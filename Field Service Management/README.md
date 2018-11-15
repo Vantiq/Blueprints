@@ -1,11 +1,17 @@
-# Blueprints
-The Blueprints repo contains working examples that can be imported by users to jumpstart development by providing a (mostly) working example application. Some configuration and tweaking may be required.
+# Field Service Management
+This repository contains the Field Service Management blueprint and documentation. 
 
-Each Blueprint takes the form of an export from a VANTIQ system and should appear as a uniquely named top-level folder in this repository.
+VANTIQ Blueprint - FSM - Quick Start.docx: A short installation guide.
 
-Blueprints should be made by members of the VANTIQ Sales Engineering Team. To add a blueprint, open a pull request against this repository with your suggested additions and it will be reviewed by a member of the VANTIQ team before being merged into the repository.
+FSM-Blueprint-Datasheet.docx: Lists features and capabilities of the FSM application.
 
-To import a Blueprint in Modelo, go to the Projects dropdown and click Imports. In the import popup select Blueprints from the import type droplist and browse the subsequent list to view the available blueprints.
+VANTIQ Blueprint - FSM.docx: Detailed technical documentation for those who want to reprogram and customize this application.
 
-# Licensing
-Please note that all blueprints to this repository are freely and publicly available under the MIT license. By contributing to this repository, you are agreeing that your blueprints will also be available under this license. 
+bp_fsm.zip: A zipped version of the bp_fsm project which can be imported into a new VANTIQ namespace. 
+
+To get started installing this blueprint you will need a VANTIQ namespace. The Quick Start document will provide instructions on how to import the project into VANTIQ. 
+
+If you do not have Git installed to clone this repository you can simply download the .zip file and the Word doc files. 
+
+If you need assistance with getting started please contact VANTIQ's technical support team. 
+
