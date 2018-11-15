@@ -1,0 +1,36 @@
+// This rule was generated for the detect situation activity: TechnicianCollaboration in the app: WorkOrders
+RULE WorkOrders_TechnicianCollaboration_DetectSituation HIDDEN WITH ars_dependentResource="/collaborationtypes/WorkOrders"
+WHEN EVENT OCCURS ON "/eventstreams/WorkOrders_WorkorderAdded" AS event OR EVENT OCCURS ON "/eventstreams/WorkOrders_WorkorderReopen" AS event  
+
+event = event.value
+
+log.debug("app.WorkOrders.TechnicianCollaboration:  initial event: {}", [event])
+
+// Publish events to update badging in UI
+PUBLISH {task: "TechnicianCollaboration"} TO TOPIC "/collaborationtypes/WorkOrders/debug"
+
+try {
+    var sit = {name: "WorkOrders_TechnicianCollaboration", relatedEntities: {event: event}}
+    var existingSituation = null
+
+    if ("Workorders") {
+        var entity = SELECT EXACTLY ONE FROM Workorders WHERE id == event.id
+        sit.entity = Utils.buildResourceRef("Workorders", entity)
+        // Check for an existing situation if there is an associated entity
+        existingSituation = SELECT ONE FROM situations WHERE name == sit.name AND entity == sit.entity AND state == "open"
+    } else {
+        sit.entity = null
+    }
+
+    if (existingSituation) {
+        log.debug("app.WorkOrders.TechnicianCollaboration:  An existing active situation for event {} already exists: {}", [event, existingSituation])
+    } else {
+        log.debug("app.WorkOrders.TechnicianCollaboration:  Generating situation: {}", [sit])
+        INSERT ArsSituation(sit)
+    }
+} catch (ex) {
+    exception("io.vantiq.app.WorkOrders.TechnicianCollaboration.WorkOrders_TechnicianCollaboration_DetectSituation.failed",
+              "The generated rule: {0} failed because: {1}", ["WorkOrders_TechnicianCollaboration_DetectSituation", ex.message])
+}
+
+log.debug("app.WorkOrders.TechnicianCollaboration:  Done")

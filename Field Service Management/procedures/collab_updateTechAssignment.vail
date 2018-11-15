@@ -1,0 +1,7 @@
+PROCEDURE collab.updateTechAssignment(techid, workorderid)
+
+var techname = SELECT * FROM technician where username == techid
+
+techname = techname[0].fname + " " + techname[0].lname
+
+update work_order(techId:techid, techname:techname) where id == workorderid

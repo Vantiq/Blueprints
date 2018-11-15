@@ -1,0 +1,41 @@
+[{
+   "name": "email_cust_techscheduled",
+   "body": "<html><head></head><body><h3>Technician Arrival Scheduled</h3> <p>This email is an alert notification that the field technician <b>{0}</b> is scheduled to arrive at <b>{1}</b> for work order -</p> <p><b>Summary: <i>{2}</i></b></p> <p>This work order references the following products:</p> {3} <p>The address the technician will arrive at is:</p> <p>{4}</p> <p><b>{0}</b> can be reached by phone at <b>{10}</b> and by email with <b>{11}</b></p></body></html>",
+   "subject": "Technician Scheduled Notification",
+   "type": "email",
+   "category": "techscheduled"
+},
+{
+   "name": "sms_cust_techscheduled",
+   "body": "Confirmation Notice: {0} is scheduled for onsite services at {1}",
+   "subject": null,
+   "type": "sms",
+   "category": "techscheduled"
+},
+{
+   "name": "email_cust_techlate",
+   "body": "<html><head></head><body><h3>Technician Delay Alert</h3> <p>This email is an alert notification that the field technician <b>{0}</b> scheduled to arrive at <b>{1}</b> is running late. Please contact your technician for any changes in scheduling. </p><p><b>Workorder Details</b></p> <p><b>Summary: <i>{2}</i></b></p> <p>This work order references the following products:</p> {3} <p>The address the technician will arrive at is:</p> <p>{4}</p> <p><b>{0}</b> can be reached by phone at <b>{5}</b> and by email with <b>{6}</b></p></body></html>",
+   "category": "techlate",
+   "subject": "Technician Delayed Arrival Alert",
+   "type": "email"
+},
+{
+   "name": "sms_cust_techlate",
+   "body": "Late arrival alert, your technician {0} is running late!",
+   "category": "techlate",
+   "subject": null,
+   "type": "sms"
+},
+{
+   "name": "sms_cust_techarrived",
+   "body": "Your technician {0} has arrived!",
+   "category": "techarrived",
+   "type": "sms"
+},
+{
+   "name": "email_cust_techarrived",
+   "body": "<html><head></head><body><h3>Technician Arrived</h3> <p>This email is an alert notification that the field technician <b>{0}</b> has arrived at the destination location <b>{1}</b> for your workorder.</p> <p><b>Summary: <i>{2}</i></b></p> <p>This work order references the following products:</p> {3} <p>{4}</p> <p><b>{0}</b> can be reached by phone at <b>{5}</b> and by email with <b>{6}</b></p></body></html>",
+   "category": "techarrived",
+   "subject": "Technician Has Arrived",
+   "type": "email"
+}]

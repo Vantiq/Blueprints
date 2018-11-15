@@ -1,0 +1,33 @@
+PROCEDURE GoogleTimeZone(location GeoJSON, time DATETIME)
+
+/**
+	Uses GoogleAPI to take latitude and longitude and return the timezone of the locaiton 
+ 
+	in order for this procdeure to work the following must be defined for a Vantiq source
+
+	a source named: GoogleTimeZone
+	the Server URI set to: https://maps.googleapis.com/maps/api/timezone/json
+
+    see the google API for more details of what is returned https://developers.google.com/maps/documentation/timezone/intro
+    
+    * @author  Brett Rudenstein
+	* @version 1.0
+	* @since   2018-10-08
+*/
+
+
+// origin coordinates
+var olon = location.coordinates[0]
+var olat = location.coordinates[1]
+
+var queryparams = {}
+queryparams.location = format("{0},{1}", olat, olon)
+
+// time in seconds
+queryparams.timestamp = (date(time) / 1000).toString()
+
+var timezone = SELECT FROM SOURCE GoogleTimeZone WITH query = queryparams
+
+
+
+

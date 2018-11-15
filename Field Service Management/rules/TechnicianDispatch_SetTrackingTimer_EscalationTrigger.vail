@@ -1,0 +1,56 @@
+RULE TechnicianDispatch_SetTrackingTimer_EscalationTrigger HIDDEN WITH ars_dependentResource="/collaborationtypes/TechnicianDispatch"
+WHEN UPDATE OCCURS ON ArsEscalationDeadline as deadline WHERE deadline.state == "expired" AND deadline.collaborationType == "TechnicianDispatch" AND deadline.activityType == "SetTrackingTimer"
+
+log.debug("collaboration.TechnicianDispatch.SetTrackingTimer.escalate: Escalation just expired: {}", [deadline])
+
+var collaboration = SELECT ONE FROM collaborations WHERE id == deadline.collaborationId
+
+if (!collaboration) {
+    exception("io.vantiq.collaboration.TechnicianDispatch.SetTrackingTimer.collaboration.not.found",
+              "No collaboration instance with the id: {0} was found when the following escalation expired: {1}",
+              [deadline.collaborationId, deadline.toString()])
+}
+
+// Publish events to update badging in UI
+PUBLISH {collaboration: collaboration.id, task: "SetTrackingTimer", event: "escalate"} TO TOPIC "/collaborationtypes/TechnicianDispatch/debug"
+
+var ct = SELECT ONE FROM collaborationtypes WHERE name == collaboration.collaborationType
+
+if (!ct) {
+    exception("io.vantiq.collaboration.TechnicianDispatch.SetTrackingTimer.collaborationType.not.found",
+              "No collaboration type with the name: {0} was found when the following escalation expired: {1}",
+              [collaboration.collaborationType, deadline.toString()])
+}
+
+if (collaboration) {
+    var activityResults = collaboration.results[deadline.activityType]
+    if (!activityResults) {
+        activityResults = {}
+    }
+    activityResults.state = "expired"
+    activityResults.updateTime = now()
+    collaboration.results[deadline.activityType] = activityResults
+    // Save the change to results
+    ALTER collaboration ({results: collaboration.results, id: collaboration.id})
+    log.debug("collaboration.TechnicianDispatch.SetTrackingTimer.escalate: Updated collaboration with id: {} to reflect escalation expiration", [collaboration.id])
+} else {
+    log.debug("collaboration.TechnicianDispatch.SetTrackingTimer.escalate: Could not find associated collaboration with id: {}", [deadline.collaborationId])
+}
+
+var activityType = ct.assembly["SetTrackingTimer"]
+var context = CollaborationGeneration.establishCollaborationContext(collaboration, activityType.instanceParameters)
+// Add the updated ArsEscalationDeadline object to the context
+context.event = deadline
+log.debug("collaboration.TechnicianDispatch.SetTrackingTimer.escalate: About to execute on escalation behaviors for collaboration id: {}", [collaboration.id])
+IF (true
+        ) {
+
+context = CollaborationGeneration.reEstablishCollaborationContext(context)
+startA_TechnicianDispatch_BeginLocationTracking(context.collaboration, [context.technician], context.workorder.geolocation, [])
+
+context = CollaborationGeneration.reEstablishCollaborationContext(context)
+startA_TechnicianDispatch_UpdateWorkorderEnroute(context.collaboration, {id:context.workorder.id, actualStartDate:now(), status:"En Route"})
+
+}
+
+log.debug("collaboration.TechnicianDispatch.SetTrackingTimer.escalate: Successfully executed on escalation behaviors for collaboration id: {}", [collaboration.id])

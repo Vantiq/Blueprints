@@ -1,0 +1,224 @@
+RULE TechnicianDispatch_BeginLocationTracking_LocationTracking HIDDEN WITH ars_dependentResource="/collaborationtypes/TechnicianDispatch"
+WHEN PUBLISH OCCURS ON "/collaboration/location/TechnicianDispatch/BeginLocationTracking" as event
+
+// Map event.newValue to event
+// Keep newValue around to avoid breaking old collaboration types
+
+var eventData = event.newValue
+event = eventData
+event.newValue = Utils.clone(eventData)
+
+
+//
+// Check if the user has arrived at one of their tracked destinations
+//
+
+var ARRIVAL = "arrival"
+var DEPARTURE = "departure"
+var NONE = "NONE"
+var specificTopic = "TechnicianDispatch_BeginLocationTracking"
+log.debug("collaboration.TechnicianDispatch.BeginLocationTracking.locationEvent: New location event: {} received for: {}", [event, specificTopic])
+
+var active = []
+// note: newValue.username is a list
+for (u in event.username) {
+    // Need all 3 in the query to use index when possible
+    select from ArsActiveTrack as activeTracksForUser where username == u AND collaboration == event.collaborationId AND activity == "BeginLocationTracking"
+    active.addAll(activeTracksForUser)
+}
+
+log.debug("collaboration.TechnicianDispatch.BeginLocationTracking.locationEvent: processing active tracks: {}", [active])
+
+// if we untrack the user because they arrived we don't want to execute
+// location update behaviors
+var untracked = false
+var collaboration = null
+
+for (a in active) {
+    var dist = null
+
+    //  If a destination is specified, calculate the distance between the current location
+    // and the destination for this active track record
+    if (a.destination) {
+        var dist = geoDistance(event.location, a.destination)
+        log.debug("collaboration.TechnicianDispatch.BeginLocationTracking.locationEvent: distance from destination: {} for active track record: {}", [dist, a])
+    } else {
+        log.debug("collaboration.TechnicianDispatch.BeginLocationTracking.locationEvent: new location update event for active track without destination: {}", [a])
+    }
+
+    // If there was a ping event scheduled, delete it
+    if (10 minutes) {
+        DELETE system.scheduledevents WHERE message.username == a.username && message.collaboration == a.collaboration && topic == "/TechnicianDispatch/BeginLocationTracking/ping"
+    }
+
+    // Only possible to arrive if distance is non-null, which implies there is a destination
+	if (dist != null && dist < a.destinationRadius) {
+	    // construct an object with the arrived user's name and the time they arrived
+        var arrivedUser = {
+            "username": a.username,
+            "arrivalTime": now()
+        }
+
+        // get this collaboration instance
+        var collaboration = SELECT EXACTLY ONE FROM collaborations WHERE id == a.collaboration
+
+        // update the collaboration instance results to indicate a user has arrived
+        if (!collaboration.results.BeginLocationTracking) {
+            collaboration.results.BeginLocationTracking = { "arrivedUsers": []}
+        }
+
+        // If 2 events come in quickly it's possible we could trigger arrival behaviors twice
+        // make sure the arrivedUser isn't already in the arrivedUsers list
+        var alreadyArrived = false
+        for (u in collaboration.results.BeginLocationTracking.arrivedUsers) {
+            if (u.username == arrivedUser.username) {
+                alreadyArrived = true
+            }
+        }
+
+        // Only update collaboration results and execute arrival behaviors if the user has not already arrived
+        if (!alreadyArrived) {
+            log.debug("collaboration.TechnicianDispatch.BeginLocationTracking.arrival: The location tracking event: {} indicates the user: {} has arrived at their destination for collaboration id: {}", [event, event.newValue.username, collaboration.id])
+            collaboration.results.BeginLocationTracking.arrivedUsers.push(arrivedUser)
+
+            // Save the change to results
+            ALTER collaboration ({results: collaboration.results, id: collaboration.id})
+            // get the collaboration type and this activity type from the collaboration type
+            SELECT EXACTLY ONE FROM collaborationtypes as ct WHERE name == collaboration.collaborationType
+            var activityType = ct.assembly["BeginLocationTracking"]
+
+            // create a context for executing any arrival behaviors
+            var context = CollaborationGeneration.establishCollaborationContext(collaboration, activityType.instanceParameters)
+            context.event = event
+
+            if (false) {
+                // Publish events to arrival badging in UI
+                PUBLISH {collaboration: collaboration.id, task: "BeginLocationTracking", event: "arrival"} TO TOPIC "/collaborationtypes/TechnicianDispatch/debug"
+                log.debug("collaboration.TechnicianDispatch.BeginLocationTracking.arrival: Beginning to execute on arrival behaviors for active track: {}", [a])
+                
+                log.debug("collaboration.TechnicianDispatch.BeginLocationTracking.arrival: Successfully executed on arrival behaviors for active track: {}", [a])
+            }
+
+            if (true) {
+                if (collaboration.results.BeginLocationTracking.arrivedUsers.size() == 1) {
+                    // Publish events to arrival badging in UI
+                    PUBLISH {collaboration: collaboration.id, task: "BeginLocationTracking", event: "firstArrival"} TO TOPIC "/collaborationtypes/TechnicianDispatch/debug"
+                    log.debug("collaboration.TechnicianDispatch.BeginLocationTracking.firstArrival: Executing first arrival behaviors for active track: {}", [a])
+                    IF (true
+        ) {
+
+context = CollaborationGeneration.reEstablishCollaborationContext(context)
+startA_TechnicianDispatch_CompleteWorkorderNotification(context.collaboration, context.technician)
+
+context = CollaborationGeneration.reEstablishCollaborationContext(context)
+startA_TechnicianDispatch_UpdateWorkorderStatus(context.collaboration, {id:context.workorder.id, status:"On Site", actualArrivalDate:now()})
+
+}
+
+                    log.debug("collaboration.TechnicianDispatch.BeginLocationTracking.firstArrival: Successfully executed first arrival behaviors for active track: {}", [a])
+                }
+            }
+        }
+   	    // By default, discontinue tracking (this might not be right)
+   	    log.debug("collaboration.TechnicianDispatch.BeginLocationTracking.arrival: untracking: {}", [a])
+   	    LocationTracking.untrackCollaborator(a, event.newValue.username)
+   	    // note that we've untracked the user and they've arrived so we don't execute updateBehaviors
+   	    untracked = true
+	} else {
+	    log.debug("collaboration.TechnicianDispatch.BeginLocationTracking.locationEvent: The location tracking event: {} does not constitute an arrival for collaboration id: {}. User: {} is still {} meters away from their destination", [event, a.collaboration, event.newValue.username, dist])
+
+	    // update the collaboration results to contain the updated location
+        collaboration = SELECT ONE FROM collaborations WHERE id == a.collaboration AND collaborationType == "TechnicianDispatch"
+
+        // Now, let's see if there are any waypoints specified, and, if so, if we are near (or not) any.
+        var waypoint = null
+        var waypointForTrack = null
+        var action = NONE
+
+        // If this activity type has any waypoint-related behaviors, we'll checkout what's up
+
+        if (false || false) {
+            // Then we might have work to do.  Now, let's go look & see if there are any waypoints.
+
+            var waypointList
+            if (a.waypointList != null && a.waypointList.size() > 0) {
+                waypointList = a.waypointList
+
+                if (a.waypointCurrent != null) {  // Let's see if we're still close
+                    var dist = geoDistance(event.location, a.waypointCurrent.waypoint)
+
+                    if (dist > a.waypointCurrent.radius) {
+                        // In this case, our user is departing a waypoint
+                        log.debug("collaboration.TechnicianDispatch.BeginLocationTracking.locationEvent: DEPARTURE from {}", [a.waypointCurrent])
+                        waypoint = a.waypointCurrent
+                        waypointForTrack = null
+                        action = DEPARTURE
+                    } else {
+                        // No change
+                        log.debug("collaboration.TechnicianDispatch.BeginLocationTracking.locationEvent: NO CHANGE current {}, location: {}", [a.waypointCurrent, a.location])
+                        action = NONE
+                    }
+                } else {
+                    for (wp in waypointList until waypoint != null) {
+                        // Here, we will loop the through the waypoint collection.  If we find that we are arriving or departing,
+                        // we'll update accordingly.  There can be only one for which thing are applicable at a time,
+                        // so upon first appropriate waypoint, we'll exit the loop.
+                        var dist = geoDistance(event.location, wp.waypoint)
+                        log.debug("collaboration.TechnicianDispatch.BeginLocationTracking.locationEvent: distance from waypoint {} : {} for active track record: {}", [wp, dist, a])
+                        if (a.waypointCurrent == null && dist != null && dist <= wp.radius) {
+                            // In this case, our user has "arrived" at a waypoint
+                            log.debug("collaboration.TechnicianDispatch.BeginLocationTracking.locationEvent: ARRIVAL at {}", [wp.name])
+                            waypoint = wp
+                            waypointForTrack = wp
+                            action = ARRIVAL
+                        } else {
+                            log.debug("collaboration.TechnicianDispatch.BeginLocationTracking.locationEvent: NO CHANGE currentWaypoint {}, location: {}", [a.waypointCurrent, a.location])
+                            // Leave things as they are
+                            action = NONE
+                        }
+                    }
+                }
+            }
+        }
+        // Update ArsActiveTrack record with current location & waypoint, if appropriate
+        if (action == NONE) {
+	        UPDATE ArsActiveTrack({location: event.location}) WHERE _id == a._id
+	    } else {
+	        UPDATE ArsActiveTrack({location: event.location, waypointCurrent: waypointForTrack}) WHERE _id == a._id
+	    }
+	    // If we found a collaboration instance, execute it's update behaviors
+	    if (collaboration) {
+	        // We used to also save the location data as part of the collaboration results
+	        // but that proved to be a very frequent update operation that we would rather avoid
+            if (true) {
+                log.debug("collaboration.TechnicianDispatch.BeginLocationTracking.locationEvent: Executing update behaviors for active track: {}", [a])
+                startA_TechnicianDispatch_BeginLocationTracking_UpdateBehavior(collaboration, event)
+                log.debug("collaboration.TechnicianDispatch.BeginLocationTracking.locationEvent: Successfully executed update behaviors for active track: {}", [a])
+            }
+
+            // Once the update has been done, fire the events corresponding to waypoints, if any.
+            if (action != NONE) {
+                event.waypointName = waypoint.name
+                event.waypoint = waypoint.waypoint
+                event.username = a.username
+                if (false && action == ARRIVAL) {
+                    log.debug("collaboration.TechnicianDispatch.BeginLocationTracking.locationEvent: Executing waypoint arrival behaviors for active track: {}", [a])
+                    startA_TechnicianDispatch_BeginLocationTracking_WpArrivalBehavior(collaboration, event)
+                    log.debug("collaboration.TechnicianDispatch.BeginLocationTracking.locationEvent: Successfully executed waypoint arrival behaviors for active track: {}", [a])
+                } else if (false && action == DEPARTURE) {
+                    log.debug("collaboration.TechnicianDispatch.BeginLocationTracking.locationEvent: Executing waypoint departure behaviors for active track: {}", [a])
+                    startA_TechnicianDispatch_BeginLocationTracking_WpDepartureBehavior(collaboration, event)
+                    log.debug("collaboration.TechnicianDispatch.BeginLocationTracking.locationEvent: Successfully executed waypoint departure behaviors for active track: {}", [a])
+                }
+            }
+ 	    }
+
+ 	    // Lastly, start a new ping timer if necessary
+ 	    if (10 minutes) {
+            log.debug("collaboration.TechnicianDispatch.BeginLocationTracking.locationEvent: Starting a new ping timer for user: {}", [a.username])
+            PUBLISH {username: a.username, collaboration: event.collaborationId} TO TOPIC "/TechnicianDispatch/BeginLocationTracking/ping" SCHEDULE {periodic: true, interval: 10 minutes, name: "TechnicianDispatch_BeginLocationTracking_ping_" + collaboration.id, ars_dependentResource: "/collaborations/" + collaboration.id}
+ 	    }
+	}
+}
+
+log.debug("collaboration.TechnicianDispatch.BeginLocationTracking.locationEvent: Successfully processed location tracking event: {}", [event])

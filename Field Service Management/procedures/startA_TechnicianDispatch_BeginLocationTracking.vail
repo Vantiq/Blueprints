@@ -1,0 +1,23 @@
+PROCEDURE startA_TechnicianDispatch_BeginLocationTracking(collaboration, users, destination, waypoints) HIDDEN WITH ars_dependentResource="/collaborationtypes/TechnicianDispatch"
+
+log.debug("collaboration.TechnicianDispatch.BeginLocationTracking: Starting location tracking on users: {} for collaboration id: {}", [users, collaboration.id])
+
+// Publish events to update badging in UI
+PUBLISH {collaboration: collaboration.id, task: "BeginLocationTracking"} TO TOPIC "/collaborationtypes/TechnicianDispatch/debug"
+
+// For each user in the list start the location tracking
+var activity = {collaboration: { id: collaboration.id }, activity: "BeginLocationTracking" }
+var specificTopic = "TechnicianDispatch/BeginLocationTracking"
+for (user in users) {
+    // Make sure the username is lowercased before creating the active track record
+    // This is an issue when users hardcode an originalUsername rather than the actual username
+    var username = user.toLowerCase()
+    LocationTracking.trackCollaborator(activity, username, "fine", 200.0, 100.0, destination, 500.0, "/collaboration/arrival/" + specificTopic, "/collaboration/location/" + specificTopic, waypoints)
+    // Now start timers for the location pings if necessary
+    if (10 minutes) {
+        log.debug("collaboration.TechnicianDispatch.BeginLocationTracking: Starting ping timer for user: {}", [username])
+        PUBLISH {username: username, collaboration: collaboration.id} TO TOPIC "/TechnicianDispatch/BeginLocationTracking/ping" SCHEDULE {periodic: true, interval: 10 minutes, name: "TechnicianDispatch_BeginLocationTracking_ping_" + collaboration.id, ars_dependentResource: "/collaborations/" + collaboration.id}
+    }
+}
+
+log.debug("collaboration.TechnicianDispatch.BeginLocationTracking: Successfully started location tracking for collaboration id: {}", [collaboration.id])

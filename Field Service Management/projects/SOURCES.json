@@ -1,0 +1,254 @@
+{
+  "links" : [ {
+    "source" : "procedure/collab.notifyCustomer",
+    "target" : "source/email"
+  }, {
+    "source" : "procedure/testing.sources",
+    "target" : "source/Twilio"
+  }, {
+    "source" : "procedure/testing.sources",
+    "target" : "source/email"
+  } ],
+  "name" : "SOURCES",
+  "options" : {
+    "description" : "Sources represent the external API connections to third party systems. The Field Service Management blueprint uses Google Maps API, Twilio API and an SMTP server to provide additional capabilities. \n\nBefore using the blueprint it is necessary to enable each of the sources listed on this page. For the Google and Twilio sources it is also necessary to add your API key. You can edit these by clicking on the pencil icon and for the Google API looking for the {\"key\":\"YOUR_API_KEY\"} in query parameters. \n\nEnabling also means setting the Current State to Active which is done by clicking on the empty square box in the top right of each source and using the down arrow icon to save. The \"Current State\" will change from a red down arrow to a green up arrow after a couple seconds. Each of the sources listed on this page must be set to active. \n\nMake sure to enable the corresponding API for each of the Google API services. Directions, Distance, TimeZone, GeoCode. The Sources on this page are named to correspond to the Maps API service and lists the unique endpoint for each of those services. \n\nDistance: https://developers.google.com/maps/documentation/distance-matrix/\nDirections: https://developers.google.com/maps/documentation/directions/\nGeoCode: https://developers.google.com/maps/documentation/geocoding/\nTimeZone: https://developers.google.com/maps/documentation/timezone/\n\nThe FROM address for the email must also be set which can be done in the collab.notifyCustomer procedure which is open on this page. \n\nvar returnaddress = \"senders-email@goes.here.com\"\n\nOnce all the Sources have been filled in run the testing.sources procedure at the bottom of this page to verify the settings.\n\n",
+    "filterBitArray" : "ffffffffffffffffffffffffffffffff",
+    "isModeloProject" : true,
+    "showGrid" : true,
+    "v" : 2
+  },
+  "resources" : [ {
+    "label" : "GoogleDirections",
+    "name" : "GoogleDirections",
+    "node" : {
+      "x" : 328.8407651947557,
+      "y" : 29.706751443795923
+    },
+    "timestamp" : "2018-10-09T18:17:48.107Z",
+    "type" : 4
+  }, {
+    "label" : "GoogleDistanceMatrix",
+    "name" : "GoogleDistanceMatrix",
+    "node" : {
+      "x" : 164.30727551585176,
+      "y" : 105.26529335673152
+    },
+    "timestamp" : "2018-10-09T18:18:10.869Z",
+    "type" : 4
+  }, {
+    "label" : "GoogleGeoCode",
+    "name" : "GoogleGeoCode",
+    "node" : {
+      "x" : 185.26627023501203,
+      "y" : 248.19658371743174
+    },
+    "timestamp" : "2018-10-09T18:18:50.629Z",
+    "type" : 4
+  }, {
+    "label" : "GoogleTimeZone",
+    "name" : "GoogleTimeZone",
+    "node" : {
+      "x" : 373.5336606504696,
+      "y" : 143.13922031470852
+    },
+    "timestamp" : "2018-10-09T18:17:35.652Z",
+    "type" : 4
+  }, {
+    "label" : "Twilio",
+    "name" : "Twilio",
+    "node" : {
+      "x" : 294.9418441674165,
+      "y" : 316.77459029254453
+    },
+    "timestamp" : "2018-10-09T18:16:40.281Z",
+    "type" : 4
+  }, {
+    "label" : "VantiqPushNotification",
+    "name" : "VantiqPushNotification",
+    "node" : {
+      "x" : 129.9045910881822,
+      "y" : 172.08882660540326
+    },
+    "timestamp" : "2018-10-22T22:37:04.965Z",
+    "type" : 4
+  }, {
+    "inventory" : {
+      "appmodelHash" : [ ],
+      "appmodels" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "pagesetHash" : [ ],
+      "pagesets" : [ ],
+      "procedureHash" : [ "out", "out", "out", "out", "out", "out", "out", "out", "out", "out" ],
+      "procedures" : [ "GoogleTimeZone", "toInteger", "toDate", "arrivaltime.minusMillis", "arrivaltime.plusMillis", "push", "length", "range", "format", "sendTextMessageToTech" ],
+      "sourceHash" : [ "out" ],
+      "sources" : [ "email" ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in", "in" ],
+      "types" : [ "Technicians", "NotificationTemplates" ]
+    },
+    "label" : "collab.notifyCustomer",
+    "name" : "collab.notifyCustomer",
+    "node" : {
+      "x" : 382.94939639246775,
+      "y" : 194.60438998331074
+    },
+    "timestamp" : "2018-10-22T23:24:28.238Z",
+    "type" : 3
+  }, {
+    "label" : "email",
+    "name" : "email",
+    "node" : {
+      "x" : 428.9298931942415,
+      "y" : 253.63591014868123
+    },
+    "timestamp" : "2018-10-09T18:17:04.593Z",
+    "type" : 4
+  }, {
+    "inventory" : {
+      "appmodelHash" : [ ],
+      "appmodels" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "pagesetHash" : [ ],
+      "pagesets" : [ ],
+      "procedureHash" : [ "out", "out", "out", "out", "out" ],
+      "procedures" : [ "format", "GoogleGeoCode", "GoogleDistanceMatrix", "GoogleDirections", "GoogleTimeZone" ],
+      "sourceHash" : [ "out", "out" ],
+      "sources" : [ "Twilio", "email" ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "system.sources" ]
+    },
+    "name" : "testing.sources",
+    "node" : {
+      "x" : 406.1727855494353,
+      "y" : 95.60778718714877
+    },
+    "timestamp" : "2018-11-03T15:44:11.398Z",
+    "type" : 3
+  } ],
+  "tools" : [ {
+    "name" : "Project Resource Graph",
+    "pane" : {
+      "h" : 400,
+      "w" : 600,
+      "x" : 650.0000610351562,
+      "y" : 30
+    },
+    "toolOptions" : {
+      "scaleAndTranslationState" : {
+        "lastZoomRequest" : 0,
+        "scale" : 0.8705505632961251,
+        "translate" : [ 72.59744505355002, 21.031774872670866 ]
+      }
+    },
+    "type" : 1
+  }, {
+    "name" : "GoogleTimeZone",
+    "pane" : {
+      "h" : 400,
+      "w" : 600,
+      "x" : 20,
+      "y" : 440
+    },
+    "resourceKey" : "source/GoogleTimeZone",
+    "type" : 5
+  }, {
+    "name" : "email",
+    "pane" : {
+      "h" : 400,
+      "w" : 600,
+      "x" : 640,
+      "y" : 860.0000610351562
+    },
+    "resourceKey" : "source/email",
+    "type" : 5
+  }, {
+    "name" : "Twilio",
+    "pane" : {
+      "h" : 400,
+      "w" : 600,
+      "x" : 20,
+      "y" : 860
+    },
+    "resourceKey" : "source/Twilio",
+    "type" : 5
+  }, {
+    "name" : "GoogleDistanceMatrix",
+    "pane" : {
+      "h" : 400,
+      "w" : 600,
+      "x" : 1260.0000915527344,
+      "y" : 30
+    },
+    "resourceKey" : "source/GoogleDistanceMatrix",
+    "type" : 5
+  }, {
+    "name" : "GoogleGeoCode",
+    "pane" : {
+      "h" : 400,
+      "w" : 600,
+      "x" : 630,
+      "y" : 440.0000305175781
+    },
+    "resourceKey" : "source/GoogleGeoCode",
+    "type" : 5
+  }, {
+    "name" : "VantiqPushNotification",
+    "pane" : {
+      "h" : 400,
+      "w" : 600,
+      "x" : 20,
+      "y" : 1280.0000610351562
+    },
+    "resourceKey" : "source/VantiqPushNotification",
+    "type" : 5
+  }, {
+    "name" : "Project Description",
+    "pane" : {
+      "h" : 400,
+      "w" : 610,
+      "x" : 20,
+      "y" : 20
+    },
+    "type" : 82
+  }, {
+    "name" : "collab.notifyCustomer",
+    "pane" : {
+      "h" : 400,
+      "w" : 600,
+      "x" : 1250,
+      "y" : 860.0000610351562
+    },
+    "resourceKey" : "procedure/collab.notifyCustomer",
+    "type" : 24
+  }, {
+    "name" : "GoogleDirections",
+    "pane" : {
+      "h" : 400,
+      "w" : 600,
+      "x" : 1250,
+      "y" : 440.0000305175781
+    },
+    "resourceKey" : "source/GoogleDirections",
+    "type" : 5
+  }, {
+    "name" : "testing.sources",
+    "pane" : {
+      "h" : 400,
+      "w" : 600,
+      "x" : 650.0000610351562,
+      "y" : 1280.0000610351562
+    },
+    "resourceKey" : "procedure/testing.sources",
+    "type" : 24
+  } ],
+  "type" : "dev",
+  "views" : [ {
+    "name" : "Main",
+    "projectToolKeys" : [ "graph/Project Resource Graph", "subsourceeditor/GoogleTimeZone", "subsourceeditor/email", "subsourceeditor/Twilio", "subsourceeditor/GoogleDistanceMatrix", "subsourceeditor/GoogleGeoCode", "subsourceeditor/VantiqPushNotification", "projectdescription/Project Description", "cmeditorprocedure/collab.notifyCustomer", "subsourceeditor/GoogleDirections", "cmeditorprocedure/testing.sources" ]
+  } ]
+}

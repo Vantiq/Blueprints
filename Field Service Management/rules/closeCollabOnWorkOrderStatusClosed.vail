@@ -1,0 +1,16 @@
+RULE closeCollabOnWorkOrderStatusClosed
+
+WHEN UPDATE OCCURS ON Workorders WHERE Workorders.status == "Completed"
+
+var techId = Workorders.techId
+
+var entity = "/Workorders/" + Workorders._id
+SELECT FROM system.collaborations as collaboration WHERE entities.workorder == entity && status == "active" {
+    CollaborationUtils.closeCollaboration(collaboration.id)
+	if(techId == "-AutoAssign-"){
+        techId = null
+	}
+	update Workorders (actualCompletionDate:now(), closedDate:now(), techId:techId) where id == Workorders.id
+}
+
+

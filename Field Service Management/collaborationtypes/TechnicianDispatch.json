@@ -1,0 +1,670 @@
+{
+  "active" : true,
+  "appType" : false,
+  "assembly" : {
+    "AcceptRejectWorkorder" : {
+      "additionalBehaviors" : [ ],
+      "cancellationCondition" : [ ],
+      "completionCondition" : [ ],
+      "configuration" : {
+        "body" : "Please respond to the Workorder assignment request.",
+        "clientName" : "Accept-Reject-Assignment",
+        "firstResponseBehaviors" : [ {
+          "behaviors" : [ {
+            "description" : null,
+            "name" : "AssignTechRole",
+            "parameters" : [ {
+              "name" : "collaboration",
+              "type" : "reference",
+              "value" : "collaboration"
+            }, {
+              "name" : "value",
+              "type" : "expression",
+              "value" : "collaboration.results.AcceptRejectWorkorder.responses[0].username"
+            } ],
+            "type" : "activity"
+          }, {
+            "description" : "Remove the accept reject request after one person has already responded.",
+            "name" : "Notification.retractPayload",
+            "parameters" : [ {
+              "name" : "payloadId",
+              "type" : "expression",
+              "value" : "collaboration.results.AcceptRejectWorkorder.payloadId"
+            }, {
+              "multi" : true,
+              "name" : "excludeList",
+              "type" : "mixed",
+              "value" : [ {
+                "type" : "expression",
+                "value" : "collaboration.results.AcceptRejectWorkorder.responses[0].username"
+              } ]
+            } ],
+            "type" : "service"
+          } ],
+          "condition" : "event.submitValue == 100",
+          "description" : null,
+          "name" : "firstAcceptResponse"
+        } ],
+        "pushSourceName" : "VantiqPushNotification",
+        "responseBehaviors" : [ ],
+        "title" : "Request For Technician Dispatch"
+      },
+      "continuationCondition" : [ ],
+      "description" : "Notification payload is sent to the list of recommended techs.",
+      "instanceParameters" : [ "technician", "workorder" ],
+      "pattern" : "Notification"
+    },
+    "AssignTechRole" : {
+      "additionalBehaviors" : [ {
+        "behaviors" : [ {
+          "description" : null,
+          "name" : "ScheduleArrivalDateTime",
+          "parameters" : [ {
+            "name" : "collaboration",
+            "type" : "reference",
+            "value" : "collaboration"
+          }, {
+            "name" : "users",
+            "type" : "expression",
+            "value" : "technician"
+          } ],
+          "type" : "activity"
+        }, {
+          "description" : null,
+          "name" : "UpdateWorkorderAssignment",
+          "parameters" : [ {
+            "name" : "collaboration",
+            "type" : "reference",
+            "value" : "collaboration"
+          }, {
+            "multi" : true,
+            "name" : "parameters",
+            "type" : "mixed",
+            "value" : [ {
+              "type" : "expression",
+              "value" : "collaboration"
+            }, {
+              "type" : "Any",
+              "value" : "\"Assigned\""
+            } ]
+          } ],
+          "type" : "activity"
+        }, {
+          "description" : "Cancel the EscalationAssignment escalation timer after an assignment is made. \n\nThe cancelEscalation is a built in service. An escalation is a countdown timer that triggers the steps below it when the countdown completes. \n\nOnce an assignment is made we cancel the escalation. \n\nIf an assignment is not made before the escalation time limit is reached then the Assignment request payloads are removed from the mobile apps and a new form is sent to the Service Desk Owner user to manually make an assignment.",
+          "name" : "CollaborationUtils.cancelEscalation",
+          "parameters" : [ {
+            "name" : "collaborationId",
+            "type" : "expression",
+            "value" : "collaboration.id"
+          }, {
+            "name" : "activityTypeName",
+            "type" : "String",
+            "value" : "EscalationAssignmentTimer"
+          } ],
+          "type" : "service"
+        } ],
+        "condition" : "true",
+        "description" : null,
+        "name" : null
+      } ],
+      "cancellationCondition" : [ ],
+      "completionCondition" : [ ],
+      "configuration" : {
+        "roleName" : "technician",
+        "roleType" : "collaborator"
+      },
+      "continuationCondition" : [ ],
+      "description" : "Take the first response and assign it to the technician collaborator role. \n\nThe responses come back as an array in the event of any race condition where two techs click the Accept button at the same time only the first responded listed in the response array is used. \n\ncollaboration.results.AcceptRejectWorkorder.responses[0].response.username\n\nThe retractPayload step is executed at the same time to remove the Accept-Reject request from everyone else.",
+      "instanceParameters" : [ "technician", "workorder" ],
+      "pattern" : "Assignment"
+    },
+    "BeginLocationTracking" : {
+      "additionalBehaviors" : [ ],
+      "cancellationCondition" : [ ],
+      "completionCondition" : [ ],
+      "configuration" : {
+        "arrivalBehaviors" : [ ],
+        "desiredAccuracy" : null,
+        "destinationRadius" : null,
+        "distanceFilter" : null,
+        "firstArrivalBehaviors" : [ {
+          "behaviors" : [ {
+            "description" : null,
+            "name" : "CompleteWorkorderNotification",
+            "parameters" : [ {
+              "name" : "collaboration",
+              "type" : "reference",
+              "value" : "collaboration"
+            }, {
+              "name" : "users",
+              "type" : "expression",
+              "value" : "technician"
+            } ],
+            "type" : "activity"
+          }, {
+            "description" : null,
+            "name" : "UpdateWorkorderStatus",
+            "parameters" : [ {
+              "name" : "collaboration",
+              "type" : "reference",
+              "value" : "collaboration"
+            }, {
+              "name" : "instance",
+              "type" : "expression",
+              "value" : "{id:workorder.id, status:\"On Site\", actualArrivalDate:now()}"
+            } ],
+            "type" : "activity"
+          } ],
+          "condition" : "true",
+          "description" : null,
+          "name" : "firstArrival"
+        } ],
+        "level" : null,
+        "pingInterval" : "10 minutes",
+        "updateBehaviors" : [ {
+          "behaviors" : [ {
+            "description" : null,
+            "name" : "TrackProgress",
+            "parameters" : [ {
+              "name" : "collaboration",
+              "type" : "reference",
+              "value" : "collaboration"
+            }, {
+              "name" : "parameters",
+              "type" : "expression",
+              "value" : "[ event, collaboration.results.Initiate.event]"
+            } ],
+            "type" : "activity"
+          } ],
+          "condition" : "true",
+          "description" : null,
+          "name" : "update"
+        } ],
+        "waypointArrivalBehaviors" : [ ],
+        "waypointDepartureBehaviors" : [ ]
+      },
+      "continuationCondition" : [ ],
+      "description" : null,
+      "instanceParameters" : [ "technician", "workorder" ],
+      "pattern" : "LocationTracking"
+    },
+    "CompleteManualAssignment" : {
+      "additionalBehaviors" : [ ],
+      "cancellationCondition" : [ ],
+      "completionCondition" : [ ],
+      "configuration" : {
+        "serviceName" : "collab.completeManualAssignment"
+      },
+      "continuationCondition" : [ ],
+      "description" : null,
+      "instanceParameters" : [ "technician", "workorder" ],
+      "pattern" : "Execute"
+    },
+    "CompleteWorkorderNotification" : {
+      "additionalBehaviors" : [ ],
+      "cancellationCondition" : [ ],
+      "completionCondition" : [ ],
+      "configuration" : {
+        "body" : "You have arrived at your destination. Use this form at the end of the workorder to complete.",
+        "clientName" : "CompleteWorkorder",
+        "firstResponseBehaviors" : [ {
+          "behaviors" : [ {
+            "description" : null,
+            "name" : "CollaborationUtils.closeCollaboration",
+            "parameters" : [ {
+              "name" : "collaborationId",
+              "type" : "expression",
+              "value" : "collaboration.id"
+            } ],
+            "type" : "service"
+          }, {
+            "description" : null,
+            "name" : "UpdateWorkorderCompleted",
+            "parameters" : [ {
+              "name" : "collaboration",
+              "type" : "reference",
+              "value" : "collaboration"
+            }, {
+              "name" : "instance",
+              "type" : "expression",
+              "value" : "{id:workorder.id, status:\"Completed\", actualCompletionDate:now(), closedDate:now()}"
+            } ],
+            "type" : "activity"
+          }, {
+            "description" : null,
+            "name" : "SaveSignature",
+            "parameters" : [ {
+              "name" : "collaboration",
+              "type" : "reference",
+              "value" : "collaboration"
+            }, {
+              "name" : "instance",
+              "type" : "expression",
+              "value" : "{customername: workorder.customer, id:uuid(), url:collaboration.results.CompleteWorkorderNotification.responses[0].response.Signature1, workorderid: workorder.id}"
+            } ],
+            "type" : "activity"
+          } ],
+          "condition" : "true",
+          "description" : null,
+          "name" : "firstResponse"
+        } ],
+        "pushSourceName" : "VantiqPushNotification",
+        "responseBehaviors" : [ ],
+        "title" : "Workorder Completion Form"
+      },
+      "continuationCondition" : [ ],
+      "description" : "Send a form to the mobile app that the tech can use to complete the workorder when the job is done.",
+      "instanceParameters" : [ "technician", "workorder" ],
+      "pattern" : "Notification"
+    },
+    "CustomerNotifyTechArrival" : {
+      "additionalBehaviors" : [ ],
+      "cancellationCondition" : [ ],
+      "completionCondition" : [ ],
+      "configuration" : {
+        "serviceName" : "collab.notifyCustomer"
+      },
+      "continuationCondition" : [ ],
+      "description" : null,
+      "instanceParameters" : [ "technician", "workorder" ],
+      "pattern" : "Execute"
+    },
+    "CustomerSchedulingAlert" : {
+      "additionalBehaviors" : [ ],
+      "cancellationCondition" : [ ],
+      "completionCondition" : [ ],
+      "configuration" : {
+        "serviceName" : "collab.notifyCustomer"
+      },
+      "continuationCondition" : [ ],
+      "description" : "Send customer notification based on the notification preferences in the workorder. SMS, Email or Both.",
+      "instanceParameters" : [ "technician", "workorder" ],
+      "pattern" : "Execute"
+    },
+    "EscalationAssignmentTimer" : {
+      "additionalBehaviors" : [ ],
+      "cancellationCondition" : [ ],
+      "completionCondition" : [ ],
+      "configuration" : {
+        "escalationBehaviors" : [ {
+          "behaviors" : [ {
+            "description" : null,
+            "name" : "NotifyServiceDeskNoAssignment",
+            "parameters" : [ {
+              "name" : "collaboration",
+              "type" : "reference",
+              "value" : "collaboration"
+            }, {
+              "name" : "users",
+              "type" : "expression",
+              "value" : "workorder.servicedeskowner"
+            } ],
+            "type" : "activity"
+          }, {
+            "description" : "Remove the accept-reject request from all users once escalation time limit has expired.",
+            "name" : "Notification.retractPayload",
+            "parameters" : [ {
+              "name" : "payloadId",
+              "type" : "expression",
+              "value" : "collaboration.results.AcceptRejectWorkorder.payloadId"
+            }, {
+              "multi" : true,
+              "name" : "excludeList",
+              "type" : "mixed",
+              "value" : null
+            } ],
+            "type" : "service"
+          } ],
+          "condition" : "true",
+          "description" : null,
+          "name" : "escalate"
+        } ],
+        "escalationTime" : 90
+      },
+      "continuationCondition" : [ ],
+      "description" : "Countdown timer for the a technician to accept the workorder assignment request.",
+      "instanceParameters" : [ "technician", "workorder" ],
+      "pattern" : "Escalation"
+    },
+    "Initiate" : {
+      "additionalBehaviors" : [ {
+        "behaviors" : [ {
+          "description" : null,
+          "name" : "ProcessAssignment",
+          "parameters" : [ {
+            "name" : "collaboration",
+            "type" : "reference",
+            "value" : "collaboration"
+          }, {
+            "name" : "target",
+            "type" : "expression",
+            "value" : "collaboration.results.Initiate.event"
+          } ],
+          "type" : "activity"
+        } ],
+        "condition" : "true",
+        "description" : null,
+        "name" : null
+      } ],
+      "cancellationCondition" : [ ],
+      "completionCondition" : [ ],
+      "configuration" : {
+        "entityRole" : "workorder",
+        "initialTrigger" : "WHEN INSERT OCCURS ON ArsSituation AS situation WHERE situation.name == \"WorkOrders_TechnicianCollaboration\""
+      },
+      "continuationCondition" : [ ],
+      "description" : null,
+      "instanceParameters" : [ "technician", "workorder" ],
+      "pattern" : "InitiateCollaboration"
+    },
+    "NotifyServiceDeskNoAssignment" : {
+      "additionalBehaviors" : [ ],
+      "cancellationCondition" : [ ],
+      "completionCondition" : [ ],
+      "configuration" : {
+        "body" : "Please open to manually assign the technician to the Workorder.",
+        "clientName" : "Notify-Manager",
+        "firstResponseBehaviors" : [ {
+          "behaviors" : [ {
+            "description" : null,
+            "name" : "CompleteManualAssignment",
+            "parameters" : [ {
+              "name" : "collaboration",
+              "type" : "reference",
+              "value" : "collaboration"
+            }, {
+              "multi" : true,
+              "name" : "parameters",
+              "type" : "mixed",
+              "value" : [ {
+                "type" : "expression",
+                "value" : "collaboration"
+              }, {
+                "type" : "expression",
+                "value" : "collaboration.results.NotifyServiceDeskNoAssignment.responses"
+              } ]
+            } ],
+            "type" : "activity"
+          } ],
+          "condition" : "true",
+          "description" : null,
+          "name" : "firstResponse"
+        } ],
+        "pushSourceName" : "VantiqPushNotification",
+        "responseBehaviors" : [ ],
+        "title" : "Alert: No Technician For Workorder"
+      },
+      "continuationCondition" : [ ],
+      "description" : "Notify the service desk that no one has responded to the workorder assignment request. \n\nThis will be sent to the Workorders \"Service Desk Owner\" field who will then be required to manually set the technician assignment.",
+      "instanceParameters" : [ "technician", "workorder" ],
+      "pattern" : "Notification"
+    },
+    "ProcessAssignment" : {
+      "additionalBehaviors" : [ {
+        "behaviors" : [ {
+          "description" : null,
+          "name" : "EscalationAssignmentTimer",
+          "parameters" : [ {
+            "name" : "collaboration",
+            "type" : "reference",
+            "value" : "collaboration"
+          }, {
+            "name" : "escalationTimeOverride",
+            "type" : "Integer",
+            "value" : null
+          } ],
+          "type" : "activity"
+        }, {
+          "description" : null,
+          "name" : "AcceptRejectWorkorder",
+          "parameters" : [ {
+            "name" : "collaboration",
+            "type" : "reference",
+            "value" : "collaboration"
+          }, {
+            "name" : "users",
+            "type" : "expression",
+            "value" : "collaboration.results.ProcessAssignment.recommendations"
+          } ],
+          "type" : "activity"
+        } ],
+        "condition" : "true",
+        "description" : null,
+        "name" : null
+      } ],
+      "cancellationCondition" : [ ],
+      "completionCondition" : [ ],
+      "configuration" : {
+        "candidateType" : "Technicians",
+        "matchDirectives" : {
+          "excludeProperties" : [ "id" ],
+          "maxRecommendations" : 10
+        },
+        "matchType" : "Technicians",
+        "recommendationProcedure" : "collab.weightedNearbyRecommendations"
+      },
+      "continuationCondition" : [ ],
+      "description" : "Run a custom procedure to determine the recommended techs list. \n\nThe recommendation criteria will be based on skills and geolocation of the workorder and the support radius in the technicians own record. The technician must match the skills and be inside the support radius. \n\nThis step is only performed if the Assigned To field is set to -AutoAssign-. \n\nWhen a manual assignment has been made this step is skipped and the process will jump to the AssignTechRole step.\n\nThe result of the ProcessAssignment step is an array of strings that contain user id's. These user id's represent the list of technicians to contact to accept the workorder assignment request.",
+      "instanceParameters" : [ "technician", "workorder" ],
+      "pattern" : "Recommendation"
+    },
+    "SaveSignature" : {
+      "additionalBehaviors" : [ ],
+      "cancellationCondition" : [ ],
+      "completionCondition" : [ ],
+      "configuration" : {
+        "type" : "Signatures",
+        "upsert" : false
+      },
+      "continuationCondition" : [ ],
+      "description" : null,
+      "instanceParameters" : [ "technician", "workorder" ],
+      "pattern" : "Collaboration.SaveToType"
+    },
+    "ScheduleArrivalDateTime" : {
+      "additionalBehaviors" : [ ],
+      "cancellationCondition" : [ ],
+      "completionCondition" : [ ],
+      "configuration" : {
+        "body" : "Use the notification form to schedule your estimated arrival time for the workorder.",
+        "clientName" : "ScheduleArrivalDateTime",
+        "firstResponseBehaviors" : [ {
+          "behaviors" : [ {
+            "description" : null,
+            "name" : "SetTrackingTimer",
+            "parameters" : [ {
+              "name" : "collaboration",
+              "type" : "reference",
+              "value" : "collaboration"
+            }, {
+              "name" : "escalationTimeOverride",
+              "type" : "expression",
+              "value" : "collab.scheduleLocationTracking( workorder, \"1 hours\")"
+            } ],
+            "type" : "activity"
+          }, {
+            "description" : null,
+            "name" : "CustomerSchedulingAlert",
+            "parameters" : [ {
+              "name" : "collaboration",
+              "type" : "reference",
+              "value" : "collaboration"
+            }, {
+              "multi" : true,
+              "name" : "parameters",
+              "type" : "mixed",
+              "value" : [ {
+                "type" : "expression",
+                "value" : "workorder"
+              } ]
+            } ],
+            "type" : "activity"
+          } ],
+          "condition" : "true",
+          "description" : null,
+          "name" : "firstResponse"
+        } ],
+        "pushSourceName" : "VantiqPushNotification",
+        "responseBehaviors" : [ ],
+        "title" : "Required: Schedule Estimated Arrival Time"
+      },
+      "continuationCondition" : [ ],
+      "description" : "Send mobile payload form to technician request estimated arrival time. \n\nThis date is used to notify the customer of the appointment as well as to determine when to start location tracking of the technicians current GPS coordinates. \n\nThe default will be 1 hour prior to the est arrival.",
+      "instanceParameters" : [ "technician", "workorder" ],
+      "pattern" : "Notification"
+    },
+    "SetTrackingTimer" : {
+      "additionalBehaviors" : [ ],
+      "cancellationCondition" : [ ],
+      "completionCondition" : [ ],
+      "configuration" : {
+        "escalationBehaviors" : [ {
+          "behaviors" : [ {
+            "description" : null,
+            "name" : "BeginLocationTracking",
+            "parameters" : [ {
+              "name" : "collaboration",
+              "type" : "reference",
+              "value" : "collaboration"
+            }, {
+              "multi" : true,
+              "name" : "users",
+              "type" : "mixed",
+              "value" : [ {
+                "type" : "expression",
+                "value" : "technician"
+              } ]
+            }, {
+              "name" : "destination",
+              "type" : "expression",
+              "value" : "workorder.geolocation"
+            }, {
+              "multi" : true,
+              "name" : "waypoints",
+              "type" : "mixed",
+              "value" : null
+            } ],
+            "type" : "activity"
+          }, {
+            "description" : null,
+            "name" : "UpdateWorkorderEnroute",
+            "parameters" : [ {
+              "name" : "collaboration",
+              "type" : "reference",
+              "value" : "collaboration"
+            }, {
+              "name" : "instance",
+              "type" : "expression",
+              "value" : "{id:workorder.id, actualStartDate:now(), status:\"En Route\"}"
+            } ],
+            "type" : "activity"
+          } ],
+          "condition" : "true",
+          "description" : null,
+          "name" : "escalate"
+        } ],
+        "escalationTime" : 10
+      },
+      "continuationCondition" : [ ],
+      "description" : "collab.scheduleLocationTracking sets the point in time in the future when to start location tracking. \n\nThe location tracking send a request to the Google Maps API to determine travel time.\n\nLocation tracking will begin 15 minutes prior to the ETA returned by Google to take into account changes in traffic.",
+      "instanceParameters" : [ "technician", "workorder" ],
+      "pattern" : "Escalation"
+    },
+    "TrackProgress" : {
+      "additionalBehaviors" : [ ],
+      "cancellationCondition" : [ ],
+      "completionCondition" : [ ],
+      "configuration" : {
+        "serviceName" : "collab.trackProgress"
+      },
+      "continuationCondition" : [ ],
+      "description" : "This procedure will run with each new GPS update and determine the technicians current location which will update the map on the reports page. \n\nThis procedure will also use Google Maps API to get the ETA using current location and destination location. If the ETA will result in a time that is past the scheduled arrival time, we will notify customer and technician of the late arrival.",
+      "instanceParameters" : [ "technician", "workorder" ],
+      "pattern" : "Execute"
+    },
+    "UpdateWorkorderAssignment" : {
+      "additionalBehaviors" : [ ],
+      "cancellationCondition" : [ ],
+      "completionCondition" : [ ],
+      "configuration" : {
+        "serviceName" : "collab.changeWorkOrderStatus"
+      },
+      "continuationCondition" : [ ],
+      "description" : null,
+      "instanceParameters" : [ "technician", "workorder" ],
+      "pattern" : "Execute"
+    },
+    "UpdateWorkorderCompleted" : {
+      "additionalBehaviors" : [ ],
+      "cancellationCondition" : [ ],
+      "completionCondition" : [ ],
+      "configuration" : {
+        "type" : "Workorders",
+        "upsert" : true
+      },
+      "continuationCondition" : [ ],
+      "description" : null,
+      "instanceParameters" : [ "technician", "workorder" ],
+      "pattern" : "Collaboration.SaveToType"
+    },
+    "UpdateWorkorderEnroute" : {
+      "additionalBehaviors" : [ ],
+      "cancellationCondition" : [ ],
+      "completionCondition" : [ ],
+      "configuration" : {
+        "type" : "Workorders",
+        "upsert" : true
+      },
+      "continuationCondition" : [ ],
+      "description" : null,
+      "instanceParameters" : [ "technician", "workorder" ],
+      "pattern" : "Collaboration.SaveToType"
+    },
+    "UpdateWorkorderStatus" : {
+      "additionalBehaviors" : [ {
+        "behaviors" : [ {
+          "description" : null,
+          "name" : "CustomerNotifyTechArrival",
+          "parameters" : [ {
+            "name" : "collaboration",
+            "type" : "reference",
+            "value" : "collaboration"
+          }, {
+            "multi" : true,
+            "name" : "parameters",
+            "type" : "mixed",
+            "value" : [ {
+              "type" : "expression",
+              "value" : "workorder"
+            } ]
+          } ],
+          "type" : "activity"
+        } ],
+        "condition" : "true",
+        "description" : null,
+        "name" : null
+      } ],
+      "cancellationCondition" : [ ],
+      "completionCondition" : [ ],
+      "configuration" : {
+        "type" : "Workorders",
+        "upsert" : true
+      },
+      "continuationCondition" : [ ],
+      "description" : "After the status is updated to \"On Site\" send a notification to the customer that the technician has arrived. \n\nThe customer will not get any more notifications after this step.",
+      "instanceParameters" : [ "technician", "workorder" ],
+      "pattern" : "Collaboration.SaveToType"
+    }
+  },
+  "collaboratorRoles" : [ "technician" ],
+  "currentState" : {
+    "code" : "success"
+  },
+  "description" : "Save the customer signature to the Signature type for use in the Workorder View Signature popup poage.",
+  "entityRoles" : [ {
+    "name" : "workorder",
+    "type" : "Workorders"
+  } ],
+  "keyTypes" : [ "system.collaborations" ],
+  "name" : "TechnicianDispatch"
+}

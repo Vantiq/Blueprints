@@ -1,0 +1,40 @@
+PROCEDURE startA_TechnicianCollaborationCollaborationType_NoResponse(collaboration, escalationTimeOverride) HIDDEN WITH ars_dependentResource="/collaborationtypes/TechnicianCollaborationCollaborationType"
+
+log.debug("collaboration.TechnicianCollaborationCollaborationType.NoResponse: Starting an escalation for collaboration id: {}", collaboration.id)
+
+var escalationTime = 300
+
+if (escalationTimeOverride != null) {
+    escalationTime = escalationTimeOverride
+}
+
+var escalation = {
+    collaborationType    : "TechnicianCollaborationCollaborationType",
+    activityType         : "NoResponse",
+    collaborationId      : collaboration.id,
+    escalationDeadline   : now().plusMillis(escalationTime * 1000),
+    state                : "waiting",
+    ars_dependentResource: "/collaborations/" + collaboration.id
+}
+
+log.debug("collaboration.TechnicianCollaborationCollaborationType.NoResponse: Creating escalation deadline {} for collaboration id: {}", [escalation, collaboration.id])
+
+UPSERT ArsEscalationDeadline(escalation)
+
+var activityResults = collaboration.results["NoResponse"]
+if (!activityResults) {
+    activityResults = {}
+}
+activityResults.state = "waiting"
+activityResults.updateTime = now()
+collaboration.results["NoResponse"] = activityResults
+// Save the change to results
+ALTER collaboration ({results: collaboration.results, id: collaboration.id})
+
+// Schedule publication of this escalation for the escalation time
+PUBLISH escalation TO TOPIC "/TechnicianCollaborationCollaborationType/NoResponse/expiration" SCHEDULE {interval: escalationTime * 1000}
+
+// Publish events to update badging in UI
+PUBLISH {collaboration: collaboration.id, task: "NoResponse"} TO TOPIC "/collaborationtypes/TechnicianCollaborationCollaborationType/debug"
+
+log.debug("collaboration.TechnicianCollaborationCollaborationType.NoResponse: Successfully created escalation for collaboration id: {}", [collaboration.id])

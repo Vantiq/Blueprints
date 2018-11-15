@@ -1,0 +1,5 @@
+RULE TechnicianDispatch_Initiate_CloseCollaboration HIDDEN WITH ars_dependentResource="/collaborationtypes/TechnicianDispatch"
+WHEN UPDATE OCCURS ON ArsCollaboration as collaboration WHERE collaboration.collaborationType == "TechnicianDispatch" AND collaboration.status == "closed"
+log.debug("collaboration.TechnicianDispatch.Initiate_CloseCollaboration: Collaboration with id: {} was just closed", [collaboration.id])
+CollaborationGeneration.deleteDependentCollaborationResources(collaboration.id)
+log.debug("collaboration.TechnicianDispatch.Initiate_CloseCollaboration: Successfully deleted dependent resources for collaboration with id: {}", [collaboration.id])

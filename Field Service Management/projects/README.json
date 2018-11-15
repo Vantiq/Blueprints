@@ -1,0 +1,36 @@
+{
+  "links" : [ ],
+  "name" : "README",
+  "options" : {
+    "description" : "Field Service Management Setup Instructions\n\nFor full documentation on the platform click on the \"documentation\" link located on the Developer Resources pane to the right. \n\nABOUT:\n\nThis application is split into Projects which list specific assets such as code, configurations, web and mobile clients. The Projects are meant to make it easy to navigate to specific parts of the application. \n\nBEFORE USING:\n\nIt is necessary to setup your API keys for Google, Twilio and provide an email server. These services are used for mapping/geocoding functionality, SMS and email notifications. \n\nGoogle Maps API Key - https://developers.google.com/maps/documentation/javascript/get-api-key\n\nTwilio API Key - \nhttps://www.twilio.com/docs/iam/keys/api\n\nOnce you have API keys and an SMTP server credentials go to the SOURCES project for full instructions on where and how to configure these services. \n\nQUICK OVERVIEW: \n\nWhen getting started with this project it is necessary to have some data to work with before testing out the technician dispatch elements. It is necessary to first add a User, Technician, Customer, Location, Contacts first before adding a Ticket. Once at least one of each of those records are created a new Work Order can be created and used to find and dispatch the field service technician. \n\nMOBILE APP: \n\nVisit the Google Play Store or the iPhone App Store and search for \"VANTIQ\". Download and install the VANTIQ mobile app using the same credentials to login as used in Modelo here. Technicians using this project will be required to do the same once they are entered into the Technicians table. Technicians will need to register themselves on the VANTIQ platform to get their User ID which can then be emailed to the Service Desk user who maintains the Technicians table and can enter their information with the correct ID. \n\nCUSTOMIZATION:\n\nThis project is meant to be modified from its original version. Full documentation is available that details all the coding and design elements of this project. ",
+    "filterBitArray" : "ffffffffffffffffffffffffffffffff",
+    "isModeloProject" : true,
+    "showGrid" : true,
+    "v" : 2
+  },
+  "resources" : [ ],
+  "tools" : [ {
+    "name" : "Project Description",
+    "pane" : {
+      "h" : 580,
+      "w" : 670,
+      "x" : 20,
+      "y" : 20
+    },
+    "type" : 82
+  }, {
+    "name" : "Developer Resources",
+    "pane" : {
+      "h" : 580,
+      "w" : 790,
+      "x" : 700.0000610351562,
+      "y" : 20
+    },
+    "type" : 65
+  } ],
+  "type" : "dev",
+  "views" : [ {
+    "name" : "Main",
+    "projectToolKeys" : [ "projectdescription/Project Description", "undefined/Developer Resources" ]
+  } ]
+}

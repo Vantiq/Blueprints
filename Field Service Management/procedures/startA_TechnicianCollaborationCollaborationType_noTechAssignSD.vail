@@ -1,0 +1,35 @@
+PROCEDURE startA_TechnicianCollaborationCollaborationType_noTechAssignSD(collaboration, value) HIDDEN WITH ars_dependentResource="/collaborationtypes/TechnicianCollaborationCollaborationType"
+
+log.debug("collaboration.TechnicianCollaborationCollaborationType.noTechAssignSD: Beginning assignment of value: {}", [value])
+
+// Publish events to update badging in UI
+PUBLISH {collaboration: collaboration.id, task: "noTechAssignSD"} TO TOPIC "/collaborationtypes/TechnicianCollaborationCollaborationType/debug"
+
+// The collaboration id has to be part of the alter
+var updateDoc = {id: collaboration.id}
+
+if ("entity" == "collaborator") {
+    collaboration.collaborators["employee"] = value
+    updateDoc.collaborators = collaboration.collaborators
+} else if ("entity" == "entity") {
+    collaboration.entities["employee"] = Utils.buildResourceRef("employee", value)
+    updateDoc.entities = collaboration.entities
+}
+
+var activityResults = collaboration.results["noTechAssignSD"]
+if (!activityResults) {
+    activityResults = {}
+}
+activityResults.assignmentTime = now()
+activityResults.assignedType = "entity"
+activityResults.assignedRoleName = "employee"
+activityResults.assignedValue = value
+collaboration.results["noTechAssignSD"] = activityResults
+
+updateDoc.results = collaboration.results
+
+log.debug("collaboration.TechnicianCollaborationCollaborationType.noTechAssignSD: Assignment update doc: {}", [updateDoc])
+
+// Save the results object and the changes to the collaborators map
+ALTER collaboration (updateDoc)
+log.debug("collaboration.TechnicianCollaborationCollaborationType.noTechAssignSD: Successfully completed assignment operation for update doc: {}", [updateDoc])

@@ -1,0 +1,46 @@
+PROCEDURE startA_TechnicianDispatch_TrackProgress(collaboration, parameters) HIDDEN WITH ars_dependentResource="/collaborationtypes/TechnicianDispatch"
+
+log.debug("collaboration.TechnicianDispatch.TrackProgress: Preparing to execute collab.trackProgress for collaboration id: {}", [collaboration.id])
+var procDef = Utils.getProcedure("collab.trackProgress")
+log.debug("collaboration.TechnicianDispatch.TrackProgress: Found procedure definition: {}", [procDef])
+
+if (!procDef) {
+    exception("io.vantiq.collaboration.TechnicianDispatch.TrackProgress.procedure.not.found",
+              "The service: {0} specified in the configuration of {1} could not be found.", ["collab.trackProgress", "TrackProgress"])
+}
+
+var expectedParamCount = procDef.parameters.size()
+var foundParamCount = parameters.size()
+
+if (expectedParamCount < foundParamCount) {
+    exception("io.vantiq.collaboration.TechnicianDispatch.TrackProgress.procedure.parameters.error",
+              "The procedure: {0} requires {1}, but {2} were found in the configuration of {3}", ["collab.trackProgress", expectedParamCount, foundParamCount, "TrackProgress"])
+} else if (expectedParamCount > foundParamCount) {
+    // If fewer params were supplied than expected, push nulls onto the parameter list
+    // to match the expected size of the parameters list
+    for (i in range(0, expectedParamCount - foundParamCount)) {
+        parameters.push(null)
+    }
+}
+
+log.debug("collaboration.TechnicianDispatch.TrackProgress: Procedure collab.trackProgress will be executed with parameters: {} for collaboration id: {}", [parameters, collaboration.id])
+// Publish events to update badging in UI
+PUBLISH {collaboration: collaboration.id, task: "TrackProgress"} TO TOPIC "/collaborationtypes/TechnicianDispatch/debug"
+
+var procResults = null
+
+procResults = collab.trackProgress(parameters[0], parameters[1])
+
+log.debug("collaboration.TechnicianDispatch.TrackProgress: Finished executing collab.trackProgress, which returned results: {} for collaboration id: {}", [procResults, collaboration.id])
+log.debug("Finished executing: {} which returned result {}", [procDef.name, procResults.toString()])
+
+var activityResults = collaboration.results["TrackProgress"]
+if (!activityResults) {
+    activityResults = {}
+}
+activityResults.result = procResults
+activityResults.resultTime = now()
+collaboration.results["TrackProgress"] = activityResults
+// Save the change to results
+ALTER collaboration ({results: collaboration.results, id: collaboration.id})
+log.debug("collaboration.TechnicianDispatch.TrackProgress: Successfully wrote results from executing collab.trackProgress for collaboration id: {}", [collaboration.id])

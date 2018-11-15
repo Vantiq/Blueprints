@@ -1,0 +1,24 @@
+PROCEDURE startA_TechnicianCollaborationCollaborationType_TrackTechnician_UpdateBehavior(collaboration, event) HIDDEN WITH ars_dependentResource="/collaborationtypes/TechnicianCollaborationCollaborationType"
+
+log.debug("collaboration.TechnicianCollaborationCollaborationType.TrackTechnician.update: Location update event occurred for collaboration type: TechnicianCollaborationCollaborationType activity: TrackTechnician collaborationId: {}", [collaboration.id])
+
+// Publish events to update badging in UI
+PUBLISH {collaboration: collaboration.id, task: "TrackTechnician", event: "update"} TO TOPIC "/collaborationtypes/TechnicianCollaborationCollaborationType/debug"
+
+// get the collaboration type and this activity type from the collaboration type
+SELECT EXACTLY ONE FROM collaborationtypes as ct WHERE name == collaboration.collaborationType
+var activityType = ct.assembly["TrackTechnician"]
+
+// create a context for executing any arrival behaviors
+var context = CollaborationGeneration.establishCollaborationContext(collaboration, activityType.instanceParameters)
+context.event = event
+IF (true
+        ) {
+
+context = CollaborationGeneration.reEstablishCollaborationContext(context)
+collab.updateTechMobileGeoLocation(context.tech, context.event.location)
+
+}
+
+
+log.debug("collaboration.TechnicianCollaborationCollaborationType.TrackTechnician.update: Successfully executed all update behaviors for collaboration id: {}", [collaboration.id])

@@ -1,0 +1,75 @@
+// nearbyWeightedRecommendations is a modification of the built in recommendation procedure used to find nearby
+// instances of the same type as the input (match) type and use other criteria to determine a match against
+procedure collab.weightedNearbyRecommendations(matchDirectives Object, workorder Object, candidateType String, matchType String) WITH properties={"tags": ["#collaborationService"]}
+
+//Workorder is the target, but the value is actually collaboration.results.initiate that contains all the workorder data.  In the default code this is called pattern and target.
+
+if(workorder.techId != "-AutoAssign-") {
+    select exactly one from system.collaborations as collaboration where results.Initiate.event.id == workorder.id AND status == "active"
+    var value = workorder.techId
+    startA_TechnicianDispatch_AssignTechRole(collaboration, value)
+}
+
+else {   
+    // Make sure candidateType and matchType match
+    if (candidateType && matchType && candidateType != matchType) {
+        exception("io.vantiq.recommendation.nearby.type.mismatch",
+                  "Could not perform nearby recommendations because match type: {0} did not match candidateType: {1}",
+                  [matchType, candidateType])
+    } else if (matchType && !candidateType) {
+        // Assume candidate type and match type are the same
+        candidateType = matchType
+    }
+
+    // Check the parameters
+    var maxRecommendations = matchDirectives.maxRecommendations
+    if (maxRecommendations == null) {
+        maxRecommendations = 10
+    }
+
+    var maxDistance = matchDirectives.maxDistance
+    // Default to 150 miles which is the max support radius
+    if (!maxDistance) {
+        maxDistance = 241402
+    }
+
+
+    var recommendations = []
+    var skills = []
+
+    for each s in workorder.skills do
+        var obj = {"$elemMatch":{"skill":s.skill}}
+        push(skills, obj)
+    end
+
+    var query = {
+        "skills": {
+            "$all" : skills
+        }
+    }
+
+    // for debugging
+    var geos = []
+
+    var destination = { 
+        geometry: workorder.geolocation,  
+        maxDistance: maxDistance 
+    }
+
+
+    FOR (c IN SELECT * FROM @candidateType where geolocation geoNear destination and query) {
+        // calculate the distance in miles
+        var distanceInMiles = geoDistance(c.geolocation, destination["$geometry"]) * 0.000621371192
+
+        if (distanceInMiles < c.supportRadius AND length(recommendations) <=  maxRecommendations ) {
+            push(recommendations, c.username)
+        }
+
+    }
+
+    log.info("procedure collab.weightedNearbyRecommendations geos: " + stringify(geos))
+    log.info("nearbyRecommendations returning: {}", [recommendations])
+
+    return recommendations
+
+}

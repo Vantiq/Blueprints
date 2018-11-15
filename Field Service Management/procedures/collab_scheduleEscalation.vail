@@ -1,0 +1,4 @@
+PROCEDURE collab.scheduleEscalation(date DateTime)
+
+var trackInSeconds = date(date, "date", "epochSeconds") - date(now(), "date", "epochSeconds")
+

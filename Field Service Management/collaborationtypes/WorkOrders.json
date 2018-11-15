@@ -1,0 +1,52 @@
+{
+  "active" : true,
+  "appType" : true,
+  "ars_properties" : {
+    "ars_regenerate" : false
+  },
+  "assembly" : {
+    "TechnicianCollaboration" : {
+      "configuration" : {
+        "entityConstraint" : "id == event.id",
+        "entityType" : "Workorders"
+      },
+      "pattern" : "DetectSituation"
+    },
+    "WorkorderAdded" : {
+      "configuration" : {
+        "childStreams" : [ "TechnicianCollaboration" ],
+        "inboundResource" : "types",
+        "inboundResourceId" : "Workorders",
+        "op" : "INSERT",
+        "outboundResource" : "topics",
+        "outboundResourceId" : "",
+        "schema" : "Workorders",
+        "upsert" : false
+      },
+      "pattern" : "EventStream"
+    },
+    "WorkorderReopen" : {
+      "configuration" : {
+        "childStreams" : [ "TechnicianCollaboration" ],
+        "condition" : "event.status == \"Created\" AND event.actualCompletionDate",
+        "inboundResource" : "types",
+        "inboundResourceId" : "Workorders",
+        "op" : "UPDATE",
+        "outboundResource" : null,
+        "outboundResourceId" : null,
+        "schema" : "Workorders",
+        "upsert" : false
+      },
+      "description" : null,
+      "pattern" : "EventStream"
+    }
+  },
+  "collaboratorRoles" : [ ],
+  "currentState" : {
+    "code" : "success"
+  },
+  "description" : "",
+  "entityRoles" : [ ],
+  "keyTypes" : [ "system.collaborations" ],
+  "name" : "WorkOrders"
+}

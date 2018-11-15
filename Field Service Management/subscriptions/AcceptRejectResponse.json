@@ -1,0 +1,9 @@
+{
+  "name" : "AcceptRejectResponse",
+  "operation" : "publish",
+  "properties" : [ {
+    "name" : "/notifications/TechnicianCollaborationCollaborationType/NotifyAcceptReject",
+    "type" : ""
+  } ],
+  "type" : ""
+}

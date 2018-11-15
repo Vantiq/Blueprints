@@ -1,0 +1,12 @@
+{
+  "activationConstraint" : "",
+  "active" : false,
+  "config" : {
+    "twilioAccountSID" : "[number]",
+    "twilioAuthToken" : "[number]",
+    "twilioFromPhone" : "[number]"
+  },
+  "direction" : "SINK",
+  "name" : "Twilio",
+  "type" : "SMS"
+}

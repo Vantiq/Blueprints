@@ -1,0 +1,72 @@
+{
+  "links" : [ ],
+  "name" : "LOGS_ERRORS",
+  "options" : {
+    "description" : "This project can be used to view live errors and log messages as they arrive in the system. ",
+    "filterBitArray" : "ffffffffffffffffffffffffffffffff",
+    "isModeloProject" : true,
+    "showGrid" : true,
+    "v" : 2
+  },
+  "resources" : [ ],
+  "tools" : [ {
+    "name" : "Autopsies Query",
+    "pane" : {
+      "h" : 400,
+      "w" : 600,
+      "x" : 20,
+      "y" : 870.0000305175781
+    },
+    "type" : 37
+  }, {
+    "name" : "Errors Query",
+    "pane" : {
+      "h" : 400,
+      "w" : 600,
+      "x" : 640,
+      "y" : 870.0000305175781
+    },
+    "type" : 28
+  }, {
+    "name" : "Log Records Query",
+    "pane" : {
+      "h" : 435,
+      "w" : 600,
+      "x" : 20,
+      "y" : 1290.0000610351562
+    },
+    "type" : 18
+  }, {
+    "name" : "Errors",
+    "pane" : {
+      "h" : 400,
+      "w" : 600,
+      "x" : 30.000001907348633,
+      "y" : 10
+    },
+    "type" : 13
+  }, {
+    "name" : "Log Messages",
+    "pane" : {
+      "h" : 400,
+      "w" : 600,
+      "x" : 650.0000610351562,
+      "y" : 10
+    },
+    "type" : 12
+  }, {
+    "name" : "Project Description",
+    "pane" : {
+      "h" : 400,
+      "w" : 650,
+      "x" : 30,
+      "y" : 430
+    },
+    "type" : 82
+  } ],
+  "type" : "dev",
+  "views" : [ {
+    "name" : "Main",
+    "projectToolKeys" : [ "autopsyquery/Autopsies Query", "errorquery/Errors Query", "logquery/Log Records Query", "errorviewer/Errors", "logviewer/Log Messages", "projectdescription/Project Description" ]
+  } ]
+}

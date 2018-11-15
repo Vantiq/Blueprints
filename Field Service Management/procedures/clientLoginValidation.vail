@@ -1,0 +1,23 @@
+PROCEDURE clientLoginValidation(username String)
+
+var namespace = namespace()
+var result = false
+
+SELECT ONE FROM system.users AS user WHERE username == username
+
+if (includes(user.profiles, namespace + ".admin__system")){
+    result = true
+} else {
+    SELECT ONE FROM Users WHERE username == username
+    if (Users){
+    	result = true    
+	}
+}
+
+// then check if supervisor
+// then check if service desk user
+
+// return result
+return result
+
+

@@ -1,0 +1,17 @@
+PROCEDURE EngineMonitor_UpdateSystemHUD_Transformation(event) HIDDEN WITH ars_dependentResource="/collaborationtypes/EngineMonitor"
+
+var newEvent = {}
+
+try {
+    newEvent.alertMsg = ((event.temperature >= 210) && (event.speed >= 45)) ?
+    "Your engine is overheating, please reduce your speed." :
+    (((event.temperature >= 210) && (event.speed < 45)) ?
+    "Your engine is overheating: check for a malfunctioning fan or a coolant leak." : "")
+newEvent.systemId = event.systemId
+
+} catch (ex) {
+    exception("io.vantiq.app.EngineMonitor.UpdateSystemHUD.EngineMonitor_UpdateSystemHUD_Transformation.transformation.failed",
+              "The generated transformation procedure: {0} failed because: {1}", ["EngineMonitor_UpdateSystemHUD_Transformation", ex.message])
+}
+
+return newEvent

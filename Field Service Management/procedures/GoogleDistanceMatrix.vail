@@ -1,0 +1,32 @@
+PROCEDURE GoogleDistanceMatrix(destination GeoJSON, origination GeoJSON)
+
+/**
+* 
+* This procedure takes two arguments.
+* 
+* destination:  a GeoJSON point identifying a destination
+* originations: an array of GeoJSON points to get a list of distances per directions (not as the crow flies)
+* 
+*/
+
+// turn geojson back into lat, lon for google API
+var ploclon = destination.coordinates[0]
+var ploclat = destination.coordinates[1]
+var qploclon = origination.coordinates[0]
+var qloclat = origination.coordinates[1]
+destination = format("{0},{1}", ploclat, ploclon)
+origination = format("{0},{1}", qloclat, qploclon)
+
+var queryparams = {}
+queryparams.origins = origination
+queryparams.destinations = destination
+queryparams.mode = "driving"
+queryparams.language = "en-EN"
+queryparams.sensor = "false"
+queryparams.departure_time = date(now()).toString()
+
+// using the google distance matrix api to get distance from all source to destination locations
+var response = SELECT FROM SOURCE GoogleDistanceMatrix WITH query = queryparams
+
+// Note:  Google gives back a list in the order it was given so you may need to sort the distances
+return response

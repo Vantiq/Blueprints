@@ -1,0 +1,29 @@
+PROCEDURE collab.setScheduledDate(collab, event, workorderId)
+
+var username = event.newValue.username
+
+var scheduledArrivalDate = toDate(event.newValue.values.scheduledArrivalDate)
+var scheduledCompletionDate = toDate(event.newValue.values.scheduledCompletionDate)
+
+var timestamp = now().plusMillis(5 minutes)
+
+var continue = false
+
+if( scheduledArrivalDate < timestamp || scheduledCompletionDate < timestamp){
+    log.debug("You failed the date validation")
+
+	startA_TechnicianCollaborationCollaborationType_SelectDate(collab, [username], getMobilePayload("dateselection")) 
+
+
+
+} else {
+    continue = true
+    UPDATE work_order(scheduledArrivalDate:scheduledArrivalDate, scheduledCompletionDate:scheduledCompletionDate) where id == workorderId
+}
+
+return continue
+
+
+
+
+
