@@ -1,0 +1,80 @@
+RULE TechnicianDispatch_Initiate_DetectCondition HIDDEN WITH ars_dependentResource="/collaborationtypes/TechnicianDispatch"
+WHEN INSERT OCCURS ON ArsSituation AS situation WHERE situation.name == "WorkOrders_TechnicianCollaboration"
+
+log.debug("collaboration.TechnicianDispatch.Initiate_DetectCondition: Initial trigger tripped by entity: {}", [situation])
+
+// When DetectCondition is triggered we need to check if a collaboration already exists,
+// if it doesn't, then we need to create a new one start the collaboration
+var collaborationDescriptor = {
+        name: "TechnicianDispatch",
+        collaborationType: "TechnicianDispatch",
+        entities: {},
+        situations: [],
+        keys: [],
+        event: situation,
+        initialActivity: "Initiate"
+}
+
+var initialEntityRef = null
+if ("workorder") {
+    initialEntityRef = Utils.buildResourceRef("Workorders", situation)
+}
+
+// If this collaboration is initiated off of the creation of a situation grab the entity from
+// the situation entity, else build a new resource ref to the triggering event/ object
+if (true) {
+    if (situation.entity) {
+        initialEntityRef = Utils.resourceRefString(situation.entity)
+        collaborationDescriptor.entities["workorder"] =  initialEntityRef
+        collaborationDescriptor.keys.push(initialEntityRef)
+    }
+    // Grab the original event out of the situation instance
+    collaborationDescriptor.event = situation.relatedEntities.event
+    // situations is a list of situation ids, not references to situations
+    collaborationDescriptor.situations.push(situation.id)
+} else if ("workorder") {
+    collaborationDescriptor.entities["workorder"] = initialEntityRef
+}
+
+var collabQual = {status: "active", collaborationType: "TechnicianDispatch"}
+
+for (e in collaborationDescriptor.entities) {
+    collabQual["entities." + e.key] = Utils.resourceRefString(e.value)
+}
+
+log.debug("collaboration.TechnicianDispatch.Initiate_DetectCondition: Using qual: {} to determine if any collaborations are already open for event: {}", [collabQual, situation])
+
+// Check if there's already an open collab of this type with the specified entities
+// limit to 1 since we only care that any record exists
+var existingCollabs = []
+// Only bother checking if there is exactly one entity role
+// any more and we can't guarantee uniqueness at collab creation time
+if (1 == 1) {
+    existingCollabs = SELECT FROM collaborations WITH LIMIT=1 WHERE collabQual
+}
+
+// If we found an active collab, don't create a new one
+if (existingCollabs.size() > 0) {
+    // Situation already exists; fault recorded, ignore
+    log.debug("collaboration.TechnicianDispatch.Initiate_DetectCondition: Not creating extra collaboration for entity: {} because {} already exists", [initialEntityRef.toString(), existingCollabs.toString()])
+} else {
+    log.debug("collaboration.TechnicianDispatch.Initiate_DetectCondition: Creating new collaboration using the following information: {}", [collaborationDescriptor])
+
+    // Create the collaboration, which will trigger TechnicianDispatch_Initiate_NewCollaboration
+    var collaboration = CollaborationUtils.establishCollaboration(collaborationDescriptor)
+
+    log.debug("collaboration.TechnicianDispatch.Initiate_DetectCondition: Successfully created collaboration: {}", [collaboration])
+
+    // If the initial op was on the creation of a situation, do extra work to reference the newly created
+    // collaboration in the situation related entities field
+    if (true) {
+        var collaborationRef = "/collaborations/" + collaboration.id
+        var relatedE = situation.relatedEntities
+        // There may be multiple collaborations related to this situation, but no more than 1 per CollaborationType
+        relatedE.TechnicianDispatch = collaborationRef
+
+        var situationUpdate = {relatedEntities: relatedE}
+
+        UPDATE ArsSituation(situationUpdate) WHERE id == situation.id
+    }
+}

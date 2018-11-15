@@ -1,0 +1,26 @@
+{
+  "links" : [ ],
+  "name" : "Users",
+  "options" : {
+    "filterMask" : 4294967295,
+    "isModeloProject" : true,
+    "showGrid" : true,
+    "v" : 2
+  },
+  "resources" : [ ],
+  "tools" : [ {
+    "name" : "Users",
+    "pane" : {
+      "h" : 800,
+      "w" : 780,
+      "x" : 50,
+      "y" : 50
+    },
+    "type" : 52
+  } ],
+  "type" : "ops",
+  "views" : [ {
+    "name" : "Main",
+    "projectToolKeys" : [ "users/Users" ]
+  } ]
+}

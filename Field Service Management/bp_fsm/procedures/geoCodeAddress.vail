@@ -1,0 +1,44 @@
+PROCEDURE geoCodeAddress(event Object)
+
+/* Utilize GoogleGeoCode procedure to convert an address into GeoJSON points, 
+   also checks for changes to the Address field to prevent extra unnecessary calls
+   to the Google Maps API. 
+*/
+
+log.info("Event data is" + stringify(event))
+
+
+var address = event.address
+var geojson = ""
+
+//Update location if address has changed 
+if (has(event, "customerid")){
+    var id = event.id
+    select exactly one from Locations as location where id == event.id
+    if(event.address != location.address){
+        geojson = GoogleGeoCode(address)
+    	update Locations (geolocation:geojson) where id == event.id    
+    }	
+}
+
+//Update workorder if address has changed 
+else if (has(event, "customerId")) {
+    var id = event.id
+    select exactly one from Workorders as workorder where id == event.id
+    if(event.address != workorder.address){
+        geojson = GoogleGeoCode(address)
+    	update Workorders (geolocation:geojson) where id == event.id   
+    }   
+}
+//Update technician if address has changed 
+//else if (has(event, "username")) {
+else {
+	var username = event.username
+    select exactly one from Technicians as technician where username == event.username
+    if(event.address != technician.address){
+        geojson = GoogleGeoCode(address)
+    	update Technicians (geolocation:geojson) where username == event.username  
+    }      
+}
+
+return geojson

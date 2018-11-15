@@ -1,0 +1,12 @@
+{
+  "activationConstraint" : "",
+  "active" : false,
+  "config" : {
+    "host" : "[servername]",
+    "port" : null,
+    "username" : "[username]"
+  },
+  "direction" : "SINK",
+  "name" : "email",
+  "type" : "EMAIL"
+}

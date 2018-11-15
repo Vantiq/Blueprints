@@ -1,0 +1,181 @@
+{
+  "links" : [ ],
+  "name" : "TYPES",
+  "options" : {
+    "description" : "This project lists all of the database tables (called Types) in this project. \n\nFields for each table are called Properties. A Property can also be Indexed and also set as a Natural Key (such as a UUID field) which is useful for performing operations such as Upsert. \n\nFields can be added on the fly in this project by editing the Type and creating new properties. This will not automatically add those fields to the Web or Mobile client pages. Once new fields are added it is still necessary to go to the Client applications and add those fields you want to display. \n\n",
+    "filterBitArray" : "ffffffffffffffffffffffffffffffff",
+    "isModeloProject" : true,
+    "showGrid" : true,
+    "v" : 2
+  },
+  "resources" : [ {
+    "label" : "Assets",
+    "name" : "Assets",
+    "node" : {
+      "x" : 442.36332758458695,
+      "y" : 1.503080796736917
+    },
+    "timestamp" : "2018-10-09T18:13:48.444Z",
+    "type" : 1
+  }, {
+    "label" : "Contacts",
+    "name" : "Contacts",
+    "node" : {
+      "x" : 305.3489853339657,
+      "y" : 48.75374266254524
+    },
+    "timestamp" : "2018-10-09T18:13:48.958Z",
+    "type" : 1
+  }, {
+    "label" : "Customers",
+    "name" : "Customers",
+    "node" : {
+      "x" : 303.4283025033485,
+      "y" : 6.657307013319802
+    },
+    "timestamp" : "2018-10-09T18:13:47.355Z",
+    "type" : 1
+  }, {
+    "label" : "Events",
+    "name" : "Events",
+    "node" : {
+      "x" : 272.95677239446195,
+      "y" : 235.75211199946796
+    },
+    "timestamp" : "2018-10-09T18:13:47.085Z",
+    "type" : 1
+  }, {
+    "label" : "Locations",
+    "name" : "Locations",
+    "node" : {
+      "x" : 297.4264901646347,
+      "y" : 89.49992113281297
+    },
+    "timestamp" : "2018-10-09T18:13:46.760Z",
+    "type" : 1
+  }, {
+    "label" : "NotificationTemplates",
+    "name" : "NotificationTemplates",
+    "node" : {
+      "x" : 337.4841847088557,
+      "y" : 141.87539140171594
+    },
+    "timestamp" : "2018-10-09T18:13:47.688Z",
+    "type" : 1
+  }, {
+    "label" : "Signatures",
+    "name" : "Signatures",
+    "node" : {
+      "x" : 418.2952810020279,
+      "y" : 239.8077236548529
+    },
+    "timestamp" : "2018-10-09T18:13:47.844Z",
+    "type" : 1
+  }, {
+    "label" : "Skills",
+    "name" : "Skills",
+    "node" : {
+      "x" : 449.3806958861717,
+      "y" : 50.634554168279735
+    },
+    "timestamp" : "2018-10-09T18:13:48.671Z",
+    "type" : 1
+  }, {
+    "label" : "Technicians",
+    "name" : "Technicians",
+    "node" : {
+      "x" : 283.72106318597764,
+      "y" : 288.8937240182429
+    },
+    "timestamp" : "2018-10-09T18:13:48.566Z",
+    "type" : 1
+  }, {
+    "label" : "Tickets",
+    "name" : "Tickets",
+    "node" : {
+      "x" : 286.91999031667683,
+      "y" : 195.91685385021012
+    },
+    "timestamp" : "2018-10-09T18:13:48.102Z",
+    "type" : 1
+  }, {
+    "label" : "Users",
+    "name" : "Users",
+    "node" : {
+      "x" : 448.75299317796834,
+      "y" : 91.3198794374498
+    },
+    "timestamp" : "2018-10-09T18:13:47.580Z",
+    "type" : 1
+  }, {
+    "label" : "Workorders",
+    "name" : "Workorders",
+    "node" : {
+      "x" : 434.3012975729859,
+      "y" : 196.7385823388368
+    },
+    "timestamp" : "2018-10-09T18:13:46.947Z",
+    "type" : 1
+  } ],
+  "tools" : [ {
+    "name" : "Project Resource Graph",
+    "pane" : {
+      "h" : 410,
+      "w" : 580,
+      "x" : 20,
+      "y" : 20
+    },
+    "toolOptions" : {
+      "scaleAndTranslationState" : {
+        "lastZoomRequest" : 0,
+        "scale" : 1,
+        "translate" : [ -63.000030517578125, 33 ]
+      }
+    },
+    "type" : 1
+  }, {
+    "name" : "Customers",
+    "pane" : {
+      "h" : 400,
+      "w" : 600,
+      "x" : 620,
+      "y" : 20
+    },
+    "resourceKey" : "type/Customers",
+    "type" : 6
+  }, {
+    "name" : "Workorders",
+    "pane" : {
+      "h" : 400,
+      "w" : 600,
+      "x" : 20,
+      "y" : 450
+    },
+    "resourceKey" : "type/Workorders",
+    "type" : 6
+  }, {
+    "name" : "Technicians",
+    "pane" : {
+      "h" : 400,
+      "w" : 600,
+      "x" : 640,
+      "y" : 450
+    },
+    "resourceKey" : "type/Technicians",
+    "type" : 6
+  }, {
+    "name" : "Project Description",
+    "pane" : {
+      "h" : 400,
+      "w" : 650,
+      "x" : 1240,
+      "y" : 20
+    },
+    "type" : 82
+  } ],
+  "type" : "dev",
+  "views" : [ {
+    "name" : "Main",
+    "projectToolKeys" : [ "graph/Project Resource Graph", "subtypeeditor/Customers", "subtypeeditor/Workorders", "subtypeeditor/Technicians", "projectdescription/Project Description" ]
+  } ]
+}

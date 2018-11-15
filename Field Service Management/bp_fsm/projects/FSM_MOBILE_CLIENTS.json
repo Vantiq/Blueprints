@@ -1,0 +1,222 @@
+{
+  "links" : [ {
+    "source" : "client/CompleteWorkorder",
+    "target" : "topic//my/response/topic"
+  }, {
+    "source" : "client/Notify-Manager",
+    "target" : "topic//notifications/NoAssignment"
+  }, {
+    "source" : "client/ScheduleArrivalDateTime",
+    "target" : "topic//notifications/TechnicianDispatch/ScheduleArrivalDateTime"
+  }, {
+    "source" : "client/WorkOrders",
+    "target" : "topic//my/response/topic"
+  }, {
+    "source" : "client/Accept-Reject-Assignment",
+    "target" : "topic//notifications/TechnicianCollaborationCollaborationType/NotifyAcceptReject"
+  } ],
+  "name" : "FSM_MOBILE_CLIENTS",
+  "options" : {
+    "description" : "These clients will appear in the VANTIQ mobile app as push notifications or under the Collaboration section of the mobile (the Play button icon). \n\nThe VANTIQ mobile app can be obtained from the App Store or Play Store by searching for \"VANTIQ\". Users can login or register using the same OAuth providers used to access Modelo. \n\nTechnicians who register will need to send their user ID (click on your profile name in the top right corner, the uuid for the ID: value is the user ID) to the service desk users who add them into the database. Likewise service desk users who add themselves or others as Users will also need to provide a user ID. \n\nThe first client listed WorkOrders is set as Launachbe which means it will persist in the mobile app for users to run at any time. The WorkOrders client will list the Technicians WorkOrders that have been assigned to them and a calendar view of their scheduled activities. ",
+    "filterBitArray" : "ffffffffffffffffffffffffffffffff",
+    "isModeloProject" : true,
+    "showGrid" : true,
+    "v" : 2
+  },
+  "resources" : [ {
+    "label" : "/my/response/topic",
+    "name" : "/my/response/topic",
+    "type" : 10
+  }, {
+    "label" : "/notifications/NoAssignment",
+    "name" : "/notifications/NoAssignment",
+    "type" : 10
+  }, {
+    "label" : "/notifications/TechnicianCollaborationCollaborationType/NotifyAcceptReject",
+    "name" : "/notifications/TechnicianCollaborationCollaborationType/NotifyAcceptReject",
+    "type" : 10
+  }, {
+    "label" : "/notifications/TechnicianDispatch/ScheduleArrivalDateTime",
+    "name" : "/notifications/TechnicianDispatch/ScheduleArrivalDateTime",
+    "type" : 10
+  }, {
+    "inventory" : {
+      "appmodelHash" : [ ],
+      "appmodels" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "pagesetHash" : [ ],
+      "pagesets" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "topicHash" : [ "out" ],
+      "topics" : [ "/notifications/TechnicianCollaborationCollaborationType/NotifyAcceptReject" ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "Accept-Reject-Assignment",
+    "name" : "Accept-Reject-Assignment",
+    "timestamp" : "2018-10-22T22:52:00.641Z",
+    "type" : 15
+  }, {
+    "inventory" : {
+      "appmodelHash" : [ ],
+      "appmodels" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "pagesetHash" : [ ],
+      "pagesets" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "topicHash" : [ "out" ],
+      "topics" : [ "/my/response/topic" ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "CompleteWorkorder",
+    "name" : "CompleteWorkorder",
+    "timestamp" : "2018-10-22T22:11:05.497Z",
+    "type" : 15
+  }, {
+    "inventory" : {
+      "appmodelHash" : [ ],
+      "appmodels" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "pagesetHash" : [ ],
+      "pagesets" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "topicHash" : [ "out" ],
+      "topics" : [ "/notifications/NoAssignment" ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "Notify-Manager",
+    "name" : "Notify-Manager",
+    "timestamp" : "2018-10-09T18:14:14.444Z",
+    "type" : 15
+  }, {
+    "inventory" : {
+      "appmodelHash" : [ ],
+      "appmodels" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "pagesetHash" : [ ],
+      "pagesets" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "topicHash" : [ "out" ],
+      "topics" : [ "/notifications/TechnicianDispatch/ScheduleArrivalDateTime" ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "ScheduleArrivalDateTime",
+    "name" : "ScheduleArrivalDateTime",
+    "timestamp" : "2018-10-16T22:02:31.863Z",
+    "type" : 15
+  }, {
+    "inventory" : {
+      "appmodelHash" : [ ],
+      "appmodels" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "pagesetHash" : [ ],
+      "pagesets" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "topicHash" : [ "out" ],
+      "topics" : [ "/my/response/topic" ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "WorkOrders",
+    "name" : "WorkOrders",
+    "timestamp" : "2018-11-01T19:32:04.633Z",
+    "type" : 15
+  } ],
+  "tools" : [ {
+    "name" : "WorkOrders",
+    "pane" : {
+      "h" : 700,
+      "w" : 1130,
+      "x" : 0,
+      "y" : 0
+    },
+    "resourceKey" : "client/WorkOrders",
+    "type" : 63
+  }, {
+    "name" : "Project Contents",
+    "pane" : {
+      "h" : 400,
+      "w" : 710,
+      "x" : 1140,
+      "y" : 10
+    },
+    "type" : 2
+  }, {
+    "name" : "CompleteWorkorder",
+    "pane" : {
+      "h" : 700,
+      "w" : 1130,
+      "x" : 0,
+      "y" : 1440
+    },
+    "resourceKey" : "client/CompleteWorkorder",
+    "type" : 63
+  }, {
+    "name" : "Notify-Manager",
+    "pane" : {
+      "h" : 700,
+      "w" : 1130,
+      "x" : 0,
+      "y" : 2160
+    },
+    "resourceKey" : "client/Notify-Manager",
+    "type" : 63
+  }, {
+    "name" : "ScheduleArrivalDateTime",
+    "pane" : {
+      "h" : 700,
+      "w" : 1130,
+      "x" : 0,
+      "y" : 2880
+    },
+    "resourceKey" : "client/ScheduleArrivalDateTime",
+    "type" : 63
+  }, {
+    "name" : "Accept-Reject-Assignment",
+    "pane" : {
+      "h" : 700,
+      "w" : 1130,
+      "x" : 0,
+      "y" : 720
+    },
+    "resourceKey" : "client/Accept-Reject-Assignment",
+    "type" : 63
+  }, {
+    "name" : "Project Description",
+    "pane" : {
+      "h" : 400,
+      "w" : 700,
+      "x" : 1150.0000610351562,
+      "y" : 420.0000228881836
+    },
+    "type" : 82
+  } ],
+  "type" : "dev",
+  "views" : [ {
+    "name" : "Main",
+    "projectToolKeys" : [ "client/WorkOrders", "list/Project Contents", "client/CompleteWorkorder", "client/Notify-Manager", "client/ScheduleArrivalDateTime", "client/Accept-Reject-Assignment", "projectdescription/Project Description" ]
+  } ]
+}

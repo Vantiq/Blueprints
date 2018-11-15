@@ -1,0 +1,43 @@
+PROCEDURE testing.sources(smsNumber String Description "Enter the mobile phone number that should receive the text message", emailRecipient String Description "Enter the emails address that will receive the email message", address1 String Description "Enter an address", address2 String Description "Enter another address")
+
+var resultObj = {}
+var testMessage = "VANTIQ source, {0}... test complete."
+
+try{
+    // test twilio
+    var twilioMessage = { body: format(testMessage, "TWILIO") }
+    PUBLISH twilioMessage TO SOURCE Twilio USING { to: smsNumber }
+    resultObj.twilio = "SUCCESS"
+ 
+    // test email
+    SELECT EXACTLY ONE FROM system.sources AS src WHERE name == "email"
+    var emailAddress = src.config.username
+    var emailMessage = format(testMessage, "EMAIL")
+    PUBLISH { text: emailMessage } TO SOURCE email
+      USING { from: emailAddress,
+                to: [ emailRecipient ],
+           subject: emailMessage }
+    resultObj.email = "SUCCESS"
+
+    // test GoogleGeoCode
+    var geo1 =  GoogleGeoCode(address1)
+    var geo2 =  GoogleGeoCode(address2)
+    resultObj.GoogleGeoCode = "SUCCESS"
+
+    // test GoogleDistanceMatrix
+    var distance = GoogleDistanceMatrix(geo1, geo2)
+    resultObj.GoogleDistanceMatrix = "SUCCESS"
+
+    // test GoogleDirections
+    var direction = GoogleDirections(geo1, geo2)
+    resultObj.GoogleDirections = "SUCCESS"
+
+    // test GoogleTimeZone
+    var timezone = execute GoogleTimeZone(geo1, now())
+    resultObj.GoogleTimeZone = "SUCCESS"
+} catch (exception){
+    log.error("Something went wrong, you made it this far in the test. | {}", [stringify(exception)])
+                resultObj.error  = "Something Went wrong, make sure this procedure runs without returning any erros"
+} 
+
+return resultObj

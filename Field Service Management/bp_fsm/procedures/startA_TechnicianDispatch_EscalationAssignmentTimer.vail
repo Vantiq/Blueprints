@@ -1,0 +1,40 @@
+PROCEDURE startA_TechnicianDispatch_EscalationAssignmentTimer(collaboration, escalationTimeOverride) HIDDEN WITH ars_dependentResource="/collaborationtypes/TechnicianDispatch"
+
+log.debug("collaboration.TechnicianDispatch.EscalationAssignmentTimer: Starting an escalation for collaboration id: {}", collaboration.id)
+
+var escalationTime = 90
+
+if (escalationTimeOverride != null) {
+    escalationTime = escalationTimeOverride
+}
+
+var escalation = {
+    collaborationType    : "TechnicianDispatch",
+    activityType         : "EscalationAssignmentTimer",
+    collaborationId      : collaboration.id,
+    escalationDeadline   : now().plusMillis(escalationTime * 1000),
+    state                : "waiting",
+    ars_dependentResource: "/collaborations/" + collaboration.id
+}
+
+log.debug("collaboration.TechnicianDispatch.EscalationAssignmentTimer: Creating escalation deadline {} for collaboration id: {}", [escalation, collaboration.id])
+
+UPSERT ArsEscalationDeadline(escalation)
+
+var activityResults = collaboration.results["EscalationAssignmentTimer"]
+if (!activityResults) {
+    activityResults = {}
+}
+activityResults.state = "waiting"
+activityResults.updateTime = now()
+collaboration.results["EscalationAssignmentTimer"] = activityResults
+// Save the change to results
+ALTER collaboration ({results: collaboration.results, id: collaboration.id})
+
+// Schedule publication of this escalation for the escalation time
+PUBLISH escalation TO TOPIC "/TechnicianDispatch/EscalationAssignmentTimer/expiration" SCHEDULE {interval: escalationTime * 1000}
+
+// Publish events to update badging in UI
+PUBLISH {collaboration: collaboration.id, task: "EscalationAssignmentTimer"} TO TOPIC "/collaborationtypes/TechnicianDispatch/debug"
+
+log.debug("collaboration.TechnicianDispatch.EscalationAssignmentTimer: Successfully created escalation for collaboration id: {}", [collaboration.id])

@@ -1,0 +1,21 @@
+// This rule was generated to produce events for the task: WorkorderAdded in the app: WorkOrders
+RULE WorkOrders_WorkorderAdded_Stream HIDDEN WITH ars_dependentResource="/collaborationtypes/WorkOrders"
+WHEN  EVENT OCCURS ON "/eventstreams/WorkOrders_WorkorderAdded" AS event
+
+event = event.value
+
+log.debug("app.WorkOrders.WorkorderAdded.producer:  Producing outbound event for: {}", [event])
+
+// Publish events to update badging in UI
+PUBLISH {task: "WorkorderAdded"} TO TOPIC "/collaborationtypes/WorkOrders/debug"
+
+try {
+      
+    PUBLISH event TO TOPIC "/apps/WorkOrders/WorkorderAdded"
+    log.debug("app.WorkOrders.WorkorderAdded.producer:  produced outbound event: {}", [event])
+} catch (ex) {
+    exception("io.vantiq.app.WorkOrders.WorkorderAdded.WorkOrders_WorkorderAdded_Stream.failed",
+              "The generated rule: {0} failed because: {1}", ["WorkOrders_WorkorderAdded_Stream", ex.message])
+}
+
+log.debug("app.WorkOrders.WorkorderAdded.producer:  Done")

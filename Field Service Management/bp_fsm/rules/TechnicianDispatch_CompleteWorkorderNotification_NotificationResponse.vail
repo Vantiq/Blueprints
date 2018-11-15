@@ -1,0 +1,83 @@
+RULE TechnicianDispatch_CompleteWorkorderNotification_NotificationResponse HIDDEN WITH ars_dependentResource="/collaborationtypes/TechnicianDispatch"
+WHEN PUBLISH OCCURS ON "/notifications/TechnicianDispatch/CompleteWorkorderNotification" as event
+
+log.debug("collaboration.TechnicianDispatch.CompleteWorkorderNotification.response: received notification response: {}", [event.toString()])
+
+// Re-establish collaboration context by parsing the name of the chatroom in the event
+// TODO: Rename field in ArsPayloadMessage to be collaborationId
+var collaborationId = event.newValue.state.collaborationId
+if (!collaborationId) {
+    exception("io.vantiq.collaboration.TechnicianDispatch.CompleteWorkorderNotification.response.error",
+    "Could not find an associated collaboration instance for response to notification activity: {0}", ["CompleteWorkorderNotification"])
+}
+
+// Get this collaboration instance based on the id in the published payload
+var collaboration = SELECT EXACTLY ONE FROM collaborations WHERE id == collaborationId
+
+// Publish events to update badging in UI
+PUBLISH {collaboration: collaboration.id, task: "CompleteWorkorderNotification", event: "response"} TO TOPIC "/collaborationtypes/TechnicianDispatch/debug"
+
+// update the collaboration instance results to indicate a user has arrived
+if (!collaboration.results.CompleteWorkorderNotification) {
+    collaboration.results.CompleteWorkorderNotification = { "responses": []}
+} else if (!collaboration.results.CompleteWorkorderNotification.responses) {
+    collaboration.results.CompleteWorkorderNotification.responses = []
+}
+
+// construct an object with the arrived user's name and the time they arrived
+var response = {
+    "username": event.newValue.username,
+    "responseTime": now(),
+    "response": event.newValue.values,
+    "submitValue": event.newValue.submitValue,
+    "state": event.newValue.state,
+    "arsInfo": event.newValue.arsInfo // deviceName, deviceId, and more are in arsInfo
+}
+
+collaboration.results.CompleteWorkorderNotification.responses.push(response)
+
+log.debug("collaboration.TechnicianDispatch.CompleteWorkorderNotification.response: Saving response: {} for collaboration id: {}", [response, collaboration.id])
+
+// Save the change to results
+ALTER collaboration ({results: collaboration.results, id: collaboration.id})
+
+// do prep work for executing any [first]ResponseBehaviors
+SELECT EXACTLY ONE FROM collaborationtypes as ct WHERE name == collaboration.collaborationType
+
+var activityType = ct.assembly["CompleteWorkorderNotification"]
+
+var context = CollaborationGeneration.establishCollaborationContext(collaboration, activityType.instanceParameters)
+context.event = event.newValue
+context.response = response
+
+if (true) {
+    // execute firstResponseBehaviors only if this was the first response we saved to results
+    if (collaboration.results.CompleteWorkorderNotification.responses.size() == 1) {
+        // Publish extra first response event to update badging in UI
+        PUBLISH {collaboration: collaboration.id, task: "CompleteWorkorderNotification", event: "firstResponse"} TO TOPIC "/collaborationtypes/TechnicianDispatch/debug"
+        log.debug("collaboration.TechnicianDispatch.CompleteWorkorderNotification.firstResponse: Preparing to execute first response behaviors for response: {} in collaboration id: {}", [response, collaboration.id])
+        IF (true
+        ) {
+
+context = CollaborationGeneration.reEstablishCollaborationContext(context)
+CollaborationUtils.closeCollaboration(context.collaboration.id)
+
+context = CollaborationGeneration.reEstablishCollaborationContext(context)
+startA_TechnicianDispatch_UpdateWorkorderCompleted(context.collaboration, {id:context.workorder.id, status:"Completed", actualCompletionDate:now(), closedDate:now()})
+
+context = CollaborationGeneration.reEstablishCollaborationContext(context)
+startA_TechnicianDispatch_SaveSignature(context.collaboration, {customername: context.workorder.customer, id:uuid(), url:collaboration.results.CompleteWorkorderNotification.responses[0].response.Signature1, workorderid: context.workorder.id})
+
+}
+
+        log.debug("collaboration.TechnicianDispatch.CompleteWorkorderNotification.firstResponse: Successfully executed first response behaviors for collaboration id: {}", [collaboration.id])
+    }
+}
+
+if (false) {
+    log.debug("collaboration.TechnicianDispatch.CompleteWorkorderNotification.response: Preparing to execute response behaviors for response: {} in collaboration id: {}", [response, collaboration.id])
+    
+    log.debug("collaboration.TechnicianDispatch.CompleteWorkorderNotification.response: Successfully executed response behaviors for collaboration id: {}", [collaboration.id])
+}
+
+log.debug("collaboration.TechnicianDispatch.CompleteWorkorderNotification.response: Successfully processed response: {} to notification for collaboration id: {}", [response, collaboration.id])

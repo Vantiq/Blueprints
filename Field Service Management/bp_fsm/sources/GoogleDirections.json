@@ -1,0 +1,16 @@
+{
+  "activationConstraint" : "",
+  "active" : false,
+  "config" : {
+    "pollingInterval" : 0,
+    "requestDefaults" : {
+      "query" : {
+        "key" : "YOUR_API_KEY"
+      }
+    },
+    "uri" : "https://maps.googleapis.com/maps/api/directions/json"
+  },
+  "direction" : "BOTH",
+  "name" : "GoogleDirections",
+  "type" : "REMOTE"
+}

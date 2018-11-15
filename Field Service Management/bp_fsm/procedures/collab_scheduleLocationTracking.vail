@@ -1,0 +1,47 @@
+// PROCEDURE collab.scheduleLocationTracking(collaboration Object, scheduledArrivalDate DateTime)
+// PROCEDURE collab.scheduleLocationTracking(scheduledArrivalDate DateTime)
+PROCEDURE collab.scheduleLocationTracking(Workorders Object, hours String)
+
+/* 
+	I should just be able to pass scheduled arrival date from the execute in the collaboration
+	but when its placed as an argument to the execute it fails
+    workaround by passing id by fully supplying:
+    
+    collab.scheduleLocationTracking(collaboration.results.Initiate.event.id)
+    
+    unfortunately the Initate does not contain the scheduled arrival
+
+*/
+//SELECT EXACTLY ONE FROM Workorders WHERE id == id 
+var scheduledArrivalDate = Workorders.scheduledArrivalDate
+
+log.debug("scheduledArrivalDate: " + format("{0, date, yyyy-MMM-dd HH:mm z}", scheduledArrivalDate))
+
+
+var reminder = scheduledArrivalDate.minusMillis(stringToInterval(hours))
+var diff
+log.debug("reminder: " + format("{0, date, yyyy-MMM-dd HH:mm z}", reminder))
+
+var trackInSeconds = 0
+if ( reminder < now() ){
+    // start tracking right away
+    trackInSeconds = 1
+} else {
+    trackInSeconds = date(scheduledArrivalDate, "date", "epochSeconds") - date(now(), "date", "epochSeconds")
+}
+
+return trackInSeconds
+/*
+if ( reminder < now() ){
+    PUBLISH collaboration TO TOPIC "/location/tracking/tech" SCHEDULE {interval: 1 seconds}
+     
+} else{
+    PUBLISH collaboration TO TOPIC "/location/tracking/tech" SCHEDULE {occursAt: reminder}
+}
+*/
+
+
+
+
+
+

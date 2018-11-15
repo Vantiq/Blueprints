@@ -1,0 +1,26 @@
+PROCEDURE startA_TechnicianDispatch_UpdateWorkorderEnroute(collaboration, instance) HIDDEN WITH ars_dependentResource="/collaborationtypes/TechnicianDispatch"
+
+log.debug("collaboration.TechnicianDispatch.UpdateWorkorderEnroute: Preparing to insert {} into type: Workorders for collaboration id: {}", [instance, collaboration.id])
+
+// Publish events to update badging in UI
+PUBLISH {collaboration: collaboration.id, task: "UpdateWorkorderEnroute"} TO TOPIC "/collaborationtypes/TechnicianDispatch/debug"
+
+try {
+     UPSERT Workorders(instance)
+} catch (ex) {
+    exception("io.vantiq.collaboration.TechnicianDispatch.UpdateWorkorderEnroute.UPSERT.failed",
+              "UPSERT failed in task {0} for collaboration {1} with the following exception: {2}",
+              ["UpdateWorkorderEnroute", collaboration.id, ex.message])
+}
+
+var newInstance = SELECT EXACTLY ONE FROM Workorders WHERE id == instance.id
+
+var activityResults = collaboration.results["UpdateWorkorderEnroute"]
+if (!activityResults) {
+    activityResults = {}
+}
+activityResults.result = newInstance
+collaboration.results["UpdateWorkorderEnroute"] = activityResults
+// Save the change to results
+ALTER collaboration ({results: collaboration.results, id: collaboration.id})
+log.debug("collaboration.TechnicianDispatch.UpdateWorkorderEnroute: Successfully finished UPSERT op into Workorders for collaboration id: {}", [collaboration.id])

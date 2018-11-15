@@ -1,0 +1,140 @@
+{
+  "links" : [ {
+    "source" : "type/Workorders",
+    "target" : "app/WorkOrders"
+  }, {
+    "source" : "rule/closeCollabOnWorkOrderStatusClosed",
+    "target" : "type/Workorders"
+  }, {
+    "source" : "type/system.collaborations",
+    "target" : "rule/closeCollabOnWorkOrderStatusClosed"
+  } ],
+  "name" : "FSM_APPBUILD",
+  "options" : {
+    "description" : "App Builder is a graphical interface to manage events/activities as they occur. VANTIQ will convert the incoming data into a JSON object and use additional Tasks to modify and transform the JSON object.  \n\nThe App Builder comes with a series of prebuilt services like Filter, Join, Transform, that allow for modification of the JSON object which then can result in an output publish to be consumed by an application or to start a Collaboration. \n\nThis project has a very brief App Builder application called WorkOrders shown above. The \"event\" that triggers the application is an Insert into the Workorders type and an Update to Workorders type which specifically handles reopening a completed work order. \n\nA new or reopened work order will trigger a new collaboration will begin the technician assignment and tracking steps. ",
+    "filterBitArray" : "ffffffffffffffffffffffffffffffff",
+    "isModeloProject" : true,
+    "showGrid" : true,
+    "v" : 2
+  },
+  "resources" : [ {
+    "inventory" : {
+      "appmodelHash" : [ ],
+      "appmodels" : [ ],
+      "collaborationHash" : [ "out" ],
+      "collaborations" : [ "TechnicianCollaboration" ],
+      "pagesetHash" : [ ],
+      "pagesets" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "Workorders" ]
+    },
+    "label" : "WorkOrders",
+    "name" : "WorkOrders",
+    "node" : {
+      "x" : 242.03070594553736,
+      "y" : 144.92890145252022
+    },
+    "timestamp" : "2018-10-16T22:52:02.869Z",
+    "type" : 12
+  }, {
+    "label" : "Workorders",
+    "name" : "Workorders",
+    "node" : {
+      "x" : 363.0102108372752,
+      "y" : 225.5819047136804
+    },
+    "timestamp" : "2018-10-09T18:13:46.947Z",
+    "type" : 1
+  }, {
+    "inventory" : {
+      "appmodelHash" : [ ],
+      "appmodels" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "pagesetHash" : [ ],
+      "pagesets" : [ ],
+      "procedureHash" : [ "out" ],
+      "procedures" : [ "CollaborationUtils.closeCollaboration" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "both", "in" ],
+      "types" : [ "Workorders", "system.collaborations" ]
+    },
+    "label" : "closeCollabOnWorkOrderStatusClosed",
+    "name" : "closeCollabOnWorkOrderStatusClosed",
+    "node" : {
+      "x" : 304.70474139937835,
+      "y" : 81.6055639058193
+    },
+    "timestamp" : "2018-10-16T21:52:52.437Z",
+    "type" : 2
+  }, {
+    "label" : "system.collaborations",
+    "name" : "system.collaborations",
+    "node" : {
+      "x" : 435.4217346955259,
+      "y" : 154.66656397567164
+    },
+    "timestamp" : "2017-02-23T05:43:11.477Z",
+    "type" : 1
+  } ],
+  "tools" : [ {
+    "name" : "Project Resource Graph",
+    "pane" : {
+      "h" : 400,
+      "w" : 600,
+      "x" : 20,
+      "y" : 20
+    },
+    "toolOptions" : {
+      "scaleAndTranslationState" : {
+        "lastZoomRequest" : 0,
+        "scale" : 1,
+        "translate" : [ 0, 0 ]
+      }
+    },
+    "type" : 1
+  }, {
+    "name" : "WorkOrders",
+    "pane" : {
+      "h" : 410,
+      "w" : 800,
+      "x" : 640,
+      "y" : 20
+    },
+    "resourceKey" : "app/WorkOrders",
+    "type" : 15
+  }, {
+    "name" : "Workorders",
+    "pane" : {
+      "h" : 400,
+      "w" : 600,
+      "x" : 20,
+      "y" : 440
+    },
+    "resourceKey" : "type/Workorders",
+    "type" : 6
+  }, {
+    "name" : "Project Description",
+    "pane" : {
+      "h" : 400,
+      "w" : 650,
+      "x" : 630.0000457763672,
+      "y" : 440.00001525878906
+    },
+    "type" : 82
+  } ],
+  "type" : "dev",
+  "views" : [ {
+    "name" : "Main",
+    "projectToolKeys" : [ "graph/Project Resource Graph", "app/WorkOrders", "subtypeeditor/Workorders", "projectdescription/Project Description" ]
+  } ]
+}

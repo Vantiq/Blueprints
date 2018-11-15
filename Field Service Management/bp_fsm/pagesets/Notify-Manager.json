@@ -1,0 +1,177 @@
+{
+  "ars_properties" : {
+    "tags" : [ ]
+  },
+  "controllers" : {
+    "client" : {
+      "customCode" : "//Upsert function\nfunction upsert(resource, data, client, callback){\n    var http = new Http();\n    http.setVantiqUrlForResource(resource);\n    http.setVantiqHeaders();\n    http.upsert(data,function(response)\n    {\n        console.log(\"SUCCESS: \" + JSON.stringify(response));\n        if(callback){\n            callback();\n        }\n    },\n    function(errors)\n    {\n        client.showHttpErrors(errors,\"Doing an upsert of \" + resource);\n    });\n}\n\n\nfunction select(resource, params, client, callback){   \n    var http = new Http();\n    http.setVantiqUrlForResource(resource);\n    http.setVantiqHeaders();\n\n    // if no params then limit to 50 sort by create date, newest first\n\tif (!params){\n        params = {\n            sort:{\"ars_createdAt\":-1},\n            limit:50\n        };\n    }\n\n    http.select(params,function(response)\n    {\n        console.log(\"SUCCESS: \" + JSON.stringify(response));\n        if (callback)\n            callback(response);   \n    },\n    function(errors)\n    {\n        // client.showHttpErrors(errors,\"Doing a select on: \" + resource);\n        console.log(errors,\"Doing a select on: \" + resource);\n    });\n}\n\nfunction update(resource, data, dbid, client, callback){\n    \n    var http = new Http();\n    http.setVantiqUrlForResource(resource);\n    http.setVantiqHeaders();\n\n    http.update(data,dbid,function(response)\n    {\n        console.log(\"SUCCESS: \" + JSON.stringify(response));\n        if (callback)\n            callback();\n    },\n    function(errors)\n    {\n        client.showHttpErrors(errors,\"Doing an update of an existing: \" + resource);\n        console.log(errors,\"Doing an update of an existing: \" + resource);\n    });    \n}\n"
+    },
+    "dataStream" : { },
+    "page" : {
+      "Start" : {
+        "onStart" : "var thiscopy = this;\n\nselect(\"Technicians\", null, client, function(response){\n    console.log(\"Success --- \" + JSON.stringify(response));\n    var json = response;\n    var listItems = [{\"value\":\"-select-\", \"label\":\"-select-\"}];\n    jQuery(json).each(function(index, item) {\n        var name = item.fname + \" \" + item.lname;\n        var value = item.username;\n        var obj = {\"value\":value, \"label\":name};\n        listItems.push(obj);\n    });\n    var techList = client.getWidget(\"username\");\n    techList.enumeratedList = listItems;    \n});",
+        "widgets" : { }
+      }
+    }
+  },
+  "isLaunchable" : false,
+  "models" : {
+    "dataObjects" : {
+      "__GLOBAL__" : {
+        "properties" : { }
+      },
+      "__PARAMETERS__" : {
+        "properties" : { }
+      }
+    },
+    "dataStreams" : [ ]
+  },
+  "name" : "Notify-Manager",
+  "options" : {
+    "badgeCount" : 0,
+    "cssAssets" : [ "https://dev.vantiq.com/ui/docs/NS/bp_sitsm_v2/css/servicedeskmobile.css" ],
+    "description" : "",
+    "isExpertMode" : true,
+    "showGridWhileEditing" : true,
+    "theme" : {
+      "accentColor1" : "#040fdb",
+      "backgroundColor" : "#ffffff",
+      "borderColor" : "#000000",
+      "foregroundColor" : "#000000",
+      "label" : "Custom",
+      "name" : "custom",
+      "v" : 2
+    },
+    "v" : 3
+  },
+  "targetDevice" : "mobile",
+  "userList" : [ ],
+  "views" : {
+    "Start" : {
+      "bodyChildren" : [ {
+        "CSSClass" : "vantiqStaticImage",
+        "actionMenuLabel" : null,
+        "actionMenuTopic" : null,
+        "borderColor" : "Default",
+        "borderWidth" : 0,
+        "h" : 43,
+        "heightPolicy" : 0,
+        "horzGravity" : 4,
+        "isDraggable" : true,
+        "isScaleable" : false,
+        "isSelectable" : true,
+        "name" : "StaticImage14",
+        "scale" : 1,
+        "type" : "Img",
+        "url" : "../cmn/assets/branding/defaultImage.png",
+        "v" : 14,
+        "vertGravity" : 4,
+        "w" : 150,
+        "widthPolicy" : 0,
+        "x" : 115,
+        "y" : 5
+      }, {
+        "CSSClass" : "vantiqStaticHtml",
+        "actionMenuLabel" : null,
+        "actionMenuTopic" : null,
+        "borderColor" : "Default",
+        "borderWidth" : 0,
+        "dataStreamUUID" : null,
+        "dmh" : 300,
+        "dmw" : 200,
+        "h" : 300,
+        "heightPolicy" : 1,
+        "horzGravity" : 4,
+        "horzScrollPolicy" : 0,
+        "html" : "<h1><span style=\"color: #ff6600;\"><em>Escalation Alert</em></span></h1>\n<p>This notification is to alert you that no technician was found to accept a work order.<br /><br /></p>\n<table style=\"width: 100%;\">\n<tbody>\n<tr style=\"height: 13px;\">\n<td style=\"height: 13px; width: 131px;\"><strong>Company</strong></td>\n<td style=\"height: 13px; width: 385px;\">${workorder.customer}</td>\n</tr>\n<tr style=\"height: 13.5px;\">\n<td style=\"height: 13.5px; width: 131px;\"><strong>Summary</strong></td>\n<td style=\"height: 13.5px; width: 385px;\">${workorder.summary}</td>\n</tr>\n<tr style=\"height: 13px;\">\n<td style=\"height: 13px; width: 131px;\"><strong>Priority</strong></td>\n<td style=\"height: 13px; width: 385px;\">${workorder.priority}</td>\n</tr>\n<tr style=\"height: 13px;\">\n<td style=\"height: 13px; width: 131px;\"><strong>Activity</strong></td>\n<td style=\"height: 13px; width: 385px;\">${workorder.activitytype}</td>\n</tr>\n<tr style=\"height: 13px;\">\n<td style=\"height: 13px; width: 131px;\"><strong>ID</strong></td>\n<td style=\"height: 13px; width: 385px;\">&nbsp;${workorder.id}</td>\n</tr>\n</tbody>\n</table>\n<p><br /><br /><br /></p>",
+        "isDraggable" : true,
+        "isSelectable" : true,
+        "name" : "StaticHtml11",
+        "type" : "RichText",
+        "v" : 14,
+        "vertGravity" : 4,
+        "vertScrollPolicy" : 0,
+        "w" : 370,
+        "widthPolicy" : 2,
+        "x" : 5,
+        "y" : 53
+      }, {
+        "CSSClass" : "vantiqDroplist",
+        "actionMenuLabel" : null,
+        "actionMenuTopic" : null,
+        "binding" : "page.data.username",
+        "borderColor" : "Default",
+        "borderWidth" : 0,
+        "default" : null,
+        "h" : 70,
+        "heightPolicy" : 0,
+        "horzGravity" : 4,
+        "horzMargin" : 10,
+        "innerMargin" : 0,
+        "isDraggable" : true,
+        "isSelectable" : true,
+        "label" : "Select Technician to Assign to this Workorder",
+        "labelAlign" : "center",
+        "labelColor" : "#000000",
+        "labelFontSize" : 14,
+        "labelStyle" : "plain",
+        "list" : [ ],
+        "name" : "username",
+        "type" : "PIDroplist",
+        "v" : 14,
+        "vertGravity" : 4,
+        "vertMargin" : 10,
+        "w" : 370,
+        "widthPolicy" : 2,
+        "x" : 5,
+        "y" : 358
+      }, {
+        "CSSClass" : "vantiqButton",
+        "actionMenuLabel" : null,
+        "actionMenuTopic" : null,
+        "borderColor" : "Default",
+        "borderWidth" : 0,
+        "buttonBackgroundColor" : "platform",
+        "buttonLabel" : "Submit",
+        "buttonLabelColor" : "platform",
+        "buttonLabelSize" : 18,
+        "buttonLabelStyle" : "plain",
+        "h" : 51,
+        "heightPolicy" : 0,
+        "horzGravity" : 4,
+        "horzMargin" : 10,
+        "innerMargin" : 0,
+        "isDraggable" : true,
+        "isSelectable" : true,
+        "label" : "",
+        "labelAlign" : "center",
+        "labelColor" : "#000000",
+        "labelFontSize" : 14,
+        "labelStyle" : "plain",
+        "name" : "Button109754",
+        "type" : "PIInlineButton",
+        "v" : 14,
+        "value" : 100,
+        "vertGravity" : 4,
+        "vertMargin" : 10,
+        "w" : 370,
+        "widthPolicy" : 2,
+        "x" : 5,
+        "y" : 433
+      } ],
+      "data" : {
+        "properties" : {
+          "username" : {
+            "defaultLabel" : "username",
+            "defaultValue" : "username",
+            "type" : "String"
+          }
+        }
+      },
+      "fields" : [ ],
+      "footerChildren" : [ ],
+      "layoutType" : "mobile",
+      "responseTopic" : "/notifications/NoAssignment"
+    }
+  }
+}

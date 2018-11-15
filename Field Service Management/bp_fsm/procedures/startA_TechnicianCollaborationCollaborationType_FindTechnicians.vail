@@ -1,0 +1,64 @@
+PROCEDURE startA_TechnicianCollaborationCollaborationType_FindTechnicians(collaboration, target) HIDDEN WITH ars_dependentResource="/collaborationtypes/TechnicianCollaborationCollaborationType"
+
+log.debug("collaboration.TechnicianCollaborationCollaborationType.FindTechnicians: Getting recommendation using procedure: collab.weightedNearbyRecommendations for target: {} in collaboration id: {}", [target, collaboration.id])
+
+// Publish events to update badging in UI
+PUBLISH {collaboration: collaboration.id, task: "FindTechnicians"} TO TOPIC "/collaborationtypes/TechnicianCollaborationCollaborationType/debug"
+
+// Get the candidate type definition and verify that it's a real type
+var candidateType = SELECT ONE FROM types WHERE name == "technician"
+if (!candidateType) {
+    exception("io.vantiq.collaboration.TechnicianCollaborationCollaborationType.FindTechnicians.recommendation.error",
+        "The recommendation activity: {0} failed for collaboration: {1} because the candidate type: {2} could not be found.",
+        ["FindTechnicians", collaboration.id, "technician"])
+}
+
+// Get the match type definition and verify that it's a real type
+var matchType = SELECT ONE FROM types WHERE name == "technician"
+if (!matchType) {
+    exception("io.vantiq.collaboration.TechnicianCollaborationCollaborationType.FindTechnicians.recommendation.error",
+        "The recommendation activity: {0} failed for collaboration: {1} because the match type: {2} could not be found.",
+        ["FindTechnicians", collaboration.id, "technician"])
+}
+
+// Get the recommendations
+var recommendations = collab.weightedNearbyRecommendations({"maxDistance":243011,"maxRecommendations":10}, target, "technician", "technician")
+
+log.debug("collaboration.TechnicianCollaborationCollaborationType.FindTechnicians: Recommendation procedure: collab.weightedNearbyRecommendations returned results: {} for collaboration id: {}", [recommendations, collaboration.id])
+
+// save recommendations to the results
+var activityResults = collaboration.results["FindTechnicians"]
+if (!activityResults) {
+    activityResults = {}
+}
+activityResults.recommendations = recommendations
+collaboration.results["FindTechnicians"] = activityResults
+// Save the results object and the changes to the collaborators map
+ALTER collaboration ({results: collaboration.results, id: collaboration.id})
+
+log.debug("collaboration.TechnicianCollaborationCollaborationType.FindTechnicians: Successfully wrote results of recommendation for collaboration id: {}", [collaboration.id])
+SELECT EXACTLY ONE FROM collaborationtypes as ct WHERE name == collaboration.collaborationType
+
+var activityType = ct.assembly["FindTechnicians"]
+
+if (activityType != null AND activityType.additionalBehaviors != null) {
+    var context = CollaborationGeneration.establishCollaborationContext(collaboration, activityType.instanceParameters)
+    IF (length(context.collaboration.results.FindTechnicians.recommendations) > 0
+        ) {
+
+context = CollaborationGeneration.reEstablishCollaborationContext(context)
+startA_TechnicianCollaborationCollaborationType_SetNextTechToTry(context.collaboration, [context.collaboration.results])
+
+}
+IF (length(context.collaboration.results.FindTechnicians.recommendations) == 0
+        ) {
+
+context = CollaborationGeneration.reEstablishCollaborationContext(context)
+collab.changeWorkOrderStatus(context.workorder._id, "needstech")
+
+context = CollaborationGeneration.reEstablishCollaborationContext(context)
+startA_TechnicianCollaborationCollaborationType_noTechAssignSD(context.collaboration, getEmployeeByUserId( context.workorder))
+
+}
+
+}

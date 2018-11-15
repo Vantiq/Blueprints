@@ -1,0 +1,9 @@
+{
+  "name" : "sales1",
+  "operation" : "publish",
+  "properties" : [ {
+    "name" : "/ticket/sales",
+    "type" : ""
+  } ],
+  "type" : ""
+}

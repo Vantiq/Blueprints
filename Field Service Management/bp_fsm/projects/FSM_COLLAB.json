@@ -1,0 +1,865 @@
+{
+  "links" : [ {
+    "source" : "source/GoogleDirections",
+    "target" : "procedure/GoogleDirections"
+  }, {
+    "source" : "source/GoogleDirections",
+    "target" : "procedure/GoogleDirectionsDuration"
+  }, {
+    "source" : "procedure/GoogleDirectionsDuration",
+    "target" : "procedure/Google.getAPIKey"
+  }, {
+    "source" : "source/GoogleDistanceMatrix",
+    "target" : "procedure/GoogleDistanceMatrix"
+  }, {
+    "source" : "source/GoogleGeoCode",
+    "target" : "procedure/GoogleGeoCode"
+  }, {
+    "source" : "source/GoogleGeoCode",
+    "target" : "procedure/GoogleReverseGeoCode"
+  }, {
+    "source" : "source/GoogleTimeZone",
+    "target" : "procedure/GoogleTimeZone"
+  }, {
+    "source" : "type/system.users",
+    "target" : "procedure/clientLoginValidation"
+  }, {
+    "source" : "type/Users",
+    "target" : "procedure/clientLoginValidation"
+  }, {
+    "source" : "type/Technicians",
+    "target" : "procedure/collab.changeWorkOrderStatus"
+  }, {
+    "source" : "procedure/collab.changeWorkOrderStatus",
+    "target" : "type/Workorders"
+  }, {
+    "source" : "type/Technicians",
+    "target" : "procedure/collab.notifyCustomer"
+  }, {
+    "source" : "type/NotificationTemplates",
+    "target" : "procedure/collab.notifyCustomer"
+  }, {
+    "source" : "procedure/collab.notifyCustomer",
+    "target" : "source/email"
+  }, {
+    "source" : "procedure/collab.notifyCustomer",
+    "target" : "procedure/GoogleTimeZone"
+  }, {
+    "source" : "procedure/collab.trackProgress",
+    "target" : "type/Workorders"
+  }, {
+    "source" : "procedure/collab.trackProgress",
+    "target" : "type/Technicians"
+  }, {
+    "source" : "procedure/collab.trackProgress",
+    "target" : "procedure/GoogleDistanceMatrix"
+  }, {
+    "source" : "procedure/collab.trackProgress",
+    "target" : "procedure/collab.notifyCustomer"
+  }, {
+    "source" : "type/system.collaborations",
+    "target" : "procedure/collab.weightedNearbyRecommendations"
+  }, {
+    "source" : "procedure/geoCodeAddress",
+    "target" : "type/Locations"
+  }, {
+    "source" : "procedure/geoCodeAddress",
+    "target" : "type/Technicians"
+  }, {
+    "source" : "procedure/geoCodeAddress",
+    "target" : "type/Workorders"
+  }, {
+    "source" : "procedure/geoCodeAddress",
+    "target" : "procedure/GoogleGeoCode"
+  }, {
+    "source" : "type/Workorders",
+    "target" : "collaborationtype/TechnicianDispatch"
+  }, {
+    "source" : "type/Technicians",
+    "target" : "collaborationtype/TechnicianDispatch"
+  }, {
+    "source" : "type/Signatures",
+    "target" : "collaborationtype/TechnicianDispatch"
+  }, {
+    "source" : "source/VantiqPushNotification",
+    "target" : "collaborationtype/TechnicianDispatch"
+  }, {
+    "source" : "procedure/Notification.retractPayload",
+    "target" : "type/ArsPayloadMessage"
+  }, {
+    "source" : "procedure/Notification.retractPayload",
+    "target" : "procedure/Utils.initPushSource"
+  }, {
+    "source" : "collaborationtype/TechnicianDispatch",
+    "target" : "procedure/Notification.retractPayload"
+  }, {
+    "source" : "procedure/CollaborationUtils.cancelEscalation",
+    "target" : "type/ArsEscalationDeadline"
+  }, {
+    "source" : "collaborationtype/TechnicianDispatch",
+    "target" : "procedure/CollaborationUtils.cancelEscalation"
+  }, {
+    "source" : "collaborationtype/TechnicianDispatch",
+    "target" : "procedure/collab.completeManualAssignment"
+  }, {
+    "source" : "collaborationtype/TechnicianDispatch",
+    "target" : "procedure/collab.notifyCustomer"
+  }, {
+    "source" : "collaborationtype/TechnicianDispatch",
+    "target" : "procedure/collab.weightedNearbyRecommendations"
+  }, {
+    "source" : "collaborationtype/TechnicianDispatch",
+    "target" : "procedure/collab.trackProgress"
+  }, {
+    "source" : "collaborationtype/TechnicianDispatch",
+    "target" : "procedure/collab.changeWorkOrderStatus"
+  }, {
+    "source" : "procedure/sendTextMessageToTech",
+    "target" : "source/Twilio"
+  } ],
+  "name" : "FSM_COLLAB",
+  "options" : {
+    "description" : "A Collaboration is a graphical programming tool that primarily provides tools for man-machine interactions. For this project you can think of a new Collaboration as creating a ticket which holds all the information about the work order plus all the technician tracking details. \n\nIn the Collaboration you will see a lot of task activities that support the technician dispatch steps such as finding technicians (when -AutoAssign- is set), assigning a technician to the Collaboration, tracking the GPS location of the technician which occurs 1 hour prior to the scheduled arrival time. \n\nHandling of the mobile notifications, capturing their responses and taking the next steps based on the responses are all programmed through this collaboration. This includes manual assignment steps for when Escalation occurs (no Technician accepts the assignment), and when a user is manually assigned in the work order. \n\nAdditional features programmed through the collaboration are notifications to the customer, capturing the customer signature at the end of the work order, updating status for the work orders throughout the process and updating the current GPS location of the Technician once tracking has started. \n",
+    "filterBitArray" : "ffffffffffffffffffffffffffffffff",
+    "isModeloProject" : true,
+    "showGrid" : true,
+    "v" : 2
+  },
+  "resources" : [ {
+    "label" : "ArsEscalationDeadline",
+    "name" : "ArsEscalationDeadline",
+    "timestamp" : "2017-04-21T03:27:58.913Z",
+    "type" : 1
+  }, {
+    "label" : "ArsPayloadMessage",
+    "name" : "ArsPayloadMessage",
+    "timestamp" : "2016-11-23T17:40:16.195Z",
+    "type" : 1
+  }, {
+    "inventory" : {
+      "appmodelHash" : [ ],
+      "appmodels" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "pagesetHash" : [ ],
+      "pagesets" : [ ],
+      "procedureHash" : [ "out" ],
+      "procedures" : [ "now" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "both", "in" ],
+      "types" : [ "ArsEscalationDeadline", "collaborations" ]
+    },
+    "label" : "CollaborationUtils.cancelEscalation",
+    "name" : "CollaborationUtils.cancelEscalation",
+    "timestamp" : "2018-01-15T05:13:26.704Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "appmodelHash" : [ ],
+      "appmodels" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "pagesetHash" : [ ],
+      "pagesets" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "Google.getAPIKey",
+    "name" : "Google.getAPIKey",
+    "timestamp" : "2018-10-09T18:55:31.232Z",
+    "type" : 3
+  }, {
+    "label" : "GoogleDirections",
+    "name" : "GoogleDirections",
+    "timestamp" : "2018-10-09T18:17:48.107Z",
+    "type" : 4
+  }, {
+    "inventory" : {
+      "appmodelHash" : [ ],
+      "appmodels" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "pagesetHash" : [ ],
+      "pagesets" : [ ],
+      "procedureHash" : [ "out" ],
+      "procedures" : [ "format" ],
+      "sourceHash" : [ "in" ],
+      "sources" : [ "GoogleDirections" ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "GoogleDirections",
+    "name" : "GoogleDirections",
+    "timestamp" : "2018-10-09T18:14:05.939Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "appmodelHash" : [ ],
+      "appmodels" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "pagesetHash" : [ ],
+      "pagesets" : [ ],
+      "procedureHash" : [ "out", "out" ],
+      "procedures" : [ "format", "Google.getAPIKey" ],
+      "sourceHash" : [ "in" ],
+      "sources" : [ "GoogleDirections" ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "GoogleDirectionsDuration",
+    "name" : "GoogleDirectionsDuration",
+    "timestamp" : "2018-10-09T18:14:00.826Z",
+    "type" : 3
+  }, {
+    "label" : "GoogleDistanceMatrix",
+    "name" : "GoogleDistanceMatrix",
+    "timestamp" : "2018-10-09T18:18:10.869Z",
+    "type" : 4
+  }, {
+    "inventory" : {
+      "appmodelHash" : [ ],
+      "appmodels" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "pagesetHash" : [ ],
+      "pagesets" : [ ],
+      "procedureHash" : [ "out", "out" ],
+      "procedures" : [ "format", "date" ],
+      "sourceHash" : [ "in" ],
+      "sources" : [ "GoogleDistanceMatrix" ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "GoogleDistanceMatrix",
+    "name" : "GoogleDistanceMatrix",
+    "timestamp" : "2018-10-09T18:13:59.399Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "appmodelHash" : [ ],
+      "appmodels" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "pagesetHash" : [ ],
+      "pagesets" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ "in" ],
+      "sources" : [ "GoogleGeoCode" ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "GoogleGeoCode",
+    "name" : "GoogleGeoCode",
+    "timestamp" : "2018-10-09T18:13:57.765Z",
+    "type" : 3
+  }, {
+    "label" : "GoogleGeoCode",
+    "name" : "GoogleGeoCode",
+    "timestamp" : "2018-10-09T18:18:50.629Z",
+    "type" : 4
+  }, {
+    "inventory" : {
+      "appmodelHash" : [ ],
+      "appmodels" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "pagesetHash" : [ ],
+      "pagesets" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ "in" ],
+      "sources" : [ "GooglePlace" ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "GooglePlaceAutoComplete",
+    "name" : "GooglePlaceAutoComplete",
+    "timestamp" : "2018-10-09T18:13:56.146Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "appmodelHash" : [ ],
+      "appmodels" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "pagesetHash" : [ ],
+      "pagesets" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ "in" ],
+      "sources" : [ "GooglePlaceId" ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "GooglePlaceId",
+    "name" : "GooglePlaceId",
+    "timestamp" : "2018-10-09T18:13:56.763Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "appmodelHash" : [ ],
+      "appmodels" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "pagesetHash" : [ ],
+      "pagesets" : [ ],
+      "procedureHash" : [ "out" ],
+      "procedures" : [ "format" ],
+      "sourceHash" : [ "in" ],
+      "sources" : [ "GoogleGeoCode" ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "GoogleReverseGeoCode",
+    "name" : "GoogleReverseGeoCode",
+    "timestamp" : "2018-10-09T18:13:58.975Z",
+    "type" : 3
+  }, {
+    "label" : "GoogleTimeZone",
+    "name" : "GoogleTimeZone",
+    "timestamp" : "2018-10-09T18:17:35.652Z",
+    "type" : 4
+  }, {
+    "inventory" : {
+      "appmodelHash" : [ ],
+      "appmodels" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "pagesetHash" : [ ],
+      "pagesets" : [ ],
+      "procedureHash" : [ "out" ],
+      "procedures" : [ "format" ],
+      "sourceHash" : [ "in" ],
+      "sources" : [ "GoogleTimeZone" ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "GoogleTimeZone",
+    "name" : "GoogleTimeZone",
+    "timestamp" : "2018-10-09T18:14:04Z",
+    "type" : 3
+  }, {
+    "label" : "Locations",
+    "name" : "Locations",
+    "timestamp" : "2018-10-09T18:13:46.760Z",
+    "type" : 1
+  }, {
+    "inventory" : {
+      "appmodelHash" : [ ],
+      "appmodels" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "pagesetHash" : [ ],
+      "pagesets" : [ ],
+      "procedureHash" : [ "out", "out", "out", "out" ],
+      "procedures" : [ "exception", "retractedUsersArr.push", "newUsersArr.push", "Utils.initPushSource" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "both" ],
+      "types" : [ "ArsPayloadMessage" ]
+    },
+    "label" : "Notification.retractPayload",
+    "name" : "Notification.retractPayload",
+    "timestamp" : "2018-05-14T23:46:28.559Z",
+    "type" : 3
+  }, {
+    "label" : "NotificationTemplates",
+    "name" : "NotificationTemplates",
+    "timestamp" : "2018-10-09T18:13:47.688Z",
+    "type" : 1
+  }, {
+    "label" : "Signatures",
+    "name" : "Signatures",
+    "timestamp" : "2018-10-09T18:13:47.844Z",
+    "type" : 1
+  }, {
+    "inventory" : {
+      "appmodelHash" : [ ],
+      "appmodels" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "pagesetHash" : [ ],
+      "pagesets" : [ ],
+      "procedureHash" : [ "out", "out", "out", "out", "out", "out", "out", "out" ],
+      "procedures" : [ "Notification.retractPayload", "CollaborationUtils.cancelEscalation", "collab.completeManualAssignment", "CollaborationUtils.closeCollaboration", "collab.notifyCustomer", "collab.weightedNearbyRecommendations", "collab.trackProgress", "collab.changeWorkOrderStatus" ],
+      "sourceHash" : [ "in" ],
+      "sources" : [ "VantiqPushNotification" ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in", "in", "in", "in" ],
+      "types" : [ "Workorders", "Technicians", "Signatures", "Workorders" ]
+    },
+    "label" : "TechnicianDispatch",
+    "name" : "TechnicianDispatch",
+    "timestamp" : "2018-11-02T15:42:07.522Z",
+    "type" : 11
+  }, {
+    "label" : "Technicians",
+    "name" : "Technicians",
+    "timestamp" : "2018-10-09T18:13:48.566Z",
+    "type" : 1
+  }, {
+    "label" : "Twilio",
+    "name" : "Twilio",
+    "timestamp" : "2018-10-09T18:16:40.281Z",
+    "type" : 4
+  }, {
+    "label" : "Users",
+    "name" : "Users",
+    "timestamp" : "2018-10-09T18:13:47.580Z",
+    "type" : 1
+  }, {
+    "inventory" : {
+      "appmodelHash" : [ ],
+      "appmodels" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "pagesetHash" : [ ],
+      "pagesets" : [ ],
+      "procedureHash" : [ "out" ],
+      "procedures" : [ "namespace" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "sources" ]
+    },
+    "label" : "Utils.initPushSource",
+    "name" : "Utils.initPushSource",
+    "timestamp" : "2018-01-15T05:13:26.479Z",
+    "type" : 3
+  }, {
+    "label" : "VantiqPushNotification",
+    "name" : "VantiqPushNotification",
+    "timestamp" : "2018-10-22T22:37:04.965Z",
+    "type" : 4
+  }, {
+    "label" : "Workorders",
+    "name" : "Workorders",
+    "timestamp" : "2018-10-09T18:13:46.947Z",
+    "type" : 1
+  }, {
+    "inventory" : {
+      "appmodelHash" : [ ],
+      "appmodels" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "pagesetHash" : [ ],
+      "pagesets" : [ ],
+      "procedureHash" : [ "out", "out" ],
+      "procedures" : [ "namespace", "includes" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in", "in" ],
+      "types" : [ "system.users", "Users" ]
+    },
+    "label" : "clientLoginValidation",
+    "name" : "clientLoginValidation",
+    "timestamp" : "2018-10-09T18:14:02.823Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "appmodelHash" : [ ],
+      "appmodels" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "pagesetHash" : [ ],
+      "pagesets" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in", "out" ],
+      "types" : [ "Technicians", "Workorders" ]
+    },
+    "label" : "collab.changeWorkOrderStatus",
+    "name" : "collab.changeWorkOrderStatus",
+    "timestamp" : "2018-10-09T18:13:58.801Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "appmodelHash" : [ ],
+      "appmodels" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "pagesetHash" : [ ],
+      "pagesets" : [ ],
+      "procedureHash" : [ "out" ],
+      "procedures" : [ "startA_TechnicianDispatch_AssignTechRole" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "collab.completeManualAssignment",
+    "name" : "collab.completeManualAssignment",
+    "timestamp" : "2018-10-09T18:14:03.767Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "appmodelHash" : [ ],
+      "appmodels" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "pagesetHash" : [ ],
+      "pagesets" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "collab.customNearby",
+    "name" : "collab.customNearby",
+    "timestamp" : "2018-10-09T18:13:54.829Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "appmodelHash" : [ ],
+      "appmodels" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "pagesetHash" : [ ],
+      "pagesets" : [ ],
+      "procedureHash" : [ "out", "out", "out", "out", "out", "out", "out", "out", "out", "out" ],
+      "procedures" : [ "GoogleTimeZone", "toInteger", "toDate", "arrivaltime.minusMillis", "arrivaltime.plusMillis", "push", "length", "range", "format", "sendTextMessageToTech" ],
+      "sourceHash" : [ "out" ],
+      "sources" : [ "email" ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in", "in" ],
+      "types" : [ "Technicians", "NotificationTemplates" ]
+    },
+    "label" : "collab.notifyCustomer",
+    "name" : "collab.notifyCustomer",
+    "timestamp" : "2018-10-22T23:24:28.238Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "appmodelHash" : [ ],
+      "appmodels" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "pagesetHash" : [ ],
+      "pagesets" : [ ],
+      "procedureHash" : [ "out" ],
+      "procedures" : [ "date" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "collab.scheduleEscalation",
+    "name" : "collab.scheduleEscalation",
+    "timestamp" : "2018-10-09T18:14:02.650Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "appmodelHash" : [ ],
+      "appmodels" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "pagesetHash" : [ ],
+      "pagesets" : [ ],
+      "procedureHash" : [ "out", "out", "out" ],
+      "procedures" : [ "scheduledArrivalDate.minusMillis", "now", "date" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "collab.scheduleLocationTracking",
+    "name" : "collab.scheduleLocationTracking",
+    "timestamp" : "2018-10-09T18:13:59.313Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "appmodelHash" : [ ],
+      "appmodels" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "pagesetHash" : [ ],
+      "pagesets" : [ ],
+      "procedureHash" : [ "out", "out", "out", "out" ],
+      "procedures" : [ "toDate", "now", "plusMillis", "startA_TechnicianCollaborationCollaborationType_SelectDate" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "out" ],
+      "types" : [ "work_order" ]
+    },
+    "label" : "collab.setScheduledDate",
+    "name" : "collab.setScheduledDate",
+    "timestamp" : "2018-10-09T18:14:03.029Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "appmodelHash" : [ ],
+      "appmodels" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "pagesetHash" : [ ],
+      "pagesets" : [ ],
+      "procedureHash" : [ "out", "out", "out", "out", "out" ],
+      "procedures" : [ "GoogleDistanceMatrix", "now", "plusMillis", "date", "collab.notifyCustomer" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "both", "out" ],
+      "types" : [ "Workorders", "Technicians" ]
+    },
+    "label" : "collab.trackProgress",
+    "name" : "collab.trackProgress",
+    "timestamp" : "2018-11-07T17:08:56.529Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "appmodelHash" : [ ],
+      "appmodels" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "pagesetHash" : [ ],
+      "pagesets" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in", "out" ],
+      "types" : [ "technician", "work_order" ]
+    },
+    "label" : "collab.updateTechAssignment",
+    "name" : "collab.updateTechAssignment",
+    "timestamp" : "2018-10-09T18:13:58.127Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "appmodelHash" : [ ],
+      "appmodels" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "pagesetHash" : [ ],
+      "pagesets" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "out" ],
+      "types" : [ "technician" ]
+    },
+    "label" : "collab.updateTechMobileGeoLocation",
+    "name" : "collab.updateTechMobileGeoLocation",
+    "timestamp" : "2018-10-09T18:14:01.562Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "appmodelHash" : [ ],
+      "appmodels" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "pagesetHash" : [ ],
+      "pagesets" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "out" ],
+      "types" : [ "work_order" ]
+    },
+    "label" : "collab.updateWorkOrderTechId",
+    "name" : "collab.updateWorkOrderTechId",
+    "timestamp" : "2018-10-09T18:13:58.316Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "appmodelHash" : [ ],
+      "appmodels" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "pagesetHash" : [ ],
+      "pagesets" : [ ],
+      "procedureHash" : [ "out", "out", "out", "out", "out" ],
+      "procedures" : [ "exception", "startA_TechnicianDispatch_AssignTechRole", "push", "geoDistance", "length" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "system.collaborations" ]
+    },
+    "label" : "collab.weightedNearbyRecommendations",
+    "name" : "collab.weightedNearbyRecommendations",
+    "timestamp" : "2018-10-30T16:58:03.825Z",
+    "type" : 3
+  }, {
+    "label" : "email",
+    "name" : "email",
+    "timestamp" : "2018-10-09T18:17:04.593Z",
+    "type" : 4
+  }, {
+    "inventory" : {
+      "appmodelHash" : [ ],
+      "appmodels" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "pagesetHash" : [ ],
+      "pagesets" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "generateUUID",
+    "name" : "generateUUID",
+    "timestamp" : "2018-10-09T18:14:05.650Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "appmodelHash" : [ ],
+      "appmodels" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "pagesetHash" : [ ],
+      "pagesets" : [ ],
+      "procedureHash" : [ "out", "out" ],
+      "procedures" : [ "has", "GoogleGeoCode" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "both", "both", "both" ],
+      "types" : [ "Locations", "Technicians", "Workorders" ]
+    },
+    "label" : "geoCodeAddress",
+    "name" : "geoCodeAddress",
+    "timestamp" : "2018-10-09T18:13:54.344Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "appmodelHash" : [ ],
+      "appmodels" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "pagesetHash" : [ ],
+      "pagesets" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ "out" ],
+      "sources" : [ "Twilio" ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "sendTextMessageToTech",
+    "name" : "sendTextMessageToTech",
+    "timestamp" : "2018-10-23T00:03:28.734Z",
+    "type" : 3
+  }, {
+    "label" : "system.collaborations",
+    "name" : "system.collaborations",
+    "timestamp" : "2017-02-23T05:43:11.477Z",
+    "type" : 1
+  }, {
+    "label" : "system.users",
+    "name" : "system.users",
+    "timestamp" : "2015-01-04T00:00:26.316Z",
+    "type" : 1
+  } ],
+  "tools" : [ {
+    "name" : "TechnicianDispatch",
+    "pane" : {
+      "h" : 1150,
+      "w" : 1570,
+      "x" : 20,
+      "y" : 20
+    },
+    "resourceKey" : "collaborationtype/TechnicianDispatch",
+    "toolOptions" : {
+      "propertyPaneWidth" : 250,
+      "scaleAndTranslationState" : {
+        "lastZoomRequest" : 0,
+        "scale" : 0.7827325718877478,
+        "translate" : [ 620.1248683206887, 28.827030694412315 ]
+      }
+    },
+    "type" : 14
+  }, {
+    "name" : "Project Contents",
+    "pane" : {
+      "h" : 630,
+      "w" : 600,
+      "x" : 20,
+      "y" : 1190
+    },
+    "type" : 2
+  }, {
+    "name" : "Project Description",
+    "pane" : {
+      "h" : 400,
+      "w" : 650,
+      "x" : 640,
+      "y" : 1190.0000610351562
+    },
+    "type" : 82
+  } ],
+  "type" : "dev",
+  "views" : [ {
+    "name" : "Main",
+    "projectToolKeys" : [ "collaborationgraph/TechnicianDispatch", "list/Project Contents", "projectdescription/Project Description" ]
+  } ]
+}

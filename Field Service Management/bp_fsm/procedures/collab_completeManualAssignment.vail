@@ -1,0 +1,7 @@
+PROCEDURE collab.completeManualAssignment(collaboration Object, event Object)
+
+log.info("Event object  " + event)
+
+var value = event[0].username
+
+startA_TechnicianDispatch_AssignTechRole(collaboration, value)

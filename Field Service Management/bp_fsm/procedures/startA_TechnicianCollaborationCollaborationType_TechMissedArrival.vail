@@ -1,0 +1,40 @@
+PROCEDURE startA_TechnicianCollaborationCollaborationType_TechMissedArrival(collaboration, escalationTimeOverride) HIDDEN WITH ars_dependentResource="/collaborationtypes/TechnicianCollaborationCollaborationType"
+
+log.debug("collaboration.TechnicianCollaborationCollaborationType.TechMissedArrival: Starting an escalation for collaboration id: {}", collaboration.id)
+
+var escalationTime = 2345
+
+if (escalationTimeOverride != null) {
+    escalationTime = escalationTimeOverride
+}
+
+var escalation = {
+    collaborationType    : "TechnicianCollaborationCollaborationType",
+    activityType         : "TechMissedArrival",
+    collaborationId      : collaboration.id,
+    escalationDeadline   : now().plusMillis(escalationTime * 1000),
+    state                : "waiting",
+    ars_dependentResource: "/collaborations/" + collaboration.id
+}
+
+log.debug("collaboration.TechnicianCollaborationCollaborationType.TechMissedArrival: Creating escalation deadline {} for collaboration id: {}", [escalation, collaboration.id])
+
+UPSERT ArsEscalationDeadline(escalation)
+
+var activityResults = collaboration.results["TechMissedArrival"]
+if (!activityResults) {
+    activityResults = {}
+}
+activityResults.state = "waiting"
+activityResults.updateTime = now()
+collaboration.results["TechMissedArrival"] = activityResults
+// Save the change to results
+ALTER collaboration ({results: collaboration.results, id: collaboration.id})
+
+// Schedule publication of this escalation for the escalation time
+PUBLISH escalation TO TOPIC "/TechnicianCollaborationCollaborationType/TechMissedArrival/expiration" SCHEDULE {interval: escalationTime * 1000}
+
+// Publish events to update badging in UI
+PUBLISH {collaboration: collaboration.id, task: "TechMissedArrival"} TO TOPIC "/collaborationtypes/TechnicianCollaborationCollaborationType/debug"
+
+log.debug("collaboration.TechnicianCollaborationCollaborationType.TechMissedArrival: Successfully created escalation for collaboration id: {}", [collaboration.id])

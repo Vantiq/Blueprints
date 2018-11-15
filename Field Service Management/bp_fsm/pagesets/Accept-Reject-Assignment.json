@@ -1,0 +1,843 @@
+{
+  "ars_properties" : {
+    "tags" : [ ]
+  },
+  "controllers" : {
+    "client" : {
+      "customCode" : "function select(resource, params, client, callback){   \n    var http = new Http();\n    http.setVantiqUrlForResource(resource);\n    http.setVantiqHeaders();\n\n    // if no params then limit to 50 sort by create date, newest first\n    if (!params){\n        params = {\n            sort:{\"ars_createdAt\":-1},\n            limit:50\n        };\n    }\n\n    http.select(params,function(response)\n    {\n        console.log(\"SUCCESS: \" + JSON.stringify(response));\n        if (callback)\n            callback(response);   \n    },\n    function(errors)\n    {\n        client.showHttpErrors(errors,\"Doing a select on: \" + resource);\n        \n    });\n}\n\n\n//Upsert function\nfunction upsert(resource, data, client, callback){\n    var http = new Http();\n    http.setVantiqUrlForResource(resource);\n    http.setVantiqHeaders();\n    http.upsert(data,function(response)\n    {\n        console.log(\"SUCCESS: \" + JSON.stringify(response));\n        if(callback){\n            callback();\n        }\n    },\n    function(errors)\n    {\n        client.showHttpErrors(errors,\"Doing an upsert of \" + resource);\n    });\n}\n"
+    },
+    "dataStream" : {
+      "ce_assets" : { },
+      "ce_contacts" : { },
+      "ce_skills" : { }
+    },
+    "page" : {
+      "Start" : {
+        "onStart" : "var thiscopy = this;\nvar cid = client.getStateObject().collaborationId;\n\nvar params = {where: {id: cid}};\nselect(\"system.collaborations\", params, client, function(response){\n    thiscopy.data.Workorders.id = response[0].results.Initiate.event.id;\n    client.sendClientEvent(\"ce_assets\", response[0].results.Initiate.event.assets);\n    client.sendClientEvent(\"ce_contacts\", response[0].results.Initiate.event.contacts);\n    client.sendClientEvent(\"ce_skills\", response[0].results.Initiate.event.skills);\n});",
+        "widgets" : { }
+      }
+    }
+  },
+  "isLaunchable" : false,
+  "models" : {
+    "dataObjects" : {
+      "__GLOBAL__" : {
+        "properties" : {
+          "fullname" : {
+            "defaultLabel" : "fullname",
+            "type" : "String"
+          }
+        }
+      },
+      "__PARAMETERS__" : {
+        "properties" : { }
+      }
+    },
+    "dataStreams" : [ {
+      "advancedWhereClause" : null,
+      "dataObjectName" : null,
+      "dataTypeList" : [ {
+        "label" : null,
+        "type" : "Assets"
+      } ],
+      "isDeleteOp" : false,
+      "isInsertOp" : false,
+      "isUpdateOp" : false,
+      "maxRecords" : 0,
+      "name" : "ce_assets",
+      "sortByProperty" : null,
+      "sortDescending" : false,
+      "type" : 5,
+      "updateInterval" : 60,
+      "uuid" : "9bb783c3-98de-4538-8067-2121bccda171",
+      "v" : 1
+    }, {
+      "advancedWhereClause" : null,
+      "dataObjectName" : null,
+      "dataTypeList" : [ {
+        "label" : null,
+        "type" : "Contacts"
+      } ],
+      "isDeleteOp" : false,
+      "isInsertOp" : false,
+      "isUpdateOp" : false,
+      "maxRecords" : 0,
+      "name" : "ce_contacts",
+      "sortByProperty" : null,
+      "sortDescending" : false,
+      "type" : 5,
+      "updateInterval" : 60,
+      "uuid" : "e0c51b42-5086-4a0a-8e38-f25846f10482",
+      "v" : 1
+    }, {
+      "advancedWhereClause" : null,
+      "dataObjectName" : null,
+      "dataTypeList" : [ {
+        "label" : null,
+        "type" : "Skills"
+      } ],
+      "isDeleteOp" : false,
+      "isInsertOp" : false,
+      "isUpdateOp" : false,
+      "maxRecords" : 0,
+      "name" : "ce_skills",
+      "sortByProperty" : null,
+      "sortDescending" : false,
+      "type" : 5,
+      "updateInterval" : 60,
+      "uuid" : "ce53d706-ce75-4727-87d1-821a1455616e",
+      "v" : 1
+    } ]
+  },
+  "name" : "Accept-Reject-Assignment",
+  "options" : {
+    "badgeCount" : 0,
+    "cssAssets" : [ "https://dev.vantiq.com/ui/docs/NS/bp_sitsm_v2/css/servicedeskmobile.css" ],
+    "description" : "",
+    "isExpertMode" : true,
+    "showGridWhileEditing" : true,
+    "theme" : {
+      "accentColor1" : "#ff0000",
+      "backgroundColor" : "#ffffff",
+      "borderColor" : "#000000",
+      "foregroundColor" : "#000000",
+      "label" : "White",
+      "name" : "white",
+      "v" : 2
+    },
+    "v" : 3
+  },
+  "targetDevice" : "mobile",
+  "userList" : [ ],
+  "views" : {
+    "Start" : {
+      "bodyChildren" : [ {
+        "CSSClass" : "vantiqStaticImage",
+        "actionMenuLabel" : null,
+        "actionMenuTopic" : null,
+        "borderColor" : "Default",
+        "borderWidth" : 0,
+        "h" : 43,
+        "heightPolicy" : 0,
+        "horzGravity" : 4,
+        "isDraggable" : true,
+        "isScaleable" : false,
+        "isSelectable" : true,
+        "name" : "StaticImage8",
+        "scale" : 1,
+        "type" : "Img",
+        "url" : "../cmn/assets/branding/defaultImage.png",
+        "v" : 14,
+        "vertGravity" : 4,
+        "w" : 150,
+        "widthPolicy" : 0,
+        "x" : 115,
+        "y" : 5
+      }, {
+        "CSSClass" : "vantiqSectionLabel",
+        "actionMenuLabel" : null,
+        "actionMenuTopic" : null,
+        "borderColor" : "Default",
+        "borderWidth" : 0,
+        "h" : 42,
+        "heightPolicy" : 0,
+        "horzGravity" : 4,
+        "horzMargin" : 2,
+        "innerMargin" : 0,
+        "isDraggable" : true,
+        "isSelectable" : true,
+        "label" : "Work Order Details",
+        "labelAlign" : "left",
+        "labelColor" : "#808080",
+        "labelFontSize" : 18,
+        "labelStyle" : "italic",
+        "name" : "SectionLabel5",
+        "type" : "PISection",
+        "v" : 14,
+        "vertGravity" : 4,
+        "vertMargin" : 10,
+        "w" : 370,
+        "widthPolicy" : 2,
+        "x" : 5,
+        "y" : 53
+      }, {
+        "CSSClass" : "vantiqStaticText",
+        "actionMenuLabel" : null,
+        "actionMenuTopic" : null,
+        "borderColor" : "Default",
+        "borderWidth" : 0,
+        "fontFace" : "inherit",
+        "fontSize" : 20,
+        "fontStyle" : "normal",
+        "fontWeight" : "normal",
+        "h" : 26,
+        "heightPolicy" : 0,
+        "horzGravity" : 4,
+        "isDraggable" : true,
+        "isSelectable" : true,
+        "name" : "StaticText71826",
+        "text" : "Customer: ${workorder.customer}",
+        "type" : "TextLabel",
+        "v" : 14,
+        "vertGravity" : 4,
+        "w" : 282,
+        "widthPolicy" : 0,
+        "x" : 49,
+        "y" : 100
+      }, {
+        "CSSClass" : "vantiqMultilineInput",
+        "actionMenuLabel" : null,
+        "actionMenuTopic" : null,
+        "borderColor" : "Default",
+        "borderWidth" : 0,
+        "default" : "${workorder.description}",
+        "h" : 145,
+        "heightPolicy" : 0,
+        "horzGravity" : 4,
+        "horzMargin" : 10,
+        "innerMargin" : 0,
+        "isDraggable" : true,
+        "isReadOnly" : true,
+        "isSelectable" : true,
+        "label" : "Description",
+        "labelAlign" : "center",
+        "labelColor" : "#000000",
+        "labelFontSize" : 14,
+        "labelStyle" : "plain",
+        "name" : "MultilineInput2",
+        "optional" : true,
+        "placeholder" : "",
+        "rows" : 5,
+        "type" : "PIMultilineInputString",
+        "v" : 14,
+        "vertGravity" : 4,
+        "vertMargin" : 10,
+        "w" : 370,
+        "widthPolicy" : 2,
+        "wordwrap" : true,
+        "x" : 5,
+        "y" : 131
+      }, {
+        "CSSClass" : "vantiqStaticText",
+        "actionMenuLabel" : null,
+        "actionMenuTopic" : null,
+        "borderColor" : "Default",
+        "borderWidth" : 0,
+        "fontFace" : "inherit",
+        "fontSize" : 20,
+        "fontStyle" : "normal",
+        "fontWeight" : "normal",
+        "h" : 26,
+        "heightPolicy" : 0,
+        "horzGravity" : 4,
+        "isDraggable" : true,
+        "isSelectable" : true,
+        "name" : "StaticText71827",
+        "text" : "Title: ${workorder.summary}",
+        "type" : "TextLabel",
+        "v" : 14,
+        "vertGravity" : 4,
+        "w" : 239,
+        "widthPolicy" : 0,
+        "x" : 70.5,
+        "y" : 281
+      }, {
+        "CSSClass" : "vantiqStaticText",
+        "actionMenuLabel" : null,
+        "actionMenuTopic" : null,
+        "borderColor" : "Default",
+        "borderWidth" : 0,
+        "fontFace" : "inherit",
+        "fontSize" : 20,
+        "fontStyle" : "normal",
+        "fontWeight" : "normal",
+        "h" : 26,
+        "heightPolicy" : 0,
+        "horzGravity" : 4,
+        "isDraggable" : true,
+        "isSelectable" : true,
+        "name" : "StaticText71825",
+        "text" : "Priority: ${workorder.priority}",
+        "type" : "TextLabel",
+        "v" : 14,
+        "vertGravity" : 4,
+        "w" : 246,
+        "widthPolicy" : 0,
+        "x" : 67,
+        "y" : 312
+      }, {
+        "CSSClass" : "vantiqStaticText",
+        "actionMenuLabel" : null,
+        "actionMenuTopic" : null,
+        "borderColor" : "Default",
+        "borderWidth" : 0,
+        "fontFace" : "inherit",
+        "fontSize" : 20,
+        "fontStyle" : "normal",
+        "fontWeight" : "normal",
+        "h" : 26,
+        "heightPolicy" : 0,
+        "horzGravity" : 4,
+        "isDraggable" : true,
+        "isSelectable" : true,
+        "name" : "StaticText71823",
+        "text" : "Activity: ${workorder.activitytype}",
+        "type" : "TextLabel",
+        "v" : 14,
+        "vertGravity" : 4,
+        "w" : 282,
+        "widthPolicy" : 0,
+        "x" : 49,
+        "y" : 343
+      }, {
+        "CSSClass" : "vantiqSectionLabel",
+        "actionMenuLabel" : null,
+        "actionMenuTopic" : null,
+        "borderColor" : "Default",
+        "borderWidth" : 0,
+        "h" : 42,
+        "heightPolicy" : 0,
+        "horzGravity" : 4,
+        "horzMargin" : 2,
+        "innerMargin" : 0,
+        "isDraggable" : true,
+        "isSelectable" : true,
+        "label" : "Required Skills",
+        "labelAlign" : "left",
+        "labelColor" : "#808080",
+        "labelFontSize" : 18,
+        "labelStyle" : "italic",
+        "name" : "SectionLabel9577",
+        "type" : "PISection",
+        "v" : 14,
+        "vertGravity" : 4,
+        "vertMargin" : 10,
+        "w" : 370,
+        "widthPolicy" : 2,
+        "x" : 5,
+        "y" : 374
+      }, {
+        "CSSClass" : "vantiqDataTable",
+        "actionMenuLabel" : null,
+        "actionMenuTopic" : null,
+        "borderColor" : "Default",
+        "borderWidth" : 1,
+        "cellFontColor" : "#000000",
+        "cellFontFace" : "inherit",
+        "cellFontSize" : 14,
+        "cellFontStyle" : "plain",
+        "columns" : [ {
+          "colorRules" : null,
+          "dataType" : "String",
+          "propertyName" : "skill",
+          "selected" : false,
+          "title" : "skill"
+        }, {
+          "colorRules" : null,
+          "dataType" : "String",
+          "propertyName" : "description",
+          "selected" : false,
+          "title" : "description"
+        } ],
+        "dataStreamGroupedByFiltersString" : "",
+        "dataStreamPropertyList" : [ ],
+        "dataStreamUUID" : "ce53d706-ce75-4727-87d1-821a1455616e",
+        "dataType" : null,
+        "h" : 287,
+        "headerFontColor" : "#000000",
+        "headerFontFace" : "inherit",
+        "headerFontSize" : 14,
+        "headerFontStyle" : "plain",
+        "heightPolicy" : 0,
+        "horzGravity" : 4,
+        "isDraggable" : true,
+        "isSelectable" : true,
+        "name" : "DataTable652",
+        "operation" : "insert",
+        "propertyName" : null,
+        "rowsPerPage" : 5,
+        "type" : "DataTableWidget",
+        "v" : 14,
+        "vertGravity" : 4,
+        "w" : 370,
+        "widthPolicy" : 2,
+        "x" : 5,
+        "y" : 421
+      }, {
+        "CSSClass" : "vantiqSectionLabel",
+        "actionMenuLabel" : null,
+        "actionMenuTopic" : null,
+        "borderColor" : "Default",
+        "borderWidth" : 0,
+        "h" : 42,
+        "heightPolicy" : 0,
+        "horzGravity" : 4,
+        "horzMargin" : 2,
+        "innerMargin" : 0,
+        "isDraggable" : true,
+        "isSelectable" : true,
+        "label" : "Assets",
+        "labelAlign" : "left",
+        "labelColor" : "#808080",
+        "labelFontSize" : 18,
+        "labelStyle" : "italic",
+        "name" : "SectionLabel9662",
+        "type" : "PISection",
+        "v" : 14,
+        "vertGravity" : 4,
+        "vertMargin" : 10,
+        "w" : 370,
+        "widthPolicy" : 2,
+        "x" : 5,
+        "y" : 713
+      }, {
+        "CSSClass" : "vantiqDataTable",
+        "actionMenuLabel" : null,
+        "actionMenuTopic" : null,
+        "borderColor" : "Default",
+        "borderWidth" : 1,
+        "cellFontColor" : "#000000",
+        "cellFontFace" : "inherit",
+        "cellFontSize" : 14,
+        "cellFontStyle" : "plain",
+        "columns" : [ {
+          "colorRules" : null,
+          "dataType" : "String",
+          "propertyName" : "name",
+          "selected" : false,
+          "title" : "Name"
+        }, {
+          "colorRules" : null,
+          "dataType" : "String",
+          "propertyName" : "manufacturer",
+          "selected" : false,
+          "title" : "Manufacturer"
+        }, {
+          "colorRules" : null,
+          "dataType" : "String",
+          "propertyName" : "category",
+          "selected" : false,
+          "title" : "Category"
+        } ],
+        "dataStreamGroupedByFiltersString" : "",
+        "dataStreamPropertyList" : [ ],
+        "dataStreamUUID" : "9bb783c3-98de-4538-8067-2121bccda171",
+        "dataType" : null,
+        "h" : 211,
+        "headerFontColor" : "#000000",
+        "headerFontFace" : "inherit",
+        "headerFontSize" : 14,
+        "headerFontStyle" : "plain",
+        "heightPolicy" : 0,
+        "horzGravity" : 4,
+        "isDraggable" : true,
+        "isSelectable" : true,
+        "name" : "DataTable945",
+        "operation" : "insert",
+        "propertyName" : null,
+        "rowsPerPage" : 3,
+        "type" : "DataTableWidget",
+        "v" : 14,
+        "vertGravity" : 4,
+        "w" : 370,
+        "widthPolicy" : 2,
+        "x" : 5,
+        "y" : 760
+      }, {
+        "CSSClass" : "vantiqSectionLabel",
+        "actionMenuLabel" : null,
+        "actionMenuTopic" : null,
+        "borderColor" : "Default",
+        "borderWidth" : 0,
+        "h" : 42,
+        "heightPolicy" : 0,
+        "horzGravity" : 4,
+        "horzMargin" : 2,
+        "innerMargin" : 0,
+        "isDraggable" : true,
+        "isSelectable" : true,
+        "label" : "Contacts",
+        "labelAlign" : "left",
+        "labelColor" : "#808080",
+        "labelFontSize" : 18,
+        "labelStyle" : "italic",
+        "name" : "SectionLabel9660",
+        "type" : "PISection",
+        "v" : 14,
+        "vertGravity" : 4,
+        "vertMargin" : 10,
+        "w" : 370,
+        "widthPolicy" : 2,
+        "x" : 5,
+        "y" : 976
+      }, {
+        "CSSClass" : "vantiqDataTable",
+        "actionMenuLabel" : null,
+        "actionMenuTopic" : null,
+        "borderColor" : "Default",
+        "borderWidth" : 1,
+        "cellFontColor" : "#000000",
+        "cellFontFace" : "inherit",
+        "cellFontSize" : 14,
+        "cellFontStyle" : "plain",
+        "columns" : [ {
+          "colorRules" : null,
+          "dataType" : "String",
+          "propertyName" : "firstname",
+          "selected" : false,
+          "title" : "First"
+        }, {
+          "colorRules" : null,
+          "dataType" : "String",
+          "propertyName" : "lastname",
+          "selected" : false,
+          "title" : "Last"
+        }, {
+          "colorRules" : null,
+          "dataType" : "String",
+          "propertyName" : "phone",
+          "selected" : false,
+          "title" : "Phone"
+        } ],
+        "dataStreamGroupedByFiltersString" : "",
+        "dataStreamPropertyList" : [ ],
+        "dataStreamUUID" : "e0c51b42-5086-4a0a-8e38-f25846f10482",
+        "dataType" : null,
+        "h" : 211,
+        "headerFontColor" : "#000000",
+        "headerFontFace" : "inherit",
+        "headerFontSize" : 14,
+        "headerFontStyle" : "plain",
+        "heightPolicy" : 0,
+        "horzGravity" : 4,
+        "isDraggable" : true,
+        "isSelectable" : true,
+        "name" : "DataTable946",
+        "operation" : "insert",
+        "propertyName" : null,
+        "rowsPerPage" : 3,
+        "type" : "DataTableWidget",
+        "v" : 14,
+        "vertGravity" : 4,
+        "w" : 370,
+        "widthPolicy" : 2,
+        "x" : 5,
+        "y" : 1023
+      }, {
+        "CSSClass" : "vantiqSectionLabel",
+        "actionMenuLabel" : null,
+        "actionMenuTopic" : null,
+        "borderColor" : "Default",
+        "borderWidth" : 0,
+        "h" : 42,
+        "heightPolicy" : 0,
+        "horzGravity" : 4,
+        "horzMargin" : 2,
+        "innerMargin" : 0,
+        "isDraggable" : true,
+        "isSelectable" : true,
+        "label" : "Address",
+        "labelAlign" : "left",
+        "labelColor" : "#808080",
+        "labelFontSize" : 18,
+        "labelStyle" : "italic",
+        "name" : "SectionLabel9661",
+        "type" : "PISection",
+        "v" : 14,
+        "vertGravity" : 4,
+        "vertMargin" : 10,
+        "w" : 370,
+        "widthPolicy" : 2,
+        "x" : 5,
+        "y" : 1239
+      }, {
+        "CSSClass" : "vantiqMultilineInput",
+        "actionMenuLabel" : null,
+        "actionMenuTopic" : null,
+        "borderColor" : "Default",
+        "borderWidth" : 0,
+        "default" : "${workorder.address}",
+        "h" : 128,
+        "heightPolicy" : 0,
+        "horzGravity" : 4,
+        "horzMargin" : 10,
+        "innerMargin" : 0,
+        "isDraggable" : true,
+        "isReadOnly" : true,
+        "isSelectable" : true,
+        "label" : "",
+        "labelAlign" : "center",
+        "labelColor" : "#000000",
+        "labelFontSize" : 14,
+        "labelStyle" : "plain",
+        "name" : "MultilineInput1",
+        "optional" : true,
+        "placeholder" : "",
+        "rows" : 5,
+        "type" : "PIMultilineInputString",
+        "v" : 14,
+        "vertGravity" : 4,
+        "vertMargin" : 10,
+        "w" : 370,
+        "widthPolicy" : 2,
+        "wordwrap" : true,
+        "x" : 5,
+        "y" : 1286
+      }, {
+        "CSSClass" : "vantiqHorizontalLayout",
+        "actionMenuLabel" : null,
+        "actionMenuTopic" : null,
+        "borderColor" : "Default",
+        "borderWidth" : 0,
+        "h" : 77,
+        "heightPolicy" : 0,
+        "horzGravity" : 4,
+        "horzMargin" : 10,
+        "innerMargin" : 20,
+        "isDraggable" : true,
+        "isSelectable" : true,
+        "kids" : [ {
+          "CSSClass" : "vantiqButton",
+          "actionMenuLabel" : null,
+          "actionMenuTopic" : null,
+          "borderColor" : "Default",
+          "borderWidth" : 0,
+          "buttonBackgroundColor" : "platform",
+          "buttonLabel" : "Accept",
+          "buttonLabelColor" : "platform",
+          "buttonLabelSize" : 22,
+          "buttonLabelStyle" : "plain",
+          "h" : 57,
+          "heightPolicy" : 0,
+          "horzGravity" : 4,
+          "horzMargin" : 10,
+          "innerMargin" : 0,
+          "isDraggable" : true,
+          "isSelectable" : true,
+          "label" : "",
+          "labelAlign" : "center",
+          "labelColor" : "#000000",
+          "labelFontSize" : 14,
+          "labelStyle" : "plain",
+          "name" : "Button6",
+          "type" : "PIInlineButton",
+          "v" : 14,
+          "value" : 100,
+          "vertGravity" : 4,
+          "vertMargin" : 10,
+          "w" : 97,
+          "widthPolicy" : 0,
+          "x" : 45.25,
+          "y" : 10
+        }, {
+          "CSSClass" : "vantiqButton",
+          "actionMenuLabel" : null,
+          "actionMenuTopic" : null,
+          "borderColor" : "Default",
+          "borderWidth" : 0,
+          "buttonBackgroundColor" : "platform",
+          "buttonLabel" : "Reject",
+          "buttonLabelColor" : "platform",
+          "buttonLabelSize" : 22,
+          "buttonLabelStyle" : "plain",
+          "h" : 57,
+          "heightPolicy" : 0,
+          "horzGravity" : 4,
+          "horzMargin" : 10,
+          "innerMargin" : 0,
+          "isDraggable" : true,
+          "isSelectable" : true,
+          "label" : "",
+          "labelAlign" : "center",
+          "labelColor" : "#000000",
+          "labelFontSize" : 14,
+          "labelStyle" : "plain",
+          "name" : "Button5",
+          "type" : "PIInlineButton",
+          "v" : 14,
+          "value" : 200,
+          "vertGravity" : 4,
+          "vertMargin" : 10,
+          "w" : 92,
+          "widthPolicy" : 0,
+          "x" : 232.75,
+          "y" : 10
+        } ],
+        "name" : "HorizontalLayout13",
+        "type" : "HorizontalContainer",
+        "v" : 14,
+        "vertGravity" : 4,
+        "vertMargin" : 10,
+        "w" : 370,
+        "widthPolicy" : 2,
+        "x" : 5,
+        "y" : 1419
+      } ],
+      "data" : {
+        "properties" : {
+          "Workorders" : {
+            "defaultLabel" : "Workorders",
+            "type" : "TypedObject",
+            "typedObject" : {
+              "properties" : {
+                "activitytype" : {
+                  "defaultLabel" : "activitytype",
+                  "type" : "String"
+                },
+                "actualArrivalDate" : {
+                  "defaultLabel" : "actualArrivalDate",
+                  "type" : "DateTime"
+                },
+                "actualCompletionDate" : {
+                  "defaultLabel" : "actualCompletionDate",
+                  "type" : "DateTime"
+                },
+                "actualStartDate" : {
+                  "defaultLabel" : "actualStartDate",
+                  "type" : "DateTime"
+                },
+                "address" : {
+                  "defaultLabel" : "address",
+                  "type" : "String"
+                },
+                "assets" : {
+                  "defaultLabel" : "assets",
+                  "isArray" : true,
+                  "type" : "Object"
+                },
+                "closedDate" : {
+                  "defaultLabel" : "closedDate",
+                  "type" : "DateTime"
+                },
+                "closedNotes" : {
+                  "defaultLabel" : "closedNotes",
+                  "type" : "String"
+                },
+                "closedresult" : {
+                  "defaultLabel" : "closedresult",
+                  "type" : "String"
+                },
+                "contacts" : {
+                  "defaultLabel" : "contacts",
+                  "isArray" : true,
+                  "type" : "Object"
+                },
+                "creationDate" : {
+                  "defaultLabel" : "creationDate",
+                  "type" : "DateTime"
+                },
+                "customer" : {
+                  "defaultLabel" : "customer",
+                  "type" : "String"
+                },
+                "customerId" : {
+                  "defaultLabel" : "customerId",
+                  "type" : "String"
+                },
+                "description" : {
+                  "defaultLabel" : "description",
+                  "type" : "String"
+                },
+                "estimatedHours" : {
+                  "defaultLabel" : "estimatedHours",
+                  "type" : "Real"
+                },
+                "geolocation" : {
+                  "defaultLabel" : "geolocation",
+                  "type" : "GeoJSON"
+                },
+                "id" : {
+                  "defaultLabel" : "id",
+                  "type" : "String"
+                },
+                "impact" : {
+                  "defaultLabel" : "impact",
+                  "type" : "String"
+                },
+                "location" : {
+                  "defaultLabel" : "location",
+                  "type" : "String"
+                },
+                "notes" : {
+                  "defaultLabel" : "notes",
+                  "isArray" : true,
+                  "type" : "Object"
+                },
+                "notificationList_Customer" : {
+                  "defaultLabel" : "notificationList_Customer",
+                  "type" : "Object"
+                },
+                "notificationList_Internal" : {
+                  "defaultLabel" : "notificationList_Internal",
+                  "type" : "Object"
+                },
+                "priority" : {
+                  "defaultLabel" : "priority",
+                  "type" : "String"
+                },
+                "resolution" : {
+                  "defaultLabel" : "resolution",
+                  "type" : "String"
+                },
+                "scheduledArrivalDate" : {
+                  "defaultLabel" : "scheduledArrivalDate",
+                  "type" : "DateTime"
+                },
+                "scheduledCompletionDate" : {
+                  "defaultLabel" : "scheduledCompletionDate",
+                  "type" : "DateTime"
+                },
+                "servicedeskowner" : {
+                  "defaultLabel" : "servicedeskowner",
+                  "type" : "String"
+                },
+                "skills" : {
+                  "defaultLabel" : "skills",
+                  "isArray" : true,
+                  "type" : "Object"
+                },
+                "status" : {
+                  "defaultLabel" : "status",
+                  "type" : "String"
+                },
+                "summary" : {
+                  "defaultLabel" : "summary",
+                  "type" : "String"
+                },
+                "techAssignmentDate" : {
+                  "defaultLabel" : "techAssignmentDate",
+                  "type" : "DateTime"
+                },
+                "techId" : {
+                  "defaultLabel" : "techId",
+                  "type" : "String"
+                },
+                "techlevel" : {
+                  "defaultLabel" : "techlevel",
+                  "type" : "String"
+                },
+                "techname" : {
+                  "defaultLabel" : "techname",
+                  "type" : "String"
+                },
+                "ticketId" : {
+                  "defaultLabel" : "ticketId",
+                  "type" : "String"
+                }
+              },
+              "type" : "Workorders"
+            }
+          },
+          "username" : {
+            "defaultLabel" : "username",
+            "type" : "String"
+          }
+        }
+      },
+      "fields" : [ ],
+      "footerChildren" : [ ],
+      "layoutType" : "mobile",
+      "responseTopic" : "/notifications/TechnicianCollaborationCollaborationType/NotifyAcceptReject"
+    }
+  }
+}

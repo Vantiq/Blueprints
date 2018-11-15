@@ -1,0 +1,157 @@
+{
+  "links" : [ {
+    "source" : "type/Assets",
+    "target" : "client/Service Desk"
+  }, {
+    "source" : "type/Tickets",
+    "target" : "client/Service Desk"
+  }, {
+    "source" : "type/Workorders",
+    "target" : "client/Service Desk"
+  }, {
+    "source" : "type/Technicians",
+    "target" : "client/Service Desk"
+  }, {
+    "source" : "type/Skills",
+    "target" : "client/Service Desk"
+  }, {
+    "source" : "client/Service Desk",
+    "target" : "topic//my/response/topic"
+  }, {
+    "source" : "client/Service Desk",
+    "target" : "topic/email"
+  } ],
+  "name" : "FSM_CLIENT",
+  "options" : {
+    "description" : "The FSM_Client represents the web application for this project. To access the run time for this client users must navigate to: \n\nhttps://dev.vantiq.com/ui/rtc/index.html\n\nThese pages are typically broken up into a detail page and a list view page. The common naming format is \"ticketpage\" for the detail page used to add/edit content and \"ticketslist\" for the data table list view used to show all records.  A page called \"ticketslistpopup\" would represent a data table list view that is used for modal popup dialogs specifically. \n\nPrimary data objects such as Users, Customers, Locations, Tickets, Work Orders, Assets and Technicians are entered/updated through standard web forms. There are many droplists that represent fields inside these primary data objects such as Industry for the Customer record or Support Radius for the Technician. These droplist values can be changed by opening the page they appear on, clicking on the droplist widget on the page and adding/editing the List values in the widgets properties. \n\n\n\n",
+    "filterBitArray" : "ffffffffffffffffffffffffffffffff",
+    "isModeloProject" : true,
+    "showGrid" : true,
+    "v" : 2
+  },
+  "resources" : [ {
+    "label" : "/location/tracking/tech",
+    "name" : "/location/tracking/tech",
+    "type" : 10
+  }, {
+    "label" : "/my/response/topic",
+    "name" : "/my/response/topic",
+    "node" : {
+      "x" : 390.65992633099637,
+      "y" : 257.27935551447007
+    },
+    "type" : 10
+  }, {
+    "label" : "Assets",
+    "name" : "Assets",
+    "node" : {
+      "x" : 227.84301042590238,
+      "y" : 10.892916042771132
+    },
+    "timestamp" : "2018-10-09T18:13:48.444Z",
+    "type" : 1
+  }, {
+    "inventory" : {
+      "appmodelHash" : [ ],
+      "appmodels" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "pagesetHash" : [ ],
+      "pagesets" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "topicHash" : [ "out", "out" ],
+      "topics" : [ "/my/response/topic", "email" ],
+      "typeHash" : [ "in", "in", "in", "in", "in" ],
+      "types" : [ "Assets", "Tickets", "Workorders", "Technicians", "Skills" ]
+    },
+    "label" : "Service Desk",
+    "name" : "Service Desk",
+    "node" : {
+      "x" : 271.7652456006533,
+      "y" : 156.0355448406297
+    },
+    "timestamp" : "2018-11-03T15:49:08.268Z",
+    "type" : 15
+  }, {
+    "label" : "Skills",
+    "name" : "Skills",
+    "node" : {
+      "x" : 427.27064560988595,
+      "y" : 153.50500833195113
+    },
+    "timestamp" : "2018-10-09T18:13:48.671Z",
+    "type" : 1
+  }, {
+    "label" : "Technicians",
+    "name" : "Technicians",
+    "node" : {
+      "x" : 184.13451342362498,
+      "y" : 282.9848413523353
+    },
+    "timestamp" : "2018-10-09T18:13:48.566Z",
+    "type" : 1
+  }, {
+    "label" : "Tickets",
+    "name" : "Tickets",
+    "node" : {
+      "x" : 119.83427590830527,
+      "y" : 156.4028295809664
+    },
+    "timestamp" : "2018-10-09T18:13:48.102Z",
+    "type" : 1
+  }, {
+    "label" : "Workorders",
+    "name" : "Workorders",
+    "node" : {
+      "x" : 374.68980753072606,
+      "y" : 41.95379988501584
+    },
+    "timestamp" : "2018-10-09T18:13:46.947Z",
+    "type" : 1
+  }, {
+    "label" : "email",
+    "name" : "email",
+    "node" : {
+      "x" : 298.7218056908962,
+      "y" : 310.1912464873686
+    },
+    "type" : 10
+  } ],
+  "tools" : [ {
+    "name" : "Project Contents",
+    "pane" : {
+      "h" : 400,
+      "w" : 650,
+      "x" : 1150.0000610351562,
+      "y" : 0
+    },
+    "type" : 2
+  }, {
+    "name" : "Service Desk",
+    "pane" : {
+      "h" : 810,
+      "w" : 1130,
+      "x" : 0,
+      "y" : 0
+    },
+    "resourceKey" : "client/Service Desk",
+    "type" : 63
+  }, {
+    "name" : "Project Description",
+    "pane" : {
+      "h" : 400,
+      "w" : 650,
+      "x" : 1150.0000610351562,
+      "y" : 410.0000228881836
+    },
+    "type" : 82
+  } ],
+  "type" : "dev",
+  "views" : [ {
+    "name" : "Main",
+    "projectToolKeys" : [ "list/Project Contents", "client/Service Desk", "projectdescription/Project Description" ]
+  } ]
+}

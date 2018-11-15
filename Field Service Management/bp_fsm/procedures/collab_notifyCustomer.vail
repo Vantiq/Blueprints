@@ -1,0 +1,126 @@
+PROCEDURE collab.notifyCustomer(workorder Object)
+
+//Set the FROM address for email notifications here: 
+var returnaddress = ""
+
+/*
+Identify SMS, Email or Both in workorder.customernotify as notification methods for customer listed as contacts from the workorder. 
+
+* Index of values for use in template text
+0 = Technician Name
+1 = Scheduled Arrival Date
+2 = Summary
+3 = Assets
+4 = Customer Address
+5 = Priority 
+6 = unused
+7 = unused
+8 = unused
+9 = unused
+10 = Technician Phone **
+11 = Technician Email ** 
+
+** Is populated from the technicians type and not part of workorders 
+*/
+select exactly one from Technicians as tech where username == workorder.techId
+var result = GoogleTimeZone(workorder.geolocation, workorder.scheduledArrivalDate)
+var offset = toInteger(abs(result[0].rawOffset))
+var daylight = result[0].dstOffset
+offset = offset - daylight
+var arrivaltime = toDate(workorder.scheduledArrivalDate)
+
+if(result[0].rawOffset > 0){  
+	arrivaltime = arrivaltime.plusMillis(stringToInterval(offset * 1000))
+    }
+else {
+    arrivaltime = arrivaltime.minusMillis(offset * 1000)
+}
+
+var phone = tech.mobile_phone
+var email = tech.email
+var emailrecipients = []
+var smsrecipients = []
+var emailsender = returnaddress
+var assets = "<ul>"
+
+for each contact in workorder.contacts do
+	log.info("Contact.email " + contact.email)
+	if(contact.email){
+    	push(emailrecipients, contact.email)
+	}
+	if(contact.phone){
+        log.info("Contact.phone " + contact.phone)       
+		push(smsrecipients, contact.phone)
+	}
+end
+
+if(workorder.assets){
+	for each asset in workorder.assets do
+		assets += "<li>" +asset.name + "</li>"
+	end
+}
+
+assets += "</ul>"
+
+if(length(emailrecipients) > 0 OR length(smsrecipients) > 0) {
+log.info("There are recipients")
+    //The unused items in the index list can be replaced with any values from the workorder and added to the subs array
+    var subs = ["techname", "scheduledArrivalDate", "summary", "assets", "address", "priority", "", "", "", "" ]
+    var notifications = {}
+
+    if(workorder.status == "Assigned"){
+        notifications = select * from NotificationTemplates where category == "techscheduled"
+    }
+
+    else if (workorder.status == "En Route"){
+        notifications = select * from NotificationTemplates where category == "techlate"
+    }
+
+    else if (workorder.status == "On Site"){
+        notifications = select * from NotificationTemplates where category == "techarrived"
+    }
+
+    for (x in range(0, notifications.size(), 1)){
+        var str = notifications[x].body
+        //The order in which a value appears in the format() list determines its index {0} number. The first item workorder.techname will replace any occurances of {0} in the message body.
+        notifications[x].body = format(str, workorder[subs[0]], arrivaltime, workorder[subs[2]], assets, workorder[subs[4]], workorder[subs[5]], workorder[subs[6]], workorder[subs[7]], workorder[subs[8]], workorder[subs[9]], phone, email)
+    }
+
+    if(workorder.customernotify == "Both"){
+        for each n in notifications do
+            if(n.type == "email"){     
+                log.info("Sending Email")
+                PUBLISH {html: n.body  } TO SOURCE email USING { from: emailsender, to: emailrecipients, subject:n.subject  }	       
+        }
+            else if (n.type == "sms"){
+                log.info("Sending SMS")
+                sendTextMessageToTech(smsrecipients, n.body)          
+        }
+        end
+    }
+    else if(workorder.customernotify == "Email"){
+        for each n in notifications do 
+        if(n.type == "email"){      
+            PUBLISH {html: n.body  } TO SOURCE email USING { from: emailsender, to: emailrecipients, subject:n.subject  }
+            }
+        end
+    }
+
+    else if(workorder.customernotify == "SMS"){
+        for each n in notifications do 
+        if(n.type == "sms"){      
+            sendTextMessageToTech(smsrecipients, n.body)
+        }
+        end
+    }
+    else {
+        return "No notification option set"
+    }
+
+}
+else {
+    log.info("No users")
+}
+
+   
+   

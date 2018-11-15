@@ -1,0 +1,74 @@
+PROCEDURE startA_TechnicianCollaborationCollaborationType_SetNextTechToTry(collaboration, parameters) HIDDEN WITH ars_dependentResource="/collaborationtypes/TechnicianCollaborationCollaborationType"
+
+log.debug("collaboration.TechnicianCollaborationCollaborationType.SetNextTechToTry: Preparing to execute setNextTechnicianNumber for collaboration id: {}", [collaboration.id])
+var procDef = Utils.getProcedure("setNextTechnicianNumber")
+log.debug("collaboration.TechnicianCollaborationCollaborationType.SetNextTechToTry: Found procedure definition: {}", [procDef])
+
+if (!procDef) {
+    exception("io.vantiq.collaboration.TechnicianCollaborationCollaborationType.SetNextTechToTry.procedure.not.found",
+              "The service: {0} specified in the configuration of {1} could not be found.", ["setNextTechnicianNumber", "SetNextTechToTry"])
+}
+
+var expectedParamCount = procDef.parameters.size()
+var foundParamCount = parameters.size()
+
+if (expectedParamCount < foundParamCount) {
+    exception("io.vantiq.collaboration.TechnicianCollaborationCollaborationType.SetNextTechToTry.procedure.parameters.error",
+              "The procedure: {0} requires {1}, but {2} were found in the configuration of {3}", ["setNextTechnicianNumber", expectedParamCount, foundParamCount, "SetNextTechToTry"])
+} else if (expectedParamCount > foundParamCount) {
+    // If fewer params were supplied than expected, push nulls onto the parameter list
+    // to match the expected size of the parameters list
+    for (i in range(0, expectedParamCount - foundParamCount)) {
+        parameters.push(null)
+    }
+}
+
+log.debug("collaboration.TechnicianCollaborationCollaborationType.SetNextTechToTry: Procedure setNextTechnicianNumber will be executed with parameters: {} for collaboration id: {}", [parameters, collaboration.id])
+// Publish events to update badging in UI
+PUBLISH {collaboration: collaboration.id, task: "SetNextTechToTry"} TO TOPIC "/collaborationtypes/TechnicianCollaborationCollaborationType/debug"
+
+var procResults = null
+
+procResults = setNextTechnicianNumber(parameters[0])
+
+log.debug("collaboration.TechnicianCollaborationCollaborationType.SetNextTechToTry: Finished executing setNextTechnicianNumber, which returned results: {} for collaboration id: {}", [procResults, collaboration.id])
+log.debug("Finished executing: {} which returned result {}", [procDef.name, procResults.toString()])
+
+var activityResults = collaboration.results["SetNextTechToTry"]
+if (!activityResults) {
+    activityResults = {}
+}
+activityResults.result = procResults
+activityResults.resultTime = now()
+collaboration.results["SetNextTechToTry"] = activityResults
+// Save the change to results
+ALTER collaboration ({results: collaboration.results, id: collaboration.id})
+log.debug("collaboration.TechnicianCollaborationCollaborationType.SetNextTechToTry: Successfully wrote results from executing setNextTechnicianNumber for collaboration id: {}", [collaboration.id])
+SELECT EXACTLY ONE FROM collaborationtypes as ct WHERE name == collaboration.collaborationType
+
+var activityType = ct.assembly["SetNextTechToTry"]
+
+if (activityType != null AND activityType.additionalBehaviors != null) {
+    var context = CollaborationGeneration.establishCollaborationContext(collaboration, activityType.instanceParameters)
+    IF (context.collaboration.results.SetNextTechToTry.result < context.collaboration.results.FindTechnicians.recommendations.size()
+        ) {
+
+context = CollaborationGeneration.reEstablishCollaborationContext(context)
+startA_TechnicianCollaborationCollaborationType_NotifyAcceptReject(context.collaboration, [context.collaboration.results.FindTechnicians.recommendations[context.collaboration.results.SetNextTechToTry.result].username], getMobilePayload("notifyacceptreject"))
+
+}
+IF (context.collaboration.results.SetNextTechToTry.result == context.collaboration.results.FindTechnicians.recommendations.size()
+        ) {
+
+context = CollaborationGeneration.reEstablishCollaborationContext(context)
+startA_TechnicianCollaborationCollaborationType_NotifyManager(context.collaboration, [context.workorder.servicedeskowner])
+
+context = CollaborationGeneration.reEstablishCollaborationContext(context)
+startA_TechnicianCollaborationCollaborationType_noResponseAssignSD(context.collaboration, getEmployeeByUserId(context.workorder))
+
+context = CollaborationGeneration.reEstablishCollaborationContext(context)
+collab.updateWorkOrderTechId("", "workorder.id", "escalated")
+
+}
+
+}

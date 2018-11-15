@@ -1,0 +1,48 @@
+PROCEDURE collab.trackProgress(event Object, workorder Object)
+
+//This procedure is used to track the technicians ETA to the customer site and detect situations where late arrival is likely.
+/* event object: 
+	collaborationId (String)	
+	lastActive (DateTime)	
+	location (GeoJSON)	
+	username (Array of Strings)	
+*/
+
+//Refresh the workorder to the latest instance
+workorder = select exactly one from Workorders where id == workorder.id
+
+//Set the grace period, how late the technician can be without triggering a late notification alert
+var grace = 300
+
+var username = event.username[0]
+var origin = event.location
+var scheduledArrivalDate = workorder.scheduledArrivalDate
+var destination = workorder.geolocation
+
+update Technicians (mobilegeolocation:origin) where username == username
+
+var response = GoogleDistanceMatrix(destination, origin)
+var traveltime = response[0].rows[0].elements[0].duration_in_traffic.value
+
+//Compare scheduledArrivalTime against the current estimated Arrival time
+traveltime -= grace
+var estarrival = now().plusMillis(traveltime * 1000)
+
+var estarrivalmins = date(estarrival, "date", "epochMinutes")
+var schedulearrivalmins = date(scheduledArrivalDate, "date", "epochMinutes")
+
+if( estarrivalmins > schedulearrivalmins ){
+    //Do Late Notification to Tech and to Customer
+    //Update scheduledArrivaleDate with estarrival + 5 minutes
+    update Workorders(scheduledArrivalDate:estarrival) where id == workorder.id
+	workorder.scheduledArrivalDate = estarrival
+    collab.notifyCustomer(workorder)
+	
+}
+
+
+
+
+
+
+

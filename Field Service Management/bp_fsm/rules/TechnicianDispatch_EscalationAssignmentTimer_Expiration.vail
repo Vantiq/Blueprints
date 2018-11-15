@@ -1,0 +1,9 @@
+RULE TechnicianDispatch_EscalationAssignmentTimer_Expiration HIDDEN WITH ars_dependentResource="/collaborationtypes/TechnicianDispatch"
+WHEN PUBLISH OCCURS ON "/TechnicianDispatch/EscalationAssignmentTimer/expiration" as event
+
+var esc = event.newValue
+
+// Mark the escalation that we just got a published event for as expired
+// but restrict the query to only effect "waiting" escalations to avoid
+// updating escalations that have been explicitly cancelled
+UPDATE ArsEscalationDeadline(state: "expired") WHERE  collaborationId == esc.collaborationId AND activityType == esc.activityType AND state == "waiting"

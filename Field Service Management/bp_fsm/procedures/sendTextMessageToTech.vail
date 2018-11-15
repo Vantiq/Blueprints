@@ -1,0 +1,6 @@
+PROCEDURE sendTextMessageToTech(smsrecipients String ARRAY, msg String)
+
+var tmsg = { body: msg }
+for each recipient in smsrecipients do	
+	PUBLISH tmsg TO SOURCE Twilio USING { to: recipient }
+end
