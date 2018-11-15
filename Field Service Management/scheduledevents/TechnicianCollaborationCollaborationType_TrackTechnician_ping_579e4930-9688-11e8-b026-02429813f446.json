@@ -2,11 +2,11 @@
   "active" : true,
   "interval" : 900000,
   "message" : {
-    "collaboration" : "1095d8b0-974a-11e8-93d7-0242a4e646fb",
+    "collaboration" : "579e4930-9688-11e8-b026-02429813f446",
     "username" : "f7afe7bf-56b7-4cbb-95d3-ab7297154657"
   },
-  "name" : "TechnicianCollaborationCollaborationType_TrackTechnician_ping_1095d8b0-974a-11e8-93d7-0242a4e646fb",
-  "occursAt" : "2018-11-15T18:33:51Z",
+  "name" : "TechnicianCollaborationCollaborationType_TrackTechnician_ping_579e4930-9688-11e8-b026-02429813f446",
+  "occursAt" : "2018-11-15T20:33:51Z",
   "periodic" : true,
   "topic" : "/TechnicianCollaborationCollaborationType/TrackTechnician/ping"
 }

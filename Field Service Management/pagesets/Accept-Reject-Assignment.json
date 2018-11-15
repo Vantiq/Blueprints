@@ -4,24 +4,17 @@
   },
   "controllers" : {
     "client" : {
-      "customCode" : "function update(resource, data, dbid, client, callback){\n    \n    var http = new Http();\n    http.setVantiqUrlForResource(resource);\n    http.setVantiqHeaders();\n\n    http.update(data,dbid,function(response)\n    {\n        console.log(\"SUCCESS: \" + JSON.stringify(response));\n        if (callback)\n            callback();\n    },\n    function(errors)\n    {\n        client.showHttpErrors(errors,\"Doing an update of an existing: \" + resource);\n        console.log(errors,\"Doing an update of an existing: \" + resource);\n    });    \n}\n\nfunction select(resource, params, client, callback){   \n    var http = new Http();\n    http.setVantiqUrlForResource(resource);\n    http.setVantiqHeaders();\n\n    // if no params then limit to 50 sort by create date, newest first\n    if (!params){\n        params = {\n            sort:{\"ars_createdAt\":-1},\n            limit:50\n        };\n    }\n\n    http.select(params,function(response)\n    {\n        console.log(\"SUCCESS: \" + JSON.stringify(response));\n        if (callback)\n            callback(response);   \n    },\n    function(errors)\n    {\n        client.showHttpErrors(errors,\"Doing a select on: \" + resource);\n        \n    });\n}\n\n\n//Upsert function\nfunction upsert(resource, data, client, callback){\n    var http = new Http();\n    http.setVantiqUrlForResource(resource);\n    http.setVantiqHeaders();\n    http.upsert(data,function(response)\n    {\n        console.log(\"SUCCESS: \" + JSON.stringify(response));\n        if(callback){\n            callback();\n        }\n    },\n    function(errors)\n    {\n        client.showHttpErrors(errors,\"Doing an upsert of \" + resource);\n    });\n}\n"
+      "customCode" : "function select(resource, params, client, callback){   \n    var http = new Http();\n    http.setVantiqUrlForResource(resource);\n    http.setVantiqHeaders();\n\n    // if no params then limit to 50 sort by create date, newest first\n    if (!params){\n        params = {\n            sort:{\"ars_createdAt\":-1},\n            limit:50\n        };\n    }\n\n    http.select(params,function(response)\n    {\n        console.log(\"SUCCESS: \" + JSON.stringify(response));\n        if (callback)\n            callback(response);   \n    },\n    function(errors)\n    {\n        client.showHttpErrors(errors,\"Doing a select on: \" + resource);\n        \n    });\n}\n\n\n//Upsert function\nfunction upsert(resource, data, client, callback){\n    var http = new Http();\n    http.setVantiqUrlForResource(resource);\n    http.setVantiqHeaders();\n    http.upsert(data,function(response)\n    {\n        console.log(\"SUCCESS: \" + JSON.stringify(response));\n        if(callback){\n            callback();\n        }\n    },\n    function(errors)\n    {\n        client.showHttpErrors(errors,\"Doing an upsert of \" + resource);\n    });\n}\n"
     },
     "dataStream" : {
+      "ce_assets" : { },
       "ce_contacts" : { },
-      "ce_products" : { },
       "ce_skills" : { }
     },
     "page" : {
       "Start" : {
-        "onStart" : "this.data.username = client.getUsername();\nvar thisCopy = this;\n\nvar udata = {};\nudata.where = {username : this.data.username};\n// get the users full name\nselect(\"Technicians\", udata, client, function(response){\n    client.data.fullname = response[0].fname + \" \" + response[0].lname;\n});\n\nclient.getWidget(\"username\").isVisible = false;\n\nvar thiscopy = this;\nvar cid = client.getStateObject().collaborationId;\n\nvar params = {where: {id: cid}};\nselect(\"system.collaborations\", params, client, function(response){\n    console.log(JSON.stringify(response));\n    thiscopy.data.Workorders = response[0].results.Initiate.event;    \n    client.sendClientEvent(\"ce_contacts\", response[0].results.Initiate.event.contacts);\n});",
-        "widgets" : {
-          "Button6" : {
-            "onClick" : "// set the dates in the work order\nvar currentDate = new Date().getTime();\nvar thisCopy = this;\n\nif (!page.data.Workorders.scheduledArrivalDate){\n    client.infoDialog(\"You must select a date.\",\"INFO\");\n} else if (Date.parse(page.data.Workorders.scheduledArrivalDate) <= currentDate){\n    client.infoDialog(\"Scheduled Arrival Date must be greater than the current date/time.\",\"INFO\");\n        \n} else if (Date.parse(page.data.Workorders.scheduledCompletionDate) <=  Date.parse(page.data.Workorders.scheduledArrivalDate)){\n    client.infoDialog(\"Estimated Completion Date must be greater than the Scheduled Arrival Date.\",\"INFO\");\n} else { \n    page.data.Workorders.status = \"Assigned\";\n    page.data.Workorders.techAssignmentDate = new Date().getTime();\n    page.data.Workorders.techId = client.getUsername(); // which is really the userid\n    page.data.Workorders.techname = client.data.fullname;\n    upsert(\"Workorders\", page.data.Workorders, client, function(response){\n\t\tvar responseObject = client.createResponseObject(thisCopy.submitValue);\n        responseObject.username = client.getUsername;\n        \n        var responseTopic = page.responseTopic;\n\n        var http = new Http();\n        http.setVantiqUrlForSystemResource(\"topics\");\n        http.setVantiqHeaders();\n\n        http.publish(responseObject,responseTopic,function(response){\n            client.terminate();\n        },\n        function(errors){\n            client.showHttpErrors(errors,\"Doing PUBLISH on a topic\");\n        });\n    });\n}\n"
-          },
-          "InputDateTime1" : {
-            "onChange" : "var esthours = page.data.Workorders.estimatedHours; \n\nif(esthours){\n    var completiondate = new Date(page.data.Workorders.scheduledArrivalDate); \n\n    //Add estimatedHours to scheduledCompletionDate\n    completiondate.setHours(completiondate.getHours() + esthours);\n    page.data.Workorders.scheduledCompletionDate = completiondate;\n\n}"
-          }
-        }
+        "onStart" : "var thiscopy = this;\nvar cid = client.getStateObject().collaborationId;\n\nvar params = {where: {id: cid}};\nselect(\"system.collaborations\", params, client, function(response){\n    thiscopy.data.Workorders.id = response[0].results.Initiate.event.id;\n    client.sendClientEvent(\"ce_assets\", response[0].results.Initiate.event.assets);\n    client.sendClientEvent(\"ce_contacts\", response[0].results.Initiate.event.contacts);\n    client.sendClientEvent(\"ce_skills\", response[0].results.Initiate.event.skills);\n});",
+        "widgets" : { }
       }
     }
   },
@@ -45,13 +38,13 @@
       "dataObjectName" : null,
       "dataTypeList" : [ {
         "label" : null,
-        "type" : "products"
+        "type" : "Assets"
       } ],
       "isDeleteOp" : false,
       "isInsertOp" : false,
       "isUpdateOp" : false,
       "maxRecords" : 0,
-      "name" : "ce_products",
+      "name" : "ce_assets",
       "sortByProperty" : null,
       "sortDescending" : false,
       "type" : 5,
@@ -63,7 +56,7 @@
       "dataObjectName" : null,
       "dataTypeList" : [ {
         "label" : null,
-        "type" : "contacts"
+        "type" : "Contacts"
       } ],
       "isDeleteOp" : false,
       "isInsertOp" : false,
@@ -81,7 +74,7 @@
       "dataObjectName" : null,
       "dataTypeList" : [ {
         "label" : null,
-        "type" : "skills"
+        "type" : "Skills"
       } ],
       "isDeleteOp" : false,
       "isInsertOp" : false,
@@ -96,10 +89,10 @@
       "v" : 1
     } ]
   },
-  "name" : "ScheduleArrivalDateTime",
+  "name" : "Accept-Reject-Assignment",
   "options" : {
     "badgeCount" : 0,
-    "cssAssets" : [ "https://dev.vantiq.com/ui/docs/NS/bp_sitsm_v2/css/servicedeskmobile.css" ],
+    "cssAssets" : [ "../docs/NS/bp_fsm/css/servicedeskmobile.css" ],
     "description" : "",
     "isExpertMode" : true,
     "showGridWhileEditing" : true,
@@ -309,12 +302,12 @@
         "innerMargin" : 0,
         "isDraggable" : true,
         "isSelectable" : true,
-        "label" : "Contacts",
+        "label" : "Required Skills",
         "labelAlign" : "left",
         "labelColor" : "#808080",
         "labelFontSize" : 18,
         "labelStyle" : "italic",
-        "name" : "SectionLabel9660",
+        "name" : "SectionLabel9577",
         "type" : "PISection",
         "v" : 14,
         "vertGravity" : 4,
@@ -336,21 +329,175 @@
         "columns" : [ {
           "colorRules" : null,
           "dataType" : "String",
+          "propertyName" : "skill",
+          "selected" : false,
+          "title" : "skill"
+        }, {
+          "colorRules" : null,
+          "dataType" : "String",
+          "propertyName" : "description",
+          "selected" : false,
+          "title" : "description"
+        } ],
+        "dataStreamGroupedByFiltersString" : "",
+        "dataStreamPropertyList" : [ ],
+        "dataStreamUUID" : "ce53d706-ce75-4727-87d1-821a1455616e",
+        "dataType" : null,
+        "h" : 287,
+        "headerFontColor" : "#000000",
+        "headerFontFace" : "inherit",
+        "headerFontSize" : 14,
+        "headerFontStyle" : "plain",
+        "heightPolicy" : 0,
+        "horzGravity" : 4,
+        "isDraggable" : true,
+        "isSelectable" : true,
+        "name" : "DataTable652",
+        "operation" : "insert",
+        "propertyName" : null,
+        "rowsPerPage" : 5,
+        "type" : "DataTableWidget",
+        "v" : 14,
+        "vertGravity" : 4,
+        "w" : 370,
+        "widthPolicy" : 2,
+        "x" : 5,
+        "y" : 421
+      }, {
+        "CSSClass" : "vantiqSectionLabel",
+        "actionMenuLabel" : null,
+        "actionMenuTopic" : null,
+        "borderColor" : "Default",
+        "borderWidth" : 0,
+        "h" : 42,
+        "heightPolicy" : 0,
+        "horzGravity" : 4,
+        "horzMargin" : 2,
+        "innerMargin" : 0,
+        "isDraggable" : true,
+        "isSelectable" : true,
+        "label" : "Assets",
+        "labelAlign" : "left",
+        "labelColor" : "#808080",
+        "labelFontSize" : 18,
+        "labelStyle" : "italic",
+        "name" : "SectionLabel9662",
+        "type" : "PISection",
+        "v" : 14,
+        "vertGravity" : 4,
+        "vertMargin" : 10,
+        "w" : 370,
+        "widthPolicy" : 2,
+        "x" : 5,
+        "y" : 713
+      }, {
+        "CSSClass" : "vantiqDataTable",
+        "actionMenuLabel" : null,
+        "actionMenuTopic" : null,
+        "borderColor" : "Default",
+        "borderWidth" : 1,
+        "cellFontColor" : "#000000",
+        "cellFontFace" : "inherit",
+        "cellFontSize" : 14,
+        "cellFontStyle" : "plain",
+        "columns" : [ {
+          "colorRules" : null,
+          "dataType" : "String",
+          "propertyName" : "name",
+          "selected" : false,
+          "title" : "Name"
+        }, {
+          "colorRules" : null,
+          "dataType" : "String",
+          "propertyName" : "manufacturer",
+          "selected" : false,
+          "title" : "Manufacturer"
+        }, {
+          "colorRules" : null,
+          "dataType" : "String",
+          "propertyName" : "category",
+          "selected" : false,
+          "title" : "Category"
+        } ],
+        "dataStreamGroupedByFiltersString" : "",
+        "dataStreamPropertyList" : [ ],
+        "dataStreamUUID" : "9bb783c3-98de-4538-8067-2121bccda171",
+        "dataType" : null,
+        "h" : 211,
+        "headerFontColor" : "#000000",
+        "headerFontFace" : "inherit",
+        "headerFontSize" : 14,
+        "headerFontStyle" : "plain",
+        "heightPolicy" : 0,
+        "horzGravity" : 4,
+        "isDraggable" : true,
+        "isSelectable" : true,
+        "name" : "DataTable945",
+        "operation" : "insert",
+        "propertyName" : null,
+        "rowsPerPage" : 3,
+        "type" : "DataTableWidget",
+        "v" : 14,
+        "vertGravity" : 4,
+        "w" : 370,
+        "widthPolicy" : 2,
+        "x" : 5,
+        "y" : 760
+      }, {
+        "CSSClass" : "vantiqSectionLabel",
+        "actionMenuLabel" : null,
+        "actionMenuTopic" : null,
+        "borderColor" : "Default",
+        "borderWidth" : 0,
+        "h" : 42,
+        "heightPolicy" : 0,
+        "horzGravity" : 4,
+        "horzMargin" : 2,
+        "innerMargin" : 0,
+        "isDraggable" : true,
+        "isSelectable" : true,
+        "label" : "Contacts",
+        "labelAlign" : "left",
+        "labelColor" : "#808080",
+        "labelFontSize" : 18,
+        "labelStyle" : "italic",
+        "name" : "SectionLabel9660",
+        "type" : "PISection",
+        "v" : 14,
+        "vertGravity" : 4,
+        "vertMargin" : 10,
+        "w" : 370,
+        "widthPolicy" : 2,
+        "x" : 5,
+        "y" : 976
+      }, {
+        "CSSClass" : "vantiqDataTable",
+        "actionMenuLabel" : null,
+        "actionMenuTopic" : null,
+        "borderColor" : "Default",
+        "borderWidth" : 1,
+        "cellFontColor" : "#000000",
+        "cellFontFace" : "inherit",
+        "cellFontSize" : 14,
+        "cellFontStyle" : "plain",
+        "columns" : [ {
+          "colorRules" : null,
+          "dataType" : "String",
           "propertyName" : "firstname",
           "selected" : false,
-          "title" : "firstname"
+          "title" : "First"
         }, {
           "colorRules" : null,
           "dataType" : "String",
           "propertyName" : "lastname",
           "selected" : false,
-          "title" : "lastname"
+          "title" : "Last"
         }, {
           "colorRules" : null,
           "dataType" : "String",
           "propertyName" : "phone",
           "selected" : false,
-          "title" : "phone"
+          "title" : "Phone"
         } ],
         "dataStreamGroupedByFiltersString" : "",
         "dataStreamPropertyList" : [ ],
@@ -375,7 +522,7 @@
         "w" : 370,
         "widthPolicy" : 2,
         "x" : 5,
-        "y" : 421
+        "y" : 1023
       }, {
         "CSSClass" : "vantiqSectionLabel",
         "actionMenuLabel" : null,
@@ -402,7 +549,7 @@
         "w" : 370,
         "widthPolicy" : 2,
         "x" : 5,
-        "y" : 637
+        "y" : 1239
       }, {
         "CSSClass" : "vantiqMultilineInput",
         "actionMenuLabel" : null,
@@ -435,67 +582,7 @@
         "widthPolicy" : 2,
         "wordwrap" : true,
         "x" : 5,
-        "y" : 684
-      }, {
-        "CSSClass" : "vantiqInputDateTime",
-        "actionMenuLabel" : null,
-        "actionMenuTopic" : null,
-        "binding" : "page.data.Workorders.scheduledArrivalDate",
-        "borderColor" : "Default",
-        "borderWidth" : 0,
-        "h" : 70,
-        "heightPolicy" : 0,
-        "horzGravity" : 4,
-        "horzMargin" : 10,
-        "innerMargin" : 0,
-        "isDraggable" : true,
-        "isReadOnly" : false,
-        "isSelectable" : true,
-        "label" : "Arrival Data",
-        "labelAlign" : "center",
-        "labelColor" : "#000000",
-        "labelFontSize" : 14,
-        "labelStyle" : "plain",
-        "name" : "InputDateTime1",
-        "optional" : true,
-        "type" : "PIDateTime",
-        "v" : 14,
-        "vertGravity" : 4,
-        "vertMargin" : 10,
-        "w" : 370,
-        "widthPolicy" : 2,
-        "x" : 5,
-        "y" : 817
-      }, {
-        "CSSClass" : "vantiqInputDateTime",
-        "actionMenuLabel" : null,
-        "actionMenuTopic" : null,
-        "binding" : "page.data.Workorders.scheduledCompletionDate",
-        "borderColor" : "Default",
-        "borderWidth" : 0,
-        "h" : 70,
-        "heightPolicy" : 0,
-        "horzGravity" : 4,
-        "horzMargin" : 10,
-        "innerMargin" : 0,
-        "isDraggable" : true,
-        "isReadOnly" : false,
-        "isSelectable" : true,
-        "label" : "Estimated completion time",
-        "labelAlign" : "center",
-        "labelColor" : "#000000",
-        "labelFontSize" : 14,
-        "labelStyle" : "plain",
-        "name" : "InputDateTime2",
-        "optional" : true,
-        "type" : "PIDateTime",
-        "v" : 14,
-        "vertGravity" : 4,
-        "vertMargin" : 10,
-        "w" : 370,
-        "widthPolicy" : 2,
-        "x" : 5,
-        "y" : 892
+        "y" : 1286
       }, {
         "CSSClass" : "vantiqHorizontalLayout",
         "actionMenuLabel" : null,
@@ -516,7 +603,7 @@
           "borderColor" : "Default",
           "borderWidth" : 0,
           "buttonBackgroundColor" : "platform",
-          "buttonLabel" : "Schedule Arrival",
+          "buttonLabel" : "Accept",
           "buttonLabelColor" : "platform",
           "buttonLabelSize" : 22,
           "buttonLabelStyle" : "plain",
@@ -538,9 +625,42 @@
           "value" : 100,
           "vertGravity" : 4,
           "vertMargin" : 10,
-          "w" : 184,
+          "w" : 97,
           "widthPolicy" : 0,
-          "x" : 93,
+          "x" : 45.25,
+          "y" : 10
+        }, {
+          "CSSClass" : "vantiqButton",
+          "actionMenuLabel" : null,
+          "actionMenuTopic" : null,
+          "borderColor" : "Default",
+          "borderWidth" : 0,
+          "buttonBackgroundColor" : "platform",
+          "buttonLabel" : "Reject",
+          "buttonLabelColor" : "platform",
+          "buttonLabelSize" : 22,
+          "buttonLabelStyle" : "plain",
+          "h" : 57,
+          "heightPolicy" : 0,
+          "horzGravity" : 4,
+          "horzMargin" : 10,
+          "innerMargin" : 0,
+          "isDraggable" : true,
+          "isSelectable" : true,
+          "label" : "",
+          "labelAlign" : "center",
+          "labelColor" : "#000000",
+          "labelFontSize" : 14,
+          "labelStyle" : "plain",
+          "name" : "Button5",
+          "type" : "PIInlineButton",
+          "v" : 14,
+          "value" : 200,
+          "vertGravity" : 4,
+          "vertMargin" : 10,
+          "w" : 92,
+          "widthPolicy" : 0,
+          "x" : 232.75,
           "y" : 10
         } ],
         "name" : "HorizontalLayout13",
@@ -551,40 +671,7 @@
         "w" : 370,
         "widthPolicy" : 2,
         "x" : 5,
-        "y" : 967
-      }, {
-        "CSSClass" : "vantiqInputString",
-        "actionMenuLabel" : null,
-        "actionMenuTopic" : null,
-        "binding" : "page.data.username",
-        "borderColor" : "Default",
-        "borderWidth" : 0,
-        "default" : "",
-        "h" : 70,
-        "heightPolicy" : 0,
-        "horzGravity" : 4,
-        "horzMargin" : 10,
-        "innerMargin" : 0,
-        "isDraggable" : true,
-        "isPassword" : false,
-        "isReadOnly" : true,
-        "isSelectable" : true,
-        "label" : "username",
-        "labelAlign" : "center",
-        "labelColor" : "#000000",
-        "labelFontSize" : 14,
-        "labelStyle" : "plain",
-        "name" : "username",
-        "optional" : true,
-        "placeholder" : "",
-        "type" : "PIInputString",
-        "v" : 14,
-        "vertGravity" : 4,
-        "vertMargin" : 10,
-        "w" : 370,
-        "widthPolicy" : 2,
-        "x" : 5,
-        "y" : 1049
+        "y" : 1419
       } ],
       "data" : {
         "properties" : {
@@ -750,7 +837,7 @@
       "fields" : [ ],
       "footerChildren" : [ ],
       "layoutType" : "mobile",
-      "responseTopic" : "/notifications/TechnicianDispatch/ScheduleArrivalDateTime"
+      "responseTopic" : "/notifications/TechnicianCollaborationCollaborationType/NotifyAcceptReject"
     }
   }
 }

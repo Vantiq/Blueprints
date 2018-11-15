@@ -29,7 +29,7 @@
   "name" : "Notify-Manager",
   "options" : {
     "badgeCount" : 0,
-    "cssAssets" : [ "https://dev.vantiq.com/ui/docs/NS/bp_sitsm_v2/css/servicedeskmobile.css" ],
+    "cssAssets" : [ "../docs/NS/bp_fsm/css/servicedeskmobile.css" ],
     "description" : "",
     "isExpertMode" : true,
     "showGridWhileEditing" : true,
