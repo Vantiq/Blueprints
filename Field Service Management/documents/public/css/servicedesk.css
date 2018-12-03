@@ -6,6 +6,7 @@
 	width:150px;
 	border-radius: 5px;
 	transition: .4s;
+    color: white !important;
 }
 
 .vantiqMenuButton:hover {
@@ -86,7 +87,6 @@ div#_SidebarScrollingFrame_ {
 /* The left half of the top header bar */
 .main-header .logo {
 	background-color: #2B6E9E !important;
-	padding: 0 !important;
 }
 
 /* The right half of the top header bar */
