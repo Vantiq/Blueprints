@@ -239,7 +239,7 @@
   "name" : "WorkOrders",
   "options" : {
     "badgeCount" : 0,
-    "cssAssets" : [ "../docs/fullcalendar.css/bp_fsm/css/fullcalendar.css", "../docs/NS/bp_fsm/css/customcalendar.css", "../docs/NS/bp_fsm/css/servicedeskmobile.css" ],
+    "cssAssets" : [ "../docs/NS/bp_fsm/css/fullcalendar.css", "../docs/NS/bp_fsm/css/customcalendar.css", "../docs/NS/bp_fsm/css/servicedeskmobile.css" ],
     "description" : "",
     "hasTopbar" : true,
     "isExpertMode" : true,
@@ -1302,7 +1302,7 @@
         "borderColor" : "Default",
         "borderWidth" : 0,
         "default" : "",
-        "h" : 67.97916599999999,
+        "h" : 70,
         "heightPolicy" : 0,
         "horzGravity" : 4,
         "horzMargin" : 10,
@@ -1335,7 +1335,7 @@
         "borderColor" : "Default",
         "borderWidth" : 0,
         "default" : "",
-        "h" : 40,
+        "h" : 145,
         "heightPolicy" : 0,
         "horzGravity" : 4,
         "horzMargin" : 10,
@@ -1360,7 +1360,7 @@
         "widthPolicy" : 2,
         "wordwrap" : true,
         "x" : 5,
-        "y" : 77.97916599999999
+        "y" : 80
       }, {
         "CSSClass" : "vantiqInputString",
         "actionMenuLabel" : null,
@@ -1369,7 +1369,7 @@
         "borderColor" : "Default",
         "borderWidth" : 0,
         "default" : "",
-        "h" : 67.97916599999999,
+        "h" : 70,
         "heightPolicy" : 0,
         "horzGravity" : 4,
         "horzMargin" : 10,
@@ -1393,7 +1393,7 @@
         "w" : 370,
         "widthPolicy" : 2,
         "x" : 5,
-        "y" : 122.97916599999999
+        "y" : 230
       }, {
         "CSSClass" : "vantiqInputString",
         "actionMenuLabel" : null,
@@ -1402,7 +1402,7 @@
         "borderColor" : "Default",
         "borderWidth" : 0,
         "default" : "",
-        "h" : 67.97916599999999,
+        "h" : 70,
         "heightPolicy" : 0,
         "horzGravity" : 4,
         "horzMargin" : 10,
@@ -1426,7 +1426,7 @@
         "w" : 370,
         "widthPolicy" : 2,
         "x" : 5,
-        "y" : 195.95833199999998
+        "y" : 305
       }, {
         "CSSClass" : "vantiqMultilineInput",
         "actionMenuLabel" : null,
@@ -1435,7 +1435,7 @@
         "borderColor" : "Default",
         "borderWidth" : 0,
         "default" : "",
-        "h" : 40,
+        "h" : 145,
         "heightPolicy" : 0,
         "horzGravity" : 4,
         "horzMargin" : 10,
@@ -1460,14 +1460,14 @@
         "widthPolicy" : 2,
         "wordwrap" : true,
         "x" : 5,
-        "y" : 268.937498
+        "y" : 380
       }, {
         "CSSClass" : "vantiqHorizontalLayout",
         "actionMenuLabel" : null,
         "actionMenuTopic" : null,
         "borderColor" : "Default",
         "borderWidth" : 0,
-        "h" : 67.97916599999999,
+        "h" : 70,
         "heightPolicy" : 0,
         "horzGravity" : 4,
         "horzMargin" : 0,
@@ -1482,7 +1482,7 @@
           "borderColor" : "Default",
           "borderWidth" : 0,
           "default" : "",
-          "h" : 67.97916599999999,
+          "h" : 70,
           "heightPolicy" : 0,
           "horzGravity" : 0,
           "horzMargin" : 10,
@@ -1515,7 +1515,7 @@
           "borderColor" : "Default",
           "borderWidth" : 0,
           "default" : "",
-          "h" : 67.97916599999999,
+          "h" : 70,
           "heightPolicy" : 0,
           "horzGravity" : 0,
           "horzMargin" : 10,
@@ -1549,7 +1549,7 @@
         "w" : 350,
         "widthPolicy" : 1,
         "x" : 15,
-        "y" : 313.937498
+        "y" : 530
       }, {
         "CSSClass" : "vantiqInputDateTime",
         "actionMenuLabel" : null,
@@ -1557,7 +1557,7 @@
         "binding" : "page.data.Workorders.scheduledArrivalDate",
         "borderColor" : "Default",
         "borderWidth" : 0,
-        "h" : 67.97916599999999,
+        "h" : 70,
         "heightPolicy" : 0,
         "horzGravity" : 4,
         "horzMargin" : 10,
@@ -1579,7 +1579,7 @@
         "w" : 300,
         "widthPolicy" : 1,
         "x" : 40,
-        "y" : 386.91666399999997
+        "y" : 605
       }, {
         "CSSClass" : "vantiqInputString",
         "actionMenuLabel" : null,
@@ -1588,7 +1588,7 @@
         "borderColor" : "Default",
         "borderWidth" : 0,
         "default" : "",
-        "h" : 67.97916599999999,
+        "h" : 70,
         "heightPolicy" : 0,
         "horzGravity" : 4,
         "horzMargin" : 10,
@@ -1612,14 +1612,14 @@
         "w" : 370,
         "widthPolicy" : 2,
         "x" : 5,
-        "y" : 459.89582999999993
+        "y" : 680
       }, {
         "CSSClass" : "vantiqSectionLabel",
         "actionMenuLabel" : null,
         "actionMenuTopic" : null,
         "borderColor" : "Default",
         "borderWidth" : 0,
-        "h" : 20,
+        "h" : 42,
         "heightPolicy" : 0,
         "horzGravity" : 4,
         "horzMargin" : 2,
@@ -1639,7 +1639,7 @@
         "w" : 370,
         "widthPolicy" : 2,
         "x" : 5,
-        "y" : 532.8749959999999
+        "y" : 755
       }, {
         "CSSClass" : "vantiqDataTable",
         "actionMenuLabel" : null,
@@ -1667,7 +1667,7 @@
         "dataStreamPropertyList" : [ ],
         "dataStreamUUID" : "33a5b2d1-e6b9-4968-8029-af3e406d1c33",
         "dataType" : null,
-        "h" : 212,
+        "h" : 287,
         "headerFontColor" : "#000000",
         "headerFontFace" : "inherit",
         "headerFontSize" : 14,
@@ -1686,14 +1686,14 @@
         "w" : 350,
         "widthPolicy" : 1,
         "x" : 15,
-        "y" : 557.8749959999999
+        "y" : 802
       }, {
         "CSSClass" : "vantiqSectionLabel",
         "actionMenuLabel" : null,
         "actionMenuTopic" : null,
         "borderColor" : "Default",
         "borderWidth" : 0,
-        "h" : 20,
+        "h" : 42,
         "heightPolicy" : 0,
         "horzGravity" : 4,
         "horzMargin" : 2,
@@ -1713,7 +1713,7 @@
         "w" : 370,
         "widthPolicy" : 2,
         "x" : 5,
-        "y" : 774.8749959999999
+        "y" : 1094
       }, {
         "CSSClass" : "vantiqDataTable",
         "actionMenuLabel" : null,
@@ -1741,7 +1741,7 @@
         "dataStreamPropertyList" : [ ],
         "dataStreamUUID" : "1f46ddd7-0dc8-4675-9f37-330a30803436",
         "dataType" : null,
-        "h" : 212,
+        "h" : 287,
         "headerFontColor" : "#000000",
         "headerFontFace" : "inherit",
         "headerFontSize" : 14,
@@ -1760,14 +1760,14 @@
         "w" : 350,
         "widthPolicy" : 1,
         "x" : 15,
-        "y" : 799.8749959999999
+        "y" : 1141
       }, {
         "CSSClass" : "vantiqSectionLabel",
         "actionMenuLabel" : null,
         "actionMenuTopic" : null,
         "borderColor" : "Default",
         "borderWidth" : 0,
-        "h" : 20,
+        "h" : 42,
         "heightPolicy" : 0,
         "horzGravity" : 4,
         "horzMargin" : 2,
@@ -1787,7 +1787,7 @@
         "w" : 370,
         "widthPolicy" : 2,
         "x" : 5,
-        "y" : 1016.8749959999999
+        "y" : 1433
       }, {
         "CSSClass" : "vantiqButton",
         "actionMenuLabel" : null,
@@ -1799,7 +1799,7 @@
         "buttonLabelColor" : "platform",
         "buttonLabelSize" : 18,
         "buttonLabelStyle" : "plain",
-        "h" : 25.99306,
+        "h" : 51,
         "heightPolicy" : 0,
         "horzGravity" : 0,
         "horzMargin" : 10,
@@ -1821,7 +1821,7 @@
         "w" : 109,
         "widthPolicy" : 1,
         "x" : 5,
-        "y" : 1041.874996
+        "y" : 1480
       }, {
         "CSSClass" : "vantiqDataTable",
         "actionMenuLabel" : null,
@@ -1849,7 +1849,7 @@
         "dataStreamPropertyList" : [ ],
         "dataStreamUUID" : "c9109f53-0354-4b68-9654-6d0df4063575",
         "dataType" : null,
-        "h" : 212,
+        "h" : 287,
         "headerFontColor" : "#000000",
         "headerFontFace" : "inherit",
         "headerFontSize" : 14,
@@ -1868,7 +1868,7 @@
         "w" : 350,
         "widthPolicy" : 1,
         "x" : 15,
-        "y" : 1072.868056
+        "y" : 1536
       }, {
         "CSSClass" : "vantiqButton",
         "actionMenuLabel" : null,
@@ -1880,7 +1880,7 @@
         "buttonLabelColor" : "platform",
         "buttonLabelSize" : 18,
         "buttonLabelStyle" : "plain",
-        "h" : 25.99306,
+        "h" : 51,
         "heightPolicy" : 0,
         "horzGravity" : 4,
         "horzMargin" : 10,
@@ -1901,7 +1901,7 @@
         "w" : 370,
         "widthPolicy" : 2,
         "x" : 5,
-        "y" : 1289.868056
+        "y" : 1828
       } ],
       "data" : {
         "properties" : {
@@ -2076,7 +2076,7 @@
         "actionMenuTopic" : null,
         "borderColor" : "Default",
         "borderWidth" : 0,
-        "h" : 20,
+        "h" : 42,
         "heightPolicy" : 0,
         "horzGravity" : 4,
         "horzMargin" : 2,
@@ -2103,7 +2103,7 @@
         "actionMenuTopic" : null,
         "borderColor" : "Default",
         "borderWidth" : 0,
-        "h" : 67.97916599999999,
+        "h" : 70,
         "heightPolicy" : 0,
         "horzGravity" : 4,
         "horzMargin" : 10,
@@ -2118,7 +2118,7 @@
           "borderColor" : "Default",
           "borderWidth" : 0,
           "default" : "",
-          "h" : 67.97916599999999,
+          "h" : 70,
           "heightPolicy" : 0,
           "horzGravity" : 4,
           "horzMargin" : 10,
@@ -2138,7 +2138,7 @@
           "v" : 14,
           "vertGravity" : 4,
           "vertMargin" : 10,
-          "w" : 170,
+          "w" : 145,
           "widthPolicy" : 2,
           "x" : 10,
           "y" : 0
@@ -2150,7 +2150,7 @@
           "borderColor" : "Default",
           "borderWidth" : 0,
           "default" : "Assigned",
-          "h" : 67.97916599999999,
+          "h" : 70,
           "heightPolicy" : 0,
           "horzGravity" : 4,
           "horzMargin" : 10,
@@ -2186,9 +2186,9 @@
           "v" : 14,
           "vertGravity" : 4,
           "vertMargin" : 10,
-          "w" : 170,
+          "w" : 195,
           "widthPolicy" : 2,
-          "x" : 190,
+          "x" : 165,
           "y" : 0
         } ],
         "name" : "HorizontalLayout30936",
@@ -2199,61 +2199,84 @@
         "w" : 370,
         "widthPolicy" : 2,
         "x" : 5,
-        "y" : 30
+        "y" : 52
       }, {
-        "CSSClass" : "vantiqDataTable",
+        "CSSClass" : "vantiqVerticalLayout",
         "actionMenuLabel" : null,
         "actionMenuTopic" : null,
         "borderColor" : "Default",
-        "borderWidth" : 1,
-        "cellFontColor" : "#000000",
-        "cellFontFace" : "inherit",
-        "cellFontSize" : 12,
-        "cellFontStyle" : "plain",
-        "columns" : [ {
-          "colorRules" : null,
-          "dataType" : "String",
-          "propertyName" : "summary",
-          "selected" : false,
-          "title" : "Summary"
-        }, {
-          "colorRules" : null,
-          "dataType" : "String",
-          "propertyName" : "customer",
-          "selected" : false,
-          "title" : "Customer"
-        }, {
-          "colorRules" : null,
-          "dataType" : "DateTime",
-          "initialSort" : "D",
-          "propertyName" : "scheduledArrivalDate",
-          "selected" : false,
-          "title" : "Due Date"
-        } ],
-        "dataStreamGroupedByFiltersString" : "",
-        "dataStreamPropertyList" : [ ],
-        "dataStreamUUID" : "1d38ff96-00c8-4691-817a-e83696c93a3a",
-        "dataType" : null,
-        "h" : 197,
-        "headerFontColor" : "#000000",
-        "headerFontFace" : "inherit",
-        "headerFontSize" : 12,
-        "headerFontStyle" : "plain",
+        "borderWidth" : 0,
+        "h" : 290,
         "heightPolicy" : 0,
-        "horzGravity" : 0,
+        "horzGravity" : 4,
+        "horzMargin" : 20,
+        "innerMargin" : 20,
         "isDraggable" : true,
         "isSelectable" : true,
-        "name" : "DataTable2851",
-        "operation" : "insert",
-        "propertyName" : null,
-        "rowsPerPage" : 5,
-        "type" : "DataTableWidget",
+        "kids" : [ {
+          "CSSClass" : "vantiqDataTable",
+          "actionMenuLabel" : null,
+          "actionMenuTopic" : null,
+          "borderColor" : "Default",
+          "borderWidth" : 1,
+          "cellFontColor" : "#000000",
+          "cellFontFace" : "inherit",
+          "cellFontSize" : 12,
+          "cellFontStyle" : "plain",
+          "columns" : [ {
+            "colorRules" : null,
+            "dataType" : "String",
+            "propertyName" : "summary",
+            "selected" : false,
+            "title" : "Summary"
+          }, {
+            "colorRules" : null,
+            "dataType" : "String",
+            "propertyName" : "customer",
+            "selected" : false,
+            "title" : "Customer"
+          }, {
+            "colorRules" : null,
+            "dataType" : "DateTime",
+            "initialSort" : "D",
+            "propertyName" : "scheduledArrivalDate",
+            "selected" : false,
+            "title" : "Due Date"
+          } ],
+          "dataStreamGroupedByFiltersString" : "",
+          "dataStreamPropertyList" : [ ],
+          "dataStreamUUID" : "1d38ff96-00c8-4691-817a-e83696c93a3a",
+          "dataType" : null,
+          "h" : 270,
+          "headerFontColor" : "#000000",
+          "headerFontFace" : "inherit",
+          "headerFontSize" : 12,
+          "headerFontStyle" : "plain",
+          "heightPolicy" : 0,
+          "horzGravity" : 4,
+          "isDraggable" : true,
+          "isSelectable" : true,
+          "name" : "DataTable2851",
+          "operation" : "insert",
+          "propertyName" : null,
+          "rowsPerPage" : 5,
+          "type" : "DataTableWidget",
+          "v" : 14,
+          "vertGravity" : 4,
+          "w" : 330,
+          "widthPolicy" : 2,
+          "x" : 20,
+          "y" : 10
+        } ],
+        "name" : "VerticalLayout11432",
+        "type" : "VerticalContainer",
         "v" : 14,
         "vertGravity" : 4,
-        "w" : 348,
-        "widthPolicy" : 1,
+        "vertMargin" : 10,
+        "w" : 370,
+        "widthPolicy" : 2,
         "x" : 5,
-        "y" : 102.97916599999999
+        "y" : 127
       } ],
       "data" : {
         "properties" : {
