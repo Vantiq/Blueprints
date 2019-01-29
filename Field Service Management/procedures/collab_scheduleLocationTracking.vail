@@ -13,21 +13,24 @@ PROCEDURE collab.scheduleLocationTracking(Workorders Object, hours String)
 
 */
 //SELECT EXACTLY ONE FROM Workorders WHERE id == id 
-var scheduledArrivalDate = Workorders.scheduledArrivalDate
-
-log.debug("scheduledArrivalDate: " + format("{0, date, yyyy-MMM-dd HH:mm z}", scheduledArrivalDate))
+var scheduledArrivalDate = toDate(Workorders.scheduledArrivalDate)
 
 
-var reminder = scheduledArrivalDate.minusMillis(stringToInterval(hours))
+
+//log.debug("scheduledArrivalDate: " + format("{0, date, yyyy-MMM-dd HH:mm z}", scheduledArrivalDate))
+
+var buffer = stringToInterval(hours)
+var reminder = scheduledArrivalDate.minusMillis(buffer)
+
 var diff
-log.debug("reminder: " + format("{0, date, yyyy-MMM-dd HH:mm z}", reminder))
+//log.debug("reminder: " + format("{0, date, yyyy-MMM-dd HH:mm z}", reminder))
 
 var trackInSeconds = 0
 if ( reminder < now() ){
     // start tracking right away
     trackInSeconds = 1
 } else {
-    trackInSeconds = date(scheduledArrivalDate, "date", "epochSeconds") - date(now(), "date", "epochSeconds")
+    trackInSeconds = (date(scheduledArrivalDate, "date", "epochSeconds") - date(now(), "date", "epochSeconds")) - (buffer/1000)
 }
 
 return trackInSeconds
@@ -39,9 +42,3 @@ if ( reminder < now() ){
     PUBLISH collaboration TO TOPIC "/location/tracking/tech" SCHEDULE {occursAt: reminder}
 }
 */
-
-
-
-
-
-

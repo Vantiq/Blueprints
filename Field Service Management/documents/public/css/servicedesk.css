@@ -6,7 +6,7 @@
 	width:150px;
 	border-radius: 5px;
 	transition: .4s;
-    color: white !important;
+  color: white !important;
 }
 
 .vantiqMenuButton:hover {
@@ -24,7 +24,7 @@
     border-radius: 5px;
 }
 
-/* Vantiq input text class 
+/* Vantiq input text class
 .vantiqInputString {
     border-radius: 5px;
 }
@@ -62,16 +62,16 @@
 
 /* Vantiq Data Table class row heading */
 .vantiqDataTable th {
-	background: #57ADEB;	
+	background: #57ADEB;
 }
 
 /* Vantiq Data Table alternate row colors odds and evens */
 .vantiqDataTable tr:nth-child(odd) {
-	background: #F5F5F5;	
+	background: #F5F5F5;
 }
 
 .vantiqDataTable tr:nth-child(even) {
-	background: #FFFFFF;	
+	background: #FFFFFF;
 }
 
 /* Sidebar drop shadow */
@@ -92,7 +92,7 @@ div#_SidebarScrollingFrame_ {
 /* The right half of the top header bar */
 .navbar {
 	background-color: #2B6E9E !important;
-	
+
 }
 
 .vantiqFlowLayout {
