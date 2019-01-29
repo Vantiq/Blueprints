@@ -1,11 +1,11 @@
 /* Vantiq navigation Menu class */
 .vantiqMenuButton {
-	background-color: #57ADEB;
-	padding: 5px 12px;
-	display: inline-block;
-	width:150px;
-	border-radius: 5px;
-	transition: .4s;
+    background-color: #57ADEB;
+    padding: 5px 12px;
+    display: inline-block;
+    width: 150px;
+    border-radius: 5px;
+    transition: .4s;
     color: white !important;
 }
 
@@ -16,7 +16,7 @@
 
 /* Used to indicate current page */
 .menualt {
-	background-color: rgb(136, 195, 238);
+    background-color: rgb(136, 195, 238);
 }
 
 /* Vantiq Data Table class */
@@ -36,14 +36,15 @@
     box-shadow: none;
     border-color: #2B6E9E;
 }
+
 /* Vantiq Button class */
 .vantiqButton {
     text-transform: none;
     border-radius: 5px;
     background-color: #EBAF57 !important;
     border-width: 0px;
-	color: #FFFFFF !important;
-	padding: 8px;
+    color: #FFFFFF !important;
+    padding: 8px;
 }
 
 .vantiqButtonDisabled {
@@ -51,58 +52,58 @@
     border-radius: 5px;
     background-color: #D9D9D9 !important;
     border-width: 0px;
-	color: #FFFFFF !important;
-	padding: 8px;
+    color: #FFFFFF !important;
+    padding: 8px;
 }
 
 .vantiqButton:hover {
     /* box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19); */
-	background-color: #D19C4E !important;
+    background-color: #D19C4E !important;
 }
 
 /* Vantiq Data Table class row heading */
 .vantiqDataTable th {
-	background: #57ADEB;	
+    background: #57ADEB;
 }
 
 /* Vantiq Data Table alternate row colors odds and evens */
 .vantiqDataTable tr:nth-child(odd) {
-	background: #F5F5F5;	
+    background: #F5F5F5;
 }
 
 .vantiqDataTable tr:nth-child(even) {
-	background: #FFFFFF;	
+    background: #FFFFFF;
 }
 
 /* Sidebar drop shadow */
 div#_SidebarScrollingFrame_ {
-    box-shadow: 4px 8px 10px 1px rgba(0,0,0,0.24);
+    box-shadow: 4px 8px 10px 1px rgba(0, 0, 0, 0.24);
 }
 
 /* Full length of top nav bar */
 .main-header {
-	box-shadow: 3px 4px 10px 0px rgba(0,0,0,0.24);
+    box-shadow: 3px 4px 10px 0px rgba(0, 0, 0, 0.24);
 }
 
 /* The left half of the top header bar */
 .main-header .logo {
-	background-color: #2B6E9E !important;
+    background-color: #2B6E9E !important;
 }
 
 /* The right half of the top header bar */
 .navbar {
-	background-color: #2B6E9E !important;
-	
+    background-color: #2B6E9E !important;
+
 }
 
 .vantiqFlowLayout {
-	border-radius: 5px;
+    border-radius: 5px;
 }
 
 .vantiqVerticalLayout {
-	border-radius: 5px;
+    border-radius: 5px;
 }
 
 .vantiqSidebar {
-	border-radius: 0px 5px 0px 0px;
+    border-radius: 0px 5px 0px 0px;
 }
