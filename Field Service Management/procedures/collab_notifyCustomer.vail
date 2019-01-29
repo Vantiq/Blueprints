@@ -30,7 +30,9 @@ offset = offset - daylight
 var arrivaltime = toDate(workorder.scheduledArrivalDate)
 
 if(result[0].rawOffset > 0){  
-	arrivaltime = arrivaltime.plusMillis(stringToInterval(offset * 1000))
+	//arrivaltime = arrivaltime.plusMillis(stringToInterval(offset * 1000))
+    //Per https://github.com/Vantiq/Blueprints/issues/5
+    arrivaltime = arrivaltime.plusMillis(offset * 1000)
     }
 else {
     arrivaltime = arrivaltime.minusMillis(offset * 1000)
