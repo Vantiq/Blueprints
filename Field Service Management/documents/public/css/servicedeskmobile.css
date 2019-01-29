@@ -6,12 +6,12 @@
 	width:150px;
 	border-radius: 5px;
 	transition: .4s;
-    color: white !important;
+	color: white !important;
 }
 
 .vantiqMenuButton:hover {
-    background-color: rgb(136, 195, 238);
-    transition: .4s;
+	background-color: rgb(136, 195, 238);
+	transition: .4s;
 }
 
 /* Used to indicate current page */
@@ -21,10 +21,10 @@
 
 /* Vantiq Data Table class */
 .vantiqDataTable {
-    border-radius: 5px;
+	border-radius: 5px;
 }
 
-/* Vantiq input text class 
+/* Vantiq input text class
 .vantiqInputString {
     border-radius: 5px;
 }
@@ -32,16 +32,16 @@
 
 /* Similar to vantiqInputString but covers all form elements such as droplists */
 .form-control {
-    border-radius: 5px;
-    box-shadow: none;
-    border-color: #2B6E9E;
+	border-radius: 5px;
+	box-shadow: none;
+	border-color: #2B6E9E;
 }
 /* Vantiq Button class */
 .vantiqButton {
-    text-transform: none;
-    border-radius: 5px;
-    background-color: #EBAF57 !important;
-    border-width: 0px;
+	text-transform: none;
+	border-radius: 5px;
+	background-color: #EBAF57 !important;
+	border-width: 0px;
 	color: #FFFFFF !important;
 	padding: 8px;
 }
@@ -53,21 +53,21 @@
 
 /* Vantiq Data Table class row heading */
 .vantiqDataTable th {
-	background: #57ADEB;	
+	background: #57ADEB;
 }
 
 /* Vantiq Data Table alternate row colors odds and evens */
 .vantiqDataTable tr:nth-child(odd) {
-	background: #F5F5F5;	
+	background: #F5F5F5;
 }
 
 .vantiqDataTable tr:nth-child(even) {
-	background: #FFFFFF;	
+	background: #FFFFFF;
 }
 
 /* Sidebar drop shadow */
 div#_SidebarScrollingFrame_ {
-    box-shadow: 4px 8px 10px 1px rgba(0,0,0,0.24);
+	box-shadow: 4px 8px 10px 1px rgba(0,0,0,0.24);
 }
 
 /* Full length of top nav bar */
@@ -83,7 +83,7 @@ div#_SidebarScrollingFrame_ {
 /* The right half of the top header bar */
 .navbar {
 	background-color: #2B6E9E !important;
-	
+
 }
 
 .signatureImageViewer {
