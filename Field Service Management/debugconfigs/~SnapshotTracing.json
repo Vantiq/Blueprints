@@ -1,7 +1,0 @@
-{
-  "isGlobal" : false,
-  "name" : "~SnapshotTracing",
-  "resources" : [ "/procedures/collab.weightedNearbyRecommendations" ],
-  "type" : "trace",
-  "value" : "enabled"
-}

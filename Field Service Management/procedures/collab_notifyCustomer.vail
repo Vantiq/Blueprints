@@ -29,9 +29,10 @@ var daylight = result[0].dstOffset
 offset = offset - daylight
 var arrivaltime = toDate(workorder.scheduledArrivalDate)
 
-if(result[0].rawOffset > 0){  
-	arrivaltime = arrivaltime.plusMillis(stringToInterval(offset * 1000))
-    }
+if (result[0].rawOffset > 0) {
+    //Per https://github.com/Vantiq/Blueprints/issues/5
+    arrivaltime = arrivaltime.plusMillis(offset * 1000)
+}
 else {
     arrivaltime = arrivaltime.minusMillis(offset * 1000)
 }
@@ -102,7 +103,7 @@ log.info("There are recipients")
         for each n in notifications do 
         if(n.type == "email"){      
             PUBLISH {html: n.body  } TO SOURCE email USING { from: emailsender, to: emailrecipients, subject:n.subject  }
-            }
+        }
         end
     }
 
