@@ -1,0 +1,3 @@
+PROCEDURE cb.getSpaceById(id String)
+
+SELECT ONE FROM spaces WHERE id == id

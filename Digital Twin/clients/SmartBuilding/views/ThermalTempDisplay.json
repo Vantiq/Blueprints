@@ -1,0 +1,60 @@
+{
+  "bodyChildren" : {
+    "rootArray" : [ "b2c93041-bb54-4cf9-8c31-938251e3805b", "e49eb596-ece8-4373-badc-608a59f2b4ed" ],
+    "widgets" : [ {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 2,
+      "defaultMinimumHeight" : 300,
+      "defaultMinimumWidth" : 200,
+      "h" : 100,
+      "heightPolicy" : "explicit",
+      "horzGravity" : "center",
+      "horzizontalScrollPolicy" : "none",
+      "html" : "<p><br></p>",
+      "name" : "StaticHtml172",
+      "type" : "StaticHtml",
+      "uuid" : "b2c93041-bb54-4cf9-8c31-938251e3805b",
+      "v" : 16,
+      "vertGravity" : "center",
+      "verticalScrollPolicy" : "none",
+      "w" : 100,
+      "widthPolicy" : "explicit",
+      "x" : 50,
+      "y" : 50
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "clearOnDataArrive" : true,
+      "dataStreamGroupedByFiltersString" : "",
+      "dataStreamProperty" : "fplocation",
+      "dataStreamUUID" : "086ef4a0-dbfa-40d7-8dc8-8f2cedb9c292",
+      "dataType" : null,
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "imageHeightInLocationUnits" : 25,
+      "imageWidthInLocationUnits" : 30,
+      "isScaleable" : false,
+      "labelProperty" : "id",
+      "name" : "FloorplanViewer864",
+      "naturalKey" : null,
+      "operation" : "insert",
+      "type" : "FloorplanViewer",
+      "url" : "../cmn/img/floorplan.png",
+      "uuid" : "e49eb596-ece8-4373-badc-608a59f2b4ed",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "naturalSize",
+      "x" : 200,
+      "y" : 50
+    } ]
+  },
+  "data" : {
+    "properties" : { }
+  },
+  "footerChildren" : [ ],
+  "hasFooter" : false,
+  "layoutType" : "browser",
+  "responseTopic" : ""
+}

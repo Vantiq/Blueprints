@@ -1,0 +1,14 @@
+PROCEDURE newTransportRequest()
+
+var obj = {
+         "assettype": "Wheelchair",
+         "destinationbuildingid": "8064095f-5301-4a5e-8ded-52c95a2db6e9",
+         "destinationfloorid": "c40b2578-7682-48d9-8ca7-73b40263b4df",
+         "destinationspaceid": "e5c72934-8179-4927-967f-979a74ea1367",
+         "originbuildingid": "8064095f-5301-4a5e-8ded-52c95a2db6e9",
+         "originfloorid": "693c5d33-412a-44c3-84b1-e270b04819aa",
+         "originspaceid": "76f4ae8e-a3b9-41ef-beb2-64aac2c076ba",
+         "patientid": "9853b28c-266b-4fb0-812c-62b2885e2ca4"
+      }
+
+publish obj to topic "/request/transport"

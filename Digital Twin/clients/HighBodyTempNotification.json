@@ -1,0 +1,95 @@
+{
+  "ars_public" : false,
+  "controllers" : {
+    "client" : { },
+    "dataStream" : {
+      "ce_assets" : { }
+    },
+    "page" : {
+      "Start" : {
+        "onStart" : "RELOCATED to controllers/page/Start/onStart.js"
+      }
+    },
+    "topbar" : {
+      "widgets" : { }
+    }
+  },
+  "isLaunchable" : false,
+  "models" : {
+    "dataObjects" : {
+      "__GLOBAL__" : {
+        "properties" : { }
+      },
+      "__PARAMETERS__" : {
+        "properties" : { }
+      }
+    },
+    "dataStreams" : [ {
+      "advancedWhereClause" : null,
+      "dataObjectName" : null,
+      "dataTypeList" : [ {
+        "label" : null,
+        "type" : "assets"
+      } ],
+      "isDeleteOp" : false,
+      "isInsertOp" : false,
+      "isUpdateOp" : false,
+      "maxRecords" : 0,
+      "name" : "ce_assets",
+      "pauseAtStartup" : false,
+      "property" : null,
+      "sortByProperty" : null,
+      "sortDescending" : false,
+      "type" : 5,
+      "updateInterval" : 60,
+      "uuid" : "3bef706e-eaf8-4679-93a4-42982a93b302",
+      "v" : 1
+    } ]
+  },
+  "name" : "HighBodyTempNotification",
+  "options" : {
+    "RELOCATE" : [ {
+      "path" : "controllers",
+      "type" : "js"
+    }, {
+      "path" : "views",
+      "type" : "json"
+    }, {
+      "path" : "options.topbar",
+      "type" : "jsonObj"
+    } ],
+    "badgeCount" : 0,
+    "description" : "",
+    "displayName" : "High Body Temperature",
+    "docAssets" : [ "public/navbarlogo/blueprintlogo.png" ],
+    "hasTopbar" : true,
+    "paletteCollapsed" : false,
+    "productV" : "7.2",
+    "showCategoryButtons" : true,
+    "showCategoryDataDisplay" : true,
+    "showCategoryDataInput" : false,
+    "showCategoryLayout" : true,
+    "showGridWhileEditing" : false,
+    "theme" : {
+      "backgroundColor" : "#ffffff",
+      "borderColor" : "#d3d6db",
+      "cardAccentColor" : "#ffffff",
+      "cardColor" : "#3c424d",
+      "dataDisplayColor" : "#ffffff",
+      "dataDisplayColors" : [ "#3cbce1", "#996db8", "#86d557", "#ff9800", "#425b71", "#cc467c", "#01aa93", "#ffca28", "#f583a9", "#1c84d4", "#ff6767", "#4caf50" ],
+      "dataInputColor" : "#ffffff",
+      "foregroundColor" : "#566076",
+      "label" : "Light",
+      "name" : "light",
+      "titleBarColor" : "#dddddd",
+      "v" : 3
+    },
+    "topbar" : "RELOCATED to options/topbar.json",
+    "v" : 5
+  },
+  "targetDevice" : "mobile",
+  "userList" : [ ],
+  "views" : {
+    "Start" : "RELOCATED to views/Start.json"
+  }
+}

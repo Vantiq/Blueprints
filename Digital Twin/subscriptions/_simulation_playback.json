@@ -1,0 +1,9 @@
+{
+  "name" : "_simulation_playback",
+  "operation" : "publish",
+  "properties" : [ {
+    "name" : "/simulation/playback",
+    "type" : ""
+  } ],
+  "type" : ""
+}

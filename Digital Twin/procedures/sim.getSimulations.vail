@@ -1,0 +1,3 @@
+PROCEDURE sim.getSimulations()
+
+SELECT count=count() FROM movementsimulations GROUP BY name

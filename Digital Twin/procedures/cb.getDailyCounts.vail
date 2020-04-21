@@ -1,0 +1,9 @@
+PROCEDURE cb.getDailyCounts()
+
+var obj ={}
+SELECT count=count() FROM cameraevents WHERE temperature >= 99
+obj.rejected = cameraevents[0].count
+SELECT count=count() FROM cameraevents WHERE temperature < 99
+obj.accepted = cameraevents[0].count
+
+return obj

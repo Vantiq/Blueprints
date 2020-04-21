@@ -1,0 +1,161 @@
+{
+  "contents" : {
+    "groups" : [ {
+      "members" : [ "fca77ef3-d339-43a2-90e4-c017c52eedf6", "caf351a6-4433-4801-a7e1-a632ddae2caa", "1b780316-175e-4c78-82ed-d41d977beb42", "775e8cbc-130d-4701-805d-8befdda9a882", "a31471e5-c34d-4c21-8d6d-c815d2e1a64e", "fa5f240a-522b-45bd-9282-2f4a902ec653", "3d9b6029-a5c5-43a6-804d-0982c8306bc6", "04c90bab-568c-4be2-81c8-ae473b1b4685", "14147473-a812-427b-86ea-c937d2c79c2e", "383f73b3-e8d9-4ed7-bd20-7b9052a98fd1", "4be2e5a2-30d6-41a0-a13f-1c514c7c3812" ],
+      "name" : "HSAPP",
+      "selected" : true
+    } ],
+    "links" : [ {
+      "from" : "caf351a6-4433-4801-a7e1-a632ddae2caa",
+      "to" : "1b780316-175e-4c78-82ed-d41d977beb42"
+    }, {
+      "from" : "1b780316-175e-4c78-82ed-d41d977beb42",
+      "to" : "775e8cbc-130d-4701-805d-8befdda9a882"
+    }, {
+      "from" : "775e8cbc-130d-4701-805d-8befdda9a882",
+      "to" : "fa5f240a-522b-45bd-9282-2f4a902ec653"
+    }, {
+      "from" : "1b780316-175e-4c78-82ed-d41d977beb42",
+      "to" : "a31471e5-c34d-4c21-8d6d-c815d2e1a64e"
+    }, {
+      "from" : "a31471e5-c34d-4c21-8d6d-c815d2e1a64e",
+      "to" : "3d9b6029-a5c5-43a6-804d-0982c8306bc6"
+    }, {
+      "from" : "3d9b6029-a5c5-43a6-804d-0982c8306bc6",
+      "to" : "04c90bab-568c-4be2-81c8-ae473b1b4685"
+    }, {
+      "from" : "04c90bab-568c-4be2-81c8-ae473b1b4685",
+      "to" : "14147473-a812-427b-86ea-c937d2c79c2e"
+    } ],
+    "objects" : [ {
+      "eventType" : "sources",
+      "h" : 100,
+      "label" : "Hand Sanitizer Station",
+      "type" : 27,
+      "uuid" : "fca77ef3-d339-43a2-90e4-c017c52eedf6",
+      "w" : 100,
+      "x" : -9572,
+      "y" : -9818.5
+    }, {
+      "eventType" : "topics",
+      "h" : 100,
+      "label" : "HS Level Received",
+      "resourceName" : "/hs/data",
+      "type" : 24,
+      "uuid" : "caf351a6-4433-4801-a7e1-a632ddae2caa",
+      "w" : 100,
+      "x" : -9443.5,
+      "y" : -9818
+    }, {
+      "description" : "Transform the data for evaluation",
+      "h" : 100,
+      "label" : "Transform",
+      "reactionTask" : "Transformation",
+      "reactionType" : 1,
+      "type" : 25,
+      "uuid" : "1b780316-175e-4c78-82ed-d41d977beb42",
+      "w" : 100,
+      "x" : -9314.946304503426,
+      "y" : -9819.446304503426
+    }, {
+      "h" : 100,
+      "label" : "Over 90 Percent Full",
+      "reactionTask" : "Threshold",
+      "reactionType" : 1,
+      "type" : 25,
+      "uuid" : "775e8cbc-130d-4701-805d-8befdda9a882",
+      "w" : 100,
+      "x" : -9179.5,
+      "y" : -9883
+    }, {
+      "h" : 100,
+      "label" : "Under 30 Percent Full",
+      "reactionTask" : "Threshold",
+      "reactionType" : 1,
+      "type" : 25,
+      "uuid" : "a31471e5-c34d-4c21-8d6d-c815d2e1a64e",
+      "w" : 100,
+      "x" : -9181,
+      "y" : -9758.464547427951
+    }, {
+      "h" : 100,
+      "label" : "Close Issue",
+      "reactionTask" : "Procedure",
+      "reactionType" : 1,
+      "type" : 25,
+      "uuid" : "fa5f240a-522b-45bd-9282-2f4a902ec653",
+      "w" : 100,
+      "x" : -9042.324060021352,
+      "y" : -9884.059899238086
+    }, {
+      "h" : 100,
+      "label" : "Find Maintenance Worker",
+      "reactionTask" : "Recommendation",
+      "reactionType" : 2,
+      "type" : 25,
+      "uuid" : "3d9b6029-a5c5-43a6-804d-0982c8306bc6",
+      "w" : 100,
+      "x" : -9044.258419854512,
+      "y" : -9761.340518994453
+    }, {
+      "h" : 100,
+      "label" : "Notify Maintenance",
+      "reactionTask" : "Notification",
+      "reactionType" : 2,
+      "type" : 25,
+      "uuid" : "04c90bab-568c-4be2-81c8-ae473b1b4685",
+      "w" : 100,
+      "x" : -8901.074291087263,
+      "y" : -9758.447915136296
+    }, {
+      "h" : 100,
+      "label" : "Assign Work",
+      "reactionTask" : "Assignment",
+      "reactionType" : 2,
+      "type" : 25,
+      "uuid" : "14147473-a812-427b-86ea-c937d2c79c2e",
+      "w" : 100,
+      "x" : -8760.639004744668,
+      "y" : -9759.008696811534
+    }, {
+      "h" : 100,
+      "label" : "Format object for evaluation of rules",
+      "type" : 28,
+      "uuid" : "383f73b3-e8d9-4ed7-bd20-7b9052a98fd1",
+      "w" : 100,
+      "x" : -9313.506246985327,
+      "y" : -9704.610568096072
+    }, {
+      "h" : 100,
+      "label" : "Assign work to transporter who accepts",
+      "type" : 28,
+      "uuid" : "4be2e5a2-30d6-41a0-a13f-1c514c7c3812",
+      "w" : 100,
+      "x" : -8764.232478756783,
+      "y" : -9872.537140297238
+    } ],
+    "prefs" : {
+      "customTheme" : {
+        "label" : "Custom",
+        "name" : "custom",
+        "noteColors" : [ "#d0d3da", "#d0d3da", "#d0d3da", "#d0d3da", "#d0d3da" ]
+      },
+      "scaleAndTranslationState" : {
+        "lastZoomRequest" : 0,
+        "scale" : 1.4947009008621968,
+        "translate" : [ 14411.9060861133, 14986.48978692108 ]
+      },
+      "showGroups" : true,
+      "theme" : {
+        "label" : "Standard",
+        "name" : "standard",
+        "noteColors" : [ "#FDAB43", "#F1509A", "#56BFC0", "#F583A9", "#FF4B62" ]
+      },
+      "themeName" : "standard"
+    },
+    "timestamp" : "2020-04-06T20:23:56.048Z"
+  },
+  "description" : "No description given",
+  "journals" : [ ],
+  "name" : "SaniterRefill"
+}

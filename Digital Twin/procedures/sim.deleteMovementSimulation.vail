@@ -1,0 +1,3 @@
+PROCEDURE sim.deleteMovementSimulation(name String)
+
+DELETE movementsimulations WHERE name == name

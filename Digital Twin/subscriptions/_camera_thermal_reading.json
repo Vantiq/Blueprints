@@ -1,0 +1,9 @@
+{
+  "name" : "_camera_thermal_reading",
+  "operation" : "publish",
+  "properties" : [ {
+    "name" : "/camera/thermal/reading",
+    "type" : ""
+  } ],
+  "type" : ""
+}

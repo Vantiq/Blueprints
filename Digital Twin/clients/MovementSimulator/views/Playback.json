@@ -1,0 +1,126 @@
+{
+  "bodyChildren" : {
+    "rootArray" : [ "55b3ff62-92e1-4e23-8793-bff0fefa28e2", "fadd759c-2c95-49d9-80fb-abc975537688", "08adbea9-6ddc-48ca-a785-6715492db220" ],
+    "widgets" : [ {
+      "binding" : "page.data.floorid",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "inputType" : "text",
+      "label" : "floorid",
+      "name" : "InputString11355",
+      "optional" : true,
+      "placeholder" : "",
+      "type" : "InputString",
+      "uuid" : "08adbea9-6ddc-48ca-a785-6715492db220",
+      "v" : 16,
+      "vertGravity" : "center",
+      "w" : 501,
+      "widthPolicy" : "explicit",
+      "x" : 39,
+      "y" : 708
+    }, {
+      "backgroundColor" : "default",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 1,
+      "cellFontColor" : "default",
+      "cellFontFace" : "inherit",
+      "cellFontSize" : 14,
+      "cellFontStyle" : "plain",
+      "clearOnDataArrive" : true,
+      "columnDescriptors" : [ {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "name",
+        "selected" : false,
+        "title" : "name"
+      }, {
+        "buttonIcon" : "fa-play",
+        "buttonLabel" : "Play",
+        "colorRules" : null,
+        "dataType" : "Button",
+        "isLinkStyle" : true,
+        "propertyName" : "ButtonPlay",
+        "selected" : false,
+        "title" : "Action"
+      }, {
+        "buttonIcon" : "fa-times-circle-o",
+        "buttonLabel" : "Delete",
+        "colorRules" : null,
+        "dataType" : "Button",
+        "isLinkStyle" : true,
+        "propertyName" : "ButtonDelete",
+        "selected" : false,
+        "title" : ""
+      } ],
+      "columnSort" : true,
+      "dataStreamGroupedByFiltersString" : "",
+      "dataStreamUUID" : "ae54db25-3144-4b4e-9940-1e26a3e7b645",
+      "dataType" : null,
+      "headerFontColor" : "default",
+      "headerFontFace" : "inherit",
+      "headerFontSize" : 14,
+      "headerFontStyle" : "plain",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "DataTable2659",
+      "operation" : "insert",
+      "rowsPerPage" : 15,
+      "showPaging" : true,
+      "type" : "DataTable",
+      "uuid" : "55b3ff62-92e1-4e23-8793-bff0fefa28e2",
+      "v" : 16,
+      "vertGravity" : "center",
+      "w" : 500,
+      "widthPolicy" : "explicit",
+      "x" : 41,
+      "y" : 41
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "dataStreamGroupedByFiltersString" : "",
+      "dataStreamProperty" : "fplocation",
+      "dataStreamUUID" : "2711f364-8e3e-4265-b9f8-f2f42edbf292",
+      "dataType" : null,
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "imageHeightInLocationUnits" : 25,
+      "imageWidthInLocationUnits" : 30,
+      "isScaleable" : false,
+      "labelProperty" : "name",
+      "name" : "FloorplanViewer661",
+      "naturalKey" : null,
+      "operation" : "insert",
+      "type" : "FloorplanViewer",
+      "url" : "../cmn/img/floorplan.png",
+      "uuid" : "fadd759c-2c95-49d9-80fb-abc975537688",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "naturalSize",
+      "x" : 581,
+      "y" : 42
+    } ]
+  },
+  "data" : {
+    "properties" : {
+      "floorid" : {
+        "defaultLabel" : "floorid",
+        "defaultValue" : "",
+        "type" : "String"
+      },
+      "planmap" : {
+        "defaultLabel" : "planmap",
+        "type" : "Object"
+      }
+    }
+  },
+  "footerChildren" : [ ],
+  "hasFooter" : false,
+  "layoutType" : "browser",
+  "responseTopic" : ""
+}

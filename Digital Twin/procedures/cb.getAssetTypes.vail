@@ -1,0 +1,3 @@
+PROCEDURE cb.getAssetTypes()
+
+SELECT FROM assettypes ORDER BY name

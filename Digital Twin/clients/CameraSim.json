@@ -1,0 +1,157 @@
+{
+  "ars_properties" : {
+    "tags" : [ "#launchable" ]
+  },
+  "ars_public" : false,
+  "controllers" : {
+    "client" : {
+      "customCode" : "RELOCATED to controllers/client/customCode.js",
+      "onAssetsLoaded" : "RELOCATED to controllers/client/onAssetsLoaded.js"
+    },
+    "dataStream" : { },
+    "page" : {
+      "Start" : {
+        "onClientStart" : "RELOCATED to controllers/page/Start/onClientStart.js",
+        "onStart" : "RELOCATED to controllers/page/Start/onStart.js"
+      }
+    },
+    "topbar" : {
+      "widgets" : { }
+    }
+  },
+  "isLaunchable" : true,
+  "models" : {
+    "dataObjects" : {
+      "__GLOBAL__" : {
+        "properties" : {
+          "ht" : {
+            "defaultLabel" : "ht",
+            "defaultValue" : false,
+            "type" : "Boolean"
+          },
+          "person" : {
+            "defaultLabel" : "person",
+            "type" : "TypedObject",
+            "typedObject" : {
+              "properties" : {
+                "assetid" : {
+                  "defaultLabel" : "assetid",
+                  "defaultValue" : "",
+                  "type" : "String"
+                },
+                "firstname" : {
+                  "defaultLabel" : "firstname",
+                  "defaultValue" : "",
+                  "type" : "String"
+                },
+                "id" : {
+                  "defaultLabel" : "id",
+                  "defaultValue" : "",
+                  "type" : "String"
+                },
+                "lastname" : {
+                  "defaultLabel" : "lastname",
+                  "defaultValue" : "",
+                  "type" : "String"
+                },
+                "meta" : {
+                  "defaultLabel" : "meta",
+                  "type" : "Object"
+                },
+                "photopath" : {
+                  "defaultLabel" : "photopath",
+                  "defaultValue" : "",
+                  "type" : "String"
+                },
+                "photothumbnailpath" : {
+                  "defaultLabel" : "photothumbnailpath",
+                  "defaultValue" : "",
+                  "type" : "String"
+                },
+                "roles" : {
+                  "defaultLabel" : "roles",
+                  "isArray" : true,
+                  "type" : "Object"
+                },
+                "typerefs" : {
+                  "defaultLabel" : "typerefs",
+                  "defaultValue" : "",
+                  "isArray" : true,
+                  "type" : "String"
+                },
+                "uid" : {
+                  "defaultLabel" : "uid",
+                  "defaultValue" : "",
+                  "type" : "String"
+                },
+                "userId" : {
+                  "defaultLabel" : "userId",
+                  "defaultValue" : "",
+                  "type" : "String"
+                }
+              },
+              "type" : "personnel"
+            }
+          },
+          "user" : {
+            "defaultLabel" : "user",
+            "defaultValue" : false,
+            "type" : "Boolean"
+          }
+        }
+      },
+      "__PARAMETERS__" : {
+        "properties" : { }
+      }
+    },
+    "dataStreams" : [ ]
+  },
+  "name" : "CameraSim",
+  "options" : {
+    "RELOCATE" : [ {
+      "path" : "controllers",
+      "type" : "js"
+    }, {
+      "path" : "views",
+      "type" : "json"
+    }, {
+      "path" : "options.topbar",
+      "type" : "jsonObj"
+    } ],
+    "badgeCount" : 0,
+    "cssAssets" : [ "../../docs/public/css/camera.css" ],
+    "description" : "",
+    "displayName" : "GiConnect Thermal Camera Sim",
+    "docAssets" : [ "public/build/data/face-min.js", "public/build/tracking-min.js", "public/css/camera.css" ],
+    "hasTopbar" : true,
+    "jsAssets" : [ "../../docs/public/build/tracking-min.js", "../../docs/public/build/data/face-min.js" ],
+    "paletteCollapsed" : false,
+    "productV" : "7.2",
+    "showCategoryButtons" : true,
+    "showCategoryDataDisplay" : true,
+    "showCategoryDataInput" : true,
+    "showCategoryLayout" : true,
+    "showGridWhileEditing" : false,
+    "theme" : {
+      "backgroundColor" : "#aba9a9",
+      "borderColor" : "#d3d6db",
+      "cardAccentColor" : "#ffffff",
+      "cardColor" : "#3c424d",
+      "dataDisplayColor" : "#ffffff",
+      "dataDisplayColors" : [ "#3cbce1", "#996db8", "#86d557", "#ff9800", "#425b71", "#cc467c", "#01aa93", "#ffca28", "#f583a9", "#1c84d4", "#ff6767", "#4caf50" ],
+      "dataInputColor" : "#ffffff",
+      "foregroundColor" : "#566076",
+      "label" : "Custom",
+      "name" : "custom",
+      "titleBarColor" : "#dddddd",
+      "v" : 3
+    },
+    "topbar" : "RELOCATED to options/topbar.json",
+    "v" : 5
+  },
+  "targetDevice" : "browser",
+  "userList" : [ ],
+  "views" : {
+    "Start" : "RELOCATED to views/Start.json"
+  }
+}

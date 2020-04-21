@@ -1,0 +1,80 @@
+[ {
+  "config" : {
+    "display" : {
+      "config" : {
+        "highColor" : "#00cc00",
+        "highZones" : "50:100",
+        "lowColor" : "#ff0000",
+        "lowZones" : "0:30",
+        "maximum" : 100,
+        "mediumColor" : "#ffff00",
+        "mediumZones" : "30:50",
+        "minimum" : 0,
+        "title" : "% Full"
+      },
+      "page" : "GuageDisplay"
+    },
+    "rules" : {
+      "full" : {
+        "gte" : 90
+      },
+      "low" : {
+        "lte" : 29
+      }
+    }
+  },
+  "id" : "5fa2d0bf-d998-4aae-8ace-ad4ae89eb475",
+  "name" : "Hand Sanitizer Config",
+  "sensortypename" : "Volume"
+}, {
+  "config" : {
+    "display" : {
+      "config" : {
+        "highColor" : "#ff0000",
+        "highZones" : "50:100",
+        "lowColor" : "#00cc00",
+        "lowZones" : "0:30",
+        "maximum" : 100,
+        "mediumColor" : "#ffff00",
+        "mediumZones" : "30:50",
+        "minimum" : 0,
+        "title" : "% Full"
+      },
+      "page" : "GuageDisplay"
+    },
+    "rules" : {
+      "full" : {
+        "gte" : 90
+      }
+    }
+  },
+  "id" : "1dccbdc4-beca-48bb-a05e-7a01fc85461f",
+  "name" : "Trash Empty Config",
+  "sensortypename" : "Volume"
+}, {
+  "config" : {
+    "display" : {
+      "config" : { },
+      "page" : "ThermalTempDisplay"
+    },
+    "rules" : {
+      "high" : {
+        "gt" : 98.9
+      }
+    }
+  },
+  "id" : "32c28980-8475-41ff-a4a6-3b10ef9c3c5f",
+  "name" : "Body Temp",
+  "sensortypename" : "Temperature"
+}, {
+  "config" : {
+    "display" : {
+      "config" : { },
+      "page" : "FloorplanDisplay"
+    },
+    "rules" : { }
+  },
+  "id" : "d2333f13-cdd4-402a-ad32-20d5b5b85667",
+  "name" : "Indoor Location",
+  "sensortypename" : "IndoorLocation"
+} ]

@@ -1,0 +1,3 @@
+PROCEDURE app.checkForHighTemp(event Object)
+
+return event

@@ -1,0 +1,9 @@
+PROCEDURE app.lookupPersonnel(event Object)
+
+SELECT ONE FROM personnel WHERE id == event.userId
+
+event.userData = personnel
+
+return event
+
+

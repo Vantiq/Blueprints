@@ -1,0 +1,3 @@
+PROCEDURE cb.getSpacesForFloor(floorid String)
+
+SELECT FROM spaces WHERE floorid == floorid ORDER BY name

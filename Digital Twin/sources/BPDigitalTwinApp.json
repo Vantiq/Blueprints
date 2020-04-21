@@ -1,0 +1,18 @@
+{
+  "activationConstraint" : "",
+  "active" : true,
+  "ars_properties" : null,
+  "config" : {
+    "passwordType" : "string",
+    "pollingInterval" : 0,
+    "query" : { },
+    "requestDefaults" : {
+      "method" : "POST"
+    },
+    "uri" : "https://internal.vantiq.com/api/v1/resources/documents"
+  },
+  "direction" : "BOTH",
+  "messageType" : null,
+  "name" : "BPDigitalTwinApp",
+  "type" : "REMOTE"
+}

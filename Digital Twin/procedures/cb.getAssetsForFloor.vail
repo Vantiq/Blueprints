@@ -1,0 +1,44 @@
+PROCEDURE cb.getAssetsForFloor(buildingid String, floorid String, type String)
+
+// doing this set of queries without mongo syntax
+
+
+//log.info("buildingid: " + buildingid)
+//log.info("floorid: " + floorid)
+//log.info("type: " + type)
+var assets = []
+if (floorid AND type){
+    //log.info("floor and type")
+    SELECT FROM assets WHERE floorid == floorid  AND type == type ORDER BY name
+    
+} else if (buildingid AND type){
+    //log.info("building and type")
+    // get all floors for building
+    var floorids = []
+    SELECT FROM floors AS floor WHERE buildingid == buildingid ORDER BY name{
+        push(floorids, floor.id)
+    	SELECT FROM assets WHERE floorid IN floorids AND type == type ORDER BY name
+    }	   
+} else if (floorid){
+    //log.info("floorid")
+    SELECT FROM assets WHERE floorid == floorid ORDER BY type, name 
+} else if (type){
+    SELECT FROM assets WHERE type == type ORDER BY name
+} else if (buildingid){
+    //log.info("buildingid")
+    // get all floors for building
+    var floorids = []
+    SELECT FROM floors AS floor WHERE buildingid == buildingid ORDER BY name{
+        push(floorids, floor.id)
+    	SELECT FROM assets WHERE floorid IN floorids ORDER BY type, name
+    }	
+} else {
+    SELECT FROM assets ORDER BY type, name
+}
+
+return assets
+
+
+
+
+

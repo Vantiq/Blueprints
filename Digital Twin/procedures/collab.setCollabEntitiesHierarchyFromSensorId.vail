@@ -1,0 +1,45 @@
+PROCEDURE collab.setCollabEntitiesHierarchyFromSensorId(collabid String, sensorid String, sensortype String)
+
+var obj ={}
+var entities = {}
+
+
+SELECT ONE FROM sensors WHERE id == sensorid AND type == sensortype 
+obj.sensorREF = {_id:sensors._id}
+entities.sensor = "/sensors/" + sensors._id
+
+
+SELECT ONE FROM assets WHERE id == sensors.assetid
+obj.assetREF = {_id:assets._id}
+entities.asset = "/assets/" + assets._id
+
+
+SELECT ONE FROM floors WHERE id == assets.floorid
+obj.floorsREF = {_id:floors._id}
+entities.floor = "/floors/" + floors._id
+
+SELECT ONE FROM floorplans WHERE id == floors.floorplan
+obj.floorplanREF = {_id:floorplans._id}
+entities.floorplan = "/floorplans/" + floorplans._id
+
+
+var space = findSpaceForAsset(floors.id , assets.fplocation)
+obj.spaceREF = {_id:space._id}
+entities.space = "/spaces/" + space._id
+
+
+SELECT ONE FROM buildings WHERE id == floors.buildingid
+obj.buildingsREF = {_id:buildings._id}
+entities.building = "/buildings/" + buildings._id
+
+SELECT ONE FROM system.collaborations AS collab WHERE id == collabid
+var updateObj = Utils.stripSystemProperties(collab) 
+updateObj.entities = entities
+UPDATE system.collaborations(updateObj) WHERE id == collabid
+
+
+
+
+return obj
+
+

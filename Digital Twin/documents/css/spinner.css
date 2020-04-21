@@ -1,0 +1,53 @@
+/* Center the loader */
+
+.blur{
+        /* Add the blur effect */
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+}
+
+#loader {
+    
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 10;
+  margin: -30px 0 0 -30px;  /* should be half of height and width */
+  border: 6px solid #180469; /* the left and right quarter color of the spinner */
+  border-bottom: 6px solid #f3f3f3; /* the bottom quarter color of the spinner */
+  border-radius: 50%; /* the roundness of corners of the line (50% for circle) */
+  border-top: 6px solid #f3f3f3; /* the top quarter color of the spinner */
+  width: 60px;
+  height: 60px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Add animation to "page content" */
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
+
+@-webkit-keyframes animatebottom {
+  from { bottom:-100px; opacity:0 } 
+  to { bottom:0px; opacity:1 }
+}
+
+@keyframes animatebottom { 
+  from{ bottom:-100px; opacity:0 } 
+  to{ bottom:0; opacity:1 }
+}

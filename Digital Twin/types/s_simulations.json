@@ -1,0 +1,22 @@
+{
+  "ars_properties" : null,
+  "groupBy" : "",
+  "name" : "s_simulations",
+  "properties" : {
+    "count" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "Integer",
+      "unique" : false
+    },
+    "name" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "String",
+      "unique" : false
+    }
+  },
+  "role" : "schema"
+}

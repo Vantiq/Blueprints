@@ -1,0 +1,23 @@
+PROCEDURE cb.getDashboardData()
+
+var obj = {}
+
+SELECT count=count(id) FROM buildings
+obj.buildings = buildings[0].count
+
+SELECT count=count(id) FROM floors
+obj.floors = floors[0].count
+
+SELECT count=count(id) FROM spaces
+obj.spaces = spaces[0].count
+
+SELECT count=count(id) FROM assets
+obj.assets = assets[0].count
+
+SELECT count=count(id) FROM sensors
+obj.sensors = sensors[0].count
+
+SELECT count=count(id) FROM system.collaborations AS collab WHERE status == "active"
+obj.issues = collab[0].count
+
+return obj

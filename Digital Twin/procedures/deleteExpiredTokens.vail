@@ -1,0 +1,24 @@
+PROCEDURE deleteExpiredTokens()
+
+// get the current namespace
+var ns = namespace()
+
+// create an object to return the results
+var results ={}
+
+// get the number of tokens in this namespace before we delete
+SELECT count=count() FROM system.tokens AS token WHERE ars_namespace == ns
+results.tokensbefore=token[0].count
+
+// delete all tokens in namespace (note: we don't need to specify the namespace)
+var nowSecs = date(now(), "date", "epochSeconds")
+DELETE system.tokens WHERE expiresAt < nowSecs
+
+// get the number of tokens in this namespace after we delete
+SELECT count=count() FROM system.tokens AS token WHERE ars_namespace == ns
+results.tokensafter=token[0].count
+
+// return results
+results.deleted = results.tokensbefore - results.tokensafter
+
+return results

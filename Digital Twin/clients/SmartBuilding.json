@@ -1,0 +1,1284 @@
+{
+  "ars_properties" : {
+    "tags" : [ "#launchable" ]
+  },
+  "ars_public" : false,
+  "controllers" : {
+    "client" : {
+      "customCode" : "RELOCATED to controllers/client/customCode.js",
+      "onStart" : "RELOCATED to controllers/client/onStart.js"
+    },
+    "dataStream" : {
+      "ce_assets_AssetAddModify" : { },
+      "ce_assets_AssetView" : { },
+      "ce_assets_Assets" : { },
+      "ce_assets_FloorView" : { },
+      "ce_assets_PersonAddModify" : { },
+      "ce_assets_ThermalTempDisplay" : { },
+      "ce_assettypes_AssetTypeView" : { },
+      "ce_buildings" : { },
+      "ce_buildings_BuildingAddModify" : { },
+      "ce_buildings_BuildingView" : { },
+      "ce_dc_assets" : { },
+      "ce_floorplans_BuildingView" : { },
+      "ce_floors_AssetView" : { },
+      "ce_floors_BuildingView" : { },
+      "ce_floors_SpaceView" : { },
+      "ce_patients_Patients" : { },
+      "ce_personnel_Personnel" : { },
+      "ce_roles_PersonAddModify" : { },
+      "ce_roles_Roles" : { },
+      "ce_s_dashboard" : { },
+      "ce_s_issues_Start" : {
+        "onDataArrived" : "RELOCATED to controllers/dataStream/ce_s_issues_Start/onDataArrived.js"
+      },
+      "ce_s_volumesensor_GuageDisplay" : { },
+      "ce_sensorconfigs_SensorConfigs" : { },
+      "ce_sensors" : { },
+      "ce_sensors_AssetView" : { },
+      "ce_sensors_Sensors" : { },
+      "ce_sensortypes_SensorTypes" : { },
+      "ce_spaces_AssetView" : { },
+      "ce_spaces_FloorView" : { },
+      "ce_spaces_FloorView_floorplan" : { },
+      "ce_spaces_FloorView_showassets" : { },
+      "ce_spaces_SpaceAddModify" : { },
+      "dc_assets" : {
+        "onDataArrived" : "RELOCATED to controllers/dataStream/dc_assets/onDataArrived.js"
+      },
+      "dc_sensors" : {
+        "onDataArrived" : "RELOCATED to controllers/dataStream/dc_sensors/onDataArrived.js"
+      },
+      "dc_system_collaborations" : {
+        "onDataArrived" : "RELOCATED to controllers/dataStream/dc_system_collaborations/onDataArrived.js"
+      },
+      "tq_sensors" : {
+        "onDataArrived" : "RELOCATED to controllers/dataStream/tq_sensors/onDataArrived.js"
+      }
+    },
+    "page" : {
+      "AssetAddModify" : {
+        "onStart" : "RELOCATED to controllers/page/AssetAddModify/onStart.js",
+        "widgets" : {
+          "Button1151" : {
+            "onClick" : "RELOCATED to controllers/page/AssetAddModify/widgets/Button1151/onClick.js"
+          },
+          "Droplist30" : {
+            "onChange" : "RELOCATED to controllers/page/AssetAddModify/widgets/Droplist30/onChange.js"
+          },
+          "Droplist41" : {
+            "onChange" : "RELOCATED to controllers/page/AssetAddModify/widgets/Droplist41/onChange.js"
+          },
+          "Droplist42" : {
+            "onChange" : "RELOCATED to controllers/page/AssetAddModify/widgets/Droplist42/onChange.js"
+          },
+          "FloorplanViewer138" : {
+            "onClick" : "RELOCATED to controllers/page/AssetAddModify/widgets/FloorplanViewer138/onClick.js"
+          }
+        }
+      },
+      "AssetTypeAddModify" : {
+        "onStart" : "RELOCATED to controllers/page/AssetTypeAddModify/onStart.js",
+        "widgets" : {
+          "Button848" : {
+            "onClick" : "RELOCATED to controllers/page/AssetTypeAddModify/widgets/Button848/onClick.js"
+          }
+        }
+      },
+      "AssetTypeView" : {
+        "onStart" : "RELOCATED to controllers/page/AssetTypeView/onStart.js",
+        "widgets" : {
+          "Button868" : {
+            "onClick" : "RELOCATED to controllers/page/AssetTypeView/widgets/Button868/onClick.js"
+          },
+          "DataTable318" : {
+            "onButtonClickCallback" : "RELOCATED to controllers/page/AssetTypeView/widgets/DataTable318/onButtonClickCallback.js"
+          }
+        }
+      },
+      "AssetView" : {
+        "onStart" : "RELOCATED to controllers/page/AssetView/onStart.js",
+        "widgets" : {
+          "Button2054" : {
+            "onClick" : "RELOCATED to controllers/page/AssetView/widgets/Button2054/onClick.js"
+          },
+          "Button2055" : {
+            "onClick" : "RELOCATED to controllers/page/AssetView/widgets/Button2055/onClick.js"
+          },
+          "Button8939" : {
+            "onClick" : "RELOCATED to controllers/page/AssetView/widgets/Button8939/onClick.js"
+          },
+          "DataTable1866" : {
+            "onButtonClickCallback" : "RELOCATED to controllers/page/AssetView/widgets/DataTable1866/onButtonClickCallback.js"
+          }
+        }
+      },
+      "Assets" : {
+        "onStart" : "RELOCATED to controllers/page/Assets/onStart.js",
+        "widgets" : {
+          "Button1129" : {
+            "onClick" : "RELOCATED to controllers/page/Assets/widgets/Button1129/onClick.js"
+          },
+          "DataTable394" : {
+            "onButtonClickCallback" : "RELOCATED to controllers/page/Assets/widgets/DataTable394/onButtonClickCallback.js"
+          },
+          "Droplist1939" : {
+            "onChange" : "RELOCATED to controllers/page/Assets/widgets/Droplist1939/onChange.js"
+          },
+          "Droplist974" : {
+            "onChange" : "RELOCATED to controllers/page/Assets/widgets/Droplist974/onChange.js"
+          },
+          "Droplist975" : {
+            "onChange" : "RELOCATED to controllers/page/Assets/widgets/Droplist975/onChange.js"
+          }
+        }
+      },
+      "BuildingAddModify" : {
+        "onStart" : "RELOCATED to controllers/page/BuildingAddModify/onStart.js",
+        "widgets" : {
+          "Button8" : {
+            "onClick" : "RELOCATED to controllers/page/BuildingAddModify/widgets/Button8/onClick.js"
+          },
+          "MultilineInput1" : {
+            "onChange" : "RELOCATED to controllers/page/BuildingAddModify/widgets/MultilineInput1/onChange.js"
+          }
+        }
+      },
+      "BuildingView" : {
+        "onStart" : "RELOCATED to controllers/page/BuildingView/onStart.js",
+        "widgets" : {
+          "Button111" : {
+            "onClick" : "RELOCATED to controllers/page/BuildingView/widgets/Button111/onClick.js"
+          },
+          "Button112" : {
+            "onClick" : "RELOCATED to controllers/page/BuildingView/widgets/Button112/onClick.js"
+          },
+          "Button538" : {
+            "onClick" : "RELOCATED to controllers/page/BuildingView/widgets/Button538/onClick.js"
+          },
+          "Button665" : {
+            "onClick" : "RELOCATED to controllers/page/BuildingView/widgets/Button665/onClick.js"
+          },
+          "DataTable110" : {
+            "onButtonClickCallback" : "RELOCATED to controllers/page/BuildingView/widgets/DataTable110/onButtonClickCallback.js"
+          },
+          "DataTable38" : {
+            "onButtonClickCallback" : "RELOCATED to controllers/page/BuildingView/widgets/DataTable38/onButtonClickCallback.js"
+          }
+        }
+      },
+      "Buildings" : {
+        "onStart" : "RELOCATED to controllers/page/Buildings/onStart.js",
+        "widgets" : {
+          "Button3" : {
+            "onClick" : "RELOCATED to controllers/page/Buildings/widgets/Button3/onClick.js"
+          },
+          "DataTable1" : {
+            "onButtonClickCallback" : "RELOCATED to controllers/page/Buildings/widgets/DataTable1/onButtonClickCallback.js"
+          }
+        }
+      },
+      "FloorAddModify" : {
+        "onStart" : "RELOCATED to controllers/page/FloorAddModify/onStart.js",
+        "widgets" : {
+          "Button145" : {
+            "onClick" : "RELOCATED to controllers/page/FloorAddModify/widgets/Button145/onClick.js"
+          },
+          "Droplist1" : {
+            "onChange" : "RELOCATED to controllers/page/FloorAddModify/widgets/Droplist1/onChange.js"
+          }
+        }
+      },
+      "FloorPlanAddModify" : {
+        "onStart" : "RELOCATED to controllers/page/FloorPlanAddModify/onStart.js",
+        "widgets" : {
+          "Button689" : {
+            "onClick" : "RELOCATED to controllers/page/FloorPlanAddModify/widgets/Button689/onClick.js"
+          },
+          "Button723" : {
+            "onClick" : "RELOCATED to controllers/page/FloorPlanAddModify/widgets/Button723/onClick.js"
+          }
+        }
+      },
+      "FloorPlanView" : {
+        "onStart" : "RELOCATED to controllers/page/FloorPlanView/onStart.js",
+        "widgets" : {
+          "Button828" : {
+            "onClick" : "RELOCATED to controllers/page/FloorPlanView/widgets/Button828/onClick.js"
+          }
+        }
+      },
+      "FloorView" : {
+        "onStart" : "RELOCATED to controllers/page/FloorView/onStart.js",
+        "widgets" : {
+          "Button274" : {
+            "onClick" : "RELOCATED to controllers/page/FloorView/widgets/Button274/onClick.js"
+          },
+          "Button275" : {
+            "onClick" : "RELOCATED to controllers/page/FloorView/widgets/Button275/onClick.js"
+          },
+          "Button537" : {
+            "onClick" : "RELOCATED to controllers/page/FloorView/widgets/Button537/onClick.js"
+          },
+          "Button9048" : {
+            "onClick" : "RELOCATED to controllers/page/FloorView/widgets/Button9048/onClick.js"
+          },
+          "DataTable653" : {
+            "onButtonClickCallback" : "RELOCATED to controllers/page/FloorView/widgets/DataTable653/onButtonClickCallback.js"
+          },
+          "DataTable91" : {
+            "onButtonClickCallback" : "RELOCATED to controllers/page/FloorView/widgets/DataTable91/onButtonClickCallback.js"
+          },
+          "Droplist234" : {
+            "onChange" : "RELOCATED to controllers/page/FloorView/widgets/Droplist234/onChange.js"
+          },
+          "FloorplanViewer9" : {
+            "onClick" : "RELOCATED to controllers/page/FloorView/widgets/FloorplanViewer9/onClick.js"
+          }
+        }
+      },
+      "FloorplanDisplay" : {
+        "onEnd" : "RELOCATED to controllers/page/FloorplanDisplay/onEnd.js",
+        "onStart" : "RELOCATED to controllers/page/FloorplanDisplay/onStart.js",
+        "widgets" : { }
+      },
+      "GuageDisplay" : {
+        "onEnd" : "RELOCATED to controllers/page/GuageDisplay/onEnd.js",
+        "onStart" : "RELOCATED to controllers/page/GuageDisplay/onStart.js",
+        "widgets" : { }
+      },
+      "Organization" : {
+        "onStart" : "RELOCATED to controllers/page/Organization/onStart.js",
+        "widgets" : {
+          "Button1" : {
+            "onClick" : "RELOCATED to controllers/page/Organization/widgets/Button1/onClick.js"
+          },
+          "Button9138" : {
+            "onClick" : "RELOCATED to controllers/page/Organization/widgets/Button9138/onClick.js"
+          },
+          "InputString8599" : {
+            "onChange" : "RELOCATED to controllers/page/Organization/widgets/InputString8599/onChange.js"
+          },
+          "StaticImage39" : {
+            "onClick" : "RELOCATED to controllers/page/Organization/widgets/StaticImage39/onClick.js"
+          }
+        }
+      },
+      "PersonAddModify" : {
+        "onStart" : "RELOCATED to controllers/page/PersonAddModify/onStart.js",
+        "widgets" : {
+          "Button6468" : {
+            "onClick" : "RELOCATED to controllers/page/PersonAddModify/widgets/Button6468/onClick.js"
+          },
+          "Button7159" : {
+            "onClick" : "RELOCATED to controllers/page/PersonAddModify/widgets/Button7159/onClick.js"
+          },
+          "Checkbox98" : {
+            "onChange" : "RELOCATED to controllers/page/PersonAddModify/widgets/Checkbox98/onChange.js"
+          },
+          "DataTable1725" : {
+            "onButtonClickCallback" : "RELOCATED to controllers/page/PersonAddModify/widgets/DataTable1725/onButtonClickCallback.js"
+          }
+        }
+      },
+      "Personnel" : {
+        "onStart" : "RELOCATED to controllers/page/Personnel/onStart.js",
+        "widgets" : {
+          "Button6498" : {
+            "onClick" : "RELOCATED to controllers/page/Personnel/widgets/Button6498/onClick.js"
+          },
+          "DataTable1534" : {
+            "onButtonClickCallback" : "RELOCATED to controllers/page/Personnel/widgets/DataTable1534/onButtonClickCallback.js"
+          }
+        }
+      },
+      "RoleAddModify" : {
+        "onStart" : "RELOCATED to controllers/page/RoleAddModify/onStart.js",
+        "widgets" : {
+          "Button6073" : {
+            "onClick" : "RELOCATED to controllers/page/RoleAddModify/widgets/Button6073/onClick.js"
+          }
+        }
+      },
+      "Roles" : {
+        "onStart" : "RELOCATED to controllers/page/Roles/onStart.js",
+        "widgets" : {
+          "Button6074" : {
+            "onClick" : "RELOCATED to controllers/page/Roles/widgets/Button6074/onClick.js"
+          },
+          "DataTable1398" : {
+            "onButtonClickCallback" : "RELOCATED to controllers/page/Roles/widgets/DataTable1398/onButtonClickCallback.js"
+          }
+        }
+      },
+      "SensorAddModify" : {
+        "onStart" : "RELOCATED to controllers/page/SensorAddModify/onStart.js",
+        "widgets" : {
+          "Button7940" : {
+            "onClick" : "RELOCATED to controllers/page/SensorAddModify/widgets/Button7940/onClick.js"
+          },
+          "Droplist1435" : {
+            "onChange" : "RELOCATED to controllers/page/SensorAddModify/widgets/Droplist1435/onChange.js"
+          },
+          "Droplist2113" : {
+            "onChange" : "RELOCATED to controllers/page/SensorAddModify/widgets/Droplist2113/onChange.js"
+          }
+        }
+      },
+      "SensorConfigAddModify" : {
+        "onStart" : "RELOCATED to controllers/page/SensorConfigAddModify/onStart.js",
+        "widgets" : {
+          "Button9385" : {
+            "onClick" : "RELOCATED to controllers/page/SensorConfigAddModify/widgets/Button9385/onClick.js"
+          }
+        }
+      },
+      "SensorConfigs" : {
+        "onStart" : "RELOCATED to controllers/page/SensorConfigs/onStart.js",
+        "widgets" : {
+          "Button9267" : {
+            "onClick" : "RELOCATED to controllers/page/SensorConfigs/widgets/Button9267/onClick.js"
+          },
+          "DataTable2290" : {
+            "onButtonClickCallback" : "RELOCATED to controllers/page/SensorConfigs/widgets/DataTable2290/onButtonClickCallback.js"
+          }
+        }
+      },
+      "SensorTypeAddModify" : {
+        "onStart" : "RELOCATED to controllers/page/SensorTypeAddModify/onStart.js",
+        "widgets" : {
+          "Button7536" : {
+            "onClick" : "RELOCATED to controllers/page/SensorTypeAddModify/widgets/Button7536/onClick.js"
+          }
+        }
+      },
+      "SensorTypes" : {
+        "onStart" : "RELOCATED to controllers/page/SensorTypes/onStart.js",
+        "widgets" : {
+          "Button7439" : {
+            "onClick" : "RELOCATED to controllers/page/SensorTypes/widgets/Button7439/onClick.js"
+          },
+          "DataTable1826" : {
+            "onButtonClickCallback" : "RELOCATED to controllers/page/SensorTypes/widgets/DataTable1826/onButtonClickCallback.js"
+          }
+        }
+      },
+      "Sensors" : {
+        "onStart" : "RELOCATED to controllers/page/Sensors/onStart.js",
+        "widgets" : {
+          "Button7735" : {
+            "onClick" : "RELOCATED to controllers/page/Sensors/widgets/Button7735/onClick.js"
+          },
+          "DataTable1825" : {
+            "onButtonClickCallback" : "RELOCATED to controllers/page/Sensors/widgets/DataTable1825/onButtonClickCallback.js"
+          }
+        }
+      },
+      "SpaceAddModify" : {
+        "onStart" : "RELOCATED to controllers/page/SpaceAddModify/onStart.js",
+        "onValidation" : "RELOCATED to controllers/page/SpaceAddModify/onValidation.js",
+        "widgets" : {
+          "Button292" : {
+            "onClick" : "RELOCATED to controllers/page/SpaceAddModify/widgets/Button292/onClick.js"
+          },
+          "FloorplanViewer31" : {
+            "onClick" : "RELOCATED to controllers/page/SpaceAddModify/widgets/FloorplanViewer31/onClick.js"
+          }
+        }
+      },
+      "SpaceView" : {
+        "onStart" : "RELOCATED to controllers/page/SpaceView/onStart.js",
+        "widgets" : {
+          "Button464" : {
+            "onClick" : "RELOCATED to controllers/page/SpaceView/widgets/Button464/onClick.js"
+          },
+          "Button525" : {
+            "onClick" : "RELOCATED to controllers/page/SpaceView/widgets/Button525/onClick.js"
+          }
+        }
+      },
+      "Start" : {
+        "onClientStart" : "RELOCATED to controllers/page/Start/onClientStart.js",
+        "onEnd" : "RELOCATED to controllers/page/Start/onEnd.js",
+        "onStart" : "RELOCATED to controllers/page/Start/onStart.js",
+        "widgets" : {
+          "DataTable2259" : {
+            "onButtonClickCallback" : "RELOCATED to controllers/page/Start/widgets/DataTable2259/onButtonClickCallback.js"
+          },
+          "GridLayout19" : {
+            "onContextMenu" : "RELOCATED to controllers/page/Start/widgets/GridLayout19/onContextMenu.js"
+          }
+        }
+      },
+      "ThermalTempDisplay" : {
+        "onStart" : "RELOCATED to controllers/page/ThermalTempDisplay/onStart.js",
+        "widgets" : { }
+      }
+    },
+    "sidebar" : {
+      "widgets" : {
+        "MenuButton1" : {
+          "onClick" : "RELOCATED to controllers/sidebar/widgets/MenuButton1/onClick.js"
+        },
+        "MenuButton11" : {
+          "onClick" : "RELOCATED to controllers/sidebar/widgets/MenuButton11/onClick.js"
+        },
+        "MenuButton2" : {
+          "onClick" : "RELOCATED to controllers/sidebar/widgets/MenuButton2/onClick.js"
+        },
+        "MenuButton28" : {
+          "onClick" : "RELOCATED to controllers/sidebar/widgets/MenuButton28/onClick.js"
+        },
+        "MenuButton29" : {
+          "onClick" : "RELOCATED to controllers/sidebar/widgets/MenuButton29/onClick.js"
+        },
+        "MenuButton3" : {
+          "onClick" : "RELOCATED to controllers/sidebar/widgets/MenuButton3/onClick.js"
+        },
+        "MenuButton33" : {
+          "onClick" : "RELOCATED to controllers/sidebar/widgets/MenuButton33/onClick.js"
+        },
+        "MenuButton38" : {
+          "onClick" : "RELOCATED to controllers/sidebar/widgets/MenuButton38/onClick.js"
+        },
+        "MenuButton39" : {
+          "onClick" : "RELOCATED to controllers/sidebar/widgets/MenuButton39/onClick.js"
+        },
+        "MenuButton45" : {
+          "onClick" : "RELOCATED to controllers/sidebar/widgets/MenuButton45/onClick.js"
+        }
+      }
+    }
+  },
+  "isLaunchable" : true,
+  "models" : {
+    "dataObjects" : {
+      "__GLOBAL__" : {
+        "properties" : {
+          "organization" : {
+            "defaultLabel" : "organization",
+            "type" : "TypedObject",
+            "typedObject" : {
+              "properties" : {
+                "id" : {
+                  "defaultLabel" : "id",
+                  "defaultValue" : "",
+                  "type" : "String"
+                },
+                "name" : {
+                  "defaultLabel" : "name",
+                  "defaultValue" : "",
+                  "type" : "String"
+                }
+              },
+              "type" : "organization"
+            }
+          }
+        }
+      },
+      "__PARAMETERS__" : {
+        "properties" : { }
+      }
+    },
+    "dataStreams" : [ {
+      "advancedWhereClause" : null,
+      "dataObjectName" : null,
+      "dataTypeList" : [ {
+        "label" : null,
+        "type" : "buildings"
+      } ],
+      "isDeleteOp" : false,
+      "isInsertOp" : false,
+      "isUpdateOp" : false,
+      "maxRecords" : 0,
+      "name" : "ce_buildings_BuildingAddModify",
+      "pauseAtStartup" : false,
+      "property" : null,
+      "sortByProperty" : null,
+      "sortDescending" : false,
+      "type" : 5,
+      "updateInterval" : 60,
+      "uuid" : "5d8182ec-9d37-4348-991a-dda24af1e6f7",
+      "v" : 1
+    }, {
+      "advancedWhereClause" : null,
+      "dataObjectName" : null,
+      "dataTypeList" : [ {
+        "label" : null,
+        "type" : "buildings"
+      } ],
+      "isDeleteOp" : false,
+      "isInsertOp" : false,
+      "isUpdateOp" : false,
+      "maxRecords" : 0,
+      "name" : "ce_buildings",
+      "pauseAtStartup" : false,
+      "property" : null,
+      "sortByProperty" : null,
+      "sortDescending" : false,
+      "type" : 5,
+      "updateInterval" : 60,
+      "uuid" : "de7a9ceb-57f7-482c-81b1-5a2a690b770f",
+      "v" : 1
+    }, {
+      "advancedWhereClause" : null,
+      "dataObjectName" : null,
+      "dataTypeList" : [ {
+        "label" : null,
+        "type" : "buildings"
+      } ],
+      "isDeleteOp" : false,
+      "isInsertOp" : false,
+      "isUpdateOp" : false,
+      "maxRecords" : 0,
+      "name" : "ce_buildings_BuildingView",
+      "pauseAtStartup" : false,
+      "property" : null,
+      "sortByProperty" : null,
+      "sortDescending" : false,
+      "type" : 5,
+      "updateInterval" : 60,
+      "uuid" : "aa76988e-0171-4d61-80fb-9911ce3cb670",
+      "v" : 1
+    }, {
+      "advancedWhereClause" : null,
+      "dataObjectName" : null,
+      "dataTypeList" : [ {
+        "label" : null,
+        "type" : "floors"
+      } ],
+      "isDeleteOp" : false,
+      "isInsertOp" : false,
+      "isUpdateOp" : false,
+      "maxRecords" : 0,
+      "name" : "ce_floors_BuildingView",
+      "pauseAtStartup" : false,
+      "property" : null,
+      "sortByProperty" : null,
+      "sortDescending" : false,
+      "type" : 5,
+      "updateInterval" : 60,
+      "uuid" : "a64221e5-e903-42fd-812c-2487139c197e",
+      "v" : 1
+    }, {
+      "advancedWhereClause" : null,
+      "dataObjectName" : null,
+      "dataTypeList" : [ {
+        "label" : null,
+        "type" : "spaces"
+      } ],
+      "isDeleteOp" : false,
+      "isInsertOp" : false,
+      "isUpdateOp" : false,
+      "maxRecords" : 0,
+      "name" : "ce_spaces_FloorView",
+      "pauseAtStartup" : false,
+      "property" : null,
+      "sortByProperty" : null,
+      "sortDescending" : false,
+      "type" : 5,
+      "updateInterval" : 60,
+      "uuid" : "083e9e8b-3576-4397-8969-e2c2410de5c7",
+      "v" : 1
+    }, {
+      "advancedWhereClause" : null,
+      "dataObjectName" : null,
+      "dataTypeList" : [ {
+        "label" : null,
+        "type" : "floorplans"
+      } ],
+      "isDeleteOp" : false,
+      "isInsertOp" : false,
+      "isUpdateOp" : false,
+      "maxRecords" : 0,
+      "name" : "ce_floorplans_BuildingView",
+      "pauseAtStartup" : false,
+      "property" : null,
+      "sortByProperty" : null,
+      "sortDescending" : false,
+      "type" : 5,
+      "updateInterval" : 60,
+      "uuid" : "6ae72552-30a5-4994-8d3b-3d48534db407",
+      "v" : 1
+    }, {
+      "advancedWhereClause" : null,
+      "dataObjectName" : null,
+      "dataTypeList" : [ {
+        "label" : null,
+        "type" : "s_dashboard"
+      } ],
+      "isDeleteOp" : false,
+      "isInsertOp" : false,
+      "isUpdateOp" : false,
+      "maxRecords" : 0,
+      "name" : "ce_s_dashboard",
+      "pauseAtStartup" : false,
+      "property" : null,
+      "sortByProperty" : null,
+      "sortDescending" : false,
+      "type" : 5,
+      "updateInterval" : 60,
+      "uuid" : "81aa28e4-4e86-45c1-997b-3fc0b7a1a799",
+      "v" : 1
+    }, {
+      "advancedWhereClause" : null,
+      "dataObjectName" : null,
+      "dataTypeList" : [ {
+        "label" : null,
+        "type" : "spaces"
+      } ],
+      "isDeleteOp" : false,
+      "isInsertOp" : false,
+      "isUpdateOp" : false,
+      "maxRecords" : 0,
+      "name" : "ce_spaces_SpaceAddModify",
+      "pauseAtStartup" : false,
+      "property" : null,
+      "sortByProperty" : null,
+      "sortDescending" : false,
+      "type" : 5,
+      "updateInterval" : 60,
+      "uuid" : "586dff59-9292-4c0f-9c89-5f6bfe305c79",
+      "v" : 1
+    }, {
+      "advancedWhereClause" : null,
+      "dataObjectName" : null,
+      "dataTypeList" : [ {
+        "label" : null,
+        "type" : "floors"
+      } ],
+      "isDeleteOp" : false,
+      "isInsertOp" : false,
+      "isUpdateOp" : false,
+      "maxRecords" : 0,
+      "name" : "ce_floors_SpaceView",
+      "pauseAtStartup" : false,
+      "property" : null,
+      "sortByProperty" : null,
+      "sortDescending" : false,
+      "type" : 5,
+      "updateInterval" : 60,
+      "uuid" : "562aae4e-a595-4c87-b96a-c31c9c7f54c7",
+      "v" : 1
+    }, {
+      "advancedWhereClause" : null,
+      "dataObjectName" : null,
+      "dataTypeList" : [ {
+        "label" : null,
+        "type" : "assettypes"
+      } ],
+      "isDeleteOp" : false,
+      "isInsertOp" : false,
+      "isUpdateOp" : false,
+      "maxRecords" : 0,
+      "name" : "ce_assettypes_AssetTypeView",
+      "pauseAtStartup" : false,
+      "property" : "name",
+      "sortByProperty" : null,
+      "sortDescending" : false,
+      "type" : 5,
+      "updateInterval" : 60,
+      "uuid" : "93c4bfa2-7408-4e33-8424-19612edf95bb",
+      "v" : 1
+    }, {
+      "advancedWhereClause" : null,
+      "dataObjectName" : null,
+      "dataTypeList" : [ {
+        "label" : null,
+        "type" : "assets"
+      } ],
+      "isDeleteOp" : false,
+      "isInsertOp" : false,
+      "isUpdateOp" : false,
+      "maxRecords" : 0,
+      "name" : "ce_assets_Assets",
+      "pauseAtStartup" : false,
+      "property" : null,
+      "sortByProperty" : null,
+      "sortDescending" : false,
+      "type" : 5,
+      "updateInterval" : 60,
+      "uuid" : "443ed2a8-ac29-4e1f-a671-92089a524fa9",
+      "v" : 1
+    }, {
+      "advancedWhereClause" : null,
+      "dataObjectName" : null,
+      "dataTypeList" : [ {
+        "label" : null,
+        "type" : "assets"
+      } ],
+      "isDeleteOp" : false,
+      "isInsertOp" : false,
+      "isUpdateOp" : false,
+      "maxRecords" : 0,
+      "name" : "ce_assets_AssetView",
+      "pauseAtStartup" : false,
+      "property" : null,
+      "sortByProperty" : null,
+      "sortDescending" : false,
+      "type" : 5,
+      "updateInterval" : 60,
+      "uuid" : "f6d28a8c-b926-4042-b2ee-b76c3ca89e4d",
+      "v" : 1
+    }, {
+      "advancedWhereClause" : null,
+      "dataObjectName" : null,
+      "dataTypeList" : [ {
+        "label" : null,
+        "type" : "floors"
+      } ],
+      "isDeleteOp" : false,
+      "isInsertOp" : false,
+      "isUpdateOp" : false,
+      "maxRecords" : 0,
+      "name" : "ce_floors_AssetView",
+      "pauseAtStartup" : false,
+      "property" : null,
+      "sortByProperty" : null,
+      "sortDescending" : false,
+      "type" : 5,
+      "updateInterval" : 60,
+      "uuid" : "60aeb328-6585-4897-8fc8-ef7c8a8c0740",
+      "v" : 1
+    }, {
+      "advancedWhereClause" : null,
+      "dataObjectName" : null,
+      "dataTypeList" : [ {
+        "label" : null,
+        "type" : "spaces"
+      } ],
+      "isDeleteOp" : false,
+      "isInsertOp" : false,
+      "isUpdateOp" : false,
+      "maxRecords" : 0,
+      "name" : "ce_spaces_AssetView",
+      "pauseAtStartup" : false,
+      "property" : null,
+      "sortByProperty" : null,
+      "sortDescending" : false,
+      "type" : 5,
+      "updateInterval" : 60,
+      "uuid" : "213639c1-2f11-4b69-8ced-727c2aa7cf67",
+      "v" : 1
+    }, {
+      "advancedWhereClause" : null,
+      "dataObjectName" : null,
+      "dataTypeList" : [ {
+        "label" : null,
+        "type" : "spaces"
+      } ],
+      "isDeleteOp" : false,
+      "isInsertOp" : false,
+      "isUpdateOp" : false,
+      "maxRecords" : 0,
+      "name" : "ce_spaces_FloorView_showassets",
+      "pauseAtStartup" : false,
+      "property" : null,
+      "sortByProperty" : null,
+      "sortDescending" : false,
+      "type" : 5,
+      "updateInterval" : 60,
+      "uuid" : "db634542-1f59-4f07-8877-fad26eba9a60",
+      "v" : 1
+    }, {
+      "advancedWhereClause" : null,
+      "dataObjectName" : null,
+      "dataTypeList" : [ {
+        "label" : null,
+        "type" : "spaces"
+      } ],
+      "isDeleteOp" : false,
+      "isInsertOp" : false,
+      "isUpdateOp" : false,
+      "maxRecords" : 0,
+      "name" : "ce_spaces_FloorView_floorplan",
+      "pauseAtStartup" : false,
+      "property" : null,
+      "sortByProperty" : null,
+      "sortDescending" : false,
+      "type" : 5,
+      "updateInterval" : 60,
+      "uuid" : "0b7afa72-342f-45a8-8f40-af1a49a09eb3",
+      "v" : 1
+    }, {
+      "advancedWhereClause" : null,
+      "dataObjectName" : null,
+      "dataTypeList" : [ {
+        "label" : null,
+        "type" : "patients"
+      } ],
+      "isDeleteOp" : false,
+      "isInsertOp" : false,
+      "isUpdateOp" : false,
+      "maxRecords" : 0,
+      "name" : "ce_patients_Patients",
+      "pauseAtStartup" : false,
+      "property" : null,
+      "sortByProperty" : null,
+      "sortDescending" : false,
+      "type" : 5,
+      "updateInterval" : 60,
+      "uuid" : "f487473c-eb78-4262-971d-7e6d412e13b4",
+      "v" : 1
+    }, {
+      "advancedWhereClause" : null,
+      "dataObjectName" : null,
+      "dataTypeList" : [ {
+        "label" : null,
+        "type" : "assets"
+      } ],
+      "isDeleteOp" : false,
+      "isInsertOp" : false,
+      "isUpdateOp" : false,
+      "maxRecords" : 0,
+      "name" : "ce_assets_AssetAddModify",
+      "pauseAtStartup" : false,
+      "property" : null,
+      "sortByProperty" : null,
+      "sortDescending" : false,
+      "type" : 5,
+      "updateInterval" : 60,
+      "uuid" : "7a7fdbe9-9f20-4e83-8496-1cf7dec7b63a",
+      "v" : 1
+    }, {
+      "advancedWhereClause" : null,
+      "dataObjectName" : null,
+      "dataTypeList" : [ {
+        "label" : null,
+        "type" : "assets"
+      } ],
+      "isDeleteOp" : false,
+      "isInsertOp" : false,
+      "isUpdateOp" : false,
+      "maxRecords" : 0,
+      "name" : "ce_assets_FloorView",
+      "pauseAtStartup" : false,
+      "property" : null,
+      "sortByProperty" : null,
+      "sortDescending" : false,
+      "type" : 5,
+      "updateInterval" : 60,
+      "uuid" : "f875548a-82c8-4e4e-86c2-f8e90c794011",
+      "v" : 1
+    }, {
+      "advancedWhereClause" : null,
+      "dataObjectName" : null,
+      "dataTypeList" : [ {
+        "label" : null,
+        "type" : "roles"
+      } ],
+      "isDeleteOp" : false,
+      "isInsertOp" : false,
+      "isUpdateOp" : false,
+      "maxRecords" : 0,
+      "name" : "ce_roles_Roles",
+      "pauseAtStartup" : false,
+      "property" : null,
+      "sortByProperty" : null,
+      "sortDescending" : false,
+      "type" : 5,
+      "updateInterval" : 60,
+      "uuid" : "1d77fd74-c1ed-4886-89bc-a9b1f45cb7d0",
+      "v" : 1
+    }, {
+      "advancedWhereClause" : null,
+      "dataObjectName" : null,
+      "dataTypeList" : [ {
+        "label" : null,
+        "type" : "personnel"
+      } ],
+      "isDeleteOp" : false,
+      "isInsertOp" : false,
+      "isUpdateOp" : false,
+      "maxRecords" : 0,
+      "name" : "ce_personnel_Personnel",
+      "pauseAtStartup" : false,
+      "property" : null,
+      "sortByProperty" : null,
+      "sortDescending" : false,
+      "type" : 5,
+      "updateInterval" : 60,
+      "uuid" : "80888a63-ff71-42c6-80bd-eb3de2718f0b",
+      "v" : 1
+    }, {
+      "advancedWhereClause" : null,
+      "dataObjectName" : null,
+      "dataTypeList" : [ {
+        "label" : null,
+        "type" : "roles"
+      } ],
+      "isDeleteOp" : false,
+      "isInsertOp" : false,
+      "isUpdateOp" : false,
+      "maxRecords" : 0,
+      "name" : "ce_roles_PersonAddModify",
+      "pauseAtStartup" : false,
+      "property" : null,
+      "sortByProperty" : null,
+      "sortDescending" : false,
+      "type" : 5,
+      "updateInterval" : 60,
+      "uuid" : "4de417ea-2693-4f3a-946d-f6412ce44a11",
+      "v" : 1
+    }, {
+      "advancedWhereClause" : null,
+      "dataObjectName" : null,
+      "dataTypeList" : [ {
+        "label" : null,
+        "type" : "sensortypes"
+      } ],
+      "isDeleteOp" : false,
+      "isInsertOp" : false,
+      "isUpdateOp" : false,
+      "maxRecords" : 0,
+      "name" : "ce_sensortypes_SensorTypes",
+      "pauseAtStartup" : false,
+      "property" : null,
+      "sortByProperty" : null,
+      "sortDescending" : false,
+      "type" : 5,
+      "updateInterval" : 60,
+      "uuid" : "4fcde8f0-d644-4fe9-82c5-a8b8038a4ba7",
+      "v" : 1
+    }, {
+      "advancedWhereClause" : null,
+      "dataObjectName" : null,
+      "dataTypeList" : [ {
+        "label" : null,
+        "type" : "sensors"
+      } ],
+      "isDeleteOp" : false,
+      "isInsertOp" : false,
+      "isUpdateOp" : false,
+      "maxRecords" : 0,
+      "name" : "ce_sensors_Sensors",
+      "pauseAtStartup" : false,
+      "property" : null,
+      "sortByProperty" : null,
+      "sortDescending" : false,
+      "type" : 5,
+      "updateInterval" : 60,
+      "uuid" : "384991b9-5abf-4425-99e0-7df412be6dfb",
+      "v" : 1
+    }, {
+      "advancedWhereClause" : null,
+      "dataObjectName" : null,
+      "dataTypeList" : [ {
+        "label" : null,
+        "type" : "sensors"
+      } ],
+      "isDeleteOp" : false,
+      "isInsertOp" : false,
+      "isUpdateOp" : false,
+      "maxRecords" : 0,
+      "name" : "ce_sensors_AssetView",
+      "pauseAtStartup" : false,
+      "property" : null,
+      "sortByProperty" : null,
+      "sortDescending" : false,
+      "type" : 5,
+      "updateInterval" : 60,
+      "uuid" : "9e68e40d-254f-4931-a480-3abdb076848c",
+      "v" : 1
+    }, {
+      "advancedWhereClause" : null,
+      "dataObjectName" : null,
+      "dataTypeList" : [ {
+        "label" : null,
+        "type" : "s_volumesenor"
+      } ],
+      "isDeleteOp" : false,
+      "isInsertOp" : false,
+      "isUpdateOp" : false,
+      "maxRecords" : 0,
+      "name" : "ce_s_volumesensor_GuageDisplay",
+      "pauseAtStartup" : false,
+      "property" : null,
+      "sortByProperty" : null,
+      "sortDescending" : false,
+      "type" : 5,
+      "updateInterval" : 60,
+      "uuid" : "d5ac728c-7a7c-4e55-95cf-116ad933fbb6",
+      "v" : 1
+    }, {
+      "advancedWhereClause" : null,
+      "dataObjectName" : null,
+      "dataTypeList" : [ {
+        "label" : null,
+        "type" : "s_issues"
+      } ],
+      "isDeleteOp" : false,
+      "isInsertOp" : false,
+      "isUpdateOp" : false,
+      "maxRecords" : 0,
+      "name" : "ce_s_issues_Start",
+      "pauseAtStartup" : false,
+      "property" : null,
+      "sortByProperty" : null,
+      "sortDescending" : false,
+      "type" : 5,
+      "updateInterval" : 60,
+      "uuid" : "d7368714-b04e-4085-b90a-d3f2eb0042be",
+      "v" : 1
+    }, {
+      "advancedWhereClause" : null,
+      "dataObjectName" : null,
+      "dataTypeList" : [ {
+        "label" : null,
+        "type" : "sensorconfigs"
+      } ],
+      "isDeleteOp" : false,
+      "isInsertOp" : false,
+      "isUpdateOp" : false,
+      "maxRecords" : 0,
+      "name" : "ce_sensorconfigs_SensorConfigs",
+      "pauseAtStartup" : false,
+      "property" : null,
+      "sortByProperty" : null,
+      "sortDescending" : false,
+      "type" : 5,
+      "updateInterval" : 60,
+      "uuid" : "42e196c6-0a98-41c0-b3b0-866a280fa416",
+      "v" : 1
+    }, {
+      "advancedWhereClause" : null,
+      "dataObjectName" : null,
+      "dataTypeList" : [ {
+        "label" : null,
+        "type" : "assets"
+      } ],
+      "isDeleteOp" : false,
+      "isInsertOp" : false,
+      "isUpdateOp" : false,
+      "maxRecords" : 0,
+      "name" : "ce_assets_PersonAddModify",
+      "pauseAtStartup" : false,
+      "property" : null,
+      "sortByProperty" : null,
+      "sortDescending" : false,
+      "type" : 5,
+      "updateInterval" : 60,
+      "uuid" : "9a12c7f8-3991-464c-bf49-db4e6c022d30",
+      "v" : 1
+    }, {
+      "advancedWhereClause" : null,
+      "dataObjectName" : null,
+      "dataTypeList" : [ {
+        "label" : null,
+        "type" : "assets"
+      } ],
+      "isDeleteOp" : false,
+      "isInsertOp" : false,
+      "isUpdateOp" : true,
+      "maxRecords" : 0,
+      "name" : "dc_assets",
+      "pauseAtStartup" : true,
+      "property" : null,
+      "sortByProperty" : null,
+      "sortDescending" : false,
+      "type" : 1,
+      "updateInterval" : 60,
+      "uuid" : "370ccace-0cc8-4118-8a8f-3f1dedddfb0f",
+      "v" : 1
+    }, {
+      "advancedWhereClause" : null,
+      "dataObjectName" : null,
+      "dataTypeList" : [ {
+        "label" : null,
+        "type" : "sensors"
+      } ],
+      "isDeleteOp" : false,
+      "isInsertOp" : false,
+      "isUpdateOp" : true,
+      "maxRecords" : 0,
+      "name" : "ce_sensors",
+      "pauseAtStartup" : true,
+      "property" : null,
+      "sortByProperty" : null,
+      "sortDescending" : false,
+      "type" : 1,
+      "updateInterval" : 60,
+      "uuid" : "e23ec331-c27a-4bf8-88fb-9bfe28406ec3",
+      "v" : 1
+    }, {
+      "advancedWhereClause" : null,
+      "dataObjectName" : null,
+      "dataTypeList" : [ {
+        "label" : null,
+        "type" : "sensors"
+      } ],
+      "isDeleteOp" : false,
+      "isInsertOp" : false,
+      "isUpdateOp" : true,
+      "maxRecords" : 0,
+      "name" : "dc_sensors",
+      "pauseAtStartup" : true,
+      "property" : null,
+      "sortByProperty" : null,
+      "sortDescending" : false,
+      "type" : 1,
+      "updateInterval" : 60,
+      "uuid" : "c25e910a-977d-414d-8d8e-c9629abfe9f1",
+      "v" : 1
+    }, {
+      "advancedWhereClause" : null,
+      "basicQueryElement" : [ ],
+      "dataObjectName" : null,
+      "dataTypeList" : [ {
+        "label" : null,
+        "type" : "sensors"
+      } ],
+      "isDeleteOp" : false,
+      "isInsertOp" : false,
+      "isUpdateOp" : false,
+      "maxRecords" : 0,
+      "name" : "tq_sensors",
+      "pauseAtStartup" : true,
+      "property" : null,
+      "sortByProperty" : null,
+      "sortDescending" : false,
+      "type" : 4,
+      "updateInterval" : 1,
+      "uuid" : "515b276f-1fc3-420b-881e-e0dde3228555",
+      "v" : 1
+    }, {
+      "advancedWhereClause" : null,
+      "dataObjectName" : null,
+      "dataTypeList" : [ {
+        "label" : null,
+        "type" : "system.collaborations"
+      } ],
+      "isDeleteOp" : false,
+      "isInsertOp" : true,
+      "isUpdateOp" : true,
+      "maxRecords" : 0,
+      "name" : "dc_system_collaborations",
+      "pauseAtStartup" : false,
+      "property" : null,
+      "sortByProperty" : null,
+      "sortDescending" : false,
+      "type" : 1,
+      "updateInterval" : 60,
+      "uuid" : "d2b1de9c-d7be-4103-90e3-0744da97ea16",
+      "v" : 1
+    }, {
+      "advancedWhereClause" : null,
+      "dataObjectName" : null,
+      "dataTypeList" : [ {
+        "label" : null,
+        "type" : "assets"
+      } ],
+      "isDeleteOp" : false,
+      "isInsertOp" : false,
+      "isUpdateOp" : false,
+      "maxRecords" : 0,
+      "name" : "ce_assets_ThermalTempDisplay",
+      "pauseAtStartup" : false,
+      "property" : null,
+      "sortByProperty" : null,
+      "sortDescending" : false,
+      "type" : 5,
+      "updateInterval" : 60,
+      "uuid" : "086ef4a0-dbfa-40d7-8dc8-8f2cedb9c292",
+      "v" : 1
+    }, {
+      "advancedWhereClause" : null,
+      "dataObjectName" : null,
+      "dataTypeList" : [ {
+        "label" : null,
+        "type" : "assets"
+      } ],
+      "isDeleteOp" : false,
+      "isInsertOp" : false,
+      "isUpdateOp" : false,
+      "maxRecords" : 0,
+      "name" : "ce_dc_assets",
+      "pauseAtStartup" : false,
+      "property" : null,
+      "sortByProperty" : null,
+      "sortDescending" : false,
+      "type" : 5,
+      "updateInterval" : 60,
+      "uuid" : "8ec8a5cf-ae52-48f6-8fc9-c799f919a57f",
+      "v" : 1
+    } ]
+  },
+  "name" : "SmartBuilding",
+  "options" : {
+    "RELOCATE" : [ {
+      "path" : "controllers",
+      "type" : "js"
+    }, {
+      "path" : "views",
+      "type" : "json"
+    }, {
+      "path" : "options.sidebar",
+      "type" : "jsonObj"
+    } ],
+    "applyCSSwhileEditing" : true,
+    "badgeCount" : 1,
+    "cssAssets" : [ "../../docs/css/client.css", "../../docs/css/spinner.css" ],
+    "description" : "",
+    "displayName" : "SmartBuilding",
+    "docAssets" : [ "css/client.css", "css/spinner.css", "images/LogoPlaceHolder.png", "images/floorplanselect.png", "images/placeholderuser250.jpg", "qrdefault.png" ],
+    "hasSidebar" : true,
+    "paletteCollapsed" : false,
+    "productV" : "7.2",
+    "showCategoryButtons" : true,
+    "showCategoryDataDisplay" : true,
+    "showCategoryDataInput" : true,
+    "showCategoryLayout" : true,
+    "showGridCellsWhileEditing" : true,
+    "showGridWhileEditing" : true,
+    "showOutlinesWhileEditing" : true,
+    "sidebar" : "RELOCATED to options/sidebar.json",
+    "theme" : {
+      "backgroundColor" : "#ffffff",
+      "borderColor" : "#d3d6db",
+      "cardAccentColor" : "#ffffff",
+      "cardColor" : "#3c424d",
+      "dataDisplayColor" : "#ffffff",
+      "dataDisplayColors" : [ "#3cbce1", "#996db8", "#86d557", "#ff9800", "#425b71", "#cc467c", "#01aa93", "#ffca28", "#f583a9", "#1c84d4", "#ff6767", "#4caf50" ],
+      "dataInputColor" : "#ffffff",
+      "foregroundColor" : "#180469",
+      "label" : "Custom",
+      "name" : "custom",
+      "titleBarColor" : "#f5f5f5",
+      "v" : 3
+    },
+    "v" : 5
+  },
+  "targetDevice" : "browser",
+  "userList" : [ ],
+  "views" : {
+    "AssetAddModify" : "RELOCATED to views/AssetAddModify.json",
+    "AssetTypeAddModify" : "RELOCATED to views/AssetTypeAddModify.json",
+    "AssetTypeView" : "RELOCATED to views/AssetTypeView.json",
+    "AssetView" : "RELOCATED to views/AssetView.json",
+    "Assets" : "RELOCATED to views/Assets.json",
+    "BuildingAddModify" : "RELOCATED to views/BuildingAddModify.json",
+    "BuildingView" : "RELOCATED to views/BuildingView.json",
+    "Buildings" : "RELOCATED to views/Buildings.json",
+    "FloorAddModify" : "RELOCATED to views/FloorAddModify.json",
+    "FloorPlanAddModify" : "RELOCATED to views/FloorPlanAddModify.json",
+    "FloorPlanView" : "RELOCATED to views/FloorPlanView.json",
+    "FloorView" : "RELOCATED to views/FloorView.json",
+    "FloorplanDisplay" : "RELOCATED to views/FloorplanDisplay.json",
+    "GuageDisplay" : "RELOCATED to views/GuageDisplay.json",
+    "Organization" : "RELOCATED to views/Organization.json",
+    "PersonAddModify" : "RELOCATED to views/PersonAddModify.json",
+    "Personnel" : "RELOCATED to views/Personnel.json",
+    "RoleAddModify" : "RELOCATED to views/RoleAddModify.json",
+    "Roles" : "RELOCATED to views/Roles.json",
+    "SensorAddModify" : "RELOCATED to views/SensorAddModify.json",
+    "SensorConfigAddModify" : "RELOCATED to views/SensorConfigAddModify.json",
+    "SensorConfigs" : "RELOCATED to views/SensorConfigs.json",
+    "SensorTypeAddModify" : "RELOCATED to views/SensorTypeAddModify.json",
+    "SensorTypes" : "RELOCATED to views/SensorTypes.json",
+    "Sensors" : "RELOCATED to views/Sensors.json",
+    "SpaceAddModify" : "RELOCATED to views/SpaceAddModify.json",
+    "SpaceView" : "RELOCATED to views/SpaceView.json",
+    "Start" : "RELOCATED to views/Start.json",
+    "ThermalTempDisplay" : "RELOCATED to views/ThermalTempDisplay.json"
+  }
+}

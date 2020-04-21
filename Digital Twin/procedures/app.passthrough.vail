@@ -1,0 +1,3 @@
+PROCEDURE app.passthrough(event Object)
+
+return event

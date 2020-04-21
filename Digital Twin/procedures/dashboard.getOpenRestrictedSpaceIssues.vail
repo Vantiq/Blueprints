@@ -1,0 +1,63 @@
+PROCEDURE dashboard.getOpenRestrictedSpaceIssues()
+
+// the template used to gerneate the description
+var template = getDocument("templates/dashboardrestrictedspaceissue")
+
+
+var results = []
+SELECT FROM system.collaborations AS collab WHERE status == "active" AND name == "RestrictedSpaceIssue"{
+    var docprops = {}
+    var obj = {}
+    
+    if (has(collab.results, "Status")){
+        obj.state = collab.results.Status.assignedValue
+	} else {
+        // if the collaboration doesn't have a status yet, set an initial one for the display
+    	obj.state = "Issue"
+	}
+
+	// set the collaboration id
+	obj.collaborationid = collab.id
+
+	SELECT ONE FROM sensors WHERE id == collab.results.Initiate.event.id
+    obj.sensorId = sensors.id
+    obj.sensortype = sensors.type
+    obj.sensorconfig = sensors.config
+
+    SELECT ONE FROM assets WHERE id == sensors.assetid
+
+	SELECT ONE FROM personnel WHERE assetid == assets.id
+
+	var path
+	if (personnel){
+        docprops.employee = personnel.firstname + " " + personnel.lastname
+        path = personnel.photopath
+        docprops.image = path
+
+	} else {
+        docprops.employee = "- asset not associated with personnel record -"
+        path = "images/icons/asseticon.png"
+        docprops.image = path
+	}
+
+    SELECT ONE FROM floors WHERE id == assets.floorid
+    docprops.floor = floors.name
+	
+    SELECT ONE FROM buildings WHERE id == floors.buildingid
+	obj.geo = buildings.geo
+    docprops.building= buildings.name
+
+
+	docprops.space = collab.results.Initiate.event.space
+
+    
+    obj.issuetype = "Restricted Area"
+	obj.template = template
+	obj.docprops = docprops
+	
+
+    results.push(obj)
+      
+}
+	
+return results

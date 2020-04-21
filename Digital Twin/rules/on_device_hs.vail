@@ -1,0 +1,11 @@
+RULE on_device_hs
+
+WHEN PUBLISH OCCURS ON "/device/hs" AS event
+
+event = event.newValue
+
+if (event.val > 0) {
+    event.val--
+    var eventTime = stringToInterval(random(1,60)+" seconds")
+	PUBLISH event TO TOPIC "/device/hs" SCHEDULE {interval: eventTime}
+}

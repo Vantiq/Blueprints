@@ -1,0 +1,4 @@
+PROCEDURE cb.getSensorConfigById(id String)
+
+
+SELECT EXACTLY ONE FROM sensorconfigs WHERE id == id 

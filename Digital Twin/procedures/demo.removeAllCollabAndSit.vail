@@ -1,0 +1,7 @@
+PROCEDURE demo.removeAllCollabAndSit()
+
+
+DELETE system.collaborations WHERE {}
+DELETE system.situations WHERE {}
+
+

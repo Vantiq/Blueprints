@@ -1,0 +1,178 @@
+{
+  "bodyChildren" : {
+    "rootArray" : [ "f36d8a42-5362-4c29-85f1-9326c6f7e7bc" ],
+    "widgets" : [ {
+      "binding" : "page.data.sensorconfig.config",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "label" : "Configuration",
+      "name" : "InputObject1",
+      "optional" : true,
+      "type" : "InputObject",
+      "uuid" : "0084e4c5-e08a-4aee-8138-6083f013a00a",
+      "v" : 16,
+      "vertGravity" : "top",
+      "vertWeight" : 1,
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "fontFamily" : "inherit",
+      "fontSize" : 20,
+      "fontStyle" : "normal",
+      "fontWeight" : "normal",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "left",
+      "name" : "StaticText49345",
+      "text" : "Sensor Config",
+      "type" : "StaticText",
+      "uuid" : "1946f605-c0dd-4ae9-9fa7-74b5cc358933",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "naturalSize"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "children" : [ "1946f605-c0dd-4ae9-9fa7-74b5cc358933", "304b96d3-8097-468d-9d65-f9e9b1d668b4", "a6e57bcc-8d23-4414-83f2-d4f129b40467", "35c778b5-ca26-49ca-8fff-d56609fcd806", "0084e4c5-e08a-4aee-8138-6083f013a00a", "71edcaaf-60b9-4442-8d16-41df32f22861" ],
+      "heightPolicy" : "sizeToCell",
+      "horzGravity" : "left",
+      "innerMargin" : 20,
+      "name" : "VerticalLayout10011",
+      "type" : "VerticalLayout",
+      "uuid" : "25f36e86-0c2c-41b6-a7dd-1e3b72af533c",
+      "v" : 16,
+      "vertGravity" : "center",
+      "w" : 540,
+      "widthPolicy" : "explicit"
+    }, {
+      "binding" : "page.data.sensorconfig.id",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "inputType" : "text",
+      "isReadOnly" : true,
+      "label" : "Id",
+      "name" : "InputString9804",
+      "optional" : true,
+      "placeholder" : "",
+      "type" : "InputString",
+      "uuid" : "304b96d3-8097-468d-9d65-f9e9b1d668b4",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "binding" : "page.data.sensorconfig.sensortypename",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "default" : null,
+      "enumeratedList" : [ ],
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "label" : "Sensor Type",
+      "name" : "Droplist1986",
+      "type" : "Droplist",
+      "uuid" : "35c778b5-ca26-49ca-8fff-d56609fcd806",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "buttonBackgroundColor" : "#180469",
+      "buttonLabel" : "Submit",
+      "buttonLabelColor" : "platform",
+      "buttonLabelSize" : 14,
+      "buttonLabelStyle" : "bold",
+      "h" : 60,
+      "heightPolicy" : "explicit",
+      "horzGravity" : "center",
+      "name" : "Button9385",
+      "submitValue" : 100,
+      "type" : "Button",
+      "uuid" : "71edcaaf-60b9-4442-8d16-41df32f22861",
+      "v" : 16,
+      "vertGravity" : "bottom",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "binding" : "page.data.sensorconfig.name",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "inputType" : "text",
+      "label" : "Sensor Config Name",
+      "name" : "InputString9805",
+      "optional" : true,
+      "placeholder" : "",
+      "type" : "InputString",
+      "uuid" : "a6e57bcc-8d23-4414-83f2-d4f129b40467",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "children" : [ "25f36e86-0c2c-41b6-a7dd-1e3b72af533c" ],
+      "column" : 0,
+      "heightPolicy" : "sizeToCell",
+      "horzGravity" : "center",
+      "innerMargin" : 20,
+      "name" : "HorizontalLayout19849",
+      "row" : 0,
+      "type" : "HorizontalLayout",
+      "uuid" : "f36d8a42-5362-4c29-85f1-9326c6f7e7bc",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    } ]
+  },
+  "data" : {
+    "properties" : {
+      "sensorconfig" : {
+        "defaultLabel" : "sensorconfig",
+        "type" : "TypedObject",
+        "typedObject" : {
+          "properties" : {
+            "config" : {
+              "defaultLabel" : "config",
+              "type" : "Object"
+            },
+            "id" : {
+              "defaultLabel" : "id",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "name" : {
+              "defaultLabel" : "name",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "sensortypename" : {
+              "defaultLabel" : "sensortypename",
+              "defaultValue" : "",
+              "type" : "String"
+            }
+          },
+          "type" : "sensorconfigs"
+        }
+      }
+    }
+  },
+  "footerChildren" : [ ],
+  "hasFooter" : false,
+  "layoutType" : "single",
+  "responseTopic" : ""
+}

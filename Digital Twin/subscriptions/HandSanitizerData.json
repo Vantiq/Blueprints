@@ -1,0 +1,9 @@
+{
+  "name" : "HandSanitizerData",
+  "operation" : "publish",
+  "properties" : [ {
+    "name" : "/device/hs",
+    "type" : ""
+  } ],
+  "type" : ""
+}

@@ -1,0 +1,14 @@
+PROCEDURE getBinaryForNumber(num real)
+
+
+
+var numarr = []
+
+for i in range (0, 999999999, 1) until num ==  0{
+    numarr[i] = toInteger(Math.floor(num % 2)  )
+	
+    num = Math.floor(num / 2)
+    
+}
+
+return numarr

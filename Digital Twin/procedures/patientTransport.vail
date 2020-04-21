@@ -1,0 +1,13 @@
+PROCEDURE patientTransport()
+
+var obj = {}
+
+obj.patient = "" // a patient id to assoicate the collaboration to
+obj.originbuilding = "" // need an origin  building id
+obj.originfloor = "" // need an origin floor id
+obj.originlocation = {} // a geojson representation of origin coordinates
+obj.destinationbuidling = ""  // need a destination building id
+obj.destinationfloor = "" // need a destination floor id
+obj.destinationlocation = {} // a geojson represenatio of destinatoon coordinates
+
+return obj

@@ -1,0 +1,19 @@
+[ {
+  "description" : "Humidity Sensor",
+  "name" : "Humidity"
+}, {
+  "description" : "Temperature Sensor",
+  "name" : "Temperature"
+}, {
+  "description" : "Indoor coordinates for floor plans",
+  "name" : "IndoorLocation"
+}, {
+  "description" : "GPS location",
+  "name" : "OutdoorLocation"
+}, {
+  "description" : "Amount remaining or amount full for items that dispense or collect.  e.g. Hand Sanitize, Trash",
+  "name" : "Volume"
+}, {
+  "description" : "Weight Sensor",
+  "name" : "Weight"
+} ]

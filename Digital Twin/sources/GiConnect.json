@@ -1,0 +1,20 @@
+{
+  "activationConstraint" : "",
+  "active" : true,
+  "ars_properties" : null,
+  "config" : {
+    "passwordType" : "string",
+    "pollingInterval" : 0,
+    "query" : { },
+    "requestDefaults" : {
+      "contentType" : "application/json",
+      "responseType" : "application/json"
+    },
+    "uri" : "http://burmahome.tplinkdns.com:6661/vantiq"
+  },
+  "direction" : "BOTH",
+  "messageType" : null,
+  "mockProcedures" : { },
+  "name" : "GiConnect",
+  "type" : "REMOTE"
+}

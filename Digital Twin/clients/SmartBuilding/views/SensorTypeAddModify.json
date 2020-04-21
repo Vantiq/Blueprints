@@ -1,0 +1,106 @@
+{
+  "bodyChildren" : {
+    "rootArray" : [ "5d517cb9-fb57-4cf9-8de1-6fc1d40fbebd" ],
+    "widgets" : [ {
+      "binding" : "page.data.sensortype.description",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "label" : "Description",
+      "name" : "MultilineInput69",
+      "optional" : true,
+      "placeholder" : "",
+      "rows" : 5,
+      "type" : "MultilineInput",
+      "uuid" : "2443c9df-0307-4f3e-8f13-d4da31ddd0f6",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell",
+      "wordwrap" : true
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 1,
+      "children" : [ "caa264bf-b214-48e6-9ee4-ebf5a70ab1a4", "2443c9df-0307-4f3e-8f13-d4da31ddd0f6", "dd5d1c16-f6ba-429f-9915-289396c6fb2e" ],
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "innerMargin" : 20,
+      "name" : "VerticalLayout8750",
+      "type" : "VerticalLayout",
+      "uuid" : "5d517cb9-fb57-4cf9-8de1-6fc1d40fbebd",
+      "v" : 16,
+      "vertGravity" : "center",
+      "w" : 450,
+      "widthPolicy" : "explicit",
+      "x" : 50,
+      "y" : 50
+    }, {
+      "binding" : "page.data.sensortype.name",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "inputType" : "text",
+      "label" : "Name",
+      "name" : "InputString8029",
+      "optional" : true,
+      "placeholder" : "",
+      "type" : "InputString",
+      "uuid" : "caa264bf-b214-48e6-9ee4-ebf5a70ab1a4",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "buttonBackgroundColor" : "#180469",
+      "buttonLabel" : "Submit",
+      "buttonLabelColor" : "platform",
+      "buttonLabelSize" : 14,
+      "buttonLabelStyle" : "bold",
+      "h" : 60,
+      "heightPolicy" : "explicit",
+      "horzGravity" : "center",
+      "name" : "Button7536",
+      "submitValue" : 100,
+      "type" : "Button",
+      "uuid" : "dd5d1c16-f6ba-429f-9915-289396c6fb2e",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    } ]
+  },
+  "data" : {
+    "properties" : {
+      "sensortype" : {
+        "defaultLabel" : "sensortype",
+        "type" : "TypedObject",
+        "typedObject" : {
+          "properties" : {
+            "description" : {
+              "defaultLabel" : "description",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "name" : {
+              "defaultLabel" : "name",
+              "defaultValue" : "",
+              "type" : "String"
+            }
+          },
+          "type" : "sensortypes"
+        }
+      }
+    }
+  },
+  "footerChildren" : [ ],
+  "hasFooter" : false,
+  "layoutType" : "browser",
+  "responseTopic" : ""
+}

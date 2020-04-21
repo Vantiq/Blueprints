@@ -1,0 +1,58 @@
+{
+  "bodyChildren" : {
+    "rootArray" : [ "7271a3d0-918a-4b9a-8233-7150ed3a3723" ],
+    "widgets" : [ {
+      "backgroundColor" : "default",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 1,
+      "cellFontColor" : "default",
+      "cellFontFace" : "inherit",
+      "cellFontSize" : 14,
+      "cellFontStyle" : "plain",
+      "clearOnDataArrive" : true,
+      "columnDescriptors" : [ {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "name",
+        "selected" : false,
+        "title" : "name"
+      }, {
+        "buttonIcon" : "fa-play",
+        "buttonLabel" : "Play",
+        "colorRules" : null,
+        "dataType" : "Button",
+        "isLinkStyle" : true,
+        "propertyName" : "ButtonPlay",
+        "selected" : false,
+        "title" : ""
+      } ],
+      "columnSort" : true,
+      "dataStreamGroupedByFiltersString" : "",
+      "dataStreamUUID" : "60307fd6-63f2-4525-825d-c83b7d4a6535",
+      "dataType" : null,
+      "headerFontColor" : "default",
+      "headerFontFace" : "inherit",
+      "headerFontSize" : 14,
+      "headerFontStyle" : "plain",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "DataTable3405",
+      "operation" : "insert",
+      "rowsPerPage" : 25,
+      "showPaging" : true,
+      "type" : "DataTable",
+      "uuid" : "7271a3d0-918a-4b9a-8233-7150ed3a3723",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    } ]
+  },
+  "data" : {
+    "properties" : { }
+  },
+  "footerChildren" : [ ],
+  "hasFooter" : false,
+  "layoutType" : "mobile",
+  "responseTopic" : ""
+}

@@ -1,0 +1,17 @@
+PROCEDURE sim.camWithUserInfoUnitTest()
+
+var obj ={
+    "userId" : "10000001",
+    "userName" : "Brett",
+    "userType" : "Employee",
+    "deviceid": "0000001",
+    "actionCode": 1,
+    "action" : "open door",
+    "temperature" : randomFloat() * (38 - 36.3) + 36.3,
+    "Mask" : true,
+    "screenTime" : date(now(), "date","epochSeconds" ),
+    "similarity" : 80,
+    "img": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAAA2ElEQVR4nOzRsWkCARhH8Vw4jqQIpEmdLnAhgUCSCQIpxClcQ7FwAjvhcAJbHeJGUMTO6iycQHCGf/U8eL/6/xWPr9zX7V1i+rqJ9rv6N9pXL6dofx+tb5ABNANoBtAMoBlAM4BmAK1ohx/Rwf9hEu0/L+to//e+jfa9/4ABNANoBtAMoBlAM4BmAK38+n6LDgbNQ7Q/j7po/9PNon3vP2AAzQCaATQDaAbQDKAZQCueHo/Rwfh5Fe0X82W0r5oq2vf+AwbQDKAZQDOAZgDNAJoBtGsAAAD//64AFcbNYoA0AAAAAElFTkSuQmCC" 
+}
+
+PUBLISH obj TO TOPIC "/camera/thermal/userreading"

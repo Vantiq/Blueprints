@@ -1,0 +1,3 @@
+PROCEDURE cb.getFloorById(id String)
+
+SELECT ONE FROM floors WHERE id == id

@@ -1,0 +1,44 @@
+{
+  "active" : true,
+  "appType" : true,
+  "assembly" : {
+    "PhotoUpload" : {
+      "configuration" : {
+        "childStreams" : [ "UpdatePhoto" ],
+        "enableBadging" : true,
+        "inboundResource" : "topics",
+        "inboundResourceId" : "/personnel/registration",
+        "op" : null,
+        "outboundResource" : null,
+        "outboundResourceId" : null,
+        "parentStreams" : [ ],
+        "schema" : null,
+        "upsert" : false
+      },
+      "description" : null,
+      "name" : "PhotoUpload",
+      "pattern" : "EventStream"
+    },
+    "UpdatePhoto" : {
+      "configuration" : {
+        "childStreams" : null,
+        "enableBadging" : true,
+        "parentStreams" : [ "PhotoUpload" ],
+        "procedure" : "app.updatePeronnelPhoto",
+        "schema" : null
+      },
+      "description" : null,
+      "name" : "UpdatePhoto",
+      "pattern" : "Procedure"
+    }
+  },
+  "collaboratorRoles" : [ ],
+  "currentState" : {
+    "code" : "success"
+  },
+  "description" : "",
+  "disableBadging" : false,
+  "entityRoles" : [ ],
+  "keyTypes" : [ "system.collaborations" ],
+  "name" : "Registration"
+}

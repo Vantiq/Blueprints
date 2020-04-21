@@ -1,0 +1,153 @@
+{
+  "contents" : {
+    "groups" : [ {
+      "members" : [ "dbefc11b-1768-4539-8fbe-7f6296489b42", "565ec68f-d084-405f-9a91-a2c400fcf458", "a92e99a0-a2d7-4965-91c6-1431f03a79b6", "bc6c6fe1-08e3-43d3-a2d0-c040847cf6fd", "906da16e-6a7e-41d4-86e8-4797237bf169", "ca46ebb8-20d7-46b5-839d-8389dcb1d7ab" ],
+      "name" : "AppBuilderG",
+      "selected" : false
+    }, {
+      "members" : [ "a7e2f2c0-c979-4240-8dba-5856b4fc7eb7", "58612df8-7642-4e32-8db5-f293bb66a52a" ],
+      "name" : "CollabG",
+      "selected" : true
+    } ],
+    "links" : [ {
+      "from" : "906da16e-6a7e-41d4-86e8-4797237bf169",
+      "to" : "a7e2f2c0-c979-4240-8dba-5856b4fc7eb7"
+    }, {
+      "from" : "906da16e-6a7e-41d4-86e8-4797237bf169",
+      "to" : "58612df8-7642-4e32-8db5-f293bb66a52a"
+    }, {
+      "from" : "bc6c6fe1-08e3-43d3-a2d0-c040847cf6fd",
+      "to" : "906da16e-6a7e-41d4-86e8-4797237bf169"
+    }, {
+      "from" : "565ec68f-d084-405f-9a91-a2c400fcf458",
+      "to" : "ca46ebb8-20d7-46b5-839d-8389dcb1d7ab"
+    }, {
+      "from" : "a92e99a0-a2d7-4965-91c6-1431f03a79b6",
+      "to" : "ca46ebb8-20d7-46b5-839d-8389dcb1d7ab"
+    }, {
+      "from" : "ca46ebb8-20d7-46b5-839d-8389dcb1d7ab",
+      "to" : "bc6c6fe1-08e3-43d3-a2d0-c040847cf6fd"
+    } ],
+    "objects" : [ {
+      "children" : [ {
+        "eventType" : "topics",
+        "h" : 86.21561989166347,
+        "label" : "Temp_and_Recognition",
+        "resourceName" : "/camera/syface",
+        "type" : 24,
+        "uuid" : "a92e99a0-a2d7-4965-91c6-1431f03a79b6",
+        "w" : 172.9846954345703,
+        "x" : 102.57412468724364,
+        "y" : 257.336446135897
+      }, {
+        "eventType" : "topics",
+        "h" : 100,
+        "label" : "Temp_Readings",
+        "resourceName" : "/camera/syattribute",
+        "type" : 24,
+        "uuid" : "565ec68f-d084-405f-9a91-a2c400fcf458",
+        "w" : 143.87184143066406,
+        "x" : 101.24817261854065,
+        "y" : 99.79739670999406
+      }, {
+        "h" : 100,
+        "label" : "Record_to_Database",
+        "reactionTask" : "SaveToType",
+        "reactionType" : 1,
+        "type" : 25,
+        "uuid" : "bc6c6fe1-08e3-43d3-a2d0-c040847cf6fd",
+        "w" : 152.94935607910156,
+        "x" : 564.8266977686411,
+        "y" : 186.4460950649911
+      }, {
+        "h" : 104,
+        "label" : "Create a high temp issue to track user activity for dashboards and displays.",
+        "type" : 28,
+        "uuid" : "906da16e-6a7e-41d4-86e8-4797237bf169",
+        "w" : 169,
+        "x" : 786.3660143324198,
+        "y" : 185.29739670999408
+      }, {
+        "h" : 100,
+        "label" : "Check_For_High_Temp",
+        "reactionTask" : "Procedure",
+        "reactionType" : 1,
+        "type" : 25,
+        "uuid" : "ca46ebb8-20d7-46b5-839d-8389dcb1d7ab",
+        "w" : 168.8273162841797,
+        "x" : 359.47890322780904,
+        "y" : 179.8634779508462
+      } ],
+      "h" : 386,
+      "label" : "Return to work policy enforcement",
+      "type" : 29,
+      "uuid" : "3890ff99-ebeb-437b-81eb-9f343a081105",
+      "w" : 922.6912795014725,
+      "x" : -9287.327008548224,
+      "y" : -9669.148698354997
+    }, {
+      "children" : [ {
+        "description" : "Send push notification to alert a mobile app or update a tablet or similar device.",
+        "h" : 140,
+        "label" : "Mobile_or_Tablet_Alerts",
+        "reactionTask" : "Notification",
+        "reactionType" : 2,
+        "type" : 25,
+        "uuid" : "a7e2f2c0-c979-4240-8dba-5856b4fc7eb7",
+        "w" : 178.03744506835938,
+        "x" : 118.87002417918265,
+        "y" : 110.6804920892271
+      }, {
+        "description" : "Update a video display or play a sound file.",
+        "h" : 77,
+        "label" : "Audio_or_Video_Rejection",
+        "reactionTask" : "Execute",
+        "reactionType" : 2,
+        "type" : 25,
+        "uuid" : "58612df8-7642-4e32-8db5-f293bb66a52a",
+        "w" : 192.04458618164062,
+        "x" : 124.02229309082031,
+        "y" : 245.5
+      } ],
+      "h" : 308,
+      "label" : "Alerts and Notifications",
+      "type" : 29,
+      "uuid" : "45ded148-8ca1-4c02-807a-d24a3a5963b6",
+      "w" : 239.05574364028683,
+      "x" : -8613.033431236525,
+      "y" : -9672.539049350089
+    }, {
+      "eventType" : "sources",
+      "h" : 114,
+      "label" : "Camera pushes temp measurement data to a VANTIQ topic",
+      "type" : 27,
+      "uuid" : "dbefc11b-1768-4539-8fbe-7f6296489b42",
+      "w" : 125,
+      "x" : -9852.648698354997,
+      "y" : -9681
+    } ],
+    "prefs" : {
+      "customTheme" : {
+        "label" : "Custom",
+        "name" : "custom",
+        "noteColors" : [ "#d0d3da", "#d0d3da", "#d0d3da", "#d0d3da", "#d0d3da" ]
+      },
+      "scaleAndTranslationState" : {
+        "lastZoomRequest" : 0,
+        "scale" : 0.7578582832551997,
+        "translate" : [ 7581.912372471833, 7555.144880996277 ]
+      },
+      "showGroups" : true,
+      "theme" : {
+        "label" : "Standard",
+        "name" : "standard",
+        "noteColors" : [ "#FDAB43", "#F1509A", "#56BFC0", "#F583A9", "#FF4B62" ]
+      },
+      "themeName" : "standard"
+    },
+    "timestamp" : "2020-04-03T17:31:09.001Z"
+  },
+  "description" : "No description given",
+  "journals" : [ ],
+  "name" : "BodyTempMonitor"
+}

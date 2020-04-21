@@ -1,0 +1,22 @@
+{
+  "ars_properties" : null,
+  "groupBy" : "",
+  "name" : "s_volumesenor",
+  "properties" : {
+    "id" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "String",
+      "unique" : false
+    },
+    "volume" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "Integer",
+      "unique" : false
+    }
+  },
+  "role" : "schema"
+}

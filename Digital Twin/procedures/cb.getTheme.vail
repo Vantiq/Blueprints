@@ -1,0 +1,27 @@
+PROCEDURE cb.getTheme()
+
+
+SELECT ONE FROM system.clients AS client WHERE name == "SmartBuilding"
+
+var obj={}
+obj.foregroundColor = client.options.theme.foregroundColor
+
+var navbartxt = getDocument("vantiq/navBar.json")
+var navbar = parse(navbartxt)
+
+obj.navbarBackgrounColor = navbar.bgColor
+obj.logopath= navbar.icon
+obj.logowidth = navbar.iconWidth
+obj.logoheight = navbar.iconHeight
+
+var myArr = []
+var pattern = regExp("(\"buttonBackgroundColor\":\")(.*?)(\")")
+var matcher = pattern.matcher(stringify(client))
+var i = 0
+var j = 2
+ 
+var results = matcher[i.intValue()]
+results = matcher[j.intValue()]
+obj.buttonBackgroundColor = results[2]
+
+return obj

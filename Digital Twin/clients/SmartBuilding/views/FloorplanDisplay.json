@@ -1,0 +1,172 @@
+{
+  "bodyChildren" : {
+    "rootArray" : [ "ad728295-eeb4-49f6-a865-31bd6125e3ad" ],
+    "widgets" : [ {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "clearOnDataArrive" : true,
+      "dataStreamGroupedByFiltersString" : "",
+      "dataStreamProperty" : "fplocation",
+      "dataStreamUUID" : "8ec8a5cf-ae52-48f6-8fc9-c799f919a57f",
+      "dataType" : null,
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "imageHeightInLocationUnits" : 25,
+      "imageWidthInLocationUnits" : 30,
+      "isScaleable" : false,
+      "labelProperty" : "name",
+      "name" : "FloorplanViewer756",
+      "naturalKey" : null,
+      "operation" : "insert",
+      "type" : "FloorplanViewer",
+      "url" : "../cmn/img/floorplan.png",
+      "uuid" : "ad728295-eeb4-49f6-a865-31bd6125e3ad",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "naturalSize",
+      "x" : 50,
+      "y" : 50
+    } ]
+  },
+  "data" : {
+    "properties" : {
+      "asset" : {
+        "defaultLabel" : "asset",
+        "type" : "TypedObject",
+        "typedObject" : {
+          "properties" : {
+            "floorid" : {
+              "defaultLabel" : "floorid",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "fplocation" : {
+              "defaultLabel" : "fplocation",
+              "type" : "GeoJSON"
+            },
+            "id" : {
+              "defaultLabel" : "id",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "name" : {
+              "defaultLabel" : "name",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "type" : {
+              "defaultLabel" : "type",
+              "defaultValue" : "",
+              "type" : "String"
+            }
+          },
+          "type" : "assets"
+        }
+      },
+      "dcfloorid" : {
+        "defaultLabel" : "dcfloorid",
+        "defaultValue" : "",
+        "type" : "String"
+      },
+      "floor" : {
+        "defaultLabel" : "floor",
+        "type" : "TypedObject",
+        "typedObject" : {
+          "properties" : {
+            "buildingid" : {
+              "defaultLabel" : "buildingid",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "floorplan" : {
+              "defaultLabel" : "floorplan",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "id" : {
+              "defaultLabel" : "id",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "location" : {
+              "defaultLabel" : "location",
+              "type" : "GeoJSON"
+            },
+            "name" : {
+              "defaultLabel" : "name",
+              "defaultValue" : "",
+              "type" : "String"
+            }
+          },
+          "type" : "floors"
+        }
+      },
+      "floorplan" : {
+        "defaultLabel" : "floorplan",
+        "type" : "TypedObject",
+        "typedObject" : {
+          "properties" : {
+            "buildingid" : {
+              "defaultLabel" : "buildingid",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "description" : {
+              "defaultLabel" : "description",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "id" : {
+              "defaultLabel" : "id",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "path" : {
+              "defaultLabel" : "path",
+              "defaultValue" : "",
+              "type" : "String"
+            }
+          },
+          "type" : "floorplans"
+        }
+      },
+      "sensor" : {
+        "defaultLabel" : "sensor",
+        "type" : "TypedObject",
+        "typedObject" : {
+          "properties" : {
+            "assetid" : {
+              "defaultLabel" : "assetid",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "config" : {
+              "defaultLabel" : "config",
+              "type" : "Object"
+            },
+            "data" : {
+              "defaultLabel" : "data",
+              "type" : "Object"
+            },
+            "id" : {
+              "defaultLabel" : "id",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "type" : {
+              "defaultLabel" : "type",
+              "defaultValue" : "",
+              "type" : "String"
+            }
+          },
+          "type" : "sensors"
+        }
+      }
+    }
+  },
+  "footerChildren" : [ ],
+  "hasFooter" : false,
+  "layoutType" : "browser",
+  "responseTopic" : ""
+}

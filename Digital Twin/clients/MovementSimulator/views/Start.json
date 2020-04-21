@@ -1,0 +1,263 @@
+{
+  "bodyChildren" : {
+    "rootArray" : [ "9a2a3558-b159-4ac8-8866-a1e454260335", "6e64a5d5-560d-4e7d-88ff-3e17cab2fe2c" ],
+    "widgets" : [ {
+      "backgroundColor" : "#cccccc",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 1,
+      "children" : [ "c75006a7-97d7-49c5-8e4a-a1f62ff0e127", "3b4cd62c-9e62-4f19-87b8-b888d5ce83f3", "ce30f576-b7a5-4a1c-81f4-d27a8f989100", "f2f871a6-0825-4dca-8826-78c4415a7732" ],
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "innerMargin" : 20,
+      "name" : "VerticalLayout12203",
+      "type" : "VerticalLayout",
+      "uuid" : "067ef1be-f6b2-4a2d-8b81-50e53dd588c8",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "binding" : "page.data.building",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "default" : null,
+      "enumeratedList" : [ ],
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "label" : "Choose a building",
+      "name" : "Droplist2279",
+      "type" : "Droplist",
+      "uuid" : "13185a8a-d429-4b41-81ed-557f554087a1",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "binding" : "page.data.movementsimulations.sensorid",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "default" : null,
+      "enumeratedList" : [ ],
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "label" : "Choose a sensor",
+      "name" : "Droplist2397",
+      "type" : "Droplist",
+      "uuid" : "20751b50-2cd7-41d8-923b-b1d17ffce88e",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "binding" : "page.data.movementsimulations.floorid",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "default" : null,
+      "enumeratedList" : [ ],
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "label" : "Choose a floor",
+      "name" : "Droplist2280",
+      "type" : "Droplist",
+      "uuid" : "220a3e03-15d7-4fa8-a7a8-aeb98d127492",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "binding" : "page.data.movementsimulations.name",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "inputType" : "text",
+      "label" : "Simulation Name",
+      "name" : "InputString11243",
+      "optional" : false,
+      "placeholder" : "",
+      "type" : "InputString",
+      "uuid" : "35b20873-5c37-43b4-989b-d0b4f20ba98a",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "binding" : "page.data.movementsimulations.id",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "inputType" : "text",
+      "isReadOnly" : true,
+      "label" : "Id for event",
+      "name" : "InputString11336",
+      "optional" : true,
+      "placeholder" : "",
+      "type" : "InputString",
+      "uuid" : "3b4cd62c-9e62-4f19-87b8-b888d5ce83f3",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "dataStreamGroupedByFiltersString" : "",
+      "dataStreamProperty" : "location",
+      "dataStreamUUID" : "73a4dc07-964d-48c2-a846-88760a161d07",
+      "dataType" : null,
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "imageHeightInLocationUnits" : 25,
+      "imageWidthInLocationUnits" : 30,
+      "isScaleable" : false,
+      "labelProperty" : null,
+      "name" : "FloorplanViewer659",
+      "naturalKey" : null,
+      "operation" : "insert",
+      "type" : "FloorplanViewer",
+      "url" : "../cmn/img/floorplan.png",
+      "uuid" : "6e64a5d5-560d-4e7d-88ff-3e17cab2fe2c",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "naturalSize",
+      "x" : 477,
+      "y" : 36
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 2,
+      "defaultMinimumHeight" : 300,
+      "defaultMinimumWidth" : 200,
+      "h" : 135,
+      "heightPolicy" : "explicit",
+      "horzGravity" : "center",
+      "horzizontalScrollPolicy" : "none",
+      "html" : "Give your simulation a name. Choose a building and floor. Click on the map to determine the location and speed of updates.<br /><br />Note:&nbsp; Time between mouse clicks that user less than 1 second will be rounded up to 1 second between clicks.",
+      "name" : "StaticHtml25",
+      "type" : "StaticHtml",
+      "uuid" : "71ac0453-d667-4526-84e7-841af5bee07f",
+      "v" : 16,
+      "vertGravity" : "center",
+      "verticalScrollPolicy" : "none",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 1,
+      "children" : [ "35b20873-5c37-43b4-989b-d0b4f20ba98a", "13185a8a-d429-4b41-81ed-557f554087a1", "220a3e03-15d7-4fa8-a7a8-aeb98d127492", "20751b50-2cd7-41d8-923b-b1d17ffce88e", "067ef1be-f6b2-4a2d-8b81-50e53dd588c8", "71ac0453-d667-4526-84e7-841af5bee07f" ],
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "innerMargin" : 20,
+      "name" : "VerticalLayout12065",
+      "type" : "VerticalLayout",
+      "uuid" : "9a2a3558-b159-4ac8-8866-a1e454260335",
+      "v" : 16,
+      "vertGravity" : "center",
+      "w" : 388,
+      "widthPolicy" : "explicit",
+      "x" : 59,
+      "y" : 37
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "fontFamily" : "inherit",
+      "fontSize" : 20,
+      "fontStyle" : "normal",
+      "fontWeight" : "normal",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "StaticText31958",
+      "text" : "Sim Data (Click map to record point)",
+      "type" : "StaticText",
+      "uuid" : "c75006a7-97d7-49c5-8e4a-a1f62ff0e127",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "naturalSize"
+    }, {
+      "binding" : "page.data.movementsimulations.timestamp",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "isReadOnly" : true,
+      "name" : "InputDateTime1",
+      "optional" : true,
+      "placeholder" : "Set Date/Time",
+      "type" : "InputDateTime",
+      "uuid" : "ce30f576-b7a5-4a1c-81f4-d27a8f989100",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "binding" : "page.data.movementsimulations.location",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "InputObject55",
+      "optional" : true,
+      "type" : "InputObject",
+      "uuid" : "f2f871a6-0825-4dca-8826-78c4415a7732",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    } ]
+  },
+  "data" : {
+    "properties" : {
+      "building" : {
+        "defaultLabel" : "building",
+        "defaultValue" : "",
+        "type" : "String"
+      },
+      "movementsimulations" : {
+        "defaultLabel" : "movementsimulations",
+        "type" : "TypedObject",
+        "typedObject" : {
+          "properties" : {
+            "floorid" : {
+              "defaultLabel" : "floorid",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "id" : {
+              "defaultLabel" : "id",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "location" : {
+              "defaultLabel" : "location",
+              "type" : "GeoJSON"
+            },
+            "name" : {
+              "defaultLabel" : "name",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "sensorid" : {
+              "defaultLabel" : "sensorid",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "timestamp" : {
+              "defaultLabel" : "timestamp",
+              "type" : "DateTime"
+            }
+          },
+          "type" : "movementsimulations"
+        }
+      }
+    }
+  },
+  "footerChildren" : [ ],
+  "hasFooter" : false,
+  "layoutType" : "browser",
+  "responseTopic" : ""
+}

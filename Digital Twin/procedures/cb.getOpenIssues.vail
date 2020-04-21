@@ -1,0 +1,15 @@
+PROCEDURE cb.getOpenIssues()
+ 
+var issues = [
+    dashboard.getOpenRestrictedSpaceIssues(),
+	dashboard.getOpenPersonnelHighTemps(),
+	dashboard.getOpenHighBodyTemps()
+	
+]
+
+var results = []
+for item in issues{
+    results = concat(item, results)
+}
+
+return {"issues":results}
