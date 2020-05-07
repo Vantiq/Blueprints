@@ -1,3 +1,7 @@
+/*
+	Fetch the list of active HighBodyTemp collaborations to populate the dashboard
+    in the SmartBuilding Client
+*/
 PROCEDURE dashboard.getOpenHighBodyTemps()
 
 var template = getDocument("templates/dashboardhighbodytemp")
@@ -10,10 +14,6 @@ SELECT FROM system.collaborations AS collab WHERE name == "HighBodyTemp" AND sta
     docprops.image = collab.results.Initiate.event.img
     docprops.temperature = collab.results.Initiate.event.temperature
 
-
-
-
-    
     SELECT ONE FROM sensors WHERE id == collab.results.Initiate.event.deviceid
     obj.sensorId = sensors.id
     obj.sensortype = sensors.type
@@ -31,14 +31,8 @@ SELECT FROM system.collaborations AS collab WHERE name == "HighBodyTemp" AND sta
     
     obj.template = template
     obj.docprops = docprops
-    
-    //obj.results = collab.results
    
     results.push(obj)
-    
 }
 
-
 return results
-
-

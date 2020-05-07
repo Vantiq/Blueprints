@@ -35,7 +35,6 @@
       "horzGravity" : "center",
       "imageHeightInLocationUnits" : 25,
       "imageWidthInLocationUnits" : 30,
-      "isScaleable" : false,
       "labelProperty" : "id",
       "name" : "FloorplanViewer864",
       "naturalKey" : null,

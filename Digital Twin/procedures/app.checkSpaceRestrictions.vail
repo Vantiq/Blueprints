@@ -1,15 +1,18 @@
+/*
+	Given an event with a floorId, augment the event with 
+    contextual information on specific restrictions for spaces
+    on that floor
+*/
 PROCEDURE app.checkSpaceRestrictions(event Object)
 
 SELECT ONE FROM floors AS floor WHERE id == event.floorid
 
-if (floor){
+if (floor) {
     var x1 = event.x
 	var y1 = event.y
     
     var results = []
 	SELECT FROM spaces AS space WHERE floorid == event.floorid AND restricted == true{  
-        
-        //log.info(space.name)
 
     	var obj = Utils.stripSystemProperties(space)
     	var x2 = space.floorplanlocation.coordinates[1]
@@ -18,74 +21,18 @@ if (floor){
     	// formula: distance = square root of (x2 -x1)squared + (y2 - y1)squared
     	obj.distance = Math.sqrt( Math.pow((x2 -x1),2) + Math.pow((y2 - y1),2) )
 
-		
-
-    	push(results, obj)	
-	
+    	push(results, obj)		
 	} 
-
-	//log.info(stringify(results))
 
 	if (results.length() > 0){
         var results = sort(results, "distance") 
 		var result = results[0]
-		//log.info(result.name + " " + result.distance)
 
 		if(result.distance < 0.3){
-        	//log.info("Your in the room")  
 			event.securityIssue = true
             event.space = result.name
 		}
-		
 	}
-
-	
-
-
 }
 
-//log.info(stringify(results))
-
-
 return event
-
-// get space for event
-
- 
-
-
-//return event
-
-
-/*
-PROCEDURE cb.findSpaceForAsset(floorid String, fplocation GeoJSON)
-
-
-
-var x1 = fplocation.coordinates[1]
-var y1 = fplocation.coordinates[0]
-
-var results = []
-SELECT FROM spaces AS space WHERE floorid == floorid{
-    
-    
-
-    var obj = Utils.stripSystemProperties(space)
-
-
-    var x2 = space.floorplanlocation.coordinates[1]
-    var y2 = space.floorplanlocation.coordinates[0]
-
-    // formula: distance = square root of (x2 -x1)squared + (y2 - y1)squared
-    obj.distance = Math.sqrt( Math.pow((x2 -x1),2) + Math.pow((y2 - y1),2) )
-
-    push(results, obj)	
-	
-} 
-
-var results = sort(results, "distance") 
-
-return results[0]
-
-
-*/

@@ -19,6 +19,23 @@
 	});
     
     
+    
+    //cb.getSensorManufacturers()
+    client.data.execute("cb.getSensorManufacturers", {}, function(response){
+        var enumlist = [];
+        enumlist.push({value: "-select-", label:"-select-"});
+
+        response.forEach(function (item){
+            enumlist.push({value: item.name, label: item.name});
+        });
+
+        client.getWidget("Droplist2181").enumeratedList = enumlist;
+    });
+    
+    
+    
+    
+    
     page.data.refreshSensorConfigs = function(){
         // populate drop down for sensor configs - cb.getSensorConfigs()
         var args = {};

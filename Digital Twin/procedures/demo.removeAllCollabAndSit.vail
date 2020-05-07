@@ -1,7 +1,8 @@
+/*
+	Delete all collaborations and situations
+    Useful when running demos to revert to a clean state
+*/
 PROCEDURE demo.removeAllCollabAndSit()
-
 
 DELETE system.collaborations WHERE {}
 DELETE system.situations WHERE {}
-
-

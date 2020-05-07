@@ -1,3 +1,7 @@
+/*
+	Given an event object with a userId, update the event with complete userData
+    from the associated personnel record and return the augmented event
+*/
 PROCEDURE app.lookupPersonnel(event Object)
 
 SELECT ONE FROM personnel WHERE id == event.userId

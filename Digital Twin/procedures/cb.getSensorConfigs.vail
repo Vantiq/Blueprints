@@ -6,7 +6,3 @@ if (sensortypename){
 } else {
     SELECT FROM sensorconfigs ORDER BY sensortypename
 }
-
-
-
-

@@ -1,3 +1,8 @@
+/*
+	Fetch a floor by id
+*/
 PROCEDURE cb.getFloorById(id String)
 
-SELECT ONE FROM floors WHERE id == id
+var floor = SELECT ONE FROM floors WHERE id == id
+
+return floor

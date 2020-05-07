@@ -1,0 +1,18 @@
+/*
+	Delete an asset from the DB, but only if there are no associated sensors
+*/
+PROCEDURE cb.deleteAsset(assetid String)
+
+// Example asset UUID: f4ff3934-ec2f-46b3-8f5a-1463727d27cf	
+
+// don't delete asset if asset has sensors
+SELECT FROM sensors WHERE assetid == assetid
+
+if (sensors.size() > 0){
+    exception(
+    	"Parent Realtionship Error", 
+    	"You may not remove the Asset while it still has sensors associated with it"
+	)
+} else {
+    DELETE assets WHERE id == assetid
+}

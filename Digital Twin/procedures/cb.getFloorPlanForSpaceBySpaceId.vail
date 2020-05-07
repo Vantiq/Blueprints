@@ -1,7 +1,12 @@
+/*
+	Fetch a floorplan given a space id
+*/
 PROCEDURE cb.getFloorPlanForSpaceBySpaceId(spaceid String)
 
-SELECT ONE FROM spaces WHERE id == spaceid  
+var space = SELECT ONE FROM spaces WHERE id == spaceid  
 
-SELECT ONE FROM floors WHERE id == spaces.floorid
+var floor = SELECT ONE FROM floors WHERE id == space.floorid
 
-SELECT ONE FROM floorplans WHERE id == floors.floorplan
+var fp = SELECT ONE FROM floorplans WHERE id == floor.floorplan
+
+return fp

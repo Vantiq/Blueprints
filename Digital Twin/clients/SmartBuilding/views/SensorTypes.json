@@ -40,6 +40,15 @@
         "selected" : false,
         "title" : "Description"
       }, {
+        "buttonIcon" : "fa-times-circle",
+        "buttonLabel" : "Delete",
+        "colorRules" : null,
+        "dataType" : "Button",
+        "isLinkStyle" : true,
+        "propertyName" : "ButtonDelete",
+        "selected" : false,
+        "title" : ""
+      }, {
         "buttonIcon" : "fa-pencil-square-o",
         "buttonLabel" : "Edit",
         "colorRules" : null,
@@ -75,7 +84,7 @@
       "borderColor" : "Default",
       "borderRadius" : 4,
       "borderThickness" : 0,
-      "buttonBackgroundColor" : "#180469",
+      "buttonBackgroundColor" : "#01186b",
       "buttonLabel" : "Add Sensor Type",
       "buttonLabelColor" : "platform",
       "buttonLabelSize" : 14,

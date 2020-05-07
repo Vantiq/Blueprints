@@ -32,7 +32,7 @@
     }, {
       "borderColor" : "Default",
       "borderRadius" : 4,
-      "borderThickness" : 1,
+      "borderThickness" : 0,
       "children" : [ "e463b413-b974-4ec8-9212-b011c426ffda" ],
       "heightPolicy" : "naturalSize",
       "horzGravity" : "center",
@@ -175,7 +175,7 @@
       "borderColor" : "Default",
       "borderRadius" : 4,
       "borderThickness" : 0,
-      "buttonBackgroundColor" : "#180469",
+      "buttonBackgroundColor" : "#01186b",
       "buttonLabel" : "Submit",
       "buttonLabelColor" : "platform",
       "buttonLabelSize" : 14,
@@ -194,7 +194,7 @@
       "borderColor" : "Default",
       "borderRadius" : 4,
       "borderThickness" : 0,
-      "buttonBackgroundColor" : "#180469",
+      "buttonBackgroundColor" : "#01186b",
       "buttonLabel" : "Upload",
       "buttonLabelColor" : "platform",
       "buttonLabelSize" : 14,
@@ -222,7 +222,8 @@
       "uuid" : "e463b413-b974-4ec8-9212-b011c426ffda",
       "v" : 16,
       "vertGravity" : "center",
-      "widthPolicy" : "naturalSize"
+      "w" : 500,
+      "widthPolicy" : "explicit"
     } ]
   },
   "data" : {

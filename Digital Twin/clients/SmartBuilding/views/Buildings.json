@@ -59,7 +59,7 @@
       "borderColor" : "Default",
       "borderRadius" : 4,
       "borderThickness" : 0,
-      "buttonBackgroundColor" : "#180469",
+      "buttonBackgroundColor" : "#01186b",
       "buttonLabel" : "Add Building",
       "buttonLabelColor" : "platform",
       "buttonLabelSize" : 14,
@@ -137,6 +137,15 @@
         "propertyName" : "address",
         "selected" : false,
         "title" : "Address"
+      }, {
+        "buttonIcon" : "fa-times-circle",
+        "buttonLabel" : "Delete",
+        "colorRules" : null,
+        "dataType" : "Button",
+        "isLinkStyle" : true,
+        "propertyName" : "ButtonDelete",
+        "selected" : false,
+        "title" : ""
       }, {
         "buttonIcon" : "fa-binoculars",
         "buttonLabel" : "View",

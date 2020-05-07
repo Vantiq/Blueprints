@@ -1,5 +1,5 @@
 {
-  "rootObj" : "a51275af-4a57-47fa-aabd-333a2ee7874a",
+  "rootObj" : "63ddc957-c37e-4726-b839-6e5534d883ea",
   "widgets" : [ {
     "borderColor" : "Default",
     "borderRadius" : 4,
@@ -39,7 +39,7 @@
     "uuid" : "1a3bca62-1896-44ec-82a6-58b99a2d36e9",
     "v" : 16,
     "vertGravity" : "center",
-    "vertMargin" : 38,
+    "vertMargin" : 41,
     "widthPolicy" : "sizeToCell"
   }, {
     "borderColor" : "Default",
@@ -62,12 +62,12 @@
     "uuid" : "21e13f67-5110-4c3a-8b1d-4d5fd8fd3ccc",
     "v" : 16,
     "vertGravity" : "center",
-    "vertMargin" : 38,
+    "vertMargin" : 41,
     "widthPolicy" : "sizeToCell"
   }, {
     "borderColor" : "Default",
     "borderThickness" : 0,
-    "children" : [ "bfe16417-6d1b-4f32-ad2e-4626f4eb2b4a", "db212084-016d-4850-896b-2e25f247e6bb", "7c1637f4-28b1-4060-82d0-c0d2b4826407" ],
+    "children" : [ "bfe16417-6d1b-4f32-ad2e-4626f4eb2b4a", "db212084-016d-4850-896b-2e25f247e6bb", "d87734a1-4e9d-4430-8dc3-7edb758ca820", "7c1637f4-28b1-4060-82d0-c0d2b4826407" ],
     "closeIcon" : "glyphicon-chevron-up",
     "fontFace" : "inherit",
     "fontSize" : 16,
@@ -85,7 +85,7 @@
     "uuid" : "2588b0a5-d852-4810-8e48-55aeb79498dc",
     "v" : 16,
     "vertGravity" : "center",
-    "vertMargin" : 38,
+    "vertMargin" : 41,
     "widthPolicy" : "sizeToCell"
   }, {
     "borderColor" : "Default",
@@ -159,7 +159,25 @@
     "uuid" : "5d940b36-07d1-48dd-8f8a-c9bf074ed0db",
     "v" : 16,
     "vertGravity" : "center",
-    "vertMargin" : 38,
+    "vertMargin" : 41,
+    "widthPolicy" : "sizeToCell"
+  }, {
+    "backgroundColor" : "#ffffff",
+    "borderColor" : "Default",
+    "borderThickness" : 0,
+    "children" : [ "1a3bca62-1896-44ec-82a6-58b99a2d36e9", "5d940b36-07d1-48dd-8f8a-c9bf074ed0db", "2588b0a5-d852-4810-8e48-55aeb79498dc", "21e13f67-5110-4c3a-8b1d-4d5fd8fd3ccc" ],
+    "heightPolicy" : "naturalSize",
+    "horzGravity" : "center",
+    "horzMargin" : 5,
+    "innerMargin" : 5,
+    "name" : "_Sidebar_",
+    "packTight" : true,
+    "type" : "VerticalLayout",
+    "uuid" : "63ddc957-c37e-4726-b839-6e5534d883ea",
+    "v" : 16,
+    "vertGravity" : "center",
+    "vertMargin" : 5,
+    "vertWeight" : 1,
     "widthPolicy" : "sizeToCell"
   }, {
     "borderColor" : "Default",
@@ -196,24 +214,6 @@
     "vertGravity" : "center",
     "widthPolicy" : "naturalSize"
   }, {
-    "backgroundColor" : "#ffffff",
-    "borderColor" : "Default",
-    "borderThickness" : 0,
-    "children" : [ "1a3bca62-1896-44ec-82a6-58b99a2d36e9", "5d940b36-07d1-48dd-8f8a-c9bf074ed0db", "2588b0a5-d852-4810-8e48-55aeb79498dc", "21e13f67-5110-4c3a-8b1d-4d5fd8fd3ccc" ],
-    "heightPolicy" : "naturalSize",
-    "horzGravity" : "center",
-    "horzMargin" : 5,
-    "innerMargin" : 5,
-    "name" : "_Sidebar_",
-    "packTight" : true,
-    "type" : "VerticalLayout",
-    "uuid" : "a51275af-4a57-47fa-aabd-333a2ee7874a",
-    "v" : 16,
-    "vertGravity" : "center",
-    "vertMargin" : 5,
-    "vertWeight" : 1,
-    "widthPolicy" : "sizeToCell"
-  }, {
     "borderColor" : "Default",
     "borderRadius" : 4,
     "borderThickness" : 0,
@@ -244,6 +244,23 @@
     "text" : "View Sensors",
     "type" : "MenuButton",
     "uuid" : "bfe16417-6d1b-4f32-ad2e-4626f4eb2b4a",
+    "v" : 16,
+    "vertGravity" : "center",
+    "widthPolicy" : "naturalSize"
+  }, {
+    "borderColor" : "Default",
+    "borderRadius" : 4,
+    "borderThickness" : 0,
+    "fontFace" : "inherit",
+    "fontSize" : 14,
+    "fontStyle" : "normal",
+    "fontWeight" : "bold",
+    "heightPolicy" : "naturalSize",
+    "horzGravity" : "left",
+    "name" : "MenuButton104",
+    "text" : "View Sensor Manufacturers",
+    "type" : "MenuButton",
+    "uuid" : "d87734a1-4e9d-4430-8dc3-7edb758ca820",
     "v" : 16,
     "vertGravity" : "center",
     "widthPolicy" : "naturalSize"

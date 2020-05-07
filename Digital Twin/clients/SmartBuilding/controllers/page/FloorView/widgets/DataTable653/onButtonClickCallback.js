@@ -6,3 +6,17 @@
             client.goToPage("AssetView", response);
         });
     }
+    
+    if(extra.columnName === "ButtonDelete"){
+        client.confirmCustom("Are you sure you want to delete this asset.  This operation cannot bne undone","Yes","No",function(clicked){
+            if (clicked === "Yes"){
+                client.data.execute("cb.deleteAsset", {assetid: extra.dataObject.id}, function(response){
+                    page.data.refreshSpacesAndAssets();
+                });
+        	}
+        });
+            
+	}
+
+        
+    

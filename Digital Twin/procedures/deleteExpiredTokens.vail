@@ -1,3 +1,9 @@
+/*
+	Cleanup procedure used to delete old expired tokens
+    
+    This has no meaningful impact on security, as these tokens are already expired
+    and would not be accepted in future requests
+*/
 PROCEDURE deleteExpiredTokens()
 
 // get the current namespace

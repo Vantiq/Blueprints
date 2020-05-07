@@ -1,3 +1,17 @@
-PROCEDURE cb.getSensors()
+PROCEDURE cb.getSensors(isOrphaned Boolean, type String, manufacturer String)
 
-SELECT FROM sensors ORDER BY type
+var query = {}
+if (isOrphaned){
+    query.assetid = null
+}
+
+if (type){
+    query.type = type
+}
+
+if (manufacturer){
+    query.manufacturer = manufacturer
+}
+
+
+SELECT FROM sensors WHERE query ORDER BY type

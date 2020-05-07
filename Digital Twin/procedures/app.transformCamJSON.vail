@@ -1,3 +1,8 @@
+/*
+	Transform the raw event data from a camera event with no user in the image
+
+	Used in the CameraFeed app
+*/
 PROCEDURE app.transformCamJSON(event Object)
 
 event = event.Info
@@ -16,7 +21,6 @@ obj.openMsg = event.openMsg
 obj.nationCode = event.nationCode
 obj.camType = event.camType
 
-
 // convert to date
 var screenTime = event.screenTime
 obj.screenTime = date(screenTime, "epochSeconds", "date")
@@ -27,6 +31,4 @@ if (startsWith(event.img, "data") ){
     obj.img = "data:image/jpeg;base64," + event.img
 }
 
-
 return obj
-

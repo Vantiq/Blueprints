@@ -1,11 +1,18 @@
 PROCEDURE cb.getOpenIssues()
  
-var issues = [
-    dashboard.getOpenRestrictedSpaceIssues(),
-	dashboard.getOpenPersonnelHighTemps(),
-	dashboard.getOpenHighBodyTemps()
-	
-]
+var issues = []
+SELECT serviceName, name FROM system.components AS proc WHERE serviceName == "dashboard"{
+    var procname = proc.serviceName + "." + proc.name
+   
+    var getResourceRef = {}
+    getResourceRef.op = "execute"
+    getResourceRef.resourceName = "procedures"
+    getResourceRef.resourceId = procname
+    getResourceRef.object = {}
+    var result = ResourceAPI.executeOp(getResourceRef)
+	issues.push(result)
+    
+}
 
 var results = []
 for item in issues{

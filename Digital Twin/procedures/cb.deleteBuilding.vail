@@ -1,0 +1,17 @@
+/*
+	Delete a building from the DB, but only if there are no associated floors
+*/
+PROCEDURE cb.deleteBuilding(buildingid String)
+
+// look for existing floors associated with the specified building
+SELECT FROM floors WHERE buildingid == buildingid
+
+// Throw an error if there are still associated floors
+if (floors.size() > 0){
+    exception(
+    	"Parent Realtionship Error", 
+    	"You may not remove the Building while it still has floors associated with it"
+	)
+} else {
+    DELETE buildings WHERE id == buildingid
+}

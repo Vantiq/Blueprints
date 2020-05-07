@@ -16,6 +16,13 @@
       "required" : false,
       "type" : "String",
       "unique" : false
+    },
+    "simgroup" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "String",
+      "unique" : false
     }
   },
   "role" : "schema"

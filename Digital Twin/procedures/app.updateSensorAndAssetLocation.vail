@@ -1,3 +1,9 @@
+/*
+	Update the underlying asset and sensor records given a new location
+    event with updated coordinates
+    
+    Also records the event for posterity in the trackinghistory type
+*/
 PROCEDURE app.updateSensorAndAssetLocation(event Object)
 
 var loc = {
@@ -17,12 +23,10 @@ if (sensor){
 
 	// assets also have a floorid (floor) and fplocation (floorplanlocation)
 	// we'll update these as well
-
 	var asset = SELECT ONE FROM assets WHERE id == sensor.assetid
 	if (asset){
         UPSERT assets(id:asset.id, floorid:event.floorid, fplocation:loc )
 	}
-	
 }
 
 // now we see if any open collabs

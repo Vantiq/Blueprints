@@ -40,6 +40,15 @@
         "selected" : false,
         "title" : "Last Name"
       }, {
+        "buttonIcon" : "fa-times-circle",
+        "buttonLabel" : "Delete",
+        "colorRules" : null,
+        "dataType" : "Button",
+        "isLinkStyle" : true,
+        "propertyName" : "ButtonDelete",
+        "selected" : false,
+        "title" : ""
+      }, {
         "buttonIcon" : "fa-pencil-square-o",
         "buttonLabel" : "Edit",
         "colorRules" : null,
@@ -90,7 +99,7 @@
       "borderColor" : "Default",
       "borderRadius" : 4,
       "borderThickness" : 0,
-      "buttonBackgroundColor" : "#180469",
+      "buttonBackgroundColor" : "#01186b",
       "buttonLabel" : "Add Person",
       "buttonLabelColor" : "platform",
       "buttonLabelSize" : 14,

@@ -147,38 +147,14 @@
     "source" : "procedure/cb.adjustTheme",
     "target" : "type/system.documents"
   }, {
-    "source" : "procedure/cb.adjustTheme",
-    "target" : "procedure/Utils.stripSystemProperties"
-  }, {
     "source" : "type/system.clients",
     "target" : "procedure/cb.getTheme"
   }, {
     "source" : "procedure/collab.setIssueStatus",
     "target" : "type/system.collaborations"
   }, {
-    "source" : "procedure/collab.setIssueStatus",
-    "target" : "procedure/Utils.stripSystemProperties"
-  }, {
-    "source" : "procedure/Notification.retractPayloadWithSource",
-    "target" : "type/ArsPayloadMessage"
-  }, {
-    "source" : "procedure/Notification.retractPayloadWithSource",
-    "target" : "procedure/Utils.initPushSource"
-  }, {
-    "source" : "procedure/Notification.retractPayload",
-    "target" : "procedure/Notification.retractPayloadWithSource"
-  }, {
-    "source" : "procedure/CollaborationUtils.cancelEscalation",
-    "target" : "type/ArsEscalationDeadline"
-  }, {
-    "source" : "procedure/cb.findSpaceForAsset",
-    "target" : "procedure/Utils.stripSystemProperties"
-  }, {
     "source" : "type/system.collaborations",
     "target" : "procedure/cb.getDashboardData"
-  }, {
-    "source" : "topic//sensor/tracker/2d",
-    "target" : "app/IndoorTracking"
   }, {
     "source" : "procedure/app.updateSensorAndAssetLocation",
     "target" : "type/sensors"
@@ -191,18 +167,6 @@
   }, {
     "source" : "procedure/app.updateSensorAndAssetLocation",
     "target" : "topic//indoortracking"
-  }, {
-    "source" : "app/IndoorTracking",
-    "target" : "procedure/app.updateSensorAndAssetLocation"
-  }, {
-    "source" : "client/AcceptTransport",
-    "target" : "topic//my/response/topic"
-  }, {
-    "source" : "client/Demo",
-    "target" : "topic//my/response/topic"
-  }, {
-    "source" : "type/assets",
-    "target" : "client/MovementSimulator"
   }, {
     "source" : "type/floors",
     "target" : "procedure/cb.getFloorplanByFloorId"
@@ -270,37 +234,7 @@
     "source" : "procedure/app.updateSensorAndAssetLocation",
     "target" : "type/trackinghistory"
   }, {
-    "source" : "type/cameraevents",
-    "target" : "app/CameraFeed"
-  }, {
     "source" : "type/personnel",
-    "target" : "app/CameraFeed"
-  }, {
-    "source" : "type/cameraevents",
-    "target" : "collaborationtype/HighBodyTemp"
-  }, {
-    "source" : "type/floors",
-    "target" : "collaborationtype/HighBodyTemp"
-  }, {
-    "source" : "type/buildings",
-    "target" : "collaborationtype/HighBodyTemp"
-  }, {
-    "source" : "type/assets",
-    "target" : "collaborationtype/HighBodyTemp"
-  }, {
-    "source" : "type/sensors",
-    "target" : "collaborationtype/HighBodyTemp"
-  }, {
-    "source" : "type/spaces",
-    "target" : "collaborationtype/HighBodyTemp"
-  }, {
-    "source" : "type/floorplans",
-    "target" : "collaborationtype/HighBodyTemp"
-  }, {
-    "source" : "type/personnel",
-    "target" : "procedure/collab.findSecurityPersonnel"
-  }, {
-    "source" : "collaborationtype/HighBodyTemp",
     "target" : "procedure/collab.findSecurityPersonnel"
   }, {
     "source" : "type/sensors",
@@ -324,62 +258,8 @@
     "source" : "procedure/collab.getHierarchyFromSensorId",
     "target" : "procedure/findSpaceForAsset"
   }, {
-    "source" : "collaborationtype/HighBodyTemp",
-    "target" : "procedure/collab.getHierarchyFromSensorId"
-  }, {
-    "source" : "type/cameraevents",
-    "target" : "collaborationtype/PersonnelHighTemp"
-  }, {
-    "source" : "type/floors",
-    "target" : "collaborationtype/PersonnelHighTemp"
-  }, {
-    "source" : "type/buildings",
-    "target" : "collaborationtype/PersonnelHighTemp"
-  }, {
-    "source" : "type/assets",
-    "target" : "collaborationtype/PersonnelHighTemp"
-  }, {
-    "source" : "type/sensors",
-    "target" : "collaborationtype/PersonnelHighTemp"
-  }, {
-    "source" : "type/spaces",
-    "target" : "collaborationtype/PersonnelHighTemp"
-  }, {
-    "source" : "type/floorplans",
-    "target" : "collaborationtype/PersonnelHighTemp"
-  }, {
-    "source" : "collaborationtype/PersonnelHighTemp",
-    "target" : "procedure/collab.findSecurityPersonnel"
-  }, {
-    "source" : "collaborationtype/PersonnelHighTemp",
-    "target" : "procedure/collab.getHierarchyFromSensorId"
-  }, {
-    "source" : "topic//camera/thermal/reading",
-    "target" : "app/CameraFeed"
-  }, {
-    "source" : "topic//camera/thermal/userreading",
-    "target" : "app/CameraFeed"
-  }, {
-    "source" : "app/CameraFeed",
-    "target" : "procedure/app.transformCamJSON"
-  }, {
-    "source" : "app/CameraFeed",
-    "target" : "procedure/app.transformUserCamJSON"
-  }, {
     "source" : "type/personnel",
     "target" : "procedure/app.earlyReturn"
-  }, {
-    "source" : "app/CameraFeed",
-    "target" : "procedure/app.earlyReturn"
-  }, {
-    "source" : "client/CameraSim",
-    "target" : "topic//my/response/topic"
-  }, {
-    "source" : "client/HighBodyTempNotification",
-    "target" : "topic//my/response/topic"
-  }, {
-    "source" : "client/HighPersonnelTempNotification",
-    "target" : "topic//my/response/topic"
   }, {
     "source" : "type/personnel",
     "target" : "procedure/app.lookupPersonnel"
@@ -408,14 +288,8 @@
     "source" : "client/VCSDocumentExport",
     "target" : "topic//my/response/topic"
   }, {
-    "source" : "collaborationtype/PersonnelHighTemp",
-    "target" : "procedure/collab.setIssueStatus"
-  }, {
     "source" : "procedure/app.earlyReturn",
     "target" : "type/system.collaborations"
-  }, {
-    "source" : "procedure/app.earlyReturn",
-    "target" : "procedure/Utils.stripSystemProperties"
   }, {
     "source" : "type/system.collaborations",
     "target" : "procedure/dashboard.getOpenRestrictedSpaceIssues"
@@ -451,24 +325,6 @@
     "target" : "procedure/app.updatePeronnelPhoto"
   }, {
     "source" : "type/sensors",
-    "target" : "app/RestrictedSpace"
-  }, {
-    "source" : "type/sensors",
-    "target" : "collaborationtype/RestrictedSpaceIssue"
-  }, {
-    "source" : "type/assets",
-    "target" : "collaborationtype/RestrictedSpaceIssue"
-  }, {
-    "source" : "type/floors",
-    "target" : "collaborationtype/RestrictedSpaceIssue"
-  }, {
-    "source" : "type/floorplans",
-    "target" : "collaborationtype/RestrictedSpaceIssue"
-  }, {
-    "source" : "type/spaces",
-    "target" : "collaborationtype/RestrictedSpaceIssue"
-  }, {
-    "source" : "type/sensors",
     "target" : "procedure/collab.setCollabEntitiesHierarchyFromSensorId"
   }, {
     "source" : "type/assets",
@@ -489,25 +345,10 @@
     "source" : "procedure/collab.setCollabEntitiesHierarchyFromSensorId",
     "target" : "procedure/findSpaceForAsset"
   }, {
-    "source" : "procedure/collab.setCollabEntitiesHierarchyFromSensorId",
-    "target" : "procedure/Utils.stripSystemProperties"
-  }, {
-    "source" : "collaborationtype/RestrictedSpaceIssue",
-    "target" : "procedure/collab.setCollabEntitiesHierarchyFromSensorId"
-  }, {
-    "source" : "topic//sensor/tracker/2d",
-    "target" : "app/RestrictedSpace"
-  }, {
     "source" : "type/floors",
     "target" : "procedure/app.checkSpaceRestrictions"
   }, {
     "source" : "type/spaces",
-    "target" : "procedure/app.checkSpaceRestrictions"
-  }, {
-    "source" : "procedure/app.checkSpaceRestrictions",
-    "target" : "procedure/Utils.stripSystemProperties"
-  }, {
-    "source" : "app/RestrictedSpace",
     "target" : "procedure/app.checkSpaceRestrictions"
   }, {
     "source" : "client/PhotoRegistration",
@@ -549,38 +390,74 @@
     "source" : "type/buildings",
     "target" : "procedure/dashboard.getOpenPersonnelHighTemps"
   }, {
-    "source" : "app/CameraFeed",
-    "target" : "collaborationtype/HighBodyTemp"
-  }, {
-    "source" : "app/CameraFeed",
-    "target" : "collaborationtype/PersonnelHighTemp"
-  }, {
-    "source" : "app/RestrictedSpace",
-    "target" : "collaborationtype/RestrictedSpaceIssue"
+    "source" : "type/system.components",
+    "target" : "procedure/cb.getOpenIssues"
   }, {
     "source" : "type/system.collaborations",
-    "target" : "procedure/dashboard.template"
+    "target" : "procedure/dashboardtemplate"
   }, {
     "source" : "type/sensors",
-    "target" : "procedure/dashboard.template"
+    "target" : "procedure/dashboardtemplate"
   }, {
     "source" : "type/assets",
-    "target" : "procedure/dashboard.template"
+    "target" : "procedure/dashboardtemplate"
   }, {
     "source" : "type/floors",
-    "target" : "procedure/dashboard.template"
+    "target" : "procedure/dashboardtemplate"
   }, {
     "source" : "type/buildings",
-    "target" : "procedure/dashboard.template"
+    "target" : "procedure/dashboardtemplate"
   }, {
-    "source" : "procedure/dashboard.template",
+    "source" : "procedure/dashboardtemplate",
     "target" : "procedure/findSpaceForAsset"
+  }, {
+    "source" : "type/sensors",
+    "target" : "procedure/cb.deleteAsset"
+  }, {
+    "source" : "procedure/cb.deleteAsset",
+    "target" : "type/assets"
+  }, {
+    "source" : "type/floors",
+    "target" : "procedure/cb.deleteBuilding"
+  }, {
+    "source" : "procedure/cb.deleteBuilding",
+    "target" : "type/buildings"
+  }, {
+    "source" : "type/assets",
+    "target" : "procedure/cb.deleteFloor"
+  }, {
+    "source" : "procedure/cb.deleteFloor",
+    "target" : "type/floors"
+  }, {
+    "source" : "type/spaces",
+    "target" : "procedure/cb.deleteFloor"
+  }, {
+    "source" : "type/sensormanufacturers",
+    "target" : "procedure/cb.getSensorManufacturers"
+  }, {
+    "source" : "type/sensors",
+    "target" : "procedure/cb.deleteSensorType"
+  }, {
+    "source" : "procedure/cb.deleteSensorType",
+    "target" : "type/sensortypes"
+  }, {
+    "source" : "procedure/app.earlyReturn",
+    "target" : "procedure/Utils.stripSystemProperties"
+  }, {
+    "source" : "procedure/cb.adjustTheme",
+    "target" : "procedure/Utils.stripSystemProperties"
+  }, {
+    "source" : "procedure/collab.setCollabEntitiesHierarchyFromSensorId",
+    "target" : "procedure/Utils.stripSystemProperties"
+  }, {
+    "source" : "procedure/collab.setIssueStatus",
+    "target" : "procedure/Utils.stripSystemProperties"
   } ],
   "name" : "digitaltwinblueprint",
   "options" : {
-    "description" : "Digital Twin Blueprint",
+    "description" : "Digital Twin Blueprint\n\nThis description should be updated with:\n* Links to complete documentation developed by Pat\n* Brief \"Try this\" walkthrough to see how things work\n* List of plugins with very short descriptions",
     "dockCollapsed" : {
-      "bottom" : false,
+      "bottom" : true,
       "left" : false,
       "right" : false,
       "top" : false
@@ -597,10 +474,19 @@
     "isModeloProject" : true,
     "layoutStyle" : "tile",
     "listFlavor" : "tree",
-    "openResourceFolders" : { },
+    "openResourceFolders" : {
+      "App" : true,
+      "Client" : true,
+      "Collaboration Type" : true,
+      "Procedure" : true,
+      "Rule" : true,
+      "System Model" : true,
+      "Topic" : true,
+      "Type" : true
+    },
     "showGrid" : true,
     "tileColumns" : 2,
-    "tileRows" : 2,
+    "tileRows" : 1,
     "type" : "dev",
     "v" : 3
   },
@@ -700,30 +586,6 @@
     "resourceReference" : "/topics//testing123",
     "type" : 10
   }, {
-    "inventory" : {
-      "clientHash" : [ ],
-      "clients" : [ ],
-      "collaborationHash" : [ ],
-      "collaborations" : [ ],
-      "eventstreamHash" : [ ],
-      "eventstreams" : [ ],
-      "procedureHash" : [ ],
-      "procedures" : [ ],
-      "sourceHash" : [ ],
-      "sources" : [ ],
-      "systemmodelHash" : [ ],
-      "systemmodels" : [ ],
-      "topicHash" : [ "out" ],
-      "topics" : [ "/my/response/topic" ],
-      "typeHash" : [ ],
-      "types" : [ ]
-    },
-    "label" : "AcceptTransport",
-    "name" : "AcceptTransport",
-    "resourceReference" : "/system.clients/AcceptTransport",
-    "timestamp" : "2020-04-18T12:59:03.972Z",
-    "type" : 15
-  }, {
     "label" : "ArsEscalationDeadline",
     "name" : "ArsEscalationDeadline",
     "resourceReference" : "/types/ArsEscalationDeadline",
@@ -787,102 +649,6 @@
     "inventory" : {
       "clientHash" : [ ],
       "clients" : [ ],
-      "collaborationHash" : [ "out", "out" ],
-      "collaborations" : [ "HighBodyTemp", "PersonnelHighTemp" ],
-      "eventstreamHash" : [ ],
-      "eventstreams" : [ ],
-      "procedureHash" : [ "out", "out", "out" ],
-      "procedures" : [ "app.earlyReturn", "app.transformCamJSON", "app.transformUserCamJSON" ],
-      "sourceHash" : [ ],
-      "sources" : [ ],
-      "systemmodelHash" : [ ],
-      "systemmodels" : [ ],
-      "topicHash" : [ "in", "in" ],
-      "topics" : [ "/camera/thermal/reading", "/camera/thermal/userreading" ],
-      "typeHash" : [ "in", "in" ],
-      "types" : [ "cameraevents", "personnel" ]
-    },
-    "label" : "CameraFeed",
-    "name" : "CameraFeed",
-    "resourceReference" : "/collaborationtypes/CameraFeed",
-    "timestamp" : "2020-04-18T12:59:10.683Z",
-    "type" : 12
-  }, {
-    "inventory" : {
-      "clientHash" : [ ],
-      "clients" : [ ],
-      "collaborationHash" : [ ],
-      "collaborations" : [ ],
-      "eventstreamHash" : [ ],
-      "eventstreams" : [ ],
-      "procedureHash" : [ ],
-      "procedures" : [ ],
-      "sourceHash" : [ ],
-      "sources" : [ ],
-      "systemmodelHash" : [ ],
-      "systemmodels" : [ ],
-      "topicHash" : [ "out" ],
-      "topics" : [ "/my/response/topic" ],
-      "typeHash" : [ ],
-      "types" : [ ]
-    },
-    "label" : "CameraSim",
-    "name" : "CameraSim",
-    "resourceReference" : "/system.clients/CameraSim",
-    "timestamp" : "2020-04-18T12:59:03.984Z",
-    "type" : 15
-  }, {
-    "inventory" : {
-      "clientHash" : [ ],
-      "clients" : [ ],
-      "collaborationHash" : [ ],
-      "collaborations" : [ ],
-      "eventstreamHash" : [ ],
-      "eventstreams" : [ ],
-      "procedureHash" : [ "out" ],
-      "procedures" : [ "now" ],
-      "sourceHash" : [ ],
-      "sources" : [ ],
-      "systemmodelHash" : [ ],
-      "systemmodels" : [ ],
-      "topicHash" : [ ],
-      "topics" : [ ],
-      "typeHash" : [ "both", "in" ],
-      "types" : [ "ArsEscalationDeadline", "collaborations" ]
-    },
-    "label" : "CollaborationUtils.cancelEscalation",
-    "name" : "CollaborationUtils.cancelEscalation",
-    "resourceReference" : "/procedures/CollaborationUtils.cancelEscalation",
-    "timestamp" : "2020-04-04T17:17:19.649Z",
-    "type" : 3
-  }, {
-    "inventory" : {
-      "clientHash" : [ ],
-      "clients" : [ ],
-      "collaborationHash" : [ ],
-      "collaborations" : [ ],
-      "eventstreamHash" : [ ],
-      "eventstreams" : [ ],
-      "procedureHash" : [ ],
-      "procedures" : [ ],
-      "sourceHash" : [ ],
-      "sources" : [ ],
-      "systemmodelHash" : [ ],
-      "systemmodels" : [ ],
-      "topicHash" : [ "out" ],
-      "topics" : [ "/my/response/topic" ],
-      "typeHash" : [ ],
-      "types" : [ ]
-    },
-    "label" : "Demo",
-    "name" : "Demo",
-    "resourceReference" : "/system.clients/Demo",
-    "timestamp" : "2020-04-18T14:21:41.336Z",
-    "type" : 15
-  }, {
-    "inventory" : {
-      "clientHash" : [ ],
-      "clients" : [ ],
       "collaborationHash" : [ ],
       "collaborations" : [ ],
       "eventstreamHash" : [ ],
@@ -935,102 +701,6 @@
       "collaborations" : [ ],
       "eventstreamHash" : [ ],
       "eventstreams" : [ ],
-      "procedureHash" : [ "out", "out", "out" ],
-      "procedures" : [ "collab.findSecurityPersonnel", "collab.getHierarchyFromSensorId", "CollaborationUtils.closeCollaboration" ],
-      "sourceHash" : [ ],
-      "sources" : [ ],
-      "systemmodelHash" : [ ],
-      "systemmodels" : [ ],
-      "topicHash" : [ ],
-      "topics" : [ ],
-      "typeHash" : [ "in", "in", "in", "in", "in", "in", "in" ],
-      "types" : [ "cameraevents", "floors", "buildings", "assets", "sensors", "spaces", "floorplans" ]
-    },
-    "label" : "HighBodyTemp",
-    "name" : "HighBodyTemp",
-    "resourceReference" : "/collaborationtypes/HighBodyTemp",
-    "timestamp" : "2020-04-18T12:59:10.704Z",
-    "type" : 11
-  }, {
-    "inventory" : {
-      "clientHash" : [ ],
-      "clients" : [ ],
-      "collaborationHash" : [ ],
-      "collaborations" : [ ],
-      "eventstreamHash" : [ ],
-      "eventstreams" : [ ],
-      "procedureHash" : [ ],
-      "procedures" : [ ],
-      "sourceHash" : [ ],
-      "sources" : [ ],
-      "systemmodelHash" : [ ],
-      "systemmodels" : [ ],
-      "topicHash" : [ "out" ],
-      "topics" : [ "/my/response/topic" ],
-      "typeHash" : [ ],
-      "types" : [ ]
-    },
-    "label" : "HighBodyTempNotification",
-    "name" : "HighBodyTempNotification",
-    "resourceReference" : "/system.clients/HighBodyTempNotification",
-    "timestamp" : "2020-04-18T12:59:03.985Z",
-    "type" : 15
-  }, {
-    "inventory" : {
-      "clientHash" : [ ],
-      "clients" : [ ],
-      "collaborationHash" : [ ],
-      "collaborations" : [ ],
-      "eventstreamHash" : [ ],
-      "eventstreams" : [ ],
-      "procedureHash" : [ ],
-      "procedures" : [ ],
-      "sourceHash" : [ ],
-      "sources" : [ ],
-      "systemmodelHash" : [ ],
-      "systemmodels" : [ ],
-      "topicHash" : [ "out" ],
-      "topics" : [ "/my/response/topic" ],
-      "typeHash" : [ ],
-      "types" : [ ]
-    },
-    "label" : "HighPersonnelTempNotification",
-    "name" : "HighPersonnelTempNotification",
-    "resourceReference" : "/system.clients/HighPersonnelTempNotification",
-    "timestamp" : "2020-04-18T12:59:03.985Z",
-    "type" : 15
-  }, {
-    "inventory" : {
-      "clientHash" : [ ],
-      "clients" : [ ],
-      "collaborationHash" : [ ],
-      "collaborations" : [ ],
-      "eventstreamHash" : [ ],
-      "eventstreams" : [ ],
-      "procedureHash" : [ "out" ],
-      "procedures" : [ "app.updateSensorAndAssetLocation" ],
-      "sourceHash" : [ ],
-      "sources" : [ ],
-      "systemmodelHash" : [ ],
-      "systemmodels" : [ ],
-      "topicHash" : [ "in" ],
-      "topics" : [ "/sensor/tracker/2d" ],
-      "typeHash" : [ ],
-      "types" : [ ]
-    },
-    "label" : "IndoorTracking",
-    "name" : "IndoorTracking",
-    "resourceReference" : "/collaborationtypes/IndoorTracking",
-    "timestamp" : "2020-04-18T12:59:11.094Z",
-    "type" : 12
-  }, {
-    "inventory" : {
-      "clientHash" : [ ],
-      "clients" : [ ],
-      "collaborationHash" : [ ],
-      "collaborations" : [ ],
-      "eventstreamHash" : [ ],
-      "eventstreams" : [ ],
       "procedureHash" : [ ],
       "procedures" : [ ],
       "sourceHash" : [ ],
@@ -1047,102 +717,6 @@
     "resourceReference" : "/ArsSubscribe/MobileDebug",
     "timestamp" : "2020-04-18T12:59:15.178Z",
     "type" : 9
-  }, {
-    "inventory" : {
-      "clientHash" : [ ],
-      "clients" : [ ],
-      "collaborationHash" : [ ],
-      "collaborations" : [ ],
-      "eventstreamHash" : [ ],
-      "eventstreams" : [ ],
-      "procedureHash" : [ ],
-      "procedures" : [ ],
-      "sourceHash" : [ ],
-      "sources" : [ ],
-      "systemmodelHash" : [ ],
-      "systemmodels" : [ ],
-      "topicHash" : [ ],
-      "topics" : [ ],
-      "typeHash" : [ "in" ],
-      "types" : [ "assets" ]
-    },
-    "label" : "MovementSimulator",
-    "name" : "MovementSimulator",
-    "resourceReference" : "/system.clients/MovementSimulator",
-    "timestamp" : "2020-04-18T12:59:03.992Z",
-    "type" : 15
-  }, {
-    "inventory" : {
-      "clientHash" : [ ],
-      "clients" : [ ],
-      "collaborationHash" : [ ],
-      "collaborations" : [ ],
-      "eventstreamHash" : [ ],
-      "eventstreams" : [ ],
-      "procedureHash" : [ "out" ],
-      "procedures" : [ "Notification.retractPayloadWithSource" ],
-      "sourceHash" : [ ],
-      "sources" : [ ],
-      "systemmodelHash" : [ ],
-      "systemmodels" : [ ],
-      "topicHash" : [ ],
-      "topics" : [ ],
-      "typeHash" : [ ],
-      "types" : [ ]
-    },
-    "label" : "Notification.retractPayload",
-    "name" : "Notification.retractPayload",
-    "resourceReference" : "/procedures/Notification.retractPayload",
-    "timestamp" : "2020-04-04T17:17:18.314Z",
-    "type" : 3
-  }, {
-    "inventory" : {
-      "clientHash" : [ ],
-      "clients" : [ ],
-      "collaborationHash" : [ ],
-      "collaborations" : [ ],
-      "eventstreamHash" : [ ],
-      "eventstreams" : [ ],
-      "procedureHash" : [ "out", "out", "out", "out", "out" ],
-      "procedures" : [ "exception", "Utils.initPushSource", "excludeList.contains", "retractedUsersArr.push", "newUsersArr.push" ],
-      "sourceHash" : [ ],
-      "sources" : [ ],
-      "systemmodelHash" : [ ],
-      "systemmodels" : [ ],
-      "topicHash" : [ ],
-      "topics" : [ ],
-      "typeHash" : [ "both" ],
-      "types" : [ "ArsPayloadMessage" ]
-    },
-    "label" : "Notification.retractPayloadWithSource",
-    "name" : "Notification.retractPayloadWithSource",
-    "resourceReference" : "/procedures/Notification.retractPayloadWithSource",
-    "timestamp" : "2020-04-04T17:17:18.314Z",
-    "type" : 3
-  }, {
-    "inventory" : {
-      "clientHash" : [ ],
-      "clients" : [ ],
-      "collaborationHash" : [ ],
-      "collaborations" : [ ],
-      "eventstreamHash" : [ ],
-      "eventstreams" : [ ],
-      "procedureHash" : [ "out", "out", "out" ],
-      "procedures" : [ "collab.findSecurityPersonnel", "collab.getHierarchyFromSensorId", "collab.setIssueStatus" ],
-      "sourceHash" : [ ],
-      "sources" : [ ],
-      "systemmodelHash" : [ ],
-      "systemmodels" : [ ],
-      "topicHash" : [ ],
-      "topics" : [ ],
-      "typeHash" : [ "in", "in", "in", "in", "in", "in", "in" ],
-      "types" : [ "cameraevents", "floors", "buildings", "assets", "sensors", "spaces", "floorplans" ]
-    },
-    "label" : "PersonnelHighTemp",
-    "name" : "PersonnelHighTemp",
-    "resourceReference" : "/collaborationtypes/PersonnelHighTemp",
-    "timestamp" : "2020-04-18T12:59:16.251Z",
-    "type" : 11
   }, {
     "inventory" : {
       "clientHash" : [ ],
@@ -1195,54 +769,6 @@
     "inventory" : {
       "clientHash" : [ ],
       "clients" : [ ],
-      "collaborationHash" : [ "out" ],
-      "collaborations" : [ "RestrictedSpaceIssue" ],
-      "eventstreamHash" : [ ],
-      "eventstreams" : [ ],
-      "procedureHash" : [ "out" ],
-      "procedures" : [ "app.checkSpaceRestrictions" ],
-      "sourceHash" : [ ],
-      "sources" : [ ],
-      "systemmodelHash" : [ ],
-      "systemmodels" : [ ],
-      "topicHash" : [ "in" ],
-      "topics" : [ "/sensor/tracker/2d" ],
-      "typeHash" : [ "in" ],
-      "types" : [ "sensors" ]
-    },
-    "label" : "RestrictedSpace",
-    "name" : "RestrictedSpace",
-    "resourceReference" : "/collaborationtypes/RestrictedSpace",
-    "timestamp" : "2020-04-18T12:59:16.591Z",
-    "type" : 12
-  }, {
-    "inventory" : {
-      "clientHash" : [ ],
-      "clients" : [ ],
-      "collaborationHash" : [ ],
-      "collaborations" : [ ],
-      "eventstreamHash" : [ ],
-      "eventstreams" : [ ],
-      "procedureHash" : [ "out" ],
-      "procedures" : [ "collab.setCollabEntitiesHierarchyFromSensorId" ],
-      "sourceHash" : [ ],
-      "sources" : [ ],
-      "systemmodelHash" : [ ],
-      "systemmodels" : [ ],
-      "topicHash" : [ ],
-      "topics" : [ ],
-      "typeHash" : [ "in", "in", "in", "in", "in" ],
-      "types" : [ "sensors", "assets", "floors", "floorplans", "spaces" ]
-    },
-    "label" : "RestrictedSpaceIssue",
-    "name" : "RestrictedSpaceIssue",
-    "resourceReference" : "/collaborationtypes/RestrictedSpaceIssue",
-    "timestamp" : "2020-04-18T12:59:17.315Z",
-    "type" : 11
-  }, {
-    "inventory" : {
-      "clientHash" : [ ],
-      "clients" : [ ],
       "collaborationHash" : [ ],
       "collaborations" : [ ],
       "eventstreamHash" : [ ],
@@ -1285,32 +811,8 @@
     "label" : "SmartBuilding",
     "name" : "SmartBuilding",
     "resourceReference" : "/system.clients/SmartBuilding",
-    "timestamp" : "2020-04-19T13:06:09.777Z",
+    "timestamp" : "2020-05-06T15:20:31.255Z",
     "type" : 15
-  }, {
-    "inventory" : {
-      "clientHash" : [ ],
-      "clients" : [ ],
-      "collaborationHash" : [ ],
-      "collaborations" : [ ],
-      "eventstreamHash" : [ ],
-      "eventstreams" : [ ],
-      "procedureHash" : [ "out" ],
-      "procedures" : [ "namespace" ],
-      "sourceHash" : [ ],
-      "sources" : [ ],
-      "systemmodelHash" : [ ],
-      "systemmodels" : [ ],
-      "topicHash" : [ ],
-      "topics" : [ ],
-      "typeHash" : [ "in" ],
-      "types" : [ "sources" ]
-    },
-    "label" : "Utils.initPushSource",
-    "name" : "Utils.initPushSource",
-    "resourceReference" : "/procedures/Utils.initPushSource",
-    "timestamp" : "2020-04-04T17:17:20.383Z",
-    "type" : 3
   }, {
     "inventory" : {
       "clientHash" : [ ],
@@ -1330,7 +832,6 @@
       "typeHash" : [ ],
       "types" : [ ]
     },
-    "label" : "Utils.stripSystemProperties",
     "name" : "Utils.stripSystemProperties",
     "resourceReference" : "/procedures/Utils.stripSystemProperties",
     "timestamp" : "2020-04-04T17:17:20.384Z",
@@ -1357,7 +858,7 @@
     "label" : "VCSDocumentExport",
     "name" : "VCSDocumentExport",
     "resourceReference" : "/system.clients/VCSDocumentExport",
-    "timestamp" : "2020-04-19T21:41:56.885Z",
+    "timestamp" : "2020-04-21T04:54:35.360Z",
     "type" : 15
   }, {
     "inventory" : {
@@ -1453,7 +954,7 @@
     "label" : "app.checkForHighTemp",
     "name" : "app.checkForHighTemp",
     "resourceReference" : "/procedures/app.checkForHighTemp",
-    "timestamp" : "2020-04-18T12:52:49.069Z",
+    "timestamp" : "2020-05-04T21:03:36.553Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -1477,7 +978,7 @@
     "label" : "app.checkSpaceRestrictions",
     "name" : "app.checkSpaceRestrictions",
     "resourceReference" : "/procedures/app.checkSpaceRestrictions",
-    "timestamp" : "2020-04-18T12:52:48.309Z",
+    "timestamp" : "2020-05-04T21:07:10.831Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -1501,7 +1002,7 @@
     "label" : "app.earlyReturn",
     "name" : "app.earlyReturn",
     "resourceReference" : "/procedures/app.earlyReturn",
-    "timestamp" : "2020-04-18T12:52:48.986Z",
+    "timestamp" : "2020-05-04T21:37:44.403Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -1525,7 +1026,7 @@
     "label" : "app.lookupPersonnel",
     "name" : "app.lookupPersonnel",
     "resourceReference" : "/procedures/app.lookupPersonnel",
-    "timestamp" : "2020-04-18T12:52:48.633Z",
+    "timestamp" : "2020-05-04T21:34:08.375Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -1549,7 +1050,7 @@
     "label" : "app.passthrough",
     "name" : "app.passthrough",
     "resourceReference" : "/procedures/app.passthrough",
-    "timestamp" : "2020-04-18T12:52:48.491Z",
+    "timestamp" : "2020-05-04T21:34:35.858Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -1573,7 +1074,7 @@
     "label" : "app.transformCamJSON",
     "name" : "app.transformCamJSON",
     "resourceReference" : "/procedures/app.transformCamJSON",
-    "timestamp" : "2020-04-18T12:52:48.061Z",
+    "timestamp" : "2020-05-04T21:36:40.879Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -1597,7 +1098,7 @@
     "label" : "app.transformUserCamJSON",
     "name" : "app.transformUserCamJSON",
     "resourceReference" : "/procedures/app.transformUserCamJSON",
-    "timestamp" : "2020-04-18T12:52:48.316Z",
+    "timestamp" : "2020-05-04T21:38:13.619Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -1621,7 +1122,7 @@
     "label" : "app.updatePeronnelPhoto",
     "name" : "app.updatePeronnelPhoto",
     "resourceReference" : "/procedures/app.updatePeronnelPhoto",
-    "timestamp" : "2020-04-18T12:52:49.819Z",
+    "timestamp" : "2020-05-04T21:39:19.683Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -1645,7 +1146,7 @@
     "label" : "app.updateSensorAndAssetLocation",
     "name" : "app.updateSensorAndAssetLocation",
     "resourceReference" : "/procedures/app.updateSensorAndAssetLocation",
-    "timestamp" : "2020-04-18T12:52:48.461Z",
+    "timestamp" : "2020-05-04T21:42:19.940Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -1669,7 +1170,7 @@
     "label" : "appCondition.evaluateConfig",
     "name" : "appCondition.evaluateConfig",
     "resourceReference" : "/procedures/appCondition.evaluateConfig",
-    "timestamp" : "2020-04-18T12:52:48.584Z",
+    "timestamp" : "2020-05-04T21:53:33.985Z",
     "type" : 3
   }, {
     "label" : "assets",
@@ -1717,7 +1218,103 @@
     "label" : "cb.adjustTheme",
     "name" : "cb.adjustTheme",
     "resourceReference" : "/procedures/cb.adjustTheme",
-    "timestamp" : "2020-04-18T12:52:49.227Z",
+    "timestamp" : "2020-05-04T21:59:30.116Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out" ],
+      "procedures" : [ "exception" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in", "out" ],
+      "types" : [ "sensors", "assets" ]
+    },
+    "label" : "cb.deleteAsset",
+    "name" : "cb.deleteAsset",
+    "resourceReference" : "/procedures/cb.deleteAsset",
+    "timestamp" : "2020-05-04T22:02:53.455Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out" ],
+      "procedures" : [ "exception" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in", "out" ],
+      "types" : [ "floors", "buildings" ]
+    },
+    "label" : "cb.deleteBuilding",
+    "name" : "cb.deleteBuilding",
+    "resourceReference" : "/procedures/cb.deleteBuilding",
+    "timestamp" : "2020-05-04T22:04:12.552Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out" ],
+      "procedures" : [ "exception" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in", "in", "out" ],
+      "types" : [ "assets", "spaces", "floors" ]
+    },
+    "label" : "cb.deleteFloor",
+    "name" : "cb.deleteFloor",
+    "resourceReference" : "/procedures/cb.deleteFloor",
+    "timestamp" : "2020-05-04T22:20:59.458Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out" ],
+      "procedures" : [ "exception" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in", "out" ],
+      "types" : [ "sensors", "sensortypes" ]
+    },
+    "label" : "cb.deleteSensorType",
+    "name" : "cb.deleteSensorType",
+    "resourceReference" : "/procedures/cb.deleteSensorType",
+    "timestamp" : "2020-04-24T21:54:53.884Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -1981,7 +1578,7 @@
     "label" : "cb.getCollabContext",
     "name" : "cb.getCollabContext",
     "resourceReference" : "/procedures/cb.getCollabContext",
-    "timestamp" : "2020-04-18T12:52:49.125Z",
+    "timestamp" : "2020-05-04T22:06:20.492Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -2005,7 +1602,7 @@
     "label" : "cb.getDailyCounts",
     "name" : "cb.getDailyCounts",
     "resourceReference" : "/procedures/cb.getDailyCounts",
-    "timestamp" : "2020-04-18T12:59:01.542Z",
+    "timestamp" : "2020-05-04T22:09:23.574Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -2029,7 +1626,7 @@
     "label" : "cb.getDashboardData",
     "name" : "cb.getDashboardData",
     "resourceReference" : "/procedures/cb.getDashboardData",
-    "timestamp" : "2020-04-18T12:59:01.137Z",
+    "timestamp" : "2020-05-04T22:09:48.282Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -2053,7 +1650,7 @@
     "label" : "cb.getFloorById",
     "name" : "cb.getFloorById",
     "resourceReference" : "/procedures/cb.getFloorById",
-    "timestamp" : "2020-04-18T12:52:48.847Z",
+    "timestamp" : "2020-05-04T22:10:25.601Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -2077,7 +1674,7 @@
     "label" : "cb.getFloorForSpaceBySpaceId",
     "name" : "cb.getFloorForSpaceBySpaceId",
     "resourceReference" : "/procedures/cb.getFloorForSpaceBySpaceId",
-    "timestamp" : "2020-04-18T12:52:49.788Z",
+    "timestamp" : "2020-05-04T22:11:14.462Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -2101,7 +1698,7 @@
     "label" : "cb.getFloorPlanById",
     "name" : "cb.getFloorPlanById",
     "resourceReference" : "/procedures/cb.getFloorPlanById",
-    "timestamp" : "2020-04-18T12:52:48.798Z",
+    "timestamp" : "2020-05-04T22:12:02.128Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -2125,7 +1722,7 @@
     "label" : "cb.getFloorPlanForSpaceBySpaceId",
     "name" : "cb.getFloorPlanForSpaceBySpaceId",
     "resourceReference" : "/procedures/cb.getFloorPlanForSpaceBySpaceId",
-    "timestamp" : "2020-04-18T12:52:49.253Z",
+    "timestamp" : "2020-05-04T22:18:23.848Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -2255,21 +1852,21 @@
       "collaborations" : [ ],
       "eventstreamHash" : [ ],
       "eventstreams" : [ ],
-      "procedureHash" : [ "out" ],
-      "procedures" : [ "concat" ],
+      "procedureHash" : [ "out", "out", "out" ],
+      "procedures" : [ "ResourceAPI.executeOp", "issues.push", "concat" ],
       "sourceHash" : [ ],
       "sources" : [ ],
       "systemmodelHash" : [ ],
       "systemmodels" : [ ],
       "topicHash" : [ ],
       "topics" : [ ],
-      "typeHash" : [ ],
-      "types" : [ ]
+      "typeHash" : [ "in" ],
+      "types" : [ "system.components" ]
     },
     "label" : "cb.getOpenIssues",
     "name" : "cb.getOpenIssues",
     "resourceReference" : "/procedures/cb.getOpenIssues",
-    "timestamp" : "2020-04-19T21:29:10.925Z",
+    "timestamp" : "2020-04-21T13:51:25.715Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -2413,7 +2010,7 @@
     "label" : "cb.getSensorConfigById",
     "name" : "cb.getSensorConfigById",
     "resourceReference" : "/procedures/cb.getSensorConfigById",
-    "timestamp" : "2020-04-18T12:52:48.945Z",
+    "timestamp" : "2020-05-04T22:23:06.055Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -2437,7 +2034,31 @@
     "label" : "cb.getSensorConfigs",
     "name" : "cb.getSensorConfigs",
     "resourceReference" : "/procedures/cb.getSensorConfigs",
-    "timestamp" : "2020-04-18T12:52:49.451Z",
+    "timestamp" : "2020-05-04T22:23:09.526Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "sensormanufacturers" ]
+    },
+    "label" : "cb.getSensorManufacturers",
+    "name" : "cb.getSensorManufacturers",
+    "resourceReference" : "/procedures/cb.getSensorManufacturers",
+    "timestamp" : "2020-04-24T17:46:09.409Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -2485,7 +2106,7 @@
     "label" : "cb.getSensors",
     "name" : "cb.getSensors",
     "resourceReference" : "/procedures/cb.getSensors",
-    "timestamp" : "2020-04-18T12:52:49.027Z",
+    "timestamp" : "2020-05-01T14:43:11.083Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -2605,7 +2226,7 @@
     "label" : "collab.findSecurityPersonnel",
     "name" : "collab.findSecurityPersonnel",
     "resourceReference" : "/procedures/collab.findSecurityPersonnel",
-    "timestamp" : "2020-04-18T12:52:48.204Z",
+    "timestamp" : "2020-05-04T23:35:48.680Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -2629,7 +2250,7 @@
     "label" : "collab.getHierarchyFromSensorId",
     "name" : "collab.getHierarchyFromSensorId",
     "resourceReference" : "/procedures/collab.getHierarchyFromSensorId",
-    "timestamp" : "2020-04-18T12:52:49.690Z",
+    "timestamp" : "2020-05-04T23:39:35.638Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -2653,7 +2274,7 @@
     "label" : "collab.indoorTracking",
     "name" : "collab.indoorTracking",
     "resourceReference" : "/procedures/collab.indoorTracking",
-    "timestamp" : "2020-04-18T12:52:49.022Z",
+    "timestamp" : "2020-05-04T23:41:53.781Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -2677,7 +2298,7 @@
     "label" : "collab.setCollabEntitiesHierarchyFromSensorId",
     "name" : "collab.setCollabEntitiesHierarchyFromSensorId",
     "resourceReference" : "/procedures/collab.setCollabEntitiesHierarchyFromSensorId",
-    "timestamp" : "2020-04-18T12:52:49.453Z",
+    "timestamp" : "2020-05-04T23:48:19.712Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -2701,7 +2322,7 @@
     "label" : "collab.setIssueStatus",
     "name" : "collab.setIssueStatus",
     "resourceReference" : "/procedures/collab.setIssueStatus",
-    "timestamp" : "2020-04-18T12:52:49.480Z",
+    "timestamp" : "2020-05-05T00:01:05.387Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -2818,9 +2439,10 @@
       "typeHash" : [ "in", "in", "in", "in", "in" ],
       "types" : [ "system.collaborations", "sensors", "assets", "floors", "buildings" ]
     },
-    "name" : "dashboard.template",
-    "resourceReference" : "/procedures/dashboard.template",
-    "timestamp" : "2020-04-20T16:31:35.914Z",
+    "label" : "dashboardtemplate",
+    "name" : "dashboardtemplate",
+    "resourceReference" : "/procedures/dashboardtemplate",
+    "timestamp" : "2020-04-21T13:57:39.813Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -2916,7 +2538,7 @@
     "label" : "findSpaceForAsset",
     "name" : "findSpaceForAsset",
     "resourceReference" : "/procedures/findSpaceForAsset",
-    "timestamp" : "2020-04-18T12:52:49.506Z",
+    "timestamp" : "2020-05-04T23:40:48.479Z",
     "type" : 3
   }, {
     "label" : "floorplans",
@@ -2982,7 +2604,7 @@
     "label" : "movementsimulations",
     "name" : "movementsimulations",
     "resourceReference" : "/types/movementsimulations",
-    "timestamp" : "2020-04-18T12:59:01.128Z",
+    "timestamp" : "2020-04-24T15:36:57.365Z",
     "type" : 1
   }, {
     "inventory" : {
@@ -3054,7 +2676,7 @@
     "label" : "on_simulation_playback",
     "name" : "on_simulation_playback",
     "resourceReference" : "/rules/on_simulation_playback",
-    "timestamp" : "2020-04-18T12:59:01.312Z",
+    "timestamp" : "2020-04-30T21:53:16.678Z",
     "type" : 2
   }, {
     "label" : "organization",
@@ -3114,7 +2736,7 @@
     "label" : "s_simulations",
     "name" : "s_simulations",
     "resourceReference" : "/types/s_simulations",
-    "timestamp" : "2020-04-18T12:59:01.368Z",
+    "timestamp" : "2020-04-24T15:39:56.332Z",
     "type" : 1
   }, {
     "label" : "s_volumesenor",
@@ -3129,10 +2751,16 @@
     "timestamp" : "2020-04-18T12:59:01.561Z",
     "type" : 1
   }, {
+    "label" : "sensormanufacturers",
+    "name" : "sensormanufacturers",
+    "resourceReference" : "/types/sensormanufacturers",
+    "timestamp" : "2020-04-24T17:17:54.537Z",
+    "type" : 1
+  }, {
     "label" : "sensors",
     "name" : "sensors",
     "resourceReference" : "/types/sensors",
-    "timestamp" : "2020-04-18T12:59:01.446Z",
+    "timestamp" : "2020-04-24T17:52:04.150Z",
     "type" : 1
   }, {
     "label" : "sensortypes",
@@ -3234,7 +2862,7 @@
     "label" : "sim.getSimulations",
     "name" : "sim.getSimulations",
     "resourceReference" : "/procedures/sim.getSimulations",
-    "timestamp" : "2020-04-18T12:59:02.089Z",
+    "timestamp" : "2020-04-24T15:54:58.340Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -3282,7 +2910,7 @@
     "label" : "sim.playbackSimulation",
     "name" : "sim.playbackSimulation",
     "resourceReference" : "/procedures/sim.playbackSimulation",
-    "timestamp" : "2020-04-18T12:52:49.031Z",
+    "timestamp" : "2020-05-01T17:41:49.373Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -3325,6 +2953,12 @@
     "name" : "system.collaborations",
     "resourceReference" : "/types/system.collaborations",
     "timestamp" : "2020-03-18T00:32:48.756Z",
+    "type" : 1
+  }, {
+    "label" : "system.components",
+    "name" : "system.components",
+    "resourceReference" : "/types/system.components",
+    "timestamp" : "2020-03-18T00:32:42.239Z",
     "type" : 1
   }, {
     "label" : "system.documents",
@@ -3386,7 +3020,7 @@
     "name" : "Project Contents",
     "pane" : {
       "c" : -1,
-      "lastUsed" : 1587400461064,
+      "lastUsed" : 1588778561608,
       "r" : -1
     },
     "type" : 2
@@ -3396,7 +3030,7 @@
     "name" : "Inactive Panes",
     "pane" : {
       "c" : -1,
-      "lastUsed" : 1587400461064,
+      "lastUsed" : 1588778650084,
       "r" : -1
     },
     "type" : 99
@@ -3405,7 +3039,7 @@
     "name" : "Errors",
     "pane" : {
       "c" : -1,
-      "lastUsed" : 1587400461064,
+      "lastUsed" : 1588778650084,
       "r" : -1
     },
     "type" : 13
@@ -3413,10 +3047,10 @@
     "isPinned" : false,
     "name" : "VCSDocumentExport",
     "pane" : {
-      "c" : 0,
+      "c" : -1,
       "createdTime" : 1586796246094,
-      "lastUsed" : 1586796596736,
-      "r" : 0
+      "lastUsed" : 1588625895973,
+      "r" : -1
     },
     "resourceKey" : "client/VCSDocumentExport",
     "type" : 63
@@ -3424,9 +3058,9 @@
     "isPinned" : false,
     "name" : "Project Description",
     "pane" : {
-      "c" : 1,
+      "c" : 0,
       "createdTime" : 1586796834784,
-      "lastUsed" : 1586796837566,
+      "lastUsed" : 1588626170936,
       "r" : 0
     },
     "type" : 82
@@ -3434,10 +3068,10 @@
     "isPinned" : false,
     "name" : "SmartBuilding",
     "pane" : {
-      "c" : 0,
+      "c" : 1,
       "createdTime" : 1587250817464,
-      "lastUsed" : 1587250817464,
-      "r" : 1
+      "lastUsed" : 1588626145890,
+      "r" : 0
     },
     "resourceKey" : "client/SmartBuilding",
     "type" : 63

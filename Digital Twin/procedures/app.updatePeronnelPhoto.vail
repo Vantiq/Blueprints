@@ -1,25 +1,7 @@
-PROCEDURE app.updatePeronnelPhoto(event Object)
-
 /*
-// image name for script
-var imageName = event.values.Camera1
-
-// Create the script
-var script = { scriptName: "CropTo500"}
-
-// Build a convertToGrayscale action
-var convertAction = { name: "crop"}
-
-// Save that image to an image named gsSave.jpg
-var saveCropAction = { name: "save"}
-var saveCParams = { saveName: "gsSave.jpg", fileType: "image/jpeg"}
-saveCropAction.parameters = saveCParams
-
-script.script = [convertAction, saveCropAction]
-var result = VisionScriptOperation.processImageFromDocuments(imageName, script)
-
+	Update the underlying personnel record with the photo and thumbnail paths
 */
-
+PROCEDURE app.updatePeronnelPhoto(event Object)
 
 var updateObj ={}
 updateObj.photopath = event.values.Camera1
@@ -28,4 +10,3 @@ updateObj.photothumbnailpath = event.values.Camera1Thumbnail
 UPDATE personnel(updateObj) WHERE uid == event.values.PersonnelId
 
 return event
-

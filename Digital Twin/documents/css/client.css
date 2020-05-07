@@ -1,10 +1,10 @@
 .DataTableLinkButton{
-    color:#180469;
+    color:#01186b;
 }
 
 
 .pagination>.active>a, .pagination>.active>span, .pagination>.active>a:hover, .pagination>.active>span:hover, .pagination>.active>a:focus, .pagination>.active>span:focus {
 
-    background-color: #180469;
-    border-color: #180469;
+    background-color: #01186b;
+    border-color: #01186b;
 }

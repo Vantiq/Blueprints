@@ -1,3 +1,12 @@
+/*
+	Utility procedure used by collaboration types to establish all of the
+    associations between a sensor id and the relevant asset, space, floor,
+    floorplan and building. The return value is an object with references
+    to the _id values for all of the associated objects.
+    
+    This also updates the entities property of the associated collaboration
+    instance to avoid needing extra assignment tasks. 
+*/
 PROCEDURE collab.setCollabEntitiesHierarchyFromSensorId(collabid String, sensorid String, sensortype String)
 
 var obj ={}
@@ -37,9 +46,4 @@ var updateObj = Utils.stripSystemProperties(collab)
 updateObj.entities = entities
 UPDATE system.collaborations(updateObj) WHERE id == collabid
 
-
-
-
 return obj
-
-

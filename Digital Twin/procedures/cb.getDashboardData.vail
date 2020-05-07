@@ -1,3 +1,6 @@
+/*
+	Fetch the aggregate data required for the SmartBuilding Dashboard
+*/
 PROCEDURE cb.getDashboardData()
 
 var obj = {}

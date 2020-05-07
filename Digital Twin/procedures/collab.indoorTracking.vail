@@ -1,10 +1,12 @@
+/*
+	TODO: What is this used for?
+*/
 PROCEDURE collab.indoorTracking(event Object, results Object)
 
 event = event.newValue
 
 var retVal = []
-for result in results{
-    
+for result in results {
     // are we on the same floor
     if (result.floorid == event.floorid){
         // formula: distance = square root of (x2 -x1)squared + (y2 - y1)squared
@@ -12,16 +14,10 @@ for result in results{
         var ry = result.fplocation.coordinates[0]
     	var distance = Math.sqrt( Math.pow((rx - event.x),2) + Math.pow((ry - event.y),2) )
 		result.distance = distance
-
 		push(retVal, result)
-
-		
-
-		//log.info(stringify(distance))
-
     }
 }
 
-log.info(stringify(retVal))
+log.debug(stringify(retVal))
 
 return retVal

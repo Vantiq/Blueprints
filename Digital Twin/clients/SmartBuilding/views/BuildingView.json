@@ -60,7 +60,7 @@
       "borderColor" : "Default",
       "borderRadius" : 4,
       "borderThickness" : 0,
-      "buttonBackgroundColor" : "#180469",
+      "buttonBackgroundColor" : "#01186b",
       "buttonLabel" : "Edit Building",
       "buttonLabelColor" : "platform",
       "buttonLabelSize" : 14,
@@ -95,13 +95,13 @@
       "uuid" : "2b50fe4e-b8ba-4cf6-8886-3905aa1795f9",
       "v" : 16,
       "vertGravity" : "center",
-      "vertMargin" : 38,
+      "vertMargin" : 5,
       "widthPolicy" : "sizeToCell"
     }, {
       "borderColor" : "Default",
       "borderRadius" : 4,
       "borderThickness" : 0,
-      "buttonBackgroundColor" : "#180469",
+      "buttonBackgroundColor" : "#01186b",
       "buttonLabel" : "Add Floor",
       "buttonLabelColor" : "platform",
       "buttonLabelSize" : 14,
@@ -128,7 +128,7 @@
       "type" : "HorizontalLayout",
       "uuid" : "508c8ed6-f30a-4a44-b832-333e6f97455a",
       "v" : 16,
-      "vertGravity" : "bottom",
+      "vertGravity" : "center",
       "widthPolicy" : "sizeToCell"
     }, {
       "borderColor" : "Default",
@@ -214,7 +214,7 @@
       "borderColor" : "Default",
       "borderRadius" : 4,
       "borderThickness" : 0,
-      "buttonBackgroundColor" : "#180469",
+      "buttonBackgroundColor" : "#01186b",
       "buttonLabel" : "Add Floor Plan",
       "buttonLabelColor" : "platform",
       "buttonLabelSize" : 14,
@@ -227,13 +227,13 @@
       "type" : "Button",
       "uuid" : "8ae751ef-c6a5-4142-9795-45794f71e649",
       "v" : 16,
-      "vertGravity" : "bottom",
+      "vertGravity" : "center",
       "widthPolicy" : "sizeToCell"
     }, {
       "borderColor" : "Default",
       "borderRadius" : 4,
       "borderThickness" : 0,
-      "buttonBackgroundColor" : "#180469",
+      "buttonBackgroundColor" : "#01186b",
       "buttonLabel" : "Back",
       "buttonLabelColor" : "platform",
       "buttonLabelSize" : 14,
@@ -265,6 +265,15 @@
         "propertyName" : "name",
         "selected" : false,
         "title" : "Name"
+      }, {
+        "buttonIcon" : "fa-times-circle",
+        "buttonLabel" : "Delete",
+        "colorRules" : null,
+        "dataType" : "Button",
+        "isLinkStyle" : true,
+        "propertyName" : "ButtonDelete",
+        "selected" : false,
+        "title" : ""
       }, {
         "buttonIcon" : "fa-binoculars",
         "buttonLabel" : "View",
@@ -301,7 +310,7 @@
       "borderColor" : "Default",
       "borderRadius" : 4,
       "borderThickness" : 0,
-      "children" : [ "ce341175-0cf0-4e85-a53e-bbe5b9c52b95", "ed5eff10-8d01-4208-8eae-b0e0dbb40771", "8ae751ef-c6a5-4142-9795-45794f71e649" ],
+      "children" : [ "ce341175-0cf0-4e85-a53e-bbe5b9c52b95", "8ae751ef-c6a5-4142-9795-45794f71e649", "ed5eff10-8d01-4208-8eae-b0e0dbb40771" ],
       "column" : 2,
       "h" : 932,
       "heightPolicy" : "explicit",
@@ -354,7 +363,7 @@
       "borderColor" : "Default",
       "borderRadius" : 4,
       "borderThickness" : 0,
-      "children" : [ "84e54357-b65c-4d67-8df0-fbafc8e26e4a", "94917b30-70c8-4042-8f01-4cc879eb1ed2", "c648d648-95c2-47e8-88a1-d09e9941c2ab" ],
+      "children" : [ "84e54357-b65c-4d67-8df0-fbafc8e26e4a", "c648d648-95c2-47e8-88a1-d09e9941c2ab", "94917b30-70c8-4042-8f01-4cc879eb1ed2" ],
       "column" : 1,
       "heightPolicy" : "sizeToCell",
       "horzGravity" : "center",
@@ -371,7 +380,7 @@
       "borderColor" : "Default",
       "borderRadius" : 4,
       "borderThickness" : 0,
-      "children" : [ "b18ba84d-6163-4215-8f49-79f4dbf26a65", "2b50fe4e-b8ba-4cf6-8886-3905aa1795f9", "c62e9b9a-2019-4b85-8331-1abdddacff2e", "508c8ed6-f30a-4a44-b832-333e6f97455a" ],
+      "children" : [ "b18ba84d-6163-4215-8f49-79f4dbf26a65", "508c8ed6-f30a-4a44-b832-333e6f97455a", "2b50fe4e-b8ba-4cf6-8886-3905aa1795f9", "c62e9b9a-2019-4b85-8331-1abdddacff2e" ],
       "column" : 0,
       "heightPolicy" : "sizeToCell",
       "horzGravity" : "center",
@@ -406,7 +415,7 @@
       "uuid" : "c62e9b9a-2019-4b85-8331-1abdddacff2e",
       "v" : 16,
       "vertGravity" : "top",
-      "vertMargin" : 38,
+      "vertMargin" : 5,
       "vertWeight" : 1,
       "widthPolicy" : "sizeToCell"
     }, {

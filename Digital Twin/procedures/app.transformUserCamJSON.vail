@@ -1,3 +1,8 @@
+/*
+	Transform the raw event data from a camera event with a user in the image
+
+	Used in the CameraFeed app
+*/
 PROCEDURE app.transformUserCamJSON(event Object)
 
 var obj = {}
@@ -23,13 +28,10 @@ obj.screenTime = date(screenTime, "epochSeconds", "date")
 
 obj.similarity = event.similarity
 
-
 if (startsWith(event.img, "data") ){
     obj.img = event.img
 } else {
     obj.img = "data:image/jpeg;base64," + event.img
 }
 
-
 return obj
-

@@ -1,12 +1,11 @@
+/*
+	Replay a set of recorded locations over time to simulate an asset changing location over time
+*/
 RULE on_simulation_playback
-
 WHEN PUBLISH OCCURS ON "/simulation/playback" AS event
 
 event = event.newValue
 var simulation = event.simulation
-
-
-
 
 var obj ={}
 obj.id = simulation.sensorid
@@ -16,7 +15,7 @@ obj.y = simulation.location.coordinates[0]
 
 PUBLISH obj TO TOPIC "/sensor/tracker/2d"
 
-if ( has(event, "skip") ){
-	sim.playbackSimulation(event.name , event.skip )
+if (has(event, "skip")){
+	sim.playbackSimulation(event.name , event.skip)
 }
 

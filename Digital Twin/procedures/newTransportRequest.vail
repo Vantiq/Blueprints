@@ -1,3 +1,7 @@
+/*
+	Used by a variant of demo.start to publish a simulated event 
+    that kicks off a request for a transport
+*/
 PROCEDURE newTransportRequest()
 
 var obj = {

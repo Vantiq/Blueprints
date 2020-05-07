@@ -11,6 +11,9 @@
   "indexes" : [ {
     "keys" : [ "name", "timestamp" ],
     "options" : { }
+  }, {
+    "keys" : [ "simgroup" ],
+    "options" : { }
   } ],
   "maxObjects" : 0,
   "maxStorage" : 0,
@@ -48,6 +51,14 @@
       "unique" : false
     },
     "sensorid" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "String",
+      "unique" : false
+    },
+    "simgroup" : {
+      "description" : "Use to group simulations together for playback",
       "encrypted" : false,
       "multi" : false,
       "required" : false,

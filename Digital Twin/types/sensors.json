@@ -52,6 +52,13 @@
       "type" : "String",
       "unique" : false
     },
+    "manufacturer" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "String",
+      "unique" : false
+    },
     "meta" : {
       "encrypted" : false,
       "multi" : false,

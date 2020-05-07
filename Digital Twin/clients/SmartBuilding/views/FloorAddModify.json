@@ -84,7 +84,8 @@
       "uuid" : "9636b7df-7b2a-43dd-8171-85187a22aad3",
       "v" : 16,
       "vertGravity" : "center",
-      "widthPolicy" : "naturalSize"
+      "w" : 500,
+      "widthPolicy" : "explicit"
     }, {
       "borderColor" : "Default",
       "borderRadius" : 4,
@@ -106,7 +107,7 @@
       "borderColor" : "Default",
       "borderRadius" : 4,
       "borderThickness" : 0,
-      "buttonBackgroundColor" : "#180469",
+      "buttonBackgroundColor" : "#01186b",
       "buttonLabel" : "Submit",
       "buttonLabelColor" : "platform",
       "buttonLabelSize" : 14,

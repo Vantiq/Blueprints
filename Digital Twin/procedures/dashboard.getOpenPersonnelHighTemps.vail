@@ -1,3 +1,7 @@
+/*
+	Fetch the list of active PersonnelHighTemp collaborations to populate the dashboard
+    in the SmartBuilding Client
+*/
 PROCEDURE dashboard.getOpenPersonnelHighTemps()
 
 var template = getDocument("templates/dashboardpersonnelhightemp")
@@ -18,15 +22,12 @@ SELECT FROM system.collaborations AS collab WHERE name == "PersonnelHighTemp" AN
     var returndate = toDate(collab.results.Initiate.event.screenTime).plusMillis(14 days)
     docprops.returndate = format("{0, date, MMM-dd-yyyy}", returndate)
 
-
 	if (collab.results.Initiate.event.mask){
         docprops.mask = "Mask Present"
 	} else {
         docprops.mask = "Mask Not Present"
 	}
 
-
-    
     SELECT ONE FROM sensors WHERE id == collab.results.Initiate.event.deviceid
     obj.sensorId = sensors.id
     obj.sensortype = sensors.type
@@ -44,14 +45,8 @@ SELECT FROM system.collaborations AS collab WHERE name == "PersonnelHighTemp" AN
 
 	obj.template = template
     obj.docprops = docprops
-    
-    //obj.results = collab.results
    
     results.push(obj)
-    
 }
 
-
 return results
-
-

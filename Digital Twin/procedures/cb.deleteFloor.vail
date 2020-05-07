@@ -1,0 +1,20 @@
+/*
+	Delete a floor by id if it has no assets or spaces associated
+*/
+PROCEDURE cb.deleteFloor(floorid String)
+
+// don't delete floor if floor has assets
+SELECT FROM assets WHERE floorid == floorid
+
+// don't delete floor if floor has spaces
+SELECT FROM spaces WHERE floorid == floorid
+
+// Throw an exception if any associations were found
+if (assets.size() > 0 || spaces.size() > 0){
+    exception(
+    	"Parent Realtionship Error", 
+    	"You may not remove the Floor while it still has assets and or spaces associated with it"
+	)
+} else {
+    DELETE floors WHERE id == floorid
+}

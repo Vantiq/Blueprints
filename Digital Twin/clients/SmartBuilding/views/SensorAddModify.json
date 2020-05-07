@@ -35,6 +35,22 @@
       "vertGravity" : "center",
       "widthPolicy" : "sizeToCell"
     }, {
+      "binding" : "page.data.sensor.manufacturer",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "default" : null,
+      "enumeratedList" : [ ],
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "label" : "Sensor Manufacturer",
+      "name" : "Droplist2181",
+      "type" : "Droplist",
+      "uuid" : "2a3d4346-bc4a-4a63-8303-edc731a5d5d5",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
       "borderColor" : "Default",
       "borderRadius" : 4,
       "borderThickness" : 0,
@@ -70,7 +86,7 @@
       "borderColor" : "Default",
       "borderRadius" : 4,
       "borderThickness" : 0,
-      "buttonBackgroundColor" : "#180469",
+      "buttonBackgroundColor" : "#01186b",
       "buttonLabel" : "Submit",
       "buttonLabelColor" : "platform",
       "buttonLabelSize" : 14,
@@ -89,7 +105,7 @@
       "borderColor" : "Default",
       "borderRadius" : 4,
       "borderThickness" : 0,
-      "children" : [ "1f5a49ef-a0a3-43a0-8eb3-d37c77fe0a84", "9ea310ab-ec7d-4f3b-a1f8-01a19edb7996", "d0e26339-ac47-41db-8279-b4ce15bc3de2", "26127b36-c956-41d3-aa85-524d077a33ec", "b24353a6-5f9a-46d9-8e93-70ca09ff2bd3", "53f02ba1-e957-4918-a6b5-ad3c3fd2369a", "5408bba9-377b-4676-b2cc-7b8c8bec42ee" ],
+      "children" : [ "1f5a49ef-a0a3-43a0-8eb3-d37c77fe0a84", "9ea310ab-ec7d-4f3b-a1f8-01a19edb7996", "d0e26339-ac47-41db-8279-b4ce15bc3de2", "2a3d4346-bc4a-4a63-8303-edc731a5d5d5", "26127b36-c956-41d3-aa85-524d077a33ec", "b24353a6-5f9a-46d9-8e93-70ca09ff2bd3", "53f02ba1-e957-4918-a6b5-ad3c3fd2369a", "5408bba9-377b-4676-b2cc-7b8c8bec42ee" ],
       "heightPolicy" : "sizeToCell",
       "horzGravity" : "left",
       "innerMargin" : 20,
@@ -176,6 +192,11 @@
             },
             "id" : {
               "defaultLabel" : "id",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "manufacturer" : {
+              "defaultLabel" : "manufacturer",
               "defaultValue" : "",
               "type" : "String"
             },

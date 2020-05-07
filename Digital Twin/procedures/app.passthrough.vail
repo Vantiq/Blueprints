@@ -1,3 +1,4 @@
+// TODO: DELETE THIS? Replace with Utils.clone if necessary
 PROCEDURE app.passthrough(event Object)
 
 return event

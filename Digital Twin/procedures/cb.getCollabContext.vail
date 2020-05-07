@@ -1,3 +1,8 @@
+/*
+	Given a collaboration id, return an object with all of the context 
+    of that collaboration, including all related entities and the complete
+    collaboration definition
+*/
 PROCEDURE cb.getCollabContext(id String)
 
 SELECT ONE FROM system.collaborations AS collab WHERE id == id
@@ -5,9 +10,6 @@ SELECT ONE FROM system.collaborations AS collab WHERE id == id
 var results = {}
 
 if(collab){
-
-
-
     for item in collab.entities {
         //var key = item.key
         if (item.value != null){
@@ -16,25 +18,9 @@ if(collab){
             var uid = valuearray[2]
             results[item.key] = SELECT ONE FROM @resource WHERE _id == uid
         }
-
     }
 
     results.collaboration = collab
 }
 
 return results
-
-/*
-var obj = {}
-obj.cameraevent = SELECT ONE FROM cameraevents WHERE _id == "5e8c8da82a7f513da135f490"
-obj.floor = SELECT ONE FROM floors WHERE _id == "5e7820e2d909300a5ac3e531"
-obj.building = SELECT ONE FROM buildings WHERE _id == "5e7820dec857bc08f2bbdf07"
-obj.asset = SELECT ONE FROM assets WHERE _id == "5e87558b1bd1b9426e879f32"
-obj.sensor = SELECT ONE FROM sensors WHERE _id == "5e8bda197819df4838a92a85"
-obj.space = SELECT ONE FROM spaces WHERE _id == "5e7820dfd909300a5ac3e4e9"
-obj.floorplan = SELECT ONE FROM floorplans WHERE _id == "5e7820e28857f23f5faf67a2"
-obj.collaboration = collab
-
-return obj
-
-*/

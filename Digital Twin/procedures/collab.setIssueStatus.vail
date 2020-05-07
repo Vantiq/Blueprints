@@ -1,5 +1,9 @@
+/*
+	Update the Status in the underlying collaboration instance
+    
+    This utility is used as a service by multiple collaboration types
+*/
 PROCEDURE collab.setIssueStatus(collabid String, state String)
-//collaboration.result.Status
 
 SELECT ONE FROM system.collaborations AS collab WHERE id == collabid
 
@@ -8,9 +12,4 @@ collab = Utils.stripSystemProperties(collab)
 collab.results.Status.assignmentTime = now()
 collab.results.Status.assignedValue = state
 
-
 UPDATE system.collaborations(collab) WHERE id ==  collabid
-
-
-
-

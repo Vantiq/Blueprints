@@ -13,7 +13,7 @@
   top: 50%;
   z-index: 10;
   margin: -30px 0 0 -30px;  /* should be half of height and width */
-  border: 6px solid #180469; /* the left and right quarter color of the spinner */
+  border: 6px solid #01186b; /* the left and right quarter color of the spinner */
   border-bottom: 6px solid #f3f3f3; /* the bottom quarter color of the spinner */
   border-radius: 50%; /* the roundness of corners of the line (50% for circle) */
   border-top: 6px solid #f3f3f3; /* the top quarter color of the spinner */

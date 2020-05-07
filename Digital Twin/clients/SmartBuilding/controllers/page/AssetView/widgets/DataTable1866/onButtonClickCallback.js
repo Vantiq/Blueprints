@@ -14,3 +14,21 @@
 
         }
     }
+    
+    if(extra.columnName === "ButtonDelete"){
+        
+       client.confirmCustom("Are you sure you want to delete this sensor.  This operation cannot bne undone","Yes","No",function(clicked){
+            if (clicked === "Yes"){
+                client.data.deleteOne("sensors", extra.dataObject._id, function(response){
+                    var newObj = JSON.parse(JSON.stringify(page.data.asset.values));
+                page.data.preparePage(newObj);
+                });
+
+            } 
+
+        });
+    }
+    
+    
+    
+   

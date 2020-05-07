@@ -1,8 +1,11 @@
+/*
+	Fetch the list of active RestrictedSpaceIssue collaborations to populate the dashboard
+    in the SmartBuilding Client
+*/
 PROCEDURE dashboard.getOpenRestrictedSpaceIssues()
 
 // the template used to gerneate the description
 var template = getDocument("templates/dashboardrestrictedspaceissue")
-
 
 var results = []
 SELECT FROM system.collaborations AS collab WHERE status == "active" AND name == "RestrictedSpaceIssue"{
@@ -33,7 +36,6 @@ SELECT FROM system.collaborations AS collab WHERE status == "active" AND name ==
         docprops.employee = personnel.firstname + " " + personnel.lastname
         path = personnel.photopath
         docprops.image = path
-
 	} else {
         docprops.employee = "- asset not associated with personnel record -"
         path = "images/icons/asseticon.png"
@@ -47,17 +49,13 @@ SELECT FROM system.collaborations AS collab WHERE status == "active" AND name ==
 	obj.geo = buildings.geo
     docprops.building= buildings.name
 
-
 	docprops.space = collab.results.Initiate.event.space
-
-    
+ 
     obj.issuetype = "Restricted Area"
 	obj.template = template
 	obj.docprops = docprops
 	
-
-    results.push(obj)
-      
+    results.push(obj)      
 }
 	
 return results

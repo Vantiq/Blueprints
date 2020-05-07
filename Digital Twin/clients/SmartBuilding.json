@@ -34,6 +34,7 @@
       },
       "ce_s_volumesensor_GuageDisplay" : { },
       "ce_sensorconfigs_SensorConfigs" : { },
+      "ce_sensormanufacturers_SensorManufacturers" : { },
       "ce_sensors" : { },
       "ce_sensors_AssetView" : { },
       "ce_sensors_Sensors" : { },
@@ -344,6 +345,22 @@
           }
         }
       },
+      "SensorManufacturerAddModify" : {
+        "onStart" : "RELOCATED to controllers/page/SensorManufacturerAddModify/onStart.js",
+        "widgets" : {
+          "Button11313" : {
+            "onClick" : "RELOCATED to controllers/page/SensorManufacturerAddModify/widgets/Button11313/onClick.js"
+          }
+        }
+      },
+      "SensorManufacturers" : {
+        "onStart" : "RELOCATED to controllers/page/SensorManufacturers/onStart.js",
+        "widgets" : {
+          "Button11312" : {
+            "onClick" : "RELOCATED to controllers/page/SensorManufacturers/widgets/Button11312/onClick.js"
+          }
+        }
+      },
       "SensorTypeAddModify" : {
         "onStart" : "RELOCATED to controllers/page/SensorTypeAddModify/onStart.js",
         "widgets" : {
@@ -369,8 +386,17 @@
           "Button7735" : {
             "onClick" : "RELOCATED to controllers/page/Sensors/widgets/Button7735/onClick.js"
           },
+          "Checkbox104" : {
+            "onChange" : "RELOCATED to controllers/page/Sensors/widgets/Checkbox104/onChange.js"
+          },
           "DataTable1825" : {
             "onButtonClickCallback" : "RELOCATED to controllers/page/Sensors/widgets/DataTable1825/onButtonClickCallback.js"
+          },
+          "Droplist2167" : {
+            "onChange" : "RELOCATED to controllers/page/Sensors/widgets/Droplist2167/onChange.js"
+          },
+          "Droplist2252" : {
+            "onChange" : "RELOCATED to controllers/page/Sensors/widgets/Droplist2252/onChange.js"
           }
         }
       },
@@ -419,6 +445,9 @@
       "widgets" : {
         "MenuButton1" : {
           "onClick" : "RELOCATED to controllers/sidebar/widgets/MenuButton1/onClick.js"
+        },
+        "MenuButton104" : {
+          "onClick" : "RELOCATED to controllers/sidebar/widgets/MenuButton104/onClick.js"
         },
         "MenuButton11" : {
           "onClick" : "RELOCATED to controllers/sidebar/widgets/MenuButton11/onClick.js"
@@ -1201,6 +1230,26 @@
       "updateInterval" : 60,
       "uuid" : "8ec8a5cf-ae52-48f6-8fc9-c799f919a57f",
       "v" : 1
+    }, {
+      "advancedWhereClause" : null,
+      "dataObjectName" : null,
+      "dataTypeList" : [ {
+        "label" : null,
+        "type" : "sensormanufacturers"
+      } ],
+      "isDeleteOp" : false,
+      "isInsertOp" : false,
+      "isUpdateOp" : false,
+      "maxRecords" : 0,
+      "name" : "ce_sensormanufacturers_SensorManufacturers",
+      "pauseAtStartup" : false,
+      "property" : null,
+      "sortByProperty" : null,
+      "sortDescending" : false,
+      "type" : 5,
+      "updateInterval" : 60,
+      "uuid" : "1aea87e2-1692-45eb-892e-cd169ac4a092",
+      "v" : 1
     } ]
   },
   "name" : "SmartBuilding",
@@ -1223,7 +1272,7 @@
     "docAssets" : [ "css/client.css", "css/spinner.css", "images/LogoPlaceHolder.png", "images/floorplanselect.png", "images/placeholderuser250.jpg", "qrdefault.png" ],
     "hasSidebar" : true,
     "paletteCollapsed" : false,
-    "productV" : "7.2",
+    "productV" : "7.2d",
     "showCategoryButtons" : true,
     "showCategoryDataDisplay" : true,
     "showCategoryDataInput" : true,
@@ -1240,7 +1289,7 @@
       "dataDisplayColor" : "#ffffff",
       "dataDisplayColors" : [ "#3cbce1", "#996db8", "#86d557", "#ff9800", "#425b71", "#cc467c", "#01aa93", "#ffca28", "#f583a9", "#1c84d4", "#ff6767", "#4caf50" ],
       "dataInputColor" : "#ffffff",
-      "foregroundColor" : "#180469",
+      "foregroundColor" : "#01186b",
       "label" : "Custom",
       "name" : "custom",
       "titleBarColor" : "#f5f5f5",
@@ -1273,6 +1322,8 @@
     "SensorAddModify" : "RELOCATED to views/SensorAddModify.json",
     "SensorConfigAddModify" : "RELOCATED to views/SensorConfigAddModify.json",
     "SensorConfigs" : "RELOCATED to views/SensorConfigs.json",
+    "SensorManufacturerAddModify" : "RELOCATED to views/SensorManufacturerAddModify.json",
+    "SensorManufacturers" : "RELOCATED to views/SensorManufacturers.json",
     "SensorTypeAddModify" : "RELOCATED to views/SensorTypeAddModify.json",
     "SensorTypes" : "RELOCATED to views/SensorTypes.json",
     "Sensors" : "RELOCATED to views/Sensors.json",

@@ -1,3 +1,11 @@
+/*
+	Playback a sequence of location events stored in the movementsimulations type
+    
+    This procedure will schedule future events for a named simulation. The events are 
+    created as one time scheduled events that will fire sometime after the completion of this procedure
+    
+    The default interval between steps in the simulation is 1 second
+*/
 PROCEDURE sim.playbackSimulation(name String, skip Integer)
 
 //Brett To Room  218 To Floor 1 reception
@@ -28,7 +36,9 @@ if (sims.length() > 1){
 
 	PUBLISH next TO TOPIC "/simulation/playback" SCHEDULE {interval: timediff}
 	
-} /*else {
+} 
+// TODO: Can we delete this else case?
+/*else {
     next.name = name
 	next.simulation = sims[0]
     PUBLISH next TO TOPIC "/simulation/playback" SCHEDULE {interval: 1 second}
