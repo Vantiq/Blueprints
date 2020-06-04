@@ -1,0 +1,31 @@
+/*
+	Trigger the early execution of the NotifySecurity task
+    in the PersonnelHighTemp CollaborationType. 
+    
+    Used by the CameraFeed app
+*/
+PROCEDURE app.earlyReturn(event Object)
+
+
+SELECT ONE FROM personnel AS person WHERE meta.giconnect_userId	 == event.userId
+
+if (person){
+    SELECT ONE FROM system.collaborations AS rcollab WHERE name == "PersonnelHighTemp" AND status == "active" AND entities.person == "/personnel/" + person._id
+
+    if (rcollab){
+        // Trigger the NotifySecuirty task in the PersonnelHighTemp Collaboration
+        startA_PersonnelHighTemp_NotifySecurity(rcollab, rcollab.results.FindSecurityPersonnel.result, null)
+
+    // change state
+    var collabid = rcollab.id
+
+    rcollab = Utils.stripSystemProperties(rcollab) 
+
+    rcollab.results.Status.assignmentTime = now()
+    rcollab.results.Status.assignedValue = "Early Return"
+    rcollab.results.Initiate.event.mask = event.mask
+    rcollab.results.Initiate.event.img	= event.img
+
+UPDATE system.collaborations(rcollab) WHERE id ==  collabid
+}
+}

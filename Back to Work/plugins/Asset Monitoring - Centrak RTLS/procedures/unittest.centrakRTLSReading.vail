@@ -1,0 +1,37 @@
+/*
+	Simulate a Centrak Location event using a generic "Staff Tag"
+*/
+PROCEDURE unittest.centrakRTLSReading()
+
+var obj = [{
+   "site_id": "1068",
+   "device_id": "2366149",
+   "device_type": "Tag",
+   "device_name": "Staff Tag",
+   "device_type_id": "11",
+   "transport": "900mhz",
+   "updated_on": "2020-04-24 12:34:34",
+   "location_data": [
+      {
+         "type": "ir",
+         "location_change": "no",
+         "location_id": "313272",
+         "location_name": " Bay Corridor",
+         "campus_name": "null",
+         "building_name": "null",
+         "floor_name": "null",
+         "x": "",
+         "y": ""
+      }
+   ],
+   "sensor": [
+      {
+         "name": "motion",
+         "value": "no"
+      }
+   ],
+   "telemetry_data": "null",
+   "alert": "null"
+}]
+
+PUBLISH obj TO TOPIC "/centrak"

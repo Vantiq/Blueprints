@@ -1,0 +1,3 @@
+PROCEDURE cb.getPersonnel()
+
+SELECT FROM personnel ORDER BY lastname, firstname

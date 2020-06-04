@@ -1,0 +1,3 @@
+PROCEDURE app.replaylastEvent(event Object)
+
+return event.lastEvent

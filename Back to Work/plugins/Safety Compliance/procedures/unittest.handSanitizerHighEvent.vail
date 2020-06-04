@@ -1,0 +1,9 @@
+PROCEDURE unittest.handSanitizerHighEvent()
+
+var obj = {}
+obj.id = "HandStation001"
+obj.val = 97
+
+PUBLISH obj TO TOPIC "/device/hs"
+
+return obj

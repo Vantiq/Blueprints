@@ -1,0 +1,34 @@
+{
+  "bodyChildren" : {
+    "rootArray" : [ "f3a76e5c-b014-43fb-809d-89e0550a49ef" ],
+    "widgets" : [ {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 2,
+      "defaultMinimumHeight" : 300,
+      "defaultMinimumWidth" : 200,
+      "h" : 94,
+      "heightPolicy" : "explicit",
+      "horzGravity" : "center",
+      "horzizontalScrollPolicy" : "none",
+      "html" : "<p><span style=\"font-size: 18px;\"><strong>This client only serves to ensure specific documents get exported with VCS Version Control Export, by adding document assets to the client properties.</strong></span></p>",
+      "name" : "StaticHtml2557",
+      "type" : "StaticHtml",
+      "uuid" : "f3a76e5c-b014-43fb-809d-89e0550a49ef",
+      "v" : 16,
+      "vertGravity" : "center",
+      "verticalScrollPolicy" : "none",
+      "w" : 478,
+      "widthPolicy" : "explicit",
+      "x" : 112,
+      "y" : 51
+    } ]
+  },
+  "data" : {
+    "properties" : { }
+  },
+  "footerChildren" : [ ],
+  "hasFooter" : false,
+  "layoutType" : "browser",
+  "responseTopic" : "/my/response/topic"
+}

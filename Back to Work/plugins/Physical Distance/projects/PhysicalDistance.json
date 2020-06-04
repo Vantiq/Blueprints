@@ -1,0 +1,762 @@
+{
+  "links" : [ {
+    "source" : "app/CameraApp",
+    "target" : "procedure/CameraApp.countPeople"
+  }, {
+    "source" : "app/ObjectExtSrcApp",
+    "target" : "procedure/CameraApp.ObjRecCountPeople"
+  }, {
+    "source" : "procedure/collab.setCollabEntitiesHierarchyFromSensorId",
+    "target" : "procedure/findSpaceForAsset"
+  }, {
+    "source" : "procedure/collab.setCollabEntitiesHierarchyFromSensorId",
+    "target" : "procedure/Utils.stripSystemProperties"
+  }, {
+    "source" : "collaborationtype/PhysicalDistance",
+    "target" : "procedure/collab.setCollabEntitiesHierarchyFromSensorId"
+  }, {
+    "source" : "procedure/dashboard.getOpenPhysicalDistanceIssues",
+    "target" : "procedure/findSpaceForAsset"
+  }, {
+    "source" : "source/LobbyCam1",
+    "target" : "app/ObjectExtSrcApp"
+  }, {
+    "source" : "topic//camera/thermal/reading",
+    "target" : "subscription/_camera_thermal_reading"
+  }, {
+    "source" : "topic//mobile/debug",
+    "target" : "subscription/MobileDebug"
+  }, {
+    "source" : "app/CameraApp",
+    "target" : "collaborationtype/PhysicalDistance"
+  }, {
+    "source" : "app/ObjectExtSrcApp",
+    "target" : "collaborationtype/PhysicalDistance"
+  }, {
+    "source" : "procedure/yolo.calculateDistance",
+    "target" : "procedure/yolo.getBoundingBoxCenterPixel"
+  }, {
+    "source" : "procedure/yolo.calculateDistance",
+    "target" : "procedure/yolo.getBoundingBoxHeight"
+  }, {
+    "source" : "type/sensors",
+    "target" : "app/ObjectExtSrcApp"
+  }, {
+    "source" : "type/system.documents",
+    "target" : "app/ObjectExtSrcApp"
+  }, {
+    "source" : "type/assets",
+    "target" : "client/SmartBuilding"
+  }, {
+    "source" : "type/sensors",
+    "target" : "client/SmartBuilding"
+  }, {
+    "source" : "type/system.collaborations",
+    "target" : "client/SmartBuilding"
+  }, {
+    "source" : "procedure/collab.setCollabEntitiesHierarchyFromSensorId",
+    "target" : "type/system.collaborations"
+  }, {
+    "source" : "type/sensors",
+    "target" : "procedure/collab.setCollabEntitiesHierarchyFromSensorId"
+  }, {
+    "source" : "type/assets",
+    "target" : "procedure/collab.setCollabEntitiesHierarchyFromSensorId"
+  }, {
+    "source" : "type/floors",
+    "target" : "procedure/collab.setCollabEntitiesHierarchyFromSensorId"
+  }, {
+    "source" : "type/floorplans",
+    "target" : "procedure/collab.setCollabEntitiesHierarchyFromSensorId"
+  }, {
+    "source" : "type/buildings",
+    "target" : "procedure/collab.setCollabEntitiesHierarchyFromSensorId"
+  } ],
+  "name" : "PhysicalDistance",
+  "options" : {
+    "description" : "This can use either the VANTIQ object recogniton source found @\nhttps://github.com/Vantiq/vantiq-extension-sources/tree/master/objectRecognitionSource or an uploaded image.\n\nIn order to use the ObjectExtSrcApp:\n\nconfigure a source of type ObjectExtSrc:\n\nconfigure a server.config file\n\nauthToken=<Auth token to your namespace>\nsources=<Comma seperated list fo source for each camera attached to this instance>\ntargetServer=<VANTIQ SERVER>\nmodelDirectory=<PATH TO MODEL DIRECTORY>\n\nThe source configuration in this project is using an mp4 file to demonstrate though in practice you would use a live stream e.g RTSP (Real Time Streaming Protocol)\n\n\nIn order to use the CameraApp:\nyou will need to upload your tensorflow model to the platform.\n\nThen each image you pass into the platform will be processed by the app.\n\nIn general since these implementations make use of system.documents you should clean up  documents periodically that are no longer needed.\n\nIf making use of GPU and high speed frame processing you should not use the uploader or upload only a small sample of images (1 every 5 seconds) for visualization.\n\n\n\n\n\n\n\n",
+    "dockCollapsed" : {
+      "bottom" : true,
+      "left" : false,
+      "right" : false,
+      "top" : false
+    },
+    "dockDimensions" : {
+      "bottom" : 200,
+      "debug" : [ 0, 0, 0 ],
+      "left" : 268,
+      "right" : 220,
+      "top" : 0
+    },
+    "dockSort" : 1,
+    "filterBitArray" : "ffffffffffffffffffffffffffffffff",
+    "isModeloProject" : true,
+    "layoutStyle" : "tile",
+    "listFlavor" : "tree",
+    "openResourceFolders" : {
+      "App" : true,
+      "Client" : true,
+      "Collaboration Type" : true,
+      "Procedure" : true,
+      "Source" : true,
+      "Type" : true
+    },
+    "showGrid" : true,
+    "tileColumns" : 2,
+    "tileRows" : 2,
+    "type" : "dev",
+    "v" : 3
+  },
+  "resources" : [ {
+    "label" : "/camera/thermal/reading",
+    "name" : "/camera/thermal/reading",
+    "resourceReference" : "/topics//camera/thermal/reading",
+    "type" : 10
+  }, {
+    "label" : "/mobile/debug",
+    "name" : "/mobile/debug",
+    "resourceReference" : "/topics//mobile/debug",
+    "type" : 10
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ "out" ],
+      "collaborations" : [ "PhysicalDistance" ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out" ],
+      "procedures" : [ "CameraApp.countPeople" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in", "in" ],
+      "types" : [ "system.documents", "sensors" ]
+    },
+    "label" : "CameraApp",
+    "name" : "CameraApp",
+    "node" : {
+      "x" : 401.5,
+      "y" : 145.5
+    },
+    "resourceReference" : "/collaborationtypes/CameraApp",
+    "timestamp" : "2020-05-08T15:34:05.920Z",
+    "type" : 12
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "CameraApp.ObjRecCountPeople",
+    "name" : "CameraApp.ObjRecCountPeople",
+    "node" : {
+      "x" : 180.2,
+      "y" : 156.6
+    },
+    "resourceReference" : "/procedures/CameraApp.ObjRecCountPeople",
+    "timestamp" : "2020-05-13T20:20:14.579Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out" ],
+      "procedures" : [ "split" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "CameraApp.countPeople",
+    "name" : "CameraApp.countPeople",
+    "node" : {
+      "x" : 726.2,
+      "y" : 192.8
+    },
+    "resourceReference" : "/procedures/CameraApp.countPeople",
+    "timestamp" : "2020-05-13T20:18:10.520Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "LobbyCam1",
+    "name" : "LobbyCam1",
+    "resourceReference" : "/sources/LobbyCam1",
+    "timestamp" : "2020-05-08T15:47:49.974Z",
+    "type" : 4
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ "in" ],
+      "topics" : [ "/mobile/debug" ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "MobileDebug",
+    "name" : "MobileDebug",
+    "resourceReference" : "/ArsSubscribe/MobileDebug",
+    "timestamp" : "2020-04-18T12:59:15.178Z",
+    "type" : 9
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ "out" ],
+      "collaborations" : [ "PhysicalDistance" ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out" ],
+      "procedures" : [ "CameraApp.ObjRecCountPeople" ],
+      "sourceHash" : [ "in" ],
+      "sources" : [ "LobbyCam1" ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in", "in" ],
+      "types" : [ "sensors", "system.documents" ]
+    },
+    "label" : "ObjectExtSrcApp",
+    "name" : "ObjectExtSrcApp",
+    "node" : {
+      "x" : 417.7,
+      "y" : 71.3
+    },
+    "resourceReference" : "/collaborationtypes/ObjectExtSrcApp",
+    "timestamp" : "2020-05-21T14:16:52.952Z",
+    "type" : 12
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out", "out" ],
+      "procedures" : [ "collab.setCollabEntitiesHierarchyFromSensorId", "CollaborationUtils.closeCollaboration" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in", "in", "in", "in", "in", "in" ],
+      "types" : [ "sensors", "buildings", "floors", "floorplans", "spaces", "assets" ]
+    },
+    "label" : "PhysicalDistance",
+    "name" : "PhysicalDistance",
+    "node" : {
+      "x" : 697.9,
+      "y" : 16.7
+    },
+    "resourceReference" : "/collaborationtypes/PhysicalDistance",
+    "timestamp" : "2020-05-13T14:05:10.348Z",
+    "type" : 11
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "sensors" ]
+    },
+    "label" : "PhysicalDistance",
+    "name" : "PhysicalDistance",
+    "node" : {
+      "x" : 462.4,
+      "y" : -119.1
+    },
+    "resourceReference" : "/system.clients/PhysicalDistance",
+    "timestamp" : "2020-05-13T20:33:16.903Z",
+    "type" : 15
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in", "in", "in" ],
+      "types" : [ "assets", "sensors", "system.collaborations" ]
+    },
+    "label" : "SmartBuilding",
+    "name" : "SmartBuilding",
+    "resourceReference" : "/system.clients/SmartBuilding",
+    "timestamp" : "2020-05-29T16:53:27.127Z",
+    "type" : 15
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out" ],
+      "procedures" : [ "deleteKey" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "Utils.stripSystemProperties",
+    "name" : "Utils.stripSystemProperties",
+    "node" : {
+      "x" : 245.9,
+      "y" : -148.3
+    },
+    "resourceReference" : "/procedures/Utils.stripSystemProperties",
+    "timestamp" : "2020-04-04T17:17:20.384Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ "in" ],
+      "topics" : [ "/camera/thermal/reading" ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "_camera_thermal_reading",
+    "name" : "_camera_thermal_reading",
+    "resourceReference" : "/ArsSubscribe/_camera_thermal_reading",
+    "timestamp" : "2020-04-18T12:59:15.210Z",
+    "type" : 9
+  }, {
+    "label" : "assets",
+    "name" : "assets",
+    "resourceReference" : "/types/assets",
+    "timestamp" : "2020-04-18T12:59:00.984Z",
+    "type" : 1
+  }, {
+    "name" : "buildings",
+    "resourceReference" : "/types/buildings",
+    "timestamp" : "2020-04-18T12:59:01.022Z",
+    "type" : 1
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out", "out" ],
+      "procedures" : [ "findSpaceForAsset", "Utils.stripSystemProperties" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "both", "in", "in", "in", "in", "in" ],
+      "types" : [ "system.collaborations", "sensors", "assets", "floors", "floorplans", "buildings" ]
+    },
+    "label" : "collab.setCollabEntitiesHierarchyFromSensorId",
+    "name" : "collab.setCollabEntitiesHierarchyFromSensorId",
+    "node" : {
+      "x" : 424.1,
+      "y" : -62.9
+    },
+    "resourceReference" : "/procedures/collab.setCollabEntitiesHierarchyFromSensorId",
+    "timestamp" : "2020-05-29T13:52:07.729Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "countResults",
+    "name" : "countResults",
+    "node" : {
+      "x" : 154.5,
+      "y" : -1.5
+    },
+    "resourceReference" : "/procedures/countResults",
+    "timestamp" : "2020-05-08T15:34:03.090Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out", "out", "out", "out" ],
+      "procedures" : [ "getDocument", "has", "findSpaceForAsset", "results.push" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in", "in", "in", "in", "in" ],
+      "types" : [ "system.collaborations", "sensors", "assets", "floors", "buildings" ]
+    },
+    "label" : "dashboard.getOpenPhysicalDistanceIssues",
+    "name" : "dashboard.getOpenPhysicalDistanceIssues",
+    "node" : {
+      "x" : 460.2,
+      "y" : 184.3
+    },
+    "resourceReference" : "/procedures/dashboard.getOpenPhysicalDistanceIssues",
+    "timestamp" : "2020-05-08T16:33:15.785Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out", "out", "out" ],
+      "procedures" : [ "Math.sqrt", "push", "sort" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "spaces" ]
+    },
+    "label" : "findSpaceForAsset",
+    "name" : "findSpaceForAsset",
+    "node" : {
+      "x" : 318.5,
+      "y" : 42.2
+    },
+    "resourceReference" : "/procedures/findSpaceForAsset",
+    "timestamp" : "2020-05-04T23:40:48.479Z",
+    "type" : 3
+  }, {
+    "name" : "floorplans",
+    "resourceReference" : "/types/floorplans",
+    "timestamp" : "2020-04-18T12:59:00.958Z",
+    "type" : 1
+  }, {
+    "name" : "floors",
+    "resourceReference" : "/types/floors",
+    "timestamp" : "2020-04-18T12:59:01.138Z",
+    "type" : 1
+  }, {
+    "label" : "sensors",
+    "name" : "sensors",
+    "resourceReference" : "/types/sensors",
+    "timestamp" : "2020-04-24T17:52:04.150Z",
+    "type" : 1
+  }, {
+    "label" : "system.collaborations",
+    "name" : "system.collaborations",
+    "resourceReference" : "/types/system.collaborations",
+    "timestamp" : "2020-03-18T00:32:48.756Z",
+    "type" : 1
+  }, {
+    "label" : "system.documents",
+    "name" : "system.documents",
+    "resourceReference" : "/types/system.documents",
+    "timestamp" : "2020-03-18T00:32:42.861Z",
+    "type" : 1
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out", "out", "out", "out", "out", "out" ],
+      "procedures" : [ "range", "yolo.getBoundingBoxCenterPixel", "yolo.getBoundingBoxHeight", "Math.sqrt", "push", "sort" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "yolo.calculateDistance",
+    "name" : "yolo.calculateDistance",
+    "resourceReference" : "/procedures/yolo.calculateDistance",
+    "timestamp" : "2020-05-13T20:16:39.251Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "yolo.getBoundingBoxCenterPixel",
+    "name" : "yolo.getBoundingBoxCenterPixel",
+    "resourceReference" : "/procedures/yolo.getBoundingBoxCenterPixel",
+    "timestamp" : "2020-05-13T20:16:53.065Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "yolo.getBoundingBoxHeight",
+    "name" : "yolo.getBoundingBoxHeight",
+    "resourceReference" : "/procedures/yolo.getBoundingBoxHeight",
+    "timestamp" : "2020-05-13T20:17:04.603Z",
+    "type" : 3
+  } ],
+  "tools" : [ {
+    "dockLocation" : "top",
+    "isPinned" : false,
+    "name" : "Inactive Panes",
+    "pane" : {
+      "c" : -1,
+      "lastUsed" : 1590771973575,
+      "r" : -1
+    },
+    "type" : 99
+  }, {
+    "isPinned" : false,
+    "name" : "Project Contents",
+    "pane" : {
+      "c" : -1,
+      "lastUsed" : 1590771973575,
+      "r" : -1
+    },
+    "type" : 2
+  }, {
+    "isPinned" : false,
+    "name" : "Errors",
+    "pane" : {
+      "c" : -1,
+      "lastUsed" : 1590771973575,
+      "r" : -1
+    },
+    "type" : 13
+  }, {
+    "isPinned" : false,
+    "name" : "ObjectExtSrcApp",
+    "pane" : {
+      "c" : 1,
+      "createdTime" : 1587612148767,
+      "lastUsed" : 1590771969621,
+      "r" : 0
+    },
+    "resourceKey" : "app/ObjectExtSrcApp",
+    "toolOptions" : {
+      "propertyPaneWidth" : 250,
+      "scaleAndTranslationState" : {
+        "lastZoomRequest" : 3,
+        "scale" : 0.4640867823569831,
+        "translate" : [ 169.0745164544378, 28.18264352860338 ]
+      }
+    },
+    "type" : 15
+  }, {
+    "isPinned" : false,
+    "name" : "PhysicalDistance",
+    "pane" : {
+      "c" : 0,
+      "createdTime" : 1587614610040,
+      "lastUsed" : 1590771969634,
+      "r" : 1
+    },
+    "resourceKey" : "collaborationtype/PhysicalDistance",
+    "toolOptions" : {
+      "propertyPaneWidth" : 250,
+      "scaleAndTranslationState" : {
+        "lastZoomRequest" : 3,
+        "scale" : 0.3403123961448986,
+        "translate" : [ 179.51013625789298, 44.429710867397816 ]
+      }
+    },
+    "type" : 14
+  }, {
+    "isPinned" : false,
+    "name" : "PhysicalDistance",
+    "pane" : {
+      "c" : -1,
+      "createdTime" : 1587619114458,
+      "lastUsed" : 1589814265272,
+      "r" : -1
+    },
+    "resourceKey" : "client/PhysicalDistance",
+    "toolOptions" : {
+      "isRunning" : false
+    },
+    "type" : 63
+  }, {
+    "isPinned" : false,
+    "name" : "Project Description",
+    "pane" : {
+      "c" : 1,
+      "createdTime" : 1588948972285,
+      "lastUsed" : 1590072549133,
+      "r" : 1
+    },
+    "type" : 82
+  }, {
+    "isPinned" : false,
+    "name" : "CameraApp",
+    "pane" : {
+      "c" : 0,
+      "createdTime" : 1588950710396,
+      "lastUsed" : 1590771969856,
+      "r" : 0
+    },
+    "resourceKey" : "app/CameraApp",
+    "toolOptions" : {
+      "propertyPaneWidth" : 250,
+      "scaleAndTranslationState" : {
+        "lastZoomRequest" : 3,
+        "scale" : 0.4416058394160584,
+        "translate" : [ 189.89091012773721, 15.014598540145982 ]
+      }
+    },
+    "type" : 15
+  }, {
+    "isPinned" : false,
+    "name" : "SmartBuilding",
+    "pane" : {
+      "c" : -1,
+      "createdTime" : 1589401286768,
+      "lastUsed" : 1589401557164,
+      "r" : -1
+    },
+    "resourceKey" : "client/SmartBuilding",
+    "type" : 63
+  } ],
+  "type" : "dev",
+  "views" : [ {
+    "name" : "Main",
+    "projectToolKeys" : [ "tiledock/Inactive Panes", "list/Project Contents", "errorviewer/Errors", "app/ObjectExtSrcApp", "collaborationgraph/PhysicalDistance", "client/PhysicalDistance", "projectdescription/Project Description", "app/CameraApp", "client/SmartBuilding" ]
+  } ]
+}

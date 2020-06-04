@@ -1,0 +1,9 @@
+{
+  "name" : "MobileDebug",
+  "operation" : "publish",
+  "properties" : [ {
+    "name" : "/mobile/debug",
+    "type" : ""
+  } ],
+  "type" : ""
+}

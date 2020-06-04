@@ -1,0 +1,5 @@
+PROCEDURE cb.getFloorplanByFloorId(floorid String)
+
+SELECT EXACTLY ONE FROM floors AS floor WHERE id == floorid
+
+SELECT ONE FROM floorplans WHERE id == floor.floorplan 

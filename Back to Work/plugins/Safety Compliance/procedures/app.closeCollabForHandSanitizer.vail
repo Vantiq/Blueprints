@@ -1,0 +1,143 @@
+PROCEDURE app.closeCollabForHandSanitizer(event Object)
+
+SELECT ONE FROM sensors WHERE id == event.id
+
+
+
+SELECT ONE FROM system.collaborations as collab 
+	WHERE name == "HandSanitizerRefill" AND 
+	status == "active" AND
+	entities.sensor == "/sensors/" + sensors._id 
+
+
+
+if (collab){
+    CollaborationUtils.closeCollaboration(collab.id)
+}
+
+return event
+
+
+/*
+{
+   "id": "HandStation001",
+   "val": 7
+}
+*/
+
+/*
+[
+   {
+      "_id": "5e7275c5f92a56126e332c8d",
+      "id": "4afa3aa0-694e-11ea-9747-dee4fae0cb44",
+      "name": "HandSanitizerRefill",
+      "collaborationType": "HandSanitizerRefill",
+      "keys": [
+         "/sensors/5e723c1ff92a56126e313a2b",
+         "/collaborations/4afa3aa0-694e-11ea-9747-dee4fae0cb44"
+      ],
+      "collaborators": {},
+      "entities": {
+         "sensor": "/sensors/5e723c1ff92a56126e313a2b"
+      },
+      "situations": [
+         "4ad3c6e2-694e-11ea-9747-dee4fae0cb44"
+      ],
+      "results": {
+         "Initiate": {
+            "event": {
+               "id": "HandStation001",
+               "val": 25
+            }
+         },
+         "FindMaintenance": {
+            "result": [
+               "9b0c8471-9314-419e-a118-8957690a91a2"
+            ],
+            "resultTime": "2020-03-18T19:25:59.475Z"
+         },
+         "NotifyMaintenance": {
+            "payloadId": "5e7275c7f35512013079a15b"
+         }
+      },
+      "status": "active",
+      "ars_namespace": "br_smarthospital",
+      "ars_version": 3,
+      "ars_createdAt": "2020-03-18T19:25:57.468Z",
+      "ars_createdBy": "9b0c8471-9314-419e-a118-8957690a91a2",
+      "ars_modifiedAt": "2020-03-18T19:26:00.004Z",
+      "ars_modifiedBy": "9b0c8471-9314-419e-a118-8957690a91a2"
+   },
+   {
+      "_id": "5e7275c8e4a08d2f57b07c09",
+      "id": "4cabe240-694e-11ea-aa57-8acf06fad096",
+      "name": "HandSanitizerRefill",
+      "collaborationType": "HandSanitizerRefill",
+      "keys": [
+         "/sensors/5e723c681c2b364dc0588677",
+         "/collaborations/4cabe240-694e-11ea-aa57-8acf06fad096"
+      ],
+      "collaborators": {},
+      "entities": {
+         "sensor": "/sensors/5e723c681c2b364dc0588677"
+      },
+      "situations": [
+         "4ca24552-694e-11ea-bc49-9642e9a3cdc2"
+      ],
+      "results": {
+         "Initiate": {
+            "event": {
+               "id": "HandStation003",
+               "val": 29
+            }
+         },
+         "FindMaintenance": {
+            "result": [
+               {
+                  "_id": "5e6ffc6cc04e0f6ba2482f62",
+                  "firstname": "Brett",
+                  "id": "9b0c8471-9314-419e-a118-8957690a91a2",
+                  "lastname": "Rudenstein",
+                  "roles": [
+                     {
+                        "_id": "5e70d5e8fe14b607d9e9c97f",
+                        "id": "f95dff07-bb7e-432b-8544-c315a4e51de2",
+                        "name": "Transport",
+                        "ars_namespace": "br_smarthospital",
+                        "ars_version": 1,
+                        "ars_createdAt": "2020-03-17T13:51:36.002Z",
+                        "ars_createdBy": "9b0c8471-9314-419e-a118-8957690a91a2"
+                     },
+                     {
+                        "_id": "5e6fe59c627a962ce91bb38e",
+                        "id": "5f6e5d9c-df4b-448a-81ef-d42ea5509ea1",
+                        "name": "Maintenance",
+                        "ars_namespace": "br_smarthospital",
+                        "ars_version": 3,
+                        "ars_createdAt": "2020-03-16T20:46:20.859Z",
+                        "ars_createdBy": "9b0c8471-9314-419e-a118-8957690a91a2",
+                        "ars_modifiedAt": "2020-03-16T20:53:06.381Z",
+                        "ars_modifiedBy": "9b0c8471-9314-419e-a118-8957690a91a2"
+                     }
+                  ],
+                  "ars_namespace": "br_smarthospital",
+                  "ars_version": 10,
+                  "ars_createdAt": "2020-03-16T22:23:40.746Z",
+                  "ars_createdBy": "9b0c8471-9314-419e-a118-8957690a91a2",
+                  "ars_modifiedAt": "2020-03-17T21:11:18.002Z",
+                  "ars_modifiedBy": "9b0c8471-9314-419e-a118-8957690a91a2"
+               }
+            ],
+            "resultTime": "2020-03-18T19:26:00.420Z"
+         }
+      },
+      "status": "active",
+      "ars_namespace": "br_smarthospital",
+      "ars_version": 2,
+      "ars_createdAt": "2020-03-18T19:26:00.304Z",
+      "ars_createdBy": "9b0c8471-9314-419e-a118-8957690a91a2",
+      "ars_modifiedAt": "2020-03-18T19:26:00.425Z",
+      "ars_modifiedBy": "9b0c8471-9314-419e-a118-8957690a91a2"
+   }
+]
+*/

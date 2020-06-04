@@ -1,0 +1,11 @@
+PROCEDURE collab.sendTextMessage(phone String, body String)
+
+var obj ={}
+obj.phone = phone
+obj.body = body
+
+PUBLISH { body: body } TO SOURCE Twilio USING { to: phone }
+
+return obj
+
+

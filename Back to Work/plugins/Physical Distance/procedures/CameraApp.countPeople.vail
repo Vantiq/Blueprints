@@ -1,0 +1,32 @@
+PROCEDURE CameraApp.countPeople(event Object)
+
+var list = event.results
+var sensorid = split(event.target.name, "/")[0]
+
+var count = 0
+for item in list{
+    if (item.label == "person"){
+        count ++
+    }
+}
+
+var obj = {}
+
+obj.id = sensorid
+obj.type = "Camera"
+obj.data = {
+    type: "object",
+    value: {
+        imagepath :event.target.name,
+        personcount : count,
+        results : yolo.calculateDistance(event)
+        
+    }
+}
+
+
+
+return obj
+//return event
+
+

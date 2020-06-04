@@ -1,0 +1,26 @@
+/*
+	Given a collaboration id, return an object with all of the context 
+    of that collaboration, including all related entities and the complete
+    collaboration definition
+*/
+PROCEDURE cb.getCollabContext(id String)
+
+SELECT ONE FROM system.collaborations AS collab WHERE id == id
+
+var results = {}
+
+if(collab){
+    for item in collab.entities {
+        //var key = item.key
+        if (item.value != null){
+            var valuearray = split(item.value,"/")
+            var resource = valuearray[1]
+            var uid = valuearray[2]
+            results[item.key] = SELECT ONE FROM @resource WHERE _id == uid
+        }
+    }
+
+    results.collaboration = collab
+}
+
+return results

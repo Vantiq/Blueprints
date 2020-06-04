@@ -1,0 +1,8 @@
+PROCEDURE cb.getSensorConfigs(sensortypename String)
+
+if (sensortypename){
+    SELECT FROM sensorconfigs WHERE sensortypename == sensortypename
+    	ORDER BY sensortypename
+} else {
+    SELECT FROM sensorconfigs ORDER BY sensortypename
+}

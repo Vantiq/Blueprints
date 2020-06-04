@@ -1,0 +1,50 @@
+/*
+	Utility procedure used by collaboration types to establish all of the
+    associations between a sensor id and the relevant asset, space, floor,
+    floorplan and building. The return value is an object with references
+    to the _id values for all of the associated objects.
+    
+    This also updates the entities property of the associated collaboration
+    instance to avoid needing extra assignment tasks. 
+*/
+
+PROCEDURE collab.setCollabEntitiesHierarchyFromSensorId(collabid String, sensorid String, sensortype String)
+ 
+var obj ={}
+ 
+SELECT ONE FROM system.collaborations AS collab WHERE id == collabid
+ 
+SELECT ONE FROM sensors WHERE id == sensorid AND type == sensortype
+obj.sensorREF = {_id:sensors._id}
+collab.entities.sensor = "/sensors/" + sensors._id
+ 
+ 
+SELECT ONE FROM assets WHERE id == sensors.assetid
+obj.assetREF = {_id:assets._id}
+collab.entities.asset = "/assets/" + assets._id
+ 
+ 
+SELECT ONE FROM floors WHERE id == assets.floorid
+obj.floorsREF = {_id:floors._id}
+collab.entities.floor = "/floors/" + floors._id
+ 
+SELECT ONE FROM floorplans WHERE id == floors.floorplan
+obj.floorplanREF = {_id:floorplans._id}
+collab.entities.floorplan = "/floorplans/" + floorplans._id
+ 
+ 
+var space = findSpaceForAsset(floors.id , assets.fplocation)
+obj.spaceREF = {_id:space._id}
+collab.entities.space = "/spaces/" + space._id
+ 
+ 
+SELECT ONE FROM buildings WHERE id == floors.buildingid
+obj.buildingsREF = {_id:buildings._id}
+collab.entities.building = "/buildings/" + buildings._id
+ 
+var updateObj = Utils.stripSystemProperties(collab)
+ 
+UPDATE system.collaborations(updateObj) WHERE id == collabid
+ 
+return obj
+

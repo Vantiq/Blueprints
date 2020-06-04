@@ -1,0 +1,630 @@
+{
+  "links" : [ {
+    "source" : "collaborationtype/HandSanitizerRefill",
+    "target" : "procedure/collab.findPersonnelForRefill"
+  }, {
+    "source" : "app/HandSanitizerApp",
+    "target" : "procedure/app.closeCollabForHandSanitizer"
+  }, {
+    "source" : "topic//device/hs",
+    "target" : "app/HandSanitizerApp"
+  }, {
+    "source" : "topic//sensor/hand",
+    "target" : "app/PersonnelHandEvent"
+  }, {
+    "source" : "procedure/unittest.handSanitizerNormalEvent",
+    "target" : "topic//device/hs"
+  }, {
+    "source" : "procedure/unittest.handSanitizerHighEvent",
+    "target" : "topic//device/hs"
+  }, {
+    "source" : "procedure/unittest.handSanitizerLowEvent",
+    "target" : "topic//device/hs"
+  }, {
+    "source" : "procedure/unittest.handevent",
+    "target" : "topic//sensor/hand"
+  }, {
+    "source" : "app/PersonnelHandEvent",
+    "target" : "collaborationtype/MissingHandSanitizerEvent"
+  }, {
+    "source" : "rule/on_simulation_playback",
+    "target" : "procedure/sim.playbackSimulation"
+  }, {
+    "source" : "topic//simulation/playback",
+    "target" : "rule/on_simulation_playback"
+  }, {
+    "source" : "rule/on_simulation_playback",
+    "target" : "topic//sensor/tracker/2d"
+  } ],
+  "name" : "SafetyCompliance",
+  "options" : {
+    "description" : "",
+    "dockCollapsed" : {
+      "bottom" : false,
+      "left" : false,
+      "right" : false,
+      "top" : false
+    },
+    "dockDimensions" : {
+      "bottom" : 200,
+      "debug" : [ 958.5, 958.5 ],
+      "left" : 420,
+      "right" : 220,
+      "top" : 0
+    },
+    "dockSort" : 1,
+    "filterBitArray" : "ffffffffffffffffffffffffffffffff",
+    "isModeloProject" : true,
+    "layoutStyle" : "tile",
+    "listFlavor" : "tree",
+    "openResourceFolders" : {
+      "App" : true,
+      "Client" : true,
+      "Collaboration Type" : true,
+      "Procedure" : true,
+      "Topic" : true,
+      "Type" : true
+    },
+    "showGrid" : true,
+    "tileColumns" : 2,
+    "tileRows" : 2,
+    "type" : "dev",
+    "v" : 3
+  },
+  "resources" : [ {
+    "label" : "/device/hs",
+    "name" : "/device/hs",
+    "resourceReference" : "/topics//device/hs",
+    "type" : 10
+  }, {
+    "label" : "/sensor/hand",
+    "name" : "/sensor/hand",
+    "resourceReference" : "/topics//sensor/hand",
+    "type" : 10
+  }, {
+    "name" : "/sensor/tracker/2d",
+    "resourceReference" : "/topics//sensor/tracker/2d",
+    "type" : 10
+  }, {
+    "name" : "/simulation/playback",
+    "resourceReference" : "/topics//simulation/playback",
+    "type" : 10
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "AcceptHS",
+    "name" : "AcceptHS",
+    "resourceReference" : "/system.clients/AcceptHS",
+    "timestamp" : "2020-05-12T18:45:41.984Z",
+    "type" : 15
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "ExportHandSanitizer",
+    "name" : "ExportHandSanitizer",
+    "resourceReference" : "/system.clients/ExportHandSanitizer",
+    "timestamp" : "2020-05-18T15:06:32.027Z",
+    "type" : 15
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ "out" ],
+      "collaborations" : [ "HandSanitizerRefill" ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out" ],
+      "procedures" : [ "app.closeCollabForHandSanitizer" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ "in" ],
+      "topics" : [ "/device/hs" ],
+      "typeHash" : [ "in" ],
+      "types" : [ "sensors" ]
+    },
+    "label" : "HandSanitizerApp",
+    "name" : "HandSanitizerApp",
+    "resourceReference" : "/collaborationtypes/HandSanitizerApp",
+    "timestamp" : "2020-05-12T18:42:00.573Z",
+    "type" : 12
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out", "out", "out", "out", "out" ],
+      "procedures" : [ "collab.setIssueStatus", "collab.findPersonnelForRefill", "collab.getHierarchyFromSensorId", "Notification.retractPayload", "CollaborationUtils.cancelEscalation" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in", "in", "in", "in", "in", "in" ],
+      "types" : [ "sensors", "assets", "floors", "floorplans", "spaces", "buildings" ]
+    },
+    "label" : "HandSanitizerRefill",
+    "name" : "HandSanitizerRefill",
+    "resourceReference" : "/collaborationtypes/HandSanitizerRefill",
+    "timestamp" : "2020-05-12T18:47:18.546Z",
+    "type" : 11
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out", "out" ],
+      "procedures" : [ "CollaborationUtils.closeCollaboration", "collab.sendTextMessage" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "personnel" ]
+    },
+    "label" : "MissingHandSanitizerEvent",
+    "name" : "MissingHandSanitizerEvent",
+    "resourceReference" : "/collaborationtypes/MissingHandSanitizerEvent",
+    "timestamp" : "2020-05-12T16:56:48.789Z",
+    "type" : 11
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ "out" ],
+      "collaborations" : [ "MissingHandSanitizerEvent" ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ "in" ],
+      "topics" : [ "/sensor/hand" ],
+      "typeHash" : [ "in" ],
+      "types" : [ "personnel" ]
+    },
+    "label" : "PersonnelHandEvent",
+    "name" : "PersonnelHandEvent",
+    "resourceReference" : "/collaborationtypes/PersonnelHandEvent",
+    "timestamp" : "2020-05-11T15:53:24.131Z",
+    "type" : 12
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "Twilio",
+    "name" : "Twilio",
+    "resourceReference" : "/sources/Twilio",
+    "timestamp" : "2020-05-12T16:49:37.041Z",
+    "type" : 4
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out" ],
+      "procedures" : [ "CollaborationUtils.closeCollaboration" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in", "in" ],
+      "types" : [ "sensors", "system.collaborations" ]
+    },
+    "label" : "app.closeCollabForHandSanitizer",
+    "name" : "app.closeCollabForHandSanitizer",
+    "resourceReference" : "/procedures/app.closeCollabForHandSanitizer",
+    "timestamp" : "2020-05-11T15:53:20.851Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out" ],
+      "procedures" : [ "push" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "personnel" ]
+    },
+    "label" : "collab.findPersonnelForRefill",
+    "name" : "collab.findPersonnelForRefill",
+    "resourceReference" : "/procedures/collab.findPersonnelForRefill",
+    "timestamp" : "2020-05-11T15:53:20.843Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out", "out", "out" ],
+      "procedures" : [ "getDocument", "has", "push" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in", "in", "in", "in", "in" ],
+      "types" : [ "system.collaborations", "sensors", "assets", "floors", "buildings" ]
+    },
+    "label" : "dashboard.getOpenHandSanitizerIssues",
+    "name" : "dashboard.getOpenHandSanitizerIssues",
+    "resourceReference" : "/procedures/dashboard.getOpenHandSanitizerIssues",
+    "timestamp" : "2020-05-11T16:36:33.799Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out", "out" ],
+      "procedures" : [ "getDocument", "results.push" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in", "in", "in", "in", "in" ],
+      "types" : [ "system.collaborations", "sensors", "assets", "floors", "buildings" ]
+    },
+    "label" : "dashboard.getOpenHighBodyTemps",
+    "name" : "dashboard.getOpenHighBodyTemps",
+    "resourceReference" : "/procedures/dashboard.getOpenHighBodyTemps",
+    "timestamp" : "2020-05-06T21:39:35.520Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out", "out" ],
+      "procedures" : [ "has", "sim.playbackSimulation" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ "in", "out" ],
+      "topics" : [ "/simulation/playback", "/sensor/tracker/2d" ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "on_simulation_playback",
+    "name" : "on_simulation_playback",
+    "resourceReference" : "/rules/on_simulation_playback",
+    "timestamp" : "2020-05-20T16:54:06.949Z",
+    "type" : 2
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out", "out" ],
+      "procedures" : [ "sims.length", "date" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ "out" ],
+      "topics" : [ "/simulation/playback" ],
+      "typeHash" : [ "in" ],
+      "types" : [ "movementsimulations" ]
+    },
+    "label" : "sim.playbackSimulation",
+    "name" : "sim.playbackSimulation",
+    "resourceReference" : "/procedures/sim.playbackSimulation",
+    "timestamp" : "2020-05-01T17:41:49.373Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ "out" ],
+      "topics" : [ "/device/hs" ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "unittest.handSanitizerHighEvent",
+    "name" : "unittest.handSanitizerHighEvent",
+    "resourceReference" : "/procedures/unittest.handSanitizerHighEvent",
+    "timestamp" : "2020-05-12T18:49:45.882Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ "out" ],
+      "topics" : [ "/device/hs" ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "unittest.handSanitizerLowEvent",
+    "name" : "unittest.handSanitizerLowEvent",
+    "resourceReference" : "/procedures/unittest.handSanitizerLowEvent",
+    "timestamp" : "2020-05-11T16:07:25.544Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ "out" ],
+      "topics" : [ "/device/hs" ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "unittest.handSanitizerNormalEvent",
+    "name" : "unittest.handSanitizerNormalEvent",
+    "resourceReference" : "/procedures/unittest.handSanitizerNormalEvent",
+    "timestamp" : "2020-05-11T16:08:22.791Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out" ],
+      "procedures" : [ "now" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ "out" ],
+      "topics" : [ "/sensor/hand" ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "unittest.handevent",
+    "name" : "unittest.handevent",
+    "resourceReference" : "/procedures/unittest.handevent",
+    "timestamp" : "2020-05-12T16:46:03.276Z",
+    "type" : 3
+  } ],
+  "tools" : [ {
+    "dockLocation" : "top",
+    "isPinned" : false,
+    "name" : "Inactive Panes",
+    "pane" : {
+      "c" : -1,
+      "lastUsed" : 1590771893242,
+      "r" : -1
+    },
+    "type" : 99
+  }, {
+    "isPinned" : false,
+    "name" : "Project Contents",
+    "pane" : {
+      "c" : -1,
+      "lastUsed" : 1590771893242,
+      "r" : -1
+    },
+    "type" : 2
+  }, {
+    "isPinned" : false,
+    "name" : "Errors",
+    "pane" : {
+      "c" : -1,
+      "lastUsed" : 1590771893242,
+      "r" : -1
+    },
+    "type" : 13
+  }, {
+    "isPinned" : false,
+    "name" : "HandSanitizerApp",
+    "pane" : {
+      "c" : 0,
+      "createdTime" : 1589206357415,
+      "lastUsed" : 1590771890228,
+      "r" : 0
+    },
+    "resourceKey" : "app/HandSanitizerApp",
+    "toolOptions" : {
+      "propertyPaneWidth" : 250,
+      "scaleAndTranslationState" : {
+        "lastZoomRequest" : 0,
+        "scale" : 0.5875912408759124,
+        "translate" : [ 337.5842124771898, 19.978102189781026 ]
+      }
+    },
+    "type" : 15
+  }, {
+    "isPinned" : false,
+    "name" : "HandSanitizerRefill",
+    "pane" : {
+      "c" : -1,
+      "createdTime" : 1589208179638,
+      "lastUsed" : 1590771890240,
+      "r" : -1
+    },
+    "resourceKey" : "collaborationtype/HandSanitizerRefill",
+    "toolOptions" : {
+      "propertyPaneWidth" : 250,
+      "scaleAndTranslationState" : {
+        "lastZoomRequest" : 0,
+        "scale" : 0.7383619286600904,
+        "translate" : [ 1026.7307849492051, -57.66128672243438 ]
+      }
+    },
+    "type" : 14
+  }, {
+    "isPinned" : false,
+    "name" : "MissingHandSanitizerEvent",
+    "pane" : {
+      "c" : 0,
+      "createdTime" : 1589208186509,
+      "lastUsed" : 1590771890265,
+      "r" : 1
+    },
+    "resourceKey" : "collaborationtype/MissingHandSanitizerEvent",
+    "toolOptions" : {
+      "propertyPaneWidth" : 250,
+      "scaleAndTranslationState" : {
+        "lastZoomRequest" : 0,
+        "scale" : 0.7647983106089147,
+        "translate" : [ 223.4251822467749, 103.59232680991835 ]
+      }
+    },
+    "type" : 14
+  }, {
+    "isPinned" : false,
+    "name" : "PersonnelHandEvent",
+    "pane" : {
+      "c" : 1,
+      "createdTime" : 1589213636513,
+      "lastUsed" : 1590771890279,
+      "r" : 0
+    },
+    "resourceKey" : "app/PersonnelHandEvent",
+    "toolOptions" : {
+      "propertyPaneWidth" : 250,
+      "scaleAndTranslationState" : {
+        "lastZoomRequest" : 0,
+        "scale" : 0.8298969072164949,
+        "translate" : [ 255, 28.216494845360813 ]
+      }
+    },
+    "type" : 15
+  }, {
+    "isPinned" : false,
+    "name" : "Log Messages",
+    "pane" : {
+      "c" : -1,
+      "lastUsed" : 1590771893242,
+      "r" : -1
+    },
+    "type" : 12
+  }, {
+    "isPinned" : false,
+    "name" : "Project Description",
+    "pane" : {
+      "c" : 1,
+      "createdTime" : 1589814402761,
+      "lastUsed" : 1589814402761,
+      "r" : 1
+    },
+    "type" : 82
+  } ],
+  "type" : "dev",
+  "views" : [ {
+    "name" : "Main",
+    "projectToolKeys" : [ "tiledock/Inactive Panes", "list/Project Contents", "errorviewer/Errors", "app/HandSanitizerApp", "collaborationgraph/HandSanitizerRefill", "collaborationgraph/MissingHandSanitizerEvent", "app/PersonnelHandEvent", "logviewer/Log Messages", "projectdescription/Project Description" ]
+  } ]
+}

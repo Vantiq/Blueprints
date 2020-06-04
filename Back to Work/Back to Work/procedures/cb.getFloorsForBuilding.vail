@@ -1,0 +1,3 @@
+PROCEDURE cb.getFloorsForBuilding(buildingid String)
+
+SELECT FROM floors WHERE buildingid == buildingid ORDER BY name

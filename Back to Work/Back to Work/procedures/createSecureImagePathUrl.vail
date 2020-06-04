@@ -1,0 +1,8 @@
+PROCEDURE createSecureImagePathUrl(path String)
+
+var base = "https://internal.vantiq.com/docs/"
+var tokenDuration = stringToInterval("10 seconds") / 1000
+var token = "?token=" + getToken(tokenDuration)
+var url = base + path + token
+
+return url

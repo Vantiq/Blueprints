@@ -1,0 +1,796 @@
+{
+  "links" : [ {
+    "source" : "type/cameraevents",
+    "target" : "app/GICameraFeed"
+  }, {
+    "source" : "type/cameraevents",
+    "target" : "collaborationtype/HighBodyTemp"
+  }, {
+    "source" : "topic//camera/thermal/reading",
+    "target" : "app/GICameraFeed"
+  }, {
+    "source" : "topic//camera/thermal/userreading",
+    "target" : "app/GICameraFeed"
+  }, {
+    "source" : "app/GICameraFeed",
+    "target" : "procedure/app.earlyReturn"
+  }, {
+    "source" : "app/GICameraFeed",
+    "target" : "procedure/app.transformCamJSON"
+  }, {
+    "source" : "app/GICameraFeed",
+    "target" : "procedure/app.transformUserCamJSON"
+  }, {
+    "source" : "type/cameraevents",
+    "target" : "collaborationtype/PersonnelHighTemp"
+  }, {
+    "source" : "app/GICameraFeed",
+    "target" : "collaborationtype/HighBodyTemp"
+  }, {
+    "source" : "app/GICameraFeed",
+    "target" : "collaborationtype/PersonnelHighTemp"
+  }, {
+    "source" : "type/sensors",
+    "target" : "procedure/cb.getCameraForGiConnectSim"
+  }, {
+    "source" : "type/assets",
+    "target" : "procedure/cb.getCameraForGiConnectSim"
+  }, {
+    "source" : "type/floors",
+    "target" : "procedure/cb.getCameraForGiConnectSim"
+  }, {
+    "source" : "type/buildings",
+    "target" : "procedure/cb.getCameraForGiConnectSim"
+  }, {
+    "source" : "type/personnel",
+    "target" : "app/GICameraFeed"
+  }, {
+    "source" : "type/floors",
+    "target" : "collaborationtype/HighBodyTemp"
+  }, {
+    "source" : "type/buildings",
+    "target" : "collaborationtype/HighBodyTemp"
+  }, {
+    "source" : "type/assets",
+    "target" : "collaborationtype/HighBodyTemp"
+  }, {
+    "source" : "type/sensors",
+    "target" : "collaborationtype/HighBodyTemp"
+  }, {
+    "source" : "type/spaces",
+    "target" : "collaborationtype/HighBodyTemp"
+  }, {
+    "source" : "type/floorplans",
+    "target" : "collaborationtype/HighBodyTemp"
+  }, {
+    "source" : "type/personnel",
+    "target" : "procedure/collab.findSecurityPersonnel"
+  }, {
+    "source" : "collaborationtype/HighBodyTemp",
+    "target" : "procedure/collab.findSecurityPersonnel"
+  }, {
+    "source" : "type/sensors",
+    "target" : "procedure/collab.getHierarchyFromSensorId"
+  }, {
+    "source" : "type/assets",
+    "target" : "procedure/collab.getHierarchyFromSensorId"
+  }, {
+    "source" : "type/floors",
+    "target" : "procedure/collab.getHierarchyFromSensorId"
+  }, {
+    "source" : "type/floorplans",
+    "target" : "procedure/collab.getHierarchyFromSensorId"
+  }, {
+    "source" : "type/buildings",
+    "target" : "procedure/collab.getHierarchyFromSensorId"
+  }, {
+    "source" : "type/spaces",
+    "target" : "procedure/findSpaceForAsset"
+  }, {
+    "source" : "procedure/collab.getHierarchyFromSensorId",
+    "target" : "procedure/findSpaceForAsset"
+  }, {
+    "source" : "collaborationtype/HighBodyTemp",
+    "target" : "procedure/collab.getHierarchyFromSensorId"
+  }, {
+    "source" : "client/HighPersonnelTempNotification",
+    "target" : "topic//my/response/topic"
+  }, {
+    "source" : "type/floors",
+    "target" : "collaborationtype/PersonnelHighTemp"
+  }, {
+    "source" : "type/buildings",
+    "target" : "collaborationtype/PersonnelHighTemp"
+  }, {
+    "source" : "type/assets",
+    "target" : "collaborationtype/PersonnelHighTemp"
+  }, {
+    "source" : "type/sensors",
+    "target" : "collaborationtype/PersonnelHighTemp"
+  }, {
+    "source" : "type/spaces",
+    "target" : "collaborationtype/PersonnelHighTemp"
+  }, {
+    "source" : "type/floorplans",
+    "target" : "collaborationtype/PersonnelHighTemp"
+  }, {
+    "source" : "collaborationtype/PersonnelHighTemp",
+    "target" : "procedure/collab.findSecurityPersonnel"
+  }, {
+    "source" : "collaborationtype/PersonnelHighTemp",
+    "target" : "procedure/collab.getHierarchyFromSensorId"
+  }, {
+    "source" : "procedure/collab.setIssueStatus",
+    "target" : "type/system.collaborations"
+  }, {
+    "source" : "procedure/collab.setIssueStatus",
+    "target" : "procedure/Utils.stripSystemProperties"
+  }, {
+    "source" : "collaborationtype/PersonnelHighTemp",
+    "target" : "procedure/collab.setIssueStatus"
+  }, {
+    "source" : "type/personnel",
+    "target" : "procedure/app.earlyReturn"
+  }, {
+    "source" : "procedure/app.earlyReturn",
+    "target" : "type/system.collaborations"
+  }, {
+    "source" : "procedure/app.earlyReturn",
+    "target" : "procedure/Utils.stripSystemProperties"
+  }, {
+    "source" : "type/system.collaborations",
+    "target" : "procedure/dashboard.getOpenHighBodyTemps"
+  }, {
+    "source" : "type/sensors",
+    "target" : "procedure/dashboard.getOpenHighBodyTemps"
+  }, {
+    "source" : "type/assets",
+    "target" : "procedure/dashboard.getOpenHighBodyTemps"
+  }, {
+    "source" : "type/floors",
+    "target" : "procedure/dashboard.getOpenHighBodyTemps"
+  }, {
+    "source" : "type/buildings",
+    "target" : "procedure/dashboard.getOpenHighBodyTemps"
+  }, {
+    "source" : "type/system.collaborations",
+    "target" : "procedure/dashboard.getOpenPersonnelHighTemps"
+  }, {
+    "source" : "type/sensors",
+    "target" : "procedure/dashboard.getOpenPersonnelHighTemps"
+  }, {
+    "source" : "type/assets",
+    "target" : "procedure/dashboard.getOpenPersonnelHighTemps"
+  }, {
+    "source" : "type/floors",
+    "target" : "procedure/dashboard.getOpenPersonnelHighTemps"
+  }, {
+    "source" : "type/buildings",
+    "target" : "procedure/dashboard.getOpenPersonnelHighTemps"
+  } ],
+  "name" : "AppGiConnectThermal",
+  "options" : {
+    "description" : "This plugin is designed to work with the GIConnect Thermal Camera.  ",
+    "dockCollapsed" : {
+      "bottom" : true,
+      "left" : false,
+      "right" : false,
+      "top" : false
+    },
+    "dockDimensions" : {
+      "bottom" : 200,
+      "debug" : [ 0, 0, 0 ],
+      "left" : 441,
+      "right" : 220,
+      "top" : 0
+    },
+    "dockSort" : 1,
+    "filterBitArray" : "ffffffffffffffffffffffffffffffff",
+    "isModeloProject" : true,
+    "layoutStyle" : "tile",
+    "listFlavor" : "tree",
+    "openResourceFolders" : {
+      "App" : true,
+      "Client" : true,
+      "Collaboration Type" : true,
+      "Procedure" : true,
+      "Topic" : true,
+      "Type" : true
+    },
+    "showGrid" : true,
+    "tileColumns" : 2,
+    "tileRows" : 2,
+    "type" : "dev",
+    "v" : 3
+  },
+  "resources" : [ {
+    "label" : "/camera/thermal/reading",
+    "name" : "/camera/thermal/reading",
+    "resourceReference" : "/topics//camera/thermal/reading",
+    "type" : 10
+  }, {
+    "label" : "/camera/thermal/userreading",
+    "name" : "/camera/thermal/userreading",
+    "resourceReference" : "/topics//camera/thermal/userreading",
+    "type" : 10
+  }, {
+    "label" : "/my/response/topic",
+    "name" : "/my/response/topic",
+    "resourceReference" : "/topics//my/response/topic",
+    "type" : 10
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "CameraSim",
+    "name" : "CameraSim",
+    "resourceReference" : "/system.clients/CameraSim",
+    "timestamp" : "2020-05-14T18:21:53.022Z",
+    "type" : 15
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ "out", "out" ],
+      "collaborations" : [ "HighBodyTemp", "PersonnelHighTemp" ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out", "out", "out" ],
+      "procedures" : [ "app.earlyReturn", "app.transformCamJSON", "app.transformUserCamJSON" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ "in", "in" ],
+      "topics" : [ "/camera/thermal/reading", "/camera/thermal/userreading" ],
+      "typeHash" : [ "in", "in" ],
+      "types" : [ "cameraevents", "personnel" ]
+    },
+    "label" : "GICameraFeed",
+    "name" : "GICameraFeed",
+    "resourceReference" : "/collaborationtypes/GICameraFeed",
+    "timestamp" : "2020-05-14T18:27:47.796Z",
+    "type" : 12
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out", "out", "out" ],
+      "procedures" : [ "collab.findSecurityPersonnel", "collab.getHierarchyFromSensorId", "CollaborationUtils.closeCollaboration" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in", "in", "in", "in", "in", "in", "in" ],
+      "types" : [ "cameraevents", "floors", "buildings", "assets", "sensors", "spaces", "floorplans" ]
+    },
+    "label" : "HighBodyTemp",
+    "name" : "HighBodyTemp",
+    "resourceReference" : "/collaborationtypes/HighBodyTemp",
+    "timestamp" : "2020-05-14T18:23:44.483Z",
+    "type" : 11
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "HighBodyTempNotification",
+    "name" : "HighBodyTempNotification",
+    "resourceReference" : "/system.clients/HighBodyTempNotification",
+    "timestamp" : "2020-05-18T15:09:56.584Z",
+    "type" : 15
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ "out" ],
+      "topics" : [ "/my/response/topic" ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "HighPersonnelTempNotification",
+    "name" : "HighPersonnelTempNotification",
+    "resourceReference" : "/system.clients/HighPersonnelTempNotification",
+    "timestamp" : "2020-05-14T18:29:07.912Z",
+    "type" : 15
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out", "out", "out" ],
+      "procedures" : [ "collab.findSecurityPersonnel", "collab.getHierarchyFromSensorId", "collab.setIssueStatus" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in", "in", "in", "in", "in", "in", "in" ],
+      "types" : [ "cameraevents", "floors", "buildings", "assets", "sensors", "spaces", "floorplans" ]
+    },
+    "label" : "PersonnelHighTemp",
+    "name" : "PersonnelHighTemp",
+    "resourceReference" : "/collaborationtypes/PersonnelHighTemp",
+    "timestamp" : "2020-05-14T18:23:36.585Z",
+    "type" : 11
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out" ],
+      "procedures" : [ "deleteKey" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "Utils.stripSystemProperties",
+    "name" : "Utils.stripSystemProperties",
+    "resourceReference" : "/procedures/Utils.stripSystemProperties",
+    "timestamp" : "2020-04-04T17:17:20.384Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out", "out", "out" ],
+      "procedures" : [ "startA_PersonnelHighTemp_NotifySecurity", "Utils.stripSystemProperties", "now" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in", "both" ],
+      "types" : [ "personnel", "system.collaborations" ]
+    },
+    "label" : "app.earlyReturn",
+    "name" : "app.earlyReturn",
+    "resourceReference" : "/procedures/app.earlyReturn",
+    "timestamp" : "2020-05-14T18:27:08.154Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out", "out", "out", "out" ],
+      "procedures" : [ "uuid", "parseFloat", "date", "startsWith" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "app.transformCamJSON",
+    "name" : "app.transformCamJSON",
+    "resourceReference" : "/procedures/app.transformCamJSON",
+    "timestamp" : "2020-05-04T21:36:40.879Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out", "out", "out", "out" ],
+      "procedures" : [ "uuid", "parseFloat", "date", "startsWith" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "app.transformUserCamJSON",
+    "name" : "app.transformUserCamJSON",
+    "resourceReference" : "/procedures/app.transformUserCamJSON",
+    "timestamp" : "2020-05-04T21:38:13.619Z",
+    "type" : 3
+  }, {
+    "label" : "assets",
+    "name" : "assets",
+    "resourceReference" : "/types/assets",
+    "timestamp" : "2020-04-18T12:59:00.984Z",
+    "type" : 1
+  }, {
+    "label" : "buildings",
+    "name" : "buildings",
+    "resourceReference" : "/types/buildings",
+    "timestamp" : "2020-04-18T12:59:01.022Z",
+    "type" : 1
+  }, {
+    "label" : "cameraevents",
+    "name" : "cameraevents",
+    "resourceReference" : "/types/cameraevents",
+    "timestamp" : "2020-04-18T12:59:00.887Z",
+    "type" : 1
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out" ],
+      "procedures" : [ "results.push" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in", "in", "in", "in" ],
+      "types" : [ "sensors", "assets", "floors", "buildings" ]
+    },
+    "label" : "cb.getCameraForGiConnectSim",
+    "name" : "cb.getCameraForGiConnectSim",
+    "resourceReference" : "/procedures/cb.getCameraForGiConnectSim",
+    "timestamp" : "2020-05-14T12:39:37.311Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out" ],
+      "procedures" : [ "results.push" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "personnel" ]
+    },
+    "label" : "collab.findSecurityPersonnel",
+    "name" : "collab.findSecurityPersonnel",
+    "resourceReference" : "/procedures/collab.findSecurityPersonnel",
+    "timestamp" : "2020-05-04T23:35:48.680Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out" ],
+      "procedures" : [ "findSpaceForAsset" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in", "in", "in", "in", "in" ],
+      "types" : [ "sensors", "assets", "floors", "floorplans", "buildings" ]
+    },
+    "label" : "collab.getHierarchyFromSensorId",
+    "name" : "collab.getHierarchyFromSensorId",
+    "resourceReference" : "/procedures/collab.getHierarchyFromSensorId",
+    "timestamp" : "2020-05-04T23:39:35.638Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out", "out" ],
+      "procedures" : [ "Utils.stripSystemProperties", "now" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "both" ],
+      "types" : [ "system.collaborations" ]
+    },
+    "label" : "collab.setIssueStatus",
+    "name" : "collab.setIssueStatus",
+    "resourceReference" : "/procedures/collab.setIssueStatus",
+    "timestamp" : "2020-05-05T00:01:05.387Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out", "out" ],
+      "procedures" : [ "getDocument", "results.push" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in", "in", "in", "in", "in" ],
+      "types" : [ "system.collaborations", "sensors", "assets", "floors", "buildings" ]
+    },
+    "label" : "dashboard.getOpenHighBodyTemps",
+    "name" : "dashboard.getOpenHighBodyTemps",
+    "resourceReference" : "/procedures/dashboard.getOpenHighBodyTemps",
+    "timestamp" : "2020-05-06T21:39:35.520Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out", "out", "out", "out", "out", "out" ],
+      "procedures" : [ "getDocument", "has", "toDate", "plusMillis", "format", "results.push" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in", "in", "in", "in", "in" ],
+      "types" : [ "system.collaborations", "sensors", "assets", "floors", "buildings" ]
+    },
+    "label" : "dashboard.getOpenPersonnelHighTemps",
+    "name" : "dashboard.getOpenPersonnelHighTemps",
+    "resourceReference" : "/procedures/dashboard.getOpenPersonnelHighTemps",
+    "timestamp" : "2020-05-06T21:40:41.433Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out", "out", "out" ],
+      "procedures" : [ "Math.sqrt", "push", "sort" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "spaces" ]
+    },
+    "label" : "findSpaceForAsset",
+    "name" : "findSpaceForAsset",
+    "resourceReference" : "/procedures/findSpaceForAsset",
+    "timestamp" : "2020-05-04T23:40:48.479Z",
+    "type" : 3
+  }, {
+    "label" : "floorplans",
+    "name" : "floorplans",
+    "resourceReference" : "/types/floorplans",
+    "timestamp" : "2020-04-18T12:59:00.958Z",
+    "type" : 1
+  }, {
+    "label" : "floors",
+    "name" : "floors",
+    "resourceReference" : "/types/floors",
+    "timestamp" : "2020-04-18T12:59:01.138Z",
+    "type" : 1
+  }, {
+    "label" : "personnel",
+    "name" : "personnel",
+    "resourceReference" : "/types/personnel",
+    "timestamp" : "2020-05-11T16:50:40.073Z",
+    "type" : 1
+  }, {
+    "label" : "sensors",
+    "name" : "sensors",
+    "resourceReference" : "/types/sensors",
+    "timestamp" : "2020-04-24T17:52:04.150Z",
+    "type" : 1
+  }, {
+    "label" : "spaces",
+    "name" : "spaces",
+    "resourceReference" : "/types/spaces",
+    "timestamp" : "2020-04-18T12:59:01.578Z",
+    "type" : 1
+  }, {
+    "label" : "system.collaborations",
+    "name" : "system.collaborations",
+    "resourceReference" : "/types/system.collaborations",
+    "timestamp" : "2020-03-18T00:32:48.756Z",
+    "type" : 1
+  } ],
+  "tools" : [ {
+    "dockLocation" : "top",
+    "isPinned" : false,
+    "name" : "Inactive Panes",
+    "pane" : {
+      "c" : -1,
+      "lastUsed" : 1589989153785,
+      "r" : -1
+    },
+    "type" : 99
+  }, {
+    "isPinned" : false,
+    "name" : "Project Contents",
+    "pane" : {
+      "c" : -1,
+      "lastUsed" : 1589989153785,
+      "r" : -1
+    },
+    "type" : 2
+  }, {
+    "isPinned" : false,
+    "name" : "Errors",
+    "pane" : {
+      "c" : -1,
+      "lastUsed" : 1589989153785,
+      "r" : -1
+    },
+    "type" : 13
+  }, {
+    "isPinned" : false,
+    "name" : "GICameraFeed",
+    "pane" : {
+      "c" : 0,
+      "createdTime" : 1588961140012,
+      "lastUsed" : 1589989139733,
+      "r" : 0
+    },
+    "resourceKey" : "app/GICameraFeed",
+    "toolOptions" : {
+      "propertyPaneWidth" : 250,
+      "scaleAndTranslationState" : {
+        "lastZoomRequest" : 0,
+        "scale" : 0.481457891168007,
+        "translate" : [ 213.07380478533997, 86.52421761990716 ]
+      }
+    },
+    "type" : 15
+  }, {
+    "isPinned" : false,
+    "name" : "Project Description",
+    "pane" : {
+      "c" : 1,
+      "createdTime" : 1588961184642,
+      "lastUsed" : 1589989146164,
+      "r" : 0
+    },
+    "type" : 82
+  }, {
+    "isPinned" : false,
+    "name" : "HighBodyTemp",
+    "pane" : {
+      "c" : 0,
+      "createdTime" : 1589480906233,
+      "lastUsed" : 1589989139768,
+      "r" : 1
+    },
+    "resourceKey" : "collaborationtype/HighBodyTemp",
+    "toolOptions" : {
+      "propertyPaneWidth" : 250,
+      "scaleAndTranslationState" : {
+        "lastZoomRequest" : 0,
+        "scale" : 0.23257955437158284,
+        "translate" : [ 198.22941461865156, 68.6046816931447 ]
+      }
+    },
+    "type" : 14
+  }, {
+    "isPinned" : false,
+    "name" : "PersonnelHighTemp",
+    "pane" : {
+      "c" : 1,
+      "createdTime" : 1589480906801,
+      "lastUsed" : 1589989139787,
+      "r" : 1
+    },
+    "resourceKey" : "collaborationtype/PersonnelHighTemp",
+    "toolOptions" : {
+      "propertyPaneWidth" : 250,
+      "scaleAndTranslationState" : {
+        "lastZoomRequest" : 0,
+        "scale" : 0.358498228514613,
+        "translate" : [ 308.3371843885225, 27.063164307020116 ]
+      }
+    },
+    "type" : 14
+  }, {
+    "isPinned" : false,
+    "name" : "HighBodyTempNotification",
+    "pane" : {
+      "c" : -1,
+      "createdTime" : 1589481011777,
+      "lastUsed" : 1589814596484,
+      "r" : -1
+    },
+    "resourceKey" : "client/HighBodyTempNotification",
+    "type" : 63
+  } ],
+  "type" : "dev",
+  "views" : [ {
+    "name" : "Main",
+    "projectToolKeys" : [ "tiledock/Inactive Panes", "list/Project Contents", "errorviewer/Errors", "app/GICameraFeed", "projectdescription/Project Description", "collaborationgraph/HighBodyTemp", "collaborationgraph/PersonnelHighTemp", "client/HighBodyTempNotification" ]
+  } ]
+}

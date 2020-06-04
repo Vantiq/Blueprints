@@ -1,0 +1,12 @@
+<div style="width: 100%;">
+	<div style="width: 25%; float: left; "> 
+            <img src="${image}" alt="Person with high body temp" width="100" height="100"/>
+	</div>
+	<div style="margin-left: 25%;  "> 
+		<p>An employee <strong>(${username})</strong> has been found @ <strong>${building}:${floor}</strong></p>
+		<p>with a High Body Temperature: <strong><font color="red">${temperature}</font></strong></p>
+        <p>The employee cannot return to work until: ${returndate}<p>
+        <p>${mask}<p>
+	</div>
+</div>
+

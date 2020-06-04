@@ -1,0 +1,131 @@
+/*
+	Simulate a Centrak Location event using a generic "Staff Tag"
+*/
+PROCEDURE unittest.centrakRTLSReading2()
+
+var obj = [
+    {
+        "site_id": "1068",
+        "device_id": "2366149",
+        "device_type": "Tag",
+        "device_name": "Staff Tag",
+        "device_type_id": "11",
+        "transport": "900mhz",
+        "updated_on": "2020-05-08 15:05:38",
+        "location_data": [
+            {
+                "type": "ir",
+                "location_change": "no",
+                "location_id": "313272",
+                "location_name": " Bay Corridor",
+                "campus_name": "null",
+                "building_name": "null",
+                "floor_name": "null",
+                "x": "",
+                "y": ""
+            }
+        ],
+        "sensor": [
+            {
+                "name": "motion",
+                "value": "no"
+            }
+        ],
+        "telemetry_data": "null",
+        "alert": "null"
+    },
+    {
+        "site_id": "1068",
+        "device_id": "2616728",
+        "device_type": "Tag",
+        "device_name": "EM Display Tag",
+        "device_type_id": "23",
+        "transport": "900mhz",
+        "updated_on": "2020-05-08 15:05:38",
+        "location_data": [
+            {
+                "type": "ir",
+                "location_change": "no",
+                "location_id": "",
+                "location_name": "",
+                "campus_name": "null",
+                "building_name": "null",
+                "floor_name": "null",
+                "x": "",
+                "y": ""
+            }
+        ],
+        "sensor": [
+            {
+                "name": "motion",
+                "value": "no"
+            }
+        ],
+        "telemetry_data": "null",
+        "alert": [
+            {
+                "source": "tag",
+                "category": "button press",
+                "timestamp": "2020-05-08 15:05:38",
+                "message": "4"
+            },
+            {
+                "source": "tag",
+                "category": "tamper",
+                "timestamp": "2020-05-08 15:05:38",
+                "message": "yes"
+            }
+        ]
+    },
+    {
+        "site_id": "1068",
+        "device_id": "2616728",
+        "device_type": "Tag",
+        "device_name": "EM Display Tag",
+        "device_type_id": "23",
+        "transport": "900mhz",
+        "updated_on": "2020-05-08 14:55:36",
+        "location_data": [
+            {
+                "type": "ir",
+                "location_change": "no",
+                "location_id": "",
+                "location_name": "",
+                "campus_name": "null",
+                "building_name": "null",
+                "floor_name": "null",
+                "x": "",
+                "y": ""
+            }
+        ],
+        "sensor": [
+            {
+                "name": "motion",
+                "value": "no"
+            }
+        ],
+        "telemetry_data": [
+            {
+                "type": "temperature",
+                "device": "probe",
+                "measurement_time": "2020-05-08 14:55:36",
+                "status": "valid",
+                "error_message": "",
+                "units": "celsius",
+                "value": "9.35"
+            },
+            {
+                "type": "",
+                "device": "",
+                "measurement_time": "",
+                "status": "",
+                "error_message": "",
+                "units": "",
+                "value": ""
+            }
+        ],
+        "alert": "null"
+    }
+]
+
+PUBLISH obj TO TOPIC "/centrak"

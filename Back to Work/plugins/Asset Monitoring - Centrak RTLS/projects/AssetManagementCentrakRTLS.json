@@ -1,0 +1,227 @@
+{
+  "links" : [ {
+    "source" : "topic//centrak",
+    "target" : "app/CentrakData"
+  }, {
+    "source" : "procedure/unittest.centrakRTLSReading",
+    "target" : "topic//centrak"
+  }, {
+    "source" : "type/s_centrakevent",
+    "target" : "app/CentrakData"
+  }, {
+    "source" : "procedure/unittest.centrakRTLSReading2",
+    "target" : "topic//centrak"
+  }, {
+    "source" : "topic//centrak",
+    "target" : "type/s_centrakevent"
+  } ],
+  "name" : "AssetManagementCentrakRTLS",
+  "options" : {
+    "description" : "CentrakRTLS\n\n- Recieve Centrak Readings and filters TAG events for downstream activities.\n- Simulate Centrak Readings",
+    "dockCollapsed" : {
+      "bottom" : true,
+      "left" : false,
+      "right" : false,
+      "top" : false
+    },
+    "dockDimensions" : {
+      "bottom" : 200,
+      "debug" : [ 0, 0, 0 ],
+      "left" : 316,
+      "right" : 220,
+      "top" : 0
+    },
+    "dockSort" : 1,
+    "filterBitArray" : "ffffffffffffffffffffffffffffffff",
+    "isModeloProject" : true,
+    "layoutStyle" : "tile",
+    "listFlavor" : "tree",
+    "openResourceFolders" : {
+      "App" : true,
+      "Procedure" : true,
+      "Topic" : true,
+      "Type" : true
+    },
+    "showGrid" : true,
+    "tileColumns" : 2,
+    "tileRows" : 2,
+    "type" : "dev",
+    "v" : 3
+  },
+  "resources" : [ {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "out" ],
+      "types" : [ "s_centrakevent" ]
+    },
+    "label" : "/centrak",
+    "name" : "/centrak",
+    "resourceReference" : "/topics//centrak",
+    "type" : 10
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ "in" ],
+      "topics" : [ "/centrak" ],
+      "typeHash" : [ "in" ],
+      "types" : [ "s_centrakevent" ]
+    },
+    "label" : "CentrakData",
+    "name" : "CentrakData",
+    "resourceReference" : "/collaborationtypes/CentrakData",
+    "timestamp" : "2020-05-08T19:25:10.409Z",
+    "type" : 12
+  }, {
+    "label" : "s_centrakevent",
+    "name" : "s_centrakevent",
+    "resourceReference" : "/types/s_centrakevent",
+    "timestamp" : "2020-05-01T16:17:31.802Z",
+    "type" : 1
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ "out" ],
+      "topics" : [ "/centrak" ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "unittest.centrakRTLSReading",
+    "name" : "unittest.centrakRTLSReading",
+    "resourceReference" : "/procedures/unittest.centrakRTLSReading",
+    "timestamp" : "2020-05-08T19:25:13.038Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ "out" ],
+      "topics" : [ "/centrak" ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "unittest.centrakRTLSReading2",
+    "name" : "unittest.centrakRTLSReading2",
+    "resourceReference" : "/procedures/unittest.centrakRTLSReading2",
+    "timestamp" : "2020-05-08T19:25:59.533Z",
+    "type" : 3
+  } ],
+  "tools" : [ {
+    "dockLocation" : "top",
+    "isPinned" : false,
+    "name" : "Inactive Panes",
+    "pane" : {
+      "c" : -1,
+      "lastUsed" : 1590771938162,
+      "r" : -1
+    },
+    "type" : 99
+  }, {
+    "isPinned" : false,
+    "name" : "Project Contents",
+    "pane" : {
+      "c" : -1,
+      "lastUsed" : 1590771938162,
+      "r" : -1
+    },
+    "type" : 2
+  }, {
+    "isPinned" : false,
+    "name" : "Errors",
+    "pane" : {
+      "c" : -1,
+      "lastUsed" : 1590771938162,
+      "r" : -1
+    },
+    "type" : 13
+  }, {
+    "isPinned" : false,
+    "name" : "CentrakData",
+    "pane" : {
+      "c" : 1,
+      "createdTime" : 1587748888268,
+      "lastUsed" : 1590771935223,
+      "r" : 0
+    },
+    "resourceKey" : "app/CentrakData",
+    "toolOptions" : {
+      "propertyPaneWidth" : 250,
+      "scaleAndTranslationState" : {
+        "lastZoomRequest" : 0,
+        "scale" : 1.774891774891775,
+        "translate" : [ 307.5, 60.34632034632034 ]
+      }
+    },
+    "type" : 15
+  }, {
+    "isPinned" : false,
+    "name" : "Project Description",
+    "pane" : {
+      "c" : 0,
+      "createdTime" : 1588349943152,
+      "lastUsed" : 1589985780258,
+      "r" : 0
+    },
+    "type" : 82
+  }, {
+    "isPinned" : false,
+    "name" : "unittest.centrakRTLSReading",
+    "pane" : {
+      "c" : 0,
+      "createdTime" : 1589827929399,
+      "lastUsed" : 1589827930746,
+      "r" : 1
+    },
+    "resourceKey" : "procedure/unittest.centrakRTLSReading",
+    "type" : 24
+  } ],
+  "type" : "dev",
+  "views" : [ {
+    "name" : "Main",
+    "projectToolKeys" : [ "tiledock/Inactive Panes", "list/Project Contents", "errorviewer/Errors", "app/CentrakData", "projectdescription/Project Description", "cmeditorprocedure/unittest.centrakRTLSReading" ]
+  } ]
+}

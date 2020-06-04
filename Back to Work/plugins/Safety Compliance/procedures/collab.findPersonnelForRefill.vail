@@ -1,0 +1,9 @@
+PROCEDURE collab.findPersonnelForRefill()
+
+// get personnel with Maintenance role 5f6e5d9c-df4b-448a-81ef-d42ea5509ea1
+var results = []
+SELECT FROM personnel AS person where roles.id == "5f6e5d9c-df4b-448a-81ef-d42ea5509ea1"{
+    push(results, person.id)
+}
+
+return results

@@ -1,0 +1,149 @@
+{
+  "active" : true,
+  "appType" : false,
+  "assembly" : {
+    "Delay" : {
+      "additionalBehaviors" : [ ],
+      "cancellationCondition" : [ ],
+      "completionCondition" : [ ],
+      "configuration" : {
+        "enableBadging" : true,
+        "escalationBehaviors" : [ {
+          "behaviors" : [ {
+            "description" : null,
+            "name" : "NotifySecurity",
+            "parameters" : [ {
+              "name" : "collaboration",
+              "type" : "reference",
+              "value" : "collaboration"
+            }, {
+              "name" : "users",
+              "type" : "expression",
+              "value" : "collab.findSecurityPersonnelForBuilding(building.id)"
+            } ],
+            "type" : "activity"
+          } ],
+          "condition" : "true",
+          "description" : null,
+          "name" : "escalate"
+        } ],
+        "escalationTime" : 5
+      },
+      "continuationCondition" : [ ],
+      "description" : "This delay is for demo only so their is time to close the app and get the notification when using the CameraApp.",
+      "instanceParameters" : [ "sensor", "building", "floor", "floorplan", "space", "asset" ],
+      "name" : "Delay",
+      "pattern" : "Escalation"
+    },
+    "Initiate" : {
+      "additionalBehaviors" : [ {
+        "behaviors" : [ {
+          "description" : null,
+          "name" : "collab.setCollabEntitiesHierarchyFromSensorId",
+          "parameters" : [ {
+            "name" : "collabid",
+            "type" : "expression",
+            "value" : "collaboration.id"
+          }, {
+            "name" : "sensorid",
+            "type" : "expression",
+            "value" : "sensor.id"
+          }, {
+            "name" : "sensortype",
+            "type" : "expression",
+            "value" : "sensor.type"
+          } ],
+          "type" : "service"
+        }, {
+          "description" : null,
+          "name" : "Delay",
+          "parameters" : [ {
+            "name" : "collaboration",
+            "type" : "reference",
+            "value" : "collaboration"
+          }, {
+            "name" : "escalationTimeOverride",
+            "type" : "Integer",
+            "value" : null
+          } ],
+          "type" : "activity"
+        } ],
+        "condition" : "true",
+        "description" : null,
+        "name" : null
+      } ],
+      "cancellationCondition" : [ ],
+      "completionCondition" : [ ],
+      "configuration" : {
+        "enableBadging" : true,
+        "entityRole" : "sensor",
+        "initialTrigger" : "WHEN INSERT OCCURS ON ArsSituation AS situation WHERE situation.name == \"PhysicalDistance\""
+      },
+      "continuationCondition" : [ ],
+      "description" : null,
+      "instanceParameters" : [ "sensor", "building", "floor", "floorplan", "space", "asset" ],
+      "name" : "Initiate",
+      "pattern" : "InitiateCollaboration"
+    },
+    "NotifySecurity" : {
+      "additionalBehaviors" : [ ],
+      "cancellationCondition" : [ ],
+      "completionCondition" : [ ],
+      "configuration" : {
+        "body" : "A crowd is forming",
+        "clientName" : "PhysicalDistance",
+        "enableBadging" : true,
+        "firstResponseBehaviors" : [ ],
+        "pushSourceName" : null,
+        "responseBehaviors" : [ {
+          "behaviors" : [ {
+            "description" : null,
+            "name" : "CollaborationUtils.closeCollaboration",
+            "parameters" : [ {
+              "name" : "collaborationId",
+              "type" : "expression",
+              "value" : "collaboration.id"
+            } ],
+            "type" : "service"
+          } ],
+          "condition" : "true",
+          "description" : null,
+          "name" : "response"
+        } ],
+        "title" : "Physical Distance"
+      },
+      "continuationCondition" : [ ],
+      "description" : null,
+      "instanceParameters" : [ "sensor", "building", "floor", "floorplan", "space", "asset" ],
+      "name" : "NotifySecurity",
+      "pattern" : "Notification"
+    }
+  },
+  "collaboratorRoles" : [ ],
+  "currentState" : {
+    "code" : "success"
+  },
+  "description" : "",
+  "disableBadging" : false,
+  "entityRoles" : [ {
+    "name" : "sensor",
+    "type" : "sensors"
+  }, {
+    "name" : "building",
+    "type" : "buildings"
+  }, {
+    "name" : "floor",
+    "type" : "floors"
+  }, {
+    "name" : "floorplan",
+    "type" : "floorplans"
+  }, {
+    "name" : "space",
+    "type" : "spaces"
+  }, {
+    "name" : "asset",
+    "type" : "assets"
+  } ],
+  "keyTypes" : [ "system.collaborations" ],
+  "name" : "PhysicalDistance"
+}

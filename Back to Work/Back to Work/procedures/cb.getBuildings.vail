@@ -1,0 +1,3 @@
+PROCEDURE cb.getBuildings(organizationid String)
+
+SELECT FROM buildings WHERE organizationid == organizationid

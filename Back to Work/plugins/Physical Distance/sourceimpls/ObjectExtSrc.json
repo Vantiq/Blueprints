@@ -1,0 +1,6 @@
+{
+    "name": "ObjectExtSrc",
+    "baseType": "EXTENSION",
+    "config": {},
+    "verticle": "service:extensionSource"
+}

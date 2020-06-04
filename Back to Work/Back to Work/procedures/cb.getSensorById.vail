@@ -1,0 +1,3 @@
+PROCEDURE cb.getSensorById(id String)
+
+SELECT ONE FROM sensors WHERE id == id

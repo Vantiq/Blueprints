@@ -1,0 +1,16 @@
+PROCEDURE cb.deleteSensorType(type String)
+
+// don't delete if sensor type is being used by sensors.
+
+SELECT FROM sensors WITH limit = 1 WHERE type == type
+
+if (sensors.size == 0){
+    DELETE sensortypes WHERE name == type
+} else {
+    exception(
+    	"Parent Realtionship Error", 
+    	"You may not remove the SensorType while it still has sensors associated with it"
+	)
+}
+
+//SELECT FROM sensortypes WHERE name == type

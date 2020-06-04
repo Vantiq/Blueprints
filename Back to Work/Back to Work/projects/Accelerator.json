@@ -1,0 +1,2450 @@
+{
+  "links" : [ {
+    "source" : "type/spaces",
+    "target" : "procedure/cb.findSpaceForAsset"
+  }, {
+    "source" : "type/assets",
+    "target" : "procedure/cb.getAssetById"
+  }, {
+    "source" : "type/sensors",
+    "target" : "procedure/cb.getAssetForSensor"
+  }, {
+    "source" : "type/assets",
+    "target" : "procedure/cb.getAssetForSensor"
+  }, {
+    "source" : "type/assettypes",
+    "target" : "procedure/cb.getAssetTypes"
+  }, {
+    "source" : "type/assets",
+    "target" : "procedure/cb.getAssets"
+  }, {
+    "source" : "type/assets",
+    "target" : "procedure/cb.getAssetsForFloor"
+  }, {
+    "source" : "type/floors",
+    "target" : "procedure/cb.getAssetsForFloor"
+  }, {
+    "source" : "type/buildings",
+    "target" : "procedure/cb.getBuildingById"
+  }, {
+    "source" : "type/spaces",
+    "target" : "procedure/cb.getBuildingForSpaceBySpaceId"
+  }, {
+    "source" : "type/floors",
+    "target" : "procedure/cb.getBuildingForSpaceBySpaceId"
+  }, {
+    "source" : "type/buildings",
+    "target" : "procedure/cb.getBuildingForSpaceBySpaceId"
+  }, {
+    "source" : "type/buildings",
+    "target" : "procedure/cb.getBuildings"
+  }, {
+    "source" : "type/buildings",
+    "target" : "procedure/cb.getDashboardData"
+  }, {
+    "source" : "type/floors",
+    "target" : "procedure/cb.getDashboardData"
+  }, {
+    "source" : "type/spaces",
+    "target" : "procedure/cb.getDashboardData"
+  }, {
+    "source" : "type/assets",
+    "target" : "procedure/cb.getDashboardData"
+  }, {
+    "source" : "type/sensors",
+    "target" : "procedure/cb.getDashboardData"
+  }, {
+    "source" : "type/floors",
+    "target" : "procedure/cb.getFloorById"
+  }, {
+    "source" : "type/spaces",
+    "target" : "procedure/cb.getFloorForSpaceBySpaceId"
+  }, {
+    "source" : "type/floors",
+    "target" : "procedure/cb.getFloorForSpaceBySpaceId"
+  }, {
+    "source" : "type/floorplans",
+    "target" : "procedure/cb.getFloorPlanById"
+  }, {
+    "source" : "type/spaces",
+    "target" : "procedure/cb.getFloorPlanForSpaceBySpaceId"
+  }, {
+    "source" : "type/floors",
+    "target" : "procedure/cb.getFloorPlanForSpaceBySpaceId"
+  }, {
+    "source" : "type/floorplans",
+    "target" : "procedure/cb.getFloorPlanForSpaceBySpaceId"
+  }, {
+    "source" : "type/floorplans",
+    "target" : "procedure/cb.getFloorPlansByBuildingId"
+  }, {
+    "source" : "type/floors",
+    "target" : "procedure/cb.getFloorsForBuilding"
+  }, {
+    "source" : "type/floors",
+    "target" : "procedure/cb.getHierarchyForAssetByFloorId"
+  }, {
+    "source" : "type/buildings",
+    "target" : "procedure/cb.getHierarchyForAssetByFloorId"
+  }, {
+    "source" : "type/spaces",
+    "target" : "procedure/cb.getHierarchyForAssetBySpaceId"
+  }, {
+    "source" : "type/floors",
+    "target" : "procedure/cb.getHierarchyForAssetBySpaceId"
+  }, {
+    "source" : "type/buildings",
+    "target" : "procedure/cb.getHierarchyForAssetBySpaceId"
+  }, {
+    "source" : "type/organization",
+    "target" : "procedure/cb.getOrganization"
+  }, {
+    "source" : "type/personnel",
+    "target" : "procedure/cb.getPersonnel"
+  }, {
+    "source" : "type/roles",
+    "target" : "procedure/cb.getRoles"
+  }, {
+    "source" : "type/sensors",
+    "target" : "procedure/cb.getSensorById"
+  }, {
+    "source" : "type/sensorconfigs",
+    "target" : "procedure/cb.getSensorConfigs"
+  }, {
+    "source" : "type/sensortypes",
+    "target" : "procedure/cb.getSensorTypes"
+  }, {
+    "source" : "type/sensors",
+    "target" : "procedure/cb.getSensors"
+  }, {
+    "source" : "type/sensors",
+    "target" : "procedure/cb.getSensorsForAsset"
+  }, {
+    "source" : "type/spaces",
+    "target" : "procedure/cb.getSpaceById"
+  }, {
+    "source" : "type/spaces",
+    "target" : "procedure/cb.getSpacesForFloor"
+  }, {
+    "source" : "type/assets",
+    "target" : "client/SmartBuilding"
+  }, {
+    "source" : "type/sensors",
+    "target" : "client/SmartBuilding"
+  }, {
+    "source" : "procedure/app.updateSensorAndAssetLocation",
+    "target" : "type/sensors"
+  }, {
+    "source" : "procedure/app.updateSensorAndAssetLocation",
+    "target" : "type/assets"
+  }, {
+    "source" : "type/floors",
+    "target" : "procedure/cb.getFloorplanByFloorId"
+  }, {
+    "source" : "type/floorplans",
+    "target" : "procedure/cb.getFloorplanByFloorId"
+  }, {
+    "source" : "type/sensors",
+    "target" : "procedure/cb.getSensorByIdAndType"
+  }, {
+    "source" : "type/sensorconfigs",
+    "target" : "procedure/cb.getSensorConfigById"
+  }, {
+    "source" : "procedure/utility.removeSensorsWhereTypeEmpty",
+    "target" : "type/sensors"
+  }, {
+    "source" : "type/personnel",
+    "target" : "procedure/collab.findSecurityPersonnel"
+  }, {
+    "source" : "type/sensors",
+    "target" : "procedure/collab.getHierarchyFromSensorId"
+  }, {
+    "source" : "type/assets",
+    "target" : "procedure/collab.getHierarchyFromSensorId"
+  }, {
+    "source" : "type/floors",
+    "target" : "procedure/collab.getHierarchyFromSensorId"
+  }, {
+    "source" : "type/floorplans",
+    "target" : "procedure/collab.getHierarchyFromSensorId"
+  }, {
+    "source" : "type/buildings",
+    "target" : "procedure/collab.getHierarchyFromSensorId"
+  }, {
+    "source" : "type/spaces",
+    "target" : "procedure/findSpaceForAsset"
+  }, {
+    "source" : "procedure/collab.getHierarchyFromSensorId",
+    "target" : "procedure/findSpaceForAsset"
+  }, {
+    "source" : "type/personnel",
+    "target" : "procedure/app.lookupPersonnel"
+  }, {
+    "source" : "type/sensors",
+    "target" : "procedure/dashboard.getOpenRestrictedSpaceIssues"
+  }, {
+    "source" : "type/assets",
+    "target" : "procedure/dashboard.getOpenRestrictedSpaceIssues"
+  }, {
+    "source" : "type/personnel",
+    "target" : "procedure/dashboard.getOpenRestrictedSpaceIssues"
+  }, {
+    "source" : "type/floors",
+    "target" : "procedure/dashboard.getOpenRestrictedSpaceIssues"
+  }, {
+    "source" : "type/buildings",
+    "target" : "procedure/dashboard.getOpenRestrictedSpaceIssues"
+  }, {
+    "source" : "procedure/createSecureImagePathUrl",
+    "target" : "procedure/getToken"
+  }, {
+    "source" : "type/sensors",
+    "target" : "procedure/collab.setCollabEntitiesHierarchyFromSensorId"
+  }, {
+    "source" : "type/assets",
+    "target" : "procedure/collab.setCollabEntitiesHierarchyFromSensorId"
+  }, {
+    "source" : "type/floors",
+    "target" : "procedure/collab.setCollabEntitiesHierarchyFromSensorId"
+  }, {
+    "source" : "type/floorplans",
+    "target" : "procedure/collab.setCollabEntitiesHierarchyFromSensorId"
+  }, {
+    "source" : "type/buildings",
+    "target" : "procedure/collab.setCollabEntitiesHierarchyFromSensorId"
+  }, {
+    "source" : "procedure/collab.setCollabEntitiesHierarchyFromSensorId",
+    "target" : "procedure/findSpaceForAsset"
+  }, {
+    "source" : "type/personnel",
+    "target" : "procedure/sim.getUserRecord"
+  }, {
+    "source" : "type/sensors",
+    "target" : "procedure/dashboard.getOpenHighBodyTemps"
+  }, {
+    "source" : "type/assets",
+    "target" : "procedure/dashboard.getOpenHighBodyTemps"
+  }, {
+    "source" : "type/floors",
+    "target" : "procedure/dashboard.getOpenHighBodyTemps"
+  }, {
+    "source" : "type/buildings",
+    "target" : "procedure/dashboard.getOpenHighBodyTemps"
+  }, {
+    "source" : "type/sensors",
+    "target" : "procedure/dashboard.getOpenPersonnelHighTemps"
+  }, {
+    "source" : "type/assets",
+    "target" : "procedure/dashboard.getOpenPersonnelHighTemps"
+  }, {
+    "source" : "type/floors",
+    "target" : "procedure/dashboard.getOpenPersonnelHighTemps"
+  }, {
+    "source" : "type/buildings",
+    "target" : "procedure/dashboard.getOpenPersonnelHighTemps"
+  }, {
+    "source" : "type/sensors",
+    "target" : "procedure/dashboardtemplate"
+  }, {
+    "source" : "type/assets",
+    "target" : "procedure/dashboardtemplate"
+  }, {
+    "source" : "type/floors",
+    "target" : "procedure/dashboardtemplate"
+  }, {
+    "source" : "type/buildings",
+    "target" : "procedure/dashboardtemplate"
+  }, {
+    "source" : "procedure/dashboardtemplate",
+    "target" : "procedure/findSpaceForAsset"
+  }, {
+    "source" : "type/sensors",
+    "target" : "procedure/cb.deleteAsset"
+  }, {
+    "source" : "procedure/cb.deleteAsset",
+    "target" : "type/assets"
+  }, {
+    "source" : "type/floors",
+    "target" : "procedure/cb.deleteBuilding"
+  }, {
+    "source" : "procedure/cb.deleteBuilding",
+    "target" : "type/buildings"
+  }, {
+    "source" : "type/assets",
+    "target" : "procedure/cb.deleteFloor"
+  }, {
+    "source" : "procedure/cb.deleteFloor",
+    "target" : "type/floors"
+  }, {
+    "source" : "type/spaces",
+    "target" : "procedure/cb.deleteFloor"
+  }, {
+    "source" : "type/sensormanufacturers",
+    "target" : "procedure/cb.getSensorManufacturers"
+  }, {
+    "source" : "type/sensors",
+    "target" : "procedure/cb.deleteSensorType"
+  }, {
+    "source" : "procedure/cb.deleteSensorType",
+    "target" : "type/sensortypes"
+  }, {
+    "source" : "type/personnel",
+    "target" : "procedure/collab.findSecurityPersonnelForBuilding"
+  }, {
+    "source" : "type/assets",
+    "target" : "procedure/collab.findSecurityPersonnelForBuilding"
+  }, {
+    "source" : "type/floors",
+    "target" : "procedure/collab.findSecurityPersonnelForBuilding"
+  }, {
+    "source" : "topic//mobile/debug",
+    "target" : "subscription/MobileDebug"
+  }, {
+    "source" : "type/cameraevents",
+    "target" : "procedure/cb.getDailyCounts"
+  }, {
+    "source" : "procedure/sim.deleteMovementSimulation",
+    "target" : "type/movementsimulations"
+  }, {
+    "source" : "type/movementsimulations",
+    "target" : "procedure/sim.getSimulations"
+  }, {
+    "source" : "type/movementsimulations",
+    "target" : "procedure/sim.playbackSimulation"
+  }, {
+    "source" : "type/movementsimulations",
+    "target" : "procedure/sim.playbackSimulation_Copy"
+  }, {
+    "source" : "client/VCSDocumentExport",
+    "target" : "topic//my/response/topic"
+  }, {
+    "source" : "type/system.collaborations",
+    "target" : "client/SmartBuilding"
+  }, {
+    "source" : "procedure/collab.setCollabEntitiesHierarchyFromSensorId",
+    "target" : "type/system.collaborations"
+  }, {
+    "source" : "procedure/collab.setCollabEntitiesHierarchyFromSensorId",
+    "target" : "procedure/Utils.stripSystemProperties"
+  }, {
+    "source" : "type/system.collaborations",
+    "target" : "procedure/dashboardtemplate"
+  }, {
+    "source" : "topic//personnel/registration",
+    "target" : "app/Registration"
+  }, {
+    "source" : "procedure/app.updatePersonnelPhoto",
+    "target" : "type/personnel"
+  }, {
+    "source" : "app/Registration",
+    "target" : "procedure/app.updatePersonnelPhoto"
+  } ],
+  "name" : "Accelerator",
+  "options" : {
+    "description" : "Digital Twin Blueprint\n\nThis description should be updated with:\n* Documentation and videos available at https://community.vantiq.com/\n* List of plugins\n\nCentrak RTLS - App that connects to RTLS data from CENTRAL\nContactTracing - Add contact tracing into accelerator, used in conjunction with RTLS data\nGiConnectThermal - App to connect GiConnect Thermnal Camera into accelerator\nHandSantizer - Notify maintenace when levels drop below threshold\nPhysical Distance - Notify Security if crowd is forming for extended period of time\nRestriced Space - Notify security if RTLS data appears in restriced area",
+    "dockCollapsed" : {
+      "bottom" : true,
+      "left" : false,
+      "right" : false,
+      "top" : false
+    },
+    "dockDimensions" : {
+      "bottom" : 200,
+      "debug" : [ 0, 0, 0 ],
+      "left" : 263,
+      "right" : 220,
+      "top" : 0
+    },
+    "dockSort" : 1,
+    "filterBitArray" : "ffffffffffffffffffffffffffffffff",
+    "isModeloProject" : true,
+    "layoutStyle" : "tile",
+    "listFlavor" : "tree",
+    "openResourceFolders" : {
+      "App" : true,
+      "Client" : true,
+      "Procedure" : true,
+      "Subscription" : true,
+      "Topic" : true,
+      "Type" : true
+    },
+    "showGrid" : true,
+    "tileColumns" : 2,
+    "tileRows" : 1,
+    "type" : "dev",
+    "v" : 3
+  },
+  "resources" : [ {
+    "label" : "/mobile/debug",
+    "name" : "/mobile/debug",
+    "resourceReference" : "/topics//mobile/debug",
+    "type" : 10
+  }, {
+    "label" : "/my/response/topic",
+    "name" : "/my/response/topic",
+    "resourceReference" : "/topics//my/response/topic",
+    "type" : 10
+  }, {
+    "name" : "/personnel/registration",
+    "resourceReference" : "/topics//personnel/registration",
+    "type" : 10
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ "in" ],
+      "topics" : [ "/mobile/debug" ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "MobileDebug",
+    "name" : "MobileDebug",
+    "resourceReference" : "/ArsSubscribe/MobileDebug",
+    "timestamp" : "2020-04-18T12:59:15.178Z",
+    "type" : 9
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ "out" ],
+      "topics" : [ "/personnel/registration" ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "PhotoRegistration",
+    "name" : "PhotoRegistration",
+    "resourceReference" : "/system.clients/PhotoRegistration",
+    "timestamp" : "2020-04-18T12:59:04.006Z",
+    "type" : 15
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out" ],
+      "procedures" : [ "app.updatePersonnelPhoto" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ "in" ],
+      "topics" : [ "/personnel/registration" ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "Registration",
+    "name" : "Registration",
+    "resourceReference" : "/collaborationtypes/Registration",
+    "timestamp" : "2020-05-29T16:56:18.544Z",
+    "type" : 12
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in", "in", "in" ],
+      "types" : [ "assets", "sensors", "system.collaborations" ]
+    },
+    "label" : "SmartBuilding",
+    "name" : "SmartBuilding",
+    "resourceReference" : "/system.clients/SmartBuilding",
+    "timestamp" : "2020-05-29T16:53:27.127Z",
+    "type" : 15
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out" ],
+      "procedures" : [ "deleteKey" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "Utils.stripSystemProperties",
+    "name" : "Utils.stripSystemProperties",
+    "resourceReference" : "/procedures/Utils.stripSystemProperties",
+    "timestamp" : "2020-04-04T17:17:20.384Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ "out" ],
+      "topics" : [ "/my/response/topic" ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "VCSDocumentExport",
+    "name" : "VCSDocumentExport",
+    "resourceReference" : "/system.clients/VCSDocumentExport",
+    "timestamp" : "2020-05-29T14:12:53.759Z",
+    "type" : 15
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "personnel" ]
+    },
+    "label" : "app.lookupPersonnel",
+    "name" : "app.lookupPersonnel",
+    "resourceReference" : "/procedures/app.lookupPersonnel",
+    "timestamp" : "2020-05-04T21:34:08.375Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out", "out", "out", "out" ],
+      "procedures" : [ "uuid", "parseFloat", "date", "startsWith" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "app.transformCamJSON",
+    "name" : "app.transformCamJSON",
+    "resourceReference" : "/procedures/app.transformCamJSON",
+    "timestamp" : "2020-05-04T21:36:40.879Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out", "out", "out", "out" ],
+      "procedures" : [ "uuid", "parseFloat", "date", "startsWith" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "app.transformUserCamJSON",
+    "name" : "app.transformUserCamJSON",
+    "resourceReference" : "/procedures/app.transformUserCamJSON",
+    "timestamp" : "2020-05-04T21:38:13.619Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "out" ],
+      "types" : [ "personnel" ]
+    },
+    "name" : "app.updatePersonnelPhoto",
+    "resourceReference" : "/procedures/app.updatePersonnelPhoto",
+    "timestamp" : "2020-05-29T16:55:15.996Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out", "out" ],
+      "procedures" : [ "uuid", "now" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ "out" ],
+      "topics" : [ "/indoortracking" ],
+      "typeHash" : [ "both", "both", "in", "out" ],
+      "types" : [ "sensors", "assets", "system.collaborations", "trackinghistory" ]
+    },
+    "label" : "app.updateSensorAndAssetLocation",
+    "name" : "app.updateSensorAndAssetLocation",
+    "resourceReference" : "/procedures/app.updateSensorAndAssetLocation",
+    "timestamp" : "2020-05-11T19:07:10.992Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out" ],
+      "procedures" : [ "has" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "appCondition.evaluateConfig",
+    "name" : "appCondition.evaluateConfig",
+    "resourceReference" : "/procedures/appCondition.evaluateConfig",
+    "timestamp" : "2020-05-04T21:53:33.985Z",
+    "type" : 3
+  }, {
+    "label" : "assets",
+    "name" : "assets",
+    "resourceReference" : "/types/assets",
+    "timestamp" : "2020-04-18T12:59:00.984Z",
+    "type" : 1
+  }, {
+    "label" : "assettypes",
+    "name" : "assettypes",
+    "resourceReference" : "/types/assettypes",
+    "timestamp" : "2020-04-18T12:59:00.961Z",
+    "type" : 1
+  }, {
+    "label" : "buildings",
+    "name" : "buildings",
+    "resourceReference" : "/types/buildings",
+    "timestamp" : "2020-04-18T12:59:01.022Z",
+    "type" : 1
+  }, {
+    "label" : "cameraevents",
+    "name" : "cameraevents",
+    "resourceReference" : "/types/cameraevents",
+    "timestamp" : "2020-04-18T12:59:00.887Z",
+    "type" : 1
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out", "out", "out", "out", "out", "out", "out" ],
+      "procedures" : [ "Utils.stripSystemProperties", "format", "stringify", "client.replace", "parse", "getDocument", "generateResource" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "both", "out" ],
+      "types" : [ "system.clients", "system.documents" ]
+    },
+    "label" : "cb.adjustTheme",
+    "name" : "cb.adjustTheme",
+    "resourceReference" : "/procedures/cb.adjustTheme",
+    "timestamp" : "2020-05-18T18:13:44.254Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out" ],
+      "procedures" : [ "exception" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in", "out" ],
+      "types" : [ "sensors", "assets" ]
+    },
+    "label" : "cb.deleteAsset",
+    "name" : "cb.deleteAsset",
+    "resourceReference" : "/procedures/cb.deleteAsset",
+    "timestamp" : "2020-05-04T22:02:53.455Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out" ],
+      "procedures" : [ "exception" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in", "out" ],
+      "types" : [ "floors", "buildings" ]
+    },
+    "label" : "cb.deleteBuilding",
+    "name" : "cb.deleteBuilding",
+    "resourceReference" : "/procedures/cb.deleteBuilding",
+    "timestamp" : "2020-05-04T22:04:12.552Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out" ],
+      "procedures" : [ "exception" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in", "in", "out" ],
+      "types" : [ "assets", "spaces", "floors" ]
+    },
+    "label" : "cb.deleteFloor",
+    "name" : "cb.deleteFloor",
+    "resourceReference" : "/procedures/cb.deleteFloor",
+    "timestamp" : "2020-05-04T22:20:59.458Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out" ],
+      "procedures" : [ "exception" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in", "out" ],
+      "types" : [ "sensors", "sensortypes" ]
+    },
+    "label" : "cb.deleteSensorType",
+    "name" : "cb.deleteSensorType",
+    "resourceReference" : "/procedures/cb.deleteSensorType",
+    "timestamp" : "2020-04-24T21:54:53.884Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out", "out", "out", "out" ],
+      "procedures" : [ "sort", "Utils.stripSystemProperties", "Math.sqrt", "push" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "spaces" ]
+    },
+    "label" : "cb.findSpaceForAsset",
+    "name" : "cb.findSpaceForAsset",
+    "resourceReference" : "/procedures/cb.findSpaceForAsset",
+    "timestamp" : "2020-05-11T17:51:32.842Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "assets" ]
+    },
+    "label" : "cb.getAssetById",
+    "name" : "cb.getAssetById",
+    "resourceReference" : "/procedures/cb.getAssetById",
+    "timestamp" : "2020-04-18T12:52:48.864Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in", "in" ],
+      "types" : [ "sensors", "assets" ]
+    },
+    "label" : "cb.getAssetForSensor",
+    "name" : "cb.getAssetForSensor",
+    "resourceReference" : "/procedures/cb.getAssetForSensor",
+    "timestamp" : "2020-04-19T13:07:06.953Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "assettypes" ]
+    },
+    "label" : "cb.getAssetTypes",
+    "name" : "cb.getAssetTypes",
+    "resourceReference" : "/procedures/cb.getAssetTypes",
+    "timestamp" : "2020-04-18T12:52:48.779Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "assets" ]
+    },
+    "label" : "cb.getAssets",
+    "name" : "cb.getAssets",
+    "resourceReference" : "/procedures/cb.getAssets",
+    "timestamp" : "2020-04-18T12:52:49.582Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out" ],
+      "procedures" : [ "push" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in", "in" ],
+      "types" : [ "assets", "floors" ]
+    },
+    "label" : "cb.getAssetsForFloor",
+    "name" : "cb.getAssetsForFloor",
+    "resourceReference" : "/procedures/cb.getAssetsForFloor",
+    "timestamp" : "2020-04-18T12:52:49.115Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "buildings" ]
+    },
+    "label" : "cb.getBuildingById",
+    "name" : "cb.getBuildingById",
+    "resourceReference" : "/procedures/cb.getBuildingById",
+    "timestamp" : "2020-04-18T12:52:49.272Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in", "in", "in" ],
+      "types" : [ "spaces", "floors", "buildings" ]
+    },
+    "label" : "cb.getBuildingForSpaceBySpaceId",
+    "name" : "cb.getBuildingForSpaceBySpaceId",
+    "resourceReference" : "/procedures/cb.getBuildingForSpaceBySpaceId",
+    "timestamp" : "2020-04-18T12:52:49.385Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "buildings" ]
+    },
+    "label" : "cb.getBuildings",
+    "name" : "cb.getBuildings",
+    "resourceReference" : "/procedures/cb.getBuildings",
+    "timestamp" : "2020-04-18T12:52:48.681Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out" ],
+      "procedures" : [ "split" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "system.collaborations" ]
+    },
+    "label" : "cb.getCollabContext",
+    "name" : "cb.getCollabContext",
+    "resourceReference" : "/procedures/cb.getCollabContext",
+    "timestamp" : "2020-05-04T22:06:20.492Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "cameraevents" ]
+    },
+    "label" : "cb.getDailyCounts",
+    "name" : "cb.getDailyCounts",
+    "resourceReference" : "/procedures/cb.getDailyCounts",
+    "timestamp" : "2020-05-04T22:09:23.574Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in", "in", "in", "in", "in", "in" ],
+      "types" : [ "buildings", "floors", "spaces", "assets", "sensors", "system.collaborations" ]
+    },
+    "label" : "cb.getDashboardData",
+    "name" : "cb.getDashboardData",
+    "resourceReference" : "/procedures/cb.getDashboardData",
+    "timestamp" : "2020-05-04T22:09:48.282Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "floors" ]
+    },
+    "label" : "cb.getFloorById",
+    "name" : "cb.getFloorById",
+    "resourceReference" : "/procedures/cb.getFloorById",
+    "timestamp" : "2020-05-04T22:10:25.601Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in", "in" ],
+      "types" : [ "spaces", "floors" ]
+    },
+    "label" : "cb.getFloorForSpaceBySpaceId",
+    "name" : "cb.getFloorForSpaceBySpaceId",
+    "resourceReference" : "/procedures/cb.getFloorForSpaceBySpaceId",
+    "timestamp" : "2020-05-04T22:11:14.462Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "floorplans" ]
+    },
+    "label" : "cb.getFloorPlanById",
+    "name" : "cb.getFloorPlanById",
+    "resourceReference" : "/procedures/cb.getFloorPlanById",
+    "timestamp" : "2020-05-04T22:12:02.128Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in", "in", "in" ],
+      "types" : [ "spaces", "floors", "floorplans" ]
+    },
+    "label" : "cb.getFloorPlanForSpaceBySpaceId",
+    "name" : "cb.getFloorPlanForSpaceBySpaceId",
+    "resourceReference" : "/procedures/cb.getFloorPlanForSpaceBySpaceId",
+    "timestamp" : "2020-05-04T22:18:23.848Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "floorplans" ]
+    },
+    "label" : "cb.getFloorPlansByBuildingId",
+    "name" : "cb.getFloorPlansByBuildingId",
+    "resourceReference" : "/procedures/cb.getFloorPlansByBuildingId",
+    "timestamp" : "2020-04-18T12:52:49.532Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in", "in" ],
+      "types" : [ "floors", "floorplans" ]
+    },
+    "label" : "cb.getFloorplanByFloorId",
+    "name" : "cb.getFloorplanByFloorId",
+    "resourceReference" : "/procedures/cb.getFloorplanByFloorId",
+    "timestamp" : "2020-04-18T12:52:48.846Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "floors" ]
+    },
+    "label" : "cb.getFloorsForBuilding",
+    "name" : "cb.getFloorsForBuilding",
+    "resourceReference" : "/procedures/cb.getFloorsForBuilding",
+    "timestamp" : "2020-04-18T12:52:48.577Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in", "in" ],
+      "types" : [ "floors", "buildings" ]
+    },
+    "label" : "cb.getHierarchyForAssetByFloorId",
+    "name" : "cb.getHierarchyForAssetByFloorId",
+    "resourceReference" : "/procedures/cb.getHierarchyForAssetByFloorId",
+    "timestamp" : "2020-04-18T12:52:49.582Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in", "in", "in" ],
+      "types" : [ "spaces", "floors", "buildings" ]
+    },
+    "label" : "cb.getHierarchyForAssetBySpaceId",
+    "name" : "cb.getHierarchyForAssetBySpaceId",
+    "resourceReference" : "/procedures/cb.getHierarchyForAssetBySpaceId",
+    "timestamp" : "2020-04-18T12:52:48.652Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out", "out", "out" ],
+      "procedures" : [ "ResourceAPI.executeOp", "issues.push", "concat" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "system.components" ]
+    },
+    "label" : "cb.getOpenIssues",
+    "name" : "cb.getOpenIssues",
+    "resourceReference" : "/procedures/cb.getOpenIssues",
+    "timestamp" : "2020-04-21T13:51:25.715Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "organization" ]
+    },
+    "label" : "cb.getOrganization",
+    "name" : "cb.getOrganization",
+    "resourceReference" : "/procedures/cb.getOrganization",
+    "timestamp" : "2020-04-18T12:52:49.268Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "personnel" ]
+    },
+    "label" : "cb.getPersonnel",
+    "name" : "cb.getPersonnel",
+    "resourceReference" : "/procedures/cb.getPersonnel",
+    "timestamp" : "2020-04-18T12:52:49.402Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "roles" ]
+    },
+    "label" : "cb.getRoles",
+    "name" : "cb.getRoles",
+    "resourceReference" : "/procedures/cb.getRoles",
+    "timestamp" : "2020-04-18T12:52:48.672Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "sensors" ]
+    },
+    "label" : "cb.getSensorById",
+    "name" : "cb.getSensorById",
+    "resourceReference" : "/procedures/cb.getSensorById",
+    "timestamp" : "2020-04-18T12:52:49.018Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "sensors" ]
+    },
+    "label" : "cb.getSensorByIdAndType",
+    "name" : "cb.getSensorByIdAndType",
+    "resourceReference" : "/procedures/cb.getSensorByIdAndType",
+    "timestamp" : "2020-04-18T12:52:48.676Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "sensorconfigs" ]
+    },
+    "label" : "cb.getSensorConfigById",
+    "name" : "cb.getSensorConfigById",
+    "resourceReference" : "/procedures/cb.getSensorConfigById",
+    "timestamp" : "2020-05-04T22:23:06.055Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "sensorconfigs" ]
+    },
+    "label" : "cb.getSensorConfigs",
+    "name" : "cb.getSensorConfigs",
+    "resourceReference" : "/procedures/cb.getSensorConfigs",
+    "timestamp" : "2020-05-04T22:23:09.526Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "sensormanufacturers" ]
+    },
+    "label" : "cb.getSensorManufacturers",
+    "name" : "cb.getSensorManufacturers",
+    "resourceReference" : "/procedures/cb.getSensorManufacturers",
+    "timestamp" : "2020-04-24T17:46:09.409Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "sensortypes" ]
+    },
+    "label" : "cb.getSensorTypes",
+    "name" : "cb.getSensorTypes",
+    "resourceReference" : "/procedures/cb.getSensorTypes",
+    "timestamp" : "2020-04-18T12:52:48.872Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "sensors" ]
+    },
+    "label" : "cb.getSensors",
+    "name" : "cb.getSensors",
+    "resourceReference" : "/procedures/cb.getSensors",
+    "timestamp" : "2020-05-01T14:43:11.083Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "sensors" ]
+    },
+    "label" : "cb.getSensorsForAsset",
+    "name" : "cb.getSensorsForAsset",
+    "resourceReference" : "/procedures/cb.getSensorsForAsset",
+    "timestamp" : "2020-04-18T12:52:49.841Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "spaces" ]
+    },
+    "label" : "cb.getSpaceById",
+    "name" : "cb.getSpaceById",
+    "resourceReference" : "/procedures/cb.getSpaceById",
+    "timestamp" : "2020-04-18T12:52:48.783Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "spaces" ]
+    },
+    "label" : "cb.getSpacesForFloor",
+    "name" : "cb.getSpacesForFloor",
+    "resourceReference" : "/procedures/cb.getSpacesForFloor",
+    "timestamp" : "2020-04-18T12:52:48.742Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out", "out", "out", "out" ],
+      "procedures" : [ "getDocument", "parse", "regExp", "pattern.matcher" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "system.clients" ]
+    },
+    "label" : "cb.getTheme",
+    "name" : "cb.getTheme",
+    "resourceReference" : "/procedures/cb.getTheme",
+    "timestamp" : "2020-04-18T12:52:49.734Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out" ],
+      "procedures" : [ "results.push" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "personnel" ]
+    },
+    "label" : "collab.findSecurityPersonnel",
+    "name" : "collab.findSecurityPersonnel",
+    "resourceReference" : "/procedures/collab.findSecurityPersonnel",
+    "timestamp" : "2020-05-04T23:35:48.680Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out" ],
+      "procedures" : [ "results.push" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in", "in", "in" ],
+      "types" : [ "personnel", "assets", "floors" ]
+    },
+    "label" : "collab.findSecurityPersonnelForBuilding",
+    "name" : "collab.findSecurityPersonnelForBuilding",
+    "resourceReference" : "/procedures/collab.findSecurityPersonnelForBuilding",
+    "timestamp" : "2020-05-12T20:41:52.877Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out" ],
+      "procedures" : [ "findSpaceForAsset" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in", "in", "in", "in", "in" ],
+      "types" : [ "sensors", "assets", "floors", "floorplans", "buildings" ]
+    },
+    "label" : "collab.getHierarchyFromSensorId",
+    "name" : "collab.getHierarchyFromSensorId",
+    "resourceReference" : "/procedures/collab.getHierarchyFromSensorId",
+    "timestamp" : "2020-05-04T23:39:35.638Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out", "out" ],
+      "procedures" : [ "Math.sqrt", "push" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "collab.indoorTracking",
+    "name" : "collab.indoorTracking",
+    "resourceReference" : "/procedures/collab.indoorTracking",
+    "timestamp" : "2020-05-04T23:41:53.781Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out", "out" ],
+      "procedures" : [ "findSpaceForAsset", "Utils.stripSystemProperties" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "both", "in", "in", "in", "in", "in" ],
+      "types" : [ "system.collaborations", "sensors", "assets", "floors", "floorplans", "buildings" ]
+    },
+    "label" : "collab.setCollabEntitiesHierarchyFromSensorId",
+    "name" : "collab.setCollabEntitiesHierarchyFromSensorId",
+    "resourceReference" : "/procedures/collab.setCollabEntitiesHierarchyFromSensorId",
+    "timestamp" : "2020-05-29T13:52:07.729Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out", "out" ],
+      "procedures" : [ "Utils.stripSystemProperties", "now" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "both" ],
+      "types" : [ "system.collaborations" ]
+    },
+    "label" : "collab.setIssueStatus",
+    "name" : "collab.setIssueStatus",
+    "resourceReference" : "/procedures/collab.setIssueStatus",
+    "timestamp" : "2020-05-05T00:01:05.387Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out", "out" ],
+      "procedures" : [ "stringToInterval", "getToken" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "createSecureImagePathUrl",
+    "name" : "createSecureImagePathUrl",
+    "resourceReference" : "/procedures/createSecureImagePathUrl",
+    "timestamp" : "2020-04-18T12:52:48.430Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out", "out" ],
+      "procedures" : [ "getDocument", "results.push" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in", "in", "in", "in", "in" ],
+      "types" : [ "system.collaborations", "sensors", "assets", "floors", "buildings" ]
+    },
+    "label" : "dashboard.getOpenHighBodyTemps",
+    "name" : "dashboard.getOpenHighBodyTemps",
+    "resourceReference" : "/procedures/dashboard.getOpenHighBodyTemps",
+    "timestamp" : "2020-05-06T21:39:35.520Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out", "out", "out", "out", "out", "out" ],
+      "procedures" : [ "getDocument", "has", "toDate", "plusMillis", "format", "results.push" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in", "in", "in", "in", "in" ],
+      "types" : [ "system.collaborations", "sensors", "assets", "floors", "buildings" ]
+    },
+    "label" : "dashboard.getOpenPersonnelHighTemps",
+    "name" : "dashboard.getOpenPersonnelHighTemps",
+    "resourceReference" : "/procedures/dashboard.getOpenPersonnelHighTemps",
+    "timestamp" : "2020-05-06T21:40:41.433Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out", "out", "out" ],
+      "procedures" : [ "getDocument", "has", "results.push" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in", "in", "in", "in", "in", "in" ],
+      "types" : [ "system.collaborations", "sensors", "assets", "personnel", "floors", "buildings" ]
+    },
+    "label" : "dashboard.getOpenRestrictedSpaceIssues",
+    "name" : "dashboard.getOpenRestrictedSpaceIssues",
+    "resourceReference" : "/procedures/dashboard.getOpenRestrictedSpaceIssues",
+    "timestamp" : "2020-05-06T21:41:49.487Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out", "out", "out", "out" ],
+      "procedures" : [ "getDocument", "has", "findSpaceForAsset", "results.push" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in", "in", "in", "in", "in" ],
+      "types" : [ "system.collaborations", "sensors", "assets", "floors", "buildings" ]
+    },
+    "label" : "dashboardtemplate",
+    "name" : "dashboardtemplate",
+    "resourceReference" : "/procedures/dashboardtemplate",
+    "timestamp" : "2020-05-29T16:33:00.122Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out", "out" ],
+      "procedures" : [ "namespace", "date" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "both" ],
+      "types" : [ "system.tokens" ]
+    },
+    "label" : "deleteExpiredTokens",
+    "name" : "deleteExpiredTokens",
+    "resourceReference" : "/procedures/deleteExpiredTokens",
+    "timestamp" : "2020-05-06T21:45:06.712Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "out", "out" ],
+      "types" : [ "system.collaborations", "system.situations" ]
+    },
+    "label" : "demo.removeAllCollabAndSit",
+    "name" : "demo.removeAllCollabAndSit",
+    "resourceReference" : "/procedures/demo.removeAllCollabAndSit",
+    "timestamp" : "2020-05-06T21:48:19.237Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out", "out", "out" ],
+      "procedures" : [ "Math.sqrt", "push", "sort" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "spaces" ]
+    },
+    "label" : "findSpaceForAsset",
+    "name" : "findSpaceForAsset",
+    "resourceReference" : "/procedures/findSpaceForAsset",
+    "timestamp" : "2020-05-04T23:40:48.479Z",
+    "type" : 3
+  }, {
+    "label" : "floorplans",
+    "name" : "floorplans",
+    "resourceReference" : "/types/floorplans",
+    "timestamp" : "2020-04-18T12:59:00.958Z",
+    "type" : 1
+  }, {
+    "label" : "floors",
+    "name" : "floors",
+    "resourceReference" : "/types/floors",
+    "timestamp" : "2020-04-18T12:59:01.138Z",
+    "type" : 1
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out", "out", "out" ],
+      "procedures" : [ "range", "toInteger", "Math.floor" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "getBinaryForNumber",
+    "name" : "getBinaryForNumber",
+    "resourceReference" : "/procedures/getBinaryForNumber",
+    "timestamp" : "2020-05-06T21:57:53.298Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out" ],
+      "procedures" : [ "uuid" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "out" ],
+      "types" : [ "system.tokens" ]
+    },
+    "label" : "getToken",
+    "name" : "getToken",
+    "resourceReference" : "/procedures/getToken",
+    "timestamp" : "2020-04-18T12:52:48.576Z",
+    "type" : 3
+  }, {
+    "label" : "movementsimulations",
+    "name" : "movementsimulations",
+    "resourceReference" : "/types/movementsimulations",
+    "timestamp" : "2020-04-24T15:36:57.365Z",
+    "type" : 1
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ "out" ],
+      "topics" : [ "/request/transport" ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "newTransportRequest",
+    "name" : "newTransportRequest",
+    "resourceReference" : "/procedures/newTransportRequest",
+    "timestamp" : "2020-05-06T22:00:43.948Z",
+    "type" : 3
+  }, {
+    "label" : "organization",
+    "name" : "organization",
+    "resourceReference" : "/types/organization",
+    "timestamp" : "2020-04-18T12:59:01.178Z",
+    "type" : 1
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "patientTransport",
+    "name" : "patientTransport",
+    "resourceReference" : "/procedures/patientTransport",
+    "timestamp" : "2020-04-18T12:52:49.348Z",
+    "type" : 3
+  }, {
+    "label" : "personnel",
+    "name" : "personnel",
+    "resourceReference" : "/types/personnel",
+    "timestamp" : "2020-05-11T16:50:40.073Z",
+    "type" : 1
+  }, {
+    "label" : "roles",
+    "name" : "roles",
+    "resourceReference" : "/types/roles",
+    "timestamp" : "2020-04-18T12:59:01.350Z",
+    "type" : 1
+  }, {
+    "label" : "s_dashboard",
+    "name" : "s_dashboard",
+    "resourceReference" : "/types/s_dashboard",
+    "timestamp" : "2020-04-18T12:59:01.332Z",
+    "type" : 1
+  }, {
+    "label" : "s_issues",
+    "name" : "s_issues",
+    "resourceReference" : "/types/s_issues",
+    "timestamp" : "2020-04-18T22:25:59.399Z",
+    "type" : 1
+  }, {
+    "label" : "sensorconfigs",
+    "name" : "sensorconfigs",
+    "resourceReference" : "/types/sensorconfigs",
+    "timestamp" : "2020-04-18T12:59:01.561Z",
+    "type" : 1
+  }, {
+    "label" : "sensormanufacturers",
+    "name" : "sensormanufacturers",
+    "resourceReference" : "/types/sensormanufacturers",
+    "timestamp" : "2020-04-24T17:17:54.537Z",
+    "type" : 1
+  }, {
+    "label" : "sensors",
+    "name" : "sensors",
+    "resourceReference" : "/types/sensors",
+    "timestamp" : "2020-04-24T17:52:04.150Z",
+    "type" : 1
+  }, {
+    "label" : "sensortypes",
+    "name" : "sensortypes",
+    "resourceReference" : "/types/sensortypes",
+    "timestamp" : "2020-04-18T12:59:01.496Z",
+    "type" : 1
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ "out" ],
+      "topics" : [ "/camera/thermal/reading" ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "sim.camNoUserInfoUnitTest",
+    "name" : "sim.camNoUserInfoUnitTest",
+    "resourceReference" : "/procedures/sim.camNoUserInfoUnitTest",
+    "timestamp" : "2020-04-18T12:52:48.844Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ "out" ],
+      "topics" : [ "/camera/thermal/userreading" ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "sim.camWithUserInfoUnitTest",
+    "name" : "sim.camWithUserInfoUnitTest",
+    "resourceReference" : "/procedures/sim.camWithUserInfoUnitTest",
+    "timestamp" : "2020-04-18T12:52:48.759Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "out" ],
+      "types" : [ "movementsimulations" ]
+    },
+    "label" : "sim.deleteMovementSimulation",
+    "name" : "sim.deleteMovementSimulation",
+    "resourceReference" : "/procedures/sim.deleteMovementSimulation",
+    "timestamp" : "2020-04-18T12:52:48.667Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "movementsimulations" ]
+    },
+    "label" : "sim.getSimulations",
+    "name" : "sim.getSimulations",
+    "resourceReference" : "/procedures/sim.getSimulations",
+    "timestamp" : "2020-04-24T15:54:58.340Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "personnel" ]
+    },
+    "label" : "sim.getUserRecord",
+    "name" : "sim.getUserRecord",
+    "resourceReference" : "/procedures/sim.getUserRecord",
+    "timestamp" : "2020-04-18T12:52:49.628Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out", "out" ],
+      "procedures" : [ "sims.length", "date" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ "out" ],
+      "topics" : [ "/simulation/playback" ],
+      "typeHash" : [ "in" ],
+      "types" : [ "movementsimulations" ]
+    },
+    "label" : "sim.playbackSimulation",
+    "name" : "sim.playbackSimulation",
+    "resourceReference" : "/procedures/sim.playbackSimulation",
+    "timestamp" : "2020-05-01T17:41:49.373Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out", "out" ],
+      "procedures" : [ "sims.length", "date" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ "out" ],
+      "topics" : [ "/simulation/playback" ],
+      "typeHash" : [ "in" ],
+      "types" : [ "movementsimulations" ]
+    },
+    "label" : "sim.playbackSimulation_Copy",
+    "name" : "sim.playbackSimulation_Copy",
+    "resourceReference" : "/procedures/sim.playbackSimulation_Copy",
+    "timestamp" : "2020-04-18T12:52:49.161Z",
+    "type" : 3
+  }, {
+    "label" : "spaces",
+    "name" : "spaces",
+    "resourceReference" : "/types/spaces",
+    "timestamp" : "2020-04-18T12:59:01.578Z",
+    "type" : 1
+  }, {
+    "label" : "system.collaborations",
+    "name" : "system.collaborations",
+    "resourceReference" : "/types/system.collaborations",
+    "timestamp" : "2020-03-18T00:32:48.756Z",
+    "type" : 1
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "out" ],
+      "types" : [ "sensors" ]
+    },
+    "label" : "utility.removeSensorsWhereTypeEmpty",
+    "name" : "utility.removeSensorsWhereTypeEmpty",
+    "resourceReference" : "/procedures/utility.removeSensorsWhereTypeEmpty",
+    "timestamp" : "2020-04-18T12:52:48.816Z",
+    "type" : 3
+  } ],
+  "tools" : [ {
+    "isPinned" : false,
+    "name" : "Project Contents",
+    "pane" : {
+      "c" : -1,
+      "lastUsed" : 1590772207501,
+      "r" : -1
+    },
+    "type" : 2
+  }, {
+    "dockLocation" : "top",
+    "isPinned" : false,
+    "name" : "Inactive Panes",
+    "pane" : {
+      "c" : -1,
+      "lastUsed" : 1590772207501,
+      "r" : -1
+    },
+    "type" : 99
+  }, {
+    "isPinned" : false,
+    "name" : "Errors",
+    "pane" : {
+      "c" : -1,
+      "lastUsed" : 1590772207501,
+      "r" : -1
+    },
+    "type" : 13
+  }, {
+    "isPinned" : false,
+    "name" : "Project Description",
+    "pane" : {
+      "c" : 1,
+      "createdTime" : 1586796834784,
+      "lastUsed" : 1590770346568,
+      "r" : 0
+    },
+    "type" : 82
+  }, {
+    "isPinned" : false,
+    "name" : "SmartBuilding",
+    "pane" : {
+      "c" : 0,
+      "createdTime" : 1589205635010,
+      "lastUsed" : 1590505142105,
+      "r" : 0
+    },
+    "resourceKey" : "client/SmartBuilding",
+    "type" : 63
+  } ],
+  "type" : "dev",
+  "views" : [ {
+    "name" : "Main",
+    "projectToolKeys" : [ "list/Project Contents", "tiledock/Inactive Panes", "errorviewer/Errors", "projectdescription/Project Description", "client/SmartBuilding" ]
+  } ]
+}

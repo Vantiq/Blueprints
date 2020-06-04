@@ -1,0 +1,5 @@
+{
+  "description" : "Topic for the arrival of Centrak-specific RTLS events",
+  "messageType" : "s_centrakevent",
+  "name" : "/centrak"
+}

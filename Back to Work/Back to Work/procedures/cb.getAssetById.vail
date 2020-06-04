@@ -1,0 +1,3 @@
+PROCEDURE cb.getAssetById(id String)
+
+SELECT ONE FROM assets WHERE id == id

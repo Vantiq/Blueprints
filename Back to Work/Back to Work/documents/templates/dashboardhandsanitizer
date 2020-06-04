@@ -1,0 +1,13 @@
+<p><strong>Hand sanitizer station needs refill</strong></p>
+<p><strong>Building</strong>: ${buildingname}</p>
+<p><strong>Floor</strong>: ${floorname}<br></p>
+<p><strong>Asset</strong></p>
+<ul>
+	<li>Name: ${assetname}</li>
+    <li>Type: ${assettype}</li>
+</ul>
+<p><strong>Sensor</strong></p>
+<ul>
+	<li>Name ${sensorname}<br></li>
+    <li>Type ${sensortype}</li>
+</ul>

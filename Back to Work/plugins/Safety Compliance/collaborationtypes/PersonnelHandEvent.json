@@ -1,0 +1,73 @@
+{
+  "active" : true,
+  "appType" : true,
+  "assembly" : {
+    "HandEvent" : {
+      "configuration" : {
+        "childStreams" : [ "SplitById" ],
+        "enableBadging" : true,
+        "inboundResource" : "topics",
+        "inboundResourceId" : "/sensor/hand",
+        "op" : null,
+        "outboundResource" : null,
+        "outboundResourceId" : null,
+        "parentStreams" : [ ],
+        "schema" : null,
+        "upsert" : false
+      },
+      "description" : null,
+      "name" : "HandEvent",
+      "pattern" : "EventStream"
+    },
+    "MisingHandEvent" : {
+      "configuration" : {
+        "childStreams" : [ "MissingHandSanitizerEvent" ],
+        "duration" : "10 seconds",
+        "emitOnlyOnce" : true,
+        "enableBadging" : true,
+        "groupByWindow" : null,
+        "outboundResource" : null,
+        "outboundResourceId" : null,
+        "parentStreams" : [ "SplitById" ],
+        "upsert" : false
+      },
+      "description" : null,
+      "name" : "MisingHandEvent",
+      "pattern" : "Missing"
+    },
+    "MissingHandSanitizerEvent" : {
+      "configuration" : {
+        "collaboration" : "MissingHandSanitizerEvent",
+        "enableBadging" : true,
+        "entityConstraint" : "id == event.lastEvent.id",
+        "entityType" : "personnel",
+        "parentStreams" : [ "MisingHandEvent" ]
+      },
+      "description" : null,
+      "name" : "MissingHandSanitizerEvent",
+      "pattern" : "StartCollaboration"
+    },
+    "SplitById" : {
+      "configuration" : {
+        "childStreams" : [ "MisingHandEvent" ],
+        "enableBadging" : true,
+        "groupBy" : "event.id",
+        "groupByWindow" : null,
+        "maxOpenGroups" : null,
+        "parentStreams" : [ "HandEvent" ]
+      },
+      "description" : null,
+      "name" : "SplitById",
+      "pattern" : "SplitByGroup"
+    }
+  },
+  "collaboratorRoles" : [ ],
+  "currentState" : {
+    "code" : "success"
+  },
+  "description" : "",
+  "disableBadging" : false,
+  "entityRoles" : [ ],
+  "keyTypes" : [ "system.collaborations" ],
+  "name" : "PersonnelHandEvent"
+}

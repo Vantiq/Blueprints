@@ -1,0 +1,13 @@
+PROCEDURE cb.getHierarchyForAssetByFloorId(floorid String)
+
+var obj = {}
+
+
+SELECT ONE FROM floors WHERE id == floorid
+obj.floor = floors
+
+SELECT ONE FROM buildings WHERE id == floors.buildingid
+obj.building = buildings
+
+return obj
+

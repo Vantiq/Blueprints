@@ -1,0 +1,54 @@
+/*
+	Used to dynamically update the style/theme for the SmartBuilding Client
+    given an updated set of colors and logo information 
+*/
+PROCEDURE cb.adjustTheme(foregroundColor String, buttonBackgroundColor String, navbarBackgroundColor String, logopath String, logowidth String, logoheight String)
+
+//#540192 bgcolor
+// backup the client
+SELECT ONE FROM system.clients AS client WHERE name == "SmartBuilding"
+client = Utils.stripSystemProperties(client)
+var prefix = "backups/SmartBuilding_"
+var datestring = format("{0, date,MMM_dd_yyyy_HH_mm}", now())
+var file = prefix + datestring
+INSERT system.documents(name:file, content:stringify(client, true), fileType:"text/plain")
+
+
+SELECT ONE FROM system.clients AS client WHERE name == "SmartBuilding"
+
+client = Utils.stripSystemProperties(client)
+
+client.options.theme.foregroundColor = foregroundColor
+
+client = stringify(client)
+
+var result = client.replace("(\"buttonBackgroundColor\":\")(.*?)(\")", "$1"+ buttonBackgroundColor + "$3")
+
+var client = parse(result)
+
+UPDATE system.clients(client) WHERE name == "SmartBuilding"
+
+//logopath String, logowidth String, logoheight String
+var obj = {
+   "bgColor": navbarBackgroundColor,
+   "title": " ",
+   "titleFontSize": 20,
+   "icon": logopath,
+   "iconWidth": logowidth,
+   "iconHeight": logoheight
+}
+
+INSERT system.documents(name:"vantiq/navBar.json", content:stringify(obj, true), fileType:"text/plain")
+
+var config ={}
+config.color = foregroundColor
+
+//client template
+var ctemplate = getDocument("templates/clientcss")
+var ccss = generateResource(ctemplate, config)
+INSERT system.documents(name:"css/client.css", content:ccss, fileType:"text/css")
+
+//spinner template
+var stemplate = getDocument("templates/spinnercss")
+var scss = generateResource(stemplate, config)
+INSERT system.documents(name:"css/spinner.css", content:scss, fileType:"text/css")

@@ -1,0 +1,12 @@
+/*
+	Fetch the list of personnel with the security role
+*/
+PROCEDURE collab.findSecurityPersonnel()
+
+var results = []
+// security role  --  fce68e8d-d4ed-4ab8-addc-b4d64f3ca990
+SELECT FROM personnel AS person WHERE roles.id == "fce68e8d-d4ed-4ab8-addc-b4d64f3ca990" {
+    results.push(person.id)
+}
+
+return results

@@ -1,0 +1,1 @@
+Using object recognition software, this plugin can process images coming from cameras to identify individuals within a given physical space and calculate the distance between each of them.  If the number of people in a fixed location exceeds a threshold number for a predetermined period of time, operations personnel in the area can be notified to address the problem.

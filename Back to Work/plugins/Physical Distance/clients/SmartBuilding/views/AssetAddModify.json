@@ -1,0 +1,383 @@
+{
+  "bodyChildren" : {
+    "rootArray" : [ "bd3c6195-d075-41d5-8d76-908aa17eef9c", "7dab9db3-1444-4a38-84dc-d22c92af3334" ],
+    "widgets" : [ {
+      "borderColor" : "Default",
+      "borderThickness" : 0,
+      "children" : [ "4847bf3e-e0cb-46c0-b85a-4558f905600e", "932b5910-f9eb-4378-813e-4761babd3ee3", "361b247c-7775-4ade-8468-9803b035b40b" ],
+      "closeIcon" : "glyphicon-chevron-up",
+      "fontFace" : "inherit",
+      "fontSize" : 16,
+      "fontStyle" : "normal",
+      "fontWeight" : "bold",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "innerMargin" : 5,
+      "name" : "AccordionLayout248",
+      "openIcon" : "glyphicon-chevron-down",
+      "title" : "@accordion.title.locationinfo",
+      "titleBarColor" : "default",
+      "tooltip" : "@tooltip.locationinfo",
+      "type" : "AccordionLayout",
+      "uuid" : "1fe897f1-2921-40e4-877d-46e8d1446576",
+      "v" : 16,
+      "vertGravity" : "center",
+      "vertMargin" : 5,
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "binding" : "page.data.asset.id",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "inputType" : "text",
+      "isReadOnly" : true,
+      "label" : "@label.text.assetid",
+      "name" : "InputString1439",
+      "optional" : true,
+      "placeholder" : "",
+      "type" : "InputString",
+      "uuid" : "2c10028b-3123-468b-aaec-158579126af2",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "buttonBackgroundColor" : "#001a80",
+      "buttonLabel" : "@button.submit",
+      "buttonLabelColor" : "platform",
+      "buttonLabelSize" : 14,
+      "buttonLabelStyle" : "bold",
+      "h" : 60,
+      "heightPolicy" : "explicit",
+      "horzGravity" : "center",
+      "name" : "Button1151",
+      "submitValue" : 100,
+      "type" : "Button",
+      "uuid" : "2cf62451-14e4-4123-8b32-d17fe4db2d98",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "binding" : "page.data.space",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "inputType" : "text",
+      "isReadOnly" : true,
+      "label" : "@text.inornearspace",
+      "name" : "InputString6884",
+      "optional" : true,
+      "placeholder" : "",
+      "type" : "InputString",
+      "uuid" : "361b247c-7775-4ade-8468-9803b035b40b",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "binding" : "page.data.building",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "default" : null,
+      "enumeratedList" : [ ],
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "label" : "@text.building",
+      "name" : "Droplist41",
+      "type" : "Droplist",
+      "uuid" : "4847bf3e-e0cb-46c0-b85a-4558f905600e",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "fontFamily" : "inherit",
+      "fontSize" : 20,
+      "fontStyle" : "normal",
+      "fontWeight" : "normal",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "StaticText4154",
+      "text" : "@text.asset",
+      "type" : "StaticText",
+      "uuid" : "6af59754-27e9-4711-8d05-a10d44102735",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "naturalSize"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "clearOnDataArrive" : true,
+      "dataStreamGroupedByFiltersString" : "",
+      "dataStreamProperty" : "fplocation",
+      "dataStreamUUID" : "7a7fdbe9-9f20-4e83-8496-1cf7dec7b63a",
+      "dataType" : null,
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "imageHeightInLocationUnits" : 25,
+      "imageWidthInLocationUnits" : 30,
+      "labelProperty" : "type",
+      "name" : "FloorplanViewer138",
+      "naturalKey" : null,
+      "operation" : "insert",
+      "type" : "FloorplanViewer",
+      "url" : "../../docs/images/floorplanselect.png",
+      "uuid" : "7dab9db3-1444-4a38-84dc-d22c92af3334",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "naturalSize",
+      "x" : 600,
+      "y" : 50
+    }, {
+      "binding" : "page.data.asset.type",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "default" : null,
+      "enumeratedList" : [ ],
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "label" : "@text.assettype",
+      "name" : "Droplist30",
+      "type" : "Droplist",
+      "uuid" : "8728f193-c549-4c4c-b746-c9a322c7cb03",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "children" : [ "2c10028b-3123-468b-aaec-158579126af2", "8728f193-c549-4c4c-b746-c9a322c7cb03", "f0778410-f113-4b64-8896-5e374c5e7f7f" ],
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "innerMargin" : 20,
+      "name" : "VerticalLayout5009",
+      "type" : "VerticalLayout",
+      "uuid" : "8ff532df-c28d-49ee-87ba-5069d691fea9",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "binding" : "page.data.floor",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "default" : null,
+      "enumeratedList" : [ ],
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "label" : "@text.floor",
+      "name" : "Droplist42",
+      "type" : "Droplist",
+      "uuid" : "932b5910-f9eb-4378-813e-4761babd3ee3",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 1,
+      "children" : [ "6af59754-27e9-4711-8d05-a10d44102735", "fc4bce48-8e41-423d-845d-643f3fab71f1", "1fe897f1-2921-40e4-877d-46e8d1446576", "2cf62451-14e4-4123-8b32-d17fe4db2d98" ],
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "innerMargin" : 20,
+      "name" : "VerticalLayout1540",
+      "type" : "VerticalLayout",
+      "uuid" : "bd3c6195-d075-41d5-8d76-908aa17eef9c",
+      "v" : 16,
+      "vertGravity" : "center",
+      "w" : 500,
+      "widthPolicy" : "explicit",
+      "x" : 50,
+      "y" : 50
+    }, {
+      "binding" : "page.data.asset.name",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "inputType" : "text",
+      "label" : "@label.text.assetname",
+      "name" : "InputString9308",
+      "optional" : true,
+      "placeholder" : "",
+      "type" : "InputString",
+      "uuid" : "f0778410-f113-4b64-8896-5e374c5e7f7f",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderThickness" : 0,
+      "children" : [ "8ff532df-c28d-49ee-87ba-5069d691fea9" ],
+      "closeIcon" : "glyphicon-chevron-up",
+      "defaultToOpen" : true,
+      "fontFace" : "inherit",
+      "fontSize" : 16,
+      "fontStyle" : "normal",
+      "fontWeight" : "bold",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "innerMargin" : 5,
+      "name" : "AccordionLayout247",
+      "openIcon" : "glyphicon-chevron-down",
+      "title" : "@accordion.title.assetinfo",
+      "titleBarColor" : "default",
+      "type" : "AccordionLayout",
+      "uuid" : "fc4bce48-8e41-423d-845d-643f3fab71f1",
+      "v" : 16,
+      "vertGravity" : "center",
+      "vertMargin" : 5,
+      "widthPolicy" : "sizeToCell"
+    } ]
+  },
+  "data" : {
+    "properties" : {
+      "asset" : {
+        "defaultLabel" : "asset",
+        "type" : "TypedObject",
+        "typedObject" : {
+          "properties" : {
+            "floorid" : {
+              "defaultLabel" : "floorid",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "fplocation" : {
+              "defaultLabel" : "fplocation",
+              "type" : "GeoJSON"
+            },
+            "id" : {
+              "defaultLabel" : "id",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "name" : {
+              "defaultLabel" : "name",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "referencetotype" : {
+              "defaultLabel" : "referencetotype",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "type" : {
+              "defaultLabel" : "type",
+              "defaultValue" : "",
+              "type" : "String"
+            }
+          },
+          "type" : "assets"
+        }
+      },
+      "building" : {
+        "defaultLabel" : "building",
+        "defaultValue" : "",
+        "type" : "String"
+      },
+      "floor" : {
+        "defaultLabel" : "floor",
+        "defaultValue" : "",
+        "type" : "String"
+      },
+      "floorplan" : {
+        "defaultLabel" : "floorplan",
+        "type" : "TypedObject",
+        "typedObject" : {
+          "properties" : {
+            "buildingid" : {
+              "defaultLabel" : "buildingid",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "description" : {
+              "defaultLabel" : "description",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "id" : {
+              "defaultLabel" : "id",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "path" : {
+              "defaultLabel" : "path",
+              "defaultValue" : "",
+              "type" : "String"
+            }
+          },
+          "type" : "floorplans"
+        }
+      },
+      "floors" : {
+        "defaultLabel" : "floors",
+        "defaultValue" : [ ],
+        "isArray" : true,
+        "type" : "TypedObject",
+        "typedObject" : {
+          "properties" : {
+            "buildingid" : {
+              "defaultLabel" : "buildingid",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "floorplan" : {
+              "defaultLabel" : "floorplan",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "id" : {
+              "defaultLabel" : "id",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "location" : {
+              "defaultLabel" : "location",
+              "type" : "GeoJSON"
+            },
+            "name" : {
+              "defaultLabel" : "name",
+              "defaultValue" : "",
+              "type" : "String"
+            }
+          },
+          "type" : "floors"
+        }
+      },
+      "patient" : {
+        "defaultLabel" : "patient",
+        "defaultValue" : "",
+        "type" : "String"
+      },
+      "person" : {
+        "defaultLabel" : "person",
+        "defaultValue" : "",
+        "type" : "String"
+      },
+      "space" : {
+        "defaultLabel" : "space",
+        "defaultValue" : "",
+        "type" : "String"
+      }
+    }
+  },
+  "footerChildren" : [ ],
+  "hasFooter" : false,
+  "layoutType" : "browser",
+  "responseTopic" : ""
+}

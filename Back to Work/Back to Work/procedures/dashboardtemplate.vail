@@ -1,0 +1,55 @@
+/*
+	This template procedure outlines how to integrate a new plugin with the 
+    SmartBuilding Blueprint Client. For each new plugin that produces collaborations
+    that should be shown as issues in the dashboard, a new procedure like this will
+    need to be created. For a functional example, take a look at 
+    dashboard.getOpenRestrictedSpaceIssues
+*/
+PROCEDURE dashboardtemplate()
+
+var template = getDocument("<PATH AND TEMPLATE NAME>")
+
+var results = []
+SELECT FROM system.collaborations AS collab WHERE status == "active" AND name == "<COLLABORATION NAME>"{
+    var docprops = {}
+    var obj = {}
+    
+    if (has(collab.results, "Status")){
+        obj.state = collab.results.Status.assignedValue
+	} else {
+        // if the collaboration doesn't have a status yet, set an initial one for the display
+    	obj.state = "Active"
+	}
+
+	// set the collaboration id
+	obj.collaborationid = collab.id
+
+	SELECT ONE FROM sensors WHERE id == collab.results.Initiate.event.id
+    obj.sensorId = sensors.id
+    obj.sensortype = sensors.type
+    obj.sensorconfig = sensors.config
+
+    SELECT ONE FROM assets WHERE id == sensors.assetid
+	docprops.asset = assets.name
+
+	var path = "images/icons/asseticon.png"
+	docprops.image = path
+
+    SELECT ONE FROM floors WHERE id == assets.floorid
+    docprops.floor = floors.name
+
+	var space = findSpaceForAsset(floors.id , assets.fplocation)
+	docprops.space = space.name
+
+    SELECT ONE FROM buildings WHERE id == floors.buildingid
+	obj.geo = buildings.geo
+    docprops.building= buildings.name
+    
+    obj.issuetype = "<ISSUE NAME TO APPEAR ON ISSUE LIST>"
+	obj.template = template
+	obj.docprops = docprops
+	
+    results.push(obj)
+}
+	
+return results

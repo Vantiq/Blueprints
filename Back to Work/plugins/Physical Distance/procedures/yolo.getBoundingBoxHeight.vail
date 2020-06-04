@@ -1,0 +1,5 @@
+PROCEDURE yolo.getBoundingBoxHeight(location Object)
+
+var height = location.bottom - location.top
+
+return height

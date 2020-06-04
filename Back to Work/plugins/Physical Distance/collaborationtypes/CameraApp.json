@@ -1,0 +1,141 @@
+{
+  "active" : true,
+  "appType" : true,
+  "assembly" : {
+    "CameraInsert" : {
+      "configuration" : {
+        "childStreams" : [ "ObjectRecognition" ],
+        "condition" : "startsWith(event.name, \"cam\")",
+        "enableBadging" : true,
+        "inboundResource" : "types",
+        "inboundResourceId" : "system.documents",
+        "op" : "BOTH",
+        "outboundResource" : null,
+        "outboundResourceId" : null,
+        "parentStreams" : [ ],
+        "schema" : "system.documents",
+        "upsert" : false
+      },
+      "description" : null,
+      "name" : "CameraInsert",
+      "pattern" : "EventStream"
+    },
+    "CountPeople" : {
+      "configuration" : {
+        "childStreams" : [ "SplitById", "PrepForUpdate" ],
+        "enableBadging" : true,
+        "parentStreams" : [ "ObjectRecognition" ],
+        "procedure" : "CameraApp.countPeople",
+        "schema" : null
+      },
+      "description" : null,
+      "name" : "CountPeople",
+      "pattern" : "Procedure"
+    },
+    "ObjectRecognition" : {
+      "configuration" : {
+        "childStreams" : [ "CountPeople" ],
+        "colorScaleFactor" : null,
+        "confidence" : 0.3,
+        "enableBadging" : true,
+        "model" : "models/yolov2_9c",
+        "parentStreams" : [ "CameraInsert" ]
+      },
+      "description" : null,
+      "name" : "ObjectRecognition",
+      "pattern" : "YOLOFromDocuments"
+    },
+    "OverCrowded" : {
+      "configuration" : {
+        "childStreams" : [ "PhysicalDistance" ],
+        "condition" : "event.data.value.personcount > 8",
+        "direction" : "true",
+        "enableBadging" : true,
+        "groupByWindow" : null,
+        "outboundResource" : null,
+        "outboundResourceId" : null,
+        "overConsecutiveReadings" : 2,
+        "parentStreams" : [ "SplitById" ],
+        "upsert" : false,
+        "withinDuration" : null
+      },
+      "description" : null,
+      "name" : "OverCrowded",
+      "pattern" : "Threshold"
+    },
+    "PhysicalDistance" : {
+      "configuration" : {
+        "collaboration" : "PhysicalDistance",
+        "enableBadging" : true,
+        "entityConstraint" : "id == event.id AND type == event.type",
+        "entityType" : "sensors",
+        "parentStreams" : [ "OverCrowded" ]
+      },
+      "description" : null,
+      "name" : "PhysicalDistance",
+      "pattern" : "StartCollaboration"
+    },
+    "PrepForUpdate" : {
+      "configuration" : {
+        "childStreams" : [ "UpdateSensor" ],
+        "enableBadging" : true,
+        "outboundResource" : null,
+        "outboundResourceId" : null,
+        "parentStreams" : [ "CountPeople" ],
+        "schema" : null,
+        "transformation" : {
+          "data" : {
+            "expression" : "event.data",
+            "type" : "expression"
+          },
+          "id" : {
+            "expression" : "event.id",
+            "type" : "expression"
+          },
+          "type" : {
+            "expression" : "event.type",
+            "type" : "expression"
+          }
+        },
+        "upsert" : false
+      },
+      "description" : null,
+      "name" : "PrepForUpdate",
+      "pattern" : "Transformation"
+    },
+    "SplitById" : {
+      "configuration" : {
+        "childStreams" : [ "OverCrowded" ],
+        "enableBadging" : true,
+        "groupBy" : "event.id",
+        "groupByWindow" : null,
+        "maxOpenGroups" : null,
+        "parentStreams" : [ "CountPeople" ]
+      },
+      "description" : null,
+      "name" : "SplitById",
+      "pattern" : "SplitByGroup"
+    },
+    "UpdateSensor" : {
+      "configuration" : {
+        "childStreams" : null,
+        "enableBadging" : true,
+        "parentStreams" : [ "PrepForUpdate" ],
+        "type" : "sensors",
+        "upsert" : true
+      },
+      "description" : null,
+      "name" : "UpdateSensor",
+      "pattern" : "SaveToType"
+    }
+  },
+  "collaboratorRoles" : [ ],
+  "currentState" : {
+    "code" : "success"
+  },
+  "description" : "",
+  "disableBadging" : false,
+  "entityRoles" : [ ],
+  "keyTypes" : [ "system.collaborations" ],
+  "name" : "CameraApp"
+}

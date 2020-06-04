@@ -1,0 +1,3 @@
+PROCEDURE cb.getRoles()
+
+SELECT FROM roles ORDER BY name

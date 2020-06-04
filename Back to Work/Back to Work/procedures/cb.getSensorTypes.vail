@@ -1,0 +1,3 @@
+PROCEDURE cb.getSensorTypes()
+
+SELECT FROM sensortypes ORDER BY name

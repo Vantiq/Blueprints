@@ -1,0 +1,36 @@
+{
+  "activationConstraint" : "",
+  "active" : true,
+  "ars_properties" : null,
+  "config" : {
+    "objRecConfig" : {
+      "dataSource" : {
+        "fileExtension" : "mp4",
+        "fileLocation" : "/root/vantiq-extension-sources/objectRecognitionSource/build/distributions/objectRecognitionSource/bin/LobbyHS3.mp4",
+        "targetTime" : 1,
+        "type" : "file"
+      },
+      "general" : {
+        "pollTime" : 1700
+      },
+      "neuralNet" : {
+        "cropBeforeAnalysis" : {
+          "height" : 490,
+          "width" : 740,
+          "x" : 110,
+          "y" : 50
+        },
+        "labelImage" : "true",
+        "metaFile" : "yolov2_9c.meta",
+        "pbFile" : "yolov2_9c.pb",
+        "saveImage" : "vantiq",
+        "threshold" : 0.4,
+        "type" : "yolo"
+      }
+    }
+  },
+  "direction" : "BOTH",
+  "mockProcedures" : { },
+  "name" : "LobbyCam1",
+  "type" : "ObjectExtSrc"
+}

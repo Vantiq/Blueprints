@@ -1,0 +1,34 @@
+/*
+	Transform the raw event data from a camera event with no user in the image
+
+	Used in the CameraFeed app
+*/
+PROCEDURE app.transformCamJSON(event Object)
+
+event = event.Info
+
+var obj = {}
+obj.uuid = uuid()
+obj.deviceid = event.deviceid
+
+// convert celcius to fahrenheit  (0°C × 9/5) + 32 = 32°F
+var temp = parseFloat(event.temperature)
+obj.temperature = (temp * 9/5) + 32
+
+obj.mask = event.mask
+obj.openCode = event.openCode
+obj.openMsg = event.openMsg
+obj.nationCode = event.nationCode
+obj.camType = event.camType
+
+// convert to date
+var screenTime = event.screenTime
+obj.screenTime = date(screenTime, "epochSeconds", "date")
+
+if (startsWith(event.img, "data") ){
+    obj.img = event.img
+} else {
+    obj.img = "data:image/jpeg;base64," + event.img
+}
+
+return obj

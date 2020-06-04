@@ -1,0 +1,16 @@
+{
+  "activationConstraint" : "",
+  "active" : true,
+  "ars_properties" : null,
+  "config" : {
+    "twilioAccountSID" : "<UPDATE WITH YOUR SID>",
+    "twilioAuthToken" : "/system.secrets/Twilio",
+    "twilioAuthTokenType" : "secret",
+    "twilioFromPhone" : "<UPDATE WITH YOUR PHONE NUMBER>"
+  },
+  "direction" : "SINK",
+  "messageType" : null,
+  "mockProcedures" : { },
+  "name" : "Twilio",
+  "type" : "SMS"
+}
