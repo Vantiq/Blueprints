@@ -1,0 +1,37 @@
+{
+  "rootObj" : "c87445c9-6e11-4a7c-880b-43734f17898a",
+  "widgets" : [ {
+    "borderColor" : "Default",
+    "borderRadius" : 4,
+    "borderThickness" : 0,
+    "heightPolicy" : "naturalSize",
+    "horzGravity" : "center",
+    "name" : "StaticImage180",
+    "preserveAspectRatio" : true,
+    "type" : "StaticImage",
+    "url" : "../../docs/public/navbarlogo/blueprintlogo.png",
+    "uuid" : "a8a0740a-4670-49ce-b933-3e9aa0ff0f47",
+    "v" : 16,
+    "vertGravity" : "center",
+    "widthPolicy" : "naturalSize"
+  }, {
+    "CSSClass" : "",
+    "backgroundColor" : "#002da8",
+    "borderColor" : "Default",
+    "borderThickness" : 0,
+    "children" : [ "a8a0740a-4670-49ce-b933-3e9aa0ff0f47" ],
+    "heightPolicy" : "naturalSize",
+    "horzGravity" : "center",
+    "horzMargin" : 5,
+    "innerMargin" : 10,
+    "name" : "_Topbar_",
+    "packTight" : true,
+    "type" : "HorizontalLayout",
+    "uuid" : "c87445c9-6e11-4a7c-880b-43734f17898a",
+    "v" : 16,
+    "vertGravity" : "center",
+    "vertMargin" : 5,
+    "vertWeight" : 1,
+    "widthPolicy" : "sizeToCell"
+  } ]
+}

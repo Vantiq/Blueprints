@@ -1,0 +1,122 @@
+{
+  "adminAccessLevel" : "ars_readWrite",
+  "ars_properties" : null,
+  "audited" : false,
+  "encapsulated" : false,
+  "expiresAfter" : null,
+  "foreignKeys" : null,
+  "groupBy" : "",
+  "groupEnabled" : false,
+  "groupRequired" : false,
+  "indexes" : [ {
+    "keys" : [ "uid" ],
+    "options" : {
+      "unique" : true
+    }
+  }, {
+    "keys" : [ "id" ],
+    "options" : { }
+  }, {
+    "keys" : [ "lastname", "firstname" ],
+    "options" : { }
+  } ],
+  "maxObjects" : 0,
+  "maxStorage" : 0,
+  "metadata" : false,
+  "name" : "personnel",
+  "naturalKey" : [ "uid" ],
+  "properties" : {
+    "assetid" : {
+      "description" : "Use this field to attach an indoor tracking asset to the user record",
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "String",
+      "unique" : false
+    },
+    "firstname" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "String",
+      "unique" : false
+    },
+    "id" : {
+      "description" : "VANTIQ USER ID",
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "String",
+      "unique" : false
+    },
+    "isCollaborator" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : true,
+      "type" : "Boolean",
+      "unique" : false
+    },
+    "lastname" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "String",
+      "unique" : false
+    },
+    "meta" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "Object",
+      "unique" : false
+    },
+    "mobile" : {
+      "description" : "Mobile Phone for text messaging",
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "String",
+      "unique" : false
+    },
+    "photopath" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "String",
+      "unique" : false
+    },
+    "photothumbnailpath" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "String",
+      "unique" : false
+    },
+    "roles" : {
+      "encrypted" : false,
+      "multi" : true,
+      "required" : false,
+      "type" : "Object",
+      "unique" : false
+    },
+    "typerefs" : {
+      "description" : "Store an array of type references",
+      "encrypted" : false,
+      "multi" : true,
+      "required" : false,
+      "type" : "String",
+      "unique" : false
+    },
+    "uid" : {
+      "description" : "unique id for all users (some may not be vantiq)",
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "String",
+      "unique" : false
+    }
+  },
+  "role" : "standard",
+  "userAccessLevel" : "ars_readOnly",
+  "volatile" : false
+}

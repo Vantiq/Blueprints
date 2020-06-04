@@ -1,0 +1,3 @@
+PROCEDURE sim.getUserRecord(personnel_id String)
+
+SELECT ONE FROM personnel WHERE id == personnel_id

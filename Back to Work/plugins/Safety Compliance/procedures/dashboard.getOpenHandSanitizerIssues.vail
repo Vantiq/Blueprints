@@ -1,0 +1,95 @@
+PROCEDURE dashboard.getOpenHandSanitizerIssues()
+
+var template = getDocument("templates/dashboardhandsanitizer")
+var results = {}
+
+
+var issueCount = 0
+var issues = []
+var data = []
+SELECT FROM system.collaborations AS collab WHERE status == "active" AND name == "HandSanitizerRefill"{
+    
+    var docprops = {}
+    var obj = {}
+    
+    if (has (collab.results, "Status") ){
+        obj.state = collab.results.Status.assignedValue
+    } else {
+        obj.state = "Open"
+	}
+    
+    obj.issuetype = collab.name
+    
+    
+    
+    
+    SELECT ONE FROM sensors AS sensor WHERE id == collab.results.Initiate.event.id
+    
+    if (sensor){
+        obj.sensor = sensor
+        obj.sensorname = sensor.id
+        obj.sensortype = sensor.type
+      
+        obj.sensorId = sensor.id
+        obj.sensorconfig = sensor.config
+        
+        docprops.sensorname = obj.sensorname
+        docprops.sensortype = obj.sensortype
+        
+        
+        
+        SELECT ONE FROM assets AS asset WHERE id == sensor.assetid
+        obj.asset = asset
+        
+        log.info(stringify(asset))
+        
+        if (asset){
+            
+            obj.assettype = asset.type
+            obj.assetname = asset.name
+            
+            SELECT ONE FROM floors AS floor WHERE id == asset.floorid
+            obj.floor = floor
+            
+            if (floor){
+                
+                obj.floorname = floor.name
+                SELECT ONE FROM buildings AS building WHERE id == floor.buildingid
+                
+                obj.building = building
+                obj.buildingname = building.name
+                // issueObj.buildingname = building.name
+                obj.geo = building.geo
+            }
+            
+        } else {
+            obj.buildingname = "- asset not set : orphaned sensor -"
+            obj.floorname = "- asset not set : orphaned sensor -"
+            obj.assetname = "- asset not set : orphaned sensor -"
+            obj.assettype = "- asset not set : orphaned sensor -"
+		}
+
+		docprops.buildingname = obj.buildingname
+		docprops.floorname = obj.floorname		
+		docprops.assetname = obj.assetname
+		docprops.assettype = obj.assettype
+    }
+
+	obj.template = template
+    obj.docprops = docprops
+    
+    //issueObj.description = generateResource(template, obj) 
+    
+    push(issues, obj)
+    
+    
+    push(data, obj)
+	
+    issueCount++
+}
+
+results.issueCount = issueCount
+results.issues = issues
+results.data = data
+
+return results.issues

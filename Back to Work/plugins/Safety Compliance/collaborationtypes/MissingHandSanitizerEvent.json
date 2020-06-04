@@ -1,0 +1,81 @@
+{
+  "active" : true,
+  "appType" : false,
+  "assembly" : {
+    "Initiate" : {
+      "additionalBehaviors" : [ {
+        "behaviors" : [ {
+          "description" : null,
+          "name" : "NotifyPerson",
+          "parameters" : [ {
+            "name" : "collaboration",
+            "type" : "reference",
+            "value" : "collaboration"
+          }, {
+            "multi" : true,
+            "name" : "parameters",
+            "type" : "mixed",
+            "value" : [ {
+              "type" : "expression",
+              "value" : "person.mobile"
+            }, {
+              "type" : "expression",
+              "value" : "\"Hand Sanitizer Use Request - It been 30 minutes since your last sanitization\""
+            } ]
+          } ],
+          "type" : "activity"
+        }, {
+          "description" : null,
+          "name" : "CollaborationUtils.closeCollaboration",
+          "parameters" : [ {
+            "name" : "collaborationId",
+            "type" : "expression",
+            "value" : "collaboration.id"
+          } ],
+          "type" : "service"
+        } ],
+        "condition" : "true",
+        "description" : null,
+        "name" : null
+      } ],
+      "cancellationCondition" : [ ],
+      "completionCondition" : [ ],
+      "configuration" : {
+        "enableBadging" : true,
+        "entityRole" : "person",
+        "initialTrigger" : "WHEN INSERT OCCURS ON ArsSituation AS situation WHERE situation.name == \"MissingHandSanitizerEvent\""
+      },
+      "continuationCondition" : [ ],
+      "description" : null,
+      "instanceParameters" : [ "person" ],
+      "name" : "Initiate",
+      "pattern" : "InitiateCollaboration"
+    },
+    "NotifyPerson" : {
+      "additionalBehaviors" : [ ],
+      "cancellationCondition" : [ ],
+      "completionCondition" : [ ],
+      "configuration" : {
+        "enableBadging" : true,
+        "serviceName" : "collab.sendTextMessage"
+      },
+      "continuationCondition" : [ ],
+      "description" : null,
+      "instanceParameters" : [ "person" ],
+      "name" : "NotifyPerson",
+      "pattern" : "Execute"
+    }
+  },
+  "collaboratorRoles" : [ ],
+  "currentState" : {
+    "code" : "success"
+  },
+  "description" : "",
+  "disableBadging" : false,
+  "entityRoles" : [ {
+    "name" : "person",
+    "type" : "personnel"
+  } ],
+  "keyTypes" : [ "system.collaborations" ],
+  "name" : "MissingHandSanitizerEvent"
+}

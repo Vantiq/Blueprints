@@ -1,0 +1,9 @@
+PROCEDURE cb.getBuildingForSpaceBySpaceId(spaceid String)
+
+SELECT ONE FROM spaces WHERE id == spaceid  
+
+SELECT ONE FROM floors WHERE id == spaces.floorid
+
+SELECT ONE FROM buildings WHERE id == floors.buildingid
+
+

@@ -1,0 +1,99 @@
+{
+  "ars_properties" : null,
+  "groupBy" : "",
+  "name" : "s_issues",
+  "properties" : {
+    "assettype" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "String",
+      "unique" : false
+    },
+    "buildingname" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "String",
+      "unique" : false
+    },
+    "collaborationid" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "String",
+      "unique" : false
+    },
+    "description" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "String",
+      "unique" : false
+    },
+    "docprops" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "Object",
+      "unique" : false
+    },
+    "floorname" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "String",
+      "unique" : false
+    },
+    "geo" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "GeoJSON",
+      "unique" : false
+    },
+    "issuetype" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "String",
+      "unique" : false
+    },
+    "sensorId" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "String",
+      "unique" : false
+    },
+    "sensorconfig" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "Object",
+      "unique" : false
+    },
+    "sensortype" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "String",
+      "unique" : false
+    },
+    "state" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "String",
+      "unique" : false
+    },
+    "template" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "String",
+      "unique" : false
+    }
+  },
+  "role" : "schema"
+}

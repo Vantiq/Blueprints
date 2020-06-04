@@ -1,0 +1,571 @@
+{
+  "active" : true,
+  "appType" : false,
+  "assembly" : {
+    "Asset" : {
+      "additionalBehaviors" : [ ],
+      "cancellationCondition" : [ ],
+      "completionCondition" : [ ],
+      "configuration" : {
+        "enableBadging" : true,
+        "roleName" : "asset",
+        "roleType" : "entity"
+      },
+      "continuationCondition" : [ ],
+      "description" : null,
+      "instanceParameters" : [ "staff", "status", "sensor", "asset", "floor", "floorplan", "space", "building" ],
+      "name" : "Asset",
+      "pattern" : "Assignment"
+    },
+    "AssignWork" : {
+      "additionalBehaviors" : [ ],
+      "cancellationCondition" : [ ],
+      "completionCondition" : [ ],
+      "configuration" : {
+        "enableBadging" : true,
+        "roleName" : "staff",
+        "roleType" : "collaborator"
+      },
+      "continuationCondition" : [ ],
+      "description" : null,
+      "instanceParameters" : [ "staff", "status", "sensor", "asset", "floor", "floorplan", "space", "building" ],
+      "name" : "AssignWork",
+      "pattern" : "Assignment"
+    },
+    "Building" : {
+      "additionalBehaviors" : [ ],
+      "cancellationCondition" : [ ],
+      "completionCondition" : [ ],
+      "configuration" : {
+        "enableBadging" : true,
+        "roleName" : "building",
+        "roleType" : "entity"
+      },
+      "continuationCondition" : [ ],
+      "description" : null,
+      "instanceParameters" : [ "staff", "status", "sensor", "asset", "floor", "floorplan", "space", "building" ],
+      "name" : "Building",
+      "pattern" : "Assignment"
+    },
+    "Delay1" : {
+      "additionalBehaviors" : [ ],
+      "cancellationCondition" : [ ],
+      "completionCondition" : [ ],
+      "configuration" : {
+        "enableBadging" : true,
+        "escalationBehaviors" : [ {
+          "behaviors" : [ {
+            "description" : null,
+            "name" : "Delay2",
+            "parameters" : [ {
+              "name" : "collaboration",
+              "type" : "reference",
+              "value" : "collaboration"
+            }, {
+              "name" : "escalationTimeOverride",
+              "type" : "Integer",
+              "value" : null
+            } ],
+            "type" : "activity"
+          }, {
+            "description" : null,
+            "name" : "collab.setIssueStatus",
+            "parameters" : [ {
+              "name" : "collabid",
+              "type" : "expression",
+              "value" : "collaboration.id"
+            }, {
+              "name" : "state",
+              "type" : "expression",
+              "value" : "\"Delayed\""
+            } ],
+            "type" : "service"
+          } ],
+          "condition" : "true",
+          "description" : null,
+          "name" : "escalate"
+        } ],
+        "escalationTime" : 200
+      },
+      "continuationCondition" : [ ],
+      "description" : null,
+      "instanceParameters" : [ "staff", "status", "sensor", "asset", "floor", "floorplan", "space", "building" ],
+      "name" : "Delay1",
+      "pattern" : "Escalation"
+    },
+    "Delay2" : {
+      "additionalBehaviors" : [ ],
+      "cancellationCondition" : [ ],
+      "completionCondition" : [ ],
+      "configuration" : {
+        "enableBadging" : true,
+        "escalationBehaviors" : [ {
+          "behaviors" : [ {
+            "description" : null,
+            "name" : "collab.setIssueStatus",
+            "parameters" : [ {
+              "name" : "collabid",
+              "type" : "expression",
+              "value" : "collaboration.id"
+            }, {
+              "name" : "state",
+              "type" : "expression",
+              "value" : "\"Overdue\""
+            } ],
+            "type" : "service"
+          } ],
+          "condition" : "true",
+          "description" : null,
+          "name" : "escalate"
+        } ],
+        "escalationTime" : 200
+      },
+      "continuationCondition" : [ ],
+      "description" : null,
+      "instanceParameters" : [ "staff", "status", "sensor", "asset", "floor", "floorplan", "space", "building" ],
+      "name" : "Delay2",
+      "pattern" : "Escalation"
+    },
+    "FindMaintenance" : {
+      "additionalBehaviors" : [ {
+        "behaviors" : [ {
+          "description" : null,
+          "name" : "NotifyAfter5",
+          "parameters" : [ {
+            "name" : "collaboration",
+            "type" : "reference",
+            "value" : "collaboration"
+          }, {
+            "name" : "escalationTimeOverride",
+            "type" : "Integer",
+            "value" : null
+          } ],
+          "type" : "activity"
+        } ],
+        "condition" : "true",
+        "description" : null,
+        "name" : null
+      } ],
+      "cancellationCondition" : [ ],
+      "completionCondition" : [ ],
+      "configuration" : {
+        "enableBadging" : true,
+        "serviceName" : "collab.findPersonnelForRefill"
+      },
+      "continuationCondition" : [ ],
+      "description" : null,
+      "instanceParameters" : [ "staff", "status", "sensor", "asset", "floor", "floorplan", "space", "building" ],
+      "name" : "FindMaintenance",
+      "pattern" : "Execute"
+    },
+    "Floor" : {
+      "additionalBehaviors" : [ ],
+      "cancellationCondition" : [ ],
+      "completionCondition" : [ ],
+      "configuration" : {
+        "enableBadging" : true,
+        "roleName" : "floor",
+        "roleType" : "entity"
+      },
+      "continuationCondition" : [ ],
+      "description" : null,
+      "instanceParameters" : [ "staff", "status", "sensor", "asset", "floor", "floorplan", "space", "building" ],
+      "name" : "Floor",
+      "pattern" : "Assignment"
+    },
+    "Floorplan" : {
+      "additionalBehaviors" : [ ],
+      "cancellationCondition" : [ ],
+      "completionCondition" : [ ],
+      "configuration" : {
+        "enableBadging" : true,
+        "roleName" : "floorplan",
+        "roleType" : "entity"
+      },
+      "continuationCondition" : [ ],
+      "description" : null,
+      "instanceParameters" : [ "staff", "status", "sensor", "asset", "floor", "floorplan", "space", "building" ],
+      "name" : "Floorplan",
+      "pattern" : "Assignment"
+    },
+    "GetSpatialHierarchy" : {
+      "additionalBehaviors" : [ {
+        "behaviors" : [ {
+          "description" : null,
+          "name" : "Asset",
+          "parameters" : [ {
+            "name" : "collaboration",
+            "type" : "reference",
+            "value" : "collaboration"
+          }, {
+            "name" : "value",
+            "type" : "expression",
+            "value" : "collaboration.results.GetSpatialHierarchy.result.assetREF"
+          } ],
+          "type" : "activity"
+        }, {
+          "description" : null,
+          "name" : "Floor",
+          "parameters" : [ {
+            "name" : "collaboration",
+            "type" : "reference",
+            "value" : "collaboration"
+          }, {
+            "name" : "value",
+            "type" : "expression",
+            "value" : "collaboration.results.GetSpatialHierarchy.result.floorsREF"
+          } ],
+          "type" : "activity"
+        }, {
+          "description" : null,
+          "name" : "Floorplan",
+          "parameters" : [ {
+            "name" : "collaboration",
+            "type" : "reference",
+            "value" : "collaboration"
+          }, {
+            "name" : "value",
+            "type" : "expression",
+            "value" : "collaboration.results.GetSpatialHierarchy.result.floorplanREF"
+          } ],
+          "type" : "activity"
+        }, {
+          "description" : null,
+          "name" : "Space",
+          "parameters" : [ {
+            "name" : "collaboration",
+            "type" : "reference",
+            "value" : "collaboration"
+          }, {
+            "name" : "value",
+            "type" : "expression",
+            "value" : "collaboration.results.GetSpatialHierarchy.result.spaceREF"
+          } ],
+          "type" : "activity"
+        }, {
+          "description" : null,
+          "name" : "Building",
+          "parameters" : [ {
+            "name" : "collaboration",
+            "type" : "reference",
+            "value" : "collaboration"
+          }, {
+            "name" : "value",
+            "type" : "expression",
+            "value" : "collaboration.results.GetSpatialHierarchy.result.buildingsREF"
+          } ],
+          "type" : "activity"
+        } ],
+        "condition" : "true",
+        "description" : null,
+        "name" : null
+      } ],
+      "cancellationCondition" : [ ],
+      "completionCondition" : [ ],
+      "configuration" : {
+        "enableBadging" : true,
+        "serviceName" : "collab.getHierarchyFromSensorId"
+      },
+      "continuationCondition" : [ ],
+      "description" : null,
+      "instanceParameters" : [ "staff", "status", "sensor", "asset", "floor", "floorplan", "space", "building" ],
+      "name" : "GetSpatialHierarchy",
+      "pattern" : "Execute"
+    },
+    "Initiate" : {
+      "additionalBehaviors" : [ {
+        "behaviors" : [ {
+          "description" : null,
+          "name" : "FindMaintenance",
+          "parameters" : [ {
+            "name" : "collaboration",
+            "type" : "reference",
+            "value" : "collaboration"
+          }, {
+            "multi" : true,
+            "name" : "parameters",
+            "type" : "Any",
+            "value" : [ ]
+          } ],
+          "type" : "activity"
+        }, {
+          "description" : null,
+          "name" : "GetSpatialHierarchy",
+          "parameters" : [ {
+            "name" : "collaboration",
+            "type" : "reference",
+            "value" : "collaboration"
+          }, {
+            "multi" : true,
+            "name" : "parameters",
+            "type" : "mixed",
+            "value" : [ {
+              "type" : "expression",
+              "value" : "collaboration.results.Initiate.event.id"
+            }, {
+              "type" : "expression",
+              "value" : "\"Volume\""
+            } ]
+          } ],
+          "type" : "activity"
+        } ],
+        "condition" : "true",
+        "description" : null,
+        "name" : null
+      }, {
+        "behaviors" : [ {
+          "description" : null,
+          "name" : "Status",
+          "parameters" : [ {
+            "name" : "collaboration",
+            "type" : "reference",
+            "value" : "collaboration"
+          }, {
+            "name" : "value",
+            "type" : "expression",
+            "value" : "\"Open\""
+          } ],
+          "type" : "activity"
+        } ],
+        "condition" : "true",
+        "description" : null,
+        "name" : null
+      } ],
+      "cancellationCondition" : [ ],
+      "completionCondition" : [ ],
+      "configuration" : {
+        "enableBadging" : true,
+        "entityRole" : "sensor",
+        "initialTrigger" : "WHEN INSERT OCCURS ON ArsSituation AS situation WHERE situation.name == \"HandSanitizerRefill\""
+      },
+      "continuationCondition" : [ ],
+      "description" : null,
+      "instanceParameters" : [ "staff", "status", "sensor", "asset", "floor", "floorplan", "space", "building" ],
+      "name" : "Initiate",
+      "pattern" : "InitiateCollaboration"
+    },
+    "NoStaffForEvent" : {
+      "additionalBehaviors" : [ ],
+      "cancellationCondition" : [ ],
+      "completionCondition" : [ ],
+      "configuration" : {
+        "enableBadging" : true,
+        "escalationBehaviors" : [ {
+          "behaviors" : [ {
+            "description" : null,
+            "name" : "Notification.retractPayload",
+            "parameters" : [ {
+              "name" : "payloadId",
+              "type" : "expression",
+              "value" : "collaboration.results.NotifyMaintenance.payloadId"
+            }, {
+              "multi" : true,
+              "name" : "excludeList",
+              "type" : "mixed",
+              "value" : null
+            } ],
+            "type" : "service"
+          } ],
+          "condition" : "true",
+          "description" : null,
+          "name" : "escalate"
+        } ],
+        "escalationTime" : 300
+      },
+      "continuationCondition" : [ ],
+      "description" : null,
+      "instanceParameters" : [ "staff", "status", "sensor", "asset", "floor", "floorplan", "space", "building" ],
+      "name" : "NoStaffForEvent",
+      "pattern" : "Escalation"
+    },
+    "NotifyAfter5" : {
+      "additionalBehaviors" : [ ],
+      "cancellationCondition" : [ ],
+      "completionCondition" : [ ],
+      "configuration" : {
+        "enableBadging" : true,
+        "escalationBehaviors" : [ {
+          "behaviors" : [ {
+            "description" : null,
+            "name" : "NotifyMaintenance",
+            "parameters" : [ {
+              "name" : "collaboration",
+              "type" : "reference",
+              "value" : "collaboration"
+            }, {
+              "name" : "users",
+              "type" : "expression",
+              "value" : "collaboration.results.FindMaintenance.result"
+            } ],
+            "type" : "activity"
+          } ],
+          "condition" : "true",
+          "description" : null,
+          "name" : "escalate"
+        } ],
+        "escalationTime" : 7
+      },
+      "continuationCondition" : [ ],
+      "description" : "This delay is just for demo so we can close the app and get the notification",
+      "instanceParameters" : [ "staff", "status", "sensor", "asset", "floor", "floorplan", "space", "building" ],
+      "name" : "NotifyAfter5",
+      "pattern" : "Escalation"
+    },
+    "NotifyMaintenance" : {
+      "additionalBehaviors" : [ {
+        "behaviors" : [ {
+          "description" : null,
+          "name" : "NoStaffForEvent",
+          "parameters" : [ {
+            "name" : "collaboration",
+            "type" : "reference",
+            "value" : "collaboration"
+          }, {
+            "name" : "escalationTimeOverride",
+            "type" : "Integer",
+            "value" : null
+          } ],
+          "type" : "activity"
+        } ],
+        "condition" : "true",
+        "description" : null,
+        "name" : null
+      } ],
+      "cancellationCondition" : [ ],
+      "completionCondition" : [ ],
+      "configuration" : {
+        "body" : "Needs Refill",
+        "clientName" : "AcceptHS",
+        "enableBadging" : true,
+        "firstResponseBehaviors" : [ {
+          "behaviors" : [ {
+            "description" : null,
+            "name" : "AssignWork",
+            "parameters" : [ {
+              "name" : "collaboration",
+              "type" : "reference",
+              "value" : "collaboration"
+            }, {
+              "name" : "value",
+              "type" : "expression",
+              "value" : "event.username"
+            } ],
+            "type" : "activity"
+          }, {
+            "description" : null,
+            "name" : "collab.setIssueStatus",
+            "parameters" : [ {
+              "name" : "collabid",
+              "type" : "expression",
+              "value" : "collaboration.id"
+            }, {
+              "name" : "state",
+              "type" : "String",
+              "value" : "In Progress"
+            } ],
+            "type" : "service"
+          }, {
+            "description" : null,
+            "name" : "CollaborationUtils.cancelEscalation",
+            "parameters" : [ {
+              "name" : "collaborationId",
+              "type" : "expression",
+              "value" : "collaboration.id"
+            }, {
+              "name" : "activityTypeName",
+              "type" : "String",
+              "value" : "NoStaffForEvent"
+            } ],
+            "type" : "service"
+          } ],
+          "condition" : "event.submitValue == 100",
+          "description" : null,
+          "name" : "firstResponse"
+        } ],
+        "pushSourceName" : null,
+        "responseBehaviors" : [ ],
+        "title" : "Hand Sanitizer Station"
+      },
+      "continuationCondition" : [ ],
+      "description" : null,
+      "instanceParameters" : [ "staff", "status", "sensor", "asset", "floor", "floorplan", "space", "building" ],
+      "name" : "NotifyMaintenance",
+      "pattern" : "Notification"
+    },
+    "Space" : {
+      "additionalBehaviors" : [ ],
+      "cancellationCondition" : [ ],
+      "completionCondition" : [ ],
+      "configuration" : {
+        "enableBadging" : true,
+        "roleName" : "space",
+        "roleType" : "entity"
+      },
+      "continuationCondition" : [ ],
+      "description" : null,
+      "instanceParameters" : [ "staff", "status", "sensor", "asset", "floor", "floorplan", "space", "building" ],
+      "name" : "Space",
+      "pattern" : "Assignment"
+    },
+    "Status" : {
+      "additionalBehaviors" : [ {
+        "behaviors" : [ {
+          "description" : null,
+          "name" : "Delay1",
+          "parameters" : [ {
+            "name" : "collaboration",
+            "type" : "reference",
+            "value" : "collaboration"
+          }, {
+            "name" : "escalationTimeOverride",
+            "type" : "Integer",
+            "value" : null
+          } ],
+          "type" : "activity"
+        } ],
+        "condition" : "true",
+        "description" : null,
+        "name" : null
+      } ],
+      "cancellationCondition" : [ ],
+      "completionCondition" : [ ],
+      "configuration" : {
+        "enableBadging" : true,
+        "roleName" : "status",
+        "roleType" : "collaborator"
+      },
+      "continuationCondition" : [ ],
+      "description" : null,
+      "instanceParameters" : [ "staff", "status", "sensor", "asset", "floor", "floorplan", "space", "building" ],
+      "name" : "Status",
+      "pattern" : "Assignment"
+    }
+  },
+  "collaboratorRoles" : [ "staff", "status" ],
+  "currentState" : {
+    "code" : "success"
+  },
+  "description" : "",
+  "disableBadging" : false,
+  "entityRoles" : [ {
+    "name" : "sensor",
+    "type" : "sensors"
+  }, {
+    "name" : "asset",
+    "type" : "assets"
+  }, {
+    "name" : "floor",
+    "type" : "floors"
+  }, {
+    "name" : "floorplan",
+    "type" : "floorplans"
+  }, {
+    "name" : "space",
+    "type" : "spaces"
+  }, {
+    "name" : "building",
+    "type" : "buildings"
+  } ],
+  "keyTypes" : [ "system.collaborations" ],
+  "name" : "HandSanitizerRefill"
+}

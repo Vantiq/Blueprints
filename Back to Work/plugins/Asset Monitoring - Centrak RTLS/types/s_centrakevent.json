@@ -1,0 +1,87 @@
+{
+  "ars_properties" : {
+    "Description" : "Schema for a Centrak RTLS Event"
+  },
+  "groupBy" : "",
+  "name" : "s_centrakevent",
+  "properties" : {
+    "alert" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "String",
+      "unique" : false
+    },
+    "device_id" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "String",
+      "unique" : false
+    },
+    "device_name" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "String",
+      "unique" : false
+    },
+    "device_type" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "String",
+      "unique" : false
+    },
+    "device_type_id" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "String",
+      "unique" : false
+    },
+    "location_data" : {
+      "encrypted" : false,
+      "multi" : true,
+      "required" : false,
+      "type" : "Object",
+      "unique" : false
+    },
+    "sensor" : {
+      "encrypted" : false,
+      "multi" : true,
+      "required" : false,
+      "type" : "Object",
+      "unique" : false
+    },
+    "site_id" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "String",
+      "unique" : false
+    },
+    "telemetry_data" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "Object",
+      "unique" : false
+    },
+    "transport" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "String",
+      "unique" : false
+    },
+    "updated_on" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "DateTime",
+      "unique" : false
+    }
+  },
+  "role" : "schema"
+}

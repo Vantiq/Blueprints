@@ -1,0 +1,49 @@
+PROCEDURE cb.findSpaceForAsset(floorid String, fplocation GeoJSON)
+
+/* 
+	no cartesian query available in VAIL for mongo (mongo $near)
+	so we'll get all spaces for the floor and do our own
+*/
+
+if (fplocation) {
+
+var x1 = fplocation.coordinates[1]
+var y1 = fplocation.coordinates[0]
+
+var results = []
+SELECT FROM spaces AS space WHERE floorid == floorid{
+    
+    
+
+    var obj = Utils.stripSystemProperties(space)
+
+
+    var x2 = space.floorplanlocation.coordinates[1]
+    var y2 = space.floorplanlocation.coordinates[0]
+
+    // formula: distance = square root of (x2 -x1)squared + (y2 - y1)squared
+    obj.distance = Math.sqrt( Math.pow((x2 -x1),2) + Math.pow((y2 - y1),2) )
+
+    push(results, obj)	
+	
+} 
+
+var results = sort(results, "distance") 
+
+return results[0]
+
+
+}
+
+
+/*
+AND floorplanlocation geoNear { 
+    geometry: fplocation, 
+    maxDistance: 1000000
+}
+*/
+
+
+
+
+

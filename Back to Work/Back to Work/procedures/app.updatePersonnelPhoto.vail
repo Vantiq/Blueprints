@@ -1,0 +1,12 @@
+/*
+	Update the underlying personnel record with the photo and thumbnail paths
+*/
+PROCEDURE app.updatePersonnelPhoto(event Object)
+
+var updateObj ={}
+updateObj.photopath = event.values.Camera1
+updateObj.photothumbnailpath = event.values.Camera1Thumbnail
+
+UPDATE personnel(updateObj) WHERE uid == event.values.PersonnelId
+
+return event

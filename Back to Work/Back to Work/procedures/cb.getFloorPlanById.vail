@@ -1,0 +1,8 @@
+/*
+	Fetch a floorplan by id
+*/
+PROCEDURE cb.getFloorPlanById(id String)
+
+var fp = SELECT ONE FROM floorplans WHERE id == id
+
+return fp

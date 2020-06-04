@@ -1,0 +1,76 @@
+{
+  "adminAccessLevel" : "ars_readWrite",
+  "ars_properties" : null,
+  "audited" : false,
+  "encapsulated" : false,
+  "expiresAfter" : null,
+  "foreignKeys" : null,
+  "groupBy" : "",
+  "groupEnabled" : false,
+  "groupRequired" : false,
+  "indexes" : [ {
+    "keys" : [ "id" ],
+    "options" : {
+      "unique" : true
+    }
+  }, {
+    "keys" : [ "#location" ],
+    "options" : { }
+  }, {
+    "keys" : [ "buildingid" ],
+    "options" : { }
+  } ],
+  "maxObjects" : 0,
+  "maxStorage" : 0,
+  "metadata" : false,
+  "name" : "floors",
+  "naturalKey" : [ "id" ],
+  "properties" : {
+    "buildingid" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "String",
+      "unique" : false
+    },
+    "floorplan" : {
+      "description" : "id of floorplan",
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "String",
+      "unique" : false
+    },
+    "id" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "String",
+      "unique" : false
+    },
+    "location" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "GeoJSON",
+      "unique" : false
+    },
+    "meta" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "Object",
+      "unique" : false
+    },
+    "name" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "String",
+      "unique" : false
+    }
+  },
+  "role" : "standard",
+  "userAccessLevel" : "ars_readOnly",
+  "volatile" : false
+}

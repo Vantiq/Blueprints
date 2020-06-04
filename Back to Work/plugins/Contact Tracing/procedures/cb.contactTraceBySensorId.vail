@@ -1,0 +1,205 @@
+PROCEDURE cb.contactTraceBySensorId(id String, interval String)
+
+var params = {
+    "$and":[
+    	{sensorids:id},
+        {timestamp:{"$gt": now().minusMillis(stringToInterval(interval))}},
+    	{
+            "$nor": [
+    			{sensorids: {"$exists": false}},
+    			{sensorids: {"$size": 0}},
+    			{sensorids: {"$size": 1}}
+			]
+		}
+	]
+}
+
+
+var obj = {}
+
+var results = []
+SELECT FROM contacttracing AS record where params  {
+    for sensorid in record.sensorids{
+        if (sensorid != id){
+            if (has(obj, sensorid)){
+                obj[sensorid].count = obj[sensorid].count + 1
+                if (! includes(obj[sensorid].places, record.spaceid)){
+                	obj[sensorid].places.push(record.spaceid)
+        		}
+            } else {
+                obj[sensorid] = {}
+                obj[sensorid].count = 1
+                obj[sensorid].places = []
+                obj[sensorid].places.push(record.spaceid)
+    		}
+        }
+    }
+    select one from spaces where id == record.spaceid    
+    record.space = spaces.name
+    results.push(record)
+}
+
+
+var personnel = []
+var arr = []
+
+for item in obj{
+    // concat all the spaces
+    arr = concat(item.value.places, arr)
+
+	// get the user associated with this sensor
+	SELECT ONE FROM sensors AS sensor WHERE id == item.key AND type == "IndoorLocation"
+	var assetid = sensor.assetid
+	
+	//var name
+	SELECT ONE firstname, lastname, uid FROM personnel AS person WHERE assetid == assetid
+
+	if (person){
+        person.sensorid = item.key
+        obj[item.key].name = person.firstname + " " + person.lastname
+        //obj[item.key].name = person.uid
+        
+        
+	}
+
+	personnel.push(person)
+	
+}
+
+
+// get the space information,  building and floor
+var spaces = {}
+SELECT id, name, floorid FROM spaces AS space WHERE id IN arr{
+    SELECT ONE FROM floors AS floor WHERE id == space.floorid
+    SELECT ONE FROM buildings AS building WHERE id == floor.buildingid
+    space.floor = floor.name
+    space.building = building.name
+    
+    spaces[space.id] = space
+   // spaces.push(space)
+    
+}
+
+var retval = []
+for o IN obj{
+    var data = {}
+    data.employee = obj[o.key].name
+    data.count = obj[o.key].count
+    data.places = []
+    var places = obj[o.key].places
+    for p in places{
+        data.places.push(format("{0} - {1} - {2}", spaces[p].building, spaces[p].floor, spaces[p].name))
+    }
+    retval.push(data)
+}
+
+return retval
+
+//return obj
+//return personnel
+//return spaces
+
+/*
+
+spaces
+{
+   "3d5c7ce7-a03e-4daf-8817-366fe38b78a5": {
+      "_id": "5e9b18a83b69a96f9d84ccaa",
+      "floorid": "00972b3e-77ac-4b6e-8785-4a52fb44cda8",
+      "id": "3d5c7ce7-a03e-4daf-8817-366fe38b78a5",
+      "name": "Room 215 IT Closet",
+      "floor": "2nd Floor",
+      "building": "Building 1"
+   },
+
+obj
+{
+   "tr002": {
+      "count": 52,
+      "places": [
+         "3d5c7ce7-a03e-4daf-8817-366fe38b78a5",
+         "c6268af4-8238-4b70-ab0e-c902b23990fd",
+         "572de9ab-ec09-4f77-bb86-7e4f55d494d2",
+         "80938d64-2cb6-43d6-84ea-8a5c1c43ea7d",
+         "de953ed1-968c-48f2-aeaf-b222e5d06d5a",
+         "74d18fcd-0b8f-43e9-9b97-e512ae6bb5d0",
+         "9fcdbf29-5b3e-44ba-8fd8-b5c86b93ead0"
+      ],
+      "name": "Pat Burma"
+   },
+   "tr004": {
+      "count": 34,
+      "places": [
+         "c6268af4-8238-4b70-ab0e-c902b23990fd",
+         "572de9ab-ec09-4f77-bb86-7e4f55d494d2"
+      ]
+   },
+   "tr003": {
+      "count": 1,
+      "places": [
+         "9fcdbf29-5b3e-44ba-8fd8-b5c86b93ead0"
+      ],
+      "name": "Jane Doe"
+   }
+}
+
+
+[
+   {
+      "_id": "5e9b18a83b69a96f9d84ccaa",
+      "floorid": "00972b3e-77ac-4b6e-8785-4a52fb44cda8",
+      "id": "3d5c7ce7-a03e-4daf-8817-366fe38b78a5",
+      "name": "Room 215 IT Closet",
+      "floor": "2nd Floor",
+      "building": "Building 1"
+   },
+   {
+      "_id": "5e9b18c687a72f786b7f29dc",
+      "floorid": "00972b3e-77ac-4b6e-8785-4a52fb44cda8",
+      "id": "572de9ab-ec09-4f77-bb86-7e4f55d494d2",
+      "name": "Room 216",
+      "floor": "2nd Floor",
+      "building": "Building 1"
+   },
+   {
+      "_id": "5e9b160d87a72f786b7f2519",
+      "floorid": "00972b3e-77ac-4b6e-8785-4a52fb44cda8",
+      "id": "74d18fcd-0b8f-43e9-9b97-e512ae6bb5d0",
+      "name": "Room 230",
+      "floor": "2nd Floor",
+      "building": "Building 1"
+   },
+   {
+      "_id": "5e9b15df7f79961bb97f6edd",
+      "floorid": "00972b3e-77ac-4b6e-8785-4a52fb44cda8",
+      "id": "80938d64-2cb6-43d6-84ea-8a5c1c43ea7d",
+      "name": "Room 226",
+      "floor": "2nd Floor",
+      "building": "Building 1"
+   },
+   {
+      "_id": "5e9b193187a72f786b7f2a92",
+      "floorid": "00972b3e-77ac-4b6e-8785-4a52fb44cda8",
+      "id": "9fcdbf29-5b3e-44ba-8fd8-b5c86b93ead0",
+      "name": "Stairwell 250",
+      "floor": "2nd Floor",
+      "building": "Building 1"
+   },
+   {
+      "_id": "5e9b185987a72f786b7f291e",
+      "floorid": "00972b3e-77ac-4b6e-8785-4a52fb44cda8",
+      "id": "c6268af4-8238-4b70-ab0e-c902b23990fd",
+      "name": "Area 200",
+      "floor": "2nd Floor",
+      "building": "Building 1"
+   },
+   {
+      "_id": "5e9b19593b69a96f9d84cd37",
+      "floorid": "00972b3e-77ac-4b6e-8785-4a52fb44cda8",
+      "id": "de953ed1-968c-48f2-aeaf-b222e5d06d5a",
+      "name": "Stairwell 256",
+      "floor": "2nd Floor",
+      "building": "Building 1"
+   }
+]
+*/

@@ -1,0 +1,6 @@
+PROCEDURE cb.getAssetForSensor(id String, type String)
+
+SELECT ONE FROM sensors WHERE id == id AND type == type
+if (sensors){
+	SELECT ONE FROM assets WHERE id == sensors.assetid
+}

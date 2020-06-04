@@ -1,0 +1,9 @@
+PROCEDURE getToken(seconds Integer)
+
+var obj = {}
+obj.name = uuid()
+obj.tokenTimeout = seconds
+
+var token = INSERT system.tokens(obj)
+
+return token.accessToken

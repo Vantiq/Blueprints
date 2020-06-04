@@ -1,0 +1,1 @@
+This plugin can be used to monitor physical assets within a business in order to support workplace safety and hygiene by using sensors or RTLS to track mobile equipment as it moves within an organization.

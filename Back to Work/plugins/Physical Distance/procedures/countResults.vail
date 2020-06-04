@@ -1,0 +1,16 @@
+PROCEDURE countResults(yoloResults Object ARRAY)
+
+var obj = {}
+
+FOR EACH x IN yoloResults DO
+    if (obj[x.label]){
+        obj[x.label] = obj[x.label] + 1
+    } else {
+        obj[x.label] = 1
+    }
+END
+
+
+return obj
+
+

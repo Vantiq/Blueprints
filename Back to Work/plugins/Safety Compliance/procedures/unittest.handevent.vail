@@ -1,0 +1,7 @@
+PROCEDURE unittest.handevent(id)
+
+var obj ={}
+obj.id = id
+obj.time = now()
+
+publish obj to topic "/sensor/hand"

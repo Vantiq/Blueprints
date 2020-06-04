@@ -1,0 +1,62 @@
+{
+  "active" : true,
+  "appType" : true,
+  "assembly" : {
+    "CentrakReading" : {
+      "configuration" : {
+        "childStreams" : [ "Unwind" ],
+        "enableBadging" : true,
+        "inboundResource" : "topics",
+        "inboundResourceId" : "/centrak",
+        "op" : null,
+        "outboundResource" : null,
+        "outboundResourceId" : null,
+        "parentStreams" : [ ],
+        "schema" : "s_centrakevent",
+        "upsert" : false
+      },
+      "description" : null,
+      "name" : "CentrakReading",
+      "pattern" : "EventStream"
+    },
+    "Tags" : {
+      "configuration" : {
+        "childStreams" : null,
+        "condition" : "event.device_type == \"Tag\"",
+        "enableBadging" : true,
+        "outboundResource" : null,
+        "outboundResourceId" : null,
+        "parentStreams" : [ "Unwind" ],
+        "upsert" : false
+      },
+      "description" : null,
+      "name" : "Tags",
+      "pattern" : "Filter"
+    },
+    "Unwind" : {
+      "configuration" : {
+        "childStreams" : [ "Tags" ],
+        "enableBadging" : true,
+        "outboundProperty" : null,
+        "outboundResource" : null,
+        "outboundResourceConfig" : null,
+        "outboundResourceId" : null,
+        "parentStreams" : [ "CentrakReading" ],
+        "unwindProperty" : null,
+        "upsert" : null
+      },
+      "description" : null,
+      "name" : "Unwind",
+      "pattern" : "Unwind"
+    }
+  },
+  "collaboratorRoles" : [ ],
+  "currentState" : {
+    "code" : "success"
+  },
+  "description" : "",
+  "disableBadging" : false,
+  "entityRoles" : [ ],
+  "keyTypes" : [ "system.collaborations" ],
+  "name" : "CentrakData"
+}

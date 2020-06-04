@@ -1,0 +1,16 @@
+PROCEDURE cb.getHierarchyForAssetBySpaceId(spaceid String)
+
+var obj = {}
+
+
+SELECT ONE FROM spaces WHERE id == spaceid  
+obj.space = spaces
+
+SELECT ONE FROM floors WHERE id == spaces.floorid
+obj.floor = floors
+
+SELECT ONE FROM buildings WHERE id == floors.buildingid
+obj.building = buildings
+
+return obj
+

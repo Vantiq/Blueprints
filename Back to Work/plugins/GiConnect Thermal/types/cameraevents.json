@@ -1,0 +1,134 @@
+{
+  "adminAccessLevel" : "ars_readWrite",
+  "ars_properties" : null,
+  "audited" : false,
+  "encapsulated" : false,
+  "expiresAfter" : null,
+  "foreignKeys" : null,
+  "groupBy" : "",
+  "groupEnabled" : false,
+  "groupRequired" : false,
+  "indexes" : [ ],
+  "maxObjects" : 0,
+  "maxStorage" : 0,
+  "metadata" : false,
+  "name" : "cameraevents",
+  "naturalKey" : [ ],
+  "properties" : {
+    "action" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "String",
+      "unique" : false
+    },
+    "actionCode" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "Integer",
+      "unique" : false
+    },
+    "camType" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "String",
+      "unique" : false
+    },
+    "deviceid" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "String",
+      "unique" : false
+    },
+    "img" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "String",
+      "unique" : false
+    },
+    "mask" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "Boolean",
+      "unique" : false
+    },
+    "nationCode" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "String",
+      "unique" : false
+    },
+    "openCode" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "Integer",
+      "unique" : false
+    },
+    "openMsg" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "String",
+      "unique" : false
+    },
+    "screenTime" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "String",
+      "unique" : false
+    },
+    "similarity" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "Integer",
+      "unique" : false
+    },
+    "temperature" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "Real",
+      "unique" : false
+    },
+    "userId" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "String",
+      "unique" : false
+    },
+    "userName" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "String",
+      "unique" : false
+    },
+    "userType" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "String",
+      "unique" : false
+    },
+    "uuid" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "String",
+      "unique" : false
+    }
+  },
+  "role" : "standard",
+  "userAccessLevel" : "ars_readOnly",
+  "volatile" : false
+}

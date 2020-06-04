@@ -1,0 +1,79 @@
+{
+  "adminAccessLevel" : "ars_readWrite",
+  "ars_properties" : null,
+  "audited" : false,
+  "encapsulated" : false,
+  "expiresAfter" : null,
+  "foreignKeys" : null,
+  "groupBy" : "",
+  "groupEnabled" : false,
+  "groupRequired" : false,
+  "indexes" : [ {
+    "keys" : [ "name", "timestamp" ],
+    "options" : { }
+  }, {
+    "keys" : [ "simgroup" ],
+    "options" : { }
+  } ],
+  "maxObjects" : 0,
+  "maxStorage" : 0,
+  "metadata" : false,
+  "name" : "movementsimulations",
+  "naturalKey" : [ ],
+  "properties" : {
+    "floorid" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "String",
+      "unique" : false
+    },
+    "id" : {
+      "description" : "For uniqueness in displaying on widget",
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "String",
+      "unique" : false
+    },
+    "location" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "GeoJSON",
+      "unique" : false
+    },
+    "name" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "String",
+      "unique" : false
+    },
+    "sensorid" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "String",
+      "unique" : false
+    },
+    "simgroup" : {
+      "description" : "Use to group simulations together for playback",
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "String",
+      "unique" : false
+    },
+    "timestamp" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "DateTime",
+      "unique" : false
+    }
+  },
+  "role" : "standard",
+  "userAccessLevel" : "ars_readOnly",
+  "volatile" : false
+}

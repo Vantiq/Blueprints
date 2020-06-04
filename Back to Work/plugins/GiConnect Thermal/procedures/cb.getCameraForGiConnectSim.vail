@@ -1,0 +1,20 @@
+PROCEDURE cb.getCameraForGiConnectSim()
+
+var results = []
+SELECT id, assetid FROM sensors AS sensor WHERE type == "Temperature" and manufacturer == "GIC"{
+    var obj = {}
+    obj.cameraid = sensor.id
+    
+    SELECT ONE FROM assets AS asset WHERE id == sensor.assetid
+    obj.asset = asset.name
+    
+    SELECT ONE FROM floors AS floor WHERE id == asset.floorid
+    obj.floor = floor.name
+    
+    SELECT ONE FROM buildings AS building WHERE id == floor.buildingid
+    obj.building = building.name
+    
+    results.push(obj)
+}
+
+return results

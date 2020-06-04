@@ -1,0 +1,124 @@
+{
+  "active" : true,
+  "appType" : true,
+  "assembly" : {
+    "Bucket" : {
+      "configuration" : {
+        "childStreams" : [ ],
+        "enableBadging" : true,
+        "outboundProperty" : "stateObject",
+        "parentStreams" : [ "SplitBySpace" ],
+        "procedure" : {
+          "vailScript" : "if (!state) {  \n    state = {}\n    state.startTime = now()\n    state.spaceId = event.spaceId\n    state.tags = []\n    state.tags.push(event.id)\n} else {\n    \n    \n    // flush the state if time has elapsed\n    if (now() > state.startTime.plusMillis(10 seconds)){\n        log.info(\"you must flush\")\n        var obj = {}\n        obj.timestamp = state.startTime\n        obj.spaceid = state.spaceId\n\t\tobj.sensorids = state.tags\n        \n        // write contact trace\n        INSERT contacttracing(obj)\n        state.startTime = now()\n        state.tags = []\n        \n        \n    }\n    \n    // don't add if it already contains the id\n    if ( state.tags.includes(event.id) == false ){\n    \tstate.tags.push(event.id)\n\t}\n}"
+        }
+      },
+      "description" : null,
+      "name" : "Bucket",
+      "pattern" : "AccumulateState"
+    },
+    "EnrichWithSpace" : {
+      "configuration" : {
+        "childStreams" : [ "SplitBySpace" ],
+        "enableBadging" : true,
+        "parentStreams" : [ "Replay", "SplitByID" ],
+        "procedure" : "app.enrichWithSpace",
+        "schema" : null
+      },
+      "description" : null,
+      "name" : "EnrichWithSpace",
+      "pattern" : "Procedure"
+    },
+    "Flush" : {
+      "configuration" : {
+        "childStreams" : [ "Replay" ],
+        "duration" : "12 seconds",
+        "emitOnlyOnce" : true,
+        "enableBadging" : true,
+        "groupByWindow" : null,
+        "outboundResource" : null,
+        "outboundResourceId" : null,
+        "parentStreams" : [ "SplitByID" ],
+        "upsert" : false
+      },
+      "description" : null,
+      "name" : "Flush",
+      "pattern" : "Missing"
+    },
+    "Replay" : {
+      "configuration" : {
+        "childStreams" : [ "EnrichWithSpace" ],
+        "enableBadging" : true,
+        "parentStreams" : [ "Flush" ],
+        "procedure" : "app.replaylastEvent",
+        "schema" : null
+      },
+      "description" : null,
+      "name" : "Replay",
+      "pattern" : "Procedure"
+    },
+    "SplitByID" : {
+      "configuration" : {
+        "childStreams" : [ "EnrichWithSpace", "Flush" ],
+        "enableBadging" : true,
+        "groupBy" : "event.id",
+        "groupByWindow" : null,
+        "maxOpenGroups" : null,
+        "parentStreams" : [ "TrackerReceived" ]
+      },
+      "description" : null,
+      "name" : "SplitByID",
+      "pattern" : "SplitByGroup"
+    },
+    "SplitBySpace" : {
+      "configuration" : {
+        "childStreams" : [ "Bucket" ],
+        "enableBadging" : true,
+        "groupBy" : "event.spaceId",
+        "groupByWindow" : null,
+        "maxOpenGroups" : null,
+        "parentStreams" : [ "EnrichWithSpace" ]
+      },
+      "description" : null,
+      "name" : "SplitBySpace",
+      "pattern" : "SplitByGroup"
+    },
+    "TrackerReceived" : {
+      "configuration" : {
+        "childStreams" : [ "UpdateSensorAndAsset", "SplitByID" ],
+        "enableBadging" : true,
+        "inboundResource" : "topics",
+        "inboundResourceId" : "/sensor/tracker/2d",
+        "op" : null,
+        "outboundResource" : null,
+        "outboundResourceId" : null,
+        "parentStreams" : [ ],
+        "schema" : null,
+        "upsert" : false
+      },
+      "description" : null,
+      "name" : "TrackerReceived",
+      "pattern" : "EventStream"
+    },
+    "UpdateSensorAndAsset" : {
+      "configuration" : {
+        "childStreams" : null,
+        "enableBadging" : true,
+        "parentStreams" : [ "TrackerReceived" ],
+        "procedure" : "app.updateSensorAndAssetLocation",
+        "schema" : null
+      },
+      "description" : "This will update the sensor and asset with the current location.\n\nNote: \nsensors just have the data  property to hold the payload\n\nassets contain the floorid and location",
+      "name" : "UpdateSensorAndAsset",
+      "pattern" : "Procedure"
+    }
+  },
+  "collaboratorRoles" : [ ],
+  "currentState" : {
+    "code" : "success"
+  },
+  "description" : "",
+  "disableBadging" : false,
+  "entityRoles" : [ ],
+  "keyTypes" : [ "system.collaborations" ],
+  "name" : "IndoorTracking"
+}

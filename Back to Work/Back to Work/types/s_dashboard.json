@@ -1,0 +1,50 @@
+{
+  "ars_properties" : null,
+  "groupBy" : "",
+  "name" : "s_dashboard",
+  "properties" : {
+    "assets" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "Integer",
+      "unique" : false
+    },
+    "buildings" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "Integer",
+      "unique" : false
+    },
+    "floors" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "Integer",
+      "unique" : false
+    },
+    "issues" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "Integer",
+      "unique" : false
+    },
+    "sensors" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "Integer",
+      "unique" : false
+    },
+    "spaces" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "Integer",
+      "unique" : false
+    }
+  },
+  "role" : "schema"
+}

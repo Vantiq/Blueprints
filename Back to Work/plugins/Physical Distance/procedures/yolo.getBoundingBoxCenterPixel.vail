@@ -1,0 +1,27 @@
+PROCEDURE yolo.getBoundingBoxCenterPixel(location Object)
+
+//PROCEDURE getBoundingBoxCenterPixel(left Real DESCRIPTION "1250.7224", right Real DESCRIPTION "1362.0428", top Real DESCRIPTION "442.7345", bottom Real DESCRIPTION "579.67126")
+
+/*
+"top": 442.7345,
+"left": 1250.7224,
+"bottom": 579.67126,
+"right": 1362.0428
+
+(result.location.left , result.location.top, (result.location.right - result.location.left), (result.location.bottom -  result.location.top)); 
+
+*/
+
+
+var x1 = location.left
+var x2 = location.right
+var y1 = location.top
+var y2 = location.bottom
+
+var x = (x1 + x2) / 2
+var y = (y1 + y2) / 2
+
+var centeredpixel = {x:x, y:y}
+
+
+return centeredpixel

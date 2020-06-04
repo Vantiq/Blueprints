@@ -1,0 +1,50 @@
+/*
+	Update the underlying asset and sensor records given a new location
+    event with updated coordinates
+    
+    Also records the event for posterity in the trackinghistory type
+*/
+PROCEDURE app.updateSensorAndAssetLocation(event Object)
+
+
+var loc = {
+	"type": "Point",
+	"coordinates": [event.y, event.x]
+}
+
+// get the sensor if there is one
+var sensor = SELECT ONE FROM sensors WHERE id == event.id and type == "IndoorLocation"
+
+if (sensor){
+    var data = {}
+    data.type = "GeoJSON"
+    data.value = loc
+    
+    UPSERT sensors(id:event.id, type:sensor.type, data:data)
+
+	// assets also have a floorid (floor) and fplocation (floorplanlocation)
+	// we'll update these as well
+	var asset = SELECT ONE FROM assets WHERE id == sensor.assetid
+	if (asset){
+        UPSERT assets(id:asset.id, floorid:event.floorid, fplocation:loc )
+	}
+}
+
+// now we see if any open collabs
+SELECT FROM system.collaborations AS collab WHERE name == "PatientTransport" AND status == "active" AND entities.tsensor == "/sensors/"+ sensor._id{
+    event.collaborationId = collab.id
+    PUBLISH event TO TOPIC "/indoortracking"
+}
+
+var history = {}
+history.id = uuid()
+history.sensorid = event.id
+history.floorid = event.floorid
+history.timestamp = now()
+history.x = event.x
+history.y = event.y
+
+INSERT trackinghistory(history)
+
+return event
+

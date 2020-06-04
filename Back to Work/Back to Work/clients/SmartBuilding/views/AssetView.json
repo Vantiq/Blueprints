@@ -1,0 +1,490 @@
+{
+  "bodyChildren" : {
+    "rootArray" : [ "5a0c876e-8b56-4ff4-8d24-319ba47469fb" ],
+    "widgets" : [ {
+      "binding" : "page.data.asset.id",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "inputType" : "text",
+      "isReadOnly" : true,
+      "label" : "@text.id",
+      "name" : "InputString2602",
+      "optional" : true,
+      "placeholder" : "",
+      "type" : "InputString",
+      "uuid" : "0b1af592-2808-4b8f-8907-60b6f54bf7a1",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "binding" : "page.data.asset.type",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "inputType" : "text",
+      "isReadOnly" : true,
+      "label" : "@text.type",
+      "name" : "InputString2604",
+      "optional" : true,
+      "placeholder" : "",
+      "type" : "InputString",
+      "uuid" : "0f2e4cf6-cdc6-46a9-88a8-c17a99ac8d0c",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "clearOnDataArrive" : true,
+      "dataStreamGroupedByFiltersString" : "",
+      "dataStreamProperty" : "fplocation",
+      "dataStreamUUID" : "f6d28a8c-b926-4042-b2ee-b76c3ca89e4d",
+      "dataType" : null,
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "left",
+      "horzWeight" : 1,
+      "imageHeightInLocationUnits" : 25,
+      "imageWidthInLocationUnits" : 30,
+      "labelProperty" : "type",
+      "name" : "FloorplanViewer235",
+      "naturalKey" : null,
+      "operation" : "insert",
+      "type" : "FloorplanViewer",
+      "url" : "../../docs/images/floorplanselect.png",
+      "uuid" : "0fbd830c-8ce2-46c5-b659-3f3339fcd647",
+      "v" : 16,
+      "vertGravity" : "top",
+      "widthPolicy" : "naturalSize"
+    }, {
+      "binding" : "page.data.space",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "inputType" : "text",
+      "isReadOnly" : true,
+      "label" : "@text.inornearspace",
+      "name" : "InputString2603",
+      "optional" : true,
+      "placeholder" : "",
+      "type" : "InputString",
+      "uuid" : "1c72d515-473a-4a77-b330-35625a45a438",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "binding" : "page.data.asset.name",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "inputType" : "text",
+      "isReadOnly" : true,
+      "label" : "@text.name",
+      "name" : "InputString9448",
+      "optional" : true,
+      "placeholder" : "",
+      "type" : "InputString",
+      "uuid" : "2006a0eb-7e67-42d6-8a9a-dce5ff333282",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "binding" : "page.data.asset.floorid",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "inputType" : "text",
+      "isReadOnly" : true,
+      "label" : "@text.floorid",
+      "name" : "InputString5149",
+      "optional" : true,
+      "placeholder" : "",
+      "type" : "InputString",
+      "uuid" : "28e5f49b-b591-407f-8228-c4b5ccaac82d",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "backgroundColor" : "default",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 1,
+      "cellFontColor" : "default",
+      "cellFontFace" : "inherit",
+      "cellFontSize" : 14,
+      "cellFontStyle" : "plain",
+      "clearOnDataArrive" : true,
+      "columnDescriptors" : [ {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "type",
+        "selected" : false,
+        "title" : "@text.type"
+      }, {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "id",
+        "selected" : false,
+        "title" : "@text.id"
+      }, {
+        "buttonIcon" : "fa-times-circle",
+        "buttonLabel" : "@button.delete",
+        "colorRules" : null,
+        "dataType" : "Button",
+        "isLinkStyle" : true,
+        "propertyName" : "ButtonDelete",
+        "selected" : false,
+        "title" : ""
+      }, {
+        "buttonIcon" : "fa-binoculars",
+        "buttonLabel" : "@button.view",
+        "colorRules" : null,
+        "dataType" : "Button",
+        "isLinkStyle" : true,
+        "propertyName" : "ButtonView",
+        "selected" : false,
+        "title" : ""
+      } ],
+      "columnSort" : true,
+      "dataStreamGroupedByFiltersString" : "",
+      "dataStreamUUID" : "9e68e40d-254f-4931-a480-3abdb076848c",
+      "dataType" : null,
+      "headerFontColor" : "default",
+      "headerFontFace" : "inherit",
+      "headerFontSize" : 14,
+      "headerFontStyle" : "plain",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "DataTable1866",
+      "operation" : "insert",
+      "rowsPerPage" : 5,
+      "showMaximizeButton" : false,
+      "showPaging" : true,
+      "type" : "DataTable",
+      "uuid" : "32897e5f-6c46-4701-80cb-743ddcae5778",
+      "v" : 16,
+      "vertGravity" : "center",
+      "w" : 500,
+      "widthPolicy" : "explicit"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "children" : [ "7a9b185f-a791-4e40-8e54-a15fb081b5b6", "0fbd830c-8ce2-46c5-b659-3f3339fcd647" ],
+      "column" : 0,
+      "heightPolicy" : "sizeToCell",
+      "horzGravity" : "center",
+      "innerMargin" : 20,
+      "name" : "HorizontalLayout20089",
+      "row" : 0,
+      "type" : "HorizontalLayout",
+      "uuid" : "5a0c876e-8b56-4ff4-8d24-319ba47469fb",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "buttonBackgroundColor" : "#001a80",
+      "buttonLabel" : "@button.back",
+      "buttonLabelColor" : "platform",
+      "buttonLabelSize" : 14,
+      "buttonLabelStyle" : "bold",
+      "glyphIcon" : "fa-fast-backward",
+      "h" : 60,
+      "heightPolicy" : "explicit",
+      "horzGravity" : "center",
+      "name" : "Button2055",
+      "submitValue" : 100,
+      "type" : "Button",
+      "uuid" : "64e612ef-ad21-4863-8b4a-3aa4b6a92ca5",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "children" : [ "f989b224-bf03-49ed-86cc-7bb44db3e731", "cb606dfd-1350-44c6-85e5-eb86089822cd" ],
+      "heightPolicy" : "sizeToCell",
+      "horzGravity" : "left",
+      "innerMargin" : 20,
+      "name" : "VerticalLayout2567",
+      "type" : "VerticalLayout",
+      "uuid" : "7a9b185f-a791-4e40-8e54-a15fb081b5b6",
+      "v" : 16,
+      "vertGravity" : "center",
+      "w" : 542,
+      "widthPolicy" : "explicit"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "buttonBackgroundColor" : "#001a80",
+      "buttonLabel" : "@button.label.editasset",
+      "buttonLabelColor" : "platform",
+      "buttonLabelSize" : 14,
+      "buttonLabelStyle" : "bold",
+      "h" : 60,
+      "heightPolicy" : "explicit",
+      "horzGravity" : "center",
+      "name" : "Button2054",
+      "submitValue" : 100,
+      "type" : "Button",
+      "uuid" : "8274a9f1-3231-4330-81d4-1f74d7b95ce2",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "children" : [ "64e612ef-ad21-4863-8b4a-3aa4b6a92ca5", "8274a9f1-3231-4330-81d4-1f74d7b95ce2" ],
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "innerMargin" : 20,
+      "name" : "HorizontalLayout4006",
+      "type" : "HorizontalLayout",
+      "uuid" : "cb4eeb3e-3b03-4284-87a1-96a6f2b1beaf",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderThickness" : 0,
+      "children" : [ "32897e5f-6c46-4701-80cb-743ddcae5778", "f4c7a609-88e4-428f-912b-8f604ab052a6" ],
+      "closeIcon" : "glyphicon-chevron-up",
+      "fontFace" : "inherit",
+      "fontSize" : 16,
+      "fontStyle" : "normal",
+      "fontWeight" : "bold",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "innerMargin" : 5,
+      "name" : "AccordionLayout911",
+      "openIcon" : "glyphicon-chevron-down",
+      "title" : "@text.sensors",
+      "titleBarColor" : "default",
+      "type" : "AccordionLayout",
+      "uuid" : "cb606dfd-1350-44c6-85e5-eb86089822cd",
+      "v" : 16,
+      "vertGravity" : "top",
+      "vertMargin" : 5,
+      "vertWeight" : 1,
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "buttonBackgroundColor" : "#001a80",
+      "buttonLabel" : "@button.label.addsensor",
+      "buttonLabelColor" : "platform",
+      "buttonLabelSize" : 14,
+      "buttonLabelStyle" : "bold",
+      "h" : 60,
+      "heightPolicy" : "explicit",
+      "horzGravity" : "center",
+      "name" : "Button8939",
+      "submitValue" : 100,
+      "type" : "Button",
+      "uuid" : "d784144c-e596-4174-81f7-12daa6ad3c09",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 1,
+      "children" : [ "d784144c-e596-4174-81f7-12daa6ad3c09" ],
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "innerMargin" : 20,
+      "name" : "HorizontalLayout9622",
+      "type" : "HorizontalLayout",
+      "uuid" : "f4c7a609-88e4-428f-912b-8f604ab052a6",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderThickness" : 0,
+      "children" : [ "0b1af592-2808-4b8f-8907-60b6f54bf7a1", "0f2e4cf6-cdc6-46a9-88a8-c17a99ac8d0c", "2006a0eb-7e67-42d6-8a9a-dce5ff333282", "28e5f49b-b591-407f-8228-c4b5ccaac82d", "1c72d515-473a-4a77-b330-35625a45a438", "cb4eeb3e-3b03-4284-87a1-96a6f2b1beaf" ],
+      "closeIcon" : "glyphicon-chevron-up",
+      "defaultToOpen" : true,
+      "fontFace" : "inherit",
+      "fontSize" : 16,
+      "fontStyle" : "normal",
+      "fontWeight" : "bold",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "innerMargin" : 5,
+      "name" : "AccordionLayout706",
+      "openIcon" : "glyphicon-chevron-down",
+      "title" : "@text.asset",
+      "titleBarColor" : "default",
+      "type" : "AccordionLayout",
+      "uuid" : "f989b224-bf03-49ed-86cc-7bb44db3e731",
+      "v" : 16,
+      "vertGravity" : "center",
+      "vertMargin" : 5,
+      "widthPolicy" : "sizeToCell"
+    } ]
+  },
+  "data" : {
+    "properties" : {
+      "asset" : {
+        "defaultLabel" : "asset",
+        "type" : "TypedObject",
+        "typedObject" : {
+          "properties" : {
+            "floorid" : {
+              "defaultLabel" : "floorid",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "fplocation" : {
+              "defaultLabel" : "fplocation",
+              "type" : "GeoJSON"
+            },
+            "id" : {
+              "defaultLabel" : "id",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "name" : {
+              "defaultLabel" : "name",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "referencetotype" : {
+              "defaultLabel" : "referencetotype",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "type" : {
+              "defaultLabel" : "type",
+              "defaultValue" : "",
+              "type" : "String"
+            }
+          },
+          "type" : "assets"
+        }
+      },
+      "floor" : {
+        "defaultLabel" : "floor",
+        "type" : "TypedObject",
+        "typedObject" : {
+          "properties" : {
+            "buildingid" : {
+              "defaultLabel" : "buildingid",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "floorplan" : {
+              "defaultLabel" : "floorplan",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "id" : {
+              "defaultLabel" : "id",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "location" : {
+              "defaultLabel" : "location",
+              "type" : "GeoJSON"
+            },
+            "name" : {
+              "defaultLabel" : "name",
+              "defaultValue" : "",
+              "type" : "String"
+            }
+          },
+          "type" : "floors"
+        }
+      },
+      "floorplan" : {
+        "defaultLabel" : "floorplan",
+        "type" : "TypedObject",
+        "typedObject" : {
+          "properties" : {
+            "buildingid" : {
+              "defaultLabel" : "buildingid",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "description" : {
+              "defaultLabel" : "description",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "id" : {
+              "defaultLabel" : "id",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "path" : {
+              "defaultLabel" : "path",
+              "defaultValue" : "",
+              "type" : "String"
+            }
+          },
+          "type" : "floorplans"
+        }
+      },
+      "sensors" : {
+        "defaultLabel" : "sensors",
+        "type" : "TypedObject",
+        "typedObject" : {
+          "properties" : {
+            "assetid" : {
+              "defaultLabel" : "assetid",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "config" : {
+              "defaultLabel" : "config",
+              "type" : "Object"
+            },
+            "data" : {
+              "defaultLabel" : "data",
+              "type" : "Object"
+            },
+            "id" : {
+              "defaultLabel" : "id",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "type" : {
+              "defaultLabel" : "type",
+              "defaultValue" : "",
+              "type" : "String"
+            }
+          },
+          "type" : "sensors"
+        }
+      }
+    }
+  },
+  "footerChildren" : [ ],
+  "hasFooter" : false,
+  "layoutType" : "single",
+  "responseTopic" : ""
+}

@@ -1,0 +1,5 @@
+{
+  "description" : "GiConnect reading that does not contain user data",
+  "isReliable" : false,
+  "name" : "/camera/thermal/reading"
+}

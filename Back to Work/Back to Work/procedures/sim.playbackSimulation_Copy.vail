@@ -1,0 +1,33 @@
+PROCEDURE sim.playbackSimulation_Copy(name String, skip Integer)
+
+//Brett To Room  218 To Floor 1 reception
+SELECT FROM movementsimulations AS sims WITH LIMIT = 2, SKIP = skip WHERE name == name ORDER BY timestamp
+
+var next = {}
+if (sims.length() > 1){
+
+    // compare the difference in time
+    var t1 = date(sims[0].timestamp, "date", "epochMilliseconds")
+	var t2 = date(sims[1].timestamp, "date", "epochMilliseconds")
+
+	var timediff =  t2 - t1
+
+	if (timediff < 1000){
+    	 timediff = 1000   
+	}
+
+	
+	next.name = name
+	next.skip = skip + 1
+	next.simulation = sims[0]
+
+	PUBLISH next TO TOPIC "/simulation/playback" SCHEDULE {interval: timediff}
+	
+} else {
+    next.name = name
+	next.simulation = sims[0]
+    PUBLISH next TO TOPIC "/simulation/playback" SCHEDULE {interval: 1 second}
+}
+
+
+return sims

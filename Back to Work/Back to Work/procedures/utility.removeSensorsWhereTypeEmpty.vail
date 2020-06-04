@@ -1,0 +1,4 @@
+PROCEDURE utility.removeSensorsWhereTypeEmpty()
+
+// SELECT FROM sensors WHERE type == null
+DELETE sensors WHERE type == null

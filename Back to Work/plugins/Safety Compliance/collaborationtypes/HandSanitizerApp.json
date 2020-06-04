@@ -1,0 +1,193 @@
+{
+  "active" : true,
+  "appType" : true,
+  "assembly" : {
+    "AutoCloseCollaboration" : {
+      "configuration" : {
+        "childStreams" : null,
+        "enableBadging" : true,
+        "parentStreams" : [ "Over90Percent" ],
+        "procedure" : "app.closeCollabForHandSanitizer",
+        "schema" : null
+      },
+      "description" : "When the level in the hand Sanitizer is back up above 90% automatically close any open collaboration",
+      "name" : "AutoCloseCollaboration",
+      "pattern" : "Procedure"
+    },
+    "DeviceData" : {
+      "configuration" : {
+        "childStreams" : [ "PrepData", "Transform" ],
+        "enableBadging" : true,
+        "inboundResource" : "topics",
+        "inboundResourceId" : "/device/hs",
+        "op" : null,
+        "outboundResource" : null,
+        "outboundResourceId" : null,
+        "parentStreams" : [ ],
+        "schema" : null,
+        "upsert" : false
+      },
+      "description" : null,
+      "name" : "DeviceData",
+      "pattern" : "EventStream"
+    },
+    "EnrichHS" : {
+      "configuration" : {
+        "associatedType" : "sensors",
+        "childStreams" : [ "Over90Percent", "Under30Percent" ],
+        "enableBadging" : true,
+        "foreignKeys" : [ {
+          "type" : "Property",
+          "value" : "id"
+        }, {
+          "type" : "Property",
+          "value" : "type"
+        } ],
+        "groupByWindow" : null,
+        "parentStreams" : [ "SplitById" ],
+        "refreshInterval" : "6 hours"
+      },
+      "description" : null,
+      "name" : "EnrichHS",
+      "pattern" : "CachedEnrich"
+    },
+    "HandSanitizerRefill" : {
+      "configuration" : {
+        "collaboration" : "HandSanitizerRefill",
+        "enableBadging" : true,
+        "entityConstraint" : "id == event.id",
+        "entityType" : "sensors",
+        "parentStreams" : [ "Under30Percent" ]
+      },
+      "description" : null,
+      "name" : "HandSanitizerRefill",
+      "pattern" : "StartCollaboration"
+    },
+    "Over90Percent" : {
+      "configuration" : {
+        "childStreams" : [ "AutoCloseCollaboration" ],
+        "condition" : "appCondition.evaluateConfig(\"full\",event.val, event.sensors.config)",
+        "direction" : "true",
+        "enableBadging" : true,
+        "groupByWindow" : null,
+        "outboundResource" : null,
+        "outboundResourceId" : null,
+        "overConsecutiveReadings" : 1,
+        "parentStreams" : [ "EnrichHS" ],
+        "upsert" : false,
+        "withinDuration" : null
+      },
+      "description" : null,
+      "name" : "Over90Percent",
+      "pattern" : "Threshold"
+    },
+    "PrepData" : {
+      "configuration" : {
+        "childStreams" : [ "UpdateSensorReading" ],
+        "enableBadging" : true,
+        "outboundResource" : null,
+        "outboundResourceId" : null,
+        "parentStreams" : [ "DeviceData" ],
+        "schema" : null,
+        "transformation" : {
+          "data" : {
+            "expression" : "{\"type\":\"Integer\", \"value\":event.val}",
+            "type" : "expression"
+          },
+          "id" : {
+            "expression" : "event.id",
+            "type" : "expression"
+          },
+          "type" : {
+            "expression" : "\"Volume\"",
+            "type" : "expression"
+          }
+        },
+        "upsert" : false
+      },
+      "description" : null,
+      "name" : "PrepData",
+      "pattern" : "Transformation"
+    },
+    "SplitById" : {
+      "configuration" : {
+        "childStreams" : [ "EnrichHS" ],
+        "enableBadging" : true,
+        "groupBy" : "event.id",
+        "groupByWindow" : null,
+        "maxOpenGroups" : null,
+        "parentStreams" : [ "Transform" ]
+      },
+      "description" : null,
+      "name" : "SplitById",
+      "pattern" : "SplitByGroup"
+    },
+    "Transform" : {
+      "configuration" : {
+        "childStreams" : [ "SplitById" ],
+        "enableBadging" : true,
+        "outboundResource" : null,
+        "outboundResourceId" : null,
+        "parentStreams" : [ "DeviceData" ],
+        "schema" : null,
+        "transformation" : {
+          "id" : {
+            "expression" : "event.id",
+            "type" : "expression"
+          },
+          "type" : {
+            "expression" : "\"Volume\"",
+            "type" : "expression"
+          },
+          "val" : {
+            "expression" : "event.val",
+            "type" : "expression"
+          }
+        },
+        "upsert" : false
+      },
+      "description" : "The inbound data may not",
+      "name" : "Transform",
+      "pattern" : "Transformation"
+    },
+    "Under30Percent" : {
+      "configuration" : {
+        "childStreams" : [ "HandSanitizerRefill" ],
+        "condition" : "appCondition.evaluateConfig(\"low\", event.val, event.sensors.config)",
+        "direction" : "true",
+        "enableBadging" : true,
+        "groupByWindow" : null,
+        "outboundResource" : null,
+        "outboundResourceId" : null,
+        "overConsecutiveReadings" : 1,
+        "parentStreams" : [ "EnrichHS" ],
+        "upsert" : false,
+        "withinDuration" : null
+      },
+      "description" : null,
+      "name" : "Under30Percent",
+      "pattern" : "Threshold"
+    },
+    "UpdateSensorReading" : {
+      "configuration" : {
+        "childStreams" : null,
+        "enableBadging" : true,
+        "parentStreams" : [ "PrepData" ],
+        "type" : "sensors",
+        "upsert" : true
+      },
+      "description" : null,
+      "name" : "UpdateSensorReading",
+      "pattern" : "SaveToType"
+    }
+  },
+  "collaboratorRoles" : [ ],
+  "currentState" : {
+    "code" : "success"
+  },
+  "description" : "",
+  "disableBadging" : false,
+  "entityRoles" : [ ],
+  "keyTypes" : [ "system.collaborations" ],
+  "name" : "HandSanitizerApp"
+}

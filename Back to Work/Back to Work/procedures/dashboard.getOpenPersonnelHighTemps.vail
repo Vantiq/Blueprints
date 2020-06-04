@@ -1,0 +1,52 @@
+/*
+	Fetch the list of active PersonnelHighTemp collaborations to populate the dashboard
+    in the SmartBuilding Client
+*/
+PROCEDURE dashboard.getOpenPersonnelHighTemps()
+
+var template = getDocument("templates/dashboardpersonnelhightemp")
+
+var results = []
+SELECT FROM system.collaborations AS collab WHERE name == "PersonnelHighTemp" AND status == "active"{
+    var obj = {}
+    if (has(collab.results, "Status")){
+        obj.state = collab.results.Status.assignedValue
+	} else {
+    	obj.state = "Warning"
+	}
+    obj.collaborationid = collab.id
+    var docprops = {}
+    docprops.image = collab.results.Initiate.event.img
+    docprops.temperature = collab.results.Initiate.event.temperature
+    docprops.username = collab.results.Initiate.event.userName
+    var returndate = toDate(collab.results.Initiate.event.screenTime).plusMillis(14 days)
+    docprops.returndate = format("{0, date, MMM-dd-yyyy}", returndate)
+
+	if (collab.results.Initiate.event.mask){
+        docprops.mask = "Mask Present"
+	} else {
+        docprops.mask = "Mask Not Present"
+	}
+
+    SELECT ONE FROM sensors WHERE id == collab.results.Initiate.event.deviceid
+    obj.sensorId = sensors.id
+    obj.sensortype = sensors.type
+    obj.sensorconfig = sensors.config
+    SELECT ONE FROM assets WHERE id == sensors.assetid
+    SELECT ONE FROM floors WHERE id == assets.floorid
+    docprops.floor = floors.name
+    SELECT ONE FROM buildings WHERE id == floors.buildingid
+	obj.geo = buildings.geo
+    docprops.building= buildings.name
+    
+    obj.issuetype = "PersonnelHighTemp"
+      
+    obj.description = "- not set - " //generateResource(template, docprops) 
+
+	obj.template = template
+    obj.docprops = docprops
+   
+    results.push(obj)
+}
+
+return results

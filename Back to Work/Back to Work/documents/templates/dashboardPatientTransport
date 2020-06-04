@@ -1,0 +1,6 @@
+<p><strong>Patient Transport Task</strong></p>
+<p><strong>AssignTransporter</strong>&nbsp;${transporter}</p>
+<p><strong>Patient </strong>${patient}</p>
+<p><strong>Mode:&nbsp;</strong>${mode}&nbsp;</p>
+<p><strong>From:&nbsp;</strong>${buildingname}, ${floorname}</p>
+<p><strong>To:&nbsp;</strong>${buildingname2}, ${floorname2}</p>

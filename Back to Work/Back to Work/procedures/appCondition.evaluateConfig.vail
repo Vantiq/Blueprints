@@ -1,0 +1,44 @@
+/*
+	evaluate event value against event config to return
+    true or false and use in conditions within activity
+    patterns like dwell, filter, threshold, etc...
+*/
+PROCEDURE appCondition.evaluateConfig(therule, value, config)
+
+var rl = config.rules[therule]
+
+var retVal = false
+
+if (has(rl, "lte") ){
+    if (value <= rl.lte){
+        retVal = true
+    }
+}
+
+
+if (has(rl, "gte") ){
+    if (value >= rl.gte){
+        retVal = true
+    }
+}
+
+
+if (has(rl, "gt") ){
+    if (value > rl.gte){
+        retVal = true
+    }
+}
+
+if (has(rl, "lt") ){
+    if (value < rl.lt){
+        retVal = true
+    }
+}
+
+if (has(rl, "eq") ){
+    if (value == rl.eq){
+        retVal = true
+    }
+}
+
+return retVal

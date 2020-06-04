@@ -1,0 +1,59 @@
+PROCEDURE yolo.calculateDistance(event Object)
+
+var height = 170 //height in cm for a person/bbox
+
+//Get Image Resolution, these values can be pulled form the Source "cropBeforeAnalysis" setting.
+var imgHeight = 490
+var imgWidth = 740
+
+var centroids = []
+//Calculate center point
+for (i in range(0, length(event.results), 1)){
+	var centroid = yolo.getBoundingBoxCenterPixel(event.results[i].location)
+	event.results[i].centroid = centroid
+}
+
+
+for (i in range(0, length(event.results), 1)){
+    var distances = []
+    for (j in range(0, length(event.results), 1)){
+        if(i != j){
+			//Calculate distance beteen each bounding box
+        	var h1 = yolo.getBoundingBoxHeight(event.results[i].location)
+            var h2 = yolo.getBoundingBoxHeight(event.results[j].location)
+            
+            var dx = event.results[i].centroid.x - event.results[j].centroid.x
+            var dy = event.results[i].centroid.y - event.results[j].centroid.y
+            
+            var lx = dx * height * (1/h1 + 1/h2)/2
+			var ly = dy * height * (1/h1 + 1/h2)/2
+            
+			//log.info("h1 " + stringify(h1))
+			//log.info("h2 " + stringify(h2))
+			//log.info("dx " + stringify(dx))
+			//log.info("dy " + stringify(dy))
+			//log.info("lx " + stringify(lx))
+			//log.info("ly " + stringify(ly))
+
+            var distance = Math.sqrt(lx**2+ly**2)
+			
+			push(distances, distance)
+        }
+
+	}
+	sort(distances)
+	event.results[i].distances = distances
+	if(distances[0] > 200){
+		event.results[i].distanceColor = "green"        
+	}
+	else if(distances[0] < 200 and distances[0] > 150 ){
+		event.results[i].distanceColor = "yellow"        
+	}
+	else {
+		event.results[i].distanceColor = "red" 
+	}
+	
+	
+}
+
+return event.results

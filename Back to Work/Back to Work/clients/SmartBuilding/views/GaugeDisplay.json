@@ -1,0 +1,110 @@
+{
+  "bodyChildren" : {
+    "rootArray" : [ "132e8725-f316-44d2-8e29-1cc26ec8953a" ],
+    "widgets" : [ {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 1,
+      "children" : [ "ea014d72-fda9-4e8d-8577-b085f1ac7237" ],
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "innerMargin" : 20,
+      "name" : "VerticalLayout9479",
+      "type" : "VerticalLayout",
+      "uuid" : "132e8725-f316-44d2-8e29-1cc26ec8953a",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "naturalSize",
+      "x" : 50,
+      "y" : 50
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 1,
+      "dataStreamGroupedByFiltersString" : "",
+      "dataStreamProperty" : "volume",
+      "dataStreamUUID" : "d5ac728c-7a7c-4e55-95cf-116ad933fbb6",
+      "dataType" : null,
+      "h" : 190,
+      "heightPolicy" : "explicit",
+      "highColor" : "#00cc00",
+      "highZones" : "50:100",
+      "horzGravity" : "center",
+      "lowColor" : "#ff0000",
+      "lowZones" : "0:30",
+      "maximum" : 100,
+      "mediumZones" : "30:50",
+      "minimum" : 0,
+      "name" : "Gauge1",
+      "naturalKey" : null,
+      "naturalKeyValue" : null,
+      "operation" : "insert",
+      "title" : "- title -",
+      "type" : "Gauge",
+      "uuid" : "ea014d72-fda9-4e8d-8577-b085f1ac7237",
+      "v" : 16,
+      "vertGravity" : "center",
+      "w" : 190,
+      "widthPolicy" : "explicit"
+    } ]
+  },
+  "data" : {
+    "properties" : {
+      "s_volumesenor" : {
+        "defaultLabel" : "s_volumesenor",
+        "type" : "TypedObject",
+        "typedObject" : {
+          "properties" : {
+            "id" : {
+              "defaultLabel" : "id",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "volume" : {
+              "defaultLabel" : "volume",
+              "defaultValue" : 0,
+              "type" : "Integer"
+            }
+          },
+          "type" : "s_volumesenor"
+        }
+      },
+      "sensor" : {
+        "defaultLabel" : "sensor",
+        "type" : "TypedObject",
+        "typedObject" : {
+          "properties" : {
+            "assetid" : {
+              "defaultLabel" : "assetid",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "config" : {
+              "defaultLabel" : "config",
+              "type" : "Object"
+            },
+            "data" : {
+              "defaultLabel" : "data",
+              "type" : "Object"
+            },
+            "id" : {
+              "defaultLabel" : "id",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "type" : {
+              "defaultLabel" : "type",
+              "defaultValue" : "",
+              "type" : "String"
+            }
+          },
+          "type" : "sensors"
+        }
+      }
+    }
+  },
+  "footerChildren" : [ ],
+  "hasFooter" : false,
+  "layoutType" : "browser",
+  "responseTopic" : ""
+}

@@ -1,0 +1,322 @@
+{
+  "links" : [ {
+    "source" : "topic//sensor/tracker/2d",
+    "target" : "app/IndoorTracking"
+  }, {
+    "source" : "procedure/app.updateSensorAndAssetLocation",
+    "target" : "type/trackinghistory"
+  }, {
+    "source" : "procedure/app.updateSensorAndAssetLocation",
+    "target" : "topic//indoortracking"
+  }, {
+    "source" : "app/IndoorTracking",
+    "target" : "procedure/app.updateSensorAndAssetLocation"
+  }, {
+    "source" : "app/IndoorTracking",
+    "target" : "procedure/app.enrichWithSpace"
+  }, {
+    "source" : "app/IndoorTracking",
+    "target" : "procedure/app.replaylastEvent"
+  }, {
+    "source" : "type/contacttracing",
+    "target" : "procedure/cb.contactTraceBySensorId"
+  } ],
+  "name" : "AppContactTracing",
+  "options" : {
+    "description" : "Contact Tracing Application\n\nRTLS data is bucketed it contact points.\n\nThe UpdateSensorAndAsset activity updates the last known position of the sensor and associated asset.  Additionally it updates the type trackinghsitory which can be turned off or tuned to only store history for  specific kinds of assets\n\nThe Bucket Pattern handles the contact tracing for those realtime events from moving assets.  It assumed all moving assets are related to people and can be tuned to only deal with specific asset types in larger systems.",
+    "dockCollapsed" : {
+      "bottom" : false,
+      "left" : false,
+      "right" : false,
+      "top" : false
+    },
+    "dockDimensions" : {
+      "bottom" : 258,
+      "debug" : [ 854.0108242044862, 1058.5 ],
+      "left" : 350,
+      "right" : 220,
+      "top" : 0
+    },
+    "dockSort" : 1,
+    "filterBitArray" : "ffffffffffffffffffffffffffffffff",
+    "isModeloProject" : true,
+    "layoutStyle" : "tile",
+    "listFlavor" : "tree",
+    "openResourceFolders" : {
+      "App" : true,
+      "Procedure" : true,
+      "Topic" : true,
+      "Type" : true
+    },
+    "showGrid" : true,
+    "tileColumns" : 2,
+    "tileRows" : 2,
+    "type" : "dev",
+    "v" : 3
+  },
+  "resources" : [ {
+    "label" : "/indoortracking",
+    "name" : "/indoortracking",
+    "resourceReference" : "/topics//indoortracking",
+    "type" : 10
+  }, {
+    "label" : "/sensor/tracker/2d",
+    "name" : "/sensor/tracker/2d",
+    "resourceReference" : "/topics//sensor/tracker/2d",
+    "type" : 10
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out", "out", "out" ],
+      "procedures" : [ "app.updateSensorAndAssetLocation", "app.enrichWithSpace", "app.replaylastEvent" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ "in" ],
+      "topics" : [ "/sensor/tracker/2d" ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "IndoorTracking",
+    "name" : "IndoorTracking",
+    "resourceReference" : "/collaborationtypes/IndoorTracking",
+    "timestamp" : "2020-05-11T21:03:28.290Z",
+    "type" : 12
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out" ],
+      "procedures" : [ "findSpaceForAsset" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "app.enrichWithSpace",
+    "name" : "app.enrichWithSpace",
+    "resourceReference" : "/procedures/app.enrichWithSpace",
+    "timestamp" : "2020-05-11T19:07:21.742Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "app.replaylastEvent",
+    "name" : "app.replaylastEvent",
+    "resourceReference" : "/procedures/app.replaylastEvent",
+    "timestamp" : "2020-05-11T19:31:55.211Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out", "out" ],
+      "procedures" : [ "uuid", "now" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ "out" ],
+      "topics" : [ "/indoortracking" ],
+      "typeHash" : [ "both", "both", "in", "out" ],
+      "types" : [ "sensors", "assets", "system.collaborations", "trackinghistory" ]
+    },
+    "label" : "app.updateSensorAndAssetLocation",
+    "name" : "app.updateSensorAndAssetLocation",
+    "resourceReference" : "/procedures/app.updateSensorAndAssetLocation",
+    "timestamp" : "2020-05-11T19:07:10.992Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out", "out", "out", "out", "out", "out", "out" ],
+      "procedures" : [ "has", "includes", "results.push", "concat", "personnel.push", "data.places.push", "retval.push" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in", "in", "in", "in", "in", "in" ],
+      "types" : [ "contacttracing", "spaces", "sensors", "personnel", "floors", "buildings" ]
+    },
+    "label" : "cb.contactTraceBySensorId",
+    "name" : "cb.contactTraceBySensorId",
+    "resourceReference" : "/procedures/cb.contactTraceBySensorId",
+    "timestamp" : "2020-05-13T16:01:38.850Z",
+    "type" : 3
+  }, {
+    "label" : "contacttracing",
+    "name" : "contacttracing",
+    "resourceReference" : "/types/contacttracing",
+    "timestamp" : "2020-05-11T19:36:36.526Z",
+    "type" : 1
+  }, {
+    "label" : "s_traceresults",
+    "name" : "s_traceresults",
+    "resourceReference" : "/types/s_traceresults",
+    "timestamp" : "2020-05-12T13:24:11.793Z",
+    "type" : 1
+  }, {
+    "label" : "trackinghistory",
+    "name" : "trackinghistory",
+    "resourceReference" : "/types/trackinghistory",
+    "timestamp" : "2020-04-18T12:59:01.650Z",
+    "type" : 1
+  } ],
+  "tools" : [ {
+    "dockLocation" : "top",
+    "isPinned" : false,
+    "name" : "Inactive Panes",
+    "pane" : {
+      "c" : -1,
+      "lastUsed" : 1589989120414,
+      "r" : -1
+    },
+    "type" : 99
+  }, {
+    "isPinned" : false,
+    "name" : "Project Contents",
+    "pane" : {
+      "c" : -1,
+      "lastUsed" : 1589989120414,
+      "r" : -1
+    },
+    "type" : 2
+  }, {
+    "isPinned" : false,
+    "name" : "Errors",
+    "pane" : {
+      "c" : -1,
+      "lastUsed" : 1589989120414,
+      "r" : -1
+    },
+    "type" : 13
+  }, {
+    "isPinned" : false,
+    "name" : "IndoorTracking",
+    "pane" : {
+      "c" : 1,
+      "createdTime" : 1589220627162,
+      "lastUsed" : 1589988037569,
+      "r" : 0
+    },
+    "resourceKey" : "app/IndoorTracking",
+    "toolOptions" : {
+      "propertyPaneWidth" : 250,
+      "scaleAndTranslationState" : {
+        "lastZoomRequest" : 0,
+        "scale" : 0.5263719298245614,
+        "translate" : [ 327.87555572916665, 22.39959298245614 ]
+      }
+    },
+    "type" : 15
+  }, {
+    "isPinned" : false,
+    "name" : "app.updateSensorAndAssetLocation",
+    "pane" : {
+      "c" : 1,
+      "createdTime" : 1589220708000,
+      "lastUsed" : 1589988038852,
+      "r" : 1
+    },
+    "resourceKey" : "procedure/app.updateSensorAndAssetLocation",
+    "type" : 24
+  }, {
+    "isPinned" : false,
+    "name" : "contacttracing",
+    "pane" : {
+      "c" : -1,
+      "createdTime" : 1589221306035,
+      "lastUsed" : 1589286514022,
+      "r" : -1
+    },
+    "resourceKey" : "type/contacttracing",
+    "type" : 6
+  }, {
+    "isPinned" : false,
+    "name" : "cb.contactTraceBySensorId",
+    "pane" : {
+      "c" : 0,
+      "createdTime" : 1589221438589,
+      "lastUsed" : 1589289862727,
+      "r" : 1
+    },
+    "resourceKey" : "procedure/cb.contactTraceBySensorId",
+    "type" : 24
+  }, {
+    "isPinned" : false,
+    "name" : "Log Messages",
+    "pane" : {
+      "c" : -1,
+      "lastUsed" : 1589989120415,
+      "r" : -1
+    },
+    "type" : 12
+  }, {
+    "isPinned" : false,
+    "name" : "app.replaylastEvent",
+    "pane" : {
+      "c" : -1,
+      "createdTime" : 1589225487797,
+      "lastUsed" : 1589226001829,
+      "r" : -1
+    },
+    "resourceKey" : "procedure/app.replaylastEvent",
+    "type" : 24
+  }, {
+    "isPinned" : false,
+    "name" : "Project Description",
+    "pane" : {
+      "c" : 0,
+      "createdTime" : 1589489403023,
+      "lastUsed" : 1589989073222,
+      "r" : 0
+    },
+    "type" : 82
+  } ],
+  "type" : "dev",
+  "views" : [ {
+    "name" : "Main",
+    "projectToolKeys" : [ "tiledock/Inactive Panes", "list/Project Contents", "errorviewer/Errors", "app/IndoorTracking", "cmeditorprocedure/app.updateSensorAndAssetLocation", "subtypeeditor/contacttracing", "cmeditorprocedure/cb.contactTraceBySensorId", "logviewer/Log Messages", "cmeditorprocedure/app.replaylastEvent", "projectdescription/Project Description" ]
+  } ]
+}

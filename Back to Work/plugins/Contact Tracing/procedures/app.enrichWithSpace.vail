@@ -1,0 +1,14 @@
+PROCEDURE app.enrichWithSpace(event Object)
+
+
+    var loc = {
+        "type": "Point",
+        "coordinates": [event.y, event.x]
+    }
+
+    var space = findSpaceForAsset(event.floorid, loc)
+
+	event.spaceId = space.id
+
+
+return event

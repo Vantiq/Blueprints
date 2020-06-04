@@ -1,0 +1,5 @@
+{
+  "description" : "GiConnect reading with facial recognition included.",
+  "isReliable" : false,
+  "name" : "/camera/thermal/userreading"
+}

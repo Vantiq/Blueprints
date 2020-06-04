@@ -1,0 +1,29 @@
+{
+  "ars_properties" : null,
+  "groupBy" : "",
+  "name" : "s_traceresults",
+  "properties" : {
+    "count" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "Integer",
+      "unique" : false
+    },
+    "employee" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "String",
+      "unique" : false
+    },
+    "places" : {
+      "encrypted" : false,
+      "multi" : true,
+      "required" : false,
+      "type" : "String",
+      "unique" : false
+    }
+  },
+  "role" : "schema"
+}

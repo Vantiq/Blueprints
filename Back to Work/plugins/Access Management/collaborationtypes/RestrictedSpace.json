@@ -1,0 +1,70 @@
+{
+  "active" : true,
+  "appType" : true,
+  "assembly" : {
+    "CheckRestriction" : {
+      "configuration" : {
+        "childStreams" : [ "HasSecurityIssue" ],
+        "enableBadging" : true,
+        "parentStreams" : [ "TrackerReceived" ],
+        "procedure" : "app.checkSpaceRestrictions",
+        "schema" : null
+      },
+      "description" : null,
+      "name" : "CheckRestriction",
+      "pattern" : "Procedure"
+    },
+    "HasSecurityIssue" : {
+      "configuration" : {
+        "childStreams" : [ "RestrictedSpaceIssue" ],
+        "condition" : "has(event, \"securityIssue\")",
+        "enableBadging" : true,
+        "outboundResource" : null,
+        "outboundResourceId" : null,
+        "parentStreams" : [ "CheckRestriction" ],
+        "upsert" : false
+      },
+      "description" : null,
+      "name" : "HasSecurityIssue",
+      "pattern" : "Filter"
+    },
+    "RestrictedSpaceIssue" : {
+      "configuration" : {
+        "collaboration" : "RestrictedSpaceIssue",
+        "enableBadging" : true,
+        "entityConstraint" : "id == event.id",
+        "entityType" : "sensors",
+        "parentStreams" : [ "HasSecurityIssue" ]
+      },
+      "description" : null,
+      "name" : "RestrictedSpaceIssue",
+      "pattern" : "StartCollaboration"
+    },
+    "TrackerReceived" : {
+      "configuration" : {
+        "childStreams" : [ "CheckRestriction" ],
+        "enableBadging" : true,
+        "inboundResource" : "topics",
+        "inboundResourceId" : "/sensor/tracker/2d",
+        "op" : null,
+        "outboundResource" : null,
+        "outboundResourceId" : null,
+        "parentStreams" : [ ],
+        "schema" : null,
+        "upsert" : false
+      },
+      "description" : null,
+      "name" : "TrackerReceived",
+      "pattern" : "EventStream"
+    }
+  },
+  "collaboratorRoles" : [ ],
+  "currentState" : {
+    "code" : "success"
+  },
+  "description" : "",
+  "disableBadging" : false,
+  "entityRoles" : [ ],
+  "keyTypes" : [ "system.collaborations" ],
+  "name" : "RestrictedSpace"
+}

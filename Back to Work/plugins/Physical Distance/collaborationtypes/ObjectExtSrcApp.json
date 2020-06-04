@@ -1,0 +1,163 @@
+{
+  "active" : true,
+  "appType" : true,
+  "assembly" : {
+    "CorrelateUpload" : {
+      "configuration" : {
+        "childStreams" : [ "PrepForUpdate" ],
+        "constraints" : [ {
+          "type" : "VAIL Expression",
+          "value" : "ObjRecCountPeople.data.value.imagepath == UploadComplete.name"
+        } ],
+        "enableBadging" : true,
+        "order" : "either",
+        "outboundResource" : null,
+        "outboundResourceId" : null,
+        "parentStreams" : [ "ObjRecCountPeople", "UploadComplete" ],
+        "upsert" : false,
+        "withinDuration" : "3 seconds"
+      },
+      "description" : null,
+      "name" : "CorrelateUpload",
+      "pattern" : "Join"
+    },
+    "LobbyCam1" : {
+      "configuration" : {
+        "childStreams" : [ "ObjRecCountPeople" ],
+        "enableBadging" : true,
+        "inboundResource" : "sources",
+        "inboundResourceId" : "LobbyCam1",
+        "op" : null,
+        "outboundResource" : null,
+        "outboundResourceId" : null,
+        "parentStreams" : [ ],
+        "schema" : null,
+        "upsert" : false
+      },
+      "description" : null,
+      "name" : "LobbyCam1",
+      "pattern" : "EventStream"
+    },
+    "ObjRecCountPeople" : {
+      "configuration" : {
+        "childStreams" : [ "SplitById", "CorrelateUpload" ],
+        "enableBadging" : true,
+        "parentStreams" : [ "LobbyCam1" ],
+        "procedure" : "CameraApp.ObjRecCountPeople",
+        "schema" : null
+      },
+      "description" : null,
+      "name" : "ObjRecCountPeople",
+      "pattern" : "Procedure"
+    },
+    "OverCrowded" : {
+      "configuration" : {
+        "childStreams" : [ "PhysicalDistance" ],
+        "condition" : "event.data.value.personcount > 8",
+        "direction" : "true",
+        "enableBadging" : true,
+        "groupByWindow" : null,
+        "outboundResource" : null,
+        "outboundResourceId" : null,
+        "overConsecutiveReadings" : 2,
+        "parentStreams" : [ "SplitById" ],
+        "upsert" : false,
+        "withinDuration" : null
+      },
+      "description" : null,
+      "name" : "OverCrowded",
+      "pattern" : "Threshold"
+    },
+    "PhysicalDistance" : {
+      "configuration" : {
+        "collaboration" : "PhysicalDistance",
+        "enableBadging" : true,
+        "entityConstraint" : "id == event.id AND type == event.type",
+        "entityType" : "sensors",
+        "parentStreams" : [ "OverCrowded" ]
+      },
+      "description" : null,
+      "name" : "PhysicalDistance",
+      "pattern" : "StartCollaboration"
+    },
+    "PrepForUpdate" : {
+      "configuration" : {
+        "childStreams" : [ "UpdateSensor" ],
+        "enableBadging" : true,
+        "outboundResource" : null,
+        "outboundResourceId" : null,
+        "parentStreams" : [ "CorrelateUpload" ],
+        "schema" : null,
+        "transformation" : {
+          "data" : {
+            "expression" : "event.ObjRecCountPeople.data",
+            "type" : "expression"
+          },
+          "id" : {
+            "expression" : "event.ObjRecCountPeople.id",
+            "type" : "expression"
+          },
+          "type" : {
+            "expression" : "event.ObjRecCountPeople.type",
+            "type" : "expression"
+          }
+        },
+        "upsert" : false
+      },
+      "description" : null,
+      "name" : "PrepForUpdate",
+      "pattern" : "Transformation"
+    },
+    "SplitById" : {
+      "configuration" : {
+        "childStreams" : [ "OverCrowded" ],
+        "enableBadging" : true,
+        "groupBy" : "event.id",
+        "groupByWindow" : null,
+        "maxOpenGroups" : null,
+        "parentStreams" : [ "ObjRecCountPeople" ]
+      },
+      "description" : null,
+      "name" : "SplitById",
+      "pattern" : "SplitByGroup"
+    },
+    "UpdateSensor" : {
+      "configuration" : {
+        "childStreams" : null,
+        "enableBadging" : true,
+        "parentStreams" : [ "PrepForUpdate" ],
+        "type" : "sensors",
+        "upsert" : true
+      },
+      "description" : null,
+      "name" : "UpdateSensor",
+      "pattern" : "SaveToType"
+    },
+    "UploadComplete" : {
+      "configuration" : {
+        "childStreams" : [ "CorrelateUpload" ],
+        "enableBadging" : true,
+        "inboundResource" : "types",
+        "inboundResourceId" : "system.documents",
+        "op" : null,
+        "outboundResource" : null,
+        "outboundResourceId" : null,
+        "parentStreams" : [ ],
+        "schema" : "system.documents",
+        "upsert" : false
+      },
+      "description" : null,
+      "name" : "UploadComplete",
+      "pattern" : "EventStream"
+    }
+  },
+  "collaboratorRoles" : [ ],
+  "currentState" : {
+    "code" : "success"
+  },
+  "description" : "",
+  "disableBadging" : false,
+  "entityRoles" : [ ],
+  "keyTypes" : [ "system.collaborations" ],
+  "name" : "ObjectExtSrcApp"
+}

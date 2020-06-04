@@ -1,0 +1,40 @@
+/*
+	Given an event with a floorId, augment the event with 
+    contextual information on specific restrictions for spaces
+    on that floor
+*/
+PROCEDURE app.checkSpaceRestrictions(event Object)
+
+var mindistance = 0.4
+
+SELECT ONE FROM floors AS floor WHERE id == event.floorid
+
+if (floor) {
+    var x1 = event.x
+	var y1 = event.y
+    
+    var results = []
+	SELECT FROM spaces AS space WHERE floorid == event.floorid AND restricted == true{  
+
+    	var obj = Utils.stripSystemProperties(space)
+    	var x2 = space.floorplanlocation.coordinates[1]
+    	var y2 = space.floorplanlocation.coordinates[0]
+
+    	// formula: distance = square root of (x2 -x1)squared + (y2 - y1)squared
+    	obj.distance = Math.sqrt( Math.pow((x2 -x1),2) + Math.pow((y2 - y1),2) )
+
+    	push(results, obj)		
+	} 
+
+	if (results.length() > 0){
+        var results = sort(results, "distance") 
+		var result = results[0]
+
+		if(result.distance < mindistance){
+			event.securityIssue = true
+            event.space = result.name
+		}
+	}
+}
+
+return event

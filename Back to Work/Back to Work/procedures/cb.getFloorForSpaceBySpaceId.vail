@@ -1,0 +1,10 @@
+/*
+	Fetch the floor associated with a spaceId
+*/
+PROCEDURE cb.getFloorForSpaceBySpaceId(spaceid String)
+
+var space = SELECT ONE FROM spaces WHERE id == spaceid  
+
+var floor = SELECT ONE FROM floors WHERE id == space.floorid
+
+return floor

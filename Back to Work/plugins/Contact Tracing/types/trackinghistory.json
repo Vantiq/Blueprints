@@ -1,0 +1,79 @@
+{
+  "adminAccessLevel" : "ars_readWrite",
+  "ars_properties" : null,
+  "audited" : false,
+  "encapsulated" : false,
+  "expiresAfter" : null,
+  "foreignKeys" : null,
+  "groupBy" : "",
+  "groupEnabled" : false,
+  "groupRequired" : false,
+  "indexes" : [ {
+    "keys" : [ "timestamp" ],
+    "options" : { }
+  }, {
+    "keys" : [ "id" ],
+    "options" : {
+      "unique" : true
+    }
+  }, {
+    "keys" : [ "floorid" ],
+    "options" : { }
+  }, {
+    "keys" : [ "sensorid" ],
+    "options" : { }
+  } ],
+  "maxObjects" : 0,
+  "maxStorage" : 0,
+  "metadata" : false,
+  "name" : "trackinghistory",
+  "naturalKey" : [ "id" ],
+  "properties" : {
+    "floorid" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "String",
+      "unique" : false
+    },
+    "id" : {
+      "description" : "A unique id",
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "String",
+      "unique" : false
+    },
+    "sensorid" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "String",
+      "unique" : false
+    },
+    "timestamp" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "DateTime",
+      "unique" : false
+    },
+    "x" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "Real",
+      "unique" : false
+    },
+    "y" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "Real",
+      "unique" : false
+    }
+  },
+  "role" : "standard",
+  "userAccessLevel" : "ars_readOnly",
+  "volatile" : false
+}

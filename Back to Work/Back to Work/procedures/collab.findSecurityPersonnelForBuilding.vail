@@ -1,0 +1,19 @@
+PROCEDURE collab.findSecurityPersonnelForBuilding(buildingid String)
+
+
+var results = []
+// security role  --  fce68e8d-d4ed-4ab8-addc-b4d64f3ca990
+SELECT FROM personnel AS person WHERE roles.id == "fce68e8d-d4ed-4ab8-addc-b4d64f3ca990" {
+    
+    SELECT ONE FROM assets WHERE id == person.assetid
+    if (assets){
+        SELECT ONE FROM floors WHERE id == assets.floorid
+        
+        if (buildingid == floors.buildingid){
+            results.push(person.id)
+        }
+    	
+    }
+}
+
+return results

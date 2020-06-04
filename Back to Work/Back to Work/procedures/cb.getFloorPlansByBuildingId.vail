@@ -1,0 +1,3 @@
+PROCEDURE cb.getFloorPlansByBuildingId(buildingid String)
+
+SELECT FROM floorplans WHERE buildingid == buildingid

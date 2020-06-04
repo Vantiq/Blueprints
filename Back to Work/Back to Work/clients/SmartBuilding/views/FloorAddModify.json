@@ -1,0 +1,215 @@
+{
+  "bodyChildren" : {
+    "rootArray" : [ "f5903f35-c09c-43f1-8705-f42a08d70cd3", "cb3203dd-ab4d-41e5-810a-3abd829d123a" ],
+    "widgets" : [ {
+      "binding" : "page.data.floor.name",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "inputType" : "text",
+      "label" : "@text.name",
+      "name" : "InputString220",
+      "optional" : true,
+      "placeholder" : "",
+      "type" : "InputString",
+      "uuid" : "158b1d4d-aadd-44a0-8057-4a2fc44352ea",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "binding" : "page.data.floor.id",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "inputType" : "text",
+      "label" : "@text.floorplanid",
+      "name" : "InputString218",
+      "optional" : true,
+      "placeholder" : "",
+      "type" : "InputString",
+      "uuid" : "46577329-3084-4fb0-bc45-28fc44443ec0",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "binding" : "page.data.floor.buildingid",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "inputType" : "text",
+      "label" : "@text.buildingid",
+      "name" : "InputString219",
+      "optional" : true,
+      "placeholder" : "",
+      "type" : "InputString",
+      "uuid" : "562908d7-3e51-4522-80fd-c2deec7619be",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "binding" : "page.data.floor.floorplan",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "default" : null,
+      "enumeratedList" : [ ],
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "Droplist1",
+      "type" : "Droplist",
+      "uuid" : "95cf1910-acc2-42e7-81cc-d617c81b9be5",
+      "v" : 16,
+      "vertGravity" : "center",
+      "w" : 392,
+      "widthPolicy" : "explicit"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "StaticImage1",
+      "preserveAspectRatio" : true,
+      "type" : "StaticImage",
+      "url" : "../../docs/images/floorplanselect.png",
+      "uuid" : "9636b7df-7b2a-43dd-8171-85187a22aad3",
+      "v" : 16,
+      "vertGravity" : "center",
+      "w" : 500,
+      "widthPolicy" : "explicit"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "fontFamily" : "inherit",
+      "fontSize" : 20,
+      "fontStyle" : "normal",
+      "fontWeight" : "normal",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "left",
+      "name" : "StaticText1324",
+      "text" : "@text.floorplan",
+      "type" : "StaticText",
+      "uuid" : "afe42a62-a593-4b73-85f4-31fb9f032f1e",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "naturalSize"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "buttonBackgroundColor" : "#001a80",
+      "buttonLabel" : "@button.submit",
+      "buttonLabelColor" : "platform",
+      "buttonLabelSize" : 14,
+      "buttonLabelStyle" : "bold",
+      "h" : 60,
+      "heightPolicy" : "explicit",
+      "horzGravity" : "center",
+      "name" : "Button145",
+      "submitValue" : 100,
+      "type" : "Button",
+      "uuid" : "c21938a8-f5c8-488d-8176-1973bd6ee7f3",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 1,
+      "children" : [ "afe42a62-a593-4b73-85f4-31fb9f032f1e", "e1882ab3-ef84-4221-8db4-9c0ce6cf19df", "9636b7df-7b2a-43dd-8171-85187a22aad3" ],
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "innerMargin" : 20,
+      "name" : "VerticalLayout618",
+      "type" : "VerticalLayout",
+      "uuid" : "cb3203dd-ab4d-41e5-810a-3abd829d123a",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "naturalSize",
+      "x" : 500,
+      "y" : 40
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 1,
+      "children" : [ "95cf1910-acc2-42e7-81cc-d617c81b9be5" ],
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "innerMargin" : 20,
+      "name" : "HorizontalLayout1408",
+      "type" : "HorizontalLayout",
+      "uuid" : "e1882ab3-ef84-4221-8db4-9c0ce6cf19df",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "naturalSize"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 1,
+      "children" : [ "562908d7-3e51-4522-80fd-c2deec7619be", "46577329-3084-4fb0-bc45-28fc44443ec0", "158b1d4d-aadd-44a0-8057-4a2fc44352ea", "c21938a8-f5c8-488d-8176-1973bd6ee7f3" ],
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "innerMargin" : 20,
+      "name" : "VerticalLayout220",
+      "type" : "VerticalLayout",
+      "uuid" : "f5903f35-c09c-43f1-8705-f42a08d70cd3",
+      "v" : 16,
+      "vertGravity" : "center",
+      "w" : 420,
+      "widthPolicy" : "explicit",
+      "x" : 50,
+      "y" : 50
+    } ]
+  },
+  "data" : {
+    "properties" : {
+      "floor" : {
+        "defaultLabel" : "floor",
+        "type" : "TypedObject",
+        "typedObject" : {
+          "properties" : {
+            "buildingid" : {
+              "defaultLabel" : "buildingid",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "floorplan" : {
+              "defaultLabel" : "floorplan",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "id" : {
+              "defaultLabel" : "id",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "location" : {
+              "defaultLabel" : "location",
+              "type" : "GeoJSON"
+            },
+            "name" : {
+              "defaultLabel" : "name",
+              "defaultValue" : "",
+              "type" : "String"
+            }
+          },
+          "type" : "floors"
+        }
+      }
+    }
+  },
+  "footerChildren" : [ ],
+  "hasFooter" : false,
+  "layoutType" : "browser",
+  "responseTopic" : ""
+}

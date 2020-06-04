@@ -1,0 +1,51 @@
+PROCEDURE dashboard.getOpenPhysicalDistanceIssues()
+
+// the template used to gerneate the description
+var template = getDocument("templates/dashboardphysicaldistanceissue")
+
+
+var results = []
+SELECT FROM system.collaborations AS collab WHERE status == "active" AND name == "PhysicalDistance"{
+    var docprops = {}
+    var obj = {}
+    
+    if (has(collab.results, "Status")){
+        obj.state = collab.results.Status.assignedValue
+	} else {
+        // if the collaboration doesn't have a status yet, set an initial one for the display
+    	obj.state = "Issue"
+	}
+
+	// set the collaboration id
+	obj.collaborationid = collab.id
+
+	SELECT ONE FROM sensors WHERE id == collab.results.Initiate.event.id
+    obj.sensorId = sensors.id
+    obj.sensortype = sensors.type
+    obj.sensorconfig = sensors.config
+    SELECT ONE FROM assets WHERE id == sensors.assetid
+
+
+    SELECT ONE FROM floors WHERE id == assets.floorid
+    docprops.floor = floors.name
+
+    SELECT ONE FROM buildings WHERE id == floors.buildingid
+	obj.geo = buildings.geo
+    docprops.building= buildings.name
+
+	var space = findSpaceForAsset(floors.id, assets.fplocation )
+	docprops.space = space.name
+	
+    
+    obj.issuetype = "Physical Distance"
+	obj.template = template
+	obj.docprops = docprops
+      
+    obj.description = " - not set - " //generateResource(template, docprops) 
+	
+
+    results.push(obj)
+      
+}
+	
+return results

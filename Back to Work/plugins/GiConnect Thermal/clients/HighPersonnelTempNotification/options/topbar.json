@@ -1,0 +1,38 @@
+{
+  "rootObj" : "39c27194-af90-4762-be96-0bab688c268f",
+  "widgets" : [ {
+    "CSSClass" : "",
+    "backgroundColor" : "#002da8",
+    "borderColor" : "Default",
+    "borderThickness" : 0,
+    "children" : [ "3eaacdfc-3b71-4d41-8bc5-f9b7f6809e7a" ],
+    "heightPolicy" : "naturalSize",
+    "horzGravity" : "center",
+    "horzMargin" : 5,
+    "innerMargin" : 10,
+    "name" : "_Topbar_",
+    "packTight" : true,
+    "type" : "HorizontalLayout",
+    "uuid" : "39c27194-af90-4762-be96-0bab688c268f",
+    "v" : 16,
+    "vertGravity" : "center",
+    "vertMargin" : 5,
+    "vertWeight" : 1,
+    "widthPolicy" : "sizeToCell"
+  }, {
+    "borderColor" : "Default",
+    "borderRadius" : 4,
+    "borderThickness" : 0,
+    "heightPolicy" : "naturalSize",
+    "horzGravity" : "center",
+    "horzWeight" : 1,
+    "name" : "StaticImage80",
+    "preserveAspectRatio" : true,
+    "type" : "StaticImage",
+    "url" : "../../docs/public/navbarlogo/vantiqLogoWhite.png",
+    "uuid" : "3eaacdfc-3b71-4d41-8bc5-f9b7f6809e7a",
+    "v" : 16,
+    "vertGravity" : "center",
+    "widthPolicy" : "naturalSize"
+  } ]
+}
