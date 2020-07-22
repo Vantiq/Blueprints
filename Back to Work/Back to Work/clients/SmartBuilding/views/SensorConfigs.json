@@ -124,7 +124,40 @@
     } ]
   },
   "data" : {
-    "properties" : { }
+    "properties" : {
+      "sensorconfigs" : {
+        "defaultLabel" : "sensorconfigs",
+        "type" : "TypedObject",
+        "typedObject" : {
+          "properties" : {
+            "config" : {
+              "defaultLabel" : "config",
+              "type" : "Object"
+            },
+            "id" : {
+              "defaultLabel" : "id",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "meta" : {
+              "defaultLabel" : "meta",
+              "type" : "Object"
+            },
+            "name" : {
+              "defaultLabel" : "name",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "sensortypename" : {
+              "defaultLabel" : "sensortypename",
+              "defaultValue" : "",
+              "type" : "String"
+            }
+          },
+          "type" : "sensorconfigs"
+        }
+      }
+    }
   },
   "footerChildren" : [ ],
   "hasFooter" : false,

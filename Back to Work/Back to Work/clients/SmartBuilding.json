@@ -37,6 +37,8 @@
         "onDataArrived" : "RELOCATED to controllers/dataStream/ce_s_traceresults_ContactTracing/onDataArrived.js"
       },
       "ce_s_volumesensor_GaugeDisplay" : { },
+      "ce_sensorConfigDetail" : { },
+      "ce_sensor_event_detail" : { },
       "ce_sensorconfigs_SensorConfigs" : { },
       "ce_sensormanufacturers_SensorManufacturers" : { },
       "ce_sensors" : { },
@@ -63,6 +65,7 @@
       "dc_system_collaborations" : {
         "onDataArrived" : "RELOCATED to controllers/dataStream/dc_system_collaborations/onDataArrived.js"
       },
+      "tq_sensorConfigDetail" : { },
       "tq_sensors" : {
         "onDataArrived" : "RELOCATED to controllers/dataStream/tq_sensors/onDataArrived.js"
       }
@@ -304,6 +307,10 @@
           },
           "DataTable1725" : {
             "onButtonClickCallback" : "RELOCATED to controllers/page/PersonAddModify/widgets/DataTable1725/onButtonClickCallback.js"
+          },
+          "StaticImage77" : {
+            "onClick" : "RELOCATED to controllers/page/PersonAddModify/widgets/StaticImage77/onClick.js",
+            "onContextMenu" : "RELOCATED to controllers/page/PersonAddModify/widgets/StaticImage77/onContextMenu.js"
           }
         }
       },
@@ -340,8 +347,15 @@
       "SensorAddModify" : {
         "onStart" : "RELOCATED to controllers/page/SensorAddModify/onStart.js",
         "widgets" : {
+          "Button12501" : {
+            "onClick" : "RELOCATED to controllers/page/SensorAddModify/widgets/Button12501/onClick.js"
+          },
           "Button7940" : {
             "onClick" : "RELOCATED to controllers/page/SensorAddModify/widgets/Button7940/onClick.js"
+          },
+          "DataTable4083" : {
+            "onButtonClickCallback" : "RELOCATED to controllers/page/SensorAddModify/widgets/DataTable4083/onButtonClickCallback.js",
+            "onContextMenu" : "RELOCATED to controllers/page/SensorAddModify/widgets/DataTable4083/onContextMenu.js"
           },
           "Droplist1435" : {
             "onChange" : "RELOCATED to controllers/page/SensorAddModify/widgets/Droplist1435/onChange.js"
@@ -356,6 +370,17 @@
         "widgets" : {
           "Button9385" : {
             "onClick" : "RELOCATED to controllers/page/SensorConfigAddModify/widgets/Button9385/onClick.js"
+          }
+        }
+      },
+      "SensorConfigDetailAddModify" : {
+        "onStart" : "RELOCATED to controllers/page/SensorConfigDetailAddModify/onStart.js",
+        "widgets" : {
+          "Button12142" : {
+            "onClick" : "RELOCATED to controllers/page/SensorConfigDetailAddModify/widgets/Button12142/onClick.js"
+          },
+          "Button12500" : {
+            "onClick" : "RELOCATED to controllers/page/SensorConfigDetailAddModify/widgets/Button12500/onClick.js"
           }
         }
       },
@@ -513,6 +538,21 @@
     "dataObjects" : {
       "__GLOBAL__" : {
         "properties" : {
+          "assetId" : {
+            "defaultLabel" : "assetId",
+            "defaultValue" : "",
+            "type" : "String"
+          },
+          "iAmNewSensor" : {
+            "defaultLabel" : "iAmNewSensor",
+            "defaultValue" : false,
+            "type" : "Boolean"
+          },
+          "id" : {
+            "defaultLabel" : "id",
+            "defaultValue" : "",
+            "type" : "String"
+          },
           "organization" : {
             "defaultLabel" : "organization",
             "type" : "TypedObject",
@@ -530,6 +570,52 @@
                 }
               },
               "type" : "organization"
+            }
+          },
+          "sensorId" : {
+            "defaultLabel" : "sensorId",
+            "defaultValue" : "",
+            "type" : "String"
+          },
+          "sensors" : {
+            "defaultLabel" : "sensors",
+            "type" : "TypedObject",
+            "typedObject" : {
+              "properties" : {
+                "assetid" : {
+                  "defaultLabel" : "assetid",
+                  "defaultValue" : "",
+                  "type" : "String"
+                },
+                "config" : {
+                  "defaultLabel" : "config",
+                  "type" : "Object"
+                },
+                "data" : {
+                  "defaultLabel" : "data",
+                  "type" : "Object"
+                },
+                "id" : {
+                  "defaultLabel" : "id",
+                  "defaultValue" : "",
+                  "type" : "String"
+                },
+                "manufacturer" : {
+                  "defaultLabel" : "manufacturer",
+                  "defaultValue" : "",
+                  "type" : "String"
+                },
+                "meta" : {
+                  "defaultLabel" : "meta",
+                  "type" : "Object"
+                },
+                "type" : {
+                  "defaultLabel" : "type",
+                  "defaultValue" : "",
+                  "type" : "String"
+                }
+              },
+              "type" : "sensors"
             }
           }
         }
@@ -1344,20 +1430,61 @@
       "dataObjectName" : null,
       "dataTypeList" : [ {
         "label" : null,
-        "type" : "personnel"
+        "type" : "sensor_config_detail"
       } ],
       "isDeleteOp" : false,
       "isInsertOp" : false,
-      "isUpdateOp" : true,
+      "isUpdateOp" : false,
       "maxRecords" : 0,
-      "name" : "dc_personnel",
-      "pauseAtStartup" : true,
+      "name" : "ce_sensor_event_detail",
+      "pauseAtStartup" : false,
       "property" : null,
       "sortByProperty" : null,
       "sortDescending" : false,
-      "type" : 1,
+      "type" : 5,
       "updateInterval" : 60,
-      "uuid" : "554dc10f-55bd-4cd6-8bc7-1cd779aeba21",
+      "uuid" : "fcb42d8f-dd55-477a-9b51-589998a5fea1",
+      "v" : 1
+    }, {
+      "advancedWhereClause" : null,
+      "dataObjectName" : null,
+      "dataTypeList" : [ {
+        "label" : null,
+        "type" : "sensorConfigDetail"
+      } ],
+      "isDeleteOp" : false,
+      "isInsertOp" : false,
+      "isUpdateOp" : false,
+      "maxRecords" : 0,
+      "name" : "ce_sensorConfigDetail",
+      "pauseAtStartup" : false,
+      "property" : null,
+      "sortByProperty" : null,
+      "sortDescending" : false,
+      "type" : 5,
+      "updateInterval" : 60,
+      "uuid" : "424434b1-cd4e-4a85-9cbe-9dad803c7f3d",
+      "v" : 1
+    }, {
+      "advancedWhereClause" : null,
+      "basicQueryElement" : [ ],
+      "dataObjectName" : null,
+      "dataTypeList" : [ {
+        "label" : null,
+        "type" : "sensorConfigDetail"
+      } ],
+      "isDeleteOp" : false,
+      "isInsertOp" : false,
+      "isUpdateOp" : false,
+      "maxRecords" : 0,
+      "name" : "tq_sensorConfigDetail",
+      "pauseAtStartup" : false,
+      "property" : null,
+      "sortByProperty" : null,
+      "sortDescending" : false,
+      "type" : 4,
+      "updateInterval" : 60,
+      "uuid" : "4e37f7e8-ef07-4bf1-875d-6007ab4ee31e",
       "v" : 1
     } ]
   },
@@ -1376,14 +1503,14 @@
     "applyCSSwhileEditing" : true,
     "badgeCount" : 1,
     "cssAssets" : [ "../../docs/css/client.css", "../../docs/css/spinner.css" ],
-    "defaultGlobalMsgHash" : "{\"@accordion.title.admin\":\"Admin\",\"@accordion.title.assetinfo\":\"Asset Info\",\"@accordion.title.assetsonthisfloor\":\"Assets on this floor\",\"@accordion.title.detail\":\"Detail\",\"@accordion.title.locationinfo\":\"Location Info (optional)\",\"@button.back\":\"Back\",\"@button.delete\":\"Delete\",\"@button.edit\":\"Edit\",\"@button.editfloor\":\"Edit Floor\",\"@button.editfloorplan\":\"Edit Floor Plan\",\"@button.editspace\":\"Edit Space\",\"@button.label.add\":\"Add\",\"@button.label.addasset\":\"Add Asset\",\"@button.label.addbuilding\":\"Add Building\",\"@button.label.addfloor\":\"Add Floor\",\"@button.label.addfloorplan\":\"Add Floor Plan\",\"@button.label.addperson\":\"Add Person\",\"@button.label.addrole\":\"Add Role\",\"@button.label.addsensor\":\"Add Sensor\",\"@button.label.addsensorconfig\":\"Add Sensor Config\",\"@button.label.addsensormanufacturer\":\"Add Sensor Manufacturer\",\"@button.label.addsensortype\":\"Add Sensor Type\",\"@button.label.addspace\":\"Add Space\",\"@button.label.editasset\":\"Edit Asset\",\"@button.label.editbuilding\":\"Edit Building\",\"@button.label.updatetheme\":\"Update Theme\",\"@button.remove\":\"Remove\",\"@button.submit\":\"Submit\",\"@button.text.addsensor\":\"Add Sensor\",\"@button.upload\":\"Upload\",\"@button.view\":\"View\",\"@checkbox.label.collaborator\":\"Collaborator\",\"@checkbox.label.restricted\":\"Restricted\",\"@confirm.btn.cancel\":\"Cancel\",\"@confirm.btn.no\":\"No\",\"@confirm.btn.yes\":\"Yes\",\"@confirm.title\":\"Confirm\",\"@droplist.assets\":\"Show assets on this floor\",\"@droplist.select\":\"-select-\",\"@droplist.spaces\":\"Show space allocation for this floor\",\"@droplistlabel.text.sensorconfigs\":\"Sensor Configs (select to set config)\",\"@label.text.assetid\":\"Asset Id\",\"@label.text.assetidtrackingassetid\":\"Asset Id (a location tracking asset id)\",\"@label.text.assetname\":\"Asset Name\",\"@label.text.assettypes\":\"Asset Types\",\"@label.text.associatedassetid\":\"Associated Asset Id\",\"@label.text.buildingname\":\"Building Name\",\"@label.text.buttonbackgroundcolor\":\"Button Background Color\",\"@label.text.configuration\":\"Configuration\",\"@label.text.floorname\":\"Floor Name\",\"@label.text.foregroundcolor\":\"Forground Color (Main Font Color)\",\"@label.text.issueslist\":\"Issues List\",\"@label.text.issuesmap\":\"Issues Map\",\"@label.text.metadata\":\"Metadata (3rd party)\",\"@label.text.organizationinfo\":\"Organization Info\",\"@label.text.sensorconfig\":\"Sensor Config\",\"@label.text.sensorconfigname\":\"Sensor Config Name\",\"@label.text.sensorconfigs\":\"Sensor Configs\",\"@label.text.sensorconfiguration\":\"Sensor Configuration\",\"@label.text.sensorid\":\"Sensor Id\",\"@label.text.sensormanufacturer\":\"Sensor Manufacturer\",\"@label.text.sensormodify\":\"Sensor Modify\",\"@label.text.sensortypes\":\"Sensor Types\",\"@label.text.showonlyorphaned\":\"Show only orphaned\",\"@label.text.topbarbackgroundcolor\":\"Top Bar Background Color\",\"@label.text.uniqueid\":\"Unique Id\",\"@label.text.vantiqid\":\"VANTIQ User Id (For roles)\",\"@menu.accordion.assets.title\":\"Assets\",\"@menu.accordion.main.title\":\"Main\",\"@menu.accordion.personnel.title\":\"Personnel\",\"@menu.accordion.sensors.title\":\"Sensors\",\"@menu.home.text\":\"Home\",\"@menu.organization.text\":\"Organization\",\"@menu.viewassets.text\":\"View Assets\",\"@menu.viewassettypes.text\":\"View Asset Types\",\"@menu.viewbuildings.text\":\"View Buildings\",\"@menu.viewroles.text\":\"View Roles\",\"@menu.viewsensorconfig.text\":\"View Sensor Configs\",\"@menu.viewsensormanufacturers.text\":\"View Sensor Manufacturers\",\"@menu.viewsensors.text\":\"View Sensors\",\"@menu.viewsensortype.text\":\"View Sensor Types\",\"@menu.viewusers.text\":\"View Users\",\"@tab.label.organization\":\"Organization\",\"@tab.label.theme\":\"Theme\",\"@table.column.issuetype\":\"Issue Type\",\"@table.column.state\":\"State\",\"@text.address\":\"Address\",\"@text.admin\":\"Admin\",\"@text.asset\":\"Asset\",\"@text.assets\":\"Assets\",\"@text.assettype\":\"Asset Type\",\"@text.building\":\"Building\",\"@text.buildingid\":\"Building Id\",\"@text.buildings\":\"Buildings\",\"@text.colortheme\":\"Color Theme\",\"@text.contacttrace\":\"Contact Tracing\",\"@text.count\":\"Count\",\"@text.description\":\"Description\",\"@text.details\":\"Details\",\"@text.employee\":\"Employee\",\"@text.firstname\":\"First Name\",\"@text.floor\":\"Floor\",\"@text.floorid\":\"Floor Id\",\"@text.floorinfo\":\"Floor Info\",\"@text.floorplan\":\"Floor Plan\",\"@text.floorplanid\":\"Floor Plan Id\",\"@text.floorplans\":\"Floor Plans\",\"@text.floors\":\"Floors\",\"@text.id\":\"Id\",\"@text.inornearspace\":\"In or near space\",\"@text.issue\":\"Issue\",\"@text.issues\":\"Issues\",\"@text.lastname\":\"Last Name\",\"@text.manufacturer\":\"Manufacturer\",\"@text.mobile\":\"Mobile Phone\",\"@text.name\":\"Name\",\"@text.navbarlogo\":\"Navbar Logo\",\"@text.navbartheme\":\"Navbar Theme\",\"@text.organizationid\":\"Organization Id\",\"@text.path\":\"Path\",\"@text.personnel\":\"Personnel\",\"@text.places\":\"Places\",\"@text.refresh\":\"Refresh\",\"@text.role\":\"Role\",\"@text.roles\":\"Roles\",\"@text.sensor\":\"Sensor\",\"@text.sensors\":\"Sensors\",\"@text.sensortype\":\"Sensor Type\",\"@text.space\":\"Space\",\"@text.spaceid\":\"Space Id\",\"@text.spacename\":\"Space Name\",\"@text.spaces\":\"Spaces\",\"@text.type\":\"Type\",\"@tooltip.locationinfo\":\"Use this to set an object location.  For mobile assets this will be its initial location\",\"@button.close\":\"Close\"}",
+    "defaultGlobalMsgHash" : "{\"@accordion.title.admin\":\"Admin\",\"@accordion.title.assetinfo\":\"Asset Info\",\"@accordion.title.assetsonthisfloor\":\"Assets on this floor\",\"@accordion.title.detail\":\"Detail\",\"@accordion.title.locationinfo\":\"Location Info (optional)\",\"@button.back\":\"Back\",\"@button.close\":\"Close\",\"@button.delete\":\"Delete\",\"@button.edit\":\"Edit\",\"@button.editfloor\":\"Edit Floor\",\"@button.editfloorplan\":\"Edit Floor Plan\",\"@button.editspace\":\"Edit Space\",\"@button.label.add\":\"Add\",\"@button.label.addasset\":\"Add Asset\",\"@button.label.addbuilding\":\"Add Building\",\"@button.label.addfloor\":\"Add Floor\",\"@button.label.addfloorplan\":\"Add Floor Plan\",\"@button.label.addperson\":\"Add Person\",\"@button.label.addrole\":\"Add Role\",\"@button.label.addsensor\":\"Add Sensor\",\"@button.label.addsensorconfig\":\"Add Sensor Config\",\"@button.label.addsensormanufacturer\":\"Add Sensor Manufacturer\",\"@button.label.addsensortype\":\"Add Sensor Type\",\"@button.label.addspace\":\"Add Space\",\"@button.label.editasset\":\"Edit Asset\",\"@button.label.editbuilding\":\"Edit Building\",\"@button.label.updatetheme\":\"Update Theme\",\"@button.remove\":\"Remove\",\"@button.submit\":\"Submit\",\"@button.text.addsensor\":\"Add Sensor\",\"@button.upload\":\"Upload\",\"@button.view\":\"View\",\"@checkbox.label.collaborator\":\"Collaborator\",\"@checkbox.label.restricted\":\"Restricted\",\"@confirm.btn.cancel\":\"Cancel\",\"@confirm.btn.no\":\"No\",\"@confirm.btn.yes\":\"Yes\",\"@confirm.title\":\"Confirm\",\"@droplist.assets\":\"Show assets on this floor\",\"@droplist.select\":\"-select-\",\"@droplist.spaces\":\"Show space allocation for this floor\",\"@droplistlabel.text.sensorconfigs\":\"Config Template\",\"@label.text.assetid\":\"Asset Id\",\"@label.text.assetidtrackingassetid\":\"Asset Id (a location tracking asset id)\",\"@label.text.assetname\":\"Asset Name\",\"@label.text.assettypes\":\"Asset Types\",\"@label.text.associatedassetid\":\"Associated Asset Id\",\"@label.text.buildingname\":\"Building Name\",\"@label.text.buttonbackgroundcolor\":\"Button Background Color\",\"@label.text.configuration\":\"Configuration\",\"@label.text.floorname\":\"Floor Name\",\"@label.text.foregroundcolor\":\"Forground Color (Main Font Color)\",\"@label.text.issueslist\":\"Issues List\",\"@label.text.issuesmap\":\"Issues Map\",\"@label.text.metadata\":\"Metadata (3rd party)\",\"@label.text.organizationinfo\":\"Organization Info\",\"@label.text.sensorconfig\":\"Sensor Config\",\"@label.text.sensorconfigname\":\"Sensor Config Name\",\"@label.text.sensorconfigs\":\"Sensor Configs\",\"@label.text.sensorconfiguration\":\"Sensor Configuration Values(Debug)\",\"@label.text.sensorid\":\"Sensor Id\",\"@label.text.sensormanufacturer\":\"Sensor Manufacturer\",\"@label.text.sensormodify\":\"Sensor Modify\",\"@label.text.sensortypes\":\"Sensor Types\",\"@label.text.showonlyorphaned\":\"Show only orphaned\",\"@label.text.topbarbackgroundcolor\":\"Top Bar Background Color\",\"@label.text.uniqueid\":\"Unique Id\",\"@label.text.vantiqid\":\"VANTIQ User Id (For roles)\",\"@menu.accordion.assets.title\":\"Assets\",\"@menu.accordion.main.title\":\"Main\",\"@menu.accordion.personnel.title\":\"Personnel\",\"@menu.accordion.sensors.title\":\"Sensors\",\"@menu.home.text\":\"Home\",\"@menu.organization.text\":\"Organization\",\"@menu.viewassets.text\":\"View Assets\",\"@menu.viewassettypes.text\":\"View Asset Types\",\"@menu.viewbuildings.text\":\"View Buildings\",\"@menu.viewroles.text\":\"View Roles\",\"@menu.viewsensorconfig.text\":\"View Sensor Configs\",\"@menu.viewsensormanufacturers.text\":\"View Sensor Manufacturers\",\"@menu.viewsensors.text\":\"View Sensors\",\"@menu.viewsensortype.text\":\"View Sensor Types\",\"@menu.viewusers.text\":\"View Users\",\"@tab.label.organization\":\"Organization\",\"@tab.label.theme\":\"Theme\",\"@table.column.issuetype\":\"Issue Type\",\"@table.column.state\":\"State\",\"@text.address\":\"Address\",\"@text.admin\":\"Admin\",\"@text.asset\":\"Asset\",\"@text.assets\":\"Assets\",\"@text.assettype\":\"Asset Type\",\"@text.building\":\"Building\",\"@text.buildingid\":\"Building Id\",\"@text.buildings\":\"Buildings\",\"@text.colortheme\":\"Color Theme\",\"@text.contacttrace\":\"Contact Tracing\",\"@text.count\":\"Count\",\"@text.description\":\"Description\",\"@text.details\":\"Details\",\"@text.email\":\"Email\",\"@text.employee\":\"Employee\",\"@text.firstname\":\"First Name\",\"@text.floor\":\"Floor\",\"@text.floorid\":\"Floor Id\",\"@text.floorinfo\":\"Floor Info\",\"@text.floorplan\":\"Floor Plan\",\"@text.floorplanid\":\"Floor Plan Id\",\"@text.floorplans\":\"Floor Plans\",\"@text.floors\":\"Floors\",\"@text.id\":\"Id\",\"@text.inornearspace\":\"In or near space\",\"@text.issue\":\"Issue\",\"@text.issues\":\"Issues\",\"@text.lastname\":\"Last Name\",\"@text.manufacturer\":\"Manufacturer\",\"@text.mobile\":\"Mobile Phone\",\"@text.name\":\"Name\",\"@text.navbarlogo\":\"Navbar Logo\",\"@text.navbartheme\":\"Navbar Theme\",\"@text.organizationid\":\"Organization Id\",\"@text.path\":\"Path\",\"@text.personnel\":\"Personnel\",\"@text.places\":\"Places\",\"@text.refresh\":\"Refresh\",\"@text.role\":\"Role\",\"@text.roles\":\"Roles\",\"@text.sensor\":\"Sensor\",\"@text.sensors\":\"Sensors\",\"@text.sensortype\":\"Sensor Type\",\"@text.space\":\"Space\",\"@text.spaceid\":\"Space Id\",\"@text.spacename\":\"Space Name\",\"@text.spaces\":\"Spaces\",\"@text.type\":\"Type\",\"@tooltip.locationinfo\":\"Use this to set an object location.  For mobile assets this will be its initial location\"}",
     "description" : "",
     "displayName" : "Accelerator",
-    "docAssets" : [ "css/client.css", "css/spinner.css", "images/LogoPlaceHolder.png", "images/floorplan_notracker.jpg", "images/floorplanselect.png", "images/icons/employeeIcon.png", "images/placeholderuser250.jpg", "qrdefault.png" ],
+    "docAssets" : [ "css/client.css", "css/spinner.css", "images/LogoPlaceHolder.png", "images/floorplan_notracker.jpg", "images/floorplanselect.png", "images/icons/employeeIcon.png", "images/placeholderuser250.jpg", "noun_Floor_3359773.svg", "noun_Security Camera_1162819.svg", "noun_Warning_57979.svg", "noun_building_2080407.svg", "noun_conference room_1211373.svg", "noun_motion sensor_2931191.svg", "qrdefault.png" ],
     "hasSidebar" : true,
     "jsAssets" : [ "https://cdn.datatables.net/buttons/1.6.2/js/dataTables.buttons.min.js", "https://cdn.datatables.net/buttons/1.6.2/js/buttons.print.min.js", "https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js", "https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js", "https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js", "https://cdn.datatables.net/buttons/1.6.2/js/buttons.html5.min.js" ],
     "paletteCollapsed" : false,
-    "productV" : "7.2h",
+    "productV" : "7.2n",
     "showCategoryButtons" : true,
     "showCategoryDataDisplay" : true,
     "showCategoryDataInput" : true,
@@ -1434,6 +1561,7 @@
     "Roles" : "RELOCATED to views/Roles.json",
     "SensorAddModify" : "RELOCATED to views/SensorAddModify.json",
     "SensorConfigAddModify" : "RELOCATED to views/SensorConfigAddModify.json",
+    "SensorConfigDetailAddModify" : "RELOCATED to views/SensorConfigDetailAddModify.json",
     "SensorConfigs" : "RELOCATED to views/SensorConfigs.json",
     "SensorManufacturerAddModify" : "RELOCATED to views/SensorManufacturerAddModify.json",
     "SensorManufacturers" : "RELOCATED to views/SensorManufacturers.json",

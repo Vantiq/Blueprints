@@ -17,6 +17,15 @@
             });
 
 
+        } else if (extra.dataObject.type == "Camera") {
+            var id = extra.dataObject.id;
+             client.data.execute("cb.getSensorById", {id:id}, function(response){
+                //client.popupPage("GaugeDisplay","Sensor Info",response,function(returnParameters){
+                client.popupPage("CameraDisplay",popupTitle,response,function(returnParameters){
+                                    
+                    console.log("The Return Parameters: " + returnParameters);
+                });
+            });
         }
     }
     

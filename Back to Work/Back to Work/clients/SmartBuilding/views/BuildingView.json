@@ -5,8 +5,120 @@
       "borderColor" : "Default",
       "borderRadius" : 4,
       "borderThickness" : 0,
+      "column" : 1,
+      "fontFamily" : "inherit",
+      "fontSize" : 20,
+      "fontStyle" : "normal",
+      "fontWeight" : "normal",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "StaticText68",
+      "row" : 0,
+      "text" : "Open",
+      "type" : "StaticText",
+      "uuid" : "07af23fc-fa75-4816-815d-503fedacb800",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "naturalSize"
+    }, {
+      "binding" : "page.data.schedule.tuesdayTI",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "column" : 1,
+      "default" : 0,
+      "enumeratedList" : [ {
+        "label" : "12 AM",
+        "value" : 0
+      }, {
+        "label" : "1 AM",
+        "value" : 1
+      }, {
+        "label" : "2 AM",
+        "value" : 2
+      }, {
+        "label" : "3 AM",
+        "value" : 3
+      }, {
+        "label" : "4 AM",
+        "value" : 4
+      }, {
+        "label" : "5 AM",
+        "value" : 5
+      }, {
+        "label" : "6 AM",
+        "value" : 6
+      }, {
+        "label" : "7 AM",
+        "value" : 7
+      }, {
+        "label" : "8 AM",
+        "value" : 8
+      }, {
+        "label" : "9 AM",
+        "value" : 9
+      }, {
+        "label" : "10 AM",
+        "value" : 10
+      }, {
+        "label" : "11 AM",
+        "value" : 11
+      }, {
+        "label" : "12 PM",
+        "value" : 12
+      }, {
+        "label" : "1 PM",
+        "value" : 13
+      }, {
+        "label" : "2 PM",
+        "value" : 14
+      }, {
+        "label" : "3 PM",
+        "value" : 15
+      }, {
+        "label" : "4 PM",
+        "value" : 16
+      }, {
+        "label" : "5 PM",
+        "value" : 17
+      }, {
+        "label" : "6 PM",
+        "value" : 18
+      }, {
+        "label" : "7 PM",
+        "value" : 19
+      }, {
+        "label" : "8 PM",
+        "value" : 20
+      }, {
+        "label" : "9 PM",
+        "value" : 21
+      }, {
+        "label" : "10 PM",
+        "value" : 22
+      }, {
+        "label" : "11 PM",
+        "value" : 23
+      } ],
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "labelAlign" : "center",
+      "labelColor" : "#000000",
+      "labelSize" : 14,
+      "labelStyle" : "plain",
+      "name" : "Droplist34",
+      "row" : 3,
+      "type" : "Droplist",
+      "uuid" : "0a0c0c89-5d9b-43a6-88e9-6804e7027459",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
       "children" : [ "bb5e5138-ec4e-4cc4-843f-19c4eec8dfd4", "b43aed1e-c4dd-4d23-8a6d-c4928192021e" ],
-      "h" : 940,
+      "h" : 1764.3333339691162,
       "heightPolicy" : "explicit",
       "horzGravity" : "center",
       "innerMargin" : 20,
@@ -38,6 +150,27 @@
       "vertGravity" : "center",
       "widthPolicy" : "sizeToCell"
     }, {
+      "binding" : "page.data.schedule.saturday",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "checkboxLabel" : "Saturday",
+      "column" : 0,
+      "default" : false,
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "labelAlign" : "center",
+      "labelColor" : "#000000",
+      "labelSize" : 14,
+      "labelStyle" : "plain",
+      "name" : "Checkbox21",
+      "row" : 7,
+      "type" : "Checkbox",
+      "uuid" : "16ec2a88-ee3a-4228-8f18-ac759a677dec",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
       "binding" : "page.data.building.organizationid",
       "borderColor" : "Default",
       "borderRadius" : 4,
@@ -53,6 +186,35 @@
       "placeholder" : "",
       "type" : "InputString",
       "uuid" : "1ac613e4-7ff1-462e-804a-6c99c3ea223a",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "binding" : "page.data.building.utcOffset",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "default" : -480,
+      "enumeratedList" : [ {
+        "label" : "Pacific",
+        "value" : -480
+      }, {
+        "label" : "Central",
+        "value" : -360
+      }, {
+        "label" : "Eastern",
+        "value" : -300
+      }, {
+        "label" : "Mountain",
+        "value" : -420
+      } ],
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "isReadOnly" : true,
+      "label" : "Timezone",
+      "name" : "Droplist2255",
+      "type" : "Droplist",
+      "uuid" : "277ba6c0-bb55-40ae-a667-6a5dc5d00425",
       "v" : 16,
       "vertGravity" : "center",
       "widthPolicy" : "sizeToCell"
@@ -95,7 +257,50 @@
       "uuid" : "2b50fe4e-b8ba-4cf6-8886-3905aa1795f9",
       "v" : 16,
       "vertGravity" : "center",
-      "vertMargin" : 5,
+      "vertMargin" : 39,
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderThickness" : 0,
+      "children" : [ "69bae764-91e5-46eb-be06-6f9fa2a99429" ],
+      "closeIcon" : "glyphicon-chevron-up",
+      "fontFace" : "inherit",
+      "fontSize" : 16,
+      "fontStyle" : "normal",
+      "fontWeight" : "bold",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "innerMargin" : 5,
+      "name" : "AccordionLayout923",
+      "openIcon" : "glyphicon-chevron-down",
+      "title" : "Office Hours",
+      "titleBarColor" : "default",
+      "type" : "AccordionLayout",
+      "uuid" : "2f0d4036-0b63-4918-8009-b4224d7b8057",
+      "v" : 16,
+      "vertGravity" : "center",
+      "vertMargin" : 39,
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "binding" : "page.data.schedule.friday",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "checkboxLabel" : "Friday",
+      "column" : 0,
+      "default" : false,
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "labelAlign" : "center",
+      "labelColor" : "#000000",
+      "labelSize" : 14,
+      "labelStyle" : "plain",
+      "name" : "Checkbox20",
+      "row" : 6,
+      "type" : "Checkbox",
+      "uuid" : "30dd7bc0-2a48-4dcc-8df3-d90676fa0cf9",
+      "v" : 16,
+      "vertGravity" : "center",
       "widthPolicy" : "sizeToCell"
     }, {
       "borderColor" : "Default",
@@ -115,6 +320,325 @@
       "uuid" : "39a2914d-485e-4405-8013-5fe4fe0685fe",
       "v" : 16,
       "vertGravity" : "bottom",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "binding" : "page.data.schedule.thursdayTO",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "column" : 2,
+      "default" : 0,
+      "enumeratedList" : [ {
+        "label" : "12 AM",
+        "value" : 0
+      }, {
+        "label" : "1 AM",
+        "value" : 1
+      }, {
+        "label" : "2 AM",
+        "value" : 2
+      }, {
+        "label" : "3 AM",
+        "value" : 3
+      }, {
+        "label" : "4 AM",
+        "value" : 4
+      }, {
+        "label" : "5 AM",
+        "value" : 5
+      }, {
+        "label" : "6 AM",
+        "value" : 6
+      }, {
+        "label" : "7 AM",
+        "value" : 7
+      }, {
+        "label" : "8 AM",
+        "value" : 8
+      }, {
+        "label" : "9 AM",
+        "value" : 9
+      }, {
+        "label" : "10 AM",
+        "value" : 10
+      }, {
+        "label" : "11 AM",
+        "value" : 11
+      }, {
+        "label" : "12 PM",
+        "value" : 12
+      }, {
+        "label" : "1 PM",
+        "value" : 13
+      }, {
+        "label" : "2 PM",
+        "value" : 14
+      }, {
+        "label" : "3 PM",
+        "value" : 15
+      }, {
+        "label" : "4 PM",
+        "value" : 16
+      }, {
+        "label" : "5 PM",
+        "value" : 17
+      }, {
+        "label" : "6 PM",
+        "value" : 18
+      }, {
+        "label" : "7 PM",
+        "value" : 19
+      }, {
+        "label" : "8 PM",
+        "value" : 20
+      }, {
+        "label" : "9 PM",
+        "value" : 21
+      }, {
+        "label" : "10 PM",
+        "value" : 22
+      }, {
+        "label" : "11 PM",
+        "value" : 23
+      } ],
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "labelAlign" : "center",
+      "labelColor" : "#000000",
+      "labelSize" : 14,
+      "labelStyle" : "plain",
+      "name" : "Droplist39",
+      "row" : 5,
+      "type" : "Droplist",
+      "uuid" : "3df303e8-b2ae-4216-b658-337a8bac8cf9",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "binding" : "page.data.schedule.thursdayTI",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "column" : 1,
+      "default" : 0,
+      "enumeratedList" : [ {
+        "label" : "12 AM",
+        "value" : 0
+      }, {
+        "label" : "1 AM",
+        "value" : 1
+      }, {
+        "label" : "2 AM",
+        "value" : 2
+      }, {
+        "label" : "3 AM",
+        "value" : 3
+      }, {
+        "label" : "4 AM",
+        "value" : 4
+      }, {
+        "label" : "5 AM",
+        "value" : 5
+      }, {
+        "label" : "6 AM",
+        "value" : 6
+      }, {
+        "label" : "7 AM",
+        "value" : 7
+      }, {
+        "label" : "8 AM",
+        "value" : 8
+      }, {
+        "label" : "9 AM",
+        "value" : 9
+      }, {
+        "label" : "10 AM",
+        "value" : 10
+      }, {
+        "label" : "11 AM",
+        "value" : 11
+      }, {
+        "label" : "12 PM",
+        "value" : 12
+      }, {
+        "label" : "1 PM",
+        "value" : 13
+      }, {
+        "label" : "2 PM",
+        "value" : 14
+      }, {
+        "label" : "3 PM",
+        "value" : 15
+      }, {
+        "label" : "4 PM",
+        "value" : 16
+      }, {
+        "label" : "5 PM",
+        "value" : 17
+      }, {
+        "label" : "6 PM",
+        "value" : 18
+      }, {
+        "label" : "7 PM",
+        "value" : 19
+      }, {
+        "label" : "8 PM",
+        "value" : 20
+      }, {
+        "label" : "9 PM",
+        "value" : 21
+      }, {
+        "label" : "10 PM",
+        "value" : 22
+      }, {
+        "label" : "11 PM",
+        "value" : 23
+      } ],
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "labelAlign" : "center",
+      "labelColor" : "#000000",
+      "labelSize" : 14,
+      "labelStyle" : "plain",
+      "name" : "Droplist38",
+      "row" : 5,
+      "type" : "Droplist",
+      "uuid" : "43b183c5-f55b-4902-90bb-6d7c057cb06a",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "column" : 0,
+      "fontFamily" : "inherit",
+      "fontSize" : 20,
+      "fontStyle" : "normal",
+      "fontWeight" : "normal",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "StaticText64",
+      "row" : 0,
+      "text" : "Day",
+      "type" : "StaticText",
+      "uuid" : "445ffc7f-dcbe-419d-8fe9-1951ac457aae",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "naturalSize"
+    }, {
+      "binding" : "page.data.schedule.wednesdayTO",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "column" : 2,
+      "default" : 0,
+      "enumeratedList" : [ {
+        "label" : "12 AM",
+        "value" : 0
+      }, {
+        "label" : "1 AM",
+        "value" : 1
+      }, {
+        "label" : "2 AM",
+        "value" : 2
+      }, {
+        "label" : "3 AM",
+        "value" : 3
+      }, {
+        "label" : "4 AM",
+        "value" : 4
+      }, {
+        "label" : "5 AM",
+        "value" : 5
+      }, {
+        "label" : "6 AM",
+        "value" : 6
+      }, {
+        "label" : "7 AM",
+        "value" : 7
+      }, {
+        "label" : "8 AM",
+        "value" : 8
+      }, {
+        "label" : "9 AM",
+        "value" : 9
+      }, {
+        "label" : "10 AM",
+        "value" : 10
+      }, {
+        "label" : "11 AM",
+        "value" : 11
+      }, {
+        "label" : "12 PM",
+        "value" : 12
+      }, {
+        "label" : "1 PM",
+        "value" : 13
+      }, {
+        "label" : "2 PM",
+        "value" : 14
+      }, {
+        "label" : "3 PM",
+        "value" : 15
+      }, {
+        "label" : "4 PM",
+        "value" : 16
+      }, {
+        "label" : "5 PM",
+        "value" : 17
+      }, {
+        "label" : "6 PM",
+        "value" : 18
+      }, {
+        "label" : "7 PM",
+        "value" : 19
+      }, {
+        "label" : "8 PM",
+        "value" : 20
+      }, {
+        "label" : "9 PM",
+        "value" : 21
+      }, {
+        "label" : "10 PM",
+        "value" : 22
+      }, {
+        "label" : "11 PM",
+        "value" : 23
+      } ],
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "labelAlign" : "center",
+      "labelColor" : "#000000",
+      "labelSize" : 14,
+      "labelStyle" : "plain",
+      "name" : "Droplist37",
+      "row" : 4,
+      "type" : "Droplist",
+      "uuid" : "465e8ff8-c417-44a1-bfd3-d36eedc1c85e",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "binding" : "page.data.schedule.tuesday",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "checkboxLabel" : "Tueday",
+      "column" : 0,
+      "default" : false,
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "labelAlign" : "center",
+      "labelColor" : "#000000",
+      "labelSize" : 14,
+      "labelStyle" : "plain",
+      "name" : "Checkbox17",
+      "row" : 3,
+      "type" : "Checkbox",
+      "uuid" : "4c8ee6a2-1a9b-4f3c-832e-6d6e32596e83",
+      "v" : 16,
+      "vertGravity" : "center",
       "widthPolicy" : "sizeToCell"
     }, {
       "borderColor" : "Default",
@@ -173,6 +697,99 @@
       "widthPolicy" : "sizeToCell",
       "wordwrap" : true
     }, {
+      "binding" : "page.data.schedule.mondayTO",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "column" : 2,
+      "default" : 0,
+      "enumeratedList" : [ {
+        "label" : "12 AM",
+        "value" : 0
+      }, {
+        "label" : "1 AM",
+        "value" : 1
+      }, {
+        "label" : "2 AM",
+        "value" : 2
+      }, {
+        "label" : "3 AM",
+        "value" : 3
+      }, {
+        "label" : "4 AM",
+        "value" : 4
+      }, {
+        "label" : "5 AM",
+        "value" : 5
+      }, {
+        "label" : "6 AM",
+        "value" : 6
+      }, {
+        "label" : "7 AM",
+        "value" : 7
+      }, {
+        "label" : "8 AM",
+        "value" : 8
+      }, {
+        "label" : "9 AM",
+        "value" : 9
+      }, {
+        "label" : "10 AM",
+        "value" : 10
+      }, {
+        "label" : "11 AM",
+        "value" : 11
+      }, {
+        "label" : "12 PM",
+        "value" : 12
+      }, {
+        "label" : "1 PM",
+        "value" : 13
+      }, {
+        "label" : "2 PM",
+        "value" : 14
+      }, {
+        "label" : "3 PM",
+        "value" : 15
+      }, {
+        "label" : "4 PM",
+        "value" : 16
+      }, {
+        "label" : "5 PM",
+        "value" : 17
+      }, {
+        "label" : "6 PM",
+        "value" : 18
+      }, {
+        "label" : "7 PM",
+        "value" : 19
+      }, {
+        "label" : "8 PM",
+        "value" : 20
+      }, {
+        "label" : "9 PM",
+        "value" : 21
+      }, {
+        "label" : "10 PM",
+        "value" : 22
+      }, {
+        "label" : "11 PM",
+        "value" : 23
+      } ],
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "labelAlign" : "center",
+      "labelColor" : "#000000",
+      "labelSize" : 14,
+      "labelStyle" : "plain",
+      "name" : "Droplist33",
+      "row" : 2,
+      "type" : "Droplist",
+      "uuid" : "61f32a82-37de-46b7-84fb-3b79fe289845",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
       "backgroundColor" : "default",
       "borderColor" : "Default",
       "borderRadius" : 4,
@@ -192,6 +809,159 @@
       "v" : 16,
       "vertGravity" : "center",
       "vertMargin" : 0,
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 1,
+      "children" : [ "445ffc7f-dcbe-419d-8fe9-1951ac457aae", "07af23fc-fa75-4816-815d-503fedacb800", "a69f4d06-cdda-4229-be22-60cbaa64e774", "c3a463f2-3d51-41b1-8772-19d70382d8bf", "fafbd974-aac4-466c-8850-2bdfb4f89571", "ee7015fc-3c51-423e-8ed8-63066c4773e6", "c4ca7101-3a2a-4750-a606-55f50535adec", "e4b01a1a-9fe9-438d-835e-745cd4251821", "61f32a82-37de-46b7-84fb-3b79fe289845", "4c8ee6a2-1a9b-4f3c-832e-6d6e32596e83", "0a0c0c89-5d9b-43a6-88e9-6804e7027459", "6c5f81df-a50f-4681-af8d-f74f251dfd40", "8496ebd3-20f4-42d1-9fa1-6733ea8a1c67", "cd34f95a-3980-4154-89bb-3b54c0196196", "465e8ff8-c417-44a1-bfd3-d36eedc1c85e", "805e0fa0-e4cf-4bcc-8817-bd2b09dcfc9f", "43b183c5-f55b-4902-90bb-6d7c057cb06a", "3df303e8-b2ae-4216-b658-337a8bac8cf9", "30dd7bc0-2a48-4dcc-8df3-d90676fa0cf9", "e795f13f-c5af-4138-964c-9f2751dbd11e", "f961b0be-c084-40ca-9fdd-85dd527a7b00", "16ec2a88-ee3a-4228-8f18-ac759a677dec", "b3571eca-1f69-4410-8785-35309fe96424", "eceeefaa-e14d-4e2c-85e3-4de4ecc00f52" ],
+      "columns" : 3,
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "horzMargin" : 5,
+      "innerMargin" : 5,
+      "name" : "GridLayout4",
+      "rows" : 8,
+      "type" : "GridLayout",
+      "uuid" : "69bae764-91e5-46eb-be06-6f9fa2a99429",
+      "v" : 16,
+      "vertGravity" : "center",
+      "vertMargin" : 5,
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "binding" : "page.data.schedule.tuesdayTO",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "column" : 2,
+      "default" : 0,
+      "enumeratedList" : [ {
+        "label" : "12 AM",
+        "value" : 0
+      }, {
+        "label" : "1 AM",
+        "value" : 1
+      }, {
+        "label" : "2 AM",
+        "value" : 2
+      }, {
+        "label" : "3 AM",
+        "value" : 3
+      }, {
+        "label" : "4 AM",
+        "value" : 4
+      }, {
+        "label" : "5 AM",
+        "value" : 5
+      }, {
+        "label" : "6 AM",
+        "value" : 6
+      }, {
+        "label" : "7 AM",
+        "value" : 7
+      }, {
+        "label" : "8 AM",
+        "value" : 8
+      }, {
+        "label" : "9 AM",
+        "value" : 9
+      }, {
+        "label" : "10 AM",
+        "value" : 10
+      }, {
+        "label" : "11 AM",
+        "value" : 11
+      }, {
+        "label" : "12 PM",
+        "value" : 12
+      }, {
+        "label" : "1 PM",
+        "value" : 13
+      }, {
+        "label" : "2 PM",
+        "value" : 14
+      }, {
+        "label" : "3 PM",
+        "value" : 15
+      }, {
+        "label" : "4 PM",
+        "value" : 16
+      }, {
+        "label" : "5 PM",
+        "value" : 17
+      }, {
+        "label" : "6 PM",
+        "value" : 18
+      }, {
+        "label" : "7 PM",
+        "value" : 19
+      }, {
+        "label" : "8 PM",
+        "value" : 20
+      }, {
+        "label" : "9 PM",
+        "value" : 21
+      }, {
+        "label" : "10 PM",
+        "value" : 22
+      }, {
+        "label" : "11 PM",
+        "value" : 23
+      } ],
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "labelAlign" : "center",
+      "labelColor" : "#000000",
+      "labelSize" : 14,
+      "labelStyle" : "plain",
+      "name" : "Droplist35",
+      "row" : 3,
+      "type" : "Droplist",
+      "uuid" : "6c5f81df-a50f-4681-af8d-f74f251dfd40",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "binding" : "page.data.schedule.thursday",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "checkboxLabel" : "Thursday",
+      "column" : 0,
+      "default" : false,
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "labelAlign" : "center",
+      "labelColor" : "#000000",
+      "labelSize" : 14,
+      "labelStyle" : "plain",
+      "name" : "Checkbox19",
+      "row" : 5,
+      "type" : "Checkbox",
+      "uuid" : "805e0fa0-e4cf-4bcc-8817-bd2b09dcfc9f",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "binding" : "page.data.schedule.wednesday",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "checkboxLabel" : "Wednesday",
+      "column" : 0,
+      "default" : false,
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "labelAlign" : "center",
+      "labelColor" : "#000000",
+      "labelSize" : 14,
+      "labelStyle" : "plain",
+      "name" : "Checkbox18",
+      "row" : 4,
+      "type" : "Checkbox",
+      "uuid" : "8496ebd3-20f4-42d1-9fa1-6733ea8a1c67",
+      "v" : 16,
+      "vertGravity" : "center",
       "widthPolicy" : "sizeToCell"
     }, {
       "borderColor" : "Default",
@@ -346,6 +1116,25 @@
       "borderColor" : "Default",
       "borderRadius" : 4,
       "borderThickness" : 0,
+      "column" : 2,
+      "fontFamily" : "inherit",
+      "fontSize" : 20,
+      "fontStyle" : "normal",
+      "fontWeight" : "normal",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "StaticText69",
+      "row" : 0,
+      "text" : "Close",
+      "type" : "StaticText",
+      "uuid" : "a69f4d06-cdda-4229-be22-60cbaa64e774",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "naturalSize"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
       "fontFamily" : "inherit",
       "fontSize" : 20,
       "fontStyle" : "normal",
@@ -359,6 +1148,99 @@
       "v" : 16,
       "vertGravity" : "center",
       "widthPolicy" : "naturalSize"
+    }, {
+      "binding" : "page.data.schedule.saturdayTI",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "column" : 1,
+      "default" : 0,
+      "enumeratedList" : [ {
+        "label" : "12 AM",
+        "value" : 0
+      }, {
+        "label" : "1 AM",
+        "value" : 1
+      }, {
+        "label" : "2 AM",
+        "value" : 2
+      }, {
+        "label" : "3 AM",
+        "value" : 3
+      }, {
+        "label" : "4 AM",
+        "value" : 4
+      }, {
+        "label" : "5 AM",
+        "value" : 5
+      }, {
+        "label" : "6 AM",
+        "value" : 6
+      }, {
+        "label" : "7 AM",
+        "value" : 7
+      }, {
+        "label" : "8 AM",
+        "value" : 8
+      }, {
+        "label" : "9 AM",
+        "value" : 9
+      }, {
+        "label" : "10 AM",
+        "value" : 10
+      }, {
+        "label" : "11 AM",
+        "value" : 11
+      }, {
+        "label" : "12 PM",
+        "value" : 12
+      }, {
+        "label" : "1 PM",
+        "value" : 13
+      }, {
+        "label" : "2 PM",
+        "value" : 14
+      }, {
+        "label" : "3 PM",
+        "value" : 15
+      }, {
+        "label" : "4 PM",
+        "value" : 16
+      }, {
+        "label" : "5 PM",
+        "value" : 17
+      }, {
+        "label" : "6 PM",
+        "value" : 18
+      }, {
+        "label" : "7 PM",
+        "value" : 19
+      }, {
+        "label" : "8 PM",
+        "value" : 20
+      }, {
+        "label" : "9 PM",
+        "value" : 21
+      }, {
+        "label" : "10 PM",
+        "value" : 22
+      }, {
+        "label" : "11 PM",
+        "value" : 23
+      } ],
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "labelAlign" : "center",
+      "labelColor" : "#000000",
+      "labelSize" : 14,
+      "labelStyle" : "plain",
+      "name" : "Droplist44",
+      "row" : 7,
+      "type" : "Droplist",
+      "uuid" : "b3571eca-1f69-4410-8785-35309fe96424",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
     }, {
       "borderColor" : "Default",
       "borderRadius" : 4,
@@ -392,12 +1274,54 @@
       "v" : 16,
       "vertGravity" : "top",
       "vertWeight" : 1,
-      "w" : 500,
+      "w" : 684,
       "widthPolicy" : "explicit"
+    }, {
+      "binding" : "page.data.schedule.sunday",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "checkboxLabel" : "Sunday",
+      "column" : 0,
+      "default" : false,
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "labelAlign" : "center",
+      "labelColor" : "#000000",
+      "labelSize" : 14,
+      "labelStyle" : "plain",
+      "name" : "Checkbox15",
+      "row" : 1,
+      "type" : "Checkbox",
+      "uuid" : "c3a463f2-3d51-41b1-8772-19d70382d8bf",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "binding" : "page.data.schedule.monday",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "checkboxLabel" : "Monday",
+      "column" : 0,
+      "default" : false,
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "labelAlign" : "center",
+      "labelColor" : "#000000",
+      "labelSize" : 14,
+      "labelStyle" : "plain",
+      "name" : "Checkbox16",
+      "row" : 2,
+      "type" : "Checkbox",
+      "uuid" : "c4ca7101-3a2a-4750-a606-55f50535adec",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
     }, {
       "borderColor" : "Default",
       "borderThickness" : 0,
-      "children" : [ "10a27c80-a1eb-4ee4-a405-6dc9cbc2f3d8", "610d8356-f320-4679-960a-0ac8bcac75cc", "fbd412cd-8b4d-4724-873e-0037ad89a6ef" ],
+      "children" : [ "10a27c80-a1eb-4ee4-a405-6dc9cbc2f3d8", "610d8356-f320-4679-960a-0ac8bcac75cc", "277ba6c0-bb55-40ae-a667-6a5dc5d00425", "2f0d4036-0b63-4918-8009-b4224d7b8057", "fbd412cd-8b4d-4724-873e-0037ad89a6ef" ],
       "closeIcon" : "glyphicon-chevron-up",
       "defaultToOpen" : true,
       "fontFace" : "inherit",
@@ -415,7 +1339,7 @@
       "uuid" : "c62e9b9a-2019-4b85-8331-1abdddacff2e",
       "v" : 16,
       "vertGravity" : "top",
-      "vertMargin" : 5,
+      "vertMargin" : 39,
       "vertWeight" : 1,
       "widthPolicy" : "sizeToCell"
     }, {
@@ -429,6 +1353,99 @@
       "name" : "HorizontalLayout20730",
       "type" : "HorizontalLayout",
       "uuid" : "c648d648-95c2-47e8-88a1-d09e9941c2ab",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "binding" : "page.data.schedule.wednesdayTI",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "column" : 1,
+      "default" : 0,
+      "enumeratedList" : [ {
+        "label" : "12 AM",
+        "value" : 0
+      }, {
+        "label" : "1 AM",
+        "value" : 1
+      }, {
+        "label" : "2 AM",
+        "value" : 2
+      }, {
+        "label" : "3 AM",
+        "value" : 3
+      }, {
+        "label" : "4 AM",
+        "value" : 4
+      }, {
+        "label" : "5 AM",
+        "value" : 5
+      }, {
+        "label" : "6 AM",
+        "value" : 6
+      }, {
+        "label" : "7 AM",
+        "value" : 7
+      }, {
+        "label" : "8 AM",
+        "value" : 8
+      }, {
+        "label" : "9 AM",
+        "value" : 9
+      }, {
+        "label" : "10 AM",
+        "value" : 10
+      }, {
+        "label" : "11 AM",
+        "value" : 11
+      }, {
+        "label" : "12 PM",
+        "value" : 12
+      }, {
+        "label" : "1 PM",
+        "value" : 13
+      }, {
+        "label" : "2 PM",
+        "value" : 14
+      }, {
+        "label" : "3 PM",
+        "value" : 15
+      }, {
+        "label" : "4 PM",
+        "value" : 16
+      }, {
+        "label" : "5 PM",
+        "value" : 17
+      }, {
+        "label" : "6 PM",
+        "value" : 18
+      }, {
+        "label" : "7 PM",
+        "value" : 19
+      }, {
+        "label" : "8 PM",
+        "value" : 20
+      }, {
+        "label" : "9 PM",
+        "value" : 21
+      }, {
+        "label" : "10 PM",
+        "value" : 22
+      }, {
+        "label" : "11 PM",
+        "value" : 23
+      } ],
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "labelAlign" : "center",
+      "labelColor" : "#000000",
+      "labelSize" : 14,
+      "labelStyle" : "plain",
+      "name" : "Droplist36",
+      "row" : 4,
+      "type" : "Droplist",
+      "uuid" : "cd34f95a-3980-4154-89bb-3b54c0196196",
       "v" : 16,
       "vertGravity" : "center",
       "widthPolicy" : "sizeToCell"
@@ -450,6 +1467,99 @@
       "vertGravity" : "center",
       "widthPolicy" : "naturalSize"
     }, {
+      "binding" : "page.data.schedule.mondayTI",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "column" : 1,
+      "default" : 0,
+      "enumeratedList" : [ {
+        "label" : "12 AM",
+        "value" : 0
+      }, {
+        "label" : "1 AM",
+        "value" : 1
+      }, {
+        "label" : "2 AM",
+        "value" : 2
+      }, {
+        "label" : "3 AM",
+        "value" : 3
+      }, {
+        "label" : "4 AM",
+        "value" : 4
+      }, {
+        "label" : "5 AM",
+        "value" : 5
+      }, {
+        "label" : "6 AM",
+        "value" : 6
+      }, {
+        "label" : "7 AM",
+        "value" : 7
+      }, {
+        "label" : "8 AM",
+        "value" : 8
+      }, {
+        "label" : "9 AM",
+        "value" : 9
+      }, {
+        "label" : "10 AM",
+        "value" : 10
+      }, {
+        "label" : "11 AM",
+        "value" : 11
+      }, {
+        "label" : "12 PM",
+        "value" : 12
+      }, {
+        "label" : "1 PM",
+        "value" : 13
+      }, {
+        "label" : "2 PM",
+        "value" : 14
+      }, {
+        "label" : "3 PM",
+        "value" : 15
+      }, {
+        "label" : "4 PM",
+        "value" : 16
+      }, {
+        "label" : "5 PM",
+        "value" : 17
+      }, {
+        "label" : "6 PM",
+        "value" : 18
+      }, {
+        "label" : "7 PM",
+        "value" : 19
+      }, {
+        "label" : "8 PM",
+        "value" : 20
+      }, {
+        "label" : "9 PM",
+        "value" : 21
+      }, {
+        "label" : "10 PM",
+        "value" : 22
+      }, {
+        "label" : "11 PM",
+        "value" : 23
+      } ],
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "labelAlign" : "center",
+      "labelColor" : "#000000",
+      "labelSize" : 14,
+      "labelStyle" : "plain",
+      "name" : "Droplist32",
+      "row" : 2,
+      "type" : "Droplist",
+      "uuid" : "e4b01a1a-9fe9-438d-835e-745cd4251821",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
       "backgroundColor" : "rgb(255, 255, 255)",
       "borderColor" : "Default",
       "borderThickness" : 0,
@@ -464,6 +1574,192 @@
       "v" : 16,
       "vertGravity" : "center",
       "vertMargin" : 0,
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "binding" : "page.data.schedule.fridayTI",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "column" : 1,
+      "default" : 0,
+      "enumeratedList" : [ {
+        "label" : "12 AM",
+        "value" : 0
+      }, {
+        "label" : "1 AM",
+        "value" : 1
+      }, {
+        "label" : "2 AM",
+        "value" : 2
+      }, {
+        "label" : "3 AM",
+        "value" : 3
+      }, {
+        "label" : "4 AM",
+        "value" : 4
+      }, {
+        "label" : "5 AM",
+        "value" : 5
+      }, {
+        "label" : "6 AM",
+        "value" : 6
+      }, {
+        "label" : "7 AM",
+        "value" : 7
+      }, {
+        "label" : "8 AM",
+        "value" : 8
+      }, {
+        "label" : "9 AM",
+        "value" : 9
+      }, {
+        "label" : "10 AM",
+        "value" : 10
+      }, {
+        "label" : "11 AM",
+        "value" : 11
+      }, {
+        "label" : "12 PM",
+        "value" : 12
+      }, {
+        "label" : "1 PM",
+        "value" : 13
+      }, {
+        "label" : "2 PM",
+        "value" : 14
+      }, {
+        "label" : "3 PM",
+        "value" : 15
+      }, {
+        "label" : "4 PM",
+        "value" : 16
+      }, {
+        "label" : "5 PM",
+        "value" : 17
+      }, {
+        "label" : "6 PM",
+        "value" : 18
+      }, {
+        "label" : "7 PM",
+        "value" : 19
+      }, {
+        "label" : "8 PM",
+        "value" : 20
+      }, {
+        "label" : "9 PM",
+        "value" : 21
+      }, {
+        "label" : "10 PM",
+        "value" : 22
+      }, {
+        "label" : "11 PM",
+        "value" : 23
+      } ],
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "labelAlign" : "center",
+      "labelColor" : "#000000",
+      "labelSize" : 14,
+      "labelStyle" : "plain",
+      "name" : "Droplist40",
+      "row" : 6,
+      "type" : "Droplist",
+      "uuid" : "e795f13f-c5af-4138-964c-9f2751dbd11e",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "binding" : "page.data.schedule.saturdayTO",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "column" : 2,
+      "default" : 0,
+      "enumeratedList" : [ {
+        "label" : "12 AM",
+        "value" : 0
+      }, {
+        "label" : "1 AM",
+        "value" : 1
+      }, {
+        "label" : "2 AM",
+        "value" : 2
+      }, {
+        "label" : "3 AM",
+        "value" : 3
+      }, {
+        "label" : "4 AM",
+        "value" : 4
+      }, {
+        "label" : "5 AM",
+        "value" : 5
+      }, {
+        "label" : "6 AM",
+        "value" : 6
+      }, {
+        "label" : "7 AM",
+        "value" : 7
+      }, {
+        "label" : "8 AM",
+        "value" : 8
+      }, {
+        "label" : "9 AM",
+        "value" : 9
+      }, {
+        "label" : "10 AM",
+        "value" : 10
+      }, {
+        "label" : "11 AM",
+        "value" : 11
+      }, {
+        "label" : "12 PM",
+        "value" : 12
+      }, {
+        "label" : "1 PM",
+        "value" : 13
+      }, {
+        "label" : "2 PM",
+        "value" : 14
+      }, {
+        "label" : "3 PM",
+        "value" : 15
+      }, {
+        "label" : "4 PM",
+        "value" : 16
+      }, {
+        "label" : "5 PM",
+        "value" : 17
+      }, {
+        "label" : "6 PM",
+        "value" : 18
+      }, {
+        "label" : "7 PM",
+        "value" : 19
+      }, {
+        "label" : "8 PM",
+        "value" : 20
+      }, {
+        "label" : "9 PM",
+        "value" : 21
+      }, {
+        "label" : "10 PM",
+        "value" : 22
+      }, {
+        "label" : "11 PM",
+        "value" : 23
+      } ],
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "labelAlign" : "center",
+      "labelColor" : "#000000",
+      "labelSize" : 14,
+      "labelStyle" : "plain",
+      "name" : "Droplist45",
+      "row" : 7,
+      "type" : "Droplist",
+      "uuid" : "eceeefaa-e14d-4e2c-85e3-4de4ecc00f52",
+      "v" : 16,
+      "vertGravity" : "center",
       "widthPolicy" : "sizeToCell"
     }, {
       "backgroundColor" : "default",
@@ -533,6 +1829,285 @@
       "vertGravity" : "center",
       "widthPolicy" : "sizeToCell"
     }, {
+      "binding" : "page.data.schedule.sundayTO",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "column" : 2,
+      "default" : 0,
+      "enumeratedList" : [ {
+        "label" : "12 AM",
+        "value" : 0
+      }, {
+        "label" : "1 AM",
+        "value" : 1
+      }, {
+        "label" : "2 AM",
+        "value" : 2
+      }, {
+        "label" : "3 AM",
+        "value" : 3
+      }, {
+        "label" : "4 AM",
+        "value" : 4
+      }, {
+        "label" : "5 AM",
+        "value" : 5
+      }, {
+        "label" : "6 AM",
+        "value" : 6
+      }, {
+        "label" : "7 AM",
+        "value" : 7
+      }, {
+        "label" : "8 AM",
+        "value" : 8
+      }, {
+        "label" : "9 AM",
+        "value" : 9
+      }, {
+        "label" : "10 AM",
+        "value" : 10
+      }, {
+        "label" : "11 AM",
+        "value" : 11
+      }, {
+        "label" : "12 PM",
+        "value" : 12
+      }, {
+        "label" : "1 PM",
+        "value" : 13
+      }, {
+        "label" : "2 PM",
+        "value" : 14
+      }, {
+        "label" : "3 PM",
+        "value" : 15
+      }, {
+        "label" : "4 PM",
+        "value" : 16
+      }, {
+        "label" : "5 PM",
+        "value" : 17
+      }, {
+        "label" : "6 PM",
+        "value" : 18
+      }, {
+        "label" : "7 PM",
+        "value" : 19
+      }, {
+        "label" : "8 PM",
+        "value" : 20
+      }, {
+        "label" : "9 PM",
+        "value" : 21
+      }, {
+        "label" : "10 PM",
+        "value" : 22
+      }, {
+        "label" : "11 PM",
+        "value" : 23
+      } ],
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "labelAlign" : "center",
+      "labelColor" : "#000000",
+      "labelSize" : 14,
+      "labelStyle" : "plain",
+      "name" : "Droplist31",
+      "row" : 1,
+      "type" : "Droplist",
+      "uuid" : "ee7015fc-3c51-423e-8ed8-63066c4773e6",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "binding" : "page.data.schedule.fridayTO",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "column" : 2,
+      "default" : 0,
+      "enumeratedList" : [ {
+        "label" : "12 AM",
+        "value" : 0
+      }, {
+        "label" : "1 AM",
+        "value" : 1
+      }, {
+        "label" : "2 AM",
+        "value" : 2
+      }, {
+        "label" : "3 AM",
+        "value" : 3
+      }, {
+        "label" : "4 AM",
+        "value" : 4
+      }, {
+        "label" : "5 AM",
+        "value" : 5
+      }, {
+        "label" : "6 AM",
+        "value" : 6
+      }, {
+        "label" : "7 AM",
+        "value" : 7
+      }, {
+        "label" : "8 AM",
+        "value" : 8
+      }, {
+        "label" : "9 AM",
+        "value" : 9
+      }, {
+        "label" : "10 AM",
+        "value" : 10
+      }, {
+        "label" : "11 AM",
+        "value" : 11
+      }, {
+        "label" : "12 PM",
+        "value" : 12
+      }, {
+        "label" : "1 PM",
+        "value" : 13
+      }, {
+        "label" : "2 PM",
+        "value" : 14
+      }, {
+        "label" : "3 PM",
+        "value" : 15
+      }, {
+        "label" : "4 PM",
+        "value" : 16
+      }, {
+        "label" : "5 PM",
+        "value" : 17
+      }, {
+        "label" : "6 PM",
+        "value" : 18
+      }, {
+        "label" : "7 PM",
+        "value" : 19
+      }, {
+        "label" : "8 PM",
+        "value" : 20
+      }, {
+        "label" : "9 PM",
+        "value" : 21
+      }, {
+        "label" : "10 PM",
+        "value" : 22
+      }, {
+        "label" : "11 PM",
+        "value" : 23
+      } ],
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "labelAlign" : "center",
+      "labelColor" : "#000000",
+      "labelSize" : 14,
+      "labelStyle" : "plain",
+      "name" : "Droplist43",
+      "row" : 6,
+      "type" : "Droplist",
+      "uuid" : "f961b0be-c084-40ca-9fdd-85dd527a7b00",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "binding" : "page.data.schedule.sundayTI",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "column" : 1,
+      "default" : 0,
+      "enumeratedList" : [ {
+        "label" : "12 AM",
+        "value" : 0
+      }, {
+        "label" : "1 AM",
+        "value" : 1
+      }, {
+        "label" : "2 AM",
+        "value" : 2
+      }, {
+        "label" : "3 AM",
+        "value" : 3
+      }, {
+        "label" : "4 AM",
+        "value" : 4
+      }, {
+        "label" : "5 AM",
+        "value" : 5
+      }, {
+        "label" : "6 AM",
+        "value" : 6
+      }, {
+        "label" : "7 AM",
+        "value" : 7
+      }, {
+        "label" : "8 AM",
+        "value" : 8
+      }, {
+        "label" : "9 AM",
+        "value" : 9
+      }, {
+        "label" : "10 AM",
+        "value" : 10
+      }, {
+        "label" : "11 AM",
+        "value" : 11
+      }, {
+        "label" : "12 PM",
+        "value" : 12
+      }, {
+        "label" : "1 PM",
+        "value" : 13
+      }, {
+        "label" : "2 PM",
+        "value" : 14
+      }, {
+        "label" : "3 PM",
+        "value" : 15
+      }, {
+        "label" : "4 PM",
+        "value" : 16
+      }, {
+        "label" : "5 PM",
+        "value" : 17
+      }, {
+        "label" : "6 PM",
+        "value" : 18
+      }, {
+        "label" : "7 PM",
+        "value" : 19
+      }, {
+        "label" : "8 PM",
+        "value" : 20
+      }, {
+        "label" : "9 PM",
+        "value" : 21
+      }, {
+        "label" : "10 PM",
+        "value" : 22
+      }, {
+        "label" : "11 PM",
+        "value" : 23
+      } ],
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "labelAlign" : "center",
+      "labelColor" : "#000000",
+      "labelSize" : 14,
+      "labelStyle" : "plain",
+      "name" : "Droplist29",
+      "row" : 1,
+      "type" : "Droplist",
+      "uuid" : "fafbd974-aac4-466c-8850-2bdfb4f89571",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
       "borderColor" : "Default",
       "borderRadius" : 4,
       "borderThickness" : 0,
@@ -578,9 +2153,110 @@
               "defaultLabel" : "organizationid",
               "defaultValue" : "",
               "type" : "String"
+            },
+            "schedule" : {
+              "defaultLabel" : "schedule",
+              "type" : "Object"
+            },
+            "utcOffset" : {
+              "defaultLabel" : "Timezone",
+              "defaultValue" : -480,
+              "type" : "Integer"
             }
           },
           "type" : "buildings"
+        }
+      },
+      "schedule" : {
+        "defaultLabel" : "schedule",
+        "type" : "TypedObject",
+        "typedObject" : {
+          "properties" : {
+            "friday" : {
+              "defaultLabel" : "friday",
+              "type" : "Boolean"
+            },
+            "fridayTI" : {
+              "defaultLabel" : "fridayTI",
+              "type" : "Integer"
+            },
+            "fridayTO" : {
+              "defaultLabel" : "fridayTO",
+              "type" : "Integer"
+            },
+            "monday" : {
+              "defaultLabel" : "monday",
+              "type" : "Boolean"
+            },
+            "mondayTI" : {
+              "defaultLabel" : "mondayTI",
+              "type" : "Integer"
+            },
+            "mondayTO" : {
+              "defaultLabel" : "mondayTO",
+              "type" : "Integer"
+            },
+            "saturday" : {
+              "defaultLabel" : "saturday",
+              "type" : "Boolean"
+            },
+            "saturdayTI" : {
+              "defaultLabel" : "saturdayTI",
+              "type" : "Integer"
+            },
+            "saturdayTO" : {
+              "defaultLabel" : "saturdayTO",
+              "type" : "Integer"
+            },
+            "sunday" : {
+              "defaultLabel" : "sunday",
+              "type" : "Boolean"
+            },
+            "sundayTI" : {
+              "defaultLabel" : "sundayTI",
+              "type" : "Integer"
+            },
+            "sundayTO" : {
+              "defaultLabel" : "sundayTO",
+              "type" : "Integer"
+            },
+            "thursday" : {
+              "defaultLabel" : "thursday",
+              "type" : "Boolean"
+            },
+            "thursdayTI" : {
+              "defaultLabel" : "thursdayTI",
+              "type" : "Integer"
+            },
+            "thursdayTO" : {
+              "defaultLabel" : "thursdayTO",
+              "type" : "Integer"
+            },
+            "tuesday" : {
+              "defaultLabel" : "tuesday",
+              "type" : "Boolean"
+            },
+            "tuesdayTI" : {
+              "defaultLabel" : "tuesdayTI",
+              "type" : "Integer"
+            },
+            "tuesdayTO" : {
+              "defaultLabel" : "tuesdayTO",
+              "type" : "Integer"
+            },
+            "wednesday" : {
+              "defaultLabel" : "wednesday",
+              "type" : "Boolean"
+            },
+            "wednesdayTI" : {
+              "defaultLabel" : "wednesdayTI",
+              "type" : "Integer"
+            },
+            "wednesdayTO" : {
+              "defaultLabel" : "wednesdayTO",
+              "type" : "Integer"
+            }
+          }
         }
       }
     }

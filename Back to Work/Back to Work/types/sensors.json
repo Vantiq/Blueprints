@@ -66,6 +66,13 @@
       "type" : "Object",
       "unique" : false
     },
+    "sensorconfig" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "String",
+      "unique" : false
+    },
     "type" : {
       "description" : "location",
       "encrypted" : false,

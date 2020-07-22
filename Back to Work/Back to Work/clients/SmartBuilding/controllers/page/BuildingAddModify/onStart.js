@@ -36,12 +36,14 @@
         map.setZoom(18);
 
     };
-    
+    page.data.schedule.initializeToDefaultValues();
     page.data.building.initializeToDefaultValues();
     page.data.building.organizationid = client.data.organization.id;
-    
+    console.log("parameters");
+    console.log(parameters);
     if (parameters){
         page.data.building.copyMatchingData(parameters);
+        page.data.schedule.copyMatchingData(parameters.schedule);
         page.data.refreshMap();
         
     } else {

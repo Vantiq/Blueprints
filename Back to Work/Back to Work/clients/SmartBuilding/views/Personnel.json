@@ -46,6 +46,18 @@
         "selected" : false,
         "title" : "@text.mobile"
       }, {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "email",
+        "selected" : false,
+        "title" : "Email"
+      }, {
+        "colorRules" : null,
+        "dataType" : "Boolean",
+        "propertyName" : "isCollaborator",
+        "selected" : false,
+        "title" : "Employee?"
+      }, {
         "buttonIcon" : "fa-times-circle",
         "buttonLabel" : "@button.delete",
         "colorRules" : null,
@@ -84,7 +96,7 @@
       "v" : 16,
       "vertGravity" : "top",
       "vertWeight" : 1,
-      "w" : 600,
+      "w" : 660,
       "widthPolicy" : "explicit"
     }, {
       "borderColor" : "Default",

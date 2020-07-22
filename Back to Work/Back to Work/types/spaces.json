@@ -47,6 +47,14 @@
       "type" : "String",
       "unique" : false
     },
+    "max" : {
+      "description" : "The maximum occupancy for this space.",
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "Integer",
+      "unique" : false
+    },
     "meta" : {
       "encrypted" : false,
       "multi" : false,

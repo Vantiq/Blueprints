@@ -34,6 +34,13 @@
       "type" : "String",
       "unique" : false
     },
+    "email" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "String",
+      "unique" : false
+    },
     "firstname" : {
       "encrypted" : false,
       "multi" : false,

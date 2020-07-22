@@ -13,67 +13,62 @@
     "options" : {
       "unique" : true
     }
-  }, {
-    "keys" : [ "#geo" ],
-    "options" : { }
   } ],
   "maxObjects" : 0,
   "maxStorage" : 0,
   "metadata" : false,
-  "name" : "buildings",
+  "name" : "sensorConfigDetail",
   "naturalKey" : [ "id" ],
   "properties" : {
-    "address" : {
-      "encrypted" : false,
-      "multi" : false,
-      "required" : false,
-      "type" : "String",
-      "unique" : false
-    },
-    "geo" : {
-      "encrypted" : false,
-      "multi" : false,
-      "required" : false,
-      "type" : "GeoJSON",
-      "unique" : false
-    },
     "id" : {
+      "description" : "Unique id for this sensor configuration rule.",
+      "encrypted" : false,
+      "multi" : false,
+      "required" : true,
+      "type" : "String",
+      "unique" : false
+    },
+    "interval" : {
+      "description" : "The interval between unacknowledged notifications.",
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "Integer",
+      "unique" : false
+    },
+    "intervalUnit" : {
+      "description" : "Allow to set the interval in hours, minutes or seconds.",
       "encrypted" : false,
       "multi" : false,
       "required" : false,
       "type" : "String",
       "unique" : false
     },
-    "meta" : {
-      "encrypted" : false,
-      "multi" : false,
-      "required" : false,
-      "type" : "Object",
-      "unique" : false
-    },
-    "name" : {
+    "notificationType" : {
       "encrypted" : false,
       "multi" : false,
       "required" : false,
       "type" : "String",
       "unique" : false
     },
-    "organizationid" : {
+    "roles" : {
+      "description" : "Defines which roles will receive the notification.",
       "encrypted" : false,
       "multi" : false,
       "required" : false,
       "type" : "String",
       "unique" : false
     },
-    "schedule" : {
+    "sensorId" : {
+      "description" : "The particular sensor to which this notification applies.",
       "encrypted" : false,
       "multi" : false,
       "required" : false,
-      "type" : "Object",
+      "type" : "String",
       "unique" : false
     },
-    "utcOffset" : {
-      "description" : "UTC Offsets in minutues",
+    "threshold" : {
+      "description" : "A numeric value that determines what value is crossed in order to send the notification. Assumes the trigger condition is > threshold.",
       "encrypted" : false,
       "multi" : false,
       "required" : false,

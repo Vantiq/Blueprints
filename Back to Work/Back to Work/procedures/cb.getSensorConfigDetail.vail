@@ -1,0 +1,28 @@
+PROCEDURE cb.getSensorConfigDetail(SensorId String)
+
+//log.info(stringify(Distance))
+if(SensorId){
+//if (Distance){
+    
+ //   if (!Location){
+ //       exception("cb.getLocations","Origin location not specified")
+//    }
+    
+    // miles to meters
+ //   var meters = Math.round(Distance * 1000)
+    
+  //  SELECT FROM Location WHERE facilityType == facility AND coordinates geoNear { 
+   // 	geometry: Distance, 
+  //  	maxDistance: meters 
+//	}
+//} else {
+   // SELECT FROM sensorConfigDetail WHERE SensorId == sensorId
+    log.info("passed in sensorId")
+    SELECT * FROM sensorConfigDetail WHERE sensorId == SensorId
+//}
+}
+
+//else{
+//    SELECT * FROM sensorConfigDetail
+//}
+//
