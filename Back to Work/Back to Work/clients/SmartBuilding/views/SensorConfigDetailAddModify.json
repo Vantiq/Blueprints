@@ -1,0 +1,344 @@
+{
+  "bodyChildren" : {
+    "rootArray" : [ "50e2cb6d-b1ad-4cb8-8a84-1be22a974e6b" ],
+    "widgets" : [ {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "fontFamily" : "inherit",
+      "fontSize" : 20,
+      "fontStyle" : "normal",
+      "fontWeight" : "normal",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "StaticText56951",
+      "text" : "Create Sensor Notifications",
+      "type" : "StaticText",
+      "uuid" : "1c02f370-d28a-4896-b62c-31b93872c53f",
+      "v" : 16,
+      "vertGravity" : "top",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "binding" : "page.data.sensorConfigDetail.interval",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : null,
+      "flavor" : "text",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "label" : "Interval",
+      "maxValue" : 100,
+      "minValue" : 0,
+      "name" : "InputInteger45",
+      "optional" : true,
+      "placeholder" : "",
+      "type" : "InputInteger",
+      "units" : "",
+      "uuid" : "298af06a-d175-4878-99d9-2ac8c6fd69fc",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 1,
+      "children" : [ "f676b3d6-eca8-4afd-9447-eaa247572e5e" ],
+      "column" : 0,
+      "heightPolicy" : "sizeToCell",
+      "horzGravity" : "center",
+      "innerMargin" : 20,
+      "name" : "HorizontalLayout24863",
+      "row" : 0,
+      "type" : "HorizontalLayout",
+      "uuid" : "50e2cb6d-b1ad-4cb8-8a84-1be22a974e6b",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "binding" : "page.data.sensorConfigDetail.threshold",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : null,
+      "flavor" : "text",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "left",
+      "label" : "Value",
+      "maxValue" : 100,
+      "minValue" : 0,
+      "name" : "InputInteger40",
+      "optional" : true,
+      "placeholder" : "",
+      "type" : "InputInteger",
+      "units" : "",
+      "uuid" : "5680baff-0d4a-4002-b049-26f57a66296e",
+      "v" : 16,
+      "vertGravity" : "top",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "buttonBackgroundColor" : "#001a80",
+      "buttonLabel" : "Save",
+      "buttonLabelColor" : "platform",
+      "buttonLabelSize" : 14,
+      "buttonLabelStyle" : "bold",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "left",
+      "name" : "Button12142",
+      "submitValue" : 100,
+      "type" : "Button",
+      "uuid" : "5edde91d-5657-47bd-9ee2-6133f0d73083",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "naturalSize"
+    }, {
+      "binding" : "page.data.sensorConfigDetail.notificationType",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "default" : "Threshold",
+      "enumeratedList" : [ {
+        "label" : "Threshold",
+        "value" : "Threshold"
+      }, {
+        "label" : "Occupancy",
+        "value" : "Occupancy"
+      }, {
+        "label" : "Physical Distancing",
+        "value" : "Distancing"
+      } ],
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "label" : "Notification Type",
+      "name" : "Droplist3283",
+      "type" : "Droplist",
+      "uuid" : "6813e483-4874-4f2f-89b9-a410bca51a7f",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "children" : [ "298af06a-d175-4878-99d9-2ac8c6fd69fc", "f0ac43b1-a647-4dd5-8a5c-809f616f7f79" ],
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "left",
+      "innerMargin" : 20,
+      "name" : "HorizontalLayout24965",
+      "type" : "HorizontalLayout",
+      "uuid" : "8e4dd949-aade-4ff0-8b7f-b882b78f01d5",
+      "v" : 16,
+      "vertGravity" : "top",
+      "widthPolicy" : "naturalSize"
+    }, {
+      "binding" : "page.data.sensorConfigDetail.sensorId",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "inputType" : "text",
+      "isReadOnly" : true,
+      "label" : "Sensor Id",
+      "name" : "InputString13034",
+      "optional" : true,
+      "placeholder" : "",
+      "type" : "InputString",
+      "uuid" : "aaece68a-f4e2-492c-8f95-63f0fe53d313",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 1,
+      "children" : [ "e5b48e6d-56e3-43fb-80f0-3c6a559520a8", "5edde91d-5657-47bd-9ee2-6133f0d73083" ],
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "innerMargin" : 20,
+      "name" : "HorizontalLayout33592",
+      "type" : "HorizontalLayout",
+      "uuid" : "b9443ea4-aefa-4c89-a4e3-23b41241167e",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "binding" : "page.data.sensorConfigDetail.roles",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "default" : null,
+      "enumeratedList" : [ ],
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "left",
+      "label" : "Role",
+      "name" : "Role",
+      "type" : "Droplist",
+      "uuid" : "d115894a-749b-4523-8dec-a433d703f972",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "buttonBackgroundColor" : "#001a80",
+      "buttonLabel" : "@button.back",
+      "buttonLabelColor" : "platform",
+      "buttonLabelSize" : 14,
+      "buttonLabelStyle" : "bold",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "Button12500",
+      "submitValue" : 100,
+      "type" : "Button",
+      "uuid" : "e5b48e6d-56e3-43fb-80f0-3c6a559520a8",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "naturalSize"
+    }, {
+      "binding" : "page.data.sensorConfigDetail.intervalUnit",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "default" : "hours",
+      "enumeratedList" : [ {
+        "label" : "Hours",
+        "value" : "hours"
+      }, {
+        "label" : "Minutes",
+        "value" : "minutes"
+      } ],
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "label" : "Units",
+      "name" : "Droplist2433",
+      "type" : "Droplist",
+      "uuid" : "f0ac43b1-a647-4dd5-8a5c-809f616f7f79",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "children" : [ "1c02f370-d28a-4896-b62c-31b93872c53f", "aaece68a-f4e2-492c-8f95-63f0fe53d313", "6813e483-4874-4f2f-89b9-a410bca51a7f", "5680baff-0d4a-4002-b049-26f57a66296e", "8e4dd949-aade-4ff0-8b7f-b882b78f01d5", "d115894a-749b-4523-8dec-a433d703f972", "b9443ea4-aefa-4c89-a4e3-23b41241167e" ],
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "left",
+      "innerMargin" : 20,
+      "name" : "VerticalLayout17920",
+      "type" : "VerticalLayout",
+      "uuid" : "f676b3d6-eca8-4afd-9447-eaa247572e5e",
+      "v" : 16,
+      "vertGravity" : "top",
+      "w" : 324,
+      "widthPolicy" : "explicit"
+    } ]
+  },
+  "data" : {
+    "properties" : {
+      "sensor" : {
+        "defaultLabel" : "sensor",
+        "type" : "TypedObject",
+        "typedObject" : {
+          "properties" : {
+            "assetid" : {
+              "defaultLabel" : "assetid",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "config" : {
+              "defaultLabel" : "config",
+              "type" : "Object"
+            },
+            "data" : {
+              "defaultLabel" : "data",
+              "type" : "Object"
+            },
+            "id" : {
+              "defaultLabel" : "id",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "manufacturer" : {
+              "defaultLabel" : "manufacturer",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "meta" : {
+              "defaultLabel" : "meta",
+              "type" : "Object"
+            },
+            "sensorconfig" : {
+              "defaultLabel" : "sensorconfig",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "type" : {
+              "defaultLabel" : "type",
+              "defaultValue" : "",
+              "type" : "String"
+            }
+          },
+          "type" : "sensors"
+        }
+      },
+      "sensorConfigDetail" : {
+        "defaultLabel" : "sensorConfigDetail",
+        "type" : "TypedObject",
+        "typedObject" : {
+          "properties" : {
+            "id" : {
+              "defaultLabel" : "id",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "interval" : {
+              "defaultLabel" : "interval",
+              "defaultValue" : "",
+              "type" : "Integer"
+            },
+            "intervalUnit" : {
+              "defaultLabel" : "intervalUnit",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "notificationType" : {
+              "defaultLabel" : "notificationType",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "roles" : {
+              "defaultLabel" : "roles",
+              "type" : "Object"
+            },
+            "sensorId" : {
+              "defaultLabel" : "sensorId",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "threshold" : {
+              "defaultLabel" : "threshold",
+              "defaultValue" : "",
+              "type" : "Integer"
+            }
+          },
+          "type" : "sensorConfigDetail"
+        }
+      },
+      "sensorId" : {
+        "defaultLabel" : "sensorId",
+        "defaultValue" : "",
+        "type" : "String"
+      }
+    }
+  },
+  "footerChildren" : [ ],
+  "hasFooter" : false,
+  "layoutType" : "single",
+  "responseTopic" : ""
+}

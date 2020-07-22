@@ -18,12 +18,14 @@
     };
 
     page.data.building.initializeToDefaultValues();
+    page.data.schedule.initializeToDefaultValues();
     
     var args = {};
     args.id = parameters.id;
     
     client.data.execute("cb.getBuildingById", args, function(response){
         page.data.building.copyMatchingData(response);
+        page.data.schedule.copyMatchingData(response.schedule);
         client.sendClientEvent("ce_buildings_BuildingView", response);
         page.data.refreshFloors();
         page.data.refreshFloorPlans();

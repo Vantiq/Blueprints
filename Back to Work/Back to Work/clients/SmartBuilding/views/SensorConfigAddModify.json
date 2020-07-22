@@ -7,7 +7,7 @@
       "borderRadius" : 4,
       "borderThickness" : 0,
       "heightPolicy" : "naturalSize",
-      "horzGravity" : "center",
+      "horzGravity" : "left",
       "label" : "@label.text.configuration",
       "name" : "InputObject1",
       "optional" : true,
@@ -47,7 +47,7 @@
       "uuid" : "25f36e86-0c2c-41b6-a7dd-1e3b72af533c",
       "v" : 16,
       "vertGravity" : "center",
-      "w" : 540,
+      "w" : 500,
       "widthPolicy" : "explicit"
     }, {
       "binding" : "page.data.sensorconfig.id",
@@ -56,7 +56,7 @@
       "borderThickness" : 0,
       "defaultValue" : "",
       "heightPolicy" : "naturalSize",
-      "horzGravity" : "center",
+      "horzGravity" : "left",
       "inputType" : "text",
       "isReadOnly" : true,
       "label" : "@text.id",
@@ -67,7 +67,8 @@
       "uuid" : "304b96d3-8097-468d-9d65-f9e9b1d668b4",
       "v" : 16,
       "vertGravity" : "center",
-      "widthPolicy" : "sizeToCell"
+      "w" : 300,
+      "widthPolicy" : "explicit"
     }, {
       "binding" : "page.data.sensorconfig.sensortypename",
       "borderColor" : "Default",
@@ -76,14 +77,15 @@
       "default" : null,
       "enumeratedList" : [ ],
       "heightPolicy" : "naturalSize",
-      "horzGravity" : "center",
+      "horzGravity" : "left",
       "label" : "@text.sensortype",
       "name" : "Droplist1986",
       "type" : "Droplist",
       "uuid" : "35c778b5-ca26-49ca-8fff-d56609fcd806",
       "v" : 16,
       "vertGravity" : "center",
-      "widthPolicy" : "sizeToCell"
+      "w" : 300,
+      "widthPolicy" : "explicit"
     }, {
       "borderColor" : "Default",
       "borderRadius" : 4,
@@ -110,7 +112,7 @@
       "borderThickness" : 0,
       "defaultValue" : "",
       "heightPolicy" : "naturalSize",
-      "horzGravity" : "center",
+      "horzGravity" : "left",
       "inputType" : "text",
       "label" : "@label.text.sensorconfigname",
       "name" : "InputString9805",
@@ -120,7 +122,8 @@
       "uuid" : "a6e57bcc-8d23-4414-83f2-d4f129b40467",
       "v" : 16,
       "vertGravity" : "center",
-      "widthPolicy" : "sizeToCell"
+      "w" : 300,
+      "widthPolicy" : "explicit"
     }, {
       "borderColor" : "Default",
       "borderRadius" : 4,

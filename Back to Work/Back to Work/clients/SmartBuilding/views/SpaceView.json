@@ -35,6 +35,28 @@
       "vertGravity" : "center",
       "widthPolicy" : "sizeToCell"
     }, {
+      "binding" : "page.data.space.max",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : null,
+      "flavor" : "text",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "isReadOnly" : true,
+      "label" : "Max Occupancy",
+      "maxValue" : 100,
+      "minValue" : 0,
+      "name" : "InputInteger3",
+      "optional" : true,
+      "placeholder" : "",
+      "type" : "InputInteger",
+      "units" : "",
+      "uuid" : "5651eac2-f46a-46bf-86af-48ba45b57bba",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
       "borderColor" : "Default",
       "borderRadius" : 4,
       "borderThickness" : 0,
@@ -102,7 +124,7 @@
       "borderColor" : "Default",
       "borderRadius" : 4,
       "borderThickness" : 1,
-      "children" : [ "fb2fa82f-bdcd-4819-8638-1816b914ae07", "9aa455ce-883e-437a-97c5-38e7a1b9e3ab", "4598142f-e87e-4fa6-8fb4-8d811ef35464", "62a9a68a-c108-4955-ab8a-7d17d1a5e15e", "2e2965ed-f938-4e6a-923b-c8322d98a314" ],
+      "children" : [ "fb2fa82f-bdcd-4819-8638-1816b914ae07", "9aa455ce-883e-437a-97c5-38e7a1b9e3ab", "4598142f-e87e-4fa6-8fb4-8d811ef35464", "62a9a68a-c108-4955-ab8a-7d17d1a5e15e", "5651eac2-f46a-46bf-86af-48ba45b57bba", "2e2965ed-f938-4e6a-923b-c8322d98a314" ],
       "heightPolicy" : "naturalSize",
       "horzGravity" : "center",
       "innerMargin" : 20,
@@ -192,6 +214,11 @@
               "defaultLabel" : "id",
               "defaultValue" : "",
               "type" : "String"
+            },
+            "max" : {
+              "defaultLabel" : "max",
+              "defaultValue" : "",
+              "type" : "Integer"
             },
             "name" : {
               "defaultLabel" : "name",

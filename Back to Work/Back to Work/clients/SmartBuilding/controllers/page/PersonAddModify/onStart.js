@@ -78,12 +78,11 @@
         console.log(page.data.person);
         
         console.log("step1");
-        if(page.data.person.values.hasOwnProperty('photopath')){
-            //if(page.data.person.values.photopath !== ""){
-                console.log("It had it");
-                client.getWidget("StaticImage77").url = page.data.person.photopath;
-            //}
-
+        if(page.data.person.photopath){
+            console.log("It had it");
+            client.getWidget("StaticImage77").url = page.data.person.photopath;
+        } else {
+            client.getWidget("StaticImage77").url = "../../docs/images/placeholderuser250.jpg";
         }
         
         console.log("step2");

@@ -338,12 +338,97 @@
   }, {
     "source" : "app/Registration",
     "target" : "procedure/app.updatePersonnelPhoto"
+  }, {
+    "source" : "client/PhotoRegistration",
+    "target" : "topic//personnel/registration"
+  }, {
+    "source" : "type/system.collaborations",
+    "target" : "procedure/app.updateSensorAndAssetLocation"
+  }, {
+    "source" : "procedure/app.updateSensorAndAssetLocation",
+    "target" : "type/trackinghistory"
+  }, {
+    "source" : "procedure/app.updateSensorAndAssetLocation",
+    "target" : "topic//indoortracking"
+  }, {
+    "source" : "procedure/cb.adjustTheme",
+    "target" : "type/system.clients"
+  }, {
+    "source" : "procedure/cb.adjustTheme",
+    "target" : "type/system.documents"
+  }, {
+    "source" : "procedure/cb.adjustTheme",
+    "target" : "procedure/Utils.stripSystemProperties"
+  }, {
+    "source" : "procedure/cb.findSpaceForAsset",
+    "target" : "procedure/Utils.stripSystemProperties"
+  }, {
+    "source" : "type/system.collaborations",
+    "target" : "procedure/cb.getCollabContext"
+  }, {
+    "source" : "type/system.collaborations",
+    "target" : "procedure/cb.getDashboardData"
+  }, {
+    "source" : "type/system.components",
+    "target" : "procedure/cb.getOpenIssues"
+  }, {
+    "source" : "type/system.clients",
+    "target" : "procedure/cb.getTheme"
+  }, {
+    "source" : "procedure/collab.setIssueStatus",
+    "target" : "type/system.collaborations"
+  }, {
+    "source" : "procedure/collab.setIssueStatus",
+    "target" : "procedure/Utils.stripSystemProperties"
+  }, {
+    "source" : "type/system.collaborations",
+    "target" : "procedure/dashboard.getOpenHighBodyTemps"
+  }, {
+    "source" : "type/system.collaborations",
+    "target" : "procedure/dashboard.getOpenPersonnelHighTemps"
+  }, {
+    "source" : "type/system.collaborations",
+    "target" : "procedure/dashboard.getOpenRestrictedSpaceIssues"
+  }, {
+    "source" : "procedure/deleteExpiredTokens",
+    "target" : "type/system.tokens"
+  }, {
+    "source" : "procedure/demo.removeAllCollabAndSit",
+    "target" : "type/system.collaborations"
+  }, {
+    "source" : "procedure/demo.removeAllCollabAndSit",
+    "target" : "type/system.situations"
+  }, {
+    "source" : "procedure/getToken",
+    "target" : "type/system.tokens"
+  }, {
+    "source" : "procedure/newTransportRequest",
+    "target" : "topic//request/transport"
+  }, {
+    "source" : "procedure/sim.camNoUserInfoUnitTest",
+    "target" : "topic//camera/thermal/reading"
+  }, {
+    "source" : "procedure/sim.camWithUserInfoUnitTest",
+    "target" : "topic//camera/thermal/userreading"
+  }, {
+    "source" : "procedure/sim.playbackSimulation",
+    "target" : "topic//simulation/playback"
+  }, {
+    "source" : "procedure/sim.playbackSimulation_Copy",
+    "target" : "topic//simulation/playback"
+  }, {
+    "source" : "type/sensorConfigDetail",
+    "target" : "client/SmartBuilding"
+  }, {
+    "source" : "type/sensorConfigDetail",
+    "target" : "procedure/cb.getSensorConfigDetail"
   } ],
   "name" : "Accelerator",
   "options" : {
+    "VCSFriendly" : 1,
     "description" : "Digital Twin Blueprint\n\nThis description should be updated with:\n* Documentation and videos available at https://community.vantiq.com/\n* List of plugins\n\nCentrak RTLS - App that connects to RTLS data from CENTRAL\nContactTracing - Add contact tracing into accelerator, used in conjunction with RTLS data\nGiConnectThermal - App to connect GiConnect Thermnal Camera into accelerator\nHandSantizer - Notify maintenace when levels drop below threshold\nPhysical Distance - Notify Security if crowd is forming for extended period of time\nRestriced Space - Notify security if RTLS data appears in restriced area",
     "dockCollapsed" : {
-      "bottom" : true,
+      "bottom" : false,
       "left" : false,
       "right" : false,
       "top" : false
@@ -351,7 +436,7 @@
     "dockDimensions" : {
       "bottom" : 200,
       "debug" : [ 0, 0, 0 ],
-      "left" : 263,
+      "left" : 371,
       "right" : 220,
       "top" : 0
     },
@@ -361,11 +446,6 @@
     "layoutStyle" : "tile",
     "listFlavor" : "tree",
     "openResourceFolders" : {
-      "App" : true,
-      "Client" : true,
-      "Procedure" : true,
-      "Subscription" : true,
-      "Topic" : true,
       "Type" : true
     },
     "showGrid" : true,
@@ -375,6 +455,21 @@
     "v" : 3
   },
   "resources" : [ {
+    "label" : "/camera/thermal/reading",
+    "name" : "/camera/thermal/reading",
+    "resourceReference" : "/topics//camera/thermal/reading",
+    "type" : 10
+  }, {
+    "label" : "/camera/thermal/userreading",
+    "name" : "/camera/thermal/userreading",
+    "resourceReference" : "/topics//camera/thermal/userreading",
+    "type" : 10
+  }, {
+    "label" : "/indoortracking",
+    "name" : "/indoortracking",
+    "resourceReference" : "/topics//indoortracking",
+    "type" : 10
+  }, {
     "label" : "/mobile/debug",
     "name" : "/mobile/debug",
     "resourceReference" : "/topics//mobile/debug",
@@ -385,8 +480,19 @@
     "resourceReference" : "/topics//my/response/topic",
     "type" : 10
   }, {
+    "label" : "/personnel/registration",
     "name" : "/personnel/registration",
     "resourceReference" : "/topics//personnel/registration",
+    "type" : 10
+  }, {
+    "label" : "/request/transport",
+    "name" : "/request/transport",
+    "resourceReference" : "/topics//request/transport",
+    "type" : 10
+  }, {
+    "label" : "/simulation/playback",
+    "name" : "/simulation/playback",
+    "resourceReference" : "/topics//simulation/playback",
     "type" : 10
   }, {
     "inventory" : {
@@ -410,8 +516,30 @@
     "label" : "MobileDebug",
     "name" : "MobileDebug",
     "resourceReference" : "/ArsSubscribe/MobileDebug",
-    "timestamp" : "2020-04-18T12:59:15.178Z",
     "type" : 9
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "MyLaptop",
+    "name" : "MyLaptop",
+    "resourceReference" : "/sources/MyLaptop",
+    "type" : 4
   }, {
     "inventory" : {
       "clientHash" : [ ],
@@ -434,7 +562,6 @@
     "label" : "PhotoRegistration",
     "name" : "PhotoRegistration",
     "resourceReference" : "/system.clients/PhotoRegistration",
-    "timestamp" : "2020-04-18T12:59:04.006Z",
     "type" : 15
   }, {
     "inventory" : {
@@ -458,7 +585,6 @@
     "label" : "Registration",
     "name" : "Registration",
     "resourceReference" : "/collaborationtypes/Registration",
-    "timestamp" : "2020-05-29T16:56:18.544Z",
     "type" : 12
   }, {
     "inventory" : {
@@ -476,13 +602,12 @@
       "systemmodels" : [ ],
       "topicHash" : [ ],
       "topics" : [ ],
-      "typeHash" : [ "in", "in", "in" ],
-      "types" : [ "assets", "sensors", "system.collaborations" ]
+      "typeHash" : [ "in", "in", "in", "in" ],
+      "types" : [ "assets", "sensors", "system.collaborations", "sensorConfigDetail" ]
     },
     "label" : "SmartBuilding",
     "name" : "SmartBuilding",
     "resourceReference" : "/system.clients/SmartBuilding",
-    "timestamp" : "2020-05-29T16:53:27.127Z",
     "type" : 15
   }, {
     "inventory" : {
@@ -506,7 +631,6 @@
     "label" : "Utils.stripSystemProperties",
     "name" : "Utils.stripSystemProperties",
     "resourceReference" : "/procedures/Utils.stripSystemProperties",
-    "timestamp" : "2020-04-04T17:17:20.384Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -530,7 +654,6 @@
     "label" : "VCSDocumentExport",
     "name" : "VCSDocumentExport",
     "resourceReference" : "/system.clients/VCSDocumentExport",
-    "timestamp" : "2020-05-29T14:12:53.759Z",
     "type" : 15
   }, {
     "inventory" : {
@@ -554,7 +677,6 @@
     "label" : "app.lookupPersonnel",
     "name" : "app.lookupPersonnel",
     "resourceReference" : "/procedures/app.lookupPersonnel",
-    "timestamp" : "2020-05-04T21:34:08.375Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -578,7 +700,6 @@
     "label" : "app.transformCamJSON",
     "name" : "app.transformCamJSON",
     "resourceReference" : "/procedures/app.transformCamJSON",
-    "timestamp" : "2020-05-04T21:36:40.879Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -602,7 +723,6 @@
     "label" : "app.transformUserCamJSON",
     "name" : "app.transformUserCamJSON",
     "resourceReference" : "/procedures/app.transformUserCamJSON",
-    "timestamp" : "2020-05-04T21:38:13.619Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -623,9 +743,9 @@
       "typeHash" : [ "out" ],
       "types" : [ "personnel" ]
     },
+    "label" : "app.updatePersonnelPhoto",
     "name" : "app.updatePersonnelPhoto",
     "resourceReference" : "/procedures/app.updatePersonnelPhoto",
-    "timestamp" : "2020-05-29T16:55:15.996Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -649,7 +769,6 @@
     "label" : "app.updateSensorAndAssetLocation",
     "name" : "app.updateSensorAndAssetLocation",
     "resourceReference" : "/procedures/app.updateSensorAndAssetLocation",
-    "timestamp" : "2020-05-11T19:07:10.992Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -673,31 +792,26 @@
     "label" : "appCondition.evaluateConfig",
     "name" : "appCondition.evaluateConfig",
     "resourceReference" : "/procedures/appCondition.evaluateConfig",
-    "timestamp" : "2020-05-04T21:53:33.985Z",
     "type" : 3
   }, {
     "label" : "assets",
     "name" : "assets",
     "resourceReference" : "/types/assets",
-    "timestamp" : "2020-04-18T12:59:00.984Z",
     "type" : 1
   }, {
     "label" : "assettypes",
     "name" : "assettypes",
     "resourceReference" : "/types/assettypes",
-    "timestamp" : "2020-04-18T12:59:00.961Z",
     "type" : 1
   }, {
     "label" : "buildings",
     "name" : "buildings",
     "resourceReference" : "/types/buildings",
-    "timestamp" : "2020-04-18T12:59:01.022Z",
     "type" : 1
   }, {
     "label" : "cameraevents",
     "name" : "cameraevents",
     "resourceReference" : "/types/cameraevents",
-    "timestamp" : "2020-04-18T12:59:00.887Z",
     "type" : 1
   }, {
     "inventory" : {
@@ -721,7 +835,6 @@
     "label" : "cb.adjustTheme",
     "name" : "cb.adjustTheme",
     "resourceReference" : "/procedures/cb.adjustTheme",
-    "timestamp" : "2020-05-18T18:13:44.254Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -745,7 +858,6 @@
     "label" : "cb.deleteAsset",
     "name" : "cb.deleteAsset",
     "resourceReference" : "/procedures/cb.deleteAsset",
-    "timestamp" : "2020-05-04T22:02:53.455Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -769,7 +881,6 @@
     "label" : "cb.deleteBuilding",
     "name" : "cb.deleteBuilding",
     "resourceReference" : "/procedures/cb.deleteBuilding",
-    "timestamp" : "2020-05-04T22:04:12.552Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -793,7 +904,6 @@
     "label" : "cb.deleteFloor",
     "name" : "cb.deleteFloor",
     "resourceReference" : "/procedures/cb.deleteFloor",
-    "timestamp" : "2020-05-04T22:20:59.458Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -817,7 +927,6 @@
     "label" : "cb.deleteSensorType",
     "name" : "cb.deleteSensorType",
     "resourceReference" : "/procedures/cb.deleteSensorType",
-    "timestamp" : "2020-04-24T21:54:53.884Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -841,7 +950,6 @@
     "label" : "cb.findSpaceForAsset",
     "name" : "cb.findSpaceForAsset",
     "resourceReference" : "/procedures/cb.findSpaceForAsset",
-    "timestamp" : "2020-05-11T17:51:32.842Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -865,7 +973,6 @@
     "label" : "cb.getAssetById",
     "name" : "cb.getAssetById",
     "resourceReference" : "/procedures/cb.getAssetById",
-    "timestamp" : "2020-04-18T12:52:48.864Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -889,7 +996,6 @@
     "label" : "cb.getAssetForSensor",
     "name" : "cb.getAssetForSensor",
     "resourceReference" : "/procedures/cb.getAssetForSensor",
-    "timestamp" : "2020-04-19T13:07:06.953Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -913,7 +1019,6 @@
     "label" : "cb.getAssetTypes",
     "name" : "cb.getAssetTypes",
     "resourceReference" : "/procedures/cb.getAssetTypes",
-    "timestamp" : "2020-04-18T12:52:48.779Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -937,7 +1042,6 @@
     "label" : "cb.getAssets",
     "name" : "cb.getAssets",
     "resourceReference" : "/procedures/cb.getAssets",
-    "timestamp" : "2020-04-18T12:52:49.582Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -961,7 +1065,6 @@
     "label" : "cb.getAssetsForFloor",
     "name" : "cb.getAssetsForFloor",
     "resourceReference" : "/procedures/cb.getAssetsForFloor",
-    "timestamp" : "2020-04-18T12:52:49.115Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -985,7 +1088,6 @@
     "label" : "cb.getBuildingById",
     "name" : "cb.getBuildingById",
     "resourceReference" : "/procedures/cb.getBuildingById",
-    "timestamp" : "2020-04-18T12:52:49.272Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -1009,7 +1111,6 @@
     "label" : "cb.getBuildingForSpaceBySpaceId",
     "name" : "cb.getBuildingForSpaceBySpaceId",
     "resourceReference" : "/procedures/cb.getBuildingForSpaceBySpaceId",
-    "timestamp" : "2020-04-18T12:52:49.385Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -1033,7 +1134,6 @@
     "label" : "cb.getBuildings",
     "name" : "cb.getBuildings",
     "resourceReference" : "/procedures/cb.getBuildings",
-    "timestamp" : "2020-04-18T12:52:48.681Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -1057,7 +1157,6 @@
     "label" : "cb.getCollabContext",
     "name" : "cb.getCollabContext",
     "resourceReference" : "/procedures/cb.getCollabContext",
-    "timestamp" : "2020-05-04T22:06:20.492Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -1081,7 +1180,6 @@
     "label" : "cb.getDailyCounts",
     "name" : "cb.getDailyCounts",
     "resourceReference" : "/procedures/cb.getDailyCounts",
-    "timestamp" : "2020-05-04T22:09:23.574Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -1105,7 +1203,6 @@
     "label" : "cb.getDashboardData",
     "name" : "cb.getDashboardData",
     "resourceReference" : "/procedures/cb.getDashboardData",
-    "timestamp" : "2020-05-04T22:09:48.282Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -1129,7 +1226,6 @@
     "label" : "cb.getFloorById",
     "name" : "cb.getFloorById",
     "resourceReference" : "/procedures/cb.getFloorById",
-    "timestamp" : "2020-05-04T22:10:25.601Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -1153,7 +1249,6 @@
     "label" : "cb.getFloorForSpaceBySpaceId",
     "name" : "cb.getFloorForSpaceBySpaceId",
     "resourceReference" : "/procedures/cb.getFloorForSpaceBySpaceId",
-    "timestamp" : "2020-05-04T22:11:14.462Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -1177,7 +1272,6 @@
     "label" : "cb.getFloorPlanById",
     "name" : "cb.getFloorPlanById",
     "resourceReference" : "/procedures/cb.getFloorPlanById",
-    "timestamp" : "2020-05-04T22:12:02.128Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -1201,7 +1295,6 @@
     "label" : "cb.getFloorPlanForSpaceBySpaceId",
     "name" : "cb.getFloorPlanForSpaceBySpaceId",
     "resourceReference" : "/procedures/cb.getFloorPlanForSpaceBySpaceId",
-    "timestamp" : "2020-05-04T22:18:23.848Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -1225,7 +1318,6 @@
     "label" : "cb.getFloorPlansByBuildingId",
     "name" : "cb.getFloorPlansByBuildingId",
     "resourceReference" : "/procedures/cb.getFloorPlansByBuildingId",
-    "timestamp" : "2020-04-18T12:52:49.532Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -1249,7 +1341,6 @@
     "label" : "cb.getFloorplanByFloorId",
     "name" : "cb.getFloorplanByFloorId",
     "resourceReference" : "/procedures/cb.getFloorplanByFloorId",
-    "timestamp" : "2020-04-18T12:52:48.846Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -1273,7 +1364,6 @@
     "label" : "cb.getFloorsForBuilding",
     "name" : "cb.getFloorsForBuilding",
     "resourceReference" : "/procedures/cb.getFloorsForBuilding",
-    "timestamp" : "2020-04-18T12:52:48.577Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -1297,7 +1387,6 @@
     "label" : "cb.getHierarchyForAssetByFloorId",
     "name" : "cb.getHierarchyForAssetByFloorId",
     "resourceReference" : "/procedures/cb.getHierarchyForAssetByFloorId",
-    "timestamp" : "2020-04-18T12:52:49.582Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -1321,7 +1410,6 @@
     "label" : "cb.getHierarchyForAssetBySpaceId",
     "name" : "cb.getHierarchyForAssetBySpaceId",
     "resourceReference" : "/procedures/cb.getHierarchyForAssetBySpaceId",
-    "timestamp" : "2020-04-18T12:52:48.652Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -1345,7 +1433,6 @@
     "label" : "cb.getOpenIssues",
     "name" : "cb.getOpenIssues",
     "resourceReference" : "/procedures/cb.getOpenIssues",
-    "timestamp" : "2020-04-21T13:51:25.715Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -1369,7 +1456,6 @@
     "label" : "cb.getOrganization",
     "name" : "cb.getOrganization",
     "resourceReference" : "/procedures/cb.getOrganization",
-    "timestamp" : "2020-04-18T12:52:49.268Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -1393,7 +1479,6 @@
     "label" : "cb.getPersonnel",
     "name" : "cb.getPersonnel",
     "resourceReference" : "/procedures/cb.getPersonnel",
-    "timestamp" : "2020-04-18T12:52:49.402Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -1417,7 +1502,6 @@
     "label" : "cb.getRoles",
     "name" : "cb.getRoles",
     "resourceReference" : "/procedures/cb.getRoles",
-    "timestamp" : "2020-04-18T12:52:48.672Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -1441,7 +1525,6 @@
     "label" : "cb.getSensorById",
     "name" : "cb.getSensorById",
     "resourceReference" : "/procedures/cb.getSensorById",
-    "timestamp" : "2020-04-18T12:52:49.018Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -1465,7 +1548,6 @@
     "label" : "cb.getSensorByIdAndType",
     "name" : "cb.getSensorByIdAndType",
     "resourceReference" : "/procedures/cb.getSensorByIdAndType",
-    "timestamp" : "2020-04-18T12:52:48.676Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -1489,7 +1571,29 @@
     "label" : "cb.getSensorConfigById",
     "name" : "cb.getSensorConfigById",
     "resourceReference" : "/procedures/cb.getSensorConfigById",
-    "timestamp" : "2020-05-04T22:23:06.055Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "sensorConfigDetail" ]
+    },
+    "label" : "cb.getSensorConfigDetail",
+    "name" : "cb.getSensorConfigDetail",
+    "resourceReference" : "/procedures/cb.getSensorConfigDetail",
     "type" : 3
   }, {
     "inventory" : {
@@ -1513,7 +1617,6 @@
     "label" : "cb.getSensorConfigs",
     "name" : "cb.getSensorConfigs",
     "resourceReference" : "/procedures/cb.getSensorConfigs",
-    "timestamp" : "2020-05-04T22:23:09.526Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -1537,7 +1640,6 @@
     "label" : "cb.getSensorManufacturers",
     "name" : "cb.getSensorManufacturers",
     "resourceReference" : "/procedures/cb.getSensorManufacturers",
-    "timestamp" : "2020-04-24T17:46:09.409Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -1561,7 +1663,6 @@
     "label" : "cb.getSensorTypes",
     "name" : "cb.getSensorTypes",
     "resourceReference" : "/procedures/cb.getSensorTypes",
-    "timestamp" : "2020-04-18T12:52:48.872Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -1585,7 +1686,6 @@
     "label" : "cb.getSensors",
     "name" : "cb.getSensors",
     "resourceReference" : "/procedures/cb.getSensors",
-    "timestamp" : "2020-05-01T14:43:11.083Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -1609,7 +1709,6 @@
     "label" : "cb.getSensorsForAsset",
     "name" : "cb.getSensorsForAsset",
     "resourceReference" : "/procedures/cb.getSensorsForAsset",
-    "timestamp" : "2020-04-18T12:52:49.841Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -1633,7 +1732,6 @@
     "label" : "cb.getSpaceById",
     "name" : "cb.getSpaceById",
     "resourceReference" : "/procedures/cb.getSpaceById",
-    "timestamp" : "2020-04-18T12:52:48.783Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -1657,7 +1755,6 @@
     "label" : "cb.getSpacesForFloor",
     "name" : "cb.getSpacesForFloor",
     "resourceReference" : "/procedures/cb.getSpacesForFloor",
-    "timestamp" : "2020-04-18T12:52:48.742Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -1681,7 +1778,6 @@
     "label" : "cb.getTheme",
     "name" : "cb.getTheme",
     "resourceReference" : "/procedures/cb.getTheme",
-    "timestamp" : "2020-04-18T12:52:49.734Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -1705,7 +1801,6 @@
     "label" : "collab.findSecurityPersonnel",
     "name" : "collab.findSecurityPersonnel",
     "resourceReference" : "/procedures/collab.findSecurityPersonnel",
-    "timestamp" : "2020-05-04T23:35:48.680Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -1729,7 +1824,6 @@
     "label" : "collab.findSecurityPersonnelForBuilding",
     "name" : "collab.findSecurityPersonnelForBuilding",
     "resourceReference" : "/procedures/collab.findSecurityPersonnelForBuilding",
-    "timestamp" : "2020-05-12T20:41:52.877Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -1753,31 +1847,6 @@
     "label" : "collab.getHierarchyFromSensorId",
     "name" : "collab.getHierarchyFromSensorId",
     "resourceReference" : "/procedures/collab.getHierarchyFromSensorId",
-    "timestamp" : "2020-05-04T23:39:35.638Z",
-    "type" : 3
-  }, {
-    "inventory" : {
-      "clientHash" : [ ],
-      "clients" : [ ],
-      "collaborationHash" : [ ],
-      "collaborations" : [ ],
-      "eventstreamHash" : [ ],
-      "eventstreams" : [ ],
-      "procedureHash" : [ "out", "out" ],
-      "procedures" : [ "Math.sqrt", "push" ],
-      "sourceHash" : [ ],
-      "sources" : [ ],
-      "systemmodelHash" : [ ],
-      "systemmodels" : [ ],
-      "topicHash" : [ ],
-      "topics" : [ ],
-      "typeHash" : [ ],
-      "types" : [ ]
-    },
-    "label" : "collab.indoorTracking",
-    "name" : "collab.indoorTracking",
-    "resourceReference" : "/procedures/collab.indoorTracking",
-    "timestamp" : "2020-05-04T23:41:53.781Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -1801,7 +1870,6 @@
     "label" : "collab.setCollabEntitiesHierarchyFromSensorId",
     "name" : "collab.setCollabEntitiesHierarchyFromSensorId",
     "resourceReference" : "/procedures/collab.setCollabEntitiesHierarchyFromSensorId",
-    "timestamp" : "2020-05-29T13:52:07.729Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -1825,7 +1893,6 @@
     "label" : "collab.setIssueStatus",
     "name" : "collab.setIssueStatus",
     "resourceReference" : "/procedures/collab.setIssueStatus",
-    "timestamp" : "2020-05-05T00:01:05.387Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -1849,7 +1916,6 @@
     "label" : "createSecureImagePathUrl",
     "name" : "createSecureImagePathUrl",
     "resourceReference" : "/procedures/createSecureImagePathUrl",
-    "timestamp" : "2020-04-18T12:52:48.430Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -1873,7 +1939,6 @@
     "label" : "dashboard.getOpenHighBodyTemps",
     "name" : "dashboard.getOpenHighBodyTemps",
     "resourceReference" : "/procedures/dashboard.getOpenHighBodyTemps",
-    "timestamp" : "2020-05-06T21:39:35.520Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -1897,7 +1962,6 @@
     "label" : "dashboard.getOpenPersonnelHighTemps",
     "name" : "dashboard.getOpenPersonnelHighTemps",
     "resourceReference" : "/procedures/dashboard.getOpenPersonnelHighTemps",
-    "timestamp" : "2020-05-06T21:40:41.433Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -1921,7 +1985,6 @@
     "label" : "dashboard.getOpenRestrictedSpaceIssues",
     "name" : "dashboard.getOpenRestrictedSpaceIssues",
     "resourceReference" : "/procedures/dashboard.getOpenRestrictedSpaceIssues",
-    "timestamp" : "2020-05-06T21:41:49.487Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -1945,7 +2008,6 @@
     "label" : "dashboardtemplate",
     "name" : "dashboardtemplate",
     "resourceReference" : "/procedures/dashboardtemplate",
-    "timestamp" : "2020-05-29T16:33:00.122Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -1969,7 +2031,6 @@
     "label" : "deleteExpiredTokens",
     "name" : "deleteExpiredTokens",
     "resourceReference" : "/procedures/deleteExpiredTokens",
-    "timestamp" : "2020-05-06T21:45:06.712Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -1993,7 +2054,6 @@
     "label" : "demo.removeAllCollabAndSit",
     "name" : "demo.removeAllCollabAndSit",
     "resourceReference" : "/procedures/demo.removeAllCollabAndSit",
-    "timestamp" : "2020-05-06T21:48:19.237Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -2017,19 +2077,16 @@
     "label" : "findSpaceForAsset",
     "name" : "findSpaceForAsset",
     "resourceReference" : "/procedures/findSpaceForAsset",
-    "timestamp" : "2020-05-04T23:40:48.479Z",
     "type" : 3
   }, {
     "label" : "floorplans",
     "name" : "floorplans",
     "resourceReference" : "/types/floorplans",
-    "timestamp" : "2020-04-18T12:59:00.958Z",
     "type" : 1
   }, {
     "label" : "floors",
     "name" : "floors",
     "resourceReference" : "/types/floors",
-    "timestamp" : "2020-04-18T12:59:01.138Z",
     "type" : 1
   }, {
     "inventory" : {
@@ -2053,7 +2110,6 @@
     "label" : "getBinaryForNumber",
     "name" : "getBinaryForNumber",
     "resourceReference" : "/procedures/getBinaryForNumber",
-    "timestamp" : "2020-05-06T21:57:53.298Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -2077,13 +2133,11 @@
     "label" : "getToken",
     "name" : "getToken",
     "resourceReference" : "/procedures/getToken",
-    "timestamp" : "2020-04-18T12:52:48.576Z",
     "type" : 3
   }, {
     "label" : "movementsimulations",
     "name" : "movementsimulations",
     "resourceReference" : "/types/movementsimulations",
-    "timestamp" : "2020-04-24T15:36:57.365Z",
     "type" : 1
   }, {
     "inventory" : {
@@ -2107,13 +2161,11 @@
     "label" : "newTransportRequest",
     "name" : "newTransportRequest",
     "resourceReference" : "/procedures/newTransportRequest",
-    "timestamp" : "2020-05-06T22:00:43.948Z",
     "type" : 3
   }, {
     "label" : "organization",
     "name" : "organization",
     "resourceReference" : "/types/organization",
-    "timestamp" : "2020-04-18T12:59:01.178Z",
     "type" : 1
   }, {
     "inventory" : {
@@ -2137,55 +2189,51 @@
     "label" : "patientTransport",
     "name" : "patientTransport",
     "resourceReference" : "/procedures/patientTransport",
-    "timestamp" : "2020-04-18T12:52:49.348Z",
     "type" : 3
   }, {
     "label" : "personnel",
     "name" : "personnel",
     "resourceReference" : "/types/personnel",
-    "timestamp" : "2020-05-11T16:50:40.073Z",
     "type" : 1
   }, {
     "label" : "roles",
     "name" : "roles",
     "resourceReference" : "/types/roles",
-    "timestamp" : "2020-04-18T12:59:01.350Z",
     "type" : 1
   }, {
     "label" : "s_dashboard",
     "name" : "s_dashboard",
     "resourceReference" : "/types/s_dashboard",
-    "timestamp" : "2020-04-18T12:59:01.332Z",
     "type" : 1
   }, {
     "label" : "s_issues",
     "name" : "s_issues",
     "resourceReference" : "/types/s_issues",
-    "timestamp" : "2020-04-18T22:25:59.399Z",
+    "type" : 1
+  }, {
+    "label" : "sensorConfigDetail",
+    "name" : "sensorConfigDetail",
+    "resourceReference" : "/types/sensorConfigDetail",
     "type" : 1
   }, {
     "label" : "sensorconfigs",
     "name" : "sensorconfigs",
     "resourceReference" : "/types/sensorconfigs",
-    "timestamp" : "2020-04-18T12:59:01.561Z",
     "type" : 1
   }, {
     "label" : "sensormanufacturers",
     "name" : "sensormanufacturers",
     "resourceReference" : "/types/sensormanufacturers",
-    "timestamp" : "2020-04-24T17:17:54.537Z",
     "type" : 1
   }, {
     "label" : "sensors",
     "name" : "sensors",
     "resourceReference" : "/types/sensors",
-    "timestamp" : "2020-04-24T17:52:04.150Z",
     "type" : 1
   }, {
     "label" : "sensortypes",
     "name" : "sensortypes",
     "resourceReference" : "/types/sensortypes",
-    "timestamp" : "2020-04-18T12:59:01.496Z",
     "type" : 1
   }, {
     "inventory" : {
@@ -2209,7 +2257,6 @@
     "label" : "sim.camNoUserInfoUnitTest",
     "name" : "sim.camNoUserInfoUnitTest",
     "resourceReference" : "/procedures/sim.camNoUserInfoUnitTest",
-    "timestamp" : "2020-04-18T12:52:48.844Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -2233,7 +2280,6 @@
     "label" : "sim.camWithUserInfoUnitTest",
     "name" : "sim.camWithUserInfoUnitTest",
     "resourceReference" : "/procedures/sim.camWithUserInfoUnitTest",
-    "timestamp" : "2020-04-18T12:52:48.759Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -2257,7 +2303,6 @@
     "label" : "sim.deleteMovementSimulation",
     "name" : "sim.deleteMovementSimulation",
     "resourceReference" : "/procedures/sim.deleteMovementSimulation",
-    "timestamp" : "2020-04-18T12:52:48.667Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -2281,7 +2326,6 @@
     "label" : "sim.getSimulations",
     "name" : "sim.getSimulations",
     "resourceReference" : "/procedures/sim.getSimulations",
-    "timestamp" : "2020-04-24T15:54:58.340Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -2305,7 +2349,6 @@
     "label" : "sim.getUserRecord",
     "name" : "sim.getUserRecord",
     "resourceReference" : "/procedures/sim.getUserRecord",
-    "timestamp" : "2020-04-18T12:52:49.628Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -2329,7 +2372,6 @@
     "label" : "sim.playbackSimulation",
     "name" : "sim.playbackSimulation",
     "resourceReference" : "/procedures/sim.playbackSimulation",
-    "timestamp" : "2020-05-01T17:41:49.373Z",
     "type" : 3
   }, {
     "inventory" : {
@@ -2353,19 +2395,46 @@
     "label" : "sim.playbackSimulation_Copy",
     "name" : "sim.playbackSimulation_Copy",
     "resourceReference" : "/procedures/sim.playbackSimulation_Copy",
-    "timestamp" : "2020-04-18T12:52:49.161Z",
     "type" : 3
   }, {
     "label" : "spaces",
     "name" : "spaces",
     "resourceReference" : "/types/spaces",
-    "timestamp" : "2020-04-18T12:59:01.578Z",
+    "type" : 1
+  }, {
+    "label" : "system.clients",
+    "name" : "system.clients",
+    "resourceReference" : "/types/system.clients",
     "type" : 1
   }, {
     "label" : "system.collaborations",
     "name" : "system.collaborations",
     "resourceReference" : "/types/system.collaborations",
-    "timestamp" : "2020-03-18T00:32:48.756Z",
+    "type" : 1
+  }, {
+    "label" : "system.components",
+    "name" : "system.components",
+    "resourceReference" : "/types/system.components",
+    "type" : 1
+  }, {
+    "label" : "system.documents",
+    "name" : "system.documents",
+    "resourceReference" : "/types/system.documents",
+    "type" : 1
+  }, {
+    "label" : "system.situations",
+    "name" : "system.situations",
+    "resourceReference" : "/types/system.situations",
+    "type" : 1
+  }, {
+    "label" : "system.tokens",
+    "name" : "system.tokens",
+    "resourceReference" : "/types/system.tokens",
+    "type" : 1
+  }, {
+    "label" : "trackinghistory",
+    "name" : "trackinghistory",
+    "resourceReference" : "/types/trackinghistory",
     "type" : 1
   }, {
     "inventory" : {
@@ -2389,7 +2458,6 @@
     "label" : "utility.removeSensorsWhereTypeEmpty",
     "name" : "utility.removeSensorsWhereTypeEmpty",
     "resourceReference" : "/procedures/utility.removeSensorsWhereTypeEmpty",
-    "timestamp" : "2020-04-18T12:52:48.816Z",
     "type" : 3
   } ],
   "tools" : [ {
@@ -2397,7 +2465,6 @@
     "name" : "Project Contents",
     "pane" : {
       "c" : -1,
-      "lastUsed" : 1590772207501,
       "r" : -1
     },
     "type" : 2
@@ -2407,7 +2474,6 @@
     "name" : "Inactive Panes",
     "pane" : {
       "c" : -1,
-      "lastUsed" : 1590772207501,
       "r" : -1
     },
     "type" : 99
@@ -2416,35 +2482,85 @@
     "name" : "Errors",
     "pane" : {
       "c" : -1,
-      "lastUsed" : 1590772207501,
       "r" : -1
     },
     "type" : 13
   }, {
-    "isPinned" : false,
-    "name" : "Project Description",
-    "pane" : {
-      "c" : 1,
-      "createdTime" : 1586796834784,
-      "lastUsed" : 1590770346568,
-      "r" : 0
-    },
-    "type" : 82
-  }, {
-    "isPinned" : false,
+    "isPinned" : true,
     "name" : "SmartBuilding",
     "pane" : {
       "c" : 0,
-      "createdTime" : 1589205635010,
-      "lastUsed" : 1590505142105,
       "r" : 0
     },
     "resourceKey" : "client/SmartBuilding",
+    "toolOptions" : {
+      "isRunning" : false
+    },
     "type" : 63
+  }, {
+    "isPinned" : false,
+    "name" : "sensorConfigDetail",
+    "pane" : {
+      "c" : -1,
+      "r" : -1
+    },
+    "resourceKey" : "type/sensorConfigDetail",
+    "type" : 6
+  }, {
+    "isPinned" : false,
+    "name" : "sensorconfigs",
+    "pane" : {
+      "c" : -1,
+      "r" : -1
+    },
+    "resourceKey" : "type/sensorconfigs",
+    "type" : 6
+  }, {
+    "isPinned" : false,
+    "name" : "sensors",
+    "pane" : {
+      "c" : -1,
+      "r" : -1
+    },
+    "resourceKey" : "type/sensors",
+    "type" : 6
+  }, {
+    "isPinned" : false,
+    "name" : "Developer Resources",
+    "pane" : {
+      "c" : -1,
+      "r" : -1
+    },
+    "type" : 65
+  }, {
+    "isPinned" : false,
+    "name" : "cb.getSensorConfigDetail",
+    "pane" : {
+      "c" : -1,
+      "r" : -1
+    },
+    "resourceKey" : "procedure/cb.getSensorConfigDetail",
+    "type" : 24
+  }, {
+    "isPinned" : false,
+    "name" : "Find Records",
+    "pane" : {
+      "c" : -1,
+      "r" : -1
+    },
+    "type" : 41
+  }, {
+    "isPinned" : false,
+    "name" : "Log Records Query",
+    "pane" : {
+      "c" : -1,
+      "r" : -1
+    },
+    "type" : 18
   } ],
   "type" : "dev",
   "views" : [ {
     "name" : "Main",
-    "projectToolKeys" : [ "list/Project Contents", "tiledock/Inactive Panes", "errorviewer/Errors", "projectdescription/Project Description", "client/SmartBuilding" ]
+    "projectToolKeys" : [ "list/Project Contents", "tiledock/Inactive Panes", "errorviewer/Errors", "client/SmartBuilding", "subtypeeditor/sensorConfigDetail", "subtypeeditor/sensorconfigs", "subtypeeditor/sensors", "undefined/Developer Resources", "cmeditorprocedure/cb.getSensorConfigDetail", "findrecords/Find Records", "logquery/Log Records Query", "loglist/Log records (oldest first) @ 2:58:01 PM" ]
   } ]
 }

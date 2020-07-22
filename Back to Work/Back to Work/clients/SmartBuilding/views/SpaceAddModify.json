@@ -74,7 +74,7 @@
       "borderColor" : "Default",
       "borderRadius" : 4,
       "borderThickness" : 1,
-      "children" : [ "2069939e-34ef-4639-87dc-fa9caac65630", "72bd51b6-ba2e-4879-8332-324dd9b77b3b", "2411039b-82b1-44ec-bb47-2e6e543a5984", "a693a230-1e40-4f83-8ba7-87599f184dc8", "358b8970-e0bd-440a-8401-1ecdb6ea13e4", "598f066f-6b72-4939-8578-eb161507a259" ],
+      "children" : [ "2069939e-34ef-4639-87dc-fa9caac65630", "72bd51b6-ba2e-4879-8332-324dd9b77b3b", "2411039b-82b1-44ec-bb47-2e6e543a5984", "a693a230-1e40-4f83-8ba7-87599f184dc8", "df2f4c61-01d9-4e80-81ff-2a72a8663c53", "358b8970-e0bd-440a-8401-1ecdb6ea13e4", "598f066f-6b72-4939-8578-eb161507a259" ],
       "heightPolicy" : "naturalSize",
       "horzGravity" : "center",
       "innerMargin" : 20,
@@ -148,6 +148,27 @@
       "widthPolicy" : "naturalSize",
       "x" : 550,
       "y" : 50
+    }, {
+      "binding" : "page.data.space.max",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : null,
+      "flavor" : "text",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "label" : "Max Occupancy",
+      "maxValue" : 100,
+      "minValue" : 0,
+      "name" : "InputInteger1",
+      "optional" : true,
+      "placeholder" : "",
+      "type" : "InputInteger",
+      "units" : "",
+      "uuid" : "df2f4c61-01d9-4e80-81ff-2a72a8663c53",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
     } ]
   },
   "data" : {
@@ -170,6 +191,11 @@
               "defaultLabel" : "id",
               "defaultValue" : "",
               "type" : "String"
+            },
+            "max" : {
+              "defaultLabel" : "max",
+              "defaultValue" : "",
+              "type" : "Integer"
             },
             "name" : {
               "defaultLabel" : "name",

@@ -41,7 +41,7 @@
       "borderColor" : "Default",
       "borderRadius" : 4,
       "borderThickness" : 0,
-      "children" : [ "1561af2d-060a-4008-8f23-f20da5f3aa08", "3aecbfd8-97ba-4781-abd0-9ead47aff486", "0db184e3-3f42-45a7-8f17-6613c9bd20cc", "49ef73f3-a0ca-49e9-82b0-e8809891448b", "52e355d7-375a-434f-a5df-09f3ea9be1bc", "e2d47229-066c-43ac-9e4a-197e7ce0929a", "7fc098bf-ebfb-4608-8cba-e93c354b03a4", "d40a6316-a4d5-4cd4-8cda-ea17ed308e85", "d7f398c6-f217-4e0a-8943-b6744a5f2fe2", "f1802933-af06-4813-b831-fa9a9f805ce2", "79d0ea06-52af-44e3-841d-1a7873806a97" ],
+      "children" : [ "1561af2d-060a-4008-8f23-f20da5f3aa08", "3aecbfd8-97ba-4781-abd0-9ead47aff486", "0db184e3-3f42-45a7-8f17-6613c9bd20cc", "49ef73f3-a0ca-49e9-82b0-e8809891448b", "52e355d7-375a-434f-a5df-09f3ea9be1bc", "e2d47229-066c-43ac-9e4a-197e7ce0929a", "7fc098bf-ebfb-4608-8cba-e93c354b03a4", "d40a6316-a4d5-4cd4-8cda-ea17ed308e85", "29d84256-1db3-403f-80b4-184865902301", "d7f398c6-f217-4e0a-8943-b6744a5f2fe2", "f1802933-af06-4813-b831-fa9a9f805ce2", "79d0ea06-52af-44e3-841d-1a7873806a97" ],
       "heightPolicy" : "sizeToCell",
       "horzGravity" : "center",
       "innerMargin" : 20,
@@ -99,6 +99,11 @@
       "borderColor" : "Default",
       "borderRadius" : 4,
       "borderThickness" : 0,
+      "contextMenu" : [ {
+        "icon" : "glyphicon-remove",
+        "key" : "Remove",
+        "label" : ""
+      } ],
       "h" : 250,
       "heightPolicy" : "explicit",
       "horzGravity" : "center",
@@ -111,6 +116,24 @@
       "vertGravity" : "center",
       "w" : 250,
       "widthPolicy" : "explicit"
+    }, {
+      "binding" : "page.data.person.email",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "inputType" : "text",
+      "label" : "@text.email",
+      "name" : "InputString12135",
+      "optional" : true,
+      "placeholder" : "",
+      "type" : "InputString",
+      "uuid" : "29d84256-1db3-403f-80b4-184865902301",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
     }, {
       "binding" : "page.data.role",
       "borderColor" : "Default",
@@ -418,6 +441,11 @@
           "properties" : {
             "assetid" : {
               "defaultLabel" : "assetid",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "email" : {
+              "defaultLabel" : "email",
               "defaultValue" : "",
               "type" : "String"
             },
