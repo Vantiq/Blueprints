@@ -11,6 +11,6 @@
   },
   "direction" : "SINK",
   "messageType" : null,
-  "name" : "EmailSource",
+  "name" : "email",
   "type" : "EMAIL"
 }
