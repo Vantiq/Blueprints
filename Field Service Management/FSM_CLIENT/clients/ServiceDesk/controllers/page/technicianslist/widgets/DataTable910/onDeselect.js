@@ -1,1 +1,0 @@
-page.data.selectedtechnician = null;

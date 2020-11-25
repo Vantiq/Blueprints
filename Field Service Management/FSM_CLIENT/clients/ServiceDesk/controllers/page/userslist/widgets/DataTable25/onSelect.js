@@ -1,1 +1,0 @@
-client.goToPage("userpage",extra._id);
