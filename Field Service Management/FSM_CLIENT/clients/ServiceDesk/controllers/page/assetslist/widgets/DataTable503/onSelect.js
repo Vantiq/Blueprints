@@ -1,0 +1,1 @@
+client.goToPage("assetpage",extra);

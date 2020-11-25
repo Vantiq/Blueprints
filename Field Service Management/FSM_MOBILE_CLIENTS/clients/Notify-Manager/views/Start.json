@@ -1,0 +1,93 @@
+{
+  "bodyChildren" : {
+    "rootArray" : [ "dd2db865-3a70-49d4-87dd-0971eac1dec0", "eca750a8-aeab-4cc8-8afc-909e87e83f33", "420ede07-7596-43a0-8157-cdd0c7a76017", "90bd6498-361f-4a60-8905-f4ba570f8065" ],
+    "widgets" : [ {
+      "binding" : "page.data.username",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "default" : null,
+      "enumeratedList" : [ ],
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "label" : "Select Technician to Assign to this Workorder",
+      "labelAlign" : "center",
+      "labelColor" : "#000000",
+      "labelSize" : 14,
+      "labelStyle" : "plain",
+      "name" : "username",
+      "type" : "Droplist",
+      "uuid" : "420ede07-7596-43a0-8157-cdd0c7a76017",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "buttonBackgroundColor" : "platform",
+      "buttonLabel" : "Submit",
+      "buttonLabelColor" : "platform",
+      "buttonLabelSize" : 18,
+      "buttonLabelStyle" : "plain",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "labelAlign" : "center",
+      "labelColor" : "#000000",
+      "labelSize" : 14,
+      "labelStyle" : "plain",
+      "name" : "Button109754",
+      "submitValue" : 100,
+      "type" : "Button",
+      "uuid" : "90bd6498-361f-4a60-8905-f4ba570f8065",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "StaticImage14",
+      "preserveAspectRatio" : true,
+      "type" : "StaticImage",
+      "url" : "../cmn/assets/branding/defaultImage.png",
+      "uuid" : "dd2db865-3a70-49d4-87dd-0971eac1dec0",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "naturalSize"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultMinimumHeight" : 300,
+      "defaultMinimumWidth" : 200,
+      "h" : 300,
+      "heightPolicy" : "explicit",
+      "horzGravity" : "center",
+      "horzizontalScrollPolicy" : "none",
+      "html" : "<h1><span style=\"color: #ff6600;\"><em>Escalation Alert</em></span></h1>\n<p>This notification is to alert you that no technician was found to accept a work order.<br /><br /></p>\n<table style=\"width: 100%;\">\n<tbody>\n<tr style=\"height: 13px;\">\n<td style=\"height: 13px; width: 131px;\"><strong>Company</strong></td>\n<td style=\"height: 13px; width: 385px;\">${workorder.customer}</td>\n</tr>\n<tr style=\"height: 13.5px;\">\n<td style=\"height: 13.5px; width: 131px;\"><strong>Summary</strong></td>\n<td style=\"height: 13.5px; width: 385px;\">${workorder.summary}</td>\n</tr>\n<tr style=\"height: 13px;\">\n<td style=\"height: 13px; width: 131px;\"><strong>Priority</strong></td>\n<td style=\"height: 13px; width: 385px;\">${workorder.priority}</td>\n</tr>\n<tr style=\"height: 13px;\">\n<td style=\"height: 13px; width: 131px;\"><strong>Activity</strong></td>\n<td style=\"height: 13px; width: 385px;\">${workorder.activitytype}</td>\n</tr>\n<tr style=\"height: 13px;\">\n<td style=\"height: 13px; width: 131px;\"><strong>ID</strong></td>\n<td style=\"height: 13px; width: 385px;\">&nbsp;${workorder.id}</td>\n</tr>\n</tbody>\n</table>\n<p><br /><br /><br /></p>",
+      "name" : "StaticHtml11",
+      "type" : "StaticHtml",
+      "uuid" : "eca750a8-aeab-4cc8-8afc-909e87e83f33",
+      "v" : 16,
+      "vertGravity" : "center",
+      "verticalScrollPolicy" : "none",
+      "widthPolicy" : "sizeToCell"
+    } ]
+  },
+  "data" : {
+    "properties" : {
+      "username" : {
+        "defaultLabel" : "username",
+        "defaultValue" : "username",
+        "type" : "String"
+      }
+    }
+  },
+  "footerChildren" : [ ],
+  "hasFooter" : false,
+  "layoutType" : "mobile",
+  "responseTopic" : "/notifications/NoAssignment"
+}

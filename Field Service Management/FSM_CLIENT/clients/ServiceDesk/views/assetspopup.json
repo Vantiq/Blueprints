@@ -1,0 +1,121 @@
+{
+  "bodyChildren" : {
+    "rootArray" : [ "12ffa4d2-c4cd-452a-b8c5-d673b0a4eea3", "2ed5aa73-7931-4500-8162-6883a9bb0e67", "d2f3f9fb-a1a0-41e8-82c5-d40756f0badc" ],
+    "widgets" : [ {
+      "binding" : "page.data.searchassets",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "labelColor" : "#000000",
+      "labelSize" : 14,
+      "labelStyle" : "plain",
+      "name" : "InputString962037",
+      "optional" : true,
+      "placeholder" : "Search Assets",
+      "type" : "InputString",
+      "uuid" : "12ffa4d2-c4cd-452a-b8c5-d673b0a4eea3",
+      "v" : 16,
+      "vertGravity" : "center",
+      "w" : 370,
+      "widthPolicy" : "explicit",
+      "x" : 30,
+      "y" : 30
+    }, {
+      "backgroundColor" : "default",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 1,
+      "cellFontColor" : "#000000",
+      "cellFontFace" : "inherit",
+      "cellFontSize" : 14,
+      "cellFontStyle" : "plain",
+      "clearOnDataArrive" : true,
+      "columnDescriptors" : [ {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "name",
+        "selected" : false,
+        "title" : "Name"
+      }, {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "manufacturer",
+        "selected" : false,
+        "title" : "Manufacturer"
+      }, {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "category",
+        "selected" : false,
+        "title" : "Category"
+      }, {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "description",
+        "selected" : false,
+        "title" : "Description"
+      } ],
+      "columnSort" : true,
+      "dataStreamGroupedByFiltersString" : "",
+      "dataStreamUUID" : "f323e62f-5de0-4338-8f08-86360422f420",
+      "dataType" : null,
+      "headerFontColor" : "#000000",
+      "headerFontFace" : "inherit",
+      "headerFontSize" : 14,
+      "headerFontStyle" : "plain",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "ppDataTable",
+      "operation" : "insert",
+      "rowsPerPage" : 8,
+      "showPaging" : true,
+      "type" : "DataTable",
+      "uuid" : "2ed5aa73-7931-4500-8162-6883a9bb0e67",
+      "v" : 16,
+      "vertGravity" : "center",
+      "w" : 950,
+      "widthPolicy" : "explicit",
+      "x" : 40,
+      "y" : 90
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "buttonBackgroundColor" : "platform",
+      "buttonLabel" : "Cancel",
+      "buttonLabelColor" : "platform",
+      "buttonLabelSize" : 18,
+      "buttonLabelStyle" : "plain",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "labelAlign" : "center",
+      "labelColor" : "#000000",
+      "labelSize" : 14,
+      "labelStyle" : "plain",
+      "name" : "Button98164",
+      "submitValue" : 100,
+      "type" : "Button",
+      "uuid" : "d2f3f9fb-a1a0-41e8-82c5-d40756f0badc",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell",
+      "x" : 30,
+      "y" : 500
+    } ]
+  },
+  "data" : {
+    "properties" : {
+      "searchassets" : {
+        "defaultLabel" : "searchassets",
+        "type" : "String"
+      }
+    }
+  },
+  "footerChildren" : [ ],
+  "hasFooter" : false,
+  "layoutType" : "browser",
+  "responseTopic" : ""
+}

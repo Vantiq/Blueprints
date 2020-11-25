@@ -1,0 +1,1 @@
+client.closePopup(page.data.workorder);

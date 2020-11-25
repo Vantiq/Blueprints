@@ -1,0 +1,35 @@
+{
+  "bodyChildren" : {
+    "rootArray" : [ "9dcb7734-ecf4-4dc4-8cc2-96a8fe4c927f" ],
+    "widgets" : [ {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "children" : [ ],
+      "h" : 450,
+      "heightPolicy" : "explicit",
+      "horzGravity" : "center",
+      "horzMargin" : 5,
+      "innerMargin" : 5,
+      "name" : "calendar",
+      "type" : "FlowLayout",
+      "uuid" : "9dcb7734-ecf4-4dc4-8cc2-96a8fe4c927f",
+      "v" : 16,
+      "vertGravity" : "center",
+      "vertMargin" : 5,
+      "widthPolicy" : "sizeToCell"
+    } ]
+  },
+  "data" : {
+    "properties" : {
+      "calendar" : {
+        "defaultLabel" : "calendar",
+        "type" : "Object"
+      }
+    }
+  },
+  "footerChildren" : [ ],
+  "hasFooter" : false,
+  "layoutType" : "mobile",
+  "responseTopic" : ""
+}
