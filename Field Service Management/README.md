@@ -35,3 +35,6 @@ The FSM Blueprint is an application built to provide ideal solutions these chall
 
 If you need assistance with getting started please contact VANTIQ's technical support team. 
 
+Note: when updating this project in Github, use the CLI to export the files, not VCS by CLI's VCSSERVER. 
+The export format in the Github repository is in the CLI full-namespace export structure and not the 
+UI VCSSERVER per-project export structure.
