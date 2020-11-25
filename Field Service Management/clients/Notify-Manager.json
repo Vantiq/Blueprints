@@ -1,6 +1,6 @@
 {
   "ars_properties" : {
-    "tags" : [ "#launchable" ]
+    "tags" : [ ]
   },
   "ars_public" : false,
   "controllers" : {
@@ -14,7 +14,7 @@
       }
     }
   },
-  "isLaunchable" : true,
+  "isLaunchable" : false,
   "models" : {
     "dataObjects" : {
       "__GLOBAL__" : {

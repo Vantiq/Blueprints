@@ -1,7 +1,9 @@
 {
   "adminAccessLevel" : "ars_readWrite",
+  "ars_properties" : null,
   "audited" : false,
   "encapsulated" : false,
+  "expiresAfter" : null,
   "foreignKeys" : null,
   "groupEnabled" : false,
   "groupRequired" : false,
@@ -18,9 +20,6 @@
   "naturalKey" : [ "skill" ],
   "properties" : {
     "description" : {
-      "LABEL" : "description (String)",
-      "NAME" : "description",
-      "PROPTYPE" : "User",
       "encrypted" : false,
       "multi" : false,
       "required" : false,
@@ -28,9 +27,6 @@
       "unique" : false
     },
     "skill" : {
-      "LABEL" : "skill (String)",
-      "NAME" : "skill",
-      "PROPTYPE" : "User",
       "encrypted" : false,
       "multi" : false,
       "required" : false,
