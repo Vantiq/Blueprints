@@ -1,0 +1,113 @@
+{
+  "bodyChildren" : {
+    "rootArray" : [ "5d8f9ad4-0290-4b19-83e3-5e5f92511d57", "6a4c6775-dc3c-4d29-b12d-15afd79bcb0e", "3acaeb3e-036b-4849-8b52-0b71a97cd7af" ],
+    "widgets" : [ {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "buttonBackgroundColor" : "platform",
+      "buttonLabel" : "Cancel",
+      "buttonLabelColor" : "platform",
+      "buttonLabelSize" : 18,
+      "buttonLabelStyle" : "plain",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "labelAlign" : "center",
+      "labelColor" : "#000000",
+      "labelSize" : 14,
+      "labelStyle" : "plain",
+      "name" : "Button101650",
+      "submitValue" : 100,
+      "type" : "Button",
+      "uuid" : "3acaeb3e-036b-4849-8b52-0b71a97cd7af",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell",
+      "x" : 40,
+      "y" : 580
+    }, {
+      "binding" : "page.data.searchcustomer",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "labelColor" : "#000000",
+      "labelSize" : 14,
+      "labelStyle" : "plain",
+      "name" : "inputString100365",
+      "optional" : false,
+      "placeholder" : "Search Customers",
+      "type" : "InputString",
+      "uuid" : "5d8f9ad4-0290-4b19-83e3-5e5f92511d57",
+      "v" : 16,
+      "vertGravity" : "center",
+      "w" : 360,
+      "widthPolicy" : "explicit",
+      "x" : 30,
+      "y" : 30
+    }, {
+      "backgroundColor" : "default",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 1,
+      "clearOnDataArrive" : true,
+      "columnDescriptors" : [ {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "companyname",
+        "selected" : false,
+        "title" : "Company"
+      }, {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "industry",
+        "selected" : false,
+        "title" : "Industry"
+      }, {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "address",
+        "selected" : false,
+        "title" : "Address"
+      }, {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "website",
+        "selected" : false,
+        "title" : "Website"
+      } ],
+      "columnSort" : true,
+      "dataStreamGroupedByFiltersString" : "",
+      "dataStreamUUID" : "27d63cf0-509a-47d9-bb3b-c54dbca0972f",
+      "dataType" : null,
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "DataTable26",
+      "operation" : "insert",
+      "rowsPerPage" : 10,
+      "showPaging" : true,
+      "type" : "DataTable",
+      "uuid" : "6a4c6775-dc3c-4d29-b12d-15afd79bcb0e",
+      "v" : 16,
+      "vertGravity" : "center",
+      "w" : 952,
+      "widthPolicy" : "explicit",
+      "x" : 40,
+      "y" : 90
+    } ]
+  },
+  "data" : {
+    "properties" : {
+      "searchcustomer" : {
+        "defaultLabel" : "searchcustomer",
+        "type" : "String"
+      }
+    }
+  },
+  "footerChildren" : [ ],
+  "hasFooter" : false,
+  "layoutType" : "browser",
+  "responseTopic" : ""
+}

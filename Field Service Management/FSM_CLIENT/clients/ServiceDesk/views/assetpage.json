@@ -1,0 +1,270 @@
+{
+  "bodyChildren" : {
+    "rootArray" : [ "73806978-3295-420a-b6d1-357288da57ec", "29b37fdc-62ec-4adb-8266-8efdeb042c54", "b340dd41-0ad4-44b6-a556-6c0e169ce97a" ],
+    "widgets" : [ {
+      "backgroundColor" : "#f5f5f5",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 1,
+      "children" : [ "85afaa09-905c-4296-bb2f-eca7ffbd0926", "828f9a37-a930-44ac-84c5-aa15014185aa", "2dff7680-73e5-4af1-8849-12d684165ba0", "4b3abb67-5cb5-4fd8-a746-22ef136ad398", "dac92da9-c7f2-4135-9a7f-267ff7fcfb1f" ],
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "innerMargin" : 10,
+      "name" : "VerticalContainer9816",
+      "type" : "VerticalLayout",
+      "uuid" : "29b37fdc-62ec-4adb-8266-8efdeb042c54",
+      "v" : 16,
+      "vertGravity" : "center",
+      "w" : 500,
+      "widthPolicy" : "explicit",
+      "x" : 50,
+      "y" : 70
+    }, {
+      "binding" : "page.data.Assets.description",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "label" : "Description",
+      "labelColor" : "#000000",
+      "labelSize" : 14,
+      "labelStyle" : "plain",
+      "name" : "multilineInput10",
+      "optional" : false,
+      "placeholder" : "",
+      "rows" : 5,
+      "type" : "MultilineInput",
+      "uuid" : "2dff7680-73e5-4af1-8849-12d684165ba0",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "binding" : "page.data.Assets.category",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "default" : "- select -",
+      "enumeratedList" : [ {
+        "label" : "- select -",
+        "value" : "- select -"
+      }, {
+        "label" : "Hardware",
+        "value" : "Hardware"
+      }, {
+        "label" : "Software",
+        "value" : "Software"
+      }, {
+        "label" : "Service",
+        "value" : "Service"
+      }, {
+        "label" : "Licensing",
+        "value" : "Licensing"
+      }, {
+        "label" : "Warranty",
+        "value" : "Warranty"
+      }, {
+        "label" : "Misc",
+        "value" : "Misc"
+      } ],
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "label" : "Category",
+      "labelColor" : "#000000",
+      "labelSize" : 14,
+      "labelStyle" : "plain",
+      "name" : "droplist8",
+      "type" : "Droplist",
+      "uuid" : "4b3abb67-5cb5-4fd8-a746-22ef136ad398",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "fontFamily" : "inherit",
+      "fontSize" : 20,
+      "fontStyle" : "normal",
+      "fontWeight" : "normal",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "StaticText126540",
+      "text" : "Asset Information",
+      "type" : "StaticText",
+      "uuid" : "73806978-3295-420a-b6d1-357288da57ec",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "naturalSize",
+      "x" : 50,
+      "y" : 30
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "buttonBackgroundColor" : "platform",
+      "buttonLabel" : "Submit",
+      "buttonLabelColor" : "platform",
+      "buttonLabelSize" : 18,
+      "buttonLabelStyle" : "plain",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "labelAlign" : "center",
+      "labelColor" : "#000000",
+      "labelSize" : 14,
+      "labelStyle" : "plain",
+      "name" : "addassetBtn",
+      "submitValue" : 100,
+      "type" : "Button",
+      "uuid" : "81e68789-ad5c-4d4a-8611-4709d01910cc",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "binding" : "page.data.Assets.name",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "label" : "Asset Name",
+      "labelColor" : "#000000",
+      "labelSize" : 14,
+      "labelStyle" : "plain",
+      "name" : "assetname",
+      "optional" : false,
+      "placeholder" : "",
+      "type" : "InputString",
+      "uuid" : "828f9a37-a930-44ac-84c5-aa15014185aa",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "binding" : "page.data.Assets.id",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "isReadOnly" : true,
+      "label" : "Asset ID",
+      "labelColor" : "#000000",
+      "labelSize" : 14,
+      "labelStyle" : "plain",
+      "name" : "InputString962515",
+      "optional" : true,
+      "placeholder" : "",
+      "type" : "InputString",
+      "uuid" : "85afaa09-905c-4296-bb2f-eca7ffbd0926",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "buttonBackgroundColor" : "platform",
+      "buttonLabel" : "Reset",
+      "buttonLabelColor" : "platform",
+      "buttonLabelSize" : 18,
+      "buttonLabelStyle" : "plain",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "labelAlign" : "center",
+      "labelColor" : "#000000",
+      "labelSize" : 14,
+      "labelStyle" : "plain",
+      "name" : "resetassetBtn",
+      "submitValue" : 100,
+      "type" : "Button",
+      "uuid" : "992a44f3-4c59-49f8-814b-9f659742542c",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "children" : [ "81e68789-ad5c-4d4a-8611-4709d01910cc", "992a44f3-4c59-49f8-814b-9f659742542c" ],
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "right",
+      "innerMargin" : 20,
+      "name" : "HorizontalContainer520",
+      "type" : "HorizontalLayout",
+      "uuid" : "b340dd41-0ad4-44b6-a556-6c0e169ce97a",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "naturalSize",
+      "x" : 50,
+      "y" : 610.0000305175781
+    }, {
+      "binding" : "page.data.Assets.manufacturer",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "default" : "- select -",
+      "enumeratedList" : [ {
+        "label" : "- select -",
+        "value" : "- select -"
+      } ],
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "label" : "Manufacturer",
+      "labelColor" : "#000000",
+      "labelSize" : 14,
+      "labelStyle" : "plain",
+      "name" : "droplist18",
+      "type" : "Droplist",
+      "uuid" : "dac92da9-c7f2-4135-9a7f-267ff7fcfb1f",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    } ]
+  },
+  "data" : {
+    "properties" : {
+      "Assets" : {
+        "defaultLabel" : "Assets",
+        "type" : "TypedObject",
+        "typedObject" : {
+          "properties" : {
+            "category" : {
+              "defaultLabel" : "category",
+              "defaultValue" : "- select -",
+              "type" : "String"
+            },
+            "description" : {
+              "defaultLabel" : "description",
+              "type" : "String"
+            },
+            "id" : {
+              "defaultLabel" : "id",
+              "type" : "String"
+            },
+            "manufacturer" : {
+              "defaultLabel" : "manufacturer",
+              "defaultValue" : "- select -",
+              "type" : "String"
+            },
+            "name" : {
+              "defaultLabel" : "name",
+              "type" : "String"
+            }
+          },
+          "type" : "Assets"
+        }
+      },
+      "dbid" : {
+        "defaultLabel" : "dbid",
+        "type" : "String"
+      }
+    }
+  },
+  "footerChildren" : [ ],
+  "hasFooter" : false,
+  "layoutType" : "browser",
+  "responseTopic" : ""
+}

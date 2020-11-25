@@ -1,0 +1,112 @@
+{
+  "adminAccessLevel" : "ars_readWrite",
+  "ars_properties" : null,
+  "audited" : false,
+  "encapsulated" : false,
+  "expiresAfter" : null,
+  "foreignKeys" : null,
+  "groupEnabled" : false,
+  "groupRequired" : false,
+  "indexes" : [ {
+    "keys" : [ "lname" ],
+    "options" : { }
+  }, {
+    "keys" : [ "username" ],
+    "options" : {
+      "unique" : true
+    }
+  }, {
+    "keys" : [ "#mobilegeolocation" ],
+    "options" : { }
+  }, {
+    "keys" : [ "#geolocation" ],
+    "options" : { }
+  } ],
+  "maxObjects" : 0,
+  "maxStorage" : 0,
+  "metadata" : false,
+  "name" : "Technicians",
+  "naturalKey" : [ "username" ],
+  "properties" : {
+    "address" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "String",
+      "unique" : false
+    },
+    "company" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : true,
+      "type" : "String",
+      "unique" : false
+    },
+    "email" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "String",
+      "unique" : false
+    },
+    "fname" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : true,
+      "type" : "String",
+      "unique" : false
+    },
+    "geolocation" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "GeoJSON",
+      "unique" : false
+    },
+    "lname" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : true,
+      "type" : "String",
+      "unique" : false
+    },
+    "mobile_phone" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "String",
+      "unique" : false
+    },
+    "mobilegeolocation" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "GeoJSON",
+      "unique" : false
+    },
+    "skills" : {
+      "encrypted" : false,
+      "multi" : true,
+      "required" : false,
+      "type" : "String",
+      "unique" : false
+    },
+    "supportRadius" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "Integer",
+      "unique" : false
+    },
+    "username" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "String",
+      "unique" : false
+    }
+  },
+  "role" : "standard",
+  "userAccessLevel" : "ars_readWrite",
+  "volatile" : false
+}

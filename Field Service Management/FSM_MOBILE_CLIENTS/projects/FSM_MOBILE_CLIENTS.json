@@ -1,0 +1,279 @@
+{
+  "links" : [ {
+    "source" : "client/CompleteWorkorder",
+    "target" : "topic//my/response/topic"
+  }, {
+    "source" : "client/Notify-Manager",
+    "target" : "topic//notifications/NoAssignment"
+  }, {
+    "source" : "client/ScheduleArrivalDateTime",
+    "target" : "topic//notifications/TechnicianDispatch/ScheduleArrivalDateTime"
+  }, {
+    "source" : "client/WorkOrders",
+    "target" : "topic//my/response/topic"
+  }, {
+    "source" : "client/Accept-Reject-Assignment",
+    "target" : "topic//notifications/TechnicianCollaborationCollaborationType/NotifyAcceptReject"
+  } ],
+  "name" : "FSM_MOBILE_CLIENTS",
+  "options" : {
+    "VCSFriendly" : 1,
+    "description" : "These clients will appear in the VANTIQ mobile app as push notifications or under the Collaboration section of the mobile (the Play button icon). \n\nThe VANTIQ mobile app can be obtained from the App Store or Play Store by searching for \"VANTIQ\". Users can login or register using the same OAuth providers used to access Modelo. \n\nTechnicians who register will need to send their user ID (click on your profile name in the top right corner, the uuid for the ID: value is the user ID) to the service desk users who add them into the database. Likewise service desk users who add themselves or others as Users will also need to provide a user ID. \n\nThe first client listed WorkOrders is set as Launachbe which means it will persist in the mobile app for users to run at any time. The WorkOrders client will list the Technicians WorkOrders that have been assigned to them and a calendar view of their scheduled activities. ",
+    "dockCollapsed" : {
+      "bottom" : true,
+      "left" : false,
+      "right" : false,
+      "top" : false,
+      "viewtabs" : false
+    },
+    "dockDimensions" : {
+      "bottom" : 200,
+      "debug" : [ 0, 0, 0 ],
+      "left" : 241,
+      "right" : 220,
+      "top" : 0,
+      "viewtabs" : 0
+    },
+    "filterBitArray" : "ffffffffffffffffffffffffffffffff",
+    "isModeloProject" : true,
+    "layoutStyle" : "custom",
+    "openResourceFolders" : {
+      "client" : true,
+      "topic" : true
+    },
+    "rootViewFlavor" : 1,
+    "showGrid" : true,
+    "type" : "dev",
+    "v" : 3,
+    "viewUUID" : "MAINVIEW"
+  },
+  "resources" : [ {
+    "label" : "/my/response/topic",
+    "name" : "/my/response/topic",
+    "resourceReference" : "/topics//my/response/topic",
+    "type" : 10
+  }, {
+    "label" : "/notifications/NoAssignment",
+    "name" : "/notifications/NoAssignment",
+    "resourceReference" : "/topics//notifications/NoAssignment",
+    "type" : 10
+  }, {
+    "label" : "/notifications/TechnicianCollaborationCollaborationType/NotifyAcceptReject",
+    "name" : "/notifications/TechnicianCollaborationCollaborationType/NotifyAcceptReject",
+    "resourceReference" : "/topics//notifications/TechnicianCollaborationCollaborationType/NotifyAcceptReject",
+    "type" : 10
+  }, {
+    "label" : "/notifications/TechnicianDispatch/ScheduleArrivalDateTime",
+    "name" : "/notifications/TechnicianDispatch/ScheduleArrivalDateTime",
+    "resourceReference" : "/topics//notifications/TechnicianDispatch/ScheduleArrivalDateTime",
+    "type" : 10
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ "out" ],
+      "topics" : [ "/notifications/TechnicianCollaborationCollaborationType/NotifyAcceptReject" ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "Accept-Reject-Assignment",
+    "name" : "Accept-Reject-Assignment",
+    "resourceReference" : "/system.clients/Accept-Reject-Assignment",
+    "type" : 15
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ "out" ],
+      "topics" : [ "/my/response/topic" ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "CompleteWorkorder",
+    "name" : "CompleteWorkorder",
+    "resourceReference" : "/system.clients/CompleteWorkorder",
+    "type" : 15
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ "out" ],
+      "topics" : [ "/notifications/NoAssignment" ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "Notify-Manager",
+    "name" : "Notify-Manager",
+    "resourceReference" : "/system.clients/Notify-Manager",
+    "type" : 15
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ "out" ],
+      "topics" : [ "/notifications/TechnicianDispatch/ScheduleArrivalDateTime" ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "ScheduleArrivalDateTime",
+    "name" : "ScheduleArrivalDateTime",
+    "resourceReference" : "/system.clients/ScheduleArrivalDateTime",
+    "type" : 15
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ "out" ],
+      "topics" : [ "/my/response/topic" ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "WorkOrders",
+    "name" : "WorkOrders",
+    "resourceReference" : "/system.clients/WorkOrders",
+    "type" : 15
+  } ],
+  "tools" : [ {
+    "isPinned" : false,
+    "name" : "Accept-Reject-Assignment",
+    "pane" : {
+      "h" : 700,
+      "w" : 1130,
+      "x" : 10,
+      "y" : 710
+    },
+    "resourceKey" : "client/Accept-Reject-Assignment",
+    "state" : 3,
+    "type" : 63
+  }, {
+    "isPinned" : false,
+    "name" : "CompleteWorkorder",
+    "pane" : {
+      "h" : 700,
+      "w" : 1130,
+      "x" : 10,
+      "y" : 1430
+    },
+    "resourceKey" : "client/CompleteWorkorder",
+    "state" : 3,
+    "type" : 63
+  }, {
+    "isPinned" : false,
+    "name" : "Errors",
+    "type" : 13
+  }, {
+    "dockLocation" : "top",
+    "isPinned" : false,
+    "name" : "Inactive Panes",
+    "type" : 99
+  }, {
+    "isPinned" : false,
+    "name" : "Notify-Manager",
+    "pane" : {
+      "h" : 700,
+      "w" : 1130,
+      "x" : 0,
+      "y" : 2160
+    },
+    "resourceKey" : "client/Notify-Manager",
+    "state" : 3,
+    "toolOptions" : {
+      "isRunning" : false
+    },
+    "type" : 63
+  }, {
+    "isPinned" : false,
+    "name" : "Project Contents",
+    "type" : 2
+  }, {
+    "isPinned" : false,
+    "name" : "Project Description",
+    "pane" : {
+      "h" : 570,
+      "w" : 700,
+      "x" : 1150,
+      "y" : 0
+    },
+    "state" : 3,
+    "type" : 82
+  }, {
+    "isPinned" : false,
+    "name" : "ScheduleArrivalDateTime",
+    "pane" : {
+      "h" : 700,
+      "w" : 1130,
+      "x" : 0,
+      "y" : 2880
+    },
+    "resourceKey" : "client/ScheduleArrivalDateTime",
+    "state" : 3,
+    "type" : 63
+  }, {
+    "isPinned" : false,
+    "name" : "WorkOrders",
+    "pane" : {
+      "h" : 700,
+      "w" : 1130,
+      "x" : 10,
+      "y" : 0
+    },
+    "resourceKey" : "client/WorkOrders",
+    "state" : 3,
+    "type" : 63
+  } ],
+  "type" : "dev",
+  "views" : [ {
+    "name" : "Project Contents",
+    "projectToolKeys" : [ "client/Accept-Reject-Assignment", "client/CompleteWorkorder", "errorviewer/Errors", "tiledock/Inactive Panes", "client/Notify-Manager", "list/Project Contents", "projectdescription/Project Description", "client/ScheduleArrivalDateTime", "client/WorkOrders" ]
+  } ]
+}

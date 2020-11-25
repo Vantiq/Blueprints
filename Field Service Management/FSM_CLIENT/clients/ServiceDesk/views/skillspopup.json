@@ -1,0 +1,109 @@
+{
+  "bodyChildren" : {
+    "rootArray" : [ "435c17c4-8e44-4e94-969a-a8e511d3950b", "7b2e2388-9e43-4d13-89ed-cbe011d699cb", "2d7286c6-45f5-4833-8178-0879a3521e0f" ],
+    "widgets" : [ {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "buttonBackgroundColor" : "platform",
+      "buttonLabel" : "Cancel",
+      "buttonLabelColor" : "platform",
+      "buttonLabelSize" : 18,
+      "buttonLabelStyle" : "plain",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "labelAlign" : "center",
+      "labelColor" : "#000000",
+      "labelSize" : 14,
+      "labelStyle" : "plain",
+      "name" : "Button98169",
+      "submitValue" : 100,
+      "type" : "Button",
+      "uuid" : "2d7286c6-45f5-4833-8178-0879a3521e0f",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell",
+      "x" : 40,
+      "y" : 680.0000305175781
+    }, {
+      "binding" : "page.data.skillsearch",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "labelColor" : "#000000",
+      "labelSize" : 14,
+      "labelStyle" : "plain",
+      "name" : "InputString962065",
+      "optional" : true,
+      "placeholder" : "Search Skills",
+      "type" : "InputString",
+      "uuid" : "435c17c4-8e44-4e94-969a-a8e511d3950b",
+      "v" : 16,
+      "vertGravity" : "center",
+      "w" : 420,
+      "widthPolicy" : "explicit",
+      "x" : 40,
+      "y" : 20
+    }, {
+      "backgroundColor" : "default",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 1,
+      "cellFontColor" : "#000000",
+      "cellFontFace" : "inherit",
+      "cellFontSize" : 14,
+      "cellFontStyle" : "plain",
+      "clearOnDataArrive" : true,
+      "columnDescriptors" : [ {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "skill",
+        "selected" : false,
+        "title" : "Skill"
+      }, {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "description",
+        "selected" : false,
+        "title" : "Description"
+      } ],
+      "columnSort" : true,
+      "dataStreamGroupedByFiltersString" : "",
+      "dataStreamUUID" : "043c3390-8a53-4d3b-a707-281690fc49ca",
+      "dataType" : null,
+      "headerFontColor" : "#000000",
+      "headerFontFace" : "inherit",
+      "headerFontSize" : 14,
+      "headerFontStyle" : "plain",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "skillslisttable",
+      "operation" : "insert",
+      "rowsPerPage" : 12,
+      "showPaging" : true,
+      "type" : "DataTable",
+      "uuid" : "7b2e2388-9e43-4d13-89ed-cbe011d699cb",
+      "v" : 16,
+      "vertGravity" : "center",
+      "w" : 800,
+      "widthPolicy" : "explicit",
+      "x" : 50,
+      "y" : 90
+    } ]
+  },
+  "data" : {
+    "properties" : {
+      "skillsearch" : {
+        "defaultLabel" : "skillsearch",
+        "type" : "String"
+      }
+    }
+  },
+  "footerChildren" : [ ],
+  "hasFooter" : false,
+  "layoutType" : "browser",
+  "responseTopic" : ""
+}

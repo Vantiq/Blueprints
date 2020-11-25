@@ -1,0 +1,133 @@
+{
+  "bodyChildren" : {
+    "rootArray" : [ "192ac3e4-1130-4c83-91eb-3194d61c6380", "12545d80-784a-40ca-b208-749714b254e3" ],
+    "widgets" : [ {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "children" : [ "6b8be4fa-4237-40b6-8e54-9ba4070c0f40", "bffe6ea9-8f85-4283-ae14-96d56656fc2b" ],
+      "h" : 600,
+      "heightPolicy" : "explicit",
+      "horzGravity" : "center",
+      "innerMargin" : 20,
+      "name" : "FlowLayout149",
+      "type" : "FlowLayout",
+      "uuid" : "12545d80-784a-40ca-b208-749714b254e3",
+      "v" : 16,
+      "vertGravity" : "center",
+      "vertMargin" : 0,
+      "w" : 1140,
+      "widthPolicy" : "explicit",
+      "x" : 30,
+      "y" : 90
+    }, {
+      "binding" : "page.data.searchtickets",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "labelColor" : "#000000",
+      "labelSize" : 14,
+      "name" : "inputString962079",
+      "optional" : true,
+      "placeholder" : "Search Tickets",
+      "type" : "InputString",
+      "uuid" : "192ac3e4-1130-4c83-91eb-3194d61c6380",
+      "v" : 16,
+      "vertGravity" : "center",
+      "w" : 360,
+      "widthPolicy" : "explicit",
+      "x" : 30,
+      "y" : 30
+    }, {
+      "backgroundColor" : "default",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 1,
+      "clearOnDataArrive" : true,
+      "columnDescriptors" : [ {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "customer",
+        "selected" : false,
+        "title" : "Customer"
+      }, {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "summary",
+        "selected" : false,
+        "title" : "Summary"
+      }, {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "status",
+        "selected" : false,
+        "title" : "Status"
+      }, {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "createdByName",
+        "selected" : false,
+        "title" : "Created By"
+      }, {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "type",
+        "selected" : false,
+        "title" : "Type"
+      } ],
+      "columnSort" : true,
+      "dataStreamGroupedByFiltersString" : "",
+      "dataStreamUUID" : "2b091a6e-d6e4-461f-b6b8-f831382b7e2e",
+      "dataType" : null,
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "left",
+      "name" : "DataTable4",
+      "operation" : "insert",
+      "rowsPerPage" : 10,
+      "showPaging" : true,
+      "type" : "DataTable",
+      "uuid" : "6b8be4fa-4237-40b6-8e54-9ba4070c0f40",
+      "v" : 16,
+      "vertGravity" : "top",
+      "w" : 1120,
+      "widthPolicy" : "explicit"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "buttonBackgroundColor" : "platform",
+      "buttonLabel" : "Cancel",
+      "buttonLabelColor" : "platform",
+      "buttonLabelSize" : 18,
+      "buttonLabelStyle" : "plain",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "left",
+      "labelAlign" : "center",
+      "labelColor" : "#000000",
+      "labelSize" : 14,
+      "labelStyle" : "plain",
+      "name" : "Button98175",
+      "submitValue" : 100,
+      "type" : "Button",
+      "uuid" : "bffe6ea9-8f85-4283-ae14-96d56656fc2b",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    } ]
+  },
+  "data" : {
+    "properties" : {
+      "searchtickets" : {
+        "defaultLabel" : "searchtickets",
+        "type" : "String"
+      }
+    }
+  },
+  "footerChildren" : [ ],
+  "hasFooter" : false,
+  "layoutType" : "browser",
+  "responseTopic" : ""
+}
