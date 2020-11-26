@@ -17,7 +17,7 @@
     },
     "page" : {
       "Start" : {
-        "onStart" : "RELOCATED to controllers/page/Start/onStart.js"
+        "onClientStart" : "RELOCATED to controllers/page/Start/onClientStart.js"
       },
       "calendar" : {
         "onClientStart" : "RELOCATED to controllers/page/calendar/onClientStart.js",
@@ -90,14 +90,14 @@
     },
     "topbar" : {
       "widgets" : {
-        "MenuButton17" : {
-          "onClick" : "RELOCATED to controllers/topbar/widgets/MenuButton17/onClick.js"
+        "MenuButton21" : {
+          "onClick" : "RELOCATED to controllers/topbar/widgets/MenuButton21/onClick.js"
         },
-        "MenuButton18" : {
-          "onClick" : "RELOCATED to controllers/topbar/widgets/MenuButton18/onClick.js"
+        "MenuButton22" : {
+          "onClick" : "RELOCATED to controllers/topbar/widgets/MenuButton22/onClick.js"
         },
-        "MenuButton20" : {
-          "onClick" : "RELOCATED to controllers/topbar/widgets/MenuButton20/onClick.js"
+        "MenuButton23" : {
+          "onClick" : "RELOCATED to controllers/topbar/widgets/MenuButton23/onClick.js"
         }
       }
     }
@@ -253,13 +253,14 @@
       "type" : "jsonObj"
     } ],
     "badgeCount" : 0,
-    "cssAssets" : [ "../../docs/public/css/fullcalendar.css", "../../docs/public/css/customcalendar.css", "../../docs/public/css/servicedeskmobile.css" ],
-    "description" : "",
-    "docAssets" : [ "public/css/customcalendar.css", "public/css/fullcalendar.css", "public/css/servicedeskmobile.css", "public/js/fullcalendar.js", "public/js/moment.min.js" ],
+    "cssAssets" : [ "../../docs/css/mobile.css", "../../docs/public/css/fullcalendar.css", "../../docs/public/css/customcalendar.css", "../../docs/servicedeskmobile.css" ],
+    "description" : "View and modify work orders",
+    "displayName" : "Work Orders",
+    "docAssets" : [ "css/mobile.css", "images/PumpBG.jpg", "images/vantiqLogoWhite.png", "public/css/customcalendar.css", "public/css/fullcalendar.css", "public/js/fullcalendar.js", "public/js/moment.min.js", "servicedeskmobile.css" ],
     "hasTopbar" : true,
     "jsAssets" : [ "../../docs/public/js/moment.min.js", "../../docs/public/js/fullcalendar.js" ],
     "paletteCollapsed" : false,
-    "productV" : "7.4o",
+    "productV" : "7.4h",
     "showCategoryButtons" : false,
     "showCategoryDataDisplay" : false,
     "showCategoryDataInput" : false,
@@ -277,7 +278,7 @@
       "foregroundColor" : "#000000",
       "label" : "Custom",
       "name" : "custom",
-      "titleBarColor" : "#dddddd",
+      "titleBarColor" : "#f0f2f8",
       "v" : 3
     },
     "topbar" : "RELOCATED to options/topbar.json",

@@ -18,10 +18,24 @@ if(parameters){
 
         select("Users", paramUser, client, function(response){
             console.log("Success Users --- " + JSON.stringify(response));
-            fullname = response[0].fname + " " + response[0].lname;  
-            thisCopy.data.fullname = fullname;
+            
+            if (response.length > 0){
+                fullname = response[0].fname + " " + response[0].lname;  
+                thisCopy.data.fullname = fullname;
+            }
         });
 
+        //Get Location name
+        var paramLocation = {
+            where: {id:workorders.location}
+        };
+
+        select("Locations", paramLocation, client, function(response){
+            console.log("Success Location --- " + JSON.stringify(response));
+            thisCopy.data.location = response[0].name;
+        });
+
+        /*
         // get the list of locations for the customer
         var paramLoc = {
             where: {customerid:{"$eq":workorders.customerId}}
@@ -38,7 +52,7 @@ if(parameters){
             var locationList = client.getWidget("locations1");
             locationList.enumeratedList = listItems;
         });
-			
+		*/			
     });
 }
 else {

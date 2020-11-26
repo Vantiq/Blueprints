@@ -18,4 +18,8 @@ select("system.collaborations", params, client, function(response){
     console.log(JSON.stringify(response));
     thiscopy.data.Workorders = response[0].results.Initiate.event;    
     client.sendClientEvent("ce_contacts", response[0].results.Initiate.event.contacts);
+    
+    thiscopy.data.address = response[0].results.Initiate.event.address; 
+    thiscopy.data.description = response[0].results.Initiate.event.description; 
+    
 });

@@ -1,6 +1,6 @@
 {
   "bodyChildren" : {
-    "rootArray" : [ "658cf184-7f91-46c7-bd27-90aa9d4f6f9f", "e669f805-ad0f-417a-bb91-ebb7b6a8c49c", "7b7f8c18-1afa-458f-831c-d252a714dbb3" ],
+    "rootArray" : [ "afb57ed2-c706-4897-a577-3f5899d3a105", "868c83b3-09fc-41a8-aeca-42bbb1218cde" ],
     "widgets" : [ {
       "binding" : "page.data.searchworkorders",
       "borderColor" : "Default",
@@ -11,13 +11,48 @@
       "horzGravity" : "center",
       "label" : "Search",
       "labelColor" : "#000000",
-      "labelSize" : 14,
       "labelStyle" : "plain",
       "name" : "InputString976487",
       "optional" : true,
       "placeholder" : "",
       "type" : "InputString",
-      "uuid" : "4da2c548-4e36-444a-8e9a-9f014060590d",
+      "uuid" : "170bc4ec-96dd-427a-8628-cd9e864c4aca",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "binding" : "page.data.statusworkorders",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "default" : "All",
+      "enumeratedList" : [ {
+        "label" : "All",
+        "value" : "All"
+      }, {
+        "label" : "Created",
+        "value" : "Created"
+      }, {
+        "label" : "Assigned",
+        "value" : "Assigned"
+      }, {
+        "label" : "En Route",
+        "value" : "En Route"
+      }, {
+        "label" : "On Site",
+        "value" : "On Site"
+      }, {
+        "label" : "Completed",
+        "value" : "Completed"
+      } ],
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "label" : "Status",
+      "labelColor" : "#000000",
+      "labelStyle" : "plain",
+      "name" : "Droplist10981",
+      "type" : "Droplist",
+      "uuid" : "29ea2e76-68f3-4e78-bf62-b973d6b8bf27",
       "v" : 16,
       "vertGravity" : "center",
       "widthPolicy" : "sizeToCell"
@@ -46,10 +81,17 @@
       }, {
         "colorRules" : null,
         "dataType" : "DateTime",
+        "format" : "MMM D",
         "initialSort" : "D",
         "propertyName" : "scheduledArrivalDate",
         "selected" : false,
-        "title" : "Due Date"
+        "title" : "Arrival"
+      }, {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "status",
+        "selected" : false,
+        "title" : "Status"
       } ],
       "columnSort" : true,
       "dataStreamGroupedByFiltersString" : "",
@@ -60,13 +102,27 @@
       "headerFontSize" : 12,
       "headerFontStyle" : "plain",
       "heightPolicy" : "naturalSize",
-      "horzGravity" : "center",
+      "horzGravity" : "left",
       "name" : "DataTable2851",
       "operation" : "insert",
       "rowsPerPage" : 5,
       "showPaging" : true,
       "type" : "DataTable",
-      "uuid" : "5bc390f6-614b-4781-99ec-1622c578dabf",
+      "uuid" : "53904619-1626-4969-90dd-369a5036bfe8",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "children" : [ "ee3b8640-1ecc-4bc5-84b1-5bd1f95ee3f3", "53904619-1626-4969-90dd-369a5036bfe8" ],
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "innerMargin" : 20,
+      "name" : "VerticalLayout72",
+      "type" : "VerticalLayout",
+      "uuid" : "868c83b3-09fc-41a8-aeca-42bbb1218cde",
       "v" : 16,
       "vertGravity" : "center",
       "widthPolicy" : "sizeToCell"
@@ -83,76 +139,24 @@
       "labelStyle" : "italic",
       "name" : "SectionLabel12048",
       "type" : "SectionLabel",
-      "uuid" : "658cf184-7f91-46c7-bd27-90aa9d4f6f9f",
+      "uuid" : "afb57ed2-c706-4897-a577-3f5899d3a105",
       "v" : 16,
       "vertGravity" : "center",
       "widthPolicy" : "sizeToCell"
     }, {
       "borderColor" : "Default",
       "borderRadius" : 4,
-      "borderThickness" : 0,
-      "children" : [ "5bc390f6-614b-4781-99ec-1622c578dabf" ],
-      "heightPolicy" : "naturalSize",
-      "horzGravity" : "center",
-      "horzMargin" : 20,
-      "innerMargin" : 20,
-      "name" : "VerticalLayout11432",
-      "type" : "VerticalLayout",
-      "uuid" : "7b7f8c18-1afa-458f-831c-d252a714dbb3",
-      "v" : 16,
-      "vertGravity" : "center",
-      "widthPolicy" : "sizeToCell"
-    }, {
-      "borderColor" : "Default",
-      "borderRadius" : 4,
-      "borderThickness" : 0,
-      "children" : [ "4da2c548-4e36-444a-8e9a-9f014060590d", "f925c17d-e43f-4274-85ff-5292ca0f7081" ],
+      "borderThickness" : 1,
+      "children" : [ "170bc4ec-96dd-427a-8628-cd9e864c4aca", "29ea2e76-68f3-4e78-bf62-b973d6b8bf27" ],
       "heightPolicy" : "naturalSize",
       "horzGravity" : "center",
       "innerMargin" : 10,
       "name" : "HorizontalLayout30936",
       "type" : "HorizontalLayout",
-      "uuid" : "e669f805-ad0f-417a-bb91-ebb7b6a8c49c",
+      "uuid" : "ee3b8640-1ecc-4bc5-84b1-5bd1f95ee3f3",
       "v" : 16,
       "vertGravity" : "center",
       "vertMargin" : 0,
-      "widthPolicy" : "sizeToCell"
-    }, {
-      "binding" : "page.data.statusworkorders",
-      "borderColor" : "Default",
-      "borderRadius" : 4,
-      "borderThickness" : 0,
-      "default" : "Assigned",
-      "enumeratedList" : [ {
-        "label" : "All",
-        "value" : "All"
-      }, {
-        "label" : "Created",
-        "value" : "Created"
-      }, {
-        "label" : "Assigned",
-        "value" : "Assigned"
-      }, {
-        "label" : "En Route",
-        "value" : "En Route"
-      }, {
-        "label" : "On Site",
-        "value" : "On Site"
-      }, {
-        "label" : "Completed",
-        "value" : "Completed"
-      } ],
-      "heightPolicy" : "naturalSize",
-      "horzGravity" : "center",
-      "label" : "Status",
-      "labelColor" : "#000000",
-      "labelSize" : 14,
-      "labelStyle" : "plain",
-      "name" : "Droplist10981",
-      "type" : "Droplist",
-      "uuid" : "f925c17d-e43f-4274-85ff-5292ca0f7081",
-      "v" : 16,
-      "vertGravity" : "center",
       "widthPolicy" : "sizeToCell"
     } ]
   },
@@ -164,7 +168,7 @@
       },
       "statusworkorders" : {
         "defaultLabel" : "statusworkorders",
-        "defaultValue" : "Assigned",
+        "defaultValue" : "All",
         "type" : "String"
       }
     }

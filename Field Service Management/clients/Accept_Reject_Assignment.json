@@ -1,29 +1,17 @@
 {
-  "ars_properties" : {
-    "tags" : [ ]
-  },
-  "ars_public" : false,
   "controllers" : {
     "client" : {
       "customCode" : "RELOCATED to controllers/client/customCode.js"
     },
     "dataStream" : {
+      "ce_assets" : { },
       "ce_contacts" : { },
-      "ce_products" : { },
       "ce_skills" : { }
     },
     "page" : {
       "Start" : {
         "onClientStart" : "RELOCATED to controllers/page/Start/onClientStart.js",
-        "onStart" : "RELOCATED to controllers/page/Start/onStart.js",
-        "widgets" : {
-          "Button6" : {
-            "onClick" : "RELOCATED to controllers/page/Start/widgets/Button6/onClick.js"
-          },
-          "InputDateTime1" : {
-            "onChange" : "RELOCATED to controllers/page/Start/widgets/InputDateTime1/onChange.js"
-          }
-        }
+        "onStart" : "RELOCATED to controllers/page/Start/onStart.js"
       }
     }
   },
@@ -47,13 +35,13 @@
       "dataObjectName" : null,
       "dataTypeList" : [ {
         "label" : null,
-        "type" : "products"
+        "type" : "Assets"
       } ],
       "isDeleteOp" : false,
       "isInsertOp" : false,
       "isUpdateOp" : false,
       "maxRecords" : 0,
-      "name" : "ce_products",
+      "name" : "ce_assets",
       "pauseAtStartup" : false,
       "sortByProperty" : null,
       "sortDescending" : false,
@@ -66,7 +54,7 @@
       "dataObjectName" : null,
       "dataTypeList" : [ {
         "label" : null,
-        "type" : "contacts"
+        "type" : "Contacts"
       } ],
       "isDeleteOp" : false,
       "isInsertOp" : false,
@@ -85,7 +73,7 @@
       "dataObjectName" : null,
       "dataTypeList" : [ {
         "label" : null,
-        "type" : "skills"
+        "type" : "Skills"
       } ],
       "isDeleteOp" : false,
       "isInsertOp" : false,
@@ -101,7 +89,7 @@
       "v" : 1
     } ]
   },
-  "name" : "ScheduleArrivalDateTime",
+  "name" : "Accept_Reject_Assignment",
   "options" : {
     "RELOCATE" : [ {
       "path" : "controllers",
@@ -113,7 +101,7 @@
     "badgeCount" : 0,
     "cssAssets" : [ "../../docs/servicedeskmobile.css" ],
     "description" : "",
-    "displayName" : "ScheduleArrivalDateTime",
+    "displayName" : "Accept_Reject_Assignment",
     "docAssets" : [ "servicedeskmobile.css" ],
     "paletteCollapsed" : false,
     "productV" : "7.1p",

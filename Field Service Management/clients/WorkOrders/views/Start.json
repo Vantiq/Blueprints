@@ -1,39 +1,56 @@
 {
+  "bgImgSize" : "cover",
+  "bgImgUrl" : "../../docs/images/PumpBG.jpg",
   "bodyChildren" : {
-    "rootArray" : [ "4a7d7cdf-943b-404e-806d-fdbedb25d47c", "28855ede-3d65-4f2a-8b37-cc6001125e9d" ],
+    "rootArray" : [ "19d2bc76-d457-40d1-8da9-1ecb67da56ec", "83953f57-3de7-46ee-84c8-497bf7c24235", "b23e2a73-1c0a-4371-87c4-bb0328e7b95b" ],
     "widgets" : [ {
       "borderColor" : "Default",
       "borderRadius" : 4,
       "borderThickness" : 0,
       "children" : [ ],
-      "h" : 377,
-      "heightPolicy" : "explicit",
+      "heightPolicy" : "naturalSize",
       "horzGravity" : "center",
       "innerMargin" : 20,
-      "name" : "backdiv",
-      "type" : "FlowLayout",
-      "uuid" : "28855ede-3d65-4f2a-8b37-cc6001125e9d",
+      "name" : "HorizontalLayout32466",
+      "type" : "HorizontalLayout",
+      "uuid" : "19d2bc76-d457-40d1-8da9-1ecb67da56ec",
       "v" : 16,
       "vertGravity" : "center",
-      "w" : 245,
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "h" : 71,
+      "heightPolicy" : "explicit",
+      "horzGravity" : "center",
+      "name" : "StaticImage1",
+      "preserveAspectRatio" : true,
+      "type" : "StaticImage",
+      "url" : "../../docs/images/vantiqLogoWhite.png",
+      "uuid" : "83953f57-3de7-46ee-84c8-497bf7c24235",
+      "v" : 16,
+      "vertGravity" : "center",
+      "w" : 359.49367088607596,
       "widthPolicy" : "explicit"
     }, {
       "borderColor" : "Default",
       "borderRadius" : 4,
       "borderThickness" : 0,
-      "fontFamily" : "inherit",
-      "fontSize" : 20,
-      "fontStyle" : "normal",
-      "fontWeight" : "normal",
-      "heightPolicy" : "naturalSize",
-      "horzGravity" : "left",
-      "name" : "StaticText108060",
-      "text" : "VANTIQ Field Service Management Mobile",
-      "type" : "StaticText",
-      "uuid" : "4a7d7cdf-943b-404e-806d-fdbedb25d47c",
+      "defaultMinimumHeight" : 300,
+      "defaultMinimumWidth" : 200,
+      "h" : 300,
+      "heightPolicy" : "explicit",
+      "horzGravity" : "center",
+      "horzizontalScrollPolicy" : "none",
+      "html" : "<br /><br />\n<div style=\"padding: 10px; opacity: 0.6; background-color: black; color: white;\"><span style=\"font-size: 14pt;\"><strong>Field Service Management </strong></span><br /><br /><span style=\"font-size: 14pt;\"><strong>Mobile Application</strong></span></div>",
+      "name" : "StaticHtml75",
+      "type" : "StaticHtml",
+      "uuid" : "b23e2a73-1c0a-4371-87c4-bb0328e7b95b",
       "v" : 16,
       "vertGravity" : "center",
-      "widthPolicy" : "naturalSize"
+      "verticalScrollPolicy" : "none",
+      "widthPolicy" : "sizeToCell"
     } ]
   },
   "data" : {
@@ -42,5 +59,5 @@
   "footerChildren" : [ ],
   "hasFooter" : false,
   "layoutType" : "mobile",
-  "responseTopic" : "/my/response/topic"
+  "responseTopic" : ""
 }

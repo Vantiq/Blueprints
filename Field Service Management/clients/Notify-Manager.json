@@ -10,6 +10,7 @@
     "dataStream" : { },
     "page" : {
       "Start" : {
+        "onClientStart" : "RELOCATED to controllers/page/Start/onClientStart.js",
         "onStart" : "RELOCATED to controllers/page/Start/onStart.js"
       }
     }
@@ -36,11 +37,12 @@
       "type" : "json"
     } ],
     "badgeCount" : 0,
-    "cssAssets" : [ "../../docs/public/css/servicedeskmobile.css" ],
+    "cssAssets" : [ "../../docs/servicedeskmobile.css" ],
     "description" : "",
-    "docAssets" : [ "public/css/servicedeskmobile.css" ],
+    "displayName" : "Notify-Manager",
+    "docAssets" : [ "servicedeskmobile.css" ],
     "paletteCollapsed" : false,
-    "productV" : "7.4o",
+    "productV" : "7.1p",
     "showCategoryButtons" : false,
     "showCategoryDataDisplay" : false,
     "showCategoryDataInput" : false,
@@ -55,9 +57,9 @@
       "dataDisplayColors" : [ "#3cbce1", "#996db8", "#86d557", "#ff9800", "#425b71", "#cc467c", "#01aa93", "#ffca28", "#f583a9", "#1c84d4", "#ff6767", "#4caf50" ],
       "dataInputColor" : "#ffffff",
       "foregroundColor" : "#000000",
-      "label" : "White",
-      "name" : "white",
-      "titleBarColor" : "#dddddd",
+      "label" : "Custom",
+      "name" : "custom",
+      "titleBarColor" : "#f0f2f8",
       "v" : 3
     },
     "v" : 5
