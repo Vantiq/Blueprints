@@ -1,6 +1,6 @@
 /* To use CSS - change the namespace name and folder where images are uploaded. Update 'left' positions. */
 #list_image {
-	background : url(https://dev.vantiq.com/ui/docs/NS/bp_sitsm_v2/status/list_image.png) no-repeat;
+	background : url(../ui/docs/NS/br_acmeWater/status/list_image.png) no-repeat;
 	position: absolute;
 	top: 5px;
 	height : 122px;
@@ -9,7 +9,7 @@
 	display: none;
 }
 #list_gray {
-	background : url(https://dev.vantiq.com/ui/docs/NS/bp_sitsm_v2/status/list_gray.png) no-repeat;
+	background : url(../ui/docs/NS/br_acmeWater/status/list_gray.png) no-repeat;
 	position: absolute;
 	top: 5px;
 	height : 122px;
@@ -36,7 +36,7 @@
 	text-align: center;
 }
 #person_image {
-	background : url(https://dev.vantiq.com/ui/docs/NS/bp_sitsm_v2/status/person_image.png) no-repeat;
+	background : url(../ui/docs/NS/br_acmeWater/status/person_image.png) no-repeat;
 	position: absolute;
 	top: 135px;
 	height : 122px;
@@ -45,7 +45,7 @@
 	display: none;
 }
 #person_gray {
-	background : url(https://dev.vantiq.com/ui/docs/NS/bp_sitsm_v2/status/person_gray.png) no-repeat;
+	background : url(../ui/docs/NS/br_acmeWater/status/person_gray.png) no-repeat;
 	position: absolute;
 	top: 135px;
 	height : 122px;
@@ -72,7 +72,7 @@
 	text-align: center;
 }
 #enroute_image{
-	background : url(https://dev.vantiq.com/ui/docs/NS/bp_sitsm_v2/status/enroute_image.png) no-repeat;
+	background : url(../ui/docs/NS/br_acmeWater/status/enroute_image.png) no-repeat;
 	position: absolute;
 	top: 265px;
 	height : 122px;
@@ -81,7 +81,7 @@
 	display: none;
 }
 #enroute_gray{
-	background : url(https://dev.vantiq.com/ui/docs/NS/bp_sitsm_v2/status/enroute_gray.png) no-repeat;
+	background : url(../ui/docs/NS/br_acmeWater/status/enroute_gray.png) no-repeat;
 	position: absolute;
 	top: 265px;
 	height : 122px;
@@ -108,7 +108,7 @@
 	text-align: center;
 }
 #technician_image{
-	background : url(https://dev.vantiq.com/ui/docs/NS/bp_sitsm_v2/status/technician_image.png) no-repeat;
+	background : url(../ui/docs/NS/br_acmeWater/status/technician_image.png) no-repeat;
 	position: absolute;
 	top: 395px;
 	height : 122px;
@@ -117,7 +117,7 @@
 	display: none;
 }
 #technician_gray{
-	background : url(https://dev.vantiq.com/ui/docs/NS/bp_sitsm_v2/status/technician_gray.png) no-repeat;
+	background : url(../ui/docs/NS/br_acmeWater/status/technician_gray.png) no-repeat;
 	position: absolute;
 	top: 395px;
 	height : 122px;
@@ -144,7 +144,7 @@
 	text-align: center;
 }
 #checkbox_image{
-	background : url(https://dev.vantiq.com/ui/docs/NS/bp_sitsm_v2/status/checkbox_image.png) no-repeat;
+	background : url(../ui/docs/NS/br_acmeWater/status/checkbox_image.png) no-repeat;
 	position: absolute;
 	top: 525px;
 	height : 122px;
@@ -153,7 +153,7 @@
 	display: none;
 }
 #checkbox_gray{
-	background : url(https://dev.vantiq.com/ui/docs/NS/bp_sitsm_v2/status/checkbox_gray.png) no-repeat;
+	background : url(../ui/docs/NS/br_acmeWater/status/checkbox_gray.png) no-repeat;
 	position: absolute;
 	top: 525px;
 	height : 122px;

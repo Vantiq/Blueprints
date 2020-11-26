@@ -15,6 +15,9 @@
     "source" : "type/Skills",
     "target" : "client/ServiceDesk"
   }, {
+    "source" : "type/pumpHistory",
+    "target" : "client/ServiceDesk"
+  }, {
     "source" : "client/ServiceDesk",
     "target" : "topic//my/response/topic"
   }, {
@@ -23,31 +26,24 @@
   } ],
   "name" : "FSM_CLIENT",
   "options" : {
-    "VCSFriendly" : 1,
     "description" : "The FSM_Client represents the web application for this project. To access the run time for this client users must navigate to: \n\nhttps://dev.vantiq.com/ui/rtc/index.html\n\nThese pages are typically broken up into a detail page and a list view page. The common naming format is \"ticketpage\" for the detail page used to add/edit content and \"ticketslist\" for the data table list view used to show all records.  A page called \"ticketslistpopup\" would represent a data table list view that is used for modal popup dialogs specifically. \n\nPrimary data objects such as Users, Customers, Locations, Tickets, Work Orders, Assets and Technicians are entered/updated through standard web forms. There are many droplists that represent fields inside these primary data objects such as Industry for the Customer record or Support Radius for the Technician. These droplist values can be changed by opening the page they appear on, clicking on the droplist widget on the page and adding/editing the List values in the widgets properties. \n\n\n\n",
     "dockCollapsed" : {
       "bottom" : true,
       "left" : false,
       "right" : false,
-      "top" : false,
-      "viewtabs" : false
+      "top" : false
     },
     "dockDimensions" : {
       "bottom" : 200,
       "debug" : [ 0, 0, 0 ],
       "left" : 210,
       "right" : 220,
-      "top" : 0,
-      "viewtabs" : 0
+      "top" : 0
     },
     "filterBitArray" : "ffffffffffffffffffffffffffffffff",
     "isModeloProject" : true,
     "layoutStyle" : "custom",
-    "openResourceFolders" : {
-      "client" : true,
-      "topic" : true,
-      "type" : true
-    },
+    "openResourceFolders" : { },
     "rootViewFlavor" : 1,
     "showGrid" : true,
     "type" : "dev",
@@ -76,6 +72,7 @@
       "y" : 10.9
     },
     "resourceReference" : "/types/Assets",
+    "timestamp" : "2020-11-24T10:54:57.743Z",
     "type" : 1
   }, {
     "inventory" : {
@@ -93,12 +90,13 @@
       "systemmodels" : [ ],
       "topicHash" : [ "out", "out" ],
       "topics" : [ "/my/response/topic", "email" ],
-      "typeHash" : [ "in", "in", "in", "in", "in" ],
-      "types" : [ "Assets", "Tickets", "Workorders", "Technicians", "Skills" ]
+      "typeHash" : [ "in", "in", "in", "in", "in", "in" ],
+      "types" : [ "Assets", "Tickets", "Workorders", "Technicians", "Skills", "pumpHistory" ]
     },
     "label" : "ServiceDesk",
     "name" : "ServiceDesk",
     "resourceReference" : "/system.clients/ServiceDesk",
+    "timestamp" : "2020-11-26T14:06:39.481Z",
     "type" : 15
   }, {
     "label" : "Skills",
@@ -108,6 +106,7 @@
       "y" : 153.5
     },
     "resourceReference" : "/types/Skills",
+    "timestamp" : "2020-11-26T14:06:36.951Z",
     "type" : 1
   }, {
     "label" : "Technicians",
@@ -117,6 +116,7 @@
       "y" : 283
     },
     "resourceReference" : "/types/Technicians",
+    "timestamp" : "2020-11-26T14:06:36.948Z",
     "type" : 1
   }, {
     "label" : "Tickets",
@@ -126,6 +126,7 @@
       "y" : 156.4
     },
     "resourceReference" : "/types/Tickets",
+    "timestamp" : "2020-11-20T13:38:41.805Z",
     "type" : 1
   }, {
     "label" : "Workorders",
@@ -135,6 +136,7 @@
       "y" : 42
     },
     "resourceReference" : "/types/Workorders",
+    "timestamp" : "2020-11-20T13:38:41.790Z",
     "type" : 1
   }, {
     "label" : "email",
@@ -145,19 +147,14 @@
     },
     "resourceReference" : "/topics/email",
     "type" : 10
+  }, {
+    "label" : "pumpHistory",
+    "name" : "pumpHistory",
+    "resourceReference" : "/types/pumpHistory",
+    "timestamp" : "2020-11-26T14:06:37.196Z",
+    "type" : 1
   } ],
   "tools" : [ {
-    "isPinned" : false,
-    "name" : "Documents",
-    "pane" : {
-      "h" : 520,
-      "w" : 900,
-      "x" : 50,
-      "y" : 1170
-    },
-    "state" : 3,
-    "type" : 26
-  }, {
     "isPinned" : false,
     "name" : "Errors",
     "type" : 13
@@ -174,10 +171,10 @@
     "isPinned" : false,
     "name" : "Project Description",
     "pane" : {
-      "h" : 400,
-      "w" : 1310,
-      "x" : 50,
-      "y" : 50
+      "h" : 720,
+      "w" : 650,
+      "x" : 1190.0000915527344,
+      "y" : 20
     },
     "state" : 3,
     "type" : 82
@@ -186,20 +183,17 @@
     "name" : "ServiceDesk",
     "pane" : {
       "h" : 700,
-      "w" : 1630,
-      "x" : 50,
-      "y" : 460
+      "w" : 1130,
+      "x" : 30,
+      "y" : 20
     },
     "resourceKey" : "client/ServiceDesk",
     "state" : 3,
-    "toolOptions" : {
-      "isRunning" : false
-    },
     "type" : 63
   } ],
   "type" : "dev",
   "views" : [ {
     "name" : "Project Contents",
-    "projectToolKeys" : [ "documents/Documents", "errorviewer/Errors", "tiledock/Inactive Panes", "list/Project Contents", "projectdescription/Project Description", "client/ServiceDesk" ]
+    "projectToolKeys" : [ "errorviewer/Errors", "tiledock/Inactive Panes", "list/Project Contents", "projectdescription/Project Description", "client/ServiceDesk" ]
   } ]
 }

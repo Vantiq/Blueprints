@@ -9,36 +9,9 @@
       "onStart" : "RELOCATED to controllers/client/onStart.js"
     },
     "dataStream" : {
-      "ce_Assets" : { },
-      "ce_Contacts" : { },
-      "ce_Customers" : { },
-      "ce_Locations" : { },
-      "ce_Skills" : { },
-      "ce_Technicians" : { },
-      "ce_Tickets" : { },
-      "ce_Users" : { },
-      "ce_Workorders" : { },
-      "ce_contactlistpopup" : { },
-      "ce_customercontacts" : { },
-      "ce_customerlocations" : { },
-      "ce_locationlistpopup" : { },
-      "ce_openrecords" : { },
-      "ce_techlifecycletimes" : { },
-      "ce_techmonthlyutilization" : { },
-      "ce_techskills" : { },
-      "ce_tpAssets" : { },
-      "ce_tpcontactslist" : { },
-      "ce_woAssets" : { },
-      "ce_workordernotes" : { },
-      "ce_workordersbyday" : { },
-      "ce_workorderskills" : { },
-      "ce_workorderslifecycle" : { },
-      "queryOpenTicketsByCustomer" : { },
-      "queryOpenWorkOrders" : { },
-      "queryOpenWorkOrdersByCustomer" : { },
-      "tq_Assets" : { },
-      "tq_Skills" : { },
-      "tq_Technicians" : { }
+      "tq_assetHistory" : {
+        "onDataArrived" : "RELOCATED to controllers/dataStream/tq_assetHistory/onDataArrived.js"
+      }
     },
     "page" : {
       "assetpage" : {
@@ -46,6 +19,12 @@
         "widgets" : {
           "addassetBtn" : {
             "onClick" : "RELOCATED to controllers/page/assetpage/widgets/addassetBtn/onClick.js"
+          },
+          "assetCustomerDroplist" : {
+            "onChange" : "RELOCATED to controllers/page/assetpage/widgets/assetCustomerDroplist/onChange.js"
+          },
+          "assetLocationDroplist" : {
+            "onChange" : "RELOCATED to controllers/page/assetpage/widgets/assetLocationDroplist/onChange.js"
           },
           "resetassetBtn" : {
             "onClick" : "RELOCATED to controllers/page/assetpage/widgets/resetassetBtn/onClick.js"
@@ -742,6 +721,11 @@
               "type" : "Technicians"
             }
           },
+          "assetMarker" : {
+            "defaultLabel" : "assetMarker",
+            "defaultValue" : { },
+            "type" : "Object"
+          },
           "customerdbid" : {
             "defaultLabel" : "customerdbid",
             "type" : "String"
@@ -1014,11 +998,11 @@
       "maxRecords" : 0,
       "name" : "tq_Assets",
       "pauseAtStartup" : false,
-      "property" : null,
+      "property" : "name",
       "sortByProperty" : null,
       "sortDescending" : false,
       "type" : 4,
-      "updateInterval" : 60,
+      "updateInterval" : 6,
       "uuid" : "11c4247b-db5c-4719-bea1-11faaaf8f5e1",
       "v" : 1
     }, {
@@ -1508,6 +1492,52 @@
       "updateInterval" : 5,
       "uuid" : "e1504a47-7b55-465b-ac8d-5bc8a234a4da",
       "v" : 1
+    }, {
+      "advancedWhereClause" : null,
+      "basicQueryElement" : [ {
+        "name" : "id",
+        "operator" : "EQ",
+        "value" : "NA"
+      } ],
+      "dataObjectName" : null,
+      "dataTypeList" : [ {
+        "label" : null,
+        "type" : "pumpHistory"
+      } ],
+      "isDeleteOp" : false,
+      "isInsertOp" : false,
+      "isUpdateOp" : false,
+      "maxRecords" : 0,
+      "name" : "tq_assetHistory",
+      "pauseAtStartup" : false,
+      "property" : "id",
+      "sortByProperty" : null,
+      "sortDescending" : false,
+      "type" : 4,
+      "updateInterval" : 6,
+      "uuid" : "01769156-77c1-4002-88e9-44cdb4f23610",
+      "v" : 1
+    }, {
+      "advancedWhereClause" : null,
+      "basicQueryElement" : [ ],
+      "dataObjectName" : null,
+      "dataTypeList" : [ {
+        "label" : null,
+        "type" : "Workorders"
+      } ],
+      "isDeleteOp" : false,
+      "isInsertOp" : false,
+      "isUpdateOp" : false,
+      "maxRecords" : 0,
+      "name" : "workorders",
+      "pauseAtStartup" : false,
+      "property" : null,
+      "sortByProperty" : null,
+      "sortDescending" : false,
+      "type" : 4,
+      "updateInterval" : 10,
+      "uuid" : "b8db3e77-e804-4454-8502-076e6204d612",
+      "v" : 1
     } ]
   },
   "name" : "ServiceDesk",
@@ -1522,16 +1552,18 @@
       "path" : "options.sidebar",
       "type" : "jsonObj"
     } ],
+    "applyCSSwhileEditing" : true,
     "badgeCount" : 50,
-    "cssAssets" : [ "../../docs/public/css/fullcalendar.css", "../../docs/public/css/customcalendar.css", "../../docs/public/css/slimselect.css", "../../docs/public/status/status_image_flow.css", "../../docs/public/css/servicedesk.css" ],
+    "cssAssets" : [ "../../docs/public/css/servicedesk.css", "../../docs/public/css/fullcalendar.css", "../../docs/public/css/customcalendar.css", "../../docs/public/css/slimselect.css", "../../docs/public/status/status_image_flow.css" ],
     "description" : "Service Desk Management",
+    "displayName" : "ServiceDesk",
     "docAssets" : [ "public/css/customcalendar.css", "public/css/fullcalendar.css", "public/css/servicedesk.css", "public/css/slimselect.css", "public/js/fullcalendar.js", "public/js/moment.min.js", "public/js/slimselect.js", "public/status/status_image_flow.css" ],
     "hasSidebar" : true,
     "jsAssets" : [ "../../docs/public/js/moment.min.js", "../../docs/public/js/fullcalendar.js", "../../docs/public/js/slimselect.js" ],
     "paletteCollapsed" : false,
-    "productV" : "7.4o",
-    "showCategoryButtons" : false,
-    "showCategoryDataDisplay" : false,
+    "productV" : "7.2h",
+    "showCategoryButtons" : true,
+    "showCategoryDataDisplay" : true,
     "showCategoryDataInput" : false,
     "showCategoryLayout" : true,
     "showGridWhileEditing" : true,
@@ -1545,7 +1577,7 @@
       "dataDisplayColor" : "#ffffff",
       "dataDisplayColors" : [ "#3cbce1", "#996db8", "#86d557", "#ff9800", "#425b71", "#cc467c", "#01aa93", "#ffca28", "#f583a9", "#1c84d4", "#ff6767", "#4caf50" ],
       "dataInputColor" : "#ffffff",
-      "foregroundColor" : "#000000",
+      "foregroundColor" : "#4d4b4b",
       "label" : "Custom",
       "name" : "custom",
       "titleBarColor" : "#f0f2f8",

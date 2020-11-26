@@ -26,8 +26,8 @@ select("Users", params, client, function(response){
     // determine if the page is opened up new or opened from the list
     if (parameters){
         resetuserBtn.isVisible = false;
-        adduserBtn.buttonLabel = "Update ServiceDesk User";
-        userpagetitle.text = "Update ServiceDesk User";
+        adduserBtn.buttonLabel = "Update Service Desk User";
+        userpagetitle.text = "Update Service Desk User";
 
         thiscopy.data.dbid = parameters;
         
