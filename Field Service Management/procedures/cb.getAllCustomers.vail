@@ -1,0 +1,3 @@
+PROCEDURE cb.getAllCustomers()
+
+SELECT id, companyname FROM Customers

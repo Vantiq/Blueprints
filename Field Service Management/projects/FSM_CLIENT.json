@@ -23,6 +23,21 @@
   }, {
     "source" : "client/ServiceDesk",
     "target" : "topic/email"
+  }, {
+    "source" : "type/Customers",
+    "target" : "procedure/cb.getAllCustomers"
+  }, {
+    "source" : "type/Contacts",
+    "target" : "procedure/cb.getContactsByCustomerId"
+  }, {
+    "source" : "type/Locations",
+    "target" : "procedure/cb.getLocationByLocationId"
+  }, {
+    "source" : "type/Locations",
+    "target" : "procedure/cb.getLocationsByCustomerId"
+  }, {
+    "source" : "type/Users",
+    "target" : "procedure/clientLoginValidation"
   } ],
   "name" : "FSM_CLIENT",
   "options" : {
@@ -43,7 +58,9 @@
     "filterBitArray" : "ffffffffffffffffffffffffffffffff",
     "isModeloProject" : true,
     "layoutStyle" : "custom",
-    "openResourceFolders" : { },
+    "openResourceFolders" : {
+      "procedure" : true
+    },
     "rootViewFlavor" : 1,
     "showGrid" : true,
     "type" : "dev",
@@ -75,6 +92,24 @@
     "timestamp" : "2020-11-24T10:54:57.743Z",
     "type" : 1
   }, {
+    "label" : "Contacts",
+    "name" : "Contacts",
+    "resourceReference" : "/types/Contacts",
+    "timestamp" : "2020-11-20T13:38:41.786Z",
+    "type" : 1
+  }, {
+    "label" : "Customers",
+    "name" : "Customers",
+    "resourceReference" : "/types/Customers",
+    "timestamp" : "2020-11-20T13:38:41.716Z",
+    "type" : 1
+  }, {
+    "label" : "Locations",
+    "name" : "Locations",
+    "resourceReference" : "/types/Locations",
+    "timestamp" : "2020-11-20T13:38:41.710Z",
+    "type" : 1
+  }, {
     "inventory" : {
       "clientHash" : [ ],
       "clients" : [ ],
@@ -96,7 +131,7 @@
     "label" : "ServiceDesk",
     "name" : "ServiceDesk",
     "resourceReference" : "/system.clients/ServiceDesk",
-    "timestamp" : "2020-11-26T14:06:39.481Z",
+    "timestamp" : "2020-11-27T09:09:44.571Z",
     "type" : 15
   }, {
     "label" : "Skills",
@@ -129,6 +164,12 @@
     "timestamp" : "2020-11-20T13:38:41.805Z",
     "type" : 1
   }, {
+    "label" : "Users",
+    "name" : "Users",
+    "resourceReference" : "/types/Users",
+    "timestamp" : "2020-11-20T13:38:41.752Z",
+    "type" : 1
+  }, {
     "label" : "Workorders",
     "name" : "Workorders",
     "node" : {
@@ -138,6 +179,126 @@
     "resourceReference" : "/types/Workorders",
     "timestamp" : "2020-11-20T13:38:41.790Z",
     "type" : 1
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "Customers" ]
+    },
+    "label" : "cb.getAllCustomers",
+    "name" : "cb.getAllCustomers",
+    "resourceReference" : "/procedures/cb.getAllCustomers",
+    "timestamp" : "2020-11-27T08:47:11.368Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "Contacts" ]
+    },
+    "label" : "cb.getContactsByCustomerId",
+    "name" : "cb.getContactsByCustomerId",
+    "resourceReference" : "/procedures/cb.getContactsByCustomerId",
+    "timestamp" : "2020-11-27T08:47:11.628Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "Locations" ]
+    },
+    "label" : "cb.getLocationByLocationId",
+    "name" : "cb.getLocationByLocationId",
+    "resourceReference" : "/procedures/cb.getLocationByLocationId",
+    "timestamp" : "2020-11-27T08:47:11.413Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "Locations" ]
+    },
+    "label" : "cb.getLocationsByCustomerId",
+    "name" : "cb.getLocationsByCustomerId",
+    "resourceReference" : "/procedures/cb.getLocationsByCustomerId",
+    "timestamp" : "2020-11-27T08:47:11.869Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out", "out" ],
+      "procedures" : [ "namespace", "includes" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in", "in" ],
+      "types" : [ "system.users", "Users" ]
+    },
+    "label" : "clientLoginValidation",
+    "name" : "clientLoginValidation",
+    "resourceReference" : "/procedures/clientLoginValidation",
+    "timestamp" : "2020-11-20T13:38:47.773Z",
+    "type" : 3
   }, {
     "label" : "email",
     "name" : "email",
@@ -158,6 +319,17 @@
     "isPinned" : false,
     "name" : "Errors",
     "type" : 13
+  }, {
+    "isPinned" : false,
+    "name" : "Errors Query",
+    "pane" : {
+      "h" : 400,
+      "w" : 600,
+      "x" : 30,
+      "y" : 730
+    },
+    "state" : 3,
+    "type" : 28
   }, {
     "dockLocation" : "top",
     "isPinned" : false,
@@ -194,6 +366,6 @@
   "type" : "dev",
   "views" : [ {
     "name" : "Project Contents",
-    "projectToolKeys" : [ "errorviewer/Errors", "tiledock/Inactive Panes", "list/Project Contents", "projectdescription/Project Description", "client/ServiceDesk" ]
+    "projectToolKeys" : [ "errorviewer/Errors", "errorquery/Errors Query", "tiledock/Inactive Panes", "list/Project Contents", "projectdescription/Project Description", "client/ServiceDesk" ]
   } ]
 }

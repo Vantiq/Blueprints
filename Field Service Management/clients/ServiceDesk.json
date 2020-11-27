@@ -9,9 +9,40 @@
       "onStart" : "RELOCATED to controllers/client/onStart.js"
     },
     "dataStream" : {
+      "ce_Assets" : { },
+      "ce_Contacts" : { },
+      "ce_Customers" : { },
+      "ce_Locations" : { },
+      "ce_Skills" : { },
+      "ce_Technicians" : { },
+      "ce_Tickets" : { },
+      "ce_Users" : { },
+      "ce_Workorders" : { },
+      "ce_contactlistpopup" : { },
+      "ce_customercontacts" : { },
+      "ce_customerlocations" : { },
+      "ce_locationlistpopup" : { },
+      "ce_openrecords" : { },
+      "ce_techlifecycletimes" : { },
+      "ce_techmonthlyutilization" : { },
+      "ce_techskills" : { },
+      "ce_tpAssets" : { },
+      "ce_tpcontactslist" : { },
+      "ce_woAssets" : { },
+      "ce_workordernotes" : { },
+      "ce_workordersbyday" : { },
+      "ce_workorderskills" : { },
+      "ce_workorderslifecycle" : { },
+      "queryOpenTicketsByCustomer" : { },
+      "queryOpenWorkOrders" : { },
+      "queryOpenWorkOrdersByCustomer" : { },
+      "tq_Assets" : { },
+      "tq_Skills" : { },
+      "tq_Technicians" : { },
       "tq_assetHistory" : {
         "onDataArrived" : "RELOCATED to controllers/dataStream/tq_assetHistory/onDataArrived.js"
-      }
+      },
+      "workorders" : { }
     },
     "page" : {
       "assetpage" : {
@@ -1561,7 +1592,7 @@
     "hasSidebar" : true,
     "jsAssets" : [ "../../docs/public/js/moment.min.js", "../../docs/public/js/fullcalendar.js", "../../docs/public/js/slimselect.js" ],
     "paletteCollapsed" : false,
-    "productV" : "7.2h",
+    "productV" : "7.4o",
     "showCategoryButtons" : true,
     "showCategoryDataDisplay" : true,
     "showCategoryDataInput" : false,

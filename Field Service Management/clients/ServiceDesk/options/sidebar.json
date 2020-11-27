@@ -1,5 +1,5 @@
 {
-  "rootObj" : "58886e36-29f3-4d6d-a5c4-2cadacbba4a2",
+  "rootObj" : "75ddca9c-6b0f-455b-9c4b-1238d87fd035",
   "widgets" : [ {
     "borderColor" : "Default",
     "borderRadius" : 4,
@@ -31,24 +31,6 @@
     "uuid" : "1fcebaa2-6ea9-43cf-84fc-76e7f16dff07",
     "v" : 16,
     "vertGravity" : "center",
-    "widthPolicy" : "sizeToCell"
-  }, {
-    "backgroundColor" : "#f0f2f9",
-    "borderColor" : "Default",
-    "borderThickness" : 0,
-    "children" : [ "1fcebaa2-6ea9-43cf-84fc-76e7f16dff07" ],
-    "heightPolicy" : "naturalSize",
-    "horzGravity" : "center",
-    "horzMargin" : 5,
-    "innerMargin" : 5,
-    "name" : "_Sidebar_",
-    "packTight" : true,
-    "type" : "VerticalLayout",
-    "uuid" : "58886e36-29f3-4d6d-a5c4-2cadacbba4a2",
-    "v" : 16,
-    "vertGravity" : "center",
-    "vertMargin" : 5,
-    "vertWeight" : 1,
     "widthPolicy" : "sizeToCell"
   }, {
     "borderColor" : "Default",
@@ -86,6 +68,24 @@
     "v" : 16,
     "vertGravity" : "center",
     "widthPolicy" : "naturalSize"
+  }, {
+    "backgroundColor" : "#f0f2f9",
+    "borderColor" : "Default",
+    "borderThickness" : 0,
+    "children" : [ "1fcebaa2-6ea9-43cf-84fc-76e7f16dff07" ],
+    "heightPolicy" : "naturalSize",
+    "horzGravity" : "center",
+    "horzMargin" : 5,
+    "innerMargin" : 5,
+    "name" : "_Sidebar_",
+    "packTight" : true,
+    "type" : "VerticalLayout",
+    "uuid" : "75ddca9c-6b0f-455b-9c4b-1238d87fd035",
+    "v" : 16,
+    "vertGravity" : "center",
+    "vertMargin" : 5,
+    "vertWeight" : 1,
+    "widthPolicy" : "sizeToCell"
   }, {
     "borderColor" : "Default",
     "borderRadius" : 4,

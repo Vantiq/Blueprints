@@ -1,0 +1,3 @@
+PROCEDURE cb.getLocationsByCustomerId(id String)
+
+SELECT id, name FROM Locations WHERE customerid == id

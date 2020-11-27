@@ -311,16 +311,16 @@
       "borderThickness" : 0,
       "default" : 50,
       "enumeratedList" : [ {
-        "label" : "50 Mile Radius",
+        "label" : "50 Kilometers Radius",
         "value" : 50
       }, {
-        "label" : "100 Mile Radius",
+        "label" : "100 Kilometers Radius",
         "value" : 100
       }, {
-        "label" : "150 Mile Radius",
+        "label" : "150 Kilometers Radius",
         "value" : 150
       }, {
-        "label" : "5000 Mile Radius",
+        "label" : "5000 Kilometers Radius",
         "value" : 5000
       } ],
       "heightPolicy" : "naturalSize",

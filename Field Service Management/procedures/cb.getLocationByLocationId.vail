@@ -1,0 +1,3 @@
+PROCEDURE cb.getLocationByLocationId(id String)
+
+SELECT ONE FROM Locations WHERE id == id

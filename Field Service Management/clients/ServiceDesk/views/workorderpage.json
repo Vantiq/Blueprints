@@ -893,7 +893,7 @@
       "borderRadius" : 4,
       "borderThickness" : 0,
       "children" : [ "370f6ffd-bc1b-41a0-9261-823618bd51e8", "e5093c0d-ea86-4fe8-8ec2-396a0b7429c4" ],
-      "h" : 79,
+      "h" : 80,
       "heightPolicy" : "explicit",
       "horzGravity" : "center",
       "horzMargin" : 0,
