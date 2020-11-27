@@ -40,9 +40,6 @@
     "target" : "procedure/collab.notifyCustomer"
   }, {
     "source" : "procedure/collab.notifyCustomer",
-    "target" : "source/email"
-  }, {
-    "source" : "procedure/collab.notifyCustomer",
     "target" : "procedure/GoogleTimeZone"
   }, {
     "source" : "procedure/collab.trackProgress",
@@ -84,12 +81,6 @@
     "source" : "source/VantiqPushNotification",
     "target" : "collaborationtype/TechnicianDispatch"
   }, {
-    "source" : "procedure/Notification.retractPayload",
-    "target" : "type/ArsPayloadMessage"
-  }, {
-    "source" : "procedure/Notification.retractPayload",
-    "target" : "procedure/Utils.initPushSource"
-  }, {
     "source" : "collaborationtype/TechnicianDispatch",
     "target" : "procedure/Notification.retractPayload"
   }, {
@@ -116,37 +107,142 @@
   }, {
     "source" : "procedure/sendTextMessageToTech",
     "target" : "source/Twilio"
+  }, {
+    "source" : "procedure/collab.notifyCustomer",
+    "target" : "procedure/sendTextMessageToTech"
+  }, {
+    "source" : "client/Accept_Reject_Assignment",
+    "target" : "topic//notifications/TechnicianCollaborationCollaborationType/NotifyAcceptReject"
+  }, {
+    "source" : "procedure/collab.notifyCustomer",
+    "target" : "source/email"
+  }, {
+    "source" : "type/Technicians",
+    "target" : "procedure/customIntent"
+  }, {
+    "source" : "source/GoogleDirections",
+    "target" : "procedure/getNavDirections"
+  }, {
+    "source" : "procedure/customIntent",
+    "target" : "procedure/getNavDirections"
+  }, {
+    "source" : "collaborationtype/TechnicianDispatch",
+    "target" : "procedure/customIntent"
+  }, {
+    "source" : "source/chatbot",
+    "target" : "collaborationtype/TechnicianDispatch"
+  }, {
+    "source" : "source/NLP",
+    "target" : "collaborationtype/TechnicianDispatch"
   } ],
   "name" : "FSM_COLLAB",
   "options" : {
     "description" : "A Collaboration is a graphical programming tool that primarily provides tools for man-machine interactions. For this project you can think of a new Collaboration as creating a ticket which holds all the information about the work order plus all the technician tracking details. \n\nIn the Collaboration you will see a lot of task activities that support the technician dispatch steps such as finding technicians (when -AutoAssign- is set), assigning a technician to the Collaboration, tracking the GPS location of the technician which occurs 1 hour prior to the scheduled arrival time. \n\nHandling of the mobile notifications, capturing their responses and taking the next steps based on the responses are all programmed through this collaboration. This includes manual assignment steps for when Escalation occurs (no Technician accepts the assignment), and when a user is manually assigned in the work order. \n\nAdditional features programmed through the collaboration are notifications to the customer, capturing the customer signature at the end of the work order, updating status for the work orders throughout the process and updating the current GPS location of the Technician once tracking has started. \n",
+    "dockCollapsed" : {
+      "bottom" : false,
+      "left" : false,
+      "right" : false,
+      "top" : false,
+      "viewtabs" : false
+    },
+    "dockDimensions" : {
+      "bottom" : 200,
+      "debug" : [ 560.398388431471, 983.7101525425884, 369.8914590259406 ],
+      "left" : 331,
+      "right" : 220,
+      "top" : 0,
+      "viewtabs" : 0
+    },
     "filterBitArray" : "ffffffffffffffffffffffffffffffff",
     "isModeloProject" : true,
+    "layoutStyle" : "custom",
+    "openResourceFolders" : {
+      "collaborationtype" : true,
+      "procedure" : true,
+      "source" : true,
+      "type" : true
+    },
+    "rootViewFlavor" : 1,
     "showGrid" : true,
-    "v" : 2
+    "type" : "dev",
+    "v" : 3,
+    "viewUUID" : "MAINVIEW"
   },
   "resources" : [ {
+    "label" : "/TechnicianDispatch/BeginLocationTracking/ping",
+    "name" : "/TechnicianDispatch/BeginLocationTracking/ping",
+    "resourceReference" : "/topics//TechnicianDispatch/BeginLocationTracking/ping",
+    "type" : 10
+  }, {
+    "label" : "/collaboration/location/TechnicianDispatch/BeginLocationTracking",
+    "name" : "/collaboration/location/TechnicianDispatch/BeginLocationTracking",
+    "resourceReference" : "/topics//collaboration/location/TechnicianDispatch/BeginLocationTracking",
+    "type" : 10
+  }, {
+    "label" : "/collaborationtypes/TechnicianDispatch/debug",
+    "name" : "/collaborationtypes/TechnicianDispatch/debug",
+    "resourceReference" : "/topics//collaborationtypes/TechnicianDispatch/debug",
+    "type" : 10
+  }, {
+    "label" : "/notifications/TechnicianCollaborationCollaborationType/NotifyAcceptReject",
+    "name" : "/notifications/TechnicianCollaborationCollaborationType/NotifyAcceptReject",
+    "resourceReference" : "/topics//notifications/TechnicianCollaborationCollaborationType/NotifyAcceptReject",
+    "type" : 10
+  }, {
+    "label" : "/notifications/TechnicianDispatch/ScheduleArrivalDateTime",
+    "name" : "/notifications/TechnicianDispatch/ScheduleArrivalDateTime",
+    "resourceReference" : "/topics//notifications/TechnicianDispatch/ScheduleArrivalDateTime",
+    "type" : 10
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ "out" ],
+      "topics" : [ "/notifications/TechnicianCollaborationCollaborationType/NotifyAcceptReject" ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "Accept_Reject_Assignment",
+    "name" : "Accept_Reject_Assignment",
+    "resourceReference" : "/system.clients/Accept_Reject_Assignment",
+    "timestamp" : "2020-11-27T09:39:59.771Z",
+    "type" : 15
+  }, {
     "label" : "ArsEscalationDeadline",
     "name" : "ArsEscalationDeadline",
+    "resourceReference" : "/types/ArsEscalationDeadline",
     "timestamp" : "2017-04-21T03:27:58.913Z",
     "type" : 1
   }, {
     "label" : "ArsPayloadMessage",
     "name" : "ArsPayloadMessage",
+    "resourceReference" : "/types/ArsPayloadMessage",
     "timestamp" : "2016-11-23T17:40:16.195Z",
     "type" : 1
   }, {
     "inventory" : {
-      "appmodelHash" : [ ],
-      "appmodels" : [ ],
+      "clientHash" : [ ],
+      "clients" : [ ],
       "collaborationHash" : [ ],
       "collaborations" : [ ],
-      "pagesetHash" : [ ],
-      "pagesets" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
       "procedureHash" : [ "out" ],
       "procedures" : [ "now" ],
       "sourceHash" : [ ],
       "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
       "topicHash" : [ ],
       "topics" : [ ],
       "typeHash" : [ "both", "in" ],
@@ -154,20 +250,23 @@
     },
     "label" : "CollaborationUtils.cancelEscalation",
     "name" : "CollaborationUtils.cancelEscalation",
-    "timestamp" : "2018-01-15T05:13:26.704Z",
+    "resourceReference" : "/procedures/CollaborationUtils.cancelEscalation",
+    "timestamp" : "2020-08-22T21:25:21.045Z",
     "type" : 3
   }, {
     "inventory" : {
-      "appmodelHash" : [ ],
-      "appmodels" : [ ],
+      "clientHash" : [ ],
+      "clients" : [ ],
       "collaborationHash" : [ ],
       "collaborations" : [ ],
-      "pagesetHash" : [ ],
-      "pagesets" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
       "procedureHash" : [ ],
       "procedures" : [ ],
       "sourceHash" : [ ],
       "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
       "topicHash" : [ ],
       "topics" : [ ],
       "typeHash" : [ ],
@@ -175,25 +274,23 @@
     },
     "label" : "Google.getAPIKey",
     "name" : "Google.getAPIKey",
-    "timestamp" : "2018-10-09T18:55:31.232Z",
+    "resourceReference" : "/procedures/Google.getAPIKey",
+    "timestamp" : "2020-11-20T13:38:47.873Z",
     "type" : 3
   }, {
-    "label" : "GoogleDirections",
-    "name" : "GoogleDirections",
-    "timestamp" : "2018-10-09T18:17:48.107Z",
-    "type" : 4
-  }, {
     "inventory" : {
-      "appmodelHash" : [ ],
-      "appmodels" : [ ],
+      "clientHash" : [ ],
+      "clients" : [ ],
       "collaborationHash" : [ ],
       "collaborations" : [ ],
-      "pagesetHash" : [ ],
-      "pagesets" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
       "procedureHash" : [ "out" ],
       "procedures" : [ "format" ],
       "sourceHash" : [ "in" ],
       "sources" : [ "GoogleDirections" ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
       "topicHash" : [ ],
       "topics" : [ ],
       "typeHash" : [ ],
@@ -201,20 +298,47 @@
     },
     "label" : "GoogleDirections",
     "name" : "GoogleDirections",
-    "timestamp" : "2018-10-09T18:14:05.939Z",
+    "resourceReference" : "/procedures/GoogleDirections",
+    "timestamp" : "2020-11-20T13:38:47.957Z",
     "type" : 3
   }, {
     "inventory" : {
-      "appmodelHash" : [ ],
-      "appmodels" : [ ],
+      "clientHash" : [ ],
+      "clients" : [ ],
       "collaborationHash" : [ ],
       "collaborations" : [ ],
-      "pagesetHash" : [ ],
-      "pagesets" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "GoogleDirections",
+    "name" : "GoogleDirections",
+    "resourceReference" : "/sources/GoogleDirections",
+    "timestamp" : "2020-11-20T15:42:43.893Z",
+    "type" : 4
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
       "procedureHash" : [ "out", "out" ],
       "procedures" : [ "format", "Google.getAPIKey" ],
       "sourceHash" : [ "in" ],
       "sources" : [ "GoogleDirections" ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
       "topicHash" : [ ],
       "topics" : [ ],
       "typeHash" : [ ],
@@ -222,25 +346,23 @@
     },
     "label" : "GoogleDirectionsDuration",
     "name" : "GoogleDirectionsDuration",
-    "timestamp" : "2018-10-09T18:14:00.826Z",
+    "resourceReference" : "/procedures/GoogleDirectionsDuration",
+    "timestamp" : "2020-11-20T13:38:48.019Z",
     "type" : 3
   }, {
-    "label" : "GoogleDistanceMatrix",
-    "name" : "GoogleDistanceMatrix",
-    "timestamp" : "2018-10-09T18:18:10.869Z",
-    "type" : 4
-  }, {
     "inventory" : {
-      "appmodelHash" : [ ],
-      "appmodels" : [ ],
+      "clientHash" : [ ],
+      "clients" : [ ],
       "collaborationHash" : [ ],
       "collaborations" : [ ],
-      "pagesetHash" : [ ],
-      "pagesets" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
       "procedureHash" : [ "out", "out" ],
       "procedures" : [ "format", "date" ],
       "sourceHash" : [ "in" ],
       "sources" : [ "GoogleDistanceMatrix" ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
       "topicHash" : [ ],
       "topics" : [ ],
       "typeHash" : [ ],
@@ -248,20 +370,47 @@
     },
     "label" : "GoogleDistanceMatrix",
     "name" : "GoogleDistanceMatrix",
-    "timestamp" : "2018-10-09T18:13:59.399Z",
+    "resourceReference" : "/procedures/GoogleDistanceMatrix",
+    "timestamp" : "2020-11-20T13:38:48.088Z",
     "type" : 3
   }, {
     "inventory" : {
-      "appmodelHash" : [ ],
-      "appmodels" : [ ],
+      "clientHash" : [ ],
+      "clients" : [ ],
       "collaborationHash" : [ ],
       "collaborations" : [ ],
-      "pagesetHash" : [ ],
-      "pagesets" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
       "procedureHash" : [ ],
       "procedures" : [ ],
-      "sourceHash" : [ "in" ],
-      "sources" : [ "GoogleGeoCode" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "GoogleDistanceMatrix",
+    "name" : "GoogleDistanceMatrix",
+    "resourceReference" : "/sources/GoogleDistanceMatrix",
+    "timestamp" : "2020-11-20T15:43:03.494Z",
+    "type" : 4
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
       "topicHash" : [ ],
       "topics" : [ ],
       "typeHash" : [ ],
@@ -269,25 +418,47 @@
     },
     "label" : "GoogleGeoCode",
     "name" : "GoogleGeoCode",
-    "timestamp" : "2018-10-09T18:13:57.765Z",
-    "type" : 3
-  }, {
-    "label" : "GoogleGeoCode",
-    "name" : "GoogleGeoCode",
-    "timestamp" : "2018-10-09T18:18:50.629Z",
+    "resourceReference" : "/sources/GoogleGeoCode",
+    "timestamp" : "2020-11-20T15:42:22.569Z",
     "type" : 4
   }, {
     "inventory" : {
-      "appmodelHash" : [ ],
-      "appmodels" : [ ],
+      "clientHash" : [ ],
+      "clients" : [ ],
       "collaborationHash" : [ ],
       "collaborations" : [ ],
-      "pagesetHash" : [ ],
-      "pagesets" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ "in" ],
+      "sources" : [ "GoogleGeoCode" ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "GoogleGeoCode",
+    "name" : "GoogleGeoCode",
+    "resourceReference" : "/procedures/GoogleGeoCode",
+    "timestamp" : "2020-11-20T13:38:47.957Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
       "procedureHash" : [ ],
       "procedures" : [ ],
       "sourceHash" : [ "in" ],
       "sources" : [ "GooglePlace" ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
       "topicHash" : [ ],
       "topics" : [ ],
       "typeHash" : [ ],
@@ -295,20 +466,23 @@
     },
     "label" : "GooglePlaceAutoComplete",
     "name" : "GooglePlaceAutoComplete",
-    "timestamp" : "2018-10-09T18:13:56.146Z",
+    "resourceReference" : "/procedures/GooglePlaceAutoComplete",
+    "timestamp" : "2020-11-20T13:38:47.910Z",
     "type" : 3
   }, {
     "inventory" : {
-      "appmodelHash" : [ ],
-      "appmodels" : [ ],
+      "clientHash" : [ ],
+      "clients" : [ ],
       "collaborationHash" : [ ],
       "collaborations" : [ ],
-      "pagesetHash" : [ ],
-      "pagesets" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
       "procedureHash" : [ ],
       "procedures" : [ ],
       "sourceHash" : [ "in" ],
       "sources" : [ "GooglePlaceId" ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
       "topicHash" : [ ],
       "topics" : [ ],
       "typeHash" : [ ],
@@ -316,20 +490,23 @@
     },
     "label" : "GooglePlaceId",
     "name" : "GooglePlaceId",
-    "timestamp" : "2018-10-09T18:13:56.763Z",
+    "resourceReference" : "/procedures/GooglePlaceId",
+    "timestamp" : "2020-11-20T13:38:48.090Z",
     "type" : 3
   }, {
     "inventory" : {
-      "appmodelHash" : [ ],
-      "appmodels" : [ ],
+      "clientHash" : [ ],
+      "clients" : [ ],
       "collaborationHash" : [ ],
       "collaborations" : [ ],
-      "pagesetHash" : [ ],
-      "pagesets" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
       "procedureHash" : [ "out" ],
       "procedures" : [ "format" ],
       "sourceHash" : [ "in" ],
       "sources" : [ "GoogleGeoCode" ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
       "topicHash" : [ ],
       "topics" : [ ],
       "typeHash" : [ ],
@@ -337,25 +514,23 @@
     },
     "label" : "GoogleReverseGeoCode",
     "name" : "GoogleReverseGeoCode",
-    "timestamp" : "2018-10-09T18:13:58.975Z",
+    "resourceReference" : "/procedures/GoogleReverseGeoCode",
+    "timestamp" : "2020-11-20T13:38:47.911Z",
     "type" : 3
   }, {
-    "label" : "GoogleTimeZone",
-    "name" : "GoogleTimeZone",
-    "timestamp" : "2018-10-09T18:17:35.652Z",
-    "type" : 4
-  }, {
     "inventory" : {
-      "appmodelHash" : [ ],
-      "appmodels" : [ ],
+      "clientHash" : [ ],
+      "clients" : [ ],
       "collaborationHash" : [ ],
       "collaborations" : [ ],
-      "pagesetHash" : [ ],
-      "pagesets" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
       "procedureHash" : [ "out" ],
       "procedures" : [ "format" ],
       "sourceHash" : [ "in" ],
       "sources" : [ "GoogleTimeZone" ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
       "topicHash" : [ ],
       "topics" : [ ],
       "typeHash" : [ ],
@@ -363,56 +538,113 @@
     },
     "label" : "GoogleTimeZone",
     "name" : "GoogleTimeZone",
-    "timestamp" : "2018-10-09T18:14:04Z",
+    "resourceReference" : "/procedures/GoogleTimeZone",
+    "timestamp" : "2020-11-20T13:38:47.826Z",
     "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "GoogleTimeZone",
+    "name" : "GoogleTimeZone",
+    "resourceReference" : "/sources/GoogleTimeZone",
+    "timestamp" : "2020-11-20T15:41:40.430Z",
+    "type" : 4
   }, {
     "label" : "Locations",
     "name" : "Locations",
-    "timestamp" : "2018-10-09T18:13:46.760Z",
+    "resourceReference" : "/types/Locations",
+    "timestamp" : "2020-11-20T13:38:41.710Z",
     "type" : 1
   }, {
     "inventory" : {
-      "appmodelHash" : [ ],
-      "appmodels" : [ ],
+      "clientHash" : [ ],
+      "clients" : [ ],
       "collaborationHash" : [ ],
       "collaborations" : [ ],
-      "pagesetHash" : [ ],
-      "pagesets" : [ ],
-      "procedureHash" : [ "out", "out", "out", "out" ],
-      "procedures" : [ "exception", "retractedUsersArr.push", "newUsersArr.push", "Utils.initPushSource" ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
       "sourceHash" : [ ],
       "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
       "topicHash" : [ ],
       "topics" : [ ],
-      "typeHash" : [ "both" ],
-      "types" : [ "ArsPayloadMessage" ]
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "NLP",
+    "name" : "NLP",
+    "resourceReference" : "/sources/NLP",
+    "timestamp" : "2020-11-27T16:37:10.600Z",
+    "type" : 4
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out" ],
+      "procedures" : [ "Notification.retractPayloadWithSource" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
     },
     "label" : "Notification.retractPayload",
     "name" : "Notification.retractPayload",
-    "timestamp" : "2018-05-14T23:46:28.559Z",
+    "resourceReference" : "/procedures/Notification.retractPayload",
+    "timestamp" : "2020-08-22T21:25:22.135Z",
     "type" : 3
   }, {
     "label" : "NotificationTemplates",
     "name" : "NotificationTemplates",
-    "timestamp" : "2018-10-09T18:13:47.688Z",
+    "resourceReference" : "/types/NotificationTemplates",
+    "timestamp" : "2020-11-20T13:38:41.675Z",
     "type" : 1
   }, {
     "label" : "Signatures",
     "name" : "Signatures",
-    "timestamp" : "2018-10-09T18:13:47.844Z",
+    "resourceReference" : "/types/Signatures",
+    "timestamp" : "2020-11-20T13:38:41.631Z",
     "type" : 1
   }, {
     "inventory" : {
-      "appmodelHash" : [ ],
-      "appmodels" : [ ],
+      "clientHash" : [ ],
+      "clients" : [ ],
       "collaborationHash" : [ ],
       "collaborations" : [ ],
-      "pagesetHash" : [ ],
-      "pagesets" : [ ],
-      "procedureHash" : [ "out", "out", "out", "out", "out", "out", "out", "out" ],
-      "procedures" : [ "Notification.retractPayload", "CollaborationUtils.cancelEscalation", "collab.completeManualAssignment", "CollaborationUtils.closeCollaboration", "collab.notifyCustomer", "collab.weightedNearbyRecommendations", "collab.trackProgress", "collab.changeWorkOrderStatus" ],
-      "sourceHash" : [ "in" ],
-      "sources" : [ "VantiqPushNotification" ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out", "out", "out", "out", "out", "out", "out", "out", "out" ],
+      "procedures" : [ "collab.trackProgress", "Notification.retractPayload", "CollaborationUtils.cancelEscalation", "collab.completeManualAssignment", "CollaborationUtils.closeCollaboration", "collab.notifyCustomer", "collab.weightedNearbyRecommendations", "collab.changeWorkOrderStatus", "customIntent" ],
+      "sourceHash" : [ "in", "in", "in" ],
+      "sources" : [ "VantiqPushNotification", "chatbot", "NLP" ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
       "topicHash" : [ ],
       "topics" : [ ],
       "typeHash" : [ "in", "in", "in", "in" ],
@@ -420,35 +652,59 @@
     },
     "label" : "TechnicianDispatch",
     "name" : "TechnicianDispatch",
-    "timestamp" : "2018-11-02T15:42:07.522Z",
+    "resourceReference" : "/collaborationtypes/TechnicianDispatch",
+    "timestamp" : "2020-11-27T16:38:03.570Z",
     "type" : 11
   }, {
     "label" : "Technicians",
     "name" : "Technicians",
-    "timestamp" : "2018-10-09T18:13:48.566Z",
+    "resourceReference" : "/types/Technicians",
+    "timestamp" : "2020-11-26T14:06:36.948Z",
     "type" : 1
   }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
     "label" : "Twilio",
     "name" : "Twilio",
-    "timestamp" : "2018-10-09T18:16:40.281Z",
+    "resourceReference" : "/sources/Twilio",
+    "timestamp" : "2020-11-20T15:44:22.764Z",
     "type" : 4
   }, {
     "label" : "Users",
     "name" : "Users",
-    "timestamp" : "2018-10-09T18:13:47.580Z",
+    "resourceReference" : "/types/Users",
+    "timestamp" : "2020-11-20T13:38:41.752Z",
     "type" : 1
   }, {
     "inventory" : {
-      "appmodelHash" : [ ],
-      "appmodels" : [ ],
+      "clientHash" : [ ],
+      "clients" : [ ],
       "collaborationHash" : [ ],
       "collaborations" : [ ],
-      "pagesetHash" : [ ],
-      "pagesets" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
       "procedureHash" : [ "out" ],
       "procedures" : [ "namespace" ],
       "sourceHash" : [ ],
       "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
       "topicHash" : [ ],
       "topics" : [ ],
       "typeHash" : [ "in" ],
@@ -456,30 +712,77 @@
     },
     "label" : "Utils.initPushSource",
     "name" : "Utils.initPushSource",
-    "timestamp" : "2018-01-15T05:13:26.479Z",
+    "resourceReference" : "/procedures/Utils.initPushSource",
+    "timestamp" : "2020-08-22T21:25:21.930Z",
     "type" : 3
   }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
     "label" : "VantiqPushNotification",
     "name" : "VantiqPushNotification",
-    "timestamp" : "2018-10-22T22:37:04.965Z",
+    "resourceReference" : "/sources/VantiqPushNotification",
+    "timestamp" : "2020-11-20T15:44:38.198Z",
     "type" : 4
   }, {
     "label" : "Workorders",
     "name" : "Workorders",
-    "timestamp" : "2018-10-09T18:13:46.947Z",
+    "resourceReference" : "/types/Workorders",
+    "timestamp" : "2020-11-20T13:38:41.790Z",
     "type" : 1
   }, {
     "inventory" : {
-      "appmodelHash" : [ ],
-      "appmodels" : [ ],
+      "clientHash" : [ ],
+      "clients" : [ ],
       "collaborationHash" : [ ],
       "collaborations" : [ ],
-      "pagesetHash" : [ ],
-      "pagesets" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "chatbot",
+    "name" : "chatbot",
+    "resourceReference" : "/sources/chatbot",
+    "timestamp" : "2020-11-27T16:37:10.603Z",
+    "type" : 4
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
       "procedureHash" : [ "out", "out" ],
       "procedures" : [ "namespace", "includes" ],
       "sourceHash" : [ ],
       "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
       "topicHash" : [ ],
       "topics" : [ ],
       "typeHash" : [ "in", "in" ],
@@ -487,20 +790,23 @@
     },
     "label" : "clientLoginValidation",
     "name" : "clientLoginValidation",
-    "timestamp" : "2018-10-09T18:14:02.823Z",
+    "resourceReference" : "/procedures/clientLoginValidation",
+    "timestamp" : "2020-11-20T13:38:47.773Z",
     "type" : 3
   }, {
     "inventory" : {
-      "appmodelHash" : [ ],
-      "appmodels" : [ ],
+      "clientHash" : [ ],
+      "clients" : [ ],
       "collaborationHash" : [ ],
       "collaborations" : [ ],
-      "pagesetHash" : [ ],
-      "pagesets" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
       "procedureHash" : [ ],
       "procedures" : [ ],
       "sourceHash" : [ ],
       "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
       "topicHash" : [ ],
       "topics" : [ ],
       "typeHash" : [ "in", "out" ],
@@ -508,20 +814,23 @@
     },
     "label" : "collab.changeWorkOrderStatus",
     "name" : "collab.changeWorkOrderStatus",
-    "timestamp" : "2018-10-09T18:13:58.801Z",
+    "resourceReference" : "/procedures/collab.changeWorkOrderStatus",
+    "timestamp" : "2020-11-20T13:38:47.833Z",
     "type" : 3
   }, {
     "inventory" : {
-      "appmodelHash" : [ ],
-      "appmodels" : [ ],
+      "clientHash" : [ ],
+      "clients" : [ ],
       "collaborationHash" : [ ],
       "collaborations" : [ ],
-      "pagesetHash" : [ ],
-      "pagesets" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
       "procedureHash" : [ "out" ],
       "procedures" : [ "startA_TechnicianDispatch_AssignTechRole" ],
       "sourceHash" : [ ],
       "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
       "topicHash" : [ ],
       "topics" : [ ],
       "typeHash" : [ ],
@@ -529,20 +838,23 @@
     },
     "label" : "collab.completeManualAssignment",
     "name" : "collab.completeManualAssignment",
-    "timestamp" : "2018-10-09T18:14:03.767Z",
+    "resourceReference" : "/procedures/collab.completeManualAssignment",
+    "timestamp" : "2020-11-20T13:38:48.059Z",
     "type" : 3
   }, {
     "inventory" : {
-      "appmodelHash" : [ ],
-      "appmodels" : [ ],
+      "clientHash" : [ ],
+      "clients" : [ ],
       "collaborationHash" : [ ],
       "collaborations" : [ ],
-      "pagesetHash" : [ ],
-      "pagesets" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
       "procedureHash" : [ ],
       "procedures" : [ ],
       "sourceHash" : [ ],
       "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
       "topicHash" : [ ],
       "topics" : [ ],
       "typeHash" : [ ],
@@ -550,20 +862,23 @@
     },
     "label" : "collab.customNearby",
     "name" : "collab.customNearby",
-    "timestamp" : "2018-10-09T18:13:54.829Z",
+    "resourceReference" : "/procedures/collab.customNearby",
+    "timestamp" : "2020-11-20T13:38:48.078Z",
     "type" : 3
   }, {
     "inventory" : {
-      "appmodelHash" : [ ],
-      "appmodels" : [ ],
+      "clientHash" : [ ],
+      "clients" : [ ],
       "collaborationHash" : [ ],
       "collaborations" : [ ],
-      "pagesetHash" : [ ],
-      "pagesets" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
       "procedureHash" : [ "out", "out", "out", "out", "out", "out", "out", "out", "out", "out" ],
       "procedures" : [ "GoogleTimeZone", "toInteger", "toDate", "arrivaltime.minusMillis", "arrivaltime.plusMillis", "push", "length", "range", "format", "sendTextMessageToTech" ],
       "sourceHash" : [ "out" ],
       "sources" : [ "email" ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
       "topicHash" : [ ],
       "topics" : [ ],
       "typeHash" : [ "in", "in" ],
@@ -571,20 +886,23 @@
     },
     "label" : "collab.notifyCustomer",
     "name" : "collab.notifyCustomer",
-    "timestamp" : "2018-10-22T23:24:28.238Z",
+    "resourceReference" : "/procedures/collab.notifyCustomer",
+    "timestamp" : "2020-11-27T15:55:30.864Z",
     "type" : 3
   }, {
     "inventory" : {
-      "appmodelHash" : [ ],
-      "appmodels" : [ ],
+      "clientHash" : [ ],
+      "clients" : [ ],
       "collaborationHash" : [ ],
       "collaborations" : [ ],
-      "pagesetHash" : [ ],
-      "pagesets" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
       "procedureHash" : [ "out" ],
       "procedures" : [ "date" ],
       "sourceHash" : [ ],
       "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
       "topicHash" : [ ],
       "topics" : [ ],
       "typeHash" : [ ],
@@ -592,20 +910,23 @@
     },
     "label" : "collab.scheduleEscalation",
     "name" : "collab.scheduleEscalation",
-    "timestamp" : "2018-10-09T18:14:02.650Z",
+    "resourceReference" : "/procedures/collab.scheduleEscalation",
+    "timestamp" : "2020-11-20T13:38:47.738Z",
     "type" : 3
   }, {
     "inventory" : {
-      "appmodelHash" : [ ],
-      "appmodels" : [ ],
+      "clientHash" : [ ],
+      "clients" : [ ],
       "collaborationHash" : [ ],
       "collaborations" : [ ],
-      "pagesetHash" : [ ],
-      "pagesets" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
       "procedureHash" : [ "out", "out", "out" ],
       "procedures" : [ "scheduledArrivalDate.minusMillis", "now", "date" ],
       "sourceHash" : [ ],
       "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
       "topicHash" : [ ],
       "topics" : [ ],
       "typeHash" : [ ],
@@ -613,20 +934,23 @@
     },
     "label" : "collab.scheduleLocationTracking",
     "name" : "collab.scheduleLocationTracking",
-    "timestamp" : "2018-10-09T18:13:59.313Z",
+    "resourceReference" : "/procedures/collab.scheduleLocationTracking",
+    "timestamp" : "2020-11-27T16:59:10.564Z",
     "type" : 3
   }, {
     "inventory" : {
-      "appmodelHash" : [ ],
-      "appmodels" : [ ],
+      "clientHash" : [ ],
+      "clients" : [ ],
       "collaborationHash" : [ ],
       "collaborations" : [ ],
-      "pagesetHash" : [ ],
-      "pagesets" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
       "procedureHash" : [ "out", "out", "out", "out" ],
       "procedures" : [ "toDate", "now", "plusMillis", "startA_TechnicianCollaborationCollaborationType_SelectDate" ],
       "sourceHash" : [ ],
       "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
       "topicHash" : [ ],
       "topics" : [ ],
       "typeHash" : [ "out" ],
@@ -634,20 +958,23 @@
     },
     "label" : "collab.setScheduledDate",
     "name" : "collab.setScheduledDate",
-    "timestamp" : "2018-10-09T18:14:03.029Z",
+    "resourceReference" : "/procedures/collab.setScheduledDate",
+    "timestamp" : "2020-11-20T13:38:48.052Z",
     "type" : 3
   }, {
     "inventory" : {
-      "appmodelHash" : [ ],
-      "appmodels" : [ ],
+      "clientHash" : [ ],
+      "clients" : [ ],
       "collaborationHash" : [ ],
       "collaborations" : [ ],
-      "pagesetHash" : [ ],
-      "pagesets" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
       "procedureHash" : [ "out", "out", "out", "out", "out" ],
       "procedures" : [ "GoogleDistanceMatrix", "now", "plusMillis", "date", "collab.notifyCustomer" ],
       "sourceHash" : [ ],
       "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
       "topicHash" : [ ],
       "topics" : [ ],
       "typeHash" : [ "both", "out" ],
@@ -655,20 +982,23 @@
     },
     "label" : "collab.trackProgress",
     "name" : "collab.trackProgress",
-    "timestamp" : "2018-11-07T17:08:56.529Z",
+    "resourceReference" : "/procedures/collab.trackProgress",
+    "timestamp" : "2020-11-20T13:38:47.983Z",
     "type" : 3
   }, {
     "inventory" : {
-      "appmodelHash" : [ ],
-      "appmodels" : [ ],
+      "clientHash" : [ ],
+      "clients" : [ ],
       "collaborationHash" : [ ],
       "collaborations" : [ ],
-      "pagesetHash" : [ ],
-      "pagesets" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
       "procedureHash" : [ ],
       "procedures" : [ ],
       "sourceHash" : [ ],
       "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
       "topicHash" : [ ],
       "topics" : [ ],
       "typeHash" : [ "in", "out" ],
@@ -676,20 +1006,23 @@
     },
     "label" : "collab.updateTechAssignment",
     "name" : "collab.updateTechAssignment",
-    "timestamp" : "2018-10-09T18:13:58.127Z",
+    "resourceReference" : "/procedures/collab.updateTechAssignment",
+    "timestamp" : "2020-11-20T13:38:47.761Z",
     "type" : 3
   }, {
     "inventory" : {
-      "appmodelHash" : [ ],
-      "appmodels" : [ ],
+      "clientHash" : [ ],
+      "clients" : [ ],
       "collaborationHash" : [ ],
       "collaborations" : [ ],
-      "pagesetHash" : [ ],
-      "pagesets" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
       "procedureHash" : [ ],
       "procedures" : [ ],
       "sourceHash" : [ ],
       "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
       "topicHash" : [ ],
       "topics" : [ ],
       "typeHash" : [ "out" ],
@@ -697,20 +1030,23 @@
     },
     "label" : "collab.updateTechMobileGeoLocation",
     "name" : "collab.updateTechMobileGeoLocation",
-    "timestamp" : "2018-10-09T18:14:01.562Z",
+    "resourceReference" : "/procedures/collab.updateTechMobileGeoLocation",
+    "timestamp" : "2020-11-20T13:38:47.776Z",
     "type" : 3
   }, {
     "inventory" : {
-      "appmodelHash" : [ ],
-      "appmodels" : [ ],
+      "clientHash" : [ ],
+      "clients" : [ ],
       "collaborationHash" : [ ],
       "collaborations" : [ ],
-      "pagesetHash" : [ ],
-      "pagesets" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
       "procedureHash" : [ ],
       "procedures" : [ ],
       "sourceHash" : [ ],
       "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
       "topicHash" : [ ],
       "topics" : [ ],
       "typeHash" : [ "out" ],
@@ -718,20 +1054,23 @@
     },
     "label" : "collab.updateWorkOrderTechId",
     "name" : "collab.updateWorkOrderTechId",
-    "timestamp" : "2018-10-09T18:13:58.316Z",
+    "resourceReference" : "/procedures/collab.updateWorkOrderTechId",
+    "timestamp" : "2020-11-20T13:38:47.840Z",
     "type" : 3
   }, {
     "inventory" : {
-      "appmodelHash" : [ ],
-      "appmodels" : [ ],
+      "clientHash" : [ ],
+      "clients" : [ ],
       "collaborationHash" : [ ],
       "collaborations" : [ ],
-      "pagesetHash" : [ ],
-      "pagesets" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
       "procedureHash" : [ "out", "out", "out", "out", "out" ],
       "procedures" : [ "exception", "startA_TechnicianDispatch_AssignTechRole", "push", "geoDistance", "length" ],
       "sourceHash" : [ ],
       "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
       "topicHash" : [ ],
       "topics" : [ ],
       "typeHash" : [ "in" ],
@@ -739,25 +1078,71 @@
     },
     "label" : "collab.weightedNearbyRecommendations",
     "name" : "collab.weightedNearbyRecommendations",
-    "timestamp" : "2018-10-30T16:58:03.825Z",
+    "resourceReference" : "/procedures/collab.weightedNearbyRecommendations",
+    "timestamp" : "2020-11-20T13:38:48.213Z",
     "type" : 3
   }, {
-    "label" : "email",
-    "name" : "email",
-    "timestamp" : "2018-10-09T18:17:04.593Z",
-    "type" : 4
-  }, {
     "inventory" : {
-      "appmodelHash" : [ ],
-      "appmodels" : [ ],
+      "clientHash" : [ ],
+      "clients" : [ ],
       "collaborationHash" : [ ],
       "collaborations" : [ ],
-      "pagesetHash" : [ ],
-      "pagesets" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out", "out", "out", "out" ],
+      "procedures" : [ "getNavDirections", "push", "format", "step.html_instructions.replace" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in", "out" ],
+      "types" : [ "Technicians", "democontrol" ]
+    },
+    "label" : "customIntent",
+    "name" : "customIntent",
+    "resourceReference" : "/procedures/customIntent",
+    "timestamp" : "2020-11-27T08:47:11.416Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
       "procedureHash" : [ ],
       "procedures" : [ ],
       "sourceHash" : [ ],
       "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "email",
+    "name" : "email",
+    "resourceReference" : "/sources/email",
+    "timestamp" : "2020-11-27T10:23:46.973Z",
+    "type" : 4
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out" ],
+      "procedures" : [ "uuid" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
       "topicHash" : [ ],
       "topics" : [ ],
       "typeHash" : [ ],
@@ -765,20 +1150,23 @@
     },
     "label" : "generateUUID",
     "name" : "generateUUID",
-    "timestamp" : "2018-10-09T18:14:05.650Z",
+    "resourceReference" : "/procedures/generateUUID",
+    "timestamp" : "2020-11-20T13:38:47.805Z",
     "type" : 3
   }, {
     "inventory" : {
-      "appmodelHash" : [ ],
-      "appmodels" : [ ],
+      "clientHash" : [ ],
+      "clients" : [ ],
       "collaborationHash" : [ ],
       "collaborations" : [ ],
-      "pagesetHash" : [ ],
-      "pagesets" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
       "procedureHash" : [ "out", "out" ],
       "procedures" : [ "has", "GoogleGeoCode" ],
       "sourceHash" : [ ],
       "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
       "topicHash" : [ ],
       "topics" : [ ],
       "typeHash" : [ "both", "both", "both" ],
@@ -786,20 +1174,47 @@
     },
     "label" : "geoCodeAddress",
     "name" : "geoCodeAddress",
-    "timestamp" : "2018-10-09T18:13:54.344Z",
+    "resourceReference" : "/procedures/geoCodeAddress",
+    "timestamp" : "2020-11-20T13:38:48.181Z",
     "type" : 3
   }, {
     "inventory" : {
-      "appmodelHash" : [ ],
-      "appmodels" : [ ],
+      "clientHash" : [ ],
+      "clients" : [ ],
       "collaborationHash" : [ ],
       "collaborations" : [ ],
-      "pagesetHash" : [ ],
-      "pagesets" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out" ],
+      "procedures" : [ "format" ],
+      "sourceHash" : [ "in" ],
+      "sources" : [ "GoogleDirections" ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "getNavDirections",
+    "name" : "getNavDirections",
+    "resourceReference" : "/procedures/getNavDirections",
+    "timestamp" : "2020-11-27T08:47:11.646Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
       "procedureHash" : [ ],
       "procedures" : [ ],
       "sourceHash" : [ "out" ],
       "sources" : [ "Twilio" ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
       "topicHash" : [ ],
       "topics" : [ ],
       "typeHash" : [ ],
@@ -807,59 +1222,130 @@
     },
     "label" : "sendTextMessageToTech",
     "name" : "sendTextMessageToTech",
-    "timestamp" : "2018-10-23T00:03:28.734Z",
+    "resourceReference" : "/procedures/sendTextMessageToTech",
+    "timestamp" : "2020-11-20T13:38:48.014Z",
     "type" : 3
   }, {
     "label" : "system.collaborations",
     "name" : "system.collaborations",
+    "resourceReference" : "/types/system.collaborations",
     "timestamp" : "2017-02-23T05:43:11.477Z",
     "type" : 1
   }, {
     "label" : "system.users",
     "name" : "system.users",
+    "resourceReference" : "/types/system.users",
     "timestamp" : "2015-01-04T00:00:26.316Z",
     "type" : 1
   } ],
   "tools" : [ {
+    "isPinned" : false,
+    "name" : "Autopsies",
+    "type" : 100
+  }, {
+    "isPinned" : false,
+    "name" : "Errors",
+    "type" : 13
+  }, {
+    "isPinned" : false,
+    "name" : "Errors Query",
+    "pane" : {
+      "h" : 400,
+      "w" : 600,
+      "x" : 0,
+      "y" : 1570
+    },
+    "state" : 3,
+    "type" : 28
+  }, {
+    "isPinned" : false,
+    "name" : "Google.getAPIKey",
+    "pane" : {
+      "h" : 400,
+      "w" : 600,
+      "x" : 0,
+      "y" : 2390
+    },
+    "resourceKey" : "procedure/Google.getAPIKey",
+    "state" : 3,
+    "type" : 24
+  }, {
+    "dockLocation" : "top",
+    "isPinned" : false,
+    "name" : "Inactive Panes",
+    "type" : 99
+  }, {
+    "isPinned" : false,
+    "name" : "Log Messages",
+    "type" : 12
+  }, {
+    "isPinned" : false,
+    "name" : "Project Contents",
+    "type" : 2
+  }, {
+    "isPinned" : false,
+    "name" : "Project Description",
+    "pane" : {
+      "h" : 400,
+      "w" : 1570,
+      "x" : 0,
+      "y" : 0
+    },
+    "state" : 3,
+    "type" : 82
+  }, {
+    "isPinned" : false,
     "name" : "TechnicianDispatch",
     "pane" : {
       "h" : 1150,
       "w" : 1570,
-      "x" : 20,
-      "y" : 20
+      "x" : 0,
+      "y" : 410
     },
     "resourceKey" : "collaborationtype/TechnicianDispatch",
-    "toolOptions" : {
-      "propertyPaneWidth" : 250,
-      "scaleAndTranslationState" : {
-        "lastZoomRequest" : 0,
-        "scale" : 0.7827325718877478,
-        "translate" : [ 620.1248683206887, 28.827030694412315 ]
-      }
-    },
+    "state" : 3,
+    "toolOptions" : { },
     "type" : 14
   }, {
-    "name" : "Project Contents",
-    "pane" : {
-      "h" : 630,
-      "w" : 600,
-      "x" : 20,
-      "y" : 1190
-    },
-    "type" : 2
-  }, {
-    "name" : "Project Description",
+    "isPinned" : false,
+    "name" : "collab.notifyCustomer",
     "pane" : {
       "h" : 400,
-      "w" : 650,
-      "x" : 640,
-      "y" : 1190.0000610351562
+      "w" : 600,
+      "x" : 610,
+      "y" : 1980
     },
-    "type" : 82
+    "resourceKey" : "procedure/collab.notifyCustomer",
+    "state" : 3,
+    "type" : 24
+  }, {
+    "isPinned" : false,
+    "name" : "collab.scheduleLocationTracking",
+    "pane" : {
+      "h" : 400,
+      "w" : 1500,
+      "x" : 0,
+      "y" : 2800
+    },
+    "resourceKey" : "procedure/collab.scheduleLocationTracking",
+    "state" : 3,
+    "type" : 24
+  }, {
+    "isPinned" : false,
+    "name" : "email",
+    "pane" : {
+      "h" : 400,
+      "w" : 600,
+      "x" : 0,
+      "y" : 1980
+    },
+    "resourceKey" : "source/email",
+    "state" : 3,
+    "type" : 5
   } ],
   "type" : "dev",
   "views" : [ {
-    "name" : "Main",
-    "projectToolKeys" : [ "collaborationgraph/TechnicianDispatch", "list/Project Contents", "projectdescription/Project Description" ]
+    "name" : "Project Contents",
+    "projectToolKeys" : [ "autopsyviewer/Autopsies", "errorviewer/Errors", "errorquery/Errors Query", "cmeditorprocedure/Google.getAPIKey", "tiledock/Inactive Panes", "logviewer/Log Messages", "list/Project Contents", "projectdescription/Project Description", "collaborationgraph/TechnicianDispatch", "cmeditorprocedure/collab.notifyCustomer", "cmeditorprocedure/collab.scheduleLocationTracking", "subsourceeditor/email" ]
   } ]
 }
