@@ -1,0 +1,78 @@
+{
+  "bodyChildren" : {
+    "rootArray" : [ "7099b812-cf11-40fb-ab11-2c70e32711d9", "b722ebdc-4184-42f8-bdd6-cec305c39e29", "0b6a88b8-682e-4a5c-88e3-da7cd5fd58c7", "81540e35-887c-45b8-8309-f6a66c8172e2" ],
+    "widgets" : [ {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "buttonBackgroundColor" : "platform",
+      "buttonLabel" : "Check In",
+      "buttonLabelColor" : "platform",
+      "buttonLabelSize" : 14,
+      "buttonLabelStyle" : "bold",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "Button14192",
+      "submitValue" : 100,
+      "type" : "Button",
+      "uuid" : "0b6a88b8-682e-4a5c-88e3-da7cd5fd58c7",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "StaticImage282",
+      "preserveAspectRatio" : true,
+      "type" : "StaticImage",
+      "url" : "../cmn/assets/branding/defaultImage.png",
+      "uuid" : "7099b812-cf11-40fb-ab11-2c70e32711d9",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "naturalSize"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "buttonBackgroundColor" : "platform",
+      "buttonLabel" : "Start Route",
+      "buttonLabelColor" : "platform",
+      "buttonLabelSize" : 14,
+      "buttonLabelStyle" : "bold",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "Button14320",
+      "submitValue" : 100,
+      "type" : "Button",
+      "uuid" : "81540e35-887c-45b8-8309-f6a66c8172e2",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "barcode",
+      "optional" : true,
+      "placeholder" : "Scan Barcode",
+      "type" : "BarcodeReader",
+      "uuid" : "b722ebdc-4184-42f8-bdd6-cec305c39e29",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    } ]
+  },
+  "data" : {
+    "properties" : { }
+  },
+  "footerChildren" : [ ],
+  "hasFooter" : false,
+  "layoutType" : "mobile",
+  "responseTopic" : "/deliveries/checkin"
+}

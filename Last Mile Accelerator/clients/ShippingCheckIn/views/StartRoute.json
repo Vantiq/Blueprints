@@ -1,0 +1,201 @@
+{
+  "bodyChildren" : {
+    "rootArray" : [ "f8b54432-379a-4989-8c4a-8b50f58b26a1", "d5a2357c-2fbc-4662-b824-a7d90f7967fd", "5fd3a73b-1d31-43d3-9873-65ba08908fe5", "a11204de-a1da-4705-afdc-3d0fca06a1fe", "e75595b7-b339-4cf3-ada1-f3c05c53eb65" ],
+    "widgets" : [ {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 2,
+      "dataStreamGroupedByFiltersString" : "",
+      "dataStreamProperty" : "shippingAddressGEO",
+      "dataStreamUUID" : "45485e4a-8998-4154-8478-7d9447efff25",
+      "dataType" : null,
+      "fixedCenter" : true,
+      "h" : 500,
+      "heightPolicy" : "explicit",
+      "horzGravity" : "center",
+      "labelProperty" : "shippingAddress",
+      "markerHashKeyProperty" : "shippingAddress",
+      "name" : "ShippingPoints",
+      "naturalKey" : null,
+      "operation" : "insert",
+      "type" : "DynamicMapViewer",
+      "uuid" : "5fd3a73b-1d31-43d3-9873-65ba08908fe5",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "buttonBackgroundColor" : "platform",
+      "buttonLabel" : "View Route",
+      "buttonLabelColor" : "platform",
+      "buttonLabelSize" : 14,
+      "buttonLabelStyle" : "bold",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "Button14535",
+      "submitValue" : 100,
+      "type" : "Button",
+      "uuid" : "a11204de-a1da-4705-afdc-3d0fca06a1fe",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "backgroundColor" : "default",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 1,
+      "cellFontColor" : "default",
+      "cellFontFace" : "inherit",
+      "cellFontSize" : 14,
+      "cellFontStyle" : "plain",
+      "clearOnDataArrive" : true,
+      "columnDescriptors" : [ {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "shippingAddress",
+        "selected" : false,
+        "title" : "Shipping Address"
+      }, {
+        "buttonLabel" : "Click",
+        "colorRules" : null,
+        "dataType" : "Button",
+        "propertyName" : "Button",
+        "selected" : false,
+        "title" : "Action"
+      } ],
+      "columnSort" : true,
+      "dataStreamGroupedByFiltersString" : "",
+      "dataStreamUUID" : "45485e4a-8998-4154-8478-7d9447efff25",
+      "dataType" : null,
+      "headerFontColor" : "default",
+      "headerFontFace" : "inherit",
+      "headerFontSize" : 14,
+      "headerFontStyle" : "plain",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "DataTable5119",
+      "operation" : "insert",
+      "rowsPerPage" : 5,
+      "showPaging" : true,
+      "type" : "DataTable",
+      "uuid" : "d5a2357c-2fbc-4662-b824-a7d90f7967fd",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "buttonBackgroundColor" : "platform",
+      "buttonLabel" : "Start Route",
+      "buttonLabelColor" : "platform",
+      "buttonLabelSize" : 14,
+      "buttonLabelStyle" : "bold",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "Button14323",
+      "submitValue" : 100,
+      "type" : "Button",
+      "uuid" : "e75595b7-b339-4cf3-ada1-f3c05c53eb65",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "StaticImage311",
+      "preserveAspectRatio" : true,
+      "type" : "StaticImage",
+      "url" : "../cmn/assets/branding/defaultImage.png",
+      "uuid" : "f8b54432-379a-4989-8c4a-8b50f58b26a1",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "naturalSize"
+    } ]
+  },
+  "data" : {
+    "properties" : {
+      "clientId" : {
+        "defaultLabel" : "id",
+        "defaultValue" : "",
+        "type" : "String"
+      },
+      "destination" : {
+        "defaultLabel" : "destination",
+        "defaultValue" : "",
+        "type" : "String"
+      },
+      "origen" : {
+        "defaultLabel" : "origen",
+        "defaultValue" : "",
+        "type" : "String"
+      },
+      "routes" : {
+        "defaultLabel" : "routes",
+        "type" : "Object"
+      },
+      "shipments" : {
+        "defaultLabel" : "shipments",
+        "type" : "TypedObject",
+        "typedObject" : {
+          "properties" : {
+            "id" : {
+              "defaultLabel" : "id",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "originalAddress" : {
+              "defaultLabel" : "originalAddress",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "originalAddressGEO" : {
+              "defaultLabel" : "originalAddressGEO",
+              "type" : "GeoJSON"
+            },
+            "packageid" : {
+              "defaultLabel" : "packageid",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "shippingAddress" : {
+              "defaultLabel" : "shippingAddress",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "shippingAddressGEO" : {
+              "defaultLabel" : "shippingAddressGEO",
+              "type" : "GeoJSON"
+            },
+            "vehicleid" : {
+              "defaultLabel" : "vehicleid",
+              "defaultValue" : "",
+              "type" : "String"
+            }
+          },
+          "type" : "shipments"
+        }
+      },
+      "vehicleId" : {
+        "defaultLabel" : "vehicleId",
+        "defaultValue" : "",
+        "type" : "String"
+      },
+      "waypoints" : {
+        "defaultLabel" : "waypoints",
+        "defaultValue" : [ ],
+        "isArray" : true,
+        "type" : "String"
+      }
+    }
+  },
+  "footerChildren" : [ ],
+  "hasFooter" : false,
+  "layoutType" : "mobile",
+  "responseTopic" : "/deliveries/startroute"
+}

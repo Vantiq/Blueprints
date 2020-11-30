@@ -1,0 +1,182 @@
+{
+  "ars_properties" : {
+    "tags" : [ "#launchable" ]
+  },
+  "ars_public" : true,
+  "controllers" : {
+    "client" : {
+      "customCode" : "RELOCATED to controllers/client/customCode.js",
+      "onAssetsLoaded" : "RELOCATED to controllers/client/onAssetsLoaded.js",
+      "onStart" : "RELOCATED to controllers/client/onStart.js"
+    },
+    "dataStream" : {
+      "ce_routes" : { },
+      "ce_shipments" : { }
+    },
+    "page" : {
+      "Start" : {
+        "widgets" : {
+          "Button14320" : {
+            "onClick" : "RELOCATED to controllers/page/Start/widgets/Button14320/onClick.js"
+          }
+        }
+      },
+      "StartRoute" : {
+        "onClientStart" : "RELOCATED to controllers/page/StartRoute/onClientStart.js",
+        "onStart" : "RELOCATED to controllers/page/StartRoute/onStart.js",
+        "widgets" : {
+          "Button14535" : {
+            "onClick" : "RELOCATED to controllers/page/StartRoute/widgets/Button14535/onClick.js"
+          }
+        }
+      }
+    }
+  },
+  "isLaunchable" : true,
+  "models" : {
+    "dataObjects" : {
+      "__GLOBAL__" : {
+        "properties" : {
+          "routes" : {
+            "defaultLabel" : "routes",
+            "type" : "TypedObject",
+            "typedObject" : {
+              "properties" : {
+                "destination" : {
+                  "defaultLabel" : "destination",
+                  "defaultValue" : "",
+                  "type" : "String"
+                },
+                "destinationGEO" : {
+                  "defaultLabel" : "destinationGEO",
+                  "type" : "GeoJSON"
+                },
+                "fixed" : {
+                  "defaultLabel" : "fixed",
+                  "defaultValue" : false,
+                  "type" : "Boolean"
+                },
+                "id" : {
+                  "defaultLabel" : "id",
+                  "defaultValue" : "",
+                  "type" : "String"
+                },
+                "name" : {
+                  "defaultLabel" : "name",
+                  "defaultValue" : "",
+                  "type" : "String"
+                },
+                "origen" : {
+                  "defaultLabel" : "origen",
+                  "defaultValue" : "",
+                  "type" : "String"
+                },
+                "origenGEO" : {
+                  "defaultLabel" : "origenGEO",
+                  "type" : "GeoJSON"
+                },
+                "vehicleId" : {
+                  "defaultLabel" : "vehicleId",
+                  "defaultValue" : "",
+                  "type" : "String"
+                },
+                "waypoints" : {
+                  "defaultLabel" : "waypoints",
+                  "defaultValue" : "",
+                  "isArray" : true,
+                  "type" : "String"
+                }
+              },
+              "type" : "routes"
+            }
+          }
+        }
+      },
+      "__PARAMETERS__" : {
+        "properties" : { }
+      }
+    },
+    "dataStreams" : [ {
+      "advancedWhereClause" : null,
+      "dataObjectName" : null,
+      "dataTypeList" : [ {
+        "label" : null,
+        "type" : "shipments"
+      } ],
+      "isDeleteOp" : false,
+      "isInsertOp" : false,
+      "isUpdateOp" : false,
+      "maxRecords" : 0,
+      "name" : "ce_shipments",
+      "pauseAtStartup" : false,
+      "property" : null,
+      "sortByProperty" : null,
+      "sortDescending" : false,
+      "type" : 5,
+      "updateInterval" : 60,
+      "uuid" : "45485e4a-8998-4154-8478-7d9447efff25",
+      "v" : 1
+    }, {
+      "advancedWhereClause" : null,
+      "dataObjectName" : null,
+      "dataTypeList" : [ {
+        "label" : null,
+        "type" : "routes"
+      } ],
+      "isDeleteOp" : false,
+      "isInsertOp" : false,
+      "isUpdateOp" : false,
+      "maxRecords" : 0,
+      "name" : "ce_routes",
+      "pauseAtStartup" : false,
+      "property" : null,
+      "sortByProperty" : null,
+      "sortDescending" : false,
+      "type" : 5,
+      "updateInterval" : 60,
+      "uuid" : "5ae369a2-6f05-433d-8669-5600d11d5c49",
+      "v" : 1
+    } ]
+  },
+  "name" : "ShippingCheckIn",
+  "options" : {
+    "RELOCATE" : [ {
+      "path" : "controllers",
+      "type" : "js"
+    }, {
+      "path" : "views",
+      "type" : "json"
+    } ],
+    "badgeCount" : 0,
+    "description" : "",
+    "docAssets" : [ ],
+    "paletteCollapsed" : false,
+    "productV" : "7.4g",
+    "showCategoryButtons" : true,
+    "showCategoryDataDisplay" : true,
+    "showCategoryDataInput" : true,
+    "showCategoryLayout" : true,
+    "showGridWhileEditing" : false,
+    "theme" : {
+      "backgroundColor" : "#ffffff",
+      "borderColor" : "#d3d6db",
+      "cardAccentColor" : "#ffffff",
+      "cardColor" : "#3c424d",
+      "dataDisplayColor" : "#ffffff",
+      "dataDisplayColors" : [ "#3cbce1", "#996db8", "#86d557", "#ff9800", "#425b71", "#cc467c", "#01aa93", "#ffca28", "#f583a9", "#1c84d4", "#ff6767", "#4caf50" ],
+      "dataInputColor" : "#ffffff",
+      "foregroundColor" : "#566076",
+      "label" : "Light",
+      "name" : "light",
+      "titleBarColor" : "#dddddd",
+      "v" : 3
+    },
+    "v" : 5
+  },
+  "targetDevice" : "mobile",
+  "userList" : [ ],
+  "views" : {
+    "Start" : "RELOCATED to views/Start.json",
+    "StartRoute" : "RELOCATED to views/StartRoute.json"
+  }
+}

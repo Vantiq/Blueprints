@@ -1,0 +1,201 @@
+{
+  "bodyChildren" : {
+    "rootArray" : [ "583ff3eb-8dc6-4724-8254-f20c25593930", "14a93d48-6e74-4060-898d-ee8d3352ba86" ],
+    "widgets" : [ {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 1,
+      "children" : [ "96ac6ff1-0cb7-458b-96e1-72f86843eb73", "2d702948-fab6-447f-9320-de8a06ceb763", "c9c42b30-689a-4d2f-8551-556d02d54ae9" ],
+      "h" : 503,
+      "heightPolicy" : "explicit",
+      "horzGravity" : "center",
+      "innerMargin" : 20,
+      "name" : "VerticalLayout19963",
+      "type" : "VerticalLayout",
+      "uuid" : "14a93d48-6e74-4060-898d-ee8d3352ba86",
+      "v" : 16,
+      "vertGravity" : "center",
+      "w" : 966,
+      "widthPolicy" : "explicit",
+      "x" : 5,
+      "y" : 129
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 1,
+      "children" : [ "bdaef459-fc4f-4e0a-8cc3-e14065071ce1", "f0975dc3-d6cc-46ff-8423-af3e66097fcf", "d07a6652-26b5-4d14-9fbb-5c61f3f4b77b" ],
+      "columns" : 3,
+      "h" : 105,
+      "heightPolicy" : "explicit",
+      "horzGravity" : "center",
+      "innerMargin" : 20,
+      "name" : "GridLayout102",
+      "rows" : 1,
+      "type" : "GridLayout",
+      "uuid" : "2d702948-fab6-447f-9320-de8a06ceb763",
+      "v" : 16,
+      "vertGravity" : "top",
+      "widthPolicy" : "naturalSize"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "StaticImage617",
+      "preserveAspectRatio" : true,
+      "type" : "StaticImage",
+      "url" : "../cmn/assets/branding/defaultImage.png",
+      "uuid" : "583ff3eb-8dc6-4724-8254-f20c25593930",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "naturalSize",
+      "x" : 331,
+      "y" : 46
+    }, {
+      "backgroundColor" : null,
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 1,
+      "cellFontColor" : "default",
+      "cellFontFace" : "inherit",
+      "cellFontSize" : 14,
+      "cellFontStyle" : "plain",
+      "clearOnDataArrive" : true,
+      "columnDescriptors" : [ {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "signedBy",
+        "selected" : false,
+        "title" : "signedBy"
+      }, {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "status",
+        "selected" : false,
+        "title" : "status"
+      }, {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "vehicleid",
+        "selected" : false,
+        "title" : "vehicleid"
+      }, {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "sign",
+        "selected" : false,
+        "title" : "sign"
+      } ],
+      "columnSort" : true,
+      "dataStreamGroupedByFiltersString" : "",
+      "dataStreamUUID" : "3d169238-99f5-4d8a-a3cb-008655bb3954",
+      "dataType" : null,
+      "headerFontColor" : "default",
+      "headerFontFace" : "inherit",
+      "headerFontSize" : 14,
+      "headerFontStyle" : "plain",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "DataTable5488",
+      "operation" : "insert",
+      "rowsPerPage" : 5,
+      "showPaging" : true,
+      "type" : "DataTable",
+      "uuid" : "96ac6ff1-0cb7-458b-96e1-72f86843eb73",
+      "v" : 16,
+      "vertGravity" : "top",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "column" : 0,
+      "fontFamily" : "inherit",
+      "fontSize" : 20,
+      "fontStyle" : "normal",
+      "fontWeight" : "normal",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "StaticText59830",
+      "row" : 0,
+      "text" : "Calification",
+      "type" : "StaticText",
+      "uuid" : "bdaef459-fc4f-4e0a-8cc3-e14065071ce1",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "naturalSize"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "buttonBackgroundColor" : "platform",
+      "buttonLabel" : "Send Calification",
+      "buttonLabelColor" : "platform",
+      "buttonLabelSize" : 14,
+      "buttonLabelStyle" : "bold",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "Button15878",
+      "submitValue" : 100,
+      "type" : "Button",
+      "uuid" : "c9c42b30-689a-4d2f-8551-556d02d54ae9",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "column" : 2,
+      "default" : 5,
+      "enumeratedList" : [ {
+        "label" : "1",
+        "value" : 1
+      }, {
+        "label" : "2",
+        "value" : 2
+      }, {
+        "label" : "3",
+        "value" : 3
+      }, {
+        "label" : "4",
+        "value" : 4
+      }, {
+        "label" : "5",
+        "value" : 5
+      } ],
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "ComboBox3",
+      "row" : 0,
+      "type" : "ComboBox",
+      "uuid" : "d07a6652-26b5-4d14-9fbb-5c61f3f4b77b",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderThickness" : 0,
+      "column" : 1,
+      "fontSize" : 20,
+      "glyphIcon" : "fa-star",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "StaticIcon9",
+      "row" : 0,
+      "type" : "StaticIcon",
+      "uuid" : "f0975dc3-d6cc-46ff-8423-af3e66097fcf",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "naturalSize"
+    } ]
+  },
+  "data" : {
+    "properties" : { }
+  },
+  "footerChildren" : [ ],
+  "hasFooter" : false,
+  "layoutType" : "browser",
+  "responseTopic" : "/deliveries/public/driverfeedback"
+}
