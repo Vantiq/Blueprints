@@ -1,0 +1,38 @@
+{
+  "adminAccessLevel" : "ars_readWrite",
+  "ars_properties" : null,
+  "audited" : false,
+  "encapsulated" : false,
+  "expiresAfter" : null,
+  "foreignKeys" : null,
+  "groupBy" : "",
+  "groupEnabled" : false,
+  "groupRequired" : false,
+  "indexes" : [ ],
+  "maxObjects" : 0,
+  "maxStorage" : 0,
+  "metadata" : false,
+  "name" : "coordinates",
+  "naturalKey" : [ ],
+  "properties" : {
+    "latitude" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "scale" : 8,
+      "type" : "Decimal",
+      "unique" : false
+    },
+    "longitude" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "scale" : 8,
+      "type" : "Decimal",
+      "unique" : false
+    }
+  },
+  "role" : "standard",
+  "userAccessLevel" : "ars_readOnly",
+  "volatile" : false
+}
