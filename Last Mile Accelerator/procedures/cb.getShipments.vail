@@ -1,0 +1,5 @@
+PROCEDURE cb.getShipments(driverId)
+
+var vehicleId = select id from vehicle  where driver == driverId
+
+select * FROM shipments where vehicleid == vehicleId[0].id

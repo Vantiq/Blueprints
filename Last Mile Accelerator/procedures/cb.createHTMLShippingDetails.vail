@@ -1,0 +1,27 @@
+PROCEDURE cb.createHTMLShippingDetails(packageId)
+
+var selectPackage = select * FROM package where id == packageId
+
+var html = "<p style=\"margin-left: 25px;\"><span style=\"font-size: 14px;\">Name:<strong>" + selectPackage[0].name +  "</strong></span></p>"
+
+html+= "<p style=\"margin-left: 25px;\"><span style=\"font-size: 14px;\">Barcode:<strong>" + selectPackage[0].barcode +  "</strong></span></p>"
+
+html+= "<p style=\"margin-left: 25px;\"><span style=\"font-size: 14px;\">Condition:<strong>" + selectPackage[0].description +  "</strong></span></p>"
+
+html+= 
+"<p style=\"margin-left: 25px;\"><span style=\"font-size: 14px;\">Customer Phone:<strong>" + selectPackage[0].customerPhone +  "</strong></span></p>"
+
+html+= "<p style=\"margin-left: 25px;\"><span style=\"font-size: 14px;\">Shipping Date:<strong>" + selectPackage[0].shippingDate +  "</strong></span></p>"
+
+html+= "<p style=\"margin-left: 25px;\"><span style=\"font-size: 14px;\">Ordered Date:<strong>" + selectPackage[0].orderedDate + "</strong></span></p>"
+
+html+= "<p style=\"margin-left: 25px;\"><span style=\"font-size: 14px;\">Status:<strong>" + selectPackage[0].status +  "</strong></span></p>"
+
+html+= "<p style=\"margin-left: 25px;\"><strong><br>"
+html+= "</strong></p>"
+
+html+= "<p><br>"
+html+= "</p>"
+
+return html
+

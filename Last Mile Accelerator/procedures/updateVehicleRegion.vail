@@ -1,0 +1,3 @@
+PROCEDURE updateVehicleRegion(idx,region)
+
+upsert vehicle(id:idx,regionName:region)

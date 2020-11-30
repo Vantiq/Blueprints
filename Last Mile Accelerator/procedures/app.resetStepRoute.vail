@@ -1,0 +1,3 @@
+PROCEDURE app.resetStepRoute(id) 
+
+update routes(steps:0,status:"open") where id == id

@@ -1,0 +1,44 @@
+PROCEDURE app.assign_ZonePackage(event Object)
+
+event.region = "not found"
+
+for (regionSearch in SELECT * FROM region ) {
+    
+   //log.info(stringify({event.shippingAddressGEO: {"$geoWithin": regionSearch.coordinates}}) 
+    
+    var bounds = {}
+    bounds.geometry = {}
+    bounds.geometry.type = "Polygon"
+    bounds.geometry.coordinates = regionSearch.coordinates.coordinates
+    
+    
+    SELECT * FROM package as P where id == event.id AND shippingAddressGEO geowithin bounds
+    
+    IF (size(P)>0)
+	{
+        event.region = regionSearch.name
+        return event
+	}
+	
+	UPDATE package(region: regionSearch.name) WHERE id == event.id
+
+    return event
+/*    
+    var x = {
+        event.shippingAddressGEO: {"$geoWithin": 
+            {"$geometry": {
+                type: "Polygon",
+                coordindates:regionSearch.coordinates.coordinates}
+    		}
+        }
+    }
+
+   if ({event.shippingAddressGEO: {"$geoWithin": regionSearch.coordinates}}){
+       	event.region = regionSearch.name   
+    }*/
+}
+
+    
+
+
+

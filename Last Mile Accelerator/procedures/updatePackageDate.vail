@@ -1,0 +1,6 @@
+PROCEDURE updatePackageDate(packageId)
+
+	update package(shippingDate:now()) where id==packageId
+
+
+

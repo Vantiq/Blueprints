@@ -1,0 +1,35 @@
+PROCEDURE cb.getPackageInfo(lastIndexDestination,step,waypointOrder,routeid)
+
+if (step<length(waypointOrder)){
+
+var waypoints = []
+var index = 0
+
+ for (p in SELECT * FROM package) {
+ 	if (index.toString() != lastIndexDestination.toString())   {
+        push(waypoints,p)
+    }      
+	
+	 index++	
+ }
+
+var packageIndex = 	waypointOrder[step]
+
+var package = waypoints[packageIndex]
+
+return package
+
+}else{
+    var waypoints = []
+	var index = 0
+    //last stop
+    for (p in SELECT * FROM package) {
+ 	if (index.toString() == lastIndexDestination.toString())   {
+        push(waypoints,p)
+    }      
+	
+	 index++	
+ }
+	update routes(status:"closed") where id == routeid
+	return waypoints[0] 
+}

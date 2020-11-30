@@ -1,0 +1,17 @@
+PROCEDURE cb.getPackagePhoto(lastIndexDestination,step,waypointOrder)
+
+var waypoints = []
+var index = 0
+
+ for (p in SELECT * FROM package) {
+ 	if (index.toString() != lastIndexDestination.toString())   {
+        push(waypoints,p)
+     }      
+	 index++	
+ }
+
+var packageIndex = 	waypointOrder[step]
+
+var image = waypoints[packageIndex].photo
+
+return image

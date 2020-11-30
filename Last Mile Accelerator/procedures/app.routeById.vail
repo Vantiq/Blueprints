@@ -1,0 +1,9 @@
+PROCEDURE app.routeById(routeid)
+
+var route = select * from routes where id == routeid
+
+var step = route.steps[0]
+
+step++
+
+return step

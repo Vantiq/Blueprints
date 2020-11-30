@@ -1,0 +1,9 @@
+PROCEDURE app.getShipmentFromEventRoute(event)
+
+var selectRoute = select * FROM routes where vehicleId == event.vehicleId
+
+var selectPackage = cb.getPackageInfo(selectRoute[0].lastIndexDestination,selectRoute[0].steps,selectRoute[0].waypointOrder,selectRoute[0].id)
+
+var selectShippingInfo = select * FROM shipments where packageid == selectPackage.id
+
+return selectShippingInfo[0]

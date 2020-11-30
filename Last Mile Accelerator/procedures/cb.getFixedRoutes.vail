@@ -1,0 +1,2 @@
+PROCEDURE cb.getFixedRoutes(organizationid)
+SELECT FROM fixedroutes WHERE organizationid == organizationid 

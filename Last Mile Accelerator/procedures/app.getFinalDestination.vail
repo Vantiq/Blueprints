@@ -1,0 +1,21 @@
+PROCEDURE app.getFinalDestination(destinations)
+
+var index = 0
+var indexincol = 0
+var x = destinations.rows[0].elements[0].duration.value
+var finaldestination = destinations.rows[0].elements[0].duration.value
+
+for (destination in destinations.rows) {
+    
+    if(destination.elements[0].duration.value > finaldestination ){
+        
+        finaldestination = destination.elements[0].duration.value
+        indexincol = index
+        
+    }
+    
+    index++
+
+}
+
+return indexincol

@@ -1,0 +1,4 @@
+PROCEDURE updateLatLongVehicles(idx, location)
+
+
+upsert vehicle (id:idx, currentlocation:location)

@@ -1,0 +1,3 @@
+PROCEDURE cb.getDrivers()
+
+Select * FROM personnel where roles.name == "Driver" and assigned != true

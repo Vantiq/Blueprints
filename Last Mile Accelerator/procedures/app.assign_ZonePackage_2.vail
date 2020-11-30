@@ -1,0 +1,12 @@
+PROCEDURE app.assign_ZonePackage_2(event Object)
+
+UPSERT package(id: event.Initiate.event.id,region:event.NotifyManager.responses[0].response.dlRegions)
+
+event.Initiate.event.region = event.NotifyManager.responses[0].response.dlRegions
+
+return event.Initiate.event
+
+    
+
+
+

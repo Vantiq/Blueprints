@@ -1,0 +1,17 @@
+PROCEDURE testDistanceMatrix()
+
+var origins=["Cruz Roja de Santa Ana, Costa Rica|Automercado, Santa Ana, Costa Rica"]
+var destination = ["Avalon Country Club, Santa Ana"]
+
+var queryparams = {}
+queryparams.origins = origins
+queryparams.destinations = destination
+queryparams.mode = "driving"
+queryparams.language = "en-EN"
+queryparams.sensor = "false"
+
+// using the google distance matrix api to get distance from all source to destination locations
+var response = SELECT FROM SOURCE GoogleDistanceMatrix WITH query = queryparams
+
+// Note:  Google gives back a list in the order it was given so you may need to sort the distances
+return response

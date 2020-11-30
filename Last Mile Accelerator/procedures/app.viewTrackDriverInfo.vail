@@ -1,0 +1,13 @@
+PROCEDURE app.viewTrackDriverInfo(info,routeid)
+
+update routes(currentLocation:info.location) where id == routeid
+
+var selectvehicleId = select EXACTLY ONE vehicleId from routes where id == routeid
+
+update vehicle(currentlocation:info.location) where id  == selectvehicleId.vehicleId
+
+info.routeId = routeid
+
+return info
+
+

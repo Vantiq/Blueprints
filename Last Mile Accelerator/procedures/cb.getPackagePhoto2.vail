@@ -1,0 +1,5 @@
+PROCEDURE cb.getPackagePhoto2(packageId)
+
+var selectPhoto = select photo from package where id == packageId
+
+return selectPhoto[0].photo

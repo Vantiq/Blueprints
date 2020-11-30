@@ -1,0 +1,3 @@
+PROCEDURE cb.getVehicles(organizationid String)
+
+SELECT FROM vehicle WHERE organizationid == organizationid and driver != null

@@ -1,0 +1,4 @@
+PROCEDURE cb.updateVehicleDriver(vehicleId,driverId)
+
+UPSERT vehicle(id: vehicleId, driver: driverId)
+update personnel( assetid: vehicleId, assigned: true) where id == driverId

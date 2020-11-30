@@ -1,0 +1,3 @@
+PROCEDURE cb.updateRouteLegs(id,legs,waypointorder)
+
+update routes (legs:legs,waypointOrder:waypointorder) where id == id

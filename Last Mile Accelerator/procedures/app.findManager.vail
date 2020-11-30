@@ -1,0 +1,3 @@
+PROCEDURE app.findManager()
+
+select id FROM personnel where roles.name == "Manager"

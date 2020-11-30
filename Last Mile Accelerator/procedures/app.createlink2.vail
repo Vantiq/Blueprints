@@ -1,0 +1,10 @@
+PROCEDURE app.createlink2(route)
+
+var link = "https://www.google.com/maps/dir/?api=1&"
+
+var params = "origin=" + whitespaceTo(route.legs[route.steps].start_address, "+") 
+var destination = "&destination=" + whitespaceTo(route.legs[route.steps].end_address, "+") 
+
+link = link + params + destination + "&travelmode=driving"
+
+return link

@@ -1,0 +1,3 @@
+PROCEDURE cb.updateRegionVehicle(regionName,vehicleId)
+
+UPSERT vehicle(id: vehicleId,regionName:regionName)

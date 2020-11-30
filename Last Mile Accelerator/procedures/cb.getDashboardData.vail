@@ -1,0 +1,20 @@
+/*
+	Fetch the aggregate data required for the SmartBuilding Dashboard
+*/
+PROCEDURE cb.getDashboardData()
+
+var obj = {}
+
+SELECT count = count(id) FROM RepresentanteAdmin where Tipo == "Coordinador"
+obj.coordinador = RepresentanteAdmin[0].count
+
+SELECT count = count(id) FROM RepresentanteAdmin where Tipo == "Jefe de Colonia" 
+obj.JefeComite = RepresentanteAdmin[0].count
+
+SELECT count = count(id) FROM issuesDatos 
+obj.issueDatoss = RepresentanteAdmin[0].count
+
+SELECT count = count(id) FROM RepresentanteGeneral 
+obj.RepresentanteGeneral = RepresentanteAdmin[0].count
+
+return obj

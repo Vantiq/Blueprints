@@ -1,0 +1,3 @@
+PROCEDURE cb.getRegions()
+
+Select * FROM region order by name

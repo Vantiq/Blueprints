@@ -1,0 +1,3 @@
+PROCEDURE cb.getVehicles_All(organizationid String)
+
+SELECT FROM vehicle

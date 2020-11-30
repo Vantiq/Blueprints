@@ -1,0 +1,3 @@
+PROCEDURE cb.getPackageByBarcode(barcode)
+
+SELECT * FROM package WHERE barcode == barcode 

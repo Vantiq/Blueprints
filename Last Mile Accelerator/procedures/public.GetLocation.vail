@@ -1,0 +1,4 @@
+PROCEDURE public.GetLocation(vehicleId) WITH ars_public = true
+
+select * from vehicle where id == vehicleId
+

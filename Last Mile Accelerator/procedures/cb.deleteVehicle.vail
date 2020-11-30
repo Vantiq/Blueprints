@@ -1,0 +1,3 @@
+PROCEDURE cb.deleteVehicle(vehicleid String)
+
+DELETE vehicle WHERE id == vehicleid

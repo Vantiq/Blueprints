@@ -1,0 +1,20 @@
+PROCEDURE app.createPublicLink(route)
+
+var links = []
+
+var link = "https://internal.vantiq.com/ui/rtc/index.html?run=TrackDriver&namespace=HV_Deliveries&"
+var mobilelink = "https://internal.vantiq.com/ui/mpi/index.html?run=TrackDriverMobile&namespace=HV_Deliveries&"
+
+var params = "origen=" + whitespaceTo(route.legs[route.steps].start_address, "+") 
+var destination = "&destination=" + whitespaceTo(route.legs[route.steps].end_address, "+") 
+var vehicle = "&vehicleId=" + route.vehicleId
+var route = "&routeId=" + route.id 
+
+link = link + params + destination + vehicle + route +"&travelmode=driving"
+mobilelink = mobilelink + params + destination + vehicle + route +"&travelmode=driving"
+
+push(links,link)
+
+push(links,mobilelink)
+
+return links

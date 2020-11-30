@@ -1,0 +1,3 @@
+PROCEDURE cb.getTempOrders()
+
+select * FROM temporder

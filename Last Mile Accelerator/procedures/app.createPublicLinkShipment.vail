@@ -1,0 +1,21 @@
+PROCEDURE app.createPublicLinkShipment(shipment)
+
+var links = []
+
+var link = "https://internal.vantiq.com/ui/rtc/index.html?run=TrackDriver&namespace=HV_LastMileAccelerator&"
+var mobilelink = "https://internal.vantiq.com/ui/mpi/index.html?run=TrackDriverMobile&namespace=HV_LastMileAccelerator&"
+
+var params = "origen=" + whitespaceTo(shipment.originalAddress, "+") 
+var destination = "&destination=" + whitespaceTo(shipment.shippingAddress, "+") 
+var vehicle = "&vehicleId=" + shipment.vehicleid
+var shipmentstr = "&shipmentId=" + shipment.id 
+var package = "&packageId=" + shipment.packageid 
+
+link = link + params + destination + vehicle + shipmentstr + package +"&travelmode=driving"
+mobilelink = mobilelink + params + destination + vehicle + shipmentstr + package +"&travelmode=driving"
+
+push(links,link)
+
+push(links,mobilelink)
+
+return links

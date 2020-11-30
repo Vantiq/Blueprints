@@ -1,0 +1,64 @@
+/**
+This procedure notifies the customer that his package was assigned to a driver and it's ready to be delivered. After the shipment is created
+    
+    * @author  Hendel Valverde
+	* @version 1.0
+	* @since   2020-1-28 
+*/
+
+PROCEDURE app.sendEmailClientShipment(shipment)
+
+    var package = select * FROM package where id==shipment.packageid
+
+    log.info("beginning of send email")
+
+    // log.debug("EMPLOYEENT: " + stringify(employeeEnt))
+
+    // get the senders email address
+
+    var sender = "hvalverde@vantiq.com"
+    var subject = "Your Package is on the way! This package is on the region: " + package.region
+    var recipients = []
+    var products = "<ul>"
+
+    // time adjust for time zone EST
+    var curtime = now().minusMillis(4 hours)
+
+    // CONSTRUCT EMAIL
+
+    // email template
+
+    var content = "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">"
+    content += "<html><head>"
+    content += "<meta http-equiv=\"Content-type\" content=\"text/html; charset=utf-8\" />"
+    content += "<link href=\"https://fonts.googleapis.com/css?family=Montserrat:400,400i\" rel=\"stylesheet\" type=\"text/css\" />"
+    content += "</head>"
+    content += "<body style=\"padding:0; margin:0;\">"
+    content += "<h1 style=\"font-size:24px; line-height:1; font-weight:bold; margin: 20px 0;\">Package Region assigned</h1>"
+    content += "<p style=\"margin:0 0 20px;\">Your Package <strong> " + package.name  + " </strong> will be delivered<strong> " + package.shippingDate + " </strong></p>"
+    content += "</div>"
+    content += "</div>"
+    content += "</body></html>"
+    // add vars to content
+    content = format(content, package.name, curtime)
+    // products = products + "</ul>"
+    content = replace(content, "null", "")
+
+
+    // SEND EMAIL
+
+    push(recipients, package.customerEmail[0])
+    push(recipients, "hvalverde@vantiq.com")
+
+
+
+    PUBLISH {html: content } TO SOURCE email USING { from: sender, to: recipients, subject: subject }
+
+
+
+    log.info("end of send email")
+
+
+
+
+//return {body:body, sender:sender, subject:subject, recipient:recipients}

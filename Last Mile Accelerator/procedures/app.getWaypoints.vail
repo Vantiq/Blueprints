@@ -1,0 +1,19 @@
+PROCEDURE app.getWaypoints(destinations,endpointIndex)
+
+
+var endpoints = []
+var index = 0
+var waypointobject = {}
+
+for (destination in destinations.origin_addresses){
+    
+    if (index != endpointIndex) {
+        waypointobject.location = destination
+        waypointobject.stopover = true
+        push(endpoints,waypointobject)
+    }
+    waypointobject = {}
+    index++
+}
+
+return endpoints

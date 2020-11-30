@@ -1,0 +1,4 @@
+PROCEDURE public.GetShipmentInfo(shipmentId) WITH ars_public = true
+
+select * from shipments where id == shipmentId
+

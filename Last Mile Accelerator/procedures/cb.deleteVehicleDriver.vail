@@ -1,0 +1,4 @@
+PROCEDURE cb.deleteVehicleDriver(vehicleid,driverid)
+
+UPSERT vehicle(id: vehicleid, driver: null)
+UPDATE personnel(assetid: null, assigned: false) where id == driverid

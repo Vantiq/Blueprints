@@ -1,0 +1,2 @@
+PROCEDURE getCollabs()
+SELECT * FROM system.collaborations AS collab 

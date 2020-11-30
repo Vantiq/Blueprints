@@ -1,0 +1,62 @@
+PROCEDURE app.sendTrackingEmail(links)
+
+
+
+    log.info("beginning of send email")
+
+    // log.debug("EMPLOYEENT: " + stringify(employeeEnt))
+
+    // get the senders email address
+
+    var sender = "hvalverde@vantiq.com"
+    var subject = "Track your package "
+    var recipients = []
+    var products = "<ul>"
+
+    // time adjust for time zone EST
+    var curtime = now().minusMillis(4 hours)
+
+    // CONSTRUCT EMAIL
+
+    // email template
+
+    var content = "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">"
+    content += "<html><head>"
+    content += "<meta http-equiv=\"Content-type\" content=\"text/html; charset=utf-8\" />"
+    content += "<link href=\"https://fonts.googleapis.com/css?family=Montserrat:400,400i\" rel=\"stylesheet\" type=\"text/css\" />"
+    content += "</head>"
+    content += "<body style=\"padding:0; margin:0;\">"
+    content += "<h1 style=\"font-size:24px; line-height:1; font-weight:bold; margin: 20px 0;\">Package Region assigned</h1>"
+    content += "<p style=\"margin:0 0 20px;\">Your Driver is on the way <strong> <a href="+ links[0] +">Link to Follow</a>"+ "</strong>  </strong></p>"
+
+    content += "<p style=\"margin:0 0 20px;\">Your Driver is on the way <strong> <a href="+ links[1] +">Link to Follow(mobile)</a>"+ "</strong>  </strong></p>"
+
+    content += "</div>"
+    content += "</div>"
+    content += "</body></html>"
+    // add vars to content
+   // content = format(content, package.name, curtime)
+    // products = products + "</ul>"
+    content = replace(content, "null", "")
+
+
+    // SEND EMAIL
+
+    push(recipients, "hendel.ali@gmail.com")
+    push(recipients, "hvalverde@vantiq.com")
+
+
+
+    PUBLISH {html: content } TO SOURCE email USING { from: sender, to: recipients, subject: subject }
+
+
+
+    log.info("end of send email")
+
+
+
+
+
+
+
+//return {body:body, sender:sender, subject:subject, recipient:recipients}

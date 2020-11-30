@@ -1,0 +1,48 @@
+/**
+This procedure take all the packages and assign them to the closest driver/vehicle
+This is designed to be a batch process to be run to assign packages.
+    
+    * @author  Hendel Valverde
+	* @version 1.0
+	* @since   2020-1-28 
+*/
+
+PROCEDURE app.assignOrders()
+//waypoints used by the Google to calculate the closest vehicle
+var originations = []
+//Final Destination of the original route
+var destination
+//variable that calculate the distance from the oiginal address package to the closest vehicle
+var distancefromvehicle
+
+    for (p in SELECT * FROM package) {
+
+        var shippingDate = format("{0,date,dd/MM/yyy}",p.shippingDate) 
+        var today = format("{0,date,dd/MM/yyy}",now()) 
+
+        if (p.status == "added" and shippingDate == today)    
+        {
+            push(originations,p.shippingAddressGEO)
+
+            select * from vehicle as currentvehicle where regionName == p.region 
+
+            destination = currentvehicle.currentlocation
+
+            insert shipments (id=p.id,packageid=p.id,shippingAddress=p.shippingAddress,shippingAddressGEO=p.shippingAddressGEO,originalAddress=p.originalAddress,originalAddressGEO=p.originalAddressGEO,vehicleid = currentvehicle[0].id)
+
+        }
+    }
+
+	distancefromvehicle = GoogleDistanceMatrix(destination[0] , originations)
+	var lastIndexDestination = app.getFinalDestination(distancefromvehicle[0])
+	var waypoints = []
+	waypoints = app.getWaypoints(distancefromvehicle[0],lastIndexDestination)
+	app.updatePackageAddress(lastIndexDestination,waypoints)
+	var lastDestination = app.getEndPoint(distancefromvehicle[0],lastIndexDestination)
+	var googlemapsroute=GoogleDirectionsWayPoints(currentvehicle[0].address, lastDestination,waypoints)
+
+	update vehicle (gmapsroute:googlemapsroute) where id == currentvehicle[0].id
+
+	insert routes (destination:lastDestination,destinationGEO:GoogleGeoCode(lastDestination),fixed:false,id:uuid(),name:currentvehicle[0].regionName + currentvehicle[0].id,origen:currentvehicle[0].address,origenGEO:GoogleGeoCode(currentvehicle[0].address),vehicleId:currentvehicle[0].id,waypoints:waypoints,lastIndexDestination:lastIndexDestination,steps:0,status:"open")
+
+return googlemapsroute

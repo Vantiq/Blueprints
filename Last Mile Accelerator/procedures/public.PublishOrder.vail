@@ -1,0 +1,22 @@
+
+/**
+This procedure takes information from a public page and add the package to topic in order to notify the closest driver for a real time request delivery
+    
+    * @author  Hendel Valverde
+	* @version 1.0
+	* @since   2020-1-28 
+*/
+
+PROCEDURE public.PublishOrder(origin,destination,description,id) WITH ars_public = true
+
+var orderData = {}
+orderData.id = id
+orderData.origin = origin
+orderData.destination = destination
+orderData.description = description
+orderData.currentlocation = GoogleGeoCode(origin)
+orderData.destinationGEO = GoogleGeoCode(destination)
+
+
+PUBLISH orderData TO TOPIC "/deliveries/orderinroute"  
+

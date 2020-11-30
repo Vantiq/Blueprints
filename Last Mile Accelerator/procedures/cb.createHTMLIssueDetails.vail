@@ -1,0 +1,14 @@
+PROCEDURE cb.createHTMLIssueDetails(issue)
+
+var html = "<p style=\"margin-left: 25px;\"><span style=\"font-size: 14px;\">Description:<strong>" + issue.description +  "</strong></span></p>"
+
+html+= "<p style=\"margin-left: 25px;\"><span style=\"font-size: 14px;\">Type:<strong>" + issue.issuetype +  "</strong></span></p>"
+
+html+= "<p style=\"margin-left: 25px;\"><strong><br>"
+html+= "</strong></p>"
+
+html+= "<p><br>"
+html+= "</p>"
+
+return html
+

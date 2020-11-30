@@ -1,0 +1,15 @@
+PROCEDURE app.apdateCurrentLocationinTypes(info,shipmentid)
+
+update shipments(currentLocationGEO:info.location) where id == shipmentid
+
+var selectvehicleId = select EXACTLY ONE vehicleid from shipments where id == shipmentid
+
+update vehicle(currentlocation:info.location) where id  == selectvehicleId.vehicleId
+
+update route(vehicleCurrentLocation:info.location) where vehicleId == selectvehicleId.vehicleId
+
+info.shipmentId = shipmentid
+
+return info
+
+

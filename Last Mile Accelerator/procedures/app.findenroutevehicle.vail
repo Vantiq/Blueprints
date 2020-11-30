@@ -1,0 +1,14 @@
+PROCEDURE app.findenroutevehicle(recomendations)
+
+var recomendation
+
+for (option in recomendations) {
+    
+    if (option.driver != null){
+        recomendation = option
+    }
+    	
+    
+}
+
+return recomendation

@@ -1,0 +1,16 @@
+PROCEDURE app.getEndPoint(destinations,endpointIndex)
+
+
+var endpoints = []
+var index = 0
+
+for (destination in destinations.origin_addresses){
+    
+    if (index == endpointIndex) {
+        push(endpoints,destination)
+    }
+    
+    index++
+}
+
+return endpoints[0]

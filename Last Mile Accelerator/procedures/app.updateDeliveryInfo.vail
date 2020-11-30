@@ -1,0 +1,26 @@
+PROCEDURE app.updateDeliveryInfo(event)
+
+var routeState = select status from routes where id == event.NotifyNextLeg.responses[0].response.routeid 
+
+if (routeState.status == "closed"){
+    event.status = "closed"
+    return  event
+}
+
+var notesSelect = select notes from package where barcode == event.NotifyNextLeg.responses[0].response.barcode
+var packageSelect = select id from package where barcode == event.NotifyNextLeg.responses[0].response.barcode
+
+push(notesSelect.notes,event.NotifyNextLeg.responses[0].response.notes)
+
+update package(status:"delivered",notes:notesSelect.notes,deliveredPhoto:event.NotifyNextLeg.responses[0].response.camera) where barcode == event.barcode
+update shipments(status:"delivered",deliveredPhoto:event.NotifyNextLeg.responses[0].response.camera,signedBy:event..NotifyNextLeg.responses[0].response.receivedby) where packageid == packageSelect.id
+
+var step = app.routeById(event.NotifyNextLeg.responses[0].response.routeid)
+
+update routes(steps: step) where id == event.NotifyNextLeg.responses[0].response.routeid 
+
+return event
+
+
+
+

@@ -1,0 +1,4 @@
+PROCEDURE cb.getVehiclesInRegion(regionName,organizationid)
+
+select  from vehicle where regionName == regionName and organizationid == organizationid
+

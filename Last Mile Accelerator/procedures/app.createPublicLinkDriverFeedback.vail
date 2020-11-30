@@ -1,0 +1,6 @@
+PROCEDURE app.createPublicLinkDriverFeedback(shipment)
+
+var link = "https://internal.vantiq.com/ui/rtc/index.html?run=DriverCalification&namespace=HV_Deliveries"
+var shipmentstr = "&shipmentId=" + shipment.id 
+link +=  shipmentstr + "&travelmode=driving"
+return link
