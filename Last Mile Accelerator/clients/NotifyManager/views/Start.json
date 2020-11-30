@@ -1,0 +1,252 @@
+{
+  "bodyChildren" : {
+    "rootArray" : [ "a930dd04-a022-4153-87be-c609f952cdf1", "3686a147-c7bc-4fbc-b53a-49528e32c98f", "95475cfe-365d-4456-b762-2358ec533389", "0be40694-27b3-43a2-91bf-911315287217" ],
+    "widgets" : [ {
+      "binding" : "page.data.region.name",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "default" : null,
+      "enumeratedList" : [ ],
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "dlRegions",
+      "type" : "Droplist",
+      "uuid" : "0be40694-27b3-43a2-91bf-911315287217",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 2,
+      "dataStreamGroupedByFiltersString" : "",
+      "dataStreamProperty" : "currentlocation",
+      "dataStreamUUID" : "bf56907b-82d9-4bdd-8310-0af00acc2d77",
+      "dataType" : null,
+      "fixedCenter" : true,
+      "h" : 400,
+      "heightPolicy" : "explicit",
+      "horzGravity" : "center",
+      "labelProperty" : "regionName",
+      "name" : "DynamicMapViewerVehicles",
+      "naturalKey" : null,
+      "operation" : "insert",
+      "type" : "DynamicMapViewer",
+      "uuid" : "3686a147-c7bc-4fbc-b53a-49528e32c98f",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "product",
+      "preserveAspectRatio" : true,
+      "type" : "StaticImage",
+      "url" : "../../docs/vantiq/navBar.json",
+      "uuid" : "95475cfe-365d-4456-b762-2358ec533389",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "StaticImage117",
+      "preserveAspectRatio" : true,
+      "type" : "StaticImage",
+      "url" : "../cmn/assets/branding/defaultImage.png",
+      "uuid" : "a930dd04-a022-4153-87be-c609f952cdf1",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "naturalSize"
+    } ]
+  },
+  "data" : {
+    "properties" : {
+      "region" : {
+        "defaultLabel" : "region",
+        "type" : "TypedObject",
+        "typedObject" : {
+          "properties" : {
+            "coordinates" : {
+              "defaultLabel" : "coordinates",
+              "type" : "GeoJSON"
+            },
+            "description" : {
+              "defaultLabel" : "description",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "id" : {
+              "defaultLabel" : "id",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "name" : {
+              "defaultLabel" : "name",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "vehicles" : {
+              "defaultLabel" : "vehicles",
+              "defaultValue" : "",
+              "isArray" : true,
+              "type" : "String"
+            }
+          },
+          "type" : "region"
+        }
+      },
+      "regions" : {
+        "defaultLabel" : "region",
+        "isArray" : true,
+        "type" : "TypedObject",
+        "typedObject" : {
+          "properties" : {
+            "coordinates" : {
+              "defaultLabel" : "coordinates",
+              "type" : "GeoJSON"
+            },
+            "description" : {
+              "defaultLabel" : "description",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "id" : {
+              "defaultLabel" : "id",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "name" : {
+              "defaultLabel" : "name",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "vehicles" : {
+              "defaultLabel" : "vehicles",
+              "defaultValue" : "",
+              "isArray" : true,
+              "type" : "String"
+            }
+          },
+          "type" : "region"
+        }
+      },
+      "vehicle" : {
+        "defaultLabel" : "vehicle",
+        "type" : "TypedObject",
+        "typedObject" : {
+          "properties" : {
+            "address" : {
+              "defaultLabel" : "address",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "cargodimentions" : {
+              "defaultLabel" : "cargodimentions",
+              "type" : "Object"
+            },
+            "cargoload" : {
+              "defaultLabel" : "cargoload",
+              "defaultValue" : 0,
+              "type" : "Integer"
+            },
+            "cbm" : {
+              "defaultLabel" : "cbm",
+              "defaultValue" : "0",
+              "type" : "Decimal"
+            },
+            "currentlocation" : {
+              "defaultLabel" : "currentlocation",
+              "type" : "GeoJSON"
+            },
+            "driver" : {
+              "defaultLabel" : "driver",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "id" : {
+              "defaultLabel" : "id",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "name" : {
+              "defaultLabel" : "name",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "organizationid" : {
+              "defaultLabel" : "organizationid",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "plate" : {
+              "defaultLabel" : "plate",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "regionName" : {
+              "defaultLabel" : "regionName",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "route" : {
+              "defaultLabel" : "route",
+              "type" : "GeoJSON"
+            },
+            "startlocation" : {
+              "defaultLabel" : "startlocation",
+              "type" : "GeoJSON"
+            },
+            "targetlocation" : {
+              "defaultLabel" : "targetlocation",
+              "type" : "GeoJSON"
+            },
+            "vehicletype" : {
+              "defaultLabel" : "vehicletype",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "weightcapacity" : {
+              "defaultLabel" : "weightcapacity",
+              "defaultValue" : "0",
+              "type" : "Decimal"
+            }
+          },
+          "type" : "vehicle"
+        }
+      }
+    }
+  },
+  "footerChildren" : {
+    "rootArray" : [ "6c9110e9-e0b3-425d-85b2-63c32b037acf" ],
+    "widgets" : [ {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "buttonBackgroundColor" : "platform",
+      "buttonLabel" : "Assign Region",
+      "buttonLabelColor" : "platform",
+      "buttonLabelSize" : 14,
+      "buttonLabelStyle" : "bold",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "Button13164",
+      "submitValue" : 100,
+      "type" : "Button",
+      "uuid" : "6c9110e9-e0b3-425d-85b2-63c32b037acf",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    } ]
+  },
+  "hasFooter" : true,
+  "layoutType" : "mobile",
+  "responseTopic" : "/vantiq/systemmodel/NotifyManager/submitTopic"
+}
