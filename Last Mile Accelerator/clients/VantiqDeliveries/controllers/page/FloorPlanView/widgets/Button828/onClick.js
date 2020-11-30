@@ -1,0 +1,1 @@
+    client.goToPage("BuildingView", {id: page.data.floorplan.buildingid});
