@@ -1,0 +1,137 @@
+{
+  "ars_properties" : {
+    "tags" : [ "#launchable" ]
+  },
+  "ars_public" : true,
+  "controllers" : {
+    "client" : {
+      "customCode" : "RELOCATED to controllers/client/customCode.js",
+      "onStart" : "RELOCATED to controllers/client/onStart.js"
+    },
+    "dataStream" : {
+      "mb_package" : { }
+    },
+    "page" : {
+      "Start" : {
+        "onStart" : "RELOCATED to controllers/page/Start/onStart.js",
+        "widgets" : {
+          "Button17953" : {
+            "onClick" : "RELOCATED to controllers/page/Start/widgets/Button17953/onClick.js"
+          },
+          "Button17954" : {
+            "onClick" : "RELOCATED to controllers/page/Start/widgets/Button17954/onClick.js"
+          },
+          "Camera1" : {
+            "onChange" : "RELOCATED to controllers/page/Start/widgets/Camera1/onChange.js"
+          },
+          "barcode" : {
+            "onChange" : "RELOCATED to controllers/page/Start/widgets/barcode/onChange.js"
+          },
+          "shippingAddress" : {
+            "onChange" : "RELOCATED to controllers/page/Start/widgets/shippingAddress/onChange.js"
+          }
+        }
+      }
+    }
+  },
+  "isLaunchable" : true,
+  "models" : {
+    "dataObjects" : {
+      "__GLOBAL__" : {
+        "properties" : {
+          "organization" : {
+            "defaultLabel" : "organization",
+            "type" : "TypedObject",
+            "typedObject" : {
+              "properties" : {
+                "id" : {
+                  "defaultLabel" : "id",
+                  "defaultValue" : "",
+                  "type" : "String"
+                },
+                "location" : {
+                  "defaultLabel" : "location",
+                  "type" : "GeoJSON"
+                },
+                "meta" : {
+                  "defaultLabel" : "meta",
+                  "type" : "Object"
+                },
+                "name" : {
+                  "defaultLabel" : "name",
+                  "defaultValue" : "",
+                  "type" : "String"
+                }
+              },
+              "type" : "organization"
+            }
+          }
+        }
+      },
+      "__PARAMETERS__" : {
+        "properties" : { }
+      }
+    },
+    "dataStreams" : [ {
+      "advancedWhereClause" : null,
+      "dataObjectName" : null,
+      "dataTypeList" : [ {
+        "label" : null,
+        "type" : "package"
+      } ],
+      "isDeleteOp" : false,
+      "isInsertOp" : false,
+      "isUpdateOp" : false,
+      "maxRecords" : 0,
+      "name" : "mb_package",
+      "pauseAtStartup" : false,
+      "property" : null,
+      "sortByProperty" : null,
+      "sortDescending" : false,
+      "type" : 5,
+      "updateInterval" : 60,
+      "uuid" : "ca9abf06-ec03-4c68-82ea-9faf21d44645",
+      "v" : 1
+    } ]
+  },
+  "name" : "NewOrder",
+  "options" : {
+    "RELOCATE" : [ {
+      "path" : "controllers",
+      "type" : "js"
+    }, {
+      "path" : "views",
+      "type" : "json"
+    } ],
+    "badgeCount" : 2,
+    "description" : "",
+    "docAssets" : [ "images/icons/asseticon.png" ],
+    "paletteCollapsed" : false,
+    "productV" : "7.4j",
+    "showCategoryButtons" : true,
+    "showCategoryDataDisplay" : true,
+    "showCategoryDataInput" : true,
+    "showCategoryLayout" : true,
+    "showGridWhileEditing" : false,
+    "theme" : {
+      "backgroundColor" : "#ffffff",
+      "borderColor" : "#d3d6db",
+      "cardAccentColor" : "#ffffff",
+      "cardColor" : "#3c424d",
+      "dataDisplayColor" : "#ffffff",
+      "dataDisplayColors" : [ "#3cbce1", "#996db8", "#86d557", "#ff9800", "#425b71", "#cc467c", "#01aa93", "#ffca28", "#f583a9", "#1c84d4", "#ff6767", "#4caf50" ],
+      "dataInputColor" : "#ffffff",
+      "foregroundColor" : "#566076",
+      "label" : "Light",
+      "name" : "light",
+      "titleBarColor" : "#dddddd",
+      "v" : 3
+    },
+    "v" : 5
+  },
+  "targetDevice" : "mobile",
+  "userList" : [ ],
+  "views" : {
+    "Start" : "RELOCATED to views/Start.json"
+  }
+}

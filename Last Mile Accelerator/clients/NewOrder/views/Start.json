@@ -1,0 +1,530 @@
+{
+  "bodyChildren" : {
+    "rootArray" : [ "1f388a2e-0680-4fdb-94de-1f7d62fe044e", "818315c4-379f-4120-888d-9bfbada81289", "1af773c4-adea-4b85-851c-492f6ad8e222", "31f01615-11c1-4e7e-9c84-398889776077", "b1d1e173-4c3c-497c-903d-f0127054f0a8", "9440df46-4707-47e6-8bdc-a88e3adafd9c", "8798a14f-cad5-4aaf-9426-8795b31030fb", "b798d26f-e505-465d-88c9-a4de92abd3a2", "25bc2dcc-b2fc-40bf-8633-7702d722dc9e", "3c133807-7d83-4b25-8a8a-79e607beb8c5", "0aa3a445-8b4e-4693-8e6d-031f92c3a36e", "e1422489-6944-454b-9e79-d43df8ef0e9d", "ae034351-e222-4d54-9380-3cbd6e064e25", "1416bc3b-93a2-4a75-9092-4a7a2e1d9b93", "2c4fb3f0-db75-489c-9485-a524e69377fd", "91f4849e-a327-4eb1-8c2d-e4e1d2b65761", "e9f2b08e-0bc3-4cbf-8069-d603a7111b13", "f5b227e0-4613-4f89-8b47-3d85429b154a", "0e5e8930-b4d1-4075-a9f9-e9fc7914da23", "8aeac8c5-3b73-4376-88fd-b1ab46b83ea6", "4dad55fe-e2f3-4605-85be-918e4d427862" ],
+    "widgets" : [ {
+      "binding" : "page.data.package.shippingAddress",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "label" : "Shipping Address",
+      "name" : "shippingAddress",
+      "optional" : true,
+      "placeholder" : "",
+      "rows" : 5,
+      "type" : "MultilineInput",
+      "uuid" : "0aa3a445-8b4e-4693-8e6d-031f92c3a36e",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell",
+      "wordwrap" : true
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "buttonBackgroundColor" : "platform",
+      "buttonLabel" : "Click Me",
+      "buttonLabelColor" : "platform",
+      "buttonLabelSize" : 14,
+      "buttonLabelStyle" : "bold",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "Button13110",
+      "submitValue" : 100,
+      "type" : "Button",
+      "uuid" : "0e5e8930-b4d1-4075-a9f9-e9fc7914da23",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "label" : "Condition",
+      "name" : "Camera1",
+      "optional" : true,
+      "placeholder" : "Take Photo",
+      "type" : "Camera",
+      "uuid" : "1416bc3b-93a2-4a75-9092-4a7a2e1d9b93",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "binding" : "page.data.package.id",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "inputType" : "text",
+      "isReadOnly" : true,
+      "label" : "Package Id",
+      "name" : "packageId",
+      "optional" : true,
+      "placeholder" : "",
+      "type" : "InputString",
+      "uuid" : "1af773c4-adea-4b85-851c-492f6ad8e222",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "StaticImage84",
+      "preserveAspectRatio" : true,
+      "type" : "StaticImage",
+      "url" : "../cmn/assets/branding/defaultImage.png",
+      "uuid" : "1f388a2e-0680-4fdb-94de-1f7d62fe044e",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "naturalSize"
+    }, {
+      "binding" : "page.data.package.shippingDate",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "isReadOnly" : false,
+      "label" : "ShippingDate",
+      "name" : "shippingDate",
+      "optional" : false,
+      "placeholder" : "Set Date",
+      "type" : "InputDate",
+      "uuid" : "25bc2dcc-b2fc-40bf-8633-7702d722dc9e",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "photo",
+      "preserveAspectRatio" : true,
+      "type" : "StaticImage",
+      "url" : "../../docs/images/icons/asseticon.png",
+      "uuid" : "2c4fb3f0-db75-489c-9485-a524e69377fd",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "binding" : "page.data.package.name",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "inputType" : "text",
+      "label" : "Product Name",
+      "name" : "name",
+      "optional" : true,
+      "placeholder" : "",
+      "type" : "InputString",
+      "uuid" : "31f01615-11c1-4e7e-9c84-398889776077",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "binding" : "page.data.package.originalAddress",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "label" : "Original Address",
+      "name" : "originalAddress",
+      "optional" : true,
+      "placeholder" : "",
+      "rows" : 5,
+      "type" : "MultilineInput",
+      "uuid" : "3c133807-7d83-4b25-8a8a-79e607beb8c5",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell",
+      "wordwrap" : true
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "buttonBackgroundColor" : "platform",
+      "buttonLabel" : "P  2",
+      "buttonLabelColor" : "platform",
+      "buttonLabelSize" : 14,
+      "buttonLabelStyle" : "bold",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "Button17954",
+      "submitValue" : 100,
+      "type" : "Button",
+      "uuid" : "4dad55fe-e2f3-4605-85be-918e4d427862",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "binding" : "page.data.package.organizationid",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "inputType" : "text",
+      "isReadOnly" : true,
+      "label" : "Organization Id",
+      "name" : "organizationid",
+      "optional" : true,
+      "placeholder" : "",
+      "type" : "InputString",
+      "uuid" : "818315c4-379f-4120-888d-9bfbada81289",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "binding" : "page.data.package.customerEmail",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "inputType" : "email",
+      "label" : "Customer Email",
+      "name" : "customerEmail",
+      "optional" : true,
+      "placeholder" : "",
+      "type" : "InputString",
+      "uuid" : "8798a14f-cad5-4aaf-9426-8795b31030fb",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "buttonBackgroundColor" : "platform",
+      "buttonLabel" : "P 1",
+      "buttonLabelColor" : "platform",
+      "buttonLabelSize" : 14,
+      "buttonLabelStyle" : "bold",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "Button17953",
+      "submitValue" : 100,
+      "type" : "Button",
+      "uuid" : "8aeac8c5-3b73-4376-88fd-b1ab46b83ea6",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "binding" : "page.data.package.region",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "inputType" : "text",
+      "name" : "region",
+      "optional" : true,
+      "placeholder" : "",
+      "type" : "InputString",
+      "uuid" : "91f4849e-a327-4eb1-8c2d-e4e1d2b65761",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "binding" : "page.data.package.customerPhone",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "inputType" : "tel",
+      "label" : "Customer Phone",
+      "name" : "customerPhone",
+      "optional" : true,
+      "placeholder" : "",
+      "type" : "InputString",
+      "uuid" : "9440df46-4707-47e6-8bdc-a88e3adafd9c",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "barcode",
+      "optional" : true,
+      "placeholder" : "Scan Barcode",
+      "type" : "BarcodeReader",
+      "uuid" : "ae034351-e222-4d54-9380-3cbd6e064e25",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "binding" : "page.data.package.customerName",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "inputType" : "text",
+      "label" : "Customer Name",
+      "name" : "customerName",
+      "optional" : true,
+      "placeholder" : "",
+      "type" : "InputString",
+      "uuid" : "b1d1e173-4c3c-497c-903d-f0127054f0a8",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "binding" : "page.data.package.description",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "inputType" : "text",
+      "label" : "Description",
+      "name" : "description",
+      "optional" : true,
+      "placeholder" : "",
+      "type" : "InputString",
+      "uuid" : "b798d26f-e505-465d-88c9-a4de92abd3a2",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 2,
+      "dataStreamGroupedByFiltersString" : "",
+      "dataStreamProperty" : null,
+      "dataStreamUUID" : "ca9abf06-ec03-4c68-82ea-9faf21d44645",
+      "dataType" : null,
+      "fixedCenter" : true,
+      "h" : 200,
+      "heightPolicy" : "explicit",
+      "horzGravity" : "center",
+      "labelProperty" : null,
+      "name" : "DynamicMapViewerRoute",
+      "naturalKey" : null,
+      "operation" : "insert",
+      "type" : "DynamicMapViewer",
+      "uuid" : "e1422489-6944-454b-9e79-d43df8ef0e9d",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "binding" : "page.data.package.shippingAddressGEO",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "inputType" : "text",
+      "name" : "shippingAddressGEO",
+      "optional" : true,
+      "placeholder" : "",
+      "type" : "InputString",
+      "uuid" : "e9f2b08e-0bc3-4cbf-8069-d603a7111b13",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "binding" : "page.data.package.originalAddressGEO",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "inputType" : "text",
+      "name" : "originalAddressGEO",
+      "optional" : false,
+      "placeholder" : "",
+      "type" : "InputString",
+      "uuid" : "f5b227e0-4613-4f89-8b47-3d85429b154a",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    } ]
+  },
+  "data" : {
+    "properties" : {
+      "organization" : {
+        "defaultLabel" : "organization",
+        "type" : "TypedObject",
+        "typedObject" : {
+          "properties" : {
+            "id" : {
+              "defaultLabel" : "id",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "location" : {
+              "defaultLabel" : "location",
+              "type" : "GeoJSON"
+            },
+            "meta" : {
+              "defaultLabel" : "meta",
+              "type" : "Object"
+            },
+            "name" : {
+              "defaultLabel" : "name",
+              "defaultValue" : "",
+              "type" : "String"
+            }
+          },
+          "type" : "organization"
+        }
+      },
+      "package" : {
+        "defaultLabel" : "package",
+        "type" : "TypedObject",
+        "typedObject" : {
+          "properties" : {
+            "barcode" : {
+              "defaultLabel" : "barcode",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "condition" : {
+              "defaultLabel" : "condition",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "customerEmail" : {
+              "defaultLabel" : "customerEmail",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "customerId" : {
+              "defaultLabel" : "customerId",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "customerName" : {
+              "defaultLabel" : "customerName",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "customerPhone" : {
+              "defaultLabel" : "customerPhone",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "description" : {
+              "defaultLabel" : "description",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "dimentions" : {
+              "defaultLabel" : "dimentions",
+              "type" : "Object"
+            },
+            "id" : {
+              "defaultLabel" : "id",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "notes" : {
+              "defaultLabel" : "notes",
+              "defaultValue" : "",
+              "isArray" : true,
+              "type" : "String"
+            },
+            "orderedDate" : {
+              "defaultLabel" : "orderedDate",
+              "defaultValue" : "",
+              "type" : "DateTime"
+            },
+            "organizationid" : {
+              "defaultLabel" : "organizationid",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "originalAddress" : {
+              "defaultLabel" : "originalAddress",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "originalAddressGEO" : {
+              "defaultLabel" : "originalAddressGEO",
+              "type" : "GeoJSON"
+            },
+            "priority" : {
+              "defaultLabel" : "priority",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "region" : {
+              "defaultLabel" : "region",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "shippingAddress" : {
+              "defaultLabel" : "shippingAddress",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "shippingAddressGEO" : {
+              "defaultLabel" : "shippingAddressGEO",
+              "type" : "GeoJSON"
+            },
+            "shippingDate" : {
+              "defaultLabel" : "shippingDate",
+              "defaultValue" : "",
+              "type" : "DateTime"
+            },
+            "state" : {
+              "defaultLabel" : "state",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "trackingId" : {
+              "defaultLabel" : "trackingId",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "vehicle" : {
+              "defaultLabel" : "vehicle",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "weight" : {
+              "defaultLabel" : "weight",
+              "defaultValue" : "0",
+              "type" : "Decimal"
+            }
+          },
+          "type" : "package"
+        }
+      }
+    }
+  },
+  "footerChildren" : [ ],
+  "hasFooter" : false,
+  "layoutType" : "mobile",
+  "responseTopic" : "/deliveries/neworder"
+}

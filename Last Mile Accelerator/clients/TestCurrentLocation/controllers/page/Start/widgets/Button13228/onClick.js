@@ -1,0 +1,1 @@
+alert(client.data.location);

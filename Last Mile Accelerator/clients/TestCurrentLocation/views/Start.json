@@ -1,0 +1,96 @@
+{
+  "bodyChildren" : {
+    "rootArray" : [ "65e32b94-6351-4c5a-bb18-ad05857e1eb8", "40e2f0a3-9577-44cb-a223-d16ab40a0591", "5d034e12-5ff8-4267-8f02-a6e9abeb4cae", "bf9d5d49-cc12-46b8-91b2-a3b63fd28871", "fc14fef7-9e49-4bd7-8efd-38def73c0bab" ],
+    "widgets" : [ {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 2,
+      "dataStreamGroupedByFiltersString" : "",
+      "dataStreamProperty" : null,
+      "dataType" : null,
+      "fixedCenter" : true,
+      "h" : 200,
+      "heightPolicy" : "explicit",
+      "horzGravity" : "center",
+      "name" : "DynamicMapViewerLocation",
+      "naturalKey" : null,
+      "operation" : "insert",
+      "type" : "DynamicMapViewer",
+      "uuid" : "40e2f0a3-9577-44cb-a223-d16ab40a0591",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "buttonBackgroundColor" : "platform",
+      "buttonLabel" : "Click Me",
+      "buttonLabelColor" : "platform",
+      "buttonLabelSize" : 14,
+      "buttonLabelStyle" : "bold",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "Button13228",
+      "submitValue" : 100,
+      "type" : "Button",
+      "uuid" : "5d034e12-5ff8-4267-8f02-a6e9abeb4cae",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "StaticImage132",
+      "preserveAspectRatio" : true,
+      "type" : "StaticImage",
+      "url" : "../cmn/assets/branding/defaultImage.png",
+      "uuid" : "65e32b94-6351-4c5a-bb18-ad05857e1eb8",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "naturalSize"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "InputObject122",
+      "optional" : true,
+      "type" : "InputObject",
+      "uuid" : "bf9d5d49-cc12-46b8-91b2-a3b63fd28871",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "binding" : "page.data.location",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "InputObject121",
+      "optional" : true,
+      "type" : "InputObject",
+      "uuid" : "fc14fef7-9e49-4bd7-8efd-38def73c0bab",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    } ]
+  },
+  "data" : {
+    "properties" : {
+      "location" : {
+        "defaultLabel" : "location",
+        "type" : "Object"
+      }
+    }
+  },
+  "footerChildren" : [ ],
+  "hasFooter" : false,
+  "layoutType" : "mobile",
+  "responseTopic" : "/my/response/topic"
+}
