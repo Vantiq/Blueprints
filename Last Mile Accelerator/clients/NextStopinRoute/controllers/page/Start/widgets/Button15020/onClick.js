@@ -1,0 +1,1 @@
+    client.goToPage("DeliverPackage",page.data.collab.route.id);

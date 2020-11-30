@@ -1,0 +1,110 @@
+{
+  "bodyChildren" : {
+    "rootArray" : [ "80465c8b-a204-4774-8949-58ca63f93603", "ce0e4e20-7878-45d8-9d85-0d7423fbe8f3", "2c799360-0b9c-43ae-8c19-5cf92c5f4571", "36a86452-8f0c-4b2b-9e5b-4d0d9c89eeb3", "96a00900-0327-4067-82ad-a60d371924ba" ],
+    "widgets" : [ {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 2,
+      "defaultMinimumHeight" : 300,
+      "defaultMinimumWidth" : 200,
+      "h" : 100,
+      "heightPolicy" : "explicit",
+      "horzGravity" : "center",
+      "horzizontalScrollPolicy" : "none",
+      "html" : "<p><br></p>",
+      "name" : "HTML",
+      "type" : "StaticHtml",
+      "uuid" : "2c799360-0b9c-43ae-8c19-5cf92c5f4571",
+      "v" : 16,
+      "vertGravity" : "center",
+      "verticalScrollPolicy" : "none",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "PackagePhoto",
+      "preserveAspectRatio" : true,
+      "type" : "StaticImage",
+      "url" : "../../docs/packageBox.jpg",
+      "uuid" : "36a86452-8f0c-4b2b-9e5b-4d0d9c89eeb3",
+      "v" : 16,
+      "vertGravity" : "center",
+      "vertWeight" : 10,
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "StaticImage437",
+      "preserveAspectRatio" : true,
+      "type" : "StaticImage",
+      "url" : "../cmn/assets/branding/defaultImage.png",
+      "uuid" : "80465c8b-a204-4774-8949-58ca63f93603",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "naturalSize"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "buttonBackgroundColor" : "platform",
+      "buttonLabel" : "Close Delivery",
+      "buttonLabelColor" : "platform",
+      "buttonLabelSize" : 14,
+      "buttonLabelStyle" : "bold",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "Button15020",
+      "submitValue" : 100,
+      "type" : "Button",
+      "uuid" : "96a00900-0327-4067-82ad-a60d371924ba",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "fontFamily" : "inherit",
+      "fontSize" : 20,
+      "fontStyle" : "normal",
+      "fontWeight" : "normal",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "left",
+      "name" : "StaticText58060",
+      "text" : "Link to Route",
+      "type" : "StaticText",
+      "uuid" : "ce0e4e20-7878-45d8-9d85-0d7423fbe8f3",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "naturalSize"
+    } ]
+  },
+  "data" : {
+    "properties" : {
+      "collab" : {
+        "defaultLabel" : "collab",
+        "type" : "Object"
+      },
+      "link" : {
+        "defaultLabel" : "link",
+        "defaultValue" : "",
+        "type" : "String"
+      },
+      "pic" : {
+        "defaultLabel" : "pic",
+        "defaultValue" : "",
+        "type" : "String"
+      }
+    }
+  },
+  "footerChildren" : [ ],
+  "hasFooter" : false,
+  "layoutType" : "mobile",
+  "responseTopic" : "/deliveries/packageshipped"
+}

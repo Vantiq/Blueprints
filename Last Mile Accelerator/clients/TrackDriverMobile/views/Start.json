@@ -1,0 +1,36 @@
+{
+  "bodyChildren" : {
+    "rootArray" : [ "1404b84d-0528-4d63-b728-bf86141ccbea" ],
+    "widgets" : [ {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 2,
+      "column" : 0,
+      "dataStreamGroupedByFiltersString" : "",
+      "dataStreamProperty" : "currentLocationGEO",
+      "dataStreamUUID" : "bd6fd2fc-57a1-4c08-8cf3-5dfe139fb6a1",
+      "dataType" : null,
+      "fixedCenter" : true,
+      "heightPolicy" : "sizeToCell",
+      "horzGravity" : "center",
+      "labelProperty" : "packageid",
+      "markerHashKeyProperty" : "vehicleid",
+      "name" : "ShippingPoints",
+      "naturalKey" : null,
+      "operation" : "insert",
+      "row" : 0,
+      "type" : "DynamicMapViewer",
+      "uuid" : "1404b84d-0528-4d63-b728-bf86141ccbea",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    } ]
+  },
+  "data" : {
+    "properties" : { }
+  },
+  "footerChildren" : [ ],
+  "hasFooter" : false,
+  "layoutType" : "single",
+  "responseTopic" : "/my/response/topic"
+}

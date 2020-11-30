@@ -1,0 +1,112 @@
+{
+  "ars_public" : false,
+  "controllers" : {
+    "client" : {
+      "customCode" : "RELOCATED to controllers/client/customCode.js",
+      "onStart" : "RELOCATED to controllers/client/onStart.js"
+    },
+    "dataStream" : {
+      "ce_package" : { }
+    },
+    "page" : {
+      "DeliverPackage" : {
+        "onStart" : "RELOCATED to controllers/page/DeliverPackage/onStart.js",
+        "widgets" : {
+          "barcodescan" : {
+            "onChange" : "RELOCATED to controllers/page/DeliverPackage/widgets/barcodescan/onChange.js"
+          },
+          "camera" : {
+            "onChange" : "RELOCATED to controllers/page/DeliverPackage/widgets/camera/onChange.js"
+          }
+        }
+      },
+      "Start" : {
+        "onStart" : "RELOCATED to controllers/page/Start/onStart.js",
+        "widgets" : {
+          "Button15020" : {
+            "onClick" : "RELOCATED to controllers/page/Start/widgets/Button15020/onClick.js"
+          }
+        }
+      }
+    }
+  },
+  "isLaunchable" : false,
+  "models" : {
+    "dataObjects" : {
+      "__GLOBAL__" : {
+        "properties" : {
+          "collabid" : {
+            "defaultLabel" : "collabid",
+            "defaultValue" : "",
+            "type" : "String"
+          }
+        }
+      },
+      "__PARAMETERS__" : {
+        "properties" : { }
+      }
+    },
+    "dataStreams" : [ {
+      "advancedWhereClause" : null,
+      "dataObjectName" : null,
+      "dataTypeList" : [ {
+        "label" : null,
+        "type" : "package"
+      } ],
+      "isDeleteOp" : false,
+      "isInsertOp" : false,
+      "isUpdateOp" : false,
+      "maxRecords" : 0,
+      "name" : "ce_package",
+      "pauseAtStartup" : false,
+      "property" : null,
+      "sortByProperty" : null,
+      "sortDescending" : false,
+      "type" : 5,
+      "updateInterval" : 60,
+      "uuid" : "26539660-277c-4c98-ba3b-953908947452",
+      "v" : 1
+    } ]
+  },
+  "name" : "NextStopinRoute",
+  "options" : {
+    "RELOCATE" : [ {
+      "path" : "controllers",
+      "type" : "js"
+    }, {
+      "path" : "views",
+      "type" : "json"
+    } ],
+    "badgeCount" : 1,
+    "description" : "",
+    "docAssets" : [ "packageBox.jpg" ],
+    "paletteCollapsed" : false,
+    "productV" : "7.4g",
+    "showCategoryButtons" : true,
+    "showCategoryDataDisplay" : true,
+    "showCategoryDataInput" : true,
+    "showCategoryLayout" : true,
+    "showGridWhileEditing" : false,
+    "theme" : {
+      "backgroundColor" : "#ffffff",
+      "borderColor" : "#d3d6db",
+      "cardAccentColor" : "#ffffff",
+      "cardColor" : "#3c424d",
+      "dataDisplayColor" : "#ffffff",
+      "dataDisplayColors" : [ "#3cbce1", "#996db8", "#86d557", "#ff9800", "#425b71", "#cc467c", "#01aa93", "#ffca28", "#f583a9", "#1c84d4", "#ff6767", "#4caf50" ],
+      "dataInputColor" : "#ffffff",
+      "foregroundColor" : "#566076",
+      "label" : "Light",
+      "name" : "light",
+      "titleBarColor" : "#dddddd",
+      "v" : 3
+    },
+    "v" : 5
+  },
+  "targetDevice" : "mobile",
+  "userList" : [ ],
+  "views" : {
+    "DeliverPackage" : "RELOCATED to views/DeliverPackage.json",
+    "Start" : "RELOCATED to views/Start.json"
+  }
+}

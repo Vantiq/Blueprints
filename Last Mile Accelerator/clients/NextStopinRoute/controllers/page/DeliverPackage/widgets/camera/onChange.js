@@ -1,0 +1,1 @@
+	client.getWidget("packageimage").url = client.getWidget("camera").documentToken;
