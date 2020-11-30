@@ -1,0 +1,5 @@
+{
+  "description" : "New Orders",
+  "isReliable" : false,
+  "name" : "/deliveries/checkin"
+}

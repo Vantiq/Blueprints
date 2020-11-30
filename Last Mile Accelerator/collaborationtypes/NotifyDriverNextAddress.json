@@ -1,0 +1,232 @@
+{
+  "active" : true,
+  "appType" : false,
+  "ars_properties" : {
+    "dataVersion" : 4,
+    "graph" : {
+      "lastZoomRequest" : 0,
+      "scale" : 0.5393394301262188,
+      "translate" : [ 423, 23.107323709470165 ]
+    },
+    "groupSettings" : {
+      "appGroupOpenHash" : {
+        "actions" : true,
+        "filters" : true,
+        "flowControl" : true
+      },
+      "ctGroupOpenHash" : {
+        "actions" : true,
+        "mobile" : true
+      },
+      "ctServiceOpen" : false,
+      "serviceGroupOpenHash" : { }
+    },
+    "paletteWidth" : 170
+  },
+  "assembly" : {
+    "CreateLink" : {
+      "additionalBehaviors" : [ {
+        "behaviors" : [ {
+          "description" : null,
+          "name" : "findDriver",
+          "parameters" : [ {
+            "name" : "collaboration",
+            "type" : "reference",
+            "value" : "collaboration"
+          }, {
+            "multi" : true,
+            "name" : "parameters",
+            "type" : "mixed",
+            "value" : [ {
+              "type" : "expression",
+              "value" : "route.vehicleId"
+            } ]
+          } ],
+          "type" : "activity",
+          "uuid" : null
+        } ],
+        "condition" : "true",
+        "description" : null,
+        "name" : null,
+        "uuid" : "afde76b4-fced-430c-8e7c-1c785ecc3960"
+      } ],
+      "cancellationCondition" : [ ],
+      "completionCondition" : [ ],
+      "configuration" : {
+        "enableBadging" : true,
+        "serviceName" : "app.createLink"
+      },
+      "continuationCondition" : [ ],
+      "description" : null,
+      "instanceParameters" : [ "driver", "route" ],
+      "name" : "CreateLink",
+      "pattern" : "Execute",
+      "uuid" : "b02eadd8-e0ad-4588-864f-0fe1162fe740"
+    },
+    "Initiate" : {
+      "additionalBehaviors" : [ {
+        "behaviors" : [ {
+          "description" : null,
+          "name" : "CreateLink",
+          "parameters" : [ {
+            "name" : "collaboration",
+            "type" : "reference",
+            "value" : "collaboration"
+          }, {
+            "multi" : true,
+            "name" : "parameters",
+            "type" : "mixed",
+            "value" : [ {
+              "type" : "expression",
+              "value" : "route"
+            } ]
+          } ],
+          "type" : "activity",
+          "uuid" : null
+        } ],
+        "condition" : "true",
+        "description" : null,
+        "name" : null,
+        "uuid" : "d453c3db-6ca5-4d60-8cb4-2ae7c2b9de5c"
+      } ],
+      "cancellationCondition" : [ ],
+      "completionCondition" : [ ],
+      "configuration" : {
+        "enableBadging" : true,
+        "entityRole" : "route",
+        "initialTrigger" : "WHEN INSERT OCCURS ON ArsSituation AS situation WHERE situation.name == \"NotifyDriverNextAddress\""
+      },
+      "continuationCondition" : [ ],
+      "description" : null,
+      "instanceParameters" : [ "driver", "route" ],
+      "name" : "Initiate",
+      "pattern" : "InitiateCollaboration",
+      "uuid" : "728ae3aa-78db-4754-a54c-44fdc583a094"
+    },
+    "NotifyNextLeg" : {
+      "additionalBehaviors" : [ ],
+      "cancellationCondition" : [ ],
+      "completionCondition" : [ ],
+      "configuration" : {
+        "body" : "This is the link to the Next Address",
+        "clientName" : "NextStopinRoute",
+        "enableBadging" : true,
+        "firstResponseBehaviors" : [ {
+          "behaviors" : [ {
+            "description" : null,
+            "name" : "PublishToTopic",
+            "parameters" : [ {
+              "name" : "collaboration",
+              "type" : "reference",
+              "value" : "collaboration"
+            }, {
+              "name" : "topic",
+              "type" : "String",
+              "value" : "/deliveries/packageshipped"
+            }, {
+              "name" : "event",
+              "type" : "expression",
+              "value" : "collaboration.results"
+            } ],
+            "type" : "activity",
+            "uuid" : null
+          } ],
+          "condition" : "true",
+          "description" : null,
+          "name" : "firstResponse",
+          "uuid" : "735af8f8-eef6-4bca-bcdc-992e99d6fe7f"
+        } ],
+        "pushSourceName" : "VantiqPushNotification",
+        "responseBehaviors" : [ ],
+        "title" : "Next Shipping Address"
+      },
+      "continuationCondition" : [ ],
+      "description" : null,
+      "instanceParameters" : [ "driver", "route" ],
+      "name" : "NotifyNextLeg",
+      "pattern" : "Notification",
+      "uuid" : "218a6e92-2ac0-4778-848c-ffded3dc8585"
+    },
+    "PublishToTopic" : {
+      "additionalBehaviors" : [ {
+        "behaviors" : [ {
+          "description" : null,
+          "name" : "CollaborationUtils.closeCollaboration",
+          "parameters" : [ {
+            "name" : "collaborationId",
+            "type" : "expression",
+            "value" : "collaboration.id"
+          } ],
+          "type" : "service",
+          "uuid" : "88c47fac-8f2e-4a3f-8a88-fb044aca93fa"
+        } ],
+        "condition" : "true",
+        "description" : null,
+        "name" : null,
+        "uuid" : "c5f7b1c7-7923-4b15-954c-ace904a7227f"
+      } ],
+      "cancellationCondition" : [ ],
+      "completionCondition" : [ ],
+      "configuration" : {
+        "enableBadging" : true
+      },
+      "continuationCondition" : [ ],
+      "description" : null,
+      "instanceParameters" : [ "driver", "route" ],
+      "name" : "PublishToTopic",
+      "pattern" : "Collaboration.PublishToTopic",
+      "uuid" : "8ba1cd3f-373c-45cb-8a05-b895b3469e09"
+    },
+    "findDriver" : {
+      "additionalBehaviors" : [ {
+        "behaviors" : [ {
+          "description" : null,
+          "name" : "NotifyNextLeg",
+          "parameters" : [ {
+            "name" : "collaboration",
+            "type" : "reference",
+            "value" : "collaboration"
+          }, {
+            "multi" : true,
+            "name" : "users",
+            "type" : "mixed",
+            "value" : [ {
+              "type" : "expression",
+              "value" : "collaboration.results.findDriver.result[0].driver"
+            } ]
+          } ],
+          "type" : "activity",
+          "uuid" : null
+        } ],
+        "condition" : "true",
+        "description" : null,
+        "name" : null,
+        "uuid" : "ad409249-a560-4a9c-810f-95791e93631e"
+      } ],
+      "cancellationCondition" : [ ],
+      "completionCondition" : [ ],
+      "configuration" : {
+        "enableBadging" : true,
+        "serviceName" : "findDriverForShipping"
+      },
+      "continuationCondition" : [ ],
+      "description" : null,
+      "instanceParameters" : [ "driver", "route" ],
+      "name" : "findDriver",
+      "pattern" : "Execute",
+      "uuid" : "c90c84e7-067a-4460-8d5e-464a9bfb2346"
+    }
+  },
+  "collaboratorRoles" : [ "driver" ],
+  "currentState" : {
+    "code" : "success"
+  },
+  "description" : "",
+  "disableBadging" : false,
+  "entityRoles" : [ {
+    "name" : "route",
+    "type" : "routes"
+  } ],
+  "keyTypes" : [ "system.collaborations" ],
+  "name" : "NotifyDriverNextAddress"
+}

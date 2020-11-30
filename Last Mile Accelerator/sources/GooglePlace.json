@@ -1,0 +1,18 @@
+{
+  "activationConstraint" : "",
+  "active" : true,
+  "config" : {
+    "pollingInterval" : 0,
+    "query" : { },
+    "requestDefaults" : {
+      "query" : {
+        "key" : "AIzaSyCKsjsnvAs_qSDJXg-eLfXCs_vXrXHPyjU"
+      }
+    },
+    "uri" : "https://maps.googleapis.com/maps/api/place/autocomplete/json"
+  },
+  "direction" : "BOTH",
+  "mockProcedures" : { },
+  "name" : "GooglePlace",
+  "type" : "REMOTE"
+}

@@ -1,0 +1,107 @@
+{
+  "active" : true,
+  "appType" : false,
+  "ars_properties" : {
+    "dataVersion" : 4,
+    "graph" : {
+      "lastZoomRequest" : 0,
+      "scale" : 1.1895614653777538,
+      "translate" : [ 458, 50.68647056383023 ]
+    },
+    "groupSettings" : {
+      "appGroupOpenHash" : {
+        "actions" : true,
+        "filters" : true,
+        "flowControl" : true
+      },
+      "ctGroupOpenHash" : {
+        "actions" : true,
+        "mobile" : true
+      },
+      "ctServiceOpen" : false,
+      "serviceGroupOpenHash" : { }
+    },
+    "paletteWidth" : 170
+  },
+  "assembly" : {
+    "Initiate" : {
+      "additionalBehaviors" : [ {
+        "behaviors" : [ {
+          "description" : null,
+          "name" : "SendEmailToCustomer",
+          "parameters" : [ {
+            "name" : "collaboration",
+            "type" : "reference",
+            "value" : "collaboration"
+          }, {
+            "multi" : true,
+            "name" : "parameters",
+            "type" : "mixed",
+            "value" : [ {
+              "type" : "expression",
+              "value" : "package"
+            } ]
+          } ],
+          "type" : "activity",
+          "uuid" : null
+        } ],
+        "condition" : "true",
+        "description" : null,
+        "name" : null,
+        "uuid" : "c816035f-9e6d-4d0e-8b48-7ed86e136a78"
+      } ],
+      "cancellationCondition" : [ ],
+      "completionCondition" : [ ],
+      "configuration" : {
+        "enableBadging" : true,
+        "entityRole" : "package",
+        "initialTrigger" : "WHEN INSERT OCCURS ON ArsSituation AS situation WHERE situation.name == \"NotifyCustomer\""
+      },
+      "continuationCondition" : [ ],
+      "description" : null,
+      "instanceParameters" : [ "driver", "number", "package" ],
+      "name" : "Initiate",
+      "pattern" : "InitiateCollaboration",
+      "uuid" : "bea76262-5ab5-4fd5-9249-544464c027d0"
+    },
+    "SendEmailToCustomer" : {
+      "additionalBehaviors" : [ {
+        "behaviors" : [ {
+          "description" : null,
+          "name" : "CollaborationUtils.closeCollaboration",
+          "parameters" : [ ],
+          "type" : "service",
+          "uuid" : "e7a67dd2-0d9f-4515-91b3-f0bdc8fe3b27"
+        } ],
+        "condition" : "true",
+        "description" : null,
+        "name" : null,
+        "uuid" : "9360c664-bd2e-4402-89f8-4cf1ddbe7950"
+      } ],
+      "cancellationCondition" : [ ],
+      "completionCondition" : [ ],
+      "configuration" : {
+        "enableBadging" : true,
+        "serviceName" : "app.sendEmailClient"
+      },
+      "continuationCondition" : [ ],
+      "description" : null,
+      "instanceParameters" : [ "driver", "number", "package" ],
+      "name" : "SendEmailToCustomer",
+      "pattern" : "Execute",
+      "uuid" : "88797a2d-0b53-4342-b560-93231d35af5f"
+    }
+  },
+  "collaboratorRoles" : [ "driver", "number" ],
+  "currentState" : {
+    "code" : "success"
+  },
+  "description" : "",
+  "disableBadging" : false,
+  "entityRoles" : [ {
+    "name" : "package",
+    "type" : "package"
+  } ],
+  "keyTypes" : [ "system.collaborations" ],
+  "name" : "NotifyCustomer"
+}

@@ -1,0 +1,161 @@
+{
+  "active" : true,
+  "appType" : true,
+  "ars_properties" : {
+    "dataVersion" : 4,
+    "graph" : {
+      "lastZoomRequest" : 0,
+      "scale" : 1.6944692601179998,
+      "translate" : [ 345.18105902282497, 86.08762907373244 ]
+    },
+    "groupSettings" : {
+      "appGroupOpenHash" : {
+        "actions" : true,
+        "filters" : true,
+        "flowControl" : true
+      },
+      "ctGroupOpenHash" : {
+        "actions" : true,
+        "mobile" : true
+      },
+      "ctServiceOpen" : false,
+      "serviceGroupOpenHash" : { }
+    },
+    "paletteWidth" : 170
+  },
+  "assembly" : {
+    "AssignRegionFromTopic" : {
+      "configuration" : {
+        "childStreams" : [ "PrepareTopicInfo" ],
+        "enableBadging" : true,
+        "inboundResource" : "topics",
+        "inboundResourceId" : "/deliveries/neworder",
+        "op" : null,
+        "outboundResource" : null,
+        "outboundResourceId" : null,
+        "parentStreams" : [ ],
+        "schema" : null,
+        "upsert" : false
+      },
+      "description" : null,
+      "name" : "AssignRegionFromTopic",
+      "pattern" : "EventStream",
+      "uuid" : "cd0027f8-d778-43c1-9fbc-9d081fa42868"
+    },
+    "PrepareTopicInfo" : {
+      "configuration" : {
+        "childStreams" : [ "SaveToPackage" ],
+        "enableBadging" : true,
+        "outboundResource" : null,
+        "outboundResourceId" : null,
+        "parentStreams" : [ "AssignRegionFromTopic" ],
+        "schema" : null,
+        "transformation" : {
+          "barcode" : {
+            "expression" : "event.values.barcode",
+            "type" : "expression"
+          },
+          "condition" : {
+            "expression" : "\"\"",
+            "type" : "expression"
+          },
+          "customerEmail" : {
+            "expression" : "event.values.customerEmail",
+            "type" : "expression"
+          },
+          "customerName" : {
+            "expression" : "event.values.customerName",
+            "type" : "expression"
+          },
+          "customerPhone" : {
+            "expression" : "event.values.customerPhone",
+            "type" : "expression"
+          },
+          "description" : {
+            "expression" : "event.values.description",
+            "type" : "expression"
+          },
+          "id" : {
+            "expression" : "event.values.packageId",
+            "type" : "expression"
+          },
+          "name" : {
+            "expression" : "event.values.name",
+            "type" : "expression"
+          },
+          "notes" : {
+            "expression" : "[]",
+            "type" : "expression"
+          },
+          "orderedDate" : {
+            "expression" : "now()",
+            "type" : "expression"
+          },
+          "organizationid" : {
+            "expression" : "event.values.organizationid",
+            "type" : "expression"
+          },
+          "originalAddress" : {
+            "expression" : "event.values.originalAddress",
+            "type" : "expression"
+          },
+          "originalAddressGEO" : {
+            "expression" : "event.values.originalAddressGEO",
+            "type" : "expression"
+          },
+          "photo" : {
+            "expression" : "event.values.Camera1",
+            "type" : "expression"
+          },
+          "region" : {
+            "expression" : "\"not found\"",
+            "type" : "expression"
+          },
+          "shippingAddress" : {
+            "expression" : "event.values.shippingAddress",
+            "type" : "expression"
+          },
+          "shippingAddressGEO" : {
+            "expression" : "event.values.shippingAddressGEO",
+            "type" : "expression"
+          },
+          "shippingDate" : {
+            "expression" : "event.values.shippingDate",
+            "type" : "expression"
+          },
+          "status" : {
+            "expression" : "\"added\"",
+            "type" : "expression"
+          }
+        },
+        "upsert" : false
+      },
+      "description" : null,
+      "name" : "PrepareTopicInfo",
+      "pattern" : "Transformation",
+      "uuid" : "a70baf67-9f40-499d-8049-97c89dc3ce06"
+    },
+    "SaveToPackage" : {
+      "configuration" : {
+        "childStreams" : null,
+        "enableBadging" : true,
+        "parentStreams" : [ "PrepareTopicInfo" ],
+        "type" : "package",
+        "upsert" : false
+      },
+      "description" : null,
+      "name" : "SaveToPackage",
+      "pattern" : "SaveToType",
+      "uuid" : "b3a7ad82-afc9-497d-a08a-f7337030df59"
+    }
+  },
+  "collaboratorRoles" : [ ],
+  "currentState" : {
+    "code" : "success"
+  },
+  "description" : "",
+  "disableBadging" : false,
+  "entityRoles" : [ ],
+  "keyTypes" : [ "system.collaborations" ],
+  "name" : "SaveOrderToType"
+}

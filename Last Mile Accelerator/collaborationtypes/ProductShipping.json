@@ -1,0 +1,128 @@
+{
+  "active" : true,
+  "appType" : true,
+  "ars_properties" : {
+    "dataVersion" : 4,
+    "graph" : {
+      "lastZoomRequest" : 0,
+      "scale" : 1.34919198177794,
+      "translate" : [ 710.0201735659978, 26.05286168075139 ]
+    },
+    "groupSettings" : {
+      "appGroupOpenHash" : {
+        "actions" : true,
+        "filters" : true,
+        "flowControl" : true
+      },
+      "ctGroupOpenHash" : {
+        "actions" : true,
+        "mobile" : true
+      },
+      "ctServiceOpen" : false,
+      "serviceGroupOpenHash" : { }
+    }
+  },
+  "assembly" : {
+    "GetBarCode" : {
+      "configuration" : {
+        "childStreams" : [ "GetPackageData" ],
+        "enableBadging" : true,
+        "outboundResource" : null,
+        "outboundResourceId" : null,
+        "parentStreams" : [ "ReadyforShipping" ],
+        "schema" : null,
+        "transformation" : {
+          "barcode" : {
+            "expression" : "event.values.barcode",
+            "type" : "expression"
+          }
+        },
+        "upsert" : false
+      },
+      "description" : null,
+      "name" : "GetBarCode",
+      "pattern" : "Transformation",
+      "uuid" : "e2eec7fb-f617-4b75-8ab2-fd56a297e6b4"
+    },
+    "GetPackage" : {
+      "configuration" : {
+        "childStreams" : [ "NotifyEnRouteToCustomer" ],
+        "enableBadging" : true,
+        "outboundResource" : null,
+        "outboundResourceId" : null,
+        "parentStreams" : [ "GetPackageData" ],
+        "schema" : "package",
+        "transformation" : {
+          "package" : {
+            "expression" : "event.package",
+            "type" : "expression"
+          }
+        },
+        "upsert" : false
+      },
+      "description" : null,
+      "name" : "GetPackage",
+      "pattern" : "Transformation",
+      "uuid" : "fce6f596-bd23-465b-8c16-0f57f9bfff3c"
+    },
+    "GetPackageData" : {
+      "configuration" : {
+        "associatedType" : "package",
+        "childStreams" : [ "GetPackage" ],
+        "enableBadging" : true,
+        "foreignKeys" : [ {
+          "type" : "Property",
+          "value" : "barcode"
+        } ],
+        "outboundResource" : null,
+        "outboundResourceId" : null,
+        "parentStreams" : [ "GetBarCode" ],
+        "upsert" : false
+      },
+      "description" : null,
+      "name" : "GetPackageData",
+      "pattern" : "Enrich",
+      "uuid" : "649d6476-859e-4732-8baf-6eee69ad3e55"
+    },
+    "NotifyEnRouteToCustomer" : {
+      "configuration" : {
+        "collaboration" : "NotifyEnRouteToCustomer",
+        "enableBadging" : true,
+        "entityConstraint" : "id == event.package.id",
+        "entityType" : "package",
+        "parentStreams" : [ "GetPackage" ]
+      },
+      "description" : null,
+      "name" : "NotifyEnRouteToCustomer",
+      "pattern" : "StartCollaboration",
+      "uuid" : "515800fb-e3b1-40f5-8188-cf3e60cf8204"
+    },
+    "ReadyforShipping" : {
+      "configuration" : {
+        "childStreams" : [ "GetBarCode" ],
+        "enableBadging" : true,
+        "inboundResource" : "topics",
+        "inboundResourceId" : "/deliveries/checkin",
+        "op" : null,
+        "outboundResource" : null,
+        "outboundResourceId" : null,
+        "parentStreams" : [ ],
+        "schema" : null,
+        "upsert" : false
+      },
+      "description" : null,
+      "name" : "ReadyforShipping",
+      "pattern" : "EventStream",
+      "uuid" : "1580c909-b3dc-4421-a872-6b3b569f86ca"
+    }
+  },
+  "collaboratorRoles" : [ ],
+  "currentState" : {
+    "code" : "success"
+  },
+  "description" : "",
+  "disableBadging" : false,
+  "entityRoles" : [ ],
+  "keyTypes" : [ "system.collaborations" ],
+  "name" : "ProductShipping"
+}

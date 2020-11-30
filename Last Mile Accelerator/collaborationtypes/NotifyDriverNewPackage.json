@@ -1,0 +1,189 @@
+{
+  "active" : true,
+  "appType" : false,
+  "ars_properties" : {
+    "dataVersion" : 4,
+    "graph" : {
+      "lastZoomRequest" : 0,
+      "scale" : 0.6590625721542369,
+      "translate" : [ 423, 28.133733548833987 ]
+    },
+    "groupSettings" : {
+      "appGroupOpenHash" : {
+        "actions" : true,
+        "filters" : true,
+        "flowControl" : true
+      },
+      "ctGroupOpenHash" : {
+        "actions" : true,
+        "mobile" : true
+      },
+      "ctServiceOpen" : false,
+      "serviceGroupOpenHash" : { }
+    },
+    "paletteWidth" : 170
+  },
+  "assembly" : {
+    "Initiate" : {
+      "additionalBehaviors" : [ {
+        "behaviors" : [ {
+          "description" : null,
+          "name" : "RecommendVehicles",
+          "parameters" : [ {
+            "name" : "collaboration",
+            "type" : "reference",
+            "value" : "collaboration"
+          }, {
+            "name" : "target",
+            "type" : "expression",
+            "value" : "collaboration.results.Initiate.event.currentlocation"
+          } ],
+          "type" : "activity",
+          "uuid" : null
+        } ],
+        "condition" : "true",
+        "description" : null,
+        "name" : null,
+        "uuid" : "a6b5d639-97ba-4ff2-8f36-e681bfbb159c"
+      } ],
+      "cancellationCondition" : [ ],
+      "completionCondition" : [ ],
+      "configuration" : {
+        "enableBadging" : true,
+        "entityRole" : null,
+        "initialTrigger" : "WHEN INSERT OCCURS ON ArsSituation AS situation WHERE situation.name == \"NotifyDriverNewPackage\""
+      },
+      "continuationCondition" : [ ],
+      "description" : null,
+      "instanceParameters" : [ ],
+      "name" : "Initiate",
+      "pattern" : "InitiateCollaboration",
+      "uuid" : "d78651fd-659e-41d0-8515-37628ba73c84"
+    },
+    "NotifyClosetDriver" : {
+      "additionalBehaviors" : [ ],
+      "cancellationCondition" : [ ],
+      "completionCondition" : [ ],
+      "configuration" : {
+        "body" : "There is a new package to pick on your route",
+        "clientName" : "NewPackageDelivery",
+        "enableBadging" : true,
+        "firstResponseBehaviors" : [ {
+          "behaviors" : [ {
+            "description" : null,
+            "name" : "CollaborationUtils.closeCollaboration",
+            "parameters" : [ {
+              "name" : "collaborationId",
+              "type" : "expression",
+              "value" : "collaboration.id"
+            } ],
+            "type" : "service",
+            "uuid" : "38582254-38a9-4a9e-bdf7-0973b0f5e098"
+          } ],
+          "condition" : "true",
+          "description" : null,
+          "name" : "firstResponse",
+          "uuid" : "3fe2531a-0ca6-45c3-8911-f7ae05229613"
+        } ],
+        "pushSourceName" : "VantiqPushNotification",
+        "responseBehaviors" : [ ],
+        "title" : "New Package Delivery"
+      },
+      "continuationCondition" : [ ],
+      "description" : null,
+      "instanceParameters" : [ ],
+      "name" : "NotifyClosetDriver",
+      "pattern" : "Notification",
+      "uuid" : "152bd9dd-aa30-4c14-853b-a1034703d91f"
+    },
+    "RecommendVehicles" : {
+      "additionalBehaviors" : [ {
+        "behaviors" : [ {
+          "description" : null,
+          "name" : "SelectNotIdle",
+          "parameters" : [ {
+            "name" : "collaboration",
+            "type" : "reference",
+            "value" : "collaboration"
+          }, {
+            "multi" : true,
+            "name" : "parameters",
+            "type" : "mixed",
+            "value" : [ {
+              "type" : "expression",
+              "value" : "collaboration.results.RecommendVehicles.recommendations"
+            } ]
+          } ],
+          "type" : "activity",
+          "uuid" : null
+        } ],
+        "condition" : "true",
+        "description" : null,
+        "name" : "",
+        "uuid" : "8f170c0a-d2a2-4046-99a2-41f51a77b403"
+      } ],
+      "cancellationCondition" : [ ],
+      "completionCondition" : [ ],
+      "configuration" : {
+        "candidateType" : "vehicle",
+        "enableBadging" : true,
+        "matchType" : null,
+        "recommendationProcedure" : null
+      },
+      "continuationCondition" : [ ],
+      "description" : null,
+      "instanceParameters" : [ ],
+      "name" : "RecommendVehicles",
+      "pattern" : "Recommendation",
+      "uuid" : "ab4af4b3-440b-4420-8b6b-291ef5d987bc"
+    },
+    "SelectNotIdle" : {
+      "additionalBehaviors" : [ {
+        "behaviors" : [ {
+          "description" : null,
+          "name" : "NotifyClosetDriver",
+          "parameters" : [ {
+            "name" : "collaboration",
+            "type" : "reference",
+            "value" : "collaboration"
+          }, {
+            "multi" : true,
+            "name" : "users",
+            "type" : "mixed",
+            "value" : [ {
+              "type" : "expression",
+              "value" : "collaboration.results.SelectNotIdle.result.driver"
+            } ]
+          } ],
+          "type" : "activity",
+          "uuid" : null
+        } ],
+        "condition" : "true",
+        "description" : null,
+        "name" : "",
+        "uuid" : "e5c38c5d-701a-4397-9fca-a75a1d74be0d"
+      } ],
+      "cancellationCondition" : [ ],
+      "completionCondition" : [ ],
+      "configuration" : {
+        "enableBadging" : true,
+        "serviceName" : "app.findenroutevehicle"
+      },
+      "continuationCondition" : [ ],
+      "description" : null,
+      "instanceParameters" : [ ],
+      "name" : "SelectNotIdle",
+      "pattern" : "Execute",
+      "uuid" : "efaf8fcf-3524-424f-92db-f98849ba8932"
+    }
+  },
+  "collaboratorRoles" : [ ],
+  "currentState" : {
+    "code" : "success"
+  },
+  "description" : "",
+  "disableBadging" : false,
+  "entityRoles" : [ ],
+  "keyTypes" : [ "system.collaborations" ],
+  "name" : "NotifyDriverNewPackage"
+}

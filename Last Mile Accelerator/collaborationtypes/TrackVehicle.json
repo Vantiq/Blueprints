@@ -1,0 +1,113 @@
+{
+  "active" : true,
+  "appType" : false,
+  "ars_properties" : {
+    "dataVersion" : 4,
+    "graph" : {
+      "lastZoomRequest" : 0,
+      "scale" : 1.6160667155227486,
+      "translate" : [ 290, 54.74443414408228 ]
+    },
+    "groupSettings" : {
+      "appGroupOpenHash" : {
+        "actions" : true,
+        "filters" : true,
+        "flowControl" : true
+      },
+      "ctGroupOpenHash" : {
+        "actions" : true,
+        "mobile" : true
+      },
+      "ctServiceOpen" : false,
+      "serviceGroupOpenHash" : { }
+    },
+    "paletteWidth" : 170
+  },
+  "assembly" : {
+    "Initiate" : {
+      "additionalBehaviors" : [ {
+        "behaviors" : [ {
+          "description" : null,
+          "name" : "TrackVehicle",
+          "parameters" : [ {
+            "name" : "collaboration",
+            "type" : "reference",
+            "value" : "collaboration"
+          }, {
+            "multi" : true,
+            "name" : "users",
+            "type" : "String",
+            "value" : [ ]
+          }, {
+            "name" : "destination",
+            "type" : "GeoJSON",
+            "value" : null
+          }, {
+            "multi" : true,
+            "name" : "waypoints",
+            "type" : "Object",
+            "value" : [ ]
+          } ],
+          "type" : "activity",
+          "uuid" : null
+        } ],
+        "condition" : "true",
+        "description" : null,
+        "name" : "",
+        "uuid" : "ad56ccec-3c40-414c-9199-5742965c7b7c"
+      } ],
+      "cancellationCondition" : [ ],
+      "completionCondition" : [ ],
+      "configuration" : {
+        "enableBadging" : true,
+        "entityRole" : null,
+        "initialTrigger" : "WHEN INSERT OCCURS ON ArsSituation AS situation WHERE situation.name == \"TrackVehicle\""
+      },
+      "continuationCondition" : [ ],
+      "description" : null,
+      "instanceParameters" : [ "vehicle", "enroute", "package" ],
+      "name" : "Initiate",
+      "pattern" : "InitiateCollaboration",
+      "uuid" : "6b37f893-fbd0-4a4f-b78f-3bbe741ee455"
+    },
+    "TrackVehicle" : {
+      "additionalBehaviors" : [ ],
+      "cancellationCondition" : [ ],
+      "completionCondition" : [ ],
+      "configuration" : {
+        "arrivalBehaviors" : [ ],
+        "desiredAccuracy" : 50,
+        "destinationRadius" : 200,
+        "distanceFilter" : 200,
+        "enableBadging" : true,
+        "firstArrivalBehaviors" : [ ],
+        "level" : "fine",
+        "pingInterval" : "10 minutes",
+        "updateBehaviors" : [ ],
+        "waypointArrivalBehaviors" : [ ],
+        "waypointDepartureBehaviors" : [ ]
+      },
+      "continuationCondition" : [ ],
+      "description" : null,
+      "instanceParameters" : [ "vehicle", "enroute", "package" ],
+      "name" : "TrackVehicle",
+      "pattern" : "LocationTracking",
+      "uuid" : "91f28644-a985-4b8c-9e7c-756df00a3336"
+    }
+  },
+  "collaboratorRoles" : [ "vehicle" ],
+  "currentState" : {
+    "code" : "success"
+  },
+  "description" : "",
+  "disableBadging" : false,
+  "entityRoles" : [ {
+    "name" : "enroute",
+    "type" : "enroute"
+  }, {
+    "name" : "package",
+    "type" : "package"
+  } ],
+  "keyTypes" : [ "system.collaborations" ],
+  "name" : "TrackVehicle"
+}

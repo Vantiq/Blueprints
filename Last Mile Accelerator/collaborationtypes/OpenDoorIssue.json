@@ -1,0 +1,185 @@
+{
+  "active" : true,
+  "appType" : true,
+  "ars_properties" : {
+    "dataVersion" : 4,
+    "graph" : {
+      "lastZoomRequest" : 0,
+      "scale" : 0.7412095835902276,
+      "translate" : [ 421.8507686339229, 32.65544099003853 ]
+    },
+    "groupSettings" : {
+      "appGroupOpenHash" : {
+        "actions" : true,
+        "filters" : true,
+        "flowControl" : true
+      },
+      "ctGroupOpenHash" : {
+        "actions" : true,
+        "mobile" : true
+      },
+      "ctServiceOpen" : false,
+      "serviceGroupOpenHash" : { }
+    }
+  },
+  "assembly" : {
+    "CheckOpenDoorSensor" : {
+      "configuration" : {
+        "childStreams" : [ "GetSensorInfo" ],
+        "condition" : "event.opendoor == true",
+        "enableBadging" : true,
+        "inboundResource" : "topics",
+        "inboundResourceId" : "/deliveries/sensors/opendoorsensors",
+        "op" : null,
+        "outboundResource" : null,
+        "outboundResourceId" : null,
+        "parentStreams" : [ ],
+        "schema" : null,
+        "upsert" : false
+      },
+      "description" : null,
+      "name" : "CheckOpenDoorSensor",
+      "pattern" : "EventStream",
+      "uuid" : "8408e754-94ba-4606-aad6-170f2855bb80"
+    },
+    "GetSensorInfo" : {
+      "configuration" : {
+        "associatedType" : "sensors",
+        "childStreams" : [ "VehicleId" ],
+        "enableBadging" : true,
+        "foreignKeys" : [ {
+          "type" : "Property",
+          "value" : "id"
+        } ],
+        "outboundResource" : null,
+        "outboundResourceId" : null,
+        "parentStreams" : [ "CheckOpenDoorSensor" ],
+        "upsert" : false
+      },
+      "description" : null,
+      "name" : "GetSensorInfo",
+      "pattern" : "Enrich",
+      "uuid" : "d6d50360-7d44-4d44-875e-223d1a4bb720"
+    },
+    "GetVehicleInfo" : {
+      "configuration" : {
+        "associatedType" : "vehicle",
+        "childStreams" : [ "PrepareDataForIssueType" ],
+        "enableBadging" : true,
+        "foreignKeys" : [ {
+          "type" : "Property",
+          "value" : "id"
+        } ],
+        "outboundResource" : null,
+        "outboundResourceId" : null,
+        "parentStreams" : [ "VehicleId" ],
+        "upsert" : false
+      },
+      "description" : null,
+      "name" : "GetVehicleInfo",
+      "pattern" : "Enrich",
+      "uuid" : "618c82ec-0ea7-4a47-b7df-36fd1079b7c8"
+    },
+    "NotifyIssueToDriver" : {
+      "configuration" : {
+        "collaboration" : "NotifyIssueToDriver",
+        "enableBadging" : true,
+        "entityConstraint" : "id == event.id",
+        "entityType" : "issues",
+        "parentStreams" : [ "SaveToIssues" ]
+      },
+      "description" : null,
+      "name" : "NotifyIssueToDriver",
+      "pattern" : "StartCollaboration",
+      "uuid" : "6d8c4ff2-6fc2-4d15-a1ef-511498a2823c"
+    },
+    "PrepareDataForIssueType" : {
+      "configuration" : {
+        "childStreams" : [ "SaveToIssues" ],
+        "enableBadging" : true,
+        "outboundResource" : null,
+        "outboundResourceId" : null,
+        "parentStreams" : [ "GetVehicleInfo" ],
+        "schema" : null,
+        "transformation" : {
+          "currentlocation" : {
+            "expression" : "event.vehicle.currentlocation",
+            "type" : "expression"
+          },
+          "description" : {
+            "expression" : "\"Open Door\"",
+            "type" : "expression"
+          },
+          "driver" : {
+            "expression" : "event.vehicle.driver",
+            "type" : "expression"
+          },
+          "id" : {
+            "expression" : "event.id",
+            "type" : "expression"
+          },
+          "issuetype" : {
+            "expression" : "\"Open Door\"",
+            "type" : "expression"
+          },
+          "photo" : {
+            "expression" : "\"../../docs/Tesla-Semi-Cybertruck-e1580144358978.jpg\"",
+            "type" : "expression"
+          },
+          "vehicle" : {
+            "expression" : "event.vehicle.id",
+            "type" : "expression"
+          }
+        },
+        "upsert" : false
+      },
+      "description" : null,
+      "name" : "PrepareDataForIssueType",
+      "pattern" : "Transformation",
+      "uuid" : "54d447a2-6733-406d-895d-f698f45eec4d"
+    },
+    "SaveToIssues" : {
+      "configuration" : {
+        "childStreams" : [ "NotifyIssueToDriver" ],
+        "enableBadging" : true,
+        "parentStreams" : [ "PrepareDataForIssueType" ],
+        "type" : "issues",
+        "upsert" : true
+      },
+      "description" : null,
+      "name" : "SaveToIssues",
+      "pattern" : "SaveToType",
+      "uuid" : "c43f5032-ca99-4a23-9f0b-7decdc26292a"
+    },
+    "VehicleId" : {
+      "configuration" : {
+        "childStreams" : [ "GetVehicleInfo" ],
+        "enableBadging" : true,
+        "outboundResource" : null,
+        "outboundResourceId" : null,
+        "parentStreams" : [ "GetSensorInfo" ],
+        "schema" : null,
+        "transformation" : {
+          "id" : {
+            "expression" : "event.sensors.assetid",
+            "type" : "expression"
+          }
+        },
+        "upsert" : false
+      },
+      "description" : null,
+      "name" : "VehicleId",
+      "pattern" : "Transformation",
+      "uuid" : "2b57e732-c27a-4dbe-9633-4c4003d6e8c4"
+    }
+  },
+  "collaboratorRoles" : [ ],
+  "currentState" : {
+    "code" : "success"
+  },
+  "description" : "",
+  "disableBadging" : false,
+  "entityRoles" : [ ],
+  "keyTypes" : [ "system.collaborations" ],
+  "name" : "OpenDoorIssue"
+}

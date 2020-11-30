@@ -1,0 +1,5 @@
+{
+  "description" : "location events",
+  "isReliable" : false,
+  "name" : "/tracking/LocationEventTopic"
+}

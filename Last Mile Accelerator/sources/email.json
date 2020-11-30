@@ -1,0 +1,17 @@
+{
+  "activationConstraint" : "",
+  "active" : true,
+  "ars_properties" : null,
+  "config" : {
+    "host" : "smtp.office365.com",
+    "password" : "Mnc155777",
+    "passwordType" : "string",
+    "port" : 587,
+    "username" : "hvalverde@vantiq.com"
+  },
+  "direction" : "BOTH",
+  "messageType" : null,
+  "mockProcedures" : { },
+  "name" : "email",
+  "type" : "EMAIL"
+}

@@ -1,0 +1,19 @@
+{
+  "activationConstraint" : "",
+  "active" : true,
+  "config" : {
+    "accessToken" : "AIzaSyCKsjsnvAs_qSDJXg-eLfXCs_vXrXHPyjU",
+    "pollingInterval" : 0,
+    "query" : { },
+    "requestDefaults" : {
+      "query" : {
+        "key" : "AIzaSyCKsjsnvAs_qSDJXg-eLfXCs_vXrXHPyjU"
+      }
+    },
+    "uri" : "https://maps.googleapis.com/maps/api/place/details/json"
+  },
+  "direction" : "BOTH",
+  "mockProcedures" : { },
+  "name" : "GooglePlaceId",
+  "type" : "REMOTE"
+}

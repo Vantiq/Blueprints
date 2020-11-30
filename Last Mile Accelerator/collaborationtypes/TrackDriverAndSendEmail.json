@@ -1,0 +1,302 @@
+{
+  "active" : false,
+  "appType" : false,
+  "ars_properties" : {
+    "dataVersion" : 4,
+    "graph" : {
+      "lastZoomRequest" : 0,
+      "scale" : 0.8493672186934635,
+      "translate" : [ 170.89261968305846, -2.289964314427124 ]
+    },
+    "groupSettings" : {
+      "appGroupOpenHash" : {
+        "actions" : true,
+        "filters" : true,
+        "flowControl" : true
+      },
+      "ctGroupOpenHash" : {
+        "mobile" : true
+      },
+      "ctServiceOpen" : false,
+      "serviceGroupOpenHash" : { }
+    },
+    "paletteWidth" : 170
+  },
+  "assembly" : {
+    "CreateLinkforPublicPage" : {
+      "additionalBehaviors" : [ {
+        "behaviors" : [ {
+          "description" : null,
+          "name" : "SendTrackingEmail",
+          "parameters" : [ {
+            "name" : "collaboration",
+            "type" : "reference",
+            "value" : "collaboration"
+          }, {
+            "multi" : true,
+            "name" : "parameters",
+            "type" : "mixed",
+            "value" : [ {
+              "type" : "expression",
+              "value" : "collaboration.results.CreateLinkforPublicPage.result"
+            } ]
+          } ],
+          "type" : "activity",
+          "uuid" : null
+        } ],
+        "condition" : "true",
+        "description" : null,
+        "name" : null,
+        "uuid" : "50d48218-8a31-4c65-aab0-788c8f0c0d3b"
+      } ],
+      "cancellationCondition" : [ ],
+      "completionCondition" : [ ],
+      "configuration" : {
+        "enableBadging" : true,
+        "serviceName" : "app.createPublicLink"
+      },
+      "continuationCondition" : [ ],
+      "description" : null,
+      "instanceParameters" : [ "route" ],
+      "pattern" : "Execute",
+      "uuid" : "8c399243-6acb-44ac-8443-e127b757843c"
+    },
+    "FindDriver" : {
+      "additionalBehaviors" : [ {
+        "behaviors" : [ {
+          "description" : null,
+          "name" : "TrackDriver",
+          "parameters" : [ {
+            "name" : "collaboration",
+            "type" : "reference",
+            "value" : "collaboration"
+          }, {
+            "multi" : true,
+            "name" : "users",
+            "type" : "mixed",
+            "value" : [ {
+              "type" : "expression",
+              "value" : "collaboration.results.FindDriver.result[0].driver"
+            } ]
+          }, {
+            "name" : "destination",
+            "type" : "GeoJSON",
+            "value" : null
+          }, {
+            "multi" : true,
+            "name" : "waypoints",
+            "type" : "mixed",
+            "value" : [ ]
+          } ],
+          "type" : "activity",
+          "uuid" : null
+        } ],
+        "condition" : "true",
+        "description" : null,
+        "name" : null,
+        "uuid" : "2dc1a917-d817-4261-baa3-6c48963d54bf"
+      } ],
+      "cancellationCondition" : [ ],
+      "completionCondition" : [ ],
+      "configuration" : {
+        "enableBadging" : true,
+        "serviceName" : "findDriverForShipping"
+      },
+      "continuationCondition" : [ ],
+      "description" : null,
+      "instanceParameters" : [ "route" ],
+      "pattern" : "Execute",
+      "uuid" : "ec9e01f3-8105-4262-8b9e-d7f32560bb12"
+    },
+    "Initiate" : {
+      "additionalBehaviors" : [ {
+        "behaviors" : [ {
+          "description" : null,
+          "name" : "CreateLinkforPublicPage",
+          "parameters" : [ {
+            "name" : "collaboration",
+            "type" : "reference",
+            "value" : "collaboration"
+          }, {
+            "multi" : true,
+            "name" : "parameters",
+            "type" : "mixed",
+            "value" : [ {
+              "type" : "expression",
+              "value" : "route"
+            } ]
+          } ],
+          "type" : "activity",
+          "uuid" : null
+        } ],
+        "condition" : "true",
+        "description" : null,
+        "name" : null,
+        "uuid" : "2ab9283b-ab55-4bce-9889-518359f6d2ad"
+      }, {
+        "behaviors" : [ {
+          "description" : null,
+          "name" : "FindDriver",
+          "parameters" : [ {
+            "name" : "collaboration",
+            "type" : "reference",
+            "value" : "collaboration"
+          }, {
+            "multi" : true,
+            "name" : "parameters",
+            "type" : "mixed",
+            "value" : [ {
+              "type" : "expression",
+              "value" : "route.vehicleId"
+            } ]
+          } ],
+          "type" : "activity",
+          "uuid" : null
+        } ],
+        "condition" : "true",
+        "description" : null,
+        "name" : null,
+        "uuid" : "cf715497-1031-4a67-a38c-9b05125ac5a5"
+      } ],
+      "cancellationCondition" : [ ],
+      "completionCondition" : [ ],
+      "configuration" : {
+        "enableBadging" : true,
+        "entityRole" : "route",
+        "initialTrigger" : "WHEN INSERT OCCURS ON ArsSituation AS situation WHERE situation.name == \"TrackDriverAndSendEmail\""
+      },
+      "continuationCondition" : [ ],
+      "description" : null,
+      "instanceParameters" : [ "route" ],
+      "pattern" : "InitiateCollaboration",
+      "uuid" : "98b71ea6-e35a-41b3-83c3-d10304fccf56"
+    },
+    "PublishToTopicPublishPage" : {
+      "additionalBehaviors" : [ ],
+      "cancellationCondition" : [ ],
+      "completionCondition" : [ ],
+      "configuration" : {
+        "enableBadging" : true
+      },
+      "continuationCondition" : [ ],
+      "description" : null,
+      "instanceParameters" : [ "route" ],
+      "pattern" : "Collaboration.PublishToTopic",
+      "uuid" : "7adcb51d-d2bf-4650-84a2-2e3d178b45b5"
+    },
+    "SendTrackingEmail" : {
+      "additionalBehaviors" : [ ],
+      "cancellationCondition" : [ ],
+      "completionCondition" : [ ],
+      "configuration" : {
+        "enableBadging" : true,
+        "serviceName" : "app.sendTrackingEmail"
+      },
+      "continuationCondition" : [ ],
+      "description" : null,
+      "instanceParameters" : [ "route" ],
+      "pattern" : "Execute",
+      "uuid" : "83583db6-95e7-499f-960c-798252fe37ff"
+    },
+    "TrackDriver" : {
+      "additionalBehaviors" : [ ],
+      "cancellationCondition" : [ ],
+      "completionCondition" : [ ],
+      "configuration" : {
+        "arrivalBehaviors" : [ ],
+        "desiredAccuracy" : 5,
+        "destinationRadius" : 200,
+        "distanceFilter" : 5,
+        "enableBadging" : true,
+        "firstArrivalBehaviors" : [ ],
+        "level" : "fine",
+        "pingInterval" : "10 minutes",
+        "updateBehaviors" : [ {
+          "behaviors" : [ {
+            "description" : null,
+            "name" : "PublishToTopicPublishPage",
+            "parameters" : [ {
+              "name" : "collaboration",
+              "type" : "reference",
+              "value" : "collaboration"
+            }, {
+              "name" : "topic",
+              "type" : "String",
+              "value" : "/deliveries/updatelocation"
+            }, {
+              "name" : "event",
+              "type" : "expression",
+              "value" : "event"
+            } ],
+            "type" : "activity",
+            "uuid" : null
+          } ],
+          "condition" : "true",
+          "description" : null,
+          "name" : "update",
+          "uuid" : "7267fa66-1ae1-4959-8dd3-0037d4b704d0"
+        }, {
+          "behaviors" : [ {
+            "description" : null,
+            "name" : "ViewTrackDriverInfo",
+            "parameters" : [ {
+              "name" : "collaboration",
+              "type" : "reference",
+              "value" : "collaboration"
+            }, {
+              "multi" : true,
+              "name" : "parameters",
+              "type" : "mixed",
+              "value" : [ {
+                "type" : "expression",
+                "value" : "event"
+              }, {
+                "type" : "expression",
+                "value" : "route.id"
+              } ]
+            } ],
+            "type" : "activity",
+            "uuid" : null
+          } ],
+          "condition" : "true",
+          "description" : null,
+          "name" : "update",
+          "uuid" : "530bb508-5ecc-472c-8b38-8f1c6deb7905"
+        } ],
+        "waypointArrivalBehaviors" : [ ],
+        "waypointDepartureBehaviors" : [ ]
+      },
+      "continuationCondition" : [ ],
+      "description" : null,
+      "instanceParameters" : [ "route" ],
+      "pattern" : "LocationTracking",
+      "uuid" : "7bce9da1-30ff-42ce-80c1-230c2ed445f7"
+    },
+    "ViewTrackDriverInfo" : {
+      "additionalBehaviors" : [ ],
+      "cancellationCondition" : [ ],
+      "completionCondition" : [ ],
+      "configuration" : {
+        "enableBadging" : true,
+        "serviceName" : "app.viewTrackDriverInfo"
+      },
+      "continuationCondition" : [ ],
+      "description" : null,
+      "instanceParameters" : [ "route" ],
+      "pattern" : "Execute",
+      "uuid" : "8a6cbd31-8a4e-4c54-bcb2-723f7b37cf57"
+    }
+  },
+  "collaboratorRoles" : [ ],
+  "currentState" : {
+    "code" : "success"
+  },
+  "description" : "",
+  "disableBadging" : false,
+  "entityRoles" : [ {
+    "name" : "route",
+    "type" : "routes"
+  } ],
+  "keyTypes" : [ "system.collaborations" ],
+  "name" : "TrackDriverAndSendEmail"
+}

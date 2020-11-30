@@ -1,0 +1,67 @@
+{
+  "active" : true,
+  "appType" : true,
+  "ars_properties" : {
+    "dataVersion" : 4,
+    "graph" : {
+      "lastZoomRequest" : 0,
+      "scale" : 1.7900501418559454,
+      "translate" : [ 587.9468713738506, 101.8533958572053 ]
+    },
+    "groupSettings" : {
+      "appGroupOpenHash" : {
+        "actions" : true,
+        "filters" : true,
+        "flowControl" : true
+      },
+      "ctGroupOpenHash" : {
+        "actions" : true,
+        "mobile" : true
+      },
+      "ctServiceOpen" : false,
+      "serviceGroupOpenHash" : { }
+    }
+  },
+  "assembly" : {
+    "NotifyDriver" : {
+      "configuration" : {
+        "collaboration" : "NotifyDriver",
+        "enableBadging" : true,
+        "entityConstraint" : "id == event.id",
+        "entityType" : "shipments",
+        "parentStreams" : [ "StartShipping" ]
+      },
+      "description" : null,
+      "name" : "NotifyDriver",
+      "pattern" : "StartCollaboration",
+      "uuid" : "8c83764f-a041-42f1-849d-edc494a1acc9"
+    },
+    "StartShipping" : {
+      "configuration" : {
+        "childStreams" : [ "NotifyDriver" ],
+        "enableBadging" : true,
+        "inboundResource" : "types",
+        "inboundResourceId" : "shipments",
+        "op" : null,
+        "outboundResource" : null,
+        "outboundResourceId" : null,
+        "parentStreams" : [ ],
+        "schema" : "shipments",
+        "upsert" : false
+      },
+      "description" : null,
+      "name" : "StartShipping",
+      "pattern" : "EventStream",
+      "uuid" : "b0ed4e60-0211-49c7-8c83-487df4fc3714"
+    }
+  },
+  "collaboratorRoles" : [ ],
+  "currentState" : {
+    "code" : "success"
+  },
+  "description" : "",
+  "disableBadging" : false,
+  "entityRoles" : [ ],
+  "keyTypes" : [ "system.collaborations" ],
+  "name" : "ShippingAssignment"
+}

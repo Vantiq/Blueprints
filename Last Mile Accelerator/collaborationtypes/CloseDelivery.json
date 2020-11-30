@@ -1,0 +1,123 @@
+{
+  "active" : true,
+  "appType" : true,
+  "ars_properties" : {
+    "dataVersion" : 4,
+    "graph" : {
+      "lastZoomRequest" : 0,
+      "scale" : 1.1494151045966134,
+      "translate" : [ 418.3260112348239, 39.08011355628486 ]
+    },
+    "groupSettings" : {
+      "appGroupOpenHash" : {
+        "actions" : true,
+        "filters" : true,
+        "flowControl" : true
+      },
+      "ctGroupOpenHash" : {
+        "actions" : true,
+        "mobile" : true
+      },
+      "ctServiceOpen" : false,
+      "serviceGroupOpenHash" : { }
+    }
+  },
+  "assembly" : {
+    "CloseDeliveryandUpdateNext" : {
+      "configuration" : {
+        "childStreams" : [ "UpdateDeliveryInfo" ],
+        "enableBadging" : true,
+        "inboundResource" : "topics",
+        "inboundResourceId" : "/deliveries/packageshipped",
+        "op" : null,
+        "outboundResource" : null,
+        "outboundResourceId" : null,
+        "parentStreams" : [ ],
+        "schema" : null,
+        "upsert" : false
+      },
+      "description" : null,
+      "name" : "CloseDeliveryandUpdateNext",
+      "pattern" : "EventStream",
+      "uuid" : "2e8ebda0-5800-42ca-8e25-d10a71064d45"
+    },
+    "CloseRoute" : {
+      "configuration" : {
+        "childStreams" : [ "NotifyDriverRouteComplete" ],
+        "condition" : "event.status == \"closed\"",
+        "enableBadging" : true,
+        "outboundResource" : null,
+        "outboundResourceId" : null,
+        "parentStreams" : [ "UpdateDeliveryInfo" ],
+        "upsert" : false
+      },
+      "description" : null,
+      "name" : "CloseRoute",
+      "pattern" : "Filter",
+      "uuid" : "ec333548-694f-4549-8948-85d292136792"
+    },
+    "NextShippingNotification" : {
+      "configuration" : {
+        "collaboration" : "NextShippingNotification",
+        "enableBadging" : true,
+        "entityConstraint" : "id==event.NotifyNextLeg.responses[0].response.routeid",
+        "entityType" : "routes",
+        "parentStreams" : [ "OpenRoute" ]
+      },
+      "description" : null,
+      "name" : "NextShippingNotification",
+      "pattern" : "StartCollaboration",
+      "uuid" : "7b2f75b9-707f-4843-85ee-36ff9bfdd2fd"
+    },
+    "NotifyDriverRouteComplete" : {
+      "configuration" : {
+        "collaboration" : "NotifyDriverRouteComplete",
+        "enableBadging" : true,
+        "entityConstraint" : null,
+        "entityType" : null,
+        "parentStreams" : [ "CloseRoute" ]
+      },
+      "description" : null,
+      "name" : "NotifyDriverRouteComplete",
+      "pattern" : "StartCollaboration",
+      "uuid" : "e3c6eb2e-6729-4462-9879-a61f5c068dff"
+    },
+    "OpenRoute" : {
+      "configuration" : {
+        "childStreams" : [ "NextShippingNotification" ],
+        "condition" : "event.status != \"closed\"",
+        "enableBadging" : true,
+        "outboundResource" : null,
+        "outboundResourceId" : null,
+        "parentStreams" : [ "UpdateDeliveryInfo" ],
+        "upsert" : false
+      },
+      "description" : null,
+      "name" : "OpenRoute",
+      "pattern" : "Filter",
+      "uuid" : "f49590d4-c2b2-47a6-8f50-cabf53de2a55"
+    },
+    "UpdateDeliveryInfo" : {
+      "configuration" : {
+        "childStreams" : [ "CloseRoute", "OpenRoute" ],
+        "enableBadging" : true,
+        "parentStreams" : [ "CloseDeliveryandUpdateNext" ],
+        "procedure" : "app.updateDeliveryInfo",
+        "schema" : null
+      },
+      "description" : null,
+      "name" : "UpdateDeliveryInfo",
+      "pattern" : "Procedure",
+      "uuid" : "d88f7a3a-5065-4478-8186-d00fe63e0292"
+    }
+  },
+  "collaboratorRoles" : [ ],
+  "currentState" : {
+    "code" : "success"
+  },
+  "description" : "",
+  "disableBadging" : false,
+  "entityRoles" : [ ],
+  "keyTypes" : [ "system.collaborations" ],
+  "name" : "CloseDelivery"
+}

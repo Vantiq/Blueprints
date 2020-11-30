@@ -1,0 +1,121 @@
+{
+  "active" : true,
+  "appType" : true,
+  "ars_properties" : {
+    "dataVersion" : 4,
+    "graph" : {
+      "lastZoomRequest" : 0,
+      "scale" : 1.1477996709828369,
+      "translate" : [ 423.0535951052164, 39.5691921188687 ]
+    },
+    "groupSettings" : {
+      "appGroupOpenHash" : {
+        "actions" : true,
+        "filters" : true,
+        "flowControl" : true
+      },
+      "ctGroupOpenHash" : {
+        "actions" : true,
+        "mobile" : true
+      },
+      "ctServiceOpen" : false,
+      "serviceGroupOpenHash" : { }
+    }
+  },
+  "assembly" : {
+    "AddNewPackageToRoute" : {
+      "configuration" : {
+        "childStreams" : [ "addId" ],
+        "enableBadging" : true,
+        "inboundResource" : "topics",
+        "inboundResourceId" : "/deliveries/orderinroute",
+        "op" : null,
+        "outboundResource" : null,
+        "outboundResourceId" : null,
+        "parentStreams" : [ ],
+        "schema" : "temporder",
+        "upsert" : false
+      },
+      "description" : null,
+      "name" : "AddNewPackageToRoute",
+      "pattern" : "EventStream",
+      "uuid" : "c00cde15-e7ef-4836-80fd-02562fee620a"
+    },
+    "NotifyDriverNewPackage" : {
+      "configuration" : {
+        "collaboration" : "NotifyDriverNewPackage",
+        "enableBadging" : true,
+        "entityConstraint" : "id == event.id",
+        "entityType" : "temporder",
+        "parentStreams" : [ "SaveToTempOrder" ]
+      },
+      "description" : null,
+      "name" : "NotifyDriverNewPackage",
+      "pattern" : "StartCollaboration",
+      "uuid" : "90b22917-ddf1-4d96-8ee9-b587350f26fd"
+    },
+    "SaveToTempOrder" : {
+      "configuration" : {
+        "childStreams" : [ "NotifyDriverNewPackage" ],
+        "enableBadging" : true,
+        "parentStreams" : [ "addId" ],
+        "type" : "temporder",
+        "upsert" : false
+      },
+      "description" : null,
+      "name" : "SaveToTempOrder",
+      "pattern" : "SaveToType",
+      "uuid" : "7d621fdc-0725-495b-aa49-f6784347eecf"
+    },
+    "addId" : {
+      "configuration" : {
+        "childStreams" : [ "SaveToTempOrder" ],
+        "enableBadging" : true,
+        "outboundResource" : null,
+        "outboundResourceId" : null,
+        "parentStreams" : [ "AddNewPackageToRoute" ],
+        "schema" : null,
+        "transformation" : {
+          "currentlocation" : {
+            "expression" : "event.currentlocation",
+            "type" : "expression"
+          },
+          "description" : {
+            "expression" : "event.description",
+            "type" : "expression"
+          },
+          "destination" : {
+            "expression" : "event.destination",
+            "type" : "expression"
+          },
+          "destinationGEO" : {
+            "expression" : "event.destinationGEO",
+            "type" : "expression"
+          },
+          "id" : {
+            "expression" : "event.id",
+            "type" : "expression"
+          },
+          "origin" : {
+            "expression" : "event.origin",
+            "type" : "expression"
+          }
+        },
+        "upsert" : false
+      },
+      "description" : null,
+      "name" : "addId",
+      "pattern" : "Transformation",
+      "uuid" : "4b51c6c9-62ca-4163-b1fd-8e567ba616b7"
+    }
+  },
+  "collaboratorRoles" : [ ],
+  "currentState" : {
+    "code" : "success"
+  },
+  "description" : "",
+  "disableBadging" : false,
+  "entityRoles" : [ ],
+  "keyTypes" : [ "system.collaborations" ],
+  "name" : "AddNewPackage"
+}

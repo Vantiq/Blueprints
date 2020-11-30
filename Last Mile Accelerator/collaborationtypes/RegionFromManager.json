@@ -1,0 +1,56 @@
+{
+  "active" : true,
+  "appType" : true,
+  "assembly" : {
+    "AssignRegion" : {
+      "configuration" : {
+        "childStreams" : [ "NotifyCustomer" ],
+        "enableBadging" : true,
+        "parentStreams" : [ "AssignedRegionFromManager" ],
+        "procedure" : "app.assign_ZonePackage_2",
+        "schema" : null
+      },
+      "description" : null,
+      "name" : "AssignRegion",
+      "pattern" : "Procedure"
+    },
+    "AssignedRegionFromManager" : {
+      "configuration" : {
+        "childStreams" : [ "AssignRegion" ],
+        "enableBadging" : true,
+        "inboundResource" : "topics",
+        "inboundResourceId" : "/vantiq/systemmodel/NotifyManager/submitTopic",
+        "op" : null,
+        "outboundResource" : null,
+        "outboundResourceId" : null,
+        "parentStreams" : [ ],
+        "schema" : null,
+        "upsert" : false
+      },
+      "description" : null,
+      "name" : "AssignedRegionFromManager",
+      "pattern" : "EventStream"
+    },
+    "NotifyCustomer" : {
+      "configuration" : {
+        "collaboration" : "NotifyCustomer",
+        "enableBadging" : true,
+        "entityConstraint" : "id==event.id",
+        "entityType" : "package",
+        "parentStreams" : [ "AssignRegion" ]
+      },
+      "description" : null,
+      "name" : "NotifyCustomer",
+      "pattern" : "StartCollaboration"
+    }
+  },
+  "collaboratorRoles" : [ ],
+  "currentState" : {
+    "code" : "success"
+  },
+  "description" : "",
+  "disableBadging" : false,
+  "entityRoles" : [ ],
+  "keyTypes" : [ "system.collaborations" ],
+  "name" : "RegionFromManager"
+}

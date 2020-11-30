@@ -1,0 +1,182 @@
+{
+  "active" : true,
+  "appType" : false,
+  "ars_properties" : {
+    "dataVersion" : 4,
+    "graph" : {
+      "lastZoomRequest" : 0,
+      "scale" : 0.7777633697803784,
+      "translate" : [ 470.3334010353492, 26.96196389749742 ]
+    },
+    "groupSettings" : {
+      "appGroupOpenHash" : {
+        "actions" : true,
+        "filters" : true,
+        "flowControl" : true
+      },
+      "ctGroupOpenHash" : {
+        "actions" : true,
+        "mobile" : true
+      },
+      "ctServiceOpen" : false,
+      "serviceGroupOpenHash" : { }
+    },
+    "paletteWidth" : 170
+  },
+  "assembly" : {
+    "FindManager" : {
+      "additionalBehaviors" : [ {
+        "behaviors" : [ {
+          "description" : null,
+          "name" : "NotifyManager",
+          "parameters" : [ {
+            "name" : "collaboration",
+            "type" : "reference",
+            "value" : "collaboration"
+          }, {
+            "name" : "users",
+            "type" : "expression",
+            "value" : "collaboration.results.FindManager.result.id"
+          } ],
+          "type" : "activity",
+          "uuid" : null
+        } ],
+        "condition" : null,
+        "description" : null,
+        "name" : null,
+        "uuid" : "0f702b2a-4425-4073-853f-26631ab4eefe"
+      } ],
+      "cancellationCondition" : [ ],
+      "completionCondition" : [ ],
+      "configuration" : {
+        "enableBadging" : true,
+        "serviceName" : "app.findManager"
+      },
+      "continuationCondition" : [ ],
+      "description" : null,
+      "instanceParameters" : [ "manager", "package" ],
+      "name" : "FindManager",
+      "pattern" : "Execute",
+      "uuid" : "c0fa18c7-05f0-499d-8583-2e3f2c01d846"
+    },
+    "Initiate" : {
+      "additionalBehaviors" : [ {
+        "behaviors" : [ {
+          "description" : null,
+          "name" : "FindManager",
+          "parameters" : [ {
+            "name" : "collaboration",
+            "type" : "reference",
+            "value" : "collaboration"
+          }, {
+            "multi" : true,
+            "name" : "parameters",
+            "type" : "mixed",
+            "value" : null
+          } ],
+          "type" : "activity",
+          "uuid" : null
+        } ],
+        "condition" : "true",
+        "description" : null,
+        "name" : null,
+        "uuid" : "06def03a-1454-4b69-ab5b-6eb042574deb"
+      } ],
+      "cancellationCondition" : [ ],
+      "completionCondition" : [ ],
+      "configuration" : {
+        "enableBadging" : true,
+        "entityRole" : "package",
+        "initialTrigger" : "WHEN INSERT OCCURS ON ArsSituation AS situation WHERE situation.name == \"NotifyManager\""
+      },
+      "continuationCondition" : [ ],
+      "description" : null,
+      "instanceParameters" : [ "manager", "package" ],
+      "name" : "Initiate",
+      "pattern" : "InitiateCollaboration",
+      "uuid" : "3e423c62-4b08-41a1-aa57-2ba91ad9f153"
+    },
+    "NotifyManager" : {
+      "additionalBehaviors" : [ ],
+      "cancellationCondition" : [ ],
+      "completionCondition" : [ ],
+      "configuration" : {
+        "body" : "There is no regions for this shipping address, please assign a Region for this Package.",
+        "clientName" : "NotifyManager",
+        "enableBadging" : true,
+        "firstResponseBehaviors" : [ {
+          "behaviors" : [ {
+            "description" : null,
+            "name" : "Publish",
+            "parameters" : [ {
+              "name" : "collaboration",
+              "type" : "reference",
+              "value" : "collaboration"
+            }, {
+              "name" : "topic",
+              "type" : "String",
+              "value" : "/vantiq/systemmodel/NotifyManager/submitTopic"
+            }, {
+              "name" : "event",
+              "type" : "expression",
+              "value" : "collaboration.results"
+            } ],
+            "type" : "activity",
+            "uuid" : null
+          } ],
+          "condition" : "true",
+          "description" : null,
+          "name" : "firstResponse",
+          "uuid" : "dd9518e0-ba67-4b37-8d45-d670feb88106"
+        }, {
+          "behaviors" : [ {
+            "description" : null,
+            "name" : "CollaborationUtils.closeCollaboration",
+            "parameters" : [ ],
+            "type" : "service",
+            "uuid" : "bb30e453-3321-4309-8305-8c03b805cda0"
+          } ],
+          "condition" : "true",
+          "description" : null,
+          "name" : "firstResponse",
+          "uuid" : "cc5aa641-dc18-4065-8014-d9a2a5c02e73"
+        } ],
+        "pushSourceName" : null,
+        "responseBehaviors" : [ ],
+        "title" : "The Package ${package.name} from customer  ${package.customerName} is not in delivery Region"
+      },
+      "continuationCondition" : [ ],
+      "description" : null,
+      "instanceParameters" : [ "manager", "package" ],
+      "name" : "NotifyManager",
+      "pattern" : "Notification",
+      "uuid" : "df927ade-92a2-4908-8e8b-4f6ca14b13b1"
+    },
+    "Publish" : {
+      "additionalBehaviors" : [ ],
+      "cancellationCondition" : [ ],
+      "completionCondition" : [ ],
+      "configuration" : {
+        "enableBadging" : true
+      },
+      "continuationCondition" : [ ],
+      "description" : null,
+      "instanceParameters" : [ "manager", "package" ],
+      "name" : "Publish",
+      "pattern" : "Collaboration.PublishToTopic",
+      "uuid" : "855a3136-6fd3-42bd-8dd5-488683bf9f49"
+    }
+  },
+  "collaboratorRoles" : [ "manager" ],
+  "currentState" : {
+    "code" : "success"
+  },
+  "description" : "",
+  "disableBadging" : false,
+  "entityRoles" : [ {
+    "name" : "package",
+    "type" : "package"
+  } ],
+  "keyTypes" : [ "system.collaborations" ],
+  "name" : "NotifyManager"
+}

@@ -1,0 +1,138 @@
+{
+  "active" : true,
+  "appType" : true,
+  "ars_properties" : {
+    "dataVersion" : 4,
+    "graph" : {
+      "lastZoomRequest" : 0,
+      "scale" : 0.9364522161346412,
+      "translate" : [ 459.5985531970736, 39.57973819756569 ]
+    },
+    "groupSettings" : {
+      "appGroupOpenHash" : {
+        "actions" : true,
+        "filters" : true,
+        "flowControl" : true
+      },
+      "ctGroupOpenHash" : {
+        "actions" : true,
+        "mobile" : true
+      },
+      "ctServiceOpen" : false,
+      "serviceGroupOpenHash" : { }
+    },
+    "paletteWidth" : 170
+  },
+  "assembly" : {
+    "AddRegionToPackage" : {
+      "configuration" : {
+        "childStreams" : [ "SplitByRegion" ],
+        "enableBadging" : true,
+        "parentStreams" : [ "AssignRegion" ],
+        "procedure" : "app.assign_ZonePackage",
+        "schema" : "package"
+      },
+      "description" : null,
+      "name" : "AddRegionToPackage",
+      "pattern" : "Procedure",
+      "uuid" : "36aead34-d1d2-4f2d-aa97-6e016671b15b"
+    },
+    "AssignRegion" : {
+      "configuration" : {
+        "childStreams" : [ "AddRegionToPackage" ],
+        "enableBadging" : true,
+        "inboundResource" : "types",
+        "inboundResourceId" : "package",
+        "op" : "INSERT",
+        "outboundResource" : null,
+        "outboundResourceId" : null,
+        "parentStreams" : [ ],
+        "schema" : "package",
+        "upsert" : false
+      },
+      "description" : null,
+      "name" : "AssignRegion",
+      "pattern" : "EventStream",
+      "uuid" : "5594452d-2c96-4044-963a-f78363ae99f0"
+    },
+    "NotInRegion" : {
+      "configuration" : {
+        "childStreams" : [ "NotifyManager" ],
+        "condition" : "event.region == \"not found\"",
+        "enableBadging" : true,
+        "outboundResource" : null,
+        "outboundResourceId" : null,
+        "parentStreams" : [ "SplitByRegion" ],
+        "upsert" : false
+      },
+      "description" : null,
+      "name" : "NotInRegion",
+      "pattern" : "Filter",
+      "uuid" : "6805c190-77bf-427b-83e1-104b1276f598"
+    },
+    "NotifyCustomer" : {
+      "configuration" : {
+        "collaboration" : "NotifyCustomer",
+        "enableBadging" : true,
+        "entityConstraint" : "id == event.id",
+        "entityType" : "package",
+        "parentStreams" : [ "OnlyAssignedPackages" ]
+      },
+      "description" : null,
+      "name" : "NotifyCustomer",
+      "pattern" : "StartCollaboration",
+      "uuid" : "640310ee-e380-4633-9adb-697b80be44a4"
+    },
+    "NotifyManager" : {
+      "configuration" : {
+        "collaboration" : "NotifyManager",
+        "enableBadging" : true,
+        "entityConstraint" : "id == event.id",
+        "entityType" : "package",
+        "parentStreams" : [ "NotInRegion" ]
+      },
+      "description" : null,
+      "name" : "NotifyManager",
+      "pattern" : "StartCollaboration",
+      "uuid" : "d9a4da19-fc91-4351-9074-ca2e48c79afe"
+    },
+    "OnlyAssignedPackages" : {
+      "configuration" : {
+        "childStreams" : [ "NotifyCustomer" ],
+        "condition" : "event.region != \"not found\"",
+        "enableBadging" : true,
+        "outboundResource" : null,
+        "outboundResourceId" : null,
+        "parentStreams" : [ "SplitByRegion" ],
+        "upsert" : false
+      },
+      "description" : null,
+      "name" : "OnlyAssignedPackages",
+      "pattern" : "Filter",
+      "uuid" : "94a8b02a-c90d-410a-9479-50607549ea7b"
+    },
+    "SplitByRegion" : {
+      "configuration" : {
+        "childStreams" : [ "NotInRegion", "OnlyAssignedPackages" ],
+        "enableBadging" : true,
+        "groupBy" : "event.region",
+        "groupByWindow" : null,
+        "maxOpenGroups" : null,
+        "parentStreams" : [ "AddRegionToPackage" ]
+      },
+      "description" : null,
+      "name" : "SplitByRegion",
+      "pattern" : "SplitByGroup",
+      "uuid" : "0fedaa1a-a5ce-4b92-b4a7-332af716f8ea"
+    }
+  },
+  "collaboratorRoles" : [ ],
+  "currentState" : {
+    "code" : "success"
+  },
+  "description" : "",
+  "disableBadging" : false,
+  "entityRoles" : [ ],
+  "keyTypes" : [ "system.collaborations" ],
+  "name" : "AssignRegion"
+}

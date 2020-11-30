@@ -1,0 +1,195 @@
+{
+  "active" : true,
+  "appType" : false,
+  "ars_properties" : {
+    "dataVersion" : 4,
+    "graph" : {
+      "lastZoomRequest" : 0,
+      "scale" : 0.6677193351813514,
+      "translate" : [ 423, 22.702457396165954 ]
+    },
+    "groupSettings" : {
+      "appGroupOpenHash" : {
+        "actions" : true,
+        "filters" : true,
+        "flowControl" : true
+      },
+      "ctGroupOpenHash" : {
+        "flowControl" : true,
+        "mobile" : true,
+        "nlp" : true
+      },
+      "ctServiceOpen" : true,
+      "serviceGroupOpenHash" : { }
+    },
+    "paletteWidth" : 170
+  },
+  "assembly" : {
+    "FindDriver" : {
+      "additionalBehaviors" : [ {
+        "behaviors" : [ {
+          "description" : null,
+          "name" : "NotifyDriver",
+          "parameters" : [ {
+            "name" : "collaboration",
+            "type" : "reference",
+            "value" : "collaboration"
+          }, {
+            "multi" : true,
+            "name" : "users",
+            "type" : "mixed",
+            "value" : [ {
+              "type" : "expression",
+              "value" : "collaboration.results.FindDriver.result[0].driver"
+            } ]
+          } ],
+          "type" : "activity",
+          "uuid" : null
+        } ],
+        "condition" : "true",
+        "description" : null,
+        "name" : null,
+        "uuid" : "bf54a6e0-26e0-4f3f-8732-dc3c3d2f7830"
+      } ],
+      "cancellationCondition" : [ ],
+      "completionCondition" : [ ],
+      "configuration" : {
+        "enableBadging" : true,
+        "serviceName" : "findDriverForShipping"
+      },
+      "continuationCondition" : [ ],
+      "description" : null,
+      "instanceParameters" : [ "driver", "shipment" ],
+      "name" : "FindDriver",
+      "pattern" : "Execute",
+      "uuid" : "186a037b-1737-420b-9469-9a814da2a16e"
+    },
+    "Initiate" : {
+      "additionalBehaviors" : [ {
+        "behaviors" : [ {
+          "description" : null,
+          "name" : "FindDriver",
+          "parameters" : [ {
+            "name" : "collaboration",
+            "type" : "reference",
+            "value" : "collaboration"
+          }, {
+            "multi" : true,
+            "name" : "parameters",
+            "type" : "mixed",
+            "value" : [ {
+              "type" : "expression",
+              "value" : "shipment.vehicleid"
+            } ]
+          } ],
+          "type" : "activity",
+          "uuid" : null
+        } ],
+        "condition" : "true",
+        "description" : null,
+        "name" : null,
+        "uuid" : "dd321955-9dc7-4083-a229-338ab2d79e0c"
+      } ],
+      "cancellationCondition" : [ ],
+      "completionCondition" : [ ],
+      "configuration" : {
+        "enableBadging" : true,
+        "entityRole" : "shipment",
+        "initialTrigger" : "WHEN INSERT OCCURS ON ArsSituation AS situation WHERE situation.name == \"NotifyDriver\""
+      },
+      "continuationCondition" : [ ],
+      "description" : null,
+      "instanceParameters" : [ "driver", "shipment" ],
+      "name" : "Initiate",
+      "pattern" : "InitiateCollaboration",
+      "uuid" : "f2e30cb6-79d2-4ae8-b78e-8243a30bcecb"
+    },
+    "NotifyCust" : {
+      "additionalBehaviors" : [ {
+        "behaviors" : [ {
+          "description" : null,
+          "name" : "CollaborationUtils.closeCollaboration",
+          "parameters" : [ {
+            "name" : "collaborationId",
+            "type" : "expression",
+            "value" : "collaboration.id"
+          } ],
+          "type" : "service",
+          "uuid" : "2815e24e-5853-4452-b120-9bea49182b1b"
+        } ],
+        "condition" : "true",
+        "description" : null,
+        "name" : null,
+        "uuid" : "8721a2c8-b0b6-42e1-9188-417136e9bc8c"
+      } ],
+      "cancellationCondition" : [ ],
+      "completionCondition" : [ ],
+      "configuration" : {
+        "enableBadging" : true,
+        "serviceName" : "app.sendEmailClientShipment"
+      },
+      "continuationCondition" : [ ],
+      "description" : null,
+      "instanceParameters" : [ "driver", "shipment" ],
+      "name" : "NotifyCust",
+      "pattern" : "Execute",
+      "uuid" : "5e2bce37-2bb8-4c17-97dd-570eb1a05b35"
+    },
+    "NotifyDriver" : {
+      "additionalBehaviors" : [ ],
+      "cancellationCondition" : [ ],
+      "completionCondition" : [ ],
+      "configuration" : {
+        "body" : "There is a new Shipping for you.",
+        "clientName" : "ShippingNotification",
+        "enableBadging" : true,
+        "firstResponseBehaviors" : [ ],
+        "pushSourceName" : "VantiqPushNotification",
+        "responseBehaviors" : [ {
+          "behaviors" : [ {
+            "description" : null,
+            "name" : "NotifyCust",
+            "parameters" : [ {
+              "name" : "collaboration",
+              "type" : "reference",
+              "value" : "collaboration"
+            }, {
+              "multi" : true,
+              "name" : "parameters",
+              "type" : "mixed",
+              "value" : [ {
+                "type" : "expression",
+                "value" : "shipment"
+              } ]
+            } ],
+            "type" : "activity",
+            "uuid" : null
+          } ],
+          "condition" : "true",
+          "description" : null,
+          "name" : "response",
+          "uuid" : "8a93ddab-743f-4acb-88bb-07f5e847ec49"
+        } ],
+        "title" : "The Package"
+      },
+      "continuationCondition" : [ ],
+      "description" : null,
+      "instanceParameters" : [ "driver", "shipment" ],
+      "name" : "NotifyDriver",
+      "pattern" : "Notification",
+      "uuid" : "29d8e645-3619-4303-855a-413803029185"
+    }
+  },
+  "collaboratorRoles" : [ "driver" ],
+  "currentState" : {
+    "code" : "success"
+  },
+  "description" : "",
+  "disableBadging" : false,
+  "entityRoles" : [ {
+    "name" : "shipment",
+    "type" : "shipments"
+  } ],
+  "keyTypes" : [ "system.collaborations" ],
+  "name" : "NotifyDriver"
+}

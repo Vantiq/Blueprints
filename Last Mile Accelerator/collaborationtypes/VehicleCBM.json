@@ -1,0 +1,164 @@
+{
+  "active" : true,
+  "appType" : true,
+  "ars_properties" : {
+    "dataVersion" : 4,
+    "graph" : {
+      "lastZoomRequest" : 0,
+      "scale" : 1.8834708017156054,
+      "translate" : [ 468.37901682613, 80.4300890795117 ]
+    },
+    "groupSettings" : {
+      "appGroupOpenHash" : {
+        "actions" : true,
+        "filters" : true,
+        "flowControl" : true
+      },
+      "ctGroupOpenHash" : {
+        "actions" : true,
+        "mobile" : true
+      },
+      "ctServiceOpen" : false,
+      "serviceGroupOpenHash" : { }
+    }
+  },
+  "assembly" : {
+    "CBM" : {
+      "configuration" : {
+        "childStreams" : [ "SaveCBM" ],
+        "enableBadging" : true,
+        "outboundResource" : null,
+        "outboundResourceId" : null,
+        "parentStreams" : [ "CalculateCBM" ],
+        "schema" : "vehicle",
+        "transformation" : {
+          "address" : {
+            "expression" : "event.address",
+            "type" : "expression"
+          },
+          "cargodimentions" : {
+            "expression" : "event.cargodimentions",
+            "type" : "expression"
+          },
+          "cargoload" : {
+            "expression" : "event.cargoload",
+            "type" : "expression"
+          },
+          "cbm" : {
+            "expression" : "(event.cargodimentions.lenght * event.cargodimentions.width * event.cargodimentions.height) / 1000000",
+            "type" : "expression"
+          },
+          "currentfuelload" : {
+            "expression" : "event.currentfuelload",
+            "type" : "expression"
+          },
+          "currentlocation" : {
+            "expression" : "event.currentlocation",
+            "type" : "expression"
+          },
+          "driver" : {
+            "expression" : "event.driver",
+            "type" : "expression"
+          },
+          "enroute" : {
+            "expression" : "event.enroute",
+            "type" : "expression"
+          },
+          "fuelcapacity" : {
+            "expression" : "event.fuelcapacity",
+            "type" : "expression"
+          },
+          "gmapsroute" : {
+            "expression" : "event.gmapsroute",
+            "type" : "expression"
+          },
+          "id" : {
+            "expression" : "event.id",
+            "type" : "expression"
+          },
+          "name" : {
+            "expression" : "event.name",
+            "type" : "expression"
+          },
+          "organizationid" : {
+            "expression" : "event.organizationid",
+            "type" : "expression"
+          },
+          "plate" : {
+            "expression" : "event.plate",
+            "type" : "expression"
+          },
+          "regionName" : {
+            "expression" : "event.regionName",
+            "type" : "expression"
+          },
+          "route" : {
+            "expression" : "event.route",
+            "type" : "expression"
+          },
+          "startlocation" : {
+            "expression" : "event.startlocation",
+            "type" : "expression"
+          },
+          "targetlocation" : {
+            "expression" : "event.targetlocation",
+            "type" : "expression"
+          },
+          "vehicletype" : {
+            "expression" : "event.vehicletype",
+            "type" : "expression"
+          },
+          "weightcapacity" : {
+            "expression" : "event.weightcapacity",
+            "type" : "expression"
+          }
+        },
+        "upsert" : false
+      },
+      "description" : null,
+      "name" : "CBM",
+      "pattern" : "Transformation",
+      "uuid" : "d62b26d6-ac90-4596-9551-668ed3f700fe"
+    },
+    "CalculateCBM" : {
+      "configuration" : {
+        "childStreams" : [ "CBM" ],
+        "enableBadging" : true,
+        "inboundResource" : "types",
+        "inboundResourceId" : "vehicle",
+        "op" : "INSERT",
+        "outboundResource" : null,
+        "outboundResourceId" : null,
+        "parentStreams" : [ ],
+        "schema" : "vehicle",
+        "upsert" : false
+      },
+      "description" : null,
+      "name" : "CalculateCBM",
+      "pattern" : "EventStream",
+      "uuid" : "8d258fcd-5f70-4994-b3bc-77da58dc0add"
+    },
+    "SaveCBM" : {
+      "configuration" : {
+        "childStreams" : null,
+        "enableBadging" : true,
+        "parentStreams" : [ "CBM" ],
+        "type" : "vehicle",
+        "upsert" : true
+      },
+      "description" : null,
+      "name" : "SaveCBM",
+      "pattern" : "SaveToType",
+      "uuid" : "6d6bc4aa-5301-4365-a93e-80804902138b"
+    }
+  },
+  "collaboratorRoles" : [ ],
+  "currentState" : {
+    "code" : "success"
+  },
+  "description" : "",
+  "disableBadging" : false,
+  "entityRoles" : [ ],
+  "keyTypes" : [ "system.collaborations" ],
+  "name" : "VehicleCBM"
+}

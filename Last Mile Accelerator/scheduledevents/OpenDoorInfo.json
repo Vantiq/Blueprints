@@ -1,0 +1,12 @@
+{
+  "active" : true,
+  "interval" : 15000,
+  "message" : {
+    "id" : "123456",
+    "opendoor" : false
+  },
+  "name" : "OpenDoorInfo",
+  "occursAt" : "2020-11-25T18:46:30Z",
+  "periodic" : true,
+  "topic" : "/deliveries/sensors/opendoorsensors"
+}

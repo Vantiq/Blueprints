@@ -1,0 +1,5 @@
+{
+  "description" : "issues from sensors",
+  "isReliable" : false,
+  "name" : "/deliveries/sensors/issues"
+}

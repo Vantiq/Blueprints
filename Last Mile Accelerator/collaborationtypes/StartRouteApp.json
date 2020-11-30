@@ -1,0 +1,217 @@
+{
+  "active" : true,
+  "appType" : true,
+  "ars_properties" : {
+    "dataVersion" : 4,
+    "graph" : {
+      "lastZoomRequest" : 0,
+      "scale" : 0.8043764903913593,
+      "translate" : [ 453.16178987235236, 34.55048393884135 ]
+    },
+    "groupSettings" : {
+      "appGroupOpenHash" : {
+        "actions" : true,
+        "filters" : true,
+        "flowControl" : true
+      },
+      "ctGroupOpenHash" : {
+        "actions" : true,
+        "mobile" : true
+      },
+      "ctServiceOpen" : false,
+      "serviceGroupOpenHash" : { }
+    }
+  },
+  "assembly" : {
+    "AddProductInfo" : {
+      "configuration" : {
+        "childStreams" : [ "TrackDriverandSendEmailShipment" ],
+        "enableBadging" : true,
+        "parentStreams" : [ "SetVehicle" ],
+        "procedure" : "app.getShipmentFromEventRoute",
+        "schema" : null
+      },
+      "description" : null,
+      "name" : "AddProductInfo",
+      "pattern" : "Procedure",
+      "uuid" : "296dd199-51f9-4d85-8952-f73cbd1490ef"
+    },
+    "AddVehicleInfo" : {
+      "configuration" : {
+        "associatedType" : "vehicle",
+        "childStreams" : [ "SetVehicle" ],
+        "enableBadging" : true,
+        "foreignKeys" : [ {
+          "type" : "Property",
+          "value" : "driver"
+        } ],
+        "outboundResource" : null,
+        "outboundResourceId" : null,
+        "parentStreams" : [ "PrepareDataFromScreen" ],
+        "upsert" : false
+      },
+      "description" : null,
+      "name" : "AddVehicleInfo",
+      "pattern" : "Enrich",
+      "uuid" : "4456b43d-f620-4194-a57b-e42d85435a6c"
+    },
+    "NotifyDriverNextAddress" : {
+      "configuration" : {
+        "collaboration" : "NotifyDriverNextAddress",
+        "enableBadging" : true,
+        "entityConstraint" : "vehicleId == event.vehicleId",
+        "entityType" : "routes",
+        "parentStreams" : [ "SetVehicle" ]
+      },
+      "description" : null,
+      "name" : "NotifyDriverNextAddress",
+      "pattern" : "StartCollaboration",
+      "uuid" : "0265dd7e-0f20-47a4-8587-192c33413ca4"
+    },
+    "PrepareDataForVehicle" : {
+      "configuration" : {
+        "childStreams" : [ "SaveStatus" ],
+        "enableBadging" : true,
+        "outboundResource" : null,
+        "outboundResourceId" : null,
+        "parentStreams" : [ "SetVehicle" ],
+        "schema" : null,
+        "transformation" : {
+          "enroute" : {
+            "expression" : "true",
+            "type" : "expression"
+          },
+          "id" : {
+            "expression" : "event.vehicleId",
+            "type" : "expression"
+          }
+        },
+        "upsert" : false
+      },
+      "description" : null,
+      "name" : "PrepareDataForVehicle",
+      "pattern" : "Transformation",
+      "uuid" : "b2d3fd04-169b-4046-81cd-37defe4a3533"
+    },
+    "PrepareDataFromScreen" : {
+      "configuration" : {
+        "childStreams" : [ "AddVehicleInfo" ],
+        "enableBadging" : true,
+        "outboundResource" : null,
+        "outboundResourceId" : null,
+        "parentStreams" : [ "StartRoute" ],
+        "schema" : null,
+        "transformation" : {
+          "driver" : {
+            "expression" : "event.username",
+            "type" : "expression"
+          }
+        },
+        "upsert" : false
+      },
+      "description" : null,
+      "name" : "PrepareDataFromScreen",
+      "pattern" : "Transformation",
+      "uuid" : "3e3aa7fd-7524-46da-8d10-a457f6529923"
+    },
+    "SaveStatus" : {
+      "configuration" : {
+        "childStreams" : null,
+        "enableBadging" : true,
+        "parentStreams" : [ "PrepareDataForVehicle" ],
+        "type" : "vehicle",
+        "upsert" : true
+      },
+      "description" : null,
+      "name" : "SaveStatus",
+      "pattern" : "SaveToType",
+      "uuid" : "f22ddd74-3cdf-4fbb-896e-22b36561038c"
+    },
+    "SetVehicle" : {
+      "configuration" : {
+        "childStreams" : [ "NotifyDriverNextAddress", "TrackDriverAndSendEmail", "AddProductInfo", "PrepareDataForVehicle" ],
+        "enableBadging" : true,
+        "outboundResource" : null,
+        "outboundResourceId" : null,
+        "parentStreams" : [ "AddVehicleInfo" ],
+        "schema" : null,
+        "transformation" : {
+          "driver" : {
+            "expression" : "event.driver",
+            "type" : "expression"
+          },
+          "enroute" : {
+            "expression" : "true",
+            "type" : "expression"
+          },
+          "id" : {
+            "expression" : "event.vehicle.id",
+            "type" : "expression"
+          },
+          "vehicleId" : {
+            "expression" : "event.vehicle.id",
+            "type" : "expression"
+          }
+        },
+        "upsert" : false
+      },
+      "description" : null,
+      "name" : "SetVehicle",
+      "pattern" : "Transformation",
+      "uuid" : "099fa840-1740-4bec-bd7d-ea7b4e894389"
+    },
+    "StartRoute" : {
+      "configuration" : {
+        "childStreams" : [ "PrepareDataFromScreen" ],
+        "enableBadging" : true,
+        "inboundResource" : "topics",
+        "inboundResourceId" : "/deliveries/startroute",
+        "op" : null,
+        "outboundResource" : null,
+        "outboundResourceId" : null,
+        "parentStreams" : [ ],
+        "schema" : null,
+        "upsert" : false
+      },
+      "description" : null,
+      "name" : "StartRoute",
+      "pattern" : "EventStream",
+      "uuid" : "95148d1c-19c6-4623-930a-d557b7e240e0"
+    },
+    "TrackDriverAndSendEmail" : {
+      "configuration" : {
+        "collaboration" : "TrackDriverAndSendEmail",
+        "enableBadging" : true,
+        "entityConstraint" : "vehicleId == event.vehicleId",
+        "entityType" : "routes",
+        "parentStreams" : [ "SetVehicle" ]
+      },
+      "description" : null,
+      "name" : "TrackDriverAndSendEmail",
+      "pattern" : "StartCollaboration",
+      "uuid" : "062b3e27-cfa0-438d-8ace-5b0986855d2e"
+    },
+    "TrackDriverandSendEmailShipment" : {
+      "configuration" : {
+        "collaboration" : "TrackDriverandSendEmailShipment",
+        "enableBadging" : true,
+        "entityConstraint" : "id == event.id",
+        "entityType" : "shipments",
+        "parentStreams" : [ "AddProductInfo" ]
+      },
+      "description" : null,
+      "name" : "TrackDriverandSendEmailShipment",
+      "pattern" : "StartCollaboration",
+      "uuid" : "1b5120ee-5cc5-4f65-84fc-85dc23b90f9b"
+    }
+  },
+  "collaboratorRoles" : [ ],
+  "currentState" : {
+    "code" : "success"
+  },
+  "description" : "",
+  "disableBadging" : false,
+  "entityRoles" : [ ],
+  "keyTypes" : [ "system.collaborations" ],
+  "name" : "StartRouteApp"
+}

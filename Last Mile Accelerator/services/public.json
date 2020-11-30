@@ -1,0 +1,5 @@
+{
+  "INTERFACEASTEXT" : "PublishOrder, GetLocation, GetShipmentInfo, GetPackageInfo",
+  "interface" : [ "PublishOrder", "GetLocation", "GetShipmentInfo", "GetPackageInfo" ],
+  "name" : "public"
+}
