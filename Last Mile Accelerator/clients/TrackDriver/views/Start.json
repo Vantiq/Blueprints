@@ -1,0 +1,395 @@
+{
+  "bodyChildren" : {
+    "rootArray" : [ "11c95ca0-eb67-4e3e-a796-e915a4ed1838" ],
+    "widgets" : [ {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 1,
+      "children" : [ "cb4501b7-aeb6-4dde-afa9-b4d9a7e7e12d" ],
+      "columns" : 2,
+      "h" : 2413,
+      "heightPolicy" : "explicit",
+      "horzGravity" : "center",
+      "innerMargin" : 20,
+      "name" : "GridLayout149",
+      "rows" : 2,
+      "type" : "GridLayout",
+      "uuid" : "11c95ca0-eb67-4e3e-a796-e915a4ed1838",
+      "v" : 16,
+      "vertGravity" : "center",
+      "w" : 4093,
+      "widthPolicy" : "explicit",
+      "x" : 26,
+      "y" : 0
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 2,
+      "column" : -1,
+      "dataStreamGroupedByFiltersString" : "",
+      "dataStreamProperty" : "currentLocationGEO",
+      "dataStreamUUID" : "f941a81d-3bae-4908-9034-203e73cb8f82",
+      "dataType" : null,
+      "fixedCenter" : true,
+      "h" : 1588,
+      "heightPolicy" : "explicit",
+      "horzGravity" : "center",
+      "labelProperty" : "packageid",
+      "markerHashKeyProperty" : "vehicleid",
+      "name" : "ShippingPoints",
+      "naturalKey" : null,
+      "operation" : "insert",
+      "row" : -1,
+      "type" : "DynamicMapViewer",
+      "uuid" : "1404b84d-0528-4d63-b728-bf86141ccbea",
+      "v" : 16,
+      "vertGravity" : "top",
+      "w" : 2000,
+      "widthPolicy" : "explicit"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "h" : 200,
+      "heightPolicy" : "explicit",
+      "horzGravity" : "center",
+      "name" : "StaticImage728",
+      "preserveAspectRatio" : true,
+      "type" : "StaticImage",
+      "url" : "rcs/image/79ABEE0C-CD29-4E65-ACF5-B8F1419C39D8.jpg",
+      "uuid" : "23846129-1cc1-4354-8cd0-668f6a6a06cc",
+      "v" : 16,
+      "vertGravity" : "center",
+      "w" : 200,
+      "widthPolicy" : "explicit"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : "36.5",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "inputType" : "text",
+      "label" : "Temperature",
+      "name" : "InputString16652",
+      "optional" : true,
+      "placeholder" : "",
+      "type" : "InputString",
+      "uuid" : "248c4c3a-5ed8-4ceb-8ae1-813e2e9ba516",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 1,
+      "children" : [ "63114e4e-8d1a-460d-8c85-3597ff6bcbf6", "23846129-1cc1-4354-8cd0-668f6a6a06cc" ],
+      "column" : -1,
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "left",
+      "innerMargin" : 20,
+      "name" : "HorizontalLayout27166",
+      "row" : -1,
+      "type" : "HorizontalLayout",
+      "uuid" : "2ba6c6f2-7030-448a-86ee-ea0c7e59be7b",
+      "v" : 16,
+      "vertGravity" : "top",
+      "widthPolicy" : "naturalSize"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : "Hendel Ali",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "inputType" : "text",
+      "label" : "Driver",
+      "name" : "InputString16653",
+      "optional" : true,
+      "placeholder" : "",
+      "type" : "InputString",
+      "uuid" : "35e4dc00-6688-497c-82e1-5758c29644b8",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 1,
+      "children" : [ "a2dba03d-bb07-4a54-bd3d-e0b1e5799edd", "a72ea79c-74dc-4a51-987c-e5992b40ec51", "35e4dc00-6688-497c-82e1-5758c29644b8", "248c4c3a-5ed8-4ceb-8ae1-813e2e9ba516" ],
+      "heightPolicy" : "sizeToCell",
+      "horzGravity" : "center",
+      "innerMargin" : 20,
+      "name" : "VerticalLayout20524",
+      "type" : "VerticalLayout",
+      "uuid" : "63114e4e-8d1a-460d-8c85-3597ff6bcbf6",
+      "v" : 16,
+      "vertGravity" : "center",
+      "w" : 322,
+      "widthPolicy" : "explicit"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 1,
+      "children" : [ "c9fbedc6-412c-4081-8b93-b62000aff775" ],
+      "column" : -1,
+      "heightPolicy" : "sizeToCell",
+      "horzGravity" : "center",
+      "innerMargin" : 20,
+      "name" : "HorizontalLayout27171",
+      "row" : -1,
+      "type" : "HorizontalLayout",
+      "uuid" : "9a8870aa-14af-4c72-a8a9-289c32572891",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "StaticImage727",
+      "preserveAspectRatio" : true,
+      "type" : "StaticImage",
+      "url" : "../cmn/assets/branding/defaultImage.png",
+      "uuid" : "a2dba03d-bb07-4a54-bd3d-e0b1e5799edd",
+      "v" : 16,
+      "vertGravity" : "top",
+      "widthPolicy" : "naturalSize"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : "7 Minutes",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "inputType" : "text",
+      "label" : "ETA",
+      "name" : "ETA",
+      "optional" : true,
+      "placeholder" : "",
+      "type" : "InputString",
+      "uuid" : "a72ea79c-74dc-4a51-987c-e5992b40ec51",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "backgroundColor" : "default",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 1,
+      "cellFontColor" : "default",
+      "cellFontFace" : "inherit",
+      "cellFontSize" : 14,
+      "cellFontStyle" : "plain",
+      "clearOnDataArrive" : true,
+      "columnDescriptors" : [ {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "description",
+        "selected" : false,
+        "title" : "description"
+      }, {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "customerName",
+        "selected" : false,
+        "title" : "customerName"
+      }, {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "condition",
+        "selected" : false,
+        "title" : "condition"
+      } ],
+      "columnSort" : true,
+      "dataStreamGroupedByFiltersString" : "",
+      "dataStreamUUID" : "c6371d8d-9100-4e2b-9377-035b06703e88",
+      "dataType" : null,
+      "headerFontColor" : "default",
+      "headerFontFace" : "inherit",
+      "headerFontSize" : 14,
+      "headerFontStyle" : "plain",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "left",
+      "name" : "DataTable5910",
+      "operation" : "insert",
+      "rowsPerPage" : 5,
+      "showPaging" : true,
+      "type" : "DataTable",
+      "uuid" : "c9fbedc6-412c-4081-8b93-b62000aff775",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 1,
+      "children" : [ "2ba6c6f2-7030-448a-86ee-ea0c7e59be7b", "9a8870aa-14af-4c72-a8a9-289c32572891", "1404b84d-0528-4d63-b728-bf86141ccbea" ],
+      "column" : 0,
+      "h" : 2331,
+      "heightPolicy" : "explicit",
+      "horzGravity" : "left",
+      "innerMargin" : 10,
+      "name" : "VerticalLayout20445",
+      "row" : 0,
+      "type" : "VerticalLayout",
+      "uuid" : "cb4501b7-aeb6-4dde-afa9-b4d9a7e7e12d",
+      "v" : 16,
+      "vertGravity" : "top",
+      "w" : 2022,
+      "widthPolicy" : "explicit"
+    } ]
+  },
+  "data" : {
+    "properties" : {
+      "package" : {
+        "defaultLabel" : "package",
+        "type" : "TypedObject",
+        "typedObject" : {
+          "properties" : {
+            "barcode" : {
+              "defaultLabel" : "barcode",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "condition" : {
+              "defaultLabel" : "condition",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "customerEmail" : {
+              "defaultLabel" : "customerEmail",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "customerId" : {
+              "defaultLabel" : "customerId",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "customerName" : {
+              "defaultLabel" : "customerName",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "customerPhone" : {
+              "defaultLabel" : "customerPhone",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "deliveredPhoto" : {
+              "defaultLabel" : "deliveredPhoto",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "description" : {
+              "defaultLabel" : "description",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "dimentions" : {
+              "defaultLabel" : "dimentions",
+              "type" : "Object"
+            },
+            "id" : {
+              "defaultLabel" : "id",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "name" : {
+              "defaultLabel" : "name",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "notes" : {
+              "defaultLabel" : "notes",
+              "defaultValue" : "",
+              "isArray" : true,
+              "type" : "String"
+            },
+            "orderedDate" : {
+              "defaultLabel" : "orderedDate",
+              "defaultValue" : "",
+              "type" : "DateTime"
+            },
+            "organizationid" : {
+              "defaultLabel" : "organizationid",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "originalAddress" : {
+              "defaultLabel" : "originalAddress",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "originalAddressGEO" : {
+              "defaultLabel" : "originalAddressGEO",
+              "type" : "GeoJSON"
+            },
+            "photo" : {
+              "defaultLabel" : "photo",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "priority" : {
+              "defaultLabel" : "priority",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "recivedby" : {
+              "defaultLabel" : "recivedby",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "region" : {
+              "defaultLabel" : "region",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "shippingAddress" : {
+              "defaultLabel" : "shippingAddress",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "shippingAddressGEO" : {
+              "defaultLabel" : "shippingAddressGEO",
+              "type" : "GeoJSON"
+            },
+            "shippingDate" : {
+              "defaultLabel" : "shippingDate",
+              "defaultValue" : "",
+              "type" : "DateTime"
+            },
+            "status" : {
+              "defaultLabel" : "status",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "trackingId" : {
+              "defaultLabel" : "trackingId",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "vehicle" : {
+              "defaultLabel" : "vehicle",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "weight" : {
+              "defaultLabel" : "weight",
+              "defaultValue" : "0",
+              "type" : "Decimal"
+            }
+          },
+          "type" : "package"
+        }
+      }
+    }
+  },
+  "footerChildren" : [ ],
+  "hasFooter" : false,
+  "layoutType" : "browser",
+  "responseTopic" : "/my/response/topic"
+}

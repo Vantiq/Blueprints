@@ -1,0 +1,111 @@
+{
+  "bodyChildren" : {
+    "rootArray" : [ "3d72c9c0-42ea-41dd-a59c-d7dcd21d5efd", "e182b9b1-97c8-4a03-96d4-3fef8c4195d5", "7917c467-cab6-48a3-b366-9080e7c0aff9" ],
+    "widgets" : [ {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "StaticImage1279",
+      "preserveAspectRatio" : true,
+      "type" : "StaticImage",
+      "url" : "../cmn/assets/branding/defaultImage.png",
+      "uuid" : "3d72c9c0-42ea-41dd-a59c-d7dcd21d5efd",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "naturalSize"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 2,
+      "dataStreamGroupedByFiltersString" : "",
+      "dataStreamProperty" : "currentlocation",
+      "dataStreamUUID" : "9cfa26ea-288a-4441-8e4d-8069a45c3cb8",
+      "dataType" : null,
+      "fixedCenter" : true,
+      "h" : 500,
+      "heightPolicy" : "explicit",
+      "horzGravity" : "center",
+      "labelProperty" : "description",
+      "name" : "NewPackageMap",
+      "naturalKey" : null,
+      "operation" : "insert",
+      "type" : "DynamicMapViewer",
+      "uuid" : "7917c467-cab6-48a3-b366-9080e7c0aff9",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "backgroundColor" : "default",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 1,
+      "cellFontColor" : "default",
+      "cellFontFace" : "inherit",
+      "cellFontSize" : 14,
+      "cellFontStyle" : "plain",
+      "clearOnDataArrive" : true,
+      "columnDescriptors" : [ {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "description",
+        "selected" : false,
+        "title" : "Description"
+      }, {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "origin",
+        "selected" : false,
+        "title" : "Pick up Address"
+      } ],
+      "columnSort" : true,
+      "dataStreamGroupedByFiltersString" : "",
+      "dataStreamUUID" : "9cfa26ea-288a-4441-8e4d-8069a45c3cb8",
+      "dataType" : null,
+      "headerFontColor" : "default",
+      "headerFontFace" : "inherit",
+      "headerFontSize" : 14,
+      "headerFontStyle" : "plain",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "DataTable5940",
+      "operation" : "insert",
+      "rowsPerPage" : 5,
+      "showPaging" : true,
+      "type" : "DataTable",
+      "uuid" : "e182b9b1-97c8-4a03-96d4-3fef8c4195d5",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    } ]
+  },
+  "data" : {
+    "properties" : { }
+  },
+  "footerChildren" : {
+    "rootArray" : [ "e963d309-0bbe-4fd3-b9a0-5e6aa4c8eff9" ],
+    "widgets" : [ {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "buttonBackgroundColor" : "platform",
+      "buttonLabel" : "Submit",
+      "buttonLabelColor" : "platform",
+      "buttonLabelSize" : 14,
+      "buttonLabelStyle" : "bold",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "Button18082",
+      "submitValue" : 100,
+      "type" : "Button",
+      "uuid" : "e963d309-0bbe-4fd3-b9a0-5e6aa4c8eff9",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    } ]
+  },
+  "hasFooter" : true,
+  "layoutType" : "mobile",
+  "responseTopic" : "/vantiq/systemmodel/NewPackageDelivery/submitTopic"
+}
