@@ -1,0 +1,4734 @@
+{
+  "links" : [ {
+    "source" : "type/system.collaborations",
+    "target" : "client/VantiqDeliveries"
+  }, {
+    "source" : "type/assets",
+    "target" : "client/VantiqDeliveries"
+  }, {
+    "source" : "type/sensors",
+    "target" : "client/VantiqDeliveries"
+  }, {
+    "source" : "type/vehicletypes",
+    "target" : "procedure/cb.getVehicleTypes"
+  }, {
+    "source" : "type/vehicle",
+    "target" : "procedure/cb.getVehicles"
+  }, {
+    "source" : "type/floors",
+    "target" : "procedure/cb.deleteBuilding"
+  }, {
+    "source" : "procedure/cb.deleteBuilding",
+    "target" : "type/buildings"
+  }, {
+    "source" : "procedure/cb.deleteVehicle",
+    "target" : "type/vehicle"
+  }, {
+    "source" : "type/personnel",
+    "target" : "procedure/cb.getDrivers"
+  }, {
+    "source" : "procedure/cb.updateVehicleDriver",
+    "target" : "type/vehicle"
+  }, {
+    "source" : "procedure/cb.deleteVehicleDriver",
+    "target" : "type/vehicle"
+  }, {
+    "source" : "procedure/cb.deleteVehicleDriver",
+    "target" : "type/personnel"
+  }, {
+    "source" : "procedure/cb.updateVehicleDriver",
+    "target" : "type/personnel"
+  }, {
+    "source" : "type/region",
+    "target" : "procedure/cb.getRegions"
+  }, {
+    "source" : "procedure/cb.updateRegionVehicle",
+    "target" : "type/vehicle"
+  }, {
+    "source" : "type/vehicle",
+    "target" : "procedure/cb.getVehiclesInRegion"
+  }, {
+    "source" : "type/package",
+    "target" : "app/AssignRegion"
+  }, {
+    "source" : "type/region",
+    "target" : "procedure/app.assign_ZonePackage"
+  }, {
+    "source" : "app/AssignRegion",
+    "target" : "procedure/app.assign_ZonePackage"
+  }, {
+    "source" : "type/routes",
+    "target" : "procedure/cb.getRoutes"
+  }, {
+    "source" : "client/PhotoRegistration",
+    "target" : "topic//personnel/registration"
+  }, {
+    "source" : "client/NewOrder",
+    "target" : "topic//deliveries/neworder"
+  }, {
+    "source" : "type/organization",
+    "target" : "procedure/cb.getOrganization"
+  }, {
+    "source" : "topic//deliveries/neworder",
+    "target" : "app/SaveOrderToType"
+  }, {
+    "source" : "app/SaveOrderToType",
+    "target" : "type/package"
+  }, {
+    "source" : "type/package",
+    "target" : "collaborationtype/NotifyCustomer"
+  }, {
+    "source" : "type/package",
+    "target" : "collaborationtype/NotifyManager"
+  }, {
+    "source" : "type/personnel",
+    "target" : "procedure/app.findManager"
+  }, {
+    "source" : "collaborationtype/NotifyManager",
+    "target" : "procedure/app.findManager"
+  }, {
+    "source" : "client/NotifyManager",
+    "target" : "topic//vantiq/systemmodel/NotifyManager/submitTopic"
+  }, {
+    "source" : "type/vehicle",
+    "target" : "procedure/cb.getVehicles_All"
+  }, {
+    "source" : "topic//vantiq/systemmodel/NotifyManager/submitTopic",
+    "target" : "app/RegionFromManager"
+  }, {
+    "source" : "app/RegionFromManager",
+    "target" : "procedure/app.assign_ZonePackage_2"
+  }, {
+    "source" : "procedure/app.assign_ZonePackage_2",
+    "target" : "type/package"
+  }, {
+    "source" : "type/package",
+    "target" : "app/RegionFromManager"
+  }, {
+    "source" : "procedure/updateLatLongVehicles",
+    "target" : "type/vehicle"
+  }, {
+    "source" : "procedure/app.assignOrders",
+    "target" : "type/shipments"
+  }, {
+    "source" : "type/package",
+    "target" : "procedure/app.assignOrders"
+  }, {
+    "source" : "procedure/updateVehicleRegion",
+    "target" : "type/vehicle"
+  }, {
+    "source" : "type/shipments",
+    "target" : "app/ShippingAssignment"
+  }, {
+    "source" : "type/vehicle",
+    "target" : "procedure/findDriverForShipping"
+  }, {
+    "source" : "collaborationtype/NotifyDriver",
+    "target" : "procedure/findDriverForShipping"
+  }, {
+    "source" : "type/shipments",
+    "target" : "collaborationtype/NotifyDriver"
+  }, {
+    "source" : "source/VantiqPushNotification",
+    "target" : "collaborationtype/NotifyDriver"
+  }, {
+    "source" : "type/shipments",
+    "target" : "procedure/cb.getShipments2"
+  }, {
+    "source" : "type/vehicle",
+    "target" : "procedure/cb.getShipments"
+  }, {
+    "source" : "type/shipments",
+    "target" : "procedure/cb.getShipments"
+  }, {
+    "source" : "type/package",
+    "target" : "app/ProductShipping"
+  }, {
+    "source" : "procedure/sendEmailClientEnRoute",
+    "target" : "source/email"
+  }, {
+    "source" : "type/package",
+    "target" : "collaborationtype/NotifyEnRouteToCustomer"
+  }, {
+    "source" : "collaborationtype/NotifyEnRouteToCustomer",
+    "target" : "procedure/sendEmailClientEnRoute"
+  }, {
+    "source" : "topic//deliveries/checkin",
+    "target" : "app/ProductShipping"
+  }, {
+    "source" : "client/ShippingCheckIn",
+    "target" : "topic//deliveries/checkin"
+  }, {
+    "source" : "client/ShippingNotification",
+    "target" : "topic//deliveries/checkin"
+  }, {
+    "source" : "client/ShippingCheckIn",
+    "target" : "topic//deliveries/startroute"
+  }, {
+    "source" : "type/shipments",
+    "target" : "collaborationtype/StartDriverTracking"
+  }, {
+    "source" : "topic//deliveries/startroute",
+    "target" : "app/StartRouteApp"
+  }, {
+    "source" : "type/vehicle",
+    "target" : "app/StartRouteApp"
+  }, {
+    "source" : "type/enroute",
+    "target" : "collaborationtype/TrackVehicle"
+  }, {
+    "source" : "type/package",
+    "target" : "collaborationtype/TrackVehicle"
+  }, {
+    "source" : "source/GoogleDirections",
+    "target" : "procedure/GoogleDirections"
+  }, {
+    "source" : "source/GoogleDirections",
+    "target" : "procedure/GoogleDirectionsWayPoints"
+  }, {
+    "source" : "source/GoogleDistanceMatrix",
+    "target" : "procedure/GoogleDistanceMatrix"
+  }, {
+    "source" : "source/GoogleGeoCode",
+    "target" : "procedure/GoogleGeoCode"
+  }, {
+    "source" : "source/GooglePlace",
+    "target" : "procedure/GooglePlaceAutoComplete"
+  }, {
+    "source" : "source/GooglePlaceId",
+    "target" : "procedure/GooglePlaceId"
+  }, {
+    "source" : "source/GoogleGeoCode",
+    "target" : "procedure/GoogleReverseGeoCode"
+  }, {
+    "source" : "source/GoogleDistanceMatrix",
+    "target" : "procedure/testDistanceMatrix"
+  }, {
+    "source" : "procedure/app.assignOrders",
+    "target" : "procedure/GoogleDistanceMatrix"
+  }, {
+    "source" : "procedure/updatePackageDate",
+    "target" : "type/package"
+  }, {
+    "source" : "procedure/app.assignOrders",
+    "target" : "type/vehicle"
+  }, {
+    "source" : "procedure/app.assignOrders",
+    "target" : "type/routes"
+  }, {
+    "source" : "procedure/app.assignOrders",
+    "target" : "procedure/app.getFinalDestination"
+  }, {
+    "source" : "procedure/app.assignOrders",
+    "target" : "procedure/app.getWaypoints"
+  }, {
+    "source" : "procedure/app.assignOrders",
+    "target" : "procedure/app.getEndPoint"
+  }, {
+    "source" : "procedure/app.assignOrders",
+    "target" : "procedure/GoogleDirectionsWayPoints"
+  }, {
+    "source" : "type/routes",
+    "target" : "app/StartRouteApp"
+  }, {
+    "source" : "procedure/cb.updateRouteLegs",
+    "target" : "type/routes"
+  }, {
+    "source" : "type/routes",
+    "target" : "collaborationtype/NotifyDriverNextAddress"
+  }, {
+    "source" : "collaborationtype/NotifyDriverNextAddress",
+    "target" : "procedure/app.createLink"
+  }, {
+    "source" : "source/VantiqPushNotification",
+    "target" : "collaborationtype/NotifyDriverNextAddress"
+  }, {
+    "source" : "collaborationtype/NotifyDriverNextAddress",
+    "target" : "procedure/findDriverForShipping"
+  }, {
+    "source" : "procedure/app.assignOrders",
+    "target" : "procedure/app.updatePackageAddress"
+  }, {
+    "source" : "type/package",
+    "target" : "procedure/cb.getPackagePhoto"
+  }, {
+    "source" : "type/package",
+    "target" : "procedure/cb.getPackageInfo"
+  }, {
+    "source" : "type/package",
+    "target" : "procedure/cb.getPackagesByBarcode"
+  }, {
+    "source" : "type/package",
+    "target" : "procedure/cb.getPackageByBarcode"
+  }, {
+    "source" : "type/package",
+    "target" : "procedure/cb.getPackages"
+  }, {
+    "source" : "client/NextStopinRoute",
+    "target" : "topic//deliveries/packageshipped"
+  }, {
+    "source" : "topic//deliveries/packageshipped",
+    "target" : "app/CloseDelivery"
+  }, {
+    "source" : "app/CloseDelivery",
+    "target" : "procedure/app.updateDeliveryInfo"
+  }, {
+    "source" : "procedure/app.updateDeliveryInfo",
+    "target" : "type/package"
+  }, {
+    "source" : "procedure/app.updateDeliveryInfo",
+    "target" : "type/shipments"
+  }, {
+    "source" : "procedure/app.updateDeliveryInfo",
+    "target" : "type/routes"
+  }, {
+    "source" : "type/routes",
+    "target" : "app/CloseDelivery"
+  }, {
+    "source" : "type/routes",
+    "target" : "collaborationtype/NextShippingNotification"
+  }, {
+    "source" : "collaborationtype/NextShippingNotification",
+    "target" : "procedure/app.createlink2"
+  }, {
+    "source" : "collaborationtype/NextShippingNotification",
+    "target" : "procedure/findDriverForShipping"
+  }, {
+    "source" : "source/VantiqPushNotification",
+    "target" : "collaborationtype/NextShippingNotification"
+  }, {
+    "source" : "type/routes",
+    "target" : "procedure/app.routeById"
+  }, {
+    "source" : "procedure/app.updateDeliveryInfo",
+    "target" : "procedure/app.routeById"
+  }, {
+    "source" : "procedure/app.resetStepRoute",
+    "target" : "type/routes"
+  }, {
+    "source" : "type/system.collaborations",
+    "target" : "procedure/getCollabs"
+  }, {
+    "source" : "procedure/cb.getPackageInfo",
+    "target" : "type/routes"
+  }, {
+    "source" : "type/vehicle",
+    "target" : "procedure/public.GetLocation"
+  }, {
+    "source" : "type/routes",
+    "target" : "collaborationtype/TrackDriverAndSendEmail"
+  }, {
+    "source" : "procedure/app.sendTrackingEmail",
+    "target" : "source/email"
+  }, {
+    "source" : "collaborationtype/TrackDriverAndSendEmail",
+    "target" : "procedure/app.createPublicLink"
+  }, {
+    "source" : "collaborationtype/TrackDriverAndSendEmail",
+    "target" : "procedure/app.sendTrackingEmail"
+  }, {
+    "source" : "collaborationtype/TrackDriverAndSendEmail",
+    "target" : "procedure/findDriverForShipping"
+  }, {
+    "source" : "collaborationtype/TrackDriverAndSendEmail",
+    "target" : "procedure/app.viewTrackDriverInfo"
+  }, {
+    "source" : "procedure/app.viewTrackDriverInfo",
+    "target" : "type/routes"
+  }, {
+    "source" : "procedure/app.viewTrackDriverInfo",
+    "target" : "type/vehicle"
+  }, {
+    "source" : "app/StartRouteApp",
+    "target" : "procedure/app.getShipmentFromEventRoute"
+  }, {
+    "source" : "type/routes",
+    "target" : "procedure/app.getShipmentFromEventRoute"
+  }, {
+    "source" : "procedure/app.getShipmentFromEventRoute",
+    "target" : "procedure/cb.getPackageInfo"
+  }, {
+    "source" : "type/shipments",
+    "target" : "procedure/app.getShipmentFromEventRoute"
+  }, {
+    "source" : "type/shipments",
+    "target" : "app/StartRouteApp"
+  }, {
+    "source" : "type/shipments",
+    "target" : "collaborationtype/TrackDriverandSendEmailShipment"
+  }, {
+    "source" : "collaborationtype/TrackDriverandSendEmailShipment",
+    "target" : "procedure/app.createPublicLinkShipment"
+  }, {
+    "source" : "collaborationtype/TrackDriverandSendEmailShipment",
+    "target" : "procedure/app.sendTrackingEmail"
+  }, {
+    "source" : "collaborationtype/TrackDriverandSendEmailShipment",
+    "target" : "procedure/findDriverForShipping"
+  }, {
+    "source" : "procedure/app.apdateCurrentLocationinTypes",
+    "target" : "type/vehicle"
+  }, {
+    "source" : "procedure/app.apdateCurrentLocationinTypes",
+    "target" : "type/shipments"
+  }, {
+    "source" : "collaborationtype/TrackDriverandSendEmailShipment",
+    "target" : "procedure/app.apdateCurrentLocationinTypes"
+  }, {
+    "source" : "type/shipments",
+    "target" : "procedure/public.GetShipmentInfo"
+  }, {
+    "source" : "source/VantiqPushNotification",
+    "target" : "collaborationtype/TrackDriverandSendEmailShipment"
+  }, {
+    "source" : "client/ShippingPackage",
+    "target" : "topic//vantiq/systemmodel/ShippingPackage/submitTopic"
+  }, {
+    "source" : "client/DriverCalification",
+    "target" : "topic//deliveries/public/driverfeedback"
+  }, {
+    "source" : "collaborationtype/TrackDriverandSendEmailShipment",
+    "target" : "procedure/app.createPublicLinkDriverFeedback"
+  }, {
+    "source" : "procedure/sendEmailDriverFeedBack",
+    "target" : "source/email"
+  }, {
+    "source" : "type/package",
+    "target" : "procedure/cb.createHTMLShippingDetails"
+  }, {
+    "source" : "type/package",
+    "target" : "procedure/cb.getPackagePhoto2"
+  }, {
+    "source" : "type/fixedroutes",
+    "target" : "procedure/cb.getFixedRoutes"
+  }, {
+    "source" : "client/VantiqDeliveries",
+    "target" : "topic//deliveries/fixedrouteadd"
+  }, {
+    "source" : "scheduledevent/OpenDoorInfo",
+    "target" : "topic//deliveries/sensors/opendoorsensors"
+  }, {
+    "source" : "topic//deliveries/sensors/opendoorsensors",
+    "target" : "app/OpenDoorIssue"
+  }, {
+    "source" : "type/sensors",
+    "target" : "app/OpenDoorIssue"
+  }, {
+    "source" : "type/vehicle",
+    "target" : "app/OpenDoorIssue"
+  }, {
+    "source" : "type/issues",
+    "target" : "client/VantiqDeliveries"
+  }, {
+    "source" : "type/issues",
+    "target" : "app/OpenDoorIssue"
+  }, {
+    "source" : "type/issues",
+    "target" : "collaborationtype/NotifyIssueToDriver"
+  }, {
+    "source" : "collaborationtype/NotifyIssueToDriver",
+    "target" : "procedure/cb.createHTMLIssueDetails"
+  }, {
+    "source" : "source/VantiqPushNotification",
+    "target" : "collaborationtype/NotifyIssueToDriver"
+  }, {
+    "source" : "procedure/public.PublishOrder",
+    "target" : "topic//deliveries/orderinroute"
+  }, {
+    "source" : "topic//deliveries/orderinroute",
+    "target" : "app/AddNewPackage"
+  }, {
+    "source" : "procedure/public.PublishOrder",
+    "target" : "procedure/GoogleGeoCode"
+  }, {
+    "source" : "procedure/app.assign_ZonePackage",
+    "target" : "type/package"
+  }, {
+    "source" : "type/temporder",
+    "target" : "app/AddNewPackage"
+  }, {
+    "source" : "type/vehicle",
+    "target" : "collaborationtype/NotifyDriverNewPackage"
+  }, {
+    "source" : "collaborationtype/NotifyDriverNewPackage",
+    "target" : "procedure/app.findenroutevehicle"
+  }, {
+    "source" : "client/NewPackageDelivery",
+    "target" : "topic//vantiq/systemmodel/NewPackageDelivery/submitTopic"
+  }, {
+    "source" : "source/VantiqPushNotification",
+    "target" : "collaborationtype/NotifyDriverNewPackage"
+  }, {
+    "source" : "type/temporder",
+    "target" : "procedure/cb.getTempOrders"
+  }, {
+    "source" : "app/OpenDoorIssue",
+    "target" : "collaborationtype/NotifyIssueToDriver"
+  }, {
+    "source" : "app/ProductShipping",
+    "target" : "collaborationtype/NotifyEnRouteToCustomer"
+  }, {
+    "source" : "app/StartRouteApp",
+    "target" : "collaborationtype/NotifyDriverNextAddress"
+  }, {
+    "source" : "procedure/app.sendEmailClient",
+    "target" : "source/email"
+  }, {
+    "source" : "collaborationtype/NotifyCustomer",
+    "target" : "procedure/app.sendEmailClient"
+  }, {
+    "source" : "type/package",
+    "target" : "procedure/app.sendEmailClientShipment"
+  }, {
+    "source" : "procedure/app.sendEmailClientShipment",
+    "target" : "source/email"
+  }, {
+    "source" : "collaborationtype/NotifyDriver",
+    "target" : "procedure/app.sendEmailClientShipment"
+  }, {
+    "source" : "procedure/app.sendEmailAlert",
+    "target" : "source/email"
+  }, {
+    "source" : "collaborationtype/TrackDriverandSendEmailShipment",
+    "target" : "procedure/app.sendEmailAlert"
+  }, {
+    "source" : "type/RepresentanteAdmin",
+    "target" : "procedure/cb.getDashboardData"
+  }, {
+    "source" : "type/issuesDatos",
+    "target" : "procedure/cb.getDashboardData"
+  }, {
+    "source" : "type/RepresentanteGeneral",
+    "target" : "procedure/cb.getDashboardData"
+  } ],
+  "name" : "HVDeliveries",
+  "options" : {
+    "blacklist" : [ "client/DataSetup", "client/LandingPage", "client/MyPublicPage", "collaborationtype/FindNearestDriverToPickUp", "procedure/cb.CreateHTMLShippingDetails", "topic//my/response/topic", "topic//shipping/checkin", "type/Shipments", "type/VehicleLocation" ],
+    "description" : "",
+    "dockCollapsed" : {
+      "bottom" : false,
+      "left" : false,
+      "right" : false,
+      "top" : false
+    },
+    "dockDimensions" : {
+      "bottom" : 200,
+      "debug" : [ 616.7412867433715, 727.0269885804523, 783.2317246761762 ],
+      "left" : 479,
+      "right" : 220,
+      "top" : 0
+    },
+    "dockSort" : 0,
+    "filterBitArray" : "ffffffffffffffffffffffffffffffff",
+    "isModeloProject" : true,
+    "layoutStyle" : "tile",
+    "openResourceFolders" : {
+      "app" : true,
+      "client" : true,
+      "collaborationtype" : true,
+      "procedure" : true,
+      "scheduledevent" : true,
+      "services" : true,
+      "source" : true,
+      "topic" : true,
+      "type" : true
+    },
+    "rootViewFlavor" : 1,
+    "showGrid" : true,
+    "tileColumns" : 3,
+    "tileRows" : 3,
+    "type" : "dev",
+    "v" : 3,
+    "viewUUID" : "MAINVIEW",
+    "views" : [ {
+      "children" : [ "type/enroute", "type/package", "type/personnel", "type/routes", "type/shipments", "type/vehicle" ],
+      "dockSort" : 0,
+      "flavor" : 1,
+      "lastFlavor" : 1,
+      "layoutStyle" : "tile",
+      "name" : "Types",
+      "tileColumns" : 3,
+      "tileRows" : 3,
+      "tools" : [ {
+        "isPinned" : true,
+        "name" : "enroute",
+        "pane" : {
+          "c" : 0,
+          "r" : 1
+        },
+        "resourceKey" : "type/enroute",
+        "state" : 2,
+        "type" : 6
+      }, {
+        "isPinned" : true,
+        "name" : "package",
+        "pane" : {
+          "c" : 1,
+          "r" : 1
+        },
+        "resourceKey" : "type/package",
+        "state" : 2,
+        "type" : 6
+      }, {
+        "isPinned" : true,
+        "name" : "routes",
+        "pane" : {
+          "c" : 0,
+          "r" : 0
+        },
+        "resourceKey" : "type/routes",
+        "state" : 2,
+        "type" : 6
+      }, {
+        "isPinned" : true,
+        "name" : "shipments",
+        "pane" : {
+          "c" : 1,
+          "r" : 0
+        },
+        "resourceKey" : "type/shipments",
+        "state" : 2,
+        "type" : 6
+      }, {
+        "isPinned" : true,
+        "name" : "vehicle",
+        "pane" : {
+          "c" : 2,
+          "r" : 0
+        },
+        "resourceKey" : "type/vehicle",
+        "state" : 2,
+        "type" : 6
+      } ],
+      "type" : 2,
+      "uuid" : "6353dde2-5650-4fb2-80ba-dba302bfbfdd"
+    }, {
+      "children" : [ "procedure/app.assignOrders", "procedure/app.createLink", "procedure/app.updateDeliveryInfo", "procedure/public.GetLocation" ],
+      "dockSort" : 0,
+      "flavor" : 1,
+      "lastFlavor" : 1,
+      "layoutStyle" : "tile",
+      "name" : "Procs",
+      "tileColumns" : 3,
+      "tileRows" : 3,
+      "tools" : [ {
+        "isPinned" : true,
+        "name" : "app.assignOrders",
+        "pane" : {
+          "c" : 1,
+          "r" : 0
+        },
+        "resourceKey" : "procedure/app.assignOrders",
+        "state" : 2,
+        "type" : 24
+      }, {
+        "isPinned" : false,
+        "name" : "app.createLink",
+        "pane" : {
+          "c" : 0,
+          "r" : 0
+        },
+        "resourceKey" : "procedure/app.createLink",
+        "state" : 2,
+        "type" : 24
+      }, {
+        "isPinned" : false,
+        "name" : "app.updateDeliveryInfo",
+        "pane" : {
+          "c" : 0,
+          "r" : 1
+        },
+        "resourceKey" : "procedure/app.updateDeliveryInfo",
+        "state" : 2,
+        "type" : 24
+      }, {
+        "isPinned" : false,
+        "name" : "public.GetLocation",
+        "pane" : {
+          "c" : 2,
+          "r" : 0
+        },
+        "resourceKey" : "procedure/public.GetLocation",
+        "state" : 2,
+        "type" : 24
+      } ],
+      "type" : 2,
+      "uuid" : "6ddd4453-2566-4f1b-9cbe-a523c715bee2"
+    }, {
+      "children" : [ "client/VantiqDeliveries" ],
+      "dockSort" : 0,
+      "flavor" : 1,
+      "lastFlavor" : 1,
+      "layoutStyle" : "tile",
+      "name" : "MainAppClient",
+      "tileColumns" : 3,
+      "tileRows" : 3,
+      "tools" : [ {
+        "isPinned" : false,
+        "name" : "VantiqDeliveries",
+        "pane" : {
+          "c" : 0,
+          "r" : 0
+        },
+        "resourceKey" : "client/VantiqDeliveries",
+        "state" : 2,
+        "toolOptions" : {
+          "isRunning" : false
+        },
+        "type" : 63
+      } ],
+      "type" : 2,
+      "uuid" : "04db6195-073f-4517-9a34-11e8907c63c6"
+    }, {
+      "children" : [ "app/ProductShipping", "client/NewOrder", "client/NextStopinRoute", "client/NotifyManager", "client/PhotoRegistration", "client/ShippingCheckIn", "client/ShippingNotification" ],
+      "dockSort" : 0,
+      "flavor" : 1,
+      "lastFlavor" : 1,
+      "layoutStyle" : "tile",
+      "name" : "MobileClients",
+      "tileColumns" : 3,
+      "tileRows" : 3,
+      "tools" : [ {
+        "isPinned" : false,
+        "name" : "NewOrder",
+        "pane" : {
+          "c" : 0,
+          "r" : 1
+        },
+        "resourceKey" : "client/NewOrder",
+        "state" : 2,
+        "toolOptions" : {
+          "isRunning" : false
+        },
+        "type" : 63
+      }, {
+        "isPinned" : false,
+        "name" : "ProductShipping",
+        "pane" : {
+          "c" : 1,
+          "r" : 0
+        },
+        "resourceKey" : "app/ProductShipping",
+        "state" : 2,
+        "type" : 15
+      }, {
+        "isPinned" : false,
+        "name" : "ShippingCheckIn",
+        "pane" : {
+          "c" : 0,
+          "r" : 0
+        },
+        "resourceKey" : "client/ShippingCheckIn",
+        "state" : 2,
+        "type" : 63
+      }, {
+        "isPinned" : false,
+        "name" : "package",
+        "pane" : {
+          "c" : 2,
+          "r" : 0
+        },
+        "resourceKey" : "type/package",
+        "state" : 2,
+        "type" : 6
+      } ],
+      "type" : 2,
+      "uuid" : "7bac41b2-91f6-4c9e-9d46-588a270c9099"
+    } ]
+  },
+  "resources" : [ {
+    "label" : "/collaborationtypes/StartRouteApp/debug",
+    "name" : "/collaborationtypes/StartRouteApp/debug",
+    "resourceReference" : "/topics//collaborationtypes/StartRouteApp/debug",
+    "type" : 10
+  }, {
+    "label" : "/collaborationtypes/TrackDriverAndSendEmail/debug",
+    "name" : "/collaborationtypes/TrackDriverAndSendEmail/debug",
+    "resourceReference" : "/topics//collaborationtypes/TrackDriverAndSendEmail/debug",
+    "type" : 10
+  }, {
+    "label" : "/deliveries/checkin",
+    "name" : "/deliveries/checkin",
+    "node" : {
+      "x" : -50.3,
+      "y" : -534.6
+    },
+    "resourceReference" : "/topics//deliveries/checkin",
+    "type" : 10
+  }, {
+    "label" : "/deliveries/delivered",
+    "name" : "/deliveries/delivered",
+    "node" : {
+      "x" : 31,
+      "y" : -820.1
+    },
+    "resourceReference" : "/topics//deliveries/delivered",
+    "type" : 10
+  }, {
+    "label" : "/deliveries/fixedrouteadd",
+    "name" : "/deliveries/fixedrouteadd",
+    "resourceReference" : "/topics//deliveries/fixedrouteadd",
+    "type" : 10
+  }, {
+    "label" : "/deliveries/neworder",
+    "name" : "/deliveries/neworder",
+    "node" : {
+      "x" : 314.6,
+      "y" : -172.7
+    },
+    "resourceReference" : "/topics//deliveries/neworder",
+    "type" : 10
+  }, {
+    "label" : "/deliveries/orderinroute",
+    "name" : "/deliveries/orderinroute",
+    "resourceReference" : "/topics//deliveries/orderinroute",
+    "type" : 10
+  }, {
+    "label" : "/deliveries/packageshipped",
+    "name" : "/deliveries/packageshipped",
+    "node" : {
+      "x" : 315.2,
+      "y" : -750.7
+    },
+    "resourceReference" : "/topics//deliveries/packageshipped",
+    "type" : 10
+  }, {
+    "label" : "/deliveries/public/driverfeedback",
+    "name" : "/deliveries/public/driverfeedback",
+    "resourceReference" : "/topics//deliveries/public/driverfeedback",
+    "type" : 10
+  }, {
+    "label" : "/deliveries/sensors/issues",
+    "name" : "/deliveries/sensors/issues",
+    "resourceReference" : "/topics//deliveries/sensors/issues",
+    "type" : 10
+  }, {
+    "label" : "/deliveries/sensors/opendoorsensors",
+    "name" : "/deliveries/sensors/opendoorsensors",
+    "resourceReference" : "/topics//deliveries/sensors/opendoorsensors",
+    "type" : 10
+  }, {
+    "label" : "/deliveries/startroute",
+    "name" : "/deliveries/startroute",
+    "node" : {
+      "x" : -415,
+      "y" : 22.4
+    },
+    "resourceReference" : "/topics//deliveries/startroute",
+    "type" : 10
+  }, {
+    "label" : "/deliveries/updatelocation",
+    "name" : "/deliveries/updatelocation",
+    "resourceReference" : "/topics//deliveries/updatelocation",
+    "type" : 10
+  }, {
+    "label" : "/personnel/registration",
+    "name" : "/personnel/registration",
+    "node" : {
+      "x" : 628.4,
+      "y" : 121.6
+    },
+    "resourceReference" : "/topics//personnel/registration",
+    "type" : 10
+  }, {
+    "label" : "/tracking/LocationEventTopic",
+    "name" : "/tracking/LocationEventTopic",
+    "node" : {
+      "x" : 522.6,
+      "y" : -709.1
+    },
+    "resourceReference" : "/topics//tracking/LocationEventTopic",
+    "type" : 10
+  }, {
+    "label" : "/vantiq/systemmodel/NewPackageDelivery/submitTopic",
+    "name" : "/vantiq/systemmodel/NewPackageDelivery/submitTopic",
+    "resourceReference" : "/topics//vantiq/systemmodel/NewPackageDelivery/submitTopic",
+    "type" : 10
+  }, {
+    "label" : "/vantiq/systemmodel/NotifyManager/submitTopic",
+    "name" : "/vantiq/systemmodel/NotifyManager/submitTopic",
+    "node" : {
+      "x" : -184.6,
+      "y" : -229.4
+    },
+    "resourceReference" : "/topics//vantiq/systemmodel/NotifyManager/submitTopic",
+    "type" : 10
+  }, {
+    "label" : "/vantiq/systemmodel/ShippingPackage/submitTopic",
+    "name" : "/vantiq/systemmodel/ShippingPackage/submitTopic",
+    "resourceReference" : "/topics//vantiq/systemmodel/ShippingPackage/submitTopic",
+    "type" : 10
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "AddNewOrderPublic",
+    "name" : "AddNewOrderPublic",
+    "resourceReference" : "/system.clients/AddNewOrderPublic",
+    "timestamp" : "2020-10-27T19:39:16.145Z",
+    "type" : 15
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ "out" ],
+      "collaborations" : [ "NotifyDriverNewPackage" ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ "in" ],
+      "topics" : [ "/deliveries/orderinroute" ],
+      "typeHash" : [ "in" ],
+      "types" : [ "temporder" ]
+    },
+    "label" : "AddNewPackage",
+    "name" : "AddNewPackage",
+    "resourceReference" : "/collaborationtypes/AddNewPackage",
+    "timestamp" : "2020-10-27T19:39:23.881Z",
+    "type" : 12
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ "out", "out" ],
+      "collaborations" : [ "NotifyCustomer", "NotifyManager" ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out" ],
+      "procedures" : [ "app.assign_ZonePackage" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "package" ]
+    },
+    "label" : "AssignRegion",
+    "name" : "AssignRegion",
+    "node" : {
+      "x" : 813.5,
+      "y" : 469.4
+    },
+    "resourceReference" : "/collaborationtypes/AssignRegion",
+    "timestamp" : "2020-10-27T19:39:23.048Z",
+    "type" : 12
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ "out", "out" ],
+      "collaborations" : [ "NextShippingNotification", "NotifyDriverRouteComplete" ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out" ],
+      "procedures" : [ "app.updateDeliveryInfo" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ "in" ],
+      "topics" : [ "/deliveries/packageshipped" ],
+      "typeHash" : [ "in" ],
+      "types" : [ "routes" ]
+    },
+    "label" : "CloseDelivery",
+    "name" : "CloseDelivery",
+    "node" : {
+      "x" : 247.9,
+      "y" : -579.5
+    },
+    "resourceReference" : "/collaborationtypes/CloseDelivery",
+    "timestamp" : "2020-10-27T19:39:23.353Z",
+    "type" : 12
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ "out" ],
+      "topics" : [ "/deliveries/public/driverfeedback" ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "DriverCalification",
+    "name" : "DriverCalification",
+    "resourceReference" : "/system.clients/DriverCalification",
+    "timestamp" : "2020-10-27T19:39:16.157Z",
+    "type" : 15
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out" ],
+      "procedures" : [ "format" ],
+      "sourceHash" : [ "in" ],
+      "sources" : [ "GoogleDirections" ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "GoogleDirections",
+    "name" : "GoogleDirections",
+    "node" : {
+      "x" : 1318.1,
+      "y" : 103.7
+    },
+    "resourceReference" : "/procedures/GoogleDirections",
+    "timestamp" : "2020-10-27T19:39:17.880Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "GoogleDirections",
+    "name" : "GoogleDirections",
+    "node" : {
+      "x" : 20,
+      "y" : 20
+    },
+    "resourceReference" : "/sources/GoogleDirections",
+    "timestamp" : "2020-10-30T16:23:53.848Z",
+    "type" : 4
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ "in" ],
+      "sources" : [ "GoogleDirections" ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "GoogleDirectionsWayPoints",
+    "name" : "GoogleDirectionsWayPoints",
+    "node" : {
+      "x" : 20,
+      "y" : 70
+    },
+    "resourceReference" : "/procedures/GoogleDirectionsWayPoints",
+    "timestamp" : "2020-10-27T19:39:17.854Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out" ],
+      "procedures" : [ "format" ],
+      "sourceHash" : [ "in" ],
+      "sources" : [ "GoogleDistanceMatrix" ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "GoogleDistanceMatrix",
+    "name" : "GoogleDistanceMatrix",
+    "node" : {
+      "x" : 1328.1,
+      "y" : 102.2
+    },
+    "resourceReference" : "/procedures/GoogleDistanceMatrix",
+    "timestamp" : "2020-10-27T19:39:17.779Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "GoogleDistanceMatrix",
+    "name" : "GoogleDistanceMatrix",
+    "node" : {
+      "x" : 20,
+      "y" : 20
+    },
+    "resourceReference" : "/sources/GoogleDistanceMatrix",
+    "timestamp" : "2020-10-30T16:24:09.235Z",
+    "type" : 4
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ "in" ],
+      "sources" : [ "GoogleGeoCode" ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "GoogleGeoCode",
+    "name" : "GoogleGeoCode",
+    "node" : {
+      "x" : -438.9,
+      "y" : -435.1
+    },
+    "resourceReference" : "/procedures/GoogleGeoCode",
+    "timestamp" : "2020-10-27T19:39:17.835Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "GoogleGeoCode",
+    "name" : "GoogleGeoCode",
+    "node" : {
+      "x" : -525,
+      "y" : -303.7
+    },
+    "resourceReference" : "/sources/GoogleGeoCode",
+    "timestamp" : "2020-10-30T16:24:32.561Z",
+    "type" : 4
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "GooglePlace",
+    "name" : "GooglePlace",
+    "node" : {
+      "x" : -409.8,
+      "y" : 329.4
+    },
+    "resourceReference" : "/sources/GooglePlace",
+    "timestamp" : "2020-10-27T19:39:17.110Z",
+    "type" : 4
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ "in" ],
+      "sources" : [ "GooglePlace" ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "GooglePlaceAutoComplete",
+    "name" : "GooglePlaceAutoComplete",
+    "node" : {
+      "x" : -505.6,
+      "y" : 213.6
+    },
+    "resourceReference" : "/procedures/GooglePlaceAutoComplete",
+    "timestamp" : "2020-10-27T19:39:17.809Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ "in" ],
+      "sources" : [ "GooglePlaceId" ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "GooglePlaceId",
+    "name" : "GooglePlaceId",
+    "node" : {
+      "x" : 219.5,
+      "y" : -614.1
+    },
+    "resourceReference" : "/procedures/GooglePlaceId",
+    "timestamp" : "2020-10-27T19:39:17.855Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "GooglePlaceId",
+    "name" : "GooglePlaceId",
+    "node" : {
+      "x" : 85.4,
+      "y" : -687.3
+    },
+    "resourceReference" : "/sources/GooglePlaceId",
+    "timestamp" : "2020-10-27T19:39:17.111Z",
+    "type" : 4
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out" ],
+      "procedures" : [ "format" ],
+      "sourceHash" : [ "in" ],
+      "sources" : [ "GoogleGeoCode" ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "GoogleReverseGeoCode",
+    "name" : "GoogleReverseGeoCode",
+    "node" : {
+      "x" : -584.2,
+      "y" : -155.3
+    },
+    "resourceReference" : "/procedures/GoogleReverseGeoCode",
+    "timestamp" : "2020-10-27T19:39:17.791Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "IssueAlert",
+    "name" : "IssueAlert",
+    "resourceReference" : "/system.clients/IssueAlert",
+    "timestamp" : "2020-10-27T19:39:16.155Z",
+    "type" : 15
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ "out" ],
+      "topics" : [ "/deliveries/neworder" ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "NewOrder",
+    "name" : "NewOrder",
+    "node" : {
+      "x" : 465.9,
+      "y" : -170.7
+    },
+    "resourceReference" : "/system.clients/NewOrder",
+    "timestamp" : "2020-10-27T19:39:16.144Z",
+    "type" : 15
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ "out" ],
+      "topics" : [ "/vantiq/systemmodel/NewPackageDelivery/submitTopic" ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "NewPackageDelivery",
+    "name" : "NewPackageDelivery",
+    "resourceReference" : "/system.clients/NewPackageDelivery",
+    "timestamp" : "2020-10-27T19:39:16.145Z",
+    "type" : 15
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out", "out", "out" ],
+      "procedures" : [ "app.createlink2", "CollaborationUtils.closeCollaboration", "findDriverForShipping" ],
+      "sourceHash" : [ "in" ],
+      "sources" : [ "VantiqPushNotification" ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "routes" ]
+    },
+    "label" : "NextShippingNotification",
+    "name" : "NextShippingNotification",
+    "node" : {
+      "x" : 644.1,
+      "y" : -243.6
+    },
+    "resourceReference" : "/collaborationtypes/NextShippingNotification",
+    "timestamp" : "2020-10-27T19:39:24.119Z",
+    "type" : 11
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ "out" ],
+      "topics" : [ "/deliveries/packageshipped" ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "NextStopinRoute",
+    "name" : "NextStopinRoute",
+    "node" : {
+      "x" : 212,
+      "y" : -782.8
+    },
+    "resourceReference" : "/system.clients/NextStopinRoute",
+    "timestamp" : "2020-10-27T19:39:16.147Z",
+    "type" : 15
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out", "out" ],
+      "procedures" : [ "CollaborationUtils.closeCollaboration", "app.sendEmailClient" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "package" ]
+    },
+    "label" : "NotifyCustomer",
+    "name" : "NotifyCustomer",
+    "node" : {
+      "x" : 850.6,
+      "y" : 168.9
+    },
+    "resourceReference" : "/collaborationtypes/NotifyCustomer",
+    "timestamp" : "2020-10-30T16:08:06.817Z",
+    "type" : 11
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out", "out", "out" ],
+      "procedures" : [ "findDriverForShipping", "CollaborationUtils.closeCollaboration", "app.sendEmailClientShipment" ],
+      "sourceHash" : [ "in" ],
+      "sources" : [ "VantiqPushNotification" ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "shipments" ]
+    },
+    "label" : "NotifyDriver",
+    "name" : "NotifyDriver",
+    "node" : {
+      "x" : -93.3,
+      "y" : -222.3
+    },
+    "resourceReference" : "/collaborationtypes/NotifyDriver",
+    "timestamp" : "2020-10-30T16:21:30.848Z",
+    "type" : 11
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out", "out" ],
+      "procedures" : [ "CollaborationUtils.closeCollaboration", "app.findenroutevehicle" ],
+      "sourceHash" : [ "in" ],
+      "sources" : [ "VantiqPushNotification" ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "vehicle" ]
+    },
+    "label" : "NotifyDriverNewPackage",
+    "name" : "NotifyDriverNewPackage",
+    "resourceReference" : "/collaborationtypes/NotifyDriverNewPackage",
+    "timestamp" : "2020-10-27T19:39:24.790Z",
+    "type" : 11
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out", "out", "out" ],
+      "procedures" : [ "app.createLink", "CollaborationUtils.closeCollaboration", "findDriverForShipping" ],
+      "sourceHash" : [ "in" ],
+      "sources" : [ "VantiqPushNotification" ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "routes" ]
+    },
+    "label" : "NotifyDriverNextAddress",
+    "name" : "NotifyDriverNextAddress",
+    "node" : {
+      "x" : -320.2,
+      "y" : -71
+    },
+    "resourceReference" : "/collaborationtypes/NotifyDriverNextAddress",
+    "timestamp" : "2020-10-27T19:39:22.991Z",
+    "type" : 11
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "NotifyDriverRouteComplete",
+    "name" : "NotifyDriverRouteComplete",
+    "resourceReference" : "/collaborationtypes/NotifyDriverRouteComplete",
+    "timestamp" : "2020-10-27T19:39:24.772Z",
+    "type" : 11
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out", "out" ],
+      "procedures" : [ "CollaborationUtils.closeCollaboration", "sendEmailClientEnRoute" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "package" ]
+    },
+    "label" : "NotifyEnRouteToCustomer",
+    "name" : "NotifyEnRouteToCustomer",
+    "node" : {
+      "x" : -177,
+      "y" : -497.3
+    },
+    "resourceReference" : "/collaborationtypes/NotifyEnRouteToCustomer",
+    "timestamp" : "2020-10-27T19:39:24.513Z",
+    "type" : 11
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out", "out" ],
+      "procedures" : [ "cb.createHTMLIssueDetails", "CollaborationUtils.closeCollaboration" ],
+      "sourceHash" : [ "in" ],
+      "sources" : [ "VantiqPushNotification" ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "issues" ]
+    },
+    "label" : "NotifyIssueToDriver",
+    "name" : "NotifyIssueToDriver",
+    "resourceReference" : "/collaborationtypes/NotifyIssueToDriver",
+    "timestamp" : "2020-10-27T19:39:24.518Z",
+    "type" : 11
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out", "out" ],
+      "procedures" : [ "app.findManager", "CollaborationUtils.closeCollaboration" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "package" ]
+    },
+    "label" : "NotifyManager",
+    "name" : "NotifyManager",
+    "node" : {
+      "x" : 619.8,
+      "y" : 395.3
+    },
+    "resourceReference" : "/collaborationtypes/NotifyManager",
+    "timestamp" : "2020-10-27T19:39:24.397Z",
+    "type" : 11
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ "out" ],
+      "topics" : [ "/vantiq/systemmodel/NotifyManager/submitTopic" ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "NotifyManager",
+    "name" : "NotifyManager",
+    "node" : {
+      "x" : -269.1,
+      "y" : -104.7
+    },
+    "resourceReference" : "/system.clients/NotifyManager",
+    "timestamp" : "2020-10-27T19:39:16.161Z",
+    "type" : 15
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ "out" ],
+      "topics" : [ "/deliveries/sensors/opendoorsensors" ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "OpenDoorInfo",
+    "name" : "OpenDoorInfo",
+    "resourceReference" : "/system.scheduledevents/OpenDoorInfo",
+    "timestamp" : "2020-11-02T16:31:51.948Z",
+    "type" : 17
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ "out" ],
+      "collaborations" : [ "NotifyIssueToDriver" ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ "in" ],
+      "topics" : [ "/deliveries/sensors/opendoorsensors" ],
+      "typeHash" : [ "in", "in", "in" ],
+      "types" : [ "sensors", "vehicle", "issues" ]
+    },
+    "label" : "OpenDoorIssue",
+    "name" : "OpenDoorIssue",
+    "resourceReference" : "/collaborationtypes/OpenDoorIssue",
+    "timestamp" : "2020-10-27T19:39:23.681Z",
+    "type" : 12
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ "out" ],
+      "topics" : [ "/personnel/registration" ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "PhotoRegistration",
+    "name" : "PhotoRegistration",
+    "node" : {
+      "x" : 597.6,
+      "y" : -27.9
+    },
+    "resourceReference" : "/system.clients/PhotoRegistration",
+    "timestamp" : "2020-10-27T19:39:16.156Z",
+    "type" : 15
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ "out" ],
+      "collaborations" : [ "NotifyEnRouteToCustomer" ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ "in" ],
+      "topics" : [ "/deliveries/checkin" ],
+      "typeHash" : [ "in" ],
+      "types" : [ "package" ]
+    },
+    "label" : "ProductShipping",
+    "name" : "ProductShipping",
+    "node" : {
+      "x" : -427.4,
+      "y" : -163
+    },
+    "resourceReference" : "/collaborationtypes/ProductShipping",
+    "timestamp" : "2020-10-27T19:39:22.819Z",
+    "type" : 12
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ "out" ],
+      "collaborations" : [ "NotifyCustomer" ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out" ],
+      "procedures" : [ "app.assign_ZonePackage_2" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ "in" ],
+      "topics" : [ "/vantiq/systemmodel/NotifyManager/submitTopic" ],
+      "typeHash" : [ "in" ],
+      "types" : [ "package" ]
+    },
+    "label" : "RegionFromManager",
+    "name" : "RegionFromManager",
+    "node" : {
+      "x" : -192.5,
+      "y" : -82.7
+    },
+    "resourceReference" : "/collaborationtypes/RegionFromManager",
+    "timestamp" : "2020-10-27T19:39:24.714Z",
+    "type" : 12
+  }, {
+    "label" : "RepresentanteAdmin",
+    "name" : "RepresentanteAdmin",
+    "resourceReference" : "/types/RepresentanteAdmin",
+    "timestamp" : "2020-11-11T15:47:54.079Z",
+    "type" : 1
+  }, {
+    "label" : "RepresentanteGeneral",
+    "name" : "RepresentanteGeneral",
+    "resourceReference" : "/types/RepresentanteGeneral",
+    "timestamp" : "2020-11-12T10:48:47.549Z",
+    "type" : 1
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ "in" ],
+      "topics" : [ "/deliveries/neworder" ],
+      "typeHash" : [ "out" ],
+      "types" : [ "package" ]
+    },
+    "label" : "SaveOrderToType",
+    "name" : "SaveOrderToType",
+    "node" : {
+      "x" : -137,
+      "y" : 67.9
+    },
+    "resourceReference" : "/collaborationtypes/SaveOrderToType",
+    "timestamp" : "2020-10-27T19:39:24.432Z",
+    "type" : 12
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ "out" ],
+      "collaborations" : [ "NotifyDriver" ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "shipments" ]
+    },
+    "label" : "ShippingAssignment",
+    "name" : "ShippingAssignment",
+    "node" : {
+      "x" : 95.4,
+      "y" : -218.7
+    },
+    "resourceReference" : "/collaborationtypes/ShippingAssignment",
+    "timestamp" : "2020-10-27T19:39:21.593Z",
+    "type" : 12
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ "out", "out" ],
+      "topics" : [ "/deliveries/checkin", "/deliveries/startroute" ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "ShippingCheckIn",
+    "name" : "ShippingCheckIn",
+    "node" : {
+      "x" : -365.1,
+      "y" : -137.2
+    },
+    "resourceReference" : "/system.clients/ShippingCheckIn",
+    "timestamp" : "2020-10-27T19:39:16.147Z",
+    "type" : 15
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ "out" ],
+      "topics" : [ "/deliveries/checkin" ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "ShippingNotification",
+    "name" : "ShippingNotification",
+    "node" : {
+      "x" : 794.8,
+      "y" : -202.3
+    },
+    "resourceReference" : "/system.clients/ShippingNotification",
+    "timestamp" : "2020-10-27T19:39:16.145Z",
+    "type" : 15
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ "out" ],
+      "topics" : [ "/vantiq/systemmodel/ShippingPackage/submitTopic" ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "ShippingPackage",
+    "name" : "ShippingPackage",
+    "resourceReference" : "/system.clients/ShippingPackage",
+    "timestamp" : "2020-10-27T19:39:16.143Z",
+    "type" : 15
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "shipments" ]
+    },
+    "label" : "StartDriverTracking",
+    "name" : "StartDriverTracking",
+    "node" : {
+      "x" : 50.6,
+      "y" : -425.9
+    },
+    "resourceReference" : "/collaborationtypes/StartDriverTracking",
+    "timestamp" : "2020-10-27T19:39:23.297Z",
+    "type" : 11
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ "out", "out", "out" ],
+      "collaborations" : [ "NotifyDriverNextAddress", "TrackDriverAndSendEmail", "TrackDriverandSendEmailShipment" ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out" ],
+      "procedures" : [ "app.getShipmentFromEventRoute" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ "in" ],
+      "topics" : [ "/deliveries/startroute" ],
+      "typeHash" : [ "in", "in", "in" ],
+      "types" : [ "vehicle", "routes", "shipments" ]
+    },
+    "label" : "StartRouteApp",
+    "name" : "StartRouteApp",
+    "node" : {
+      "x" : -173.7,
+      "y" : -193
+    },
+    "resourceReference" : "/collaborationtypes/StartRouteApp",
+    "timestamp" : "2020-10-27T19:39:23.948Z",
+    "type" : 12
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "TestCurrentLocation",
+    "name" : "TestCurrentLocation",
+    "node" : {
+      "x" : 424.2,
+      "y" : -295.4
+    },
+    "resourceReference" : "/system.clients/TestCurrentLocation",
+    "timestamp" : "2020-10-27T19:39:16.146Z",
+    "type" : 15
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "TrackDriver",
+    "name" : "TrackDriver",
+    "node" : {
+      "x" : 52.6,
+      "y" : -515.7
+    },
+    "resourceReference" : "/system.clients/TrackDriver",
+    "timestamp" : "2020-11-02T15:16:03.052Z",
+    "type" : 15
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out", "out", "out", "out" ],
+      "procedures" : [ "app.createPublicLink", "findDriverForShipping", "app.sendTrackingEmail", "app.viewTrackDriverInfo" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "routes" ]
+    },
+    "label" : "TrackDriverAndSendEmail",
+    "name" : "TrackDriverAndSendEmail",
+    "resourceReference" : "/collaborationtypes/TrackDriverAndSendEmail",
+    "timestamp" : "2020-10-27T19:39:18.453Z",
+    "type" : 11
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "TrackDriverMobile",
+    "name" : "TrackDriverMobile",
+    "resourceReference" : "/system.clients/TrackDriverMobile",
+    "timestamp" : "2020-10-27T19:39:16.155Z",
+    "type" : 15
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out", "out", "out", "out", "out", "out", "out" ],
+      "procedures" : [ "app.createPublicLinkDriverFeedback", "app.createPublicLinkShipment", "findDriverForShipping", "app.apdateCurrentLocationinTypes", "CollaborationUtils.closeCollaboration", "app.sendEmailAlert", "app.sendTrackingEmail" ],
+      "sourceHash" : [ "in" ],
+      "sources" : [ "VantiqPushNotification" ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "shipments" ]
+    },
+    "label" : "TrackDriverandSendEmailShipment",
+    "name" : "TrackDriverandSendEmailShipment",
+    "resourceReference" : "/collaborationtypes/TrackDriverandSendEmailShipment",
+    "timestamp" : "2020-10-30T16:32:45.967Z",
+    "type" : 11
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in", "in" ],
+      "types" : [ "enroute", "package" ]
+    },
+    "label" : "TrackVehicle",
+    "name" : "TrackVehicle",
+    "node" : {
+      "x" : 229.6,
+      "y" : -59.1
+    },
+    "resourceReference" : "/collaborationtypes/TrackVehicle",
+    "timestamp" : "2020-10-27T19:39:24.820Z",
+    "type" : 11
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ "out" ],
+      "topics" : [ "/deliveries/fixedrouteadd" ],
+      "typeHash" : [ "in", "in", "in", "in" ],
+      "types" : [ "assets", "sensors", "system.collaborations", "issues" ]
+    },
+    "label" : "VantiqDeliveries",
+    "name" : "VantiqDeliveries",
+    "node" : {
+      "x" : 387.5,
+      "y" : 139.8
+    },
+    "resourceReference" : "/system.clients/VantiqDeliveries",
+    "timestamp" : "2020-11-03T17:05:16.657Z",
+    "type" : 15
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "VantiqPushNotification",
+    "name" : "VantiqPushNotification",
+    "node" : {
+      "x" : -238.8,
+      "y" : -299.2
+    },
+    "resourceReference" : "/sources/VantiqPushNotification",
+    "timestamp" : "2020-10-27T19:39:17.112Z",
+    "type" : 4
+  }, {
+    "label" : "app",
+    "name" : "app",
+    "resourceReference" : "/system.services/app",
+    "timestamp" : "2020-11-13T21:30:24.741Z",
+    "type" : 63
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "both", "out", "out" ],
+      "types" : [ "shipments", "vehicle", "route" ]
+    },
+    "label" : "app.apdateCurrentLocationinTypes",
+    "name" : "app.apdateCurrentLocationinTypes",
+    "resourceReference" : "/procedures/app.apdateCurrentLocationinTypes",
+    "timestamp" : "2020-10-27T19:39:17.894Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out", "out", "out", "out", "out", "out", "out", "out" ],
+      "procedures" : [ "format", "push", "GoogleDistanceMatrix", "app.getFinalDestination", "app.getWaypoints", "app.updatePackageAddress", "app.getEndPoint", "GoogleDirectionsWayPoints" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in", "both", "out", "out" ],
+      "types" : [ "package", "vehicle", "shipments", "routes" ]
+    },
+    "label" : "app.assignOrders",
+    "name" : "app.assignOrders",
+    "node" : {
+      "x" : 1308,
+      "y" : 196.3
+    },
+    "resourceReference" : "/procedures/app.assignOrders",
+    "timestamp" : "2020-11-03T16:19:10.960Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out" ],
+      "procedures" : [ "size" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in", "both" ],
+      "types" : [ "region", "package" ]
+    },
+    "label" : "app.assign_ZonePackage",
+    "name" : "app.assign_ZonePackage",
+    "node" : {
+      "x" : 663.3,
+      "y" : 461.6
+    },
+    "resourceReference" : "/procedures/app.assign_ZonePackage",
+    "timestamp" : "2020-10-30T15:49:03.435Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "out" ],
+      "types" : [ "package" ]
+    },
+    "label" : "app.assign_ZonePackage_2",
+    "name" : "app.assign_ZonePackage_2",
+    "node" : {
+      "x" : 521.3,
+      "y" : 268.8
+    },
+    "resourceReference" : "/procedures/app.assign_ZonePackage_2",
+    "timestamp" : "2020-10-27T19:39:17.936Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "app.calculateNextDestination",
+    "name" : "app.calculateNextDestination",
+    "node" : {
+      "x" : 1338.1,
+      "y" : 74.4
+    },
+    "resourceReference" : "/procedures/app.calculateNextDestination",
+    "timestamp" : "2020-10-27T19:39:17.884Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "app.calculateNextWaypoint",
+    "name" : "app.calculateNextWaypoint",
+    "node" : {
+      "x" : -67.7,
+      "y" : -754.2
+    },
+    "resourceReference" : "/procedures/app.calculateNextWaypoint",
+    "timestamp" : "2020-10-27T19:39:17.929Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out" ],
+      "procedures" : [ "whitespaceTo" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "app.createLink",
+    "name" : "app.createLink",
+    "node" : {
+      "x" : 367.1,
+      "y" : -670.1
+    },
+    "resourceReference" : "/procedures/app.createLink",
+    "timestamp" : "2020-10-27T19:39:17.789Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out", "out" ],
+      "procedures" : [ "whitespaceTo", "push" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "app.createPublicLink",
+    "name" : "app.createPublicLink",
+    "resourceReference" : "/procedures/app.createPublicLink",
+    "timestamp" : "2020-10-27T19:39:17.839Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "app.createPublicLinkDriverFeedback",
+    "name" : "app.createPublicLinkDriverFeedback",
+    "resourceReference" : "/procedures/app.createPublicLinkDriverFeedback",
+    "timestamp" : "2020-10-27T19:39:17.987Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out", "out" ],
+      "procedures" : [ "whitespaceTo", "push" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "app.createPublicLinkShipment",
+    "name" : "app.createPublicLinkShipment",
+    "resourceReference" : "/procedures/app.createPublicLinkShipment",
+    "timestamp" : "2020-11-02T15:13:51.904Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out" ],
+      "procedures" : [ "whitespaceTo" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "app.createlink2",
+    "name" : "app.createlink2",
+    "node" : {
+      "x" : 562.8,
+      "y" : -392.4
+    },
+    "resourceReference" : "/procedures/app.createlink2",
+    "timestamp" : "2020-10-27T19:39:17.910Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "personnel" ]
+    },
+    "label" : "app.findManager",
+    "name" : "app.findManager",
+    "node" : {
+      "x" : 373.4,
+      "y" : 237.4
+    },
+    "resourceReference" : "/procedures/app.findManager",
+    "timestamp" : "2020-10-27T19:39:18.145Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "app.findenroutevehicle",
+    "name" : "app.findenroutevehicle",
+    "resourceReference" : "/procedures/app.findenroutevehicle",
+    "timestamp" : "2020-10-27T19:39:17.972Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out" ],
+      "procedures" : [ "push" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "app.getEndPoint",
+    "name" : "app.getEndPoint",
+    "node" : {
+      "x" : 1115.7,
+      "y" : 151.5
+    },
+    "resourceReference" : "/procedures/app.getEndPoint",
+    "timestamp" : "2020-10-27T19:39:17.958Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "app.getFinalDestination",
+    "name" : "app.getFinalDestination",
+    "node" : {
+      "x" : 169.3,
+      "y" : -715.8
+    },
+    "resourceReference" : "/procedures/app.getFinalDestination",
+    "timestamp" : "2020-10-27T19:39:18.123Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out" ],
+      "procedures" : [ "cb.getPackageInfo" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in", "in" ],
+      "types" : [ "routes", "shipments" ]
+    },
+    "label" : "app.getShipmentFromEventRoute",
+    "name" : "app.getShipmentFromEventRoute",
+    "resourceReference" : "/procedures/app.getShipmentFromEventRoute",
+    "timestamp" : "2020-10-27T19:39:18.066Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out" ],
+      "procedures" : [ "push" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "app.getWaypoints",
+    "name" : "app.getWaypoints",
+    "node" : {
+      "x" : 318.7,
+      "y" : -591.8
+    },
+    "resourceReference" : "/procedures/app.getWaypoints",
+    "timestamp" : "2020-10-27T19:39:17.934Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "out" ],
+      "types" : [ "routes" ]
+    },
+    "label" : "app.resetStepRoute",
+    "name" : "app.resetStepRoute",
+    "node" : {
+      "x" : 233,
+      "y" : -931.4
+    },
+    "resourceReference" : "/procedures/app.resetStepRoute",
+    "timestamp" : "2020-10-27T19:39:18.054Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "routes" ]
+    },
+    "label" : "app.routeById",
+    "name" : "app.routeById",
+    "node" : {
+      "x" : 942.5,
+      "y" : 233.2
+    },
+    "resourceReference" : "/procedures/app.routeById",
+    "timestamp" : "2020-10-27T19:39:18.105Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out", "out", "out" ],
+      "procedures" : [ "now", "minusMillis", "push" ],
+      "sourceHash" : [ "out" ],
+      "sources" : [ "email" ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "app.sendEmailAlert",
+    "name" : "app.sendEmailAlert",
+    "resourceReference" : "/procedures/app.sendEmailAlert",
+    "timestamp" : "2020-10-30T16:32:16.106Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out", "out", "out", "out", "out" ],
+      "procedures" : [ "now", "minusMillis", "format", "replace", "push" ],
+      "sourceHash" : [ "out" ],
+      "sources" : [ "email" ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "app.sendEmailClient",
+    "name" : "app.sendEmailClient",
+    "resourceReference" : "/procedures/app.sendEmailClient",
+    "timestamp" : "2020-10-30T16:13:08.157Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out", "out", "out", "out", "out" ],
+      "procedures" : [ "now", "minusMillis", "format", "replace", "push" ],
+      "sourceHash" : [ "out" ],
+      "sources" : [ "email" ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "package" ]
+    },
+    "label" : "app.sendEmailClientShipment",
+    "name" : "app.sendEmailClientShipment",
+    "resourceReference" : "/procedures/app.sendEmailClientShipment",
+    "timestamp" : "2020-10-30T16:21:07.633Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out", "out", "out", "out" ],
+      "procedures" : [ "now", "minusMillis", "replace", "push" ],
+      "sourceHash" : [ "out" ],
+      "sources" : [ "email" ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "app.sendTrackingEmail",
+    "name" : "app.sendTrackingEmail",
+    "resourceReference" : "/procedures/app.sendTrackingEmail",
+    "timestamp" : "2020-10-27T19:39:18.036Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "app.trackdriver",
+    "name" : "app.trackdriver",
+    "node" : {
+      "x" : -271.6,
+      "y" : -30.7
+    },
+    "resourceReference" : "/procedures/app.trackdriver",
+    "timestamp" : "2020-10-27T19:39:18.017Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out", "out" ],
+      "procedures" : [ "push", "app.routeById" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "both", "both", "out" ],
+      "types" : [ "routes", "package", "shipments" ]
+    },
+    "label" : "app.updateDeliveryInfo",
+    "name" : "app.updateDeliveryInfo",
+    "node" : {
+      "x" : 622.5,
+      "y" : -552.4
+    },
+    "resourceReference" : "/procedures/app.updateDeliveryInfo",
+    "timestamp" : "2020-10-27T19:39:18.327Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "app.updatePackageAddress",
+    "name" : "app.updatePackageAddress",
+    "node" : {
+      "x" : 1135.2,
+      "y" : 90.3
+    },
+    "resourceReference" : "/procedures/app.updatePackageAddress",
+    "timestamp" : "2020-10-27T19:39:18.060Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "both", "out" ],
+      "types" : [ "routes", "vehicle" ]
+    },
+    "label" : "app.viewTrackDriverInfo",
+    "name" : "app.viewTrackDriverInfo",
+    "resourceReference" : "/procedures/app.viewTrackDriverInfo",
+    "timestamp" : "2020-10-27T19:39:18.175Z",
+    "type" : 3
+  }, {
+    "label" : "appCondition",
+    "name" : "appCondition",
+    "resourceReference" : "/system.services/appCondition",
+    "timestamp" : "2020-10-27T19:39:17.783Z",
+    "type" : 63
+  }, {
+    "label" : "assets",
+    "name" : "assets",
+    "node" : {
+      "x" : 409.6,
+      "y" : -7.1
+    },
+    "resourceReference" : "/types/assets",
+    "timestamp" : "2020-10-27T19:39:13.093Z",
+    "type" : 1
+  }, {
+    "label" : "buildings",
+    "name" : "buildings",
+    "node" : {
+      "x" : 663.3,
+      "y" : -10.4
+    },
+    "resourceReference" : "/types/buildings",
+    "timestamp" : "2020-10-27T19:39:13.092Z",
+    "type" : 1
+  }, {
+    "label" : "cb",
+    "name" : "cb",
+    "resourceReference" : "/system.services/cb",
+    "timestamp" : "2020-11-16T14:10:53.032Z",
+    "type" : 63
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "cb.createHTMLIssueDetails",
+    "name" : "cb.createHTMLIssueDetails",
+    "resourceReference" : "/procedures/cb.createHTMLIssueDetails",
+    "timestamp" : "2020-10-27T19:39:18.148Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "package" ]
+    },
+    "label" : "cb.createHTMLShippingDetails",
+    "name" : "cb.createHTMLShippingDetails",
+    "resourceReference" : "/procedures/cb.createHTMLShippingDetails",
+    "timestamp" : "2020-10-27T19:39:18.090Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out" ],
+      "procedures" : [ "exception" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in", "out" ],
+      "types" : [ "floors", "buildings" ]
+    },
+    "label" : "cb.deleteBuilding",
+    "name" : "cb.deleteBuilding",
+    "node" : {
+      "x" : 773.1,
+      "y" : -118.3
+    },
+    "resourceReference" : "/procedures/cb.deleteBuilding",
+    "timestamp" : "2020-10-27T19:39:18.206Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "out" ],
+      "types" : [ "vehicle" ]
+    },
+    "label" : "cb.deleteVehicle",
+    "name" : "cb.deleteVehicle",
+    "node" : {
+      "x" : 596.4,
+      "y" : 668.2
+    },
+    "resourceReference" : "/procedures/cb.deleteVehicle",
+    "timestamp" : "2020-10-29T21:04:39.981Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "out", "out" ],
+      "types" : [ "vehicle", "personnel" ]
+    },
+    "label" : "cb.deleteVehicleDriver",
+    "name" : "cb.deleteVehicleDriver",
+    "node" : {
+      "x" : 359.9,
+      "y" : 547.3
+    },
+    "resourceReference" : "/procedures/cb.deleteVehicleDriver",
+    "timestamp" : "2020-10-27T19:39:18.180Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in", "in", "in" ],
+      "types" : [ "RepresentanteAdmin", "issuesDatos", "RepresentanteGeneral" ]
+    },
+    "label" : "cb.getDashboardData",
+    "name" : "cb.getDashboardData",
+    "node" : {
+      "x" : 558.4,
+      "y" : 383.8
+    },
+    "resourceReference" : "/procedures/cb.getDashboardData",
+    "timestamp" : "2020-11-16T14:10:53.179Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "personnel" ]
+    },
+    "label" : "cb.getDrivers",
+    "name" : "cb.getDrivers",
+    "node" : {
+      "x" : 264,
+      "y" : 273.8
+    },
+    "resourceReference" : "/procedures/cb.getDrivers",
+    "timestamp" : "2020-10-27T19:39:18.178Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "fixedroutes" ]
+    },
+    "label" : "cb.getFixedRoutes",
+    "name" : "cb.getFixedRoutes",
+    "resourceReference" : "/procedures/cb.getFixedRoutes",
+    "timestamp" : "2020-10-27T19:39:18.134Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out", "out", "out" ],
+      "procedures" : [ "ResourceAPI.executeOp", "issues.push", "concat" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "system.components" ]
+    },
+    "label" : "cb.getOpenIssues",
+    "name" : "cb.getOpenIssues",
+    "resourceReference" : "/procedures/cb.getOpenIssues",
+    "timestamp" : "2020-10-27T19:39:18.386Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "organization" ]
+    },
+    "label" : "cb.getOrganization",
+    "name" : "cb.getOrganization",
+    "node" : {
+      "x" : 774.8,
+      "y" : 738.6
+    },
+    "resourceReference" : "/procedures/cb.getOrganization",
+    "timestamp" : "2020-10-27T19:39:18.276Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "package" ]
+    },
+    "label" : "cb.getPackageByBarcode",
+    "name" : "cb.getPackageByBarcode",
+    "node" : {
+      "x" : 733.5,
+      "y" : 501.4
+    },
+    "resourceReference" : "/procedures/cb.getPackageByBarcode",
+    "timestamp" : "2020-10-27T19:39:18.116Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out", "out", "out", "out" ],
+      "procedures" : [ "length", "index.toString", "lastIndexDestination.toString", "push" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in", "out" ],
+      "types" : [ "package", "routes" ]
+    },
+    "label" : "cb.getPackageInfo",
+    "name" : "cb.getPackageInfo",
+    "node" : {
+      "x" : 627,
+      "y" : 513
+    },
+    "resourceReference" : "/procedures/cb.getPackageInfo",
+    "timestamp" : "2020-10-27T19:39:18.258Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out", "out", "out" ],
+      "procedures" : [ "index.toString", "lastIndexDestination.toString", "push" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "package" ]
+    },
+    "label" : "cb.getPackagePhoto",
+    "name" : "cb.getPackagePhoto",
+    "node" : {
+      "x" : 580.9,
+      "y" : 483.1
+    },
+    "resourceReference" : "/procedures/cb.getPackagePhoto",
+    "timestamp" : "2020-10-27T19:39:18.425Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "package" ]
+    },
+    "label" : "cb.getPackagePhoto2",
+    "name" : "cb.getPackagePhoto2",
+    "resourceReference" : "/procedures/cb.getPackagePhoto2",
+    "timestamp" : "2020-10-27T19:39:18.203Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "package" ]
+    },
+    "label" : "cb.getPackages",
+    "name" : "cb.getPackages",
+    "node" : {
+      "x" : 864.6,
+      "y" : 305.7
+    },
+    "resourceReference" : "/procedures/cb.getPackages",
+    "timestamp" : "2020-10-27T19:39:18.431Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "package" ]
+    },
+    "label" : "cb.getPackagesByBarcode",
+    "name" : "cb.getPackagesByBarcode",
+    "node" : {
+      "x" : 686.8,
+      "y" : 518.7
+    },
+    "resourceReference" : "/procedures/cb.getPackagesByBarcode",
+    "timestamp" : "2020-10-27T19:39:18.366Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "region" ]
+    },
+    "label" : "cb.getRegions",
+    "name" : "cb.getRegions",
+    "node" : {
+      "x" : 736.6,
+      "y" : 155.2
+    },
+    "resourceReference" : "/procedures/cb.getRegions",
+    "timestamp" : "2020-10-27T19:39:18.156Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "routes" ]
+    },
+    "label" : "cb.getRoutes",
+    "name" : "cb.getRoutes",
+    "node" : {
+      "x" : 889.6,
+      "y" : 191.8
+    },
+    "resourceReference" : "/procedures/cb.getRoutes",
+    "timestamp" : "2020-10-27T19:39:18.354Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in", "in" ],
+      "types" : [ "vehicle", "shipments" ]
+    },
+    "label" : "cb.getShipments",
+    "name" : "cb.getShipments",
+    "node" : {
+      "x" : 187.5,
+      "y" : 109.9
+    },
+    "resourceReference" : "/procedures/cb.getShipments",
+    "timestamp" : "2020-10-27T19:39:18.452Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "shipments" ]
+    },
+    "label" : "cb.getShipments2",
+    "name" : "cb.getShipments2",
+    "node" : {
+      "x" : -78.3,
+      "y" : -299.6
+    },
+    "resourceReference" : "/procedures/cb.getShipments2",
+    "timestamp" : "2020-10-27T19:39:18.301Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "temporder" ]
+    },
+    "label" : "cb.getTempOrders",
+    "name" : "cb.getTempOrders",
+    "resourceReference" : "/procedures/cb.getTempOrders",
+    "timestamp" : "2020-10-27T19:39:18.226Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "vehicletypes" ]
+    },
+    "label" : "cb.getVehicleTypes",
+    "name" : "cb.getVehicleTypes",
+    "node" : {
+      "x" : 982.8,
+      "y" : 485.1
+    },
+    "resourceReference" : "/procedures/cb.getVehicleTypes",
+    "timestamp" : "2020-10-27T19:39:18.519Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "vehicle" ]
+    },
+    "label" : "cb.getVehicles",
+    "name" : "cb.getVehicles",
+    "node" : {
+      "x" : 457,
+      "y" : 689.4
+    },
+    "resourceReference" : "/procedures/cb.getVehicles",
+    "timestamp" : "2020-10-27T19:39:18.224Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "vehicle" ]
+    },
+    "label" : "cb.getVehiclesInRegion",
+    "name" : "cb.getVehiclesInRegion",
+    "node" : {
+      "x" : 479,
+      "y" : 387.8
+    },
+    "resourceReference" : "/procedures/cb.getVehiclesInRegion",
+    "timestamp" : "2020-10-27T19:39:18.414Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "vehicle" ]
+    },
+    "label" : "cb.getVehicles_All",
+    "name" : "cb.getVehicles_All",
+    "node" : {
+      "x" : 273.7,
+      "y" : 482.5
+    },
+    "resourceReference" : "/procedures/cb.getVehicles_All",
+    "timestamp" : "2020-10-27T19:39:18.493Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "out" ],
+      "types" : [ "vehicle" ]
+    },
+    "label" : "cb.updateRegionVehicle",
+    "name" : "cb.updateRegionVehicle",
+    "node" : {
+      "x" : 372.1,
+      "y" : 450.7
+    },
+    "resourceReference" : "/procedures/cb.updateRegionVehicle",
+    "timestamp" : "2020-10-27T19:39:18.444Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "out" ],
+      "types" : [ "routes" ]
+    },
+    "label" : "cb.updateRouteLegs",
+    "name" : "cb.updateRouteLegs",
+    "node" : {
+      "x" : 1348.1,
+      "y" : 49.4
+    },
+    "resourceReference" : "/procedures/cb.updateRouteLegs",
+    "timestamp" : "2020-10-27T19:39:18.336Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "out", "out" ],
+      "types" : [ "vehicle", "personnel" ]
+    },
+    "label" : "cb.updateVehicleDriver",
+    "name" : "cb.updateVehicleDriver",
+    "node" : {
+      "x" : 330.4,
+      "y" : 511.7
+    },
+    "resourceReference" : "/procedures/cb.updateVehicleDriver",
+    "timestamp" : "2020-10-27T19:39:18.548Z",
+    "type" : 3
+  }, {
+    "label" : "coordinates",
+    "name" : "coordinates",
+    "node" : {
+      "x" : 1044.4,
+      "y" : 275.9
+    },
+    "resourceReference" : "/types/coordinates",
+    "timestamp" : "2020-10-27T19:39:12.854Z",
+    "type" : 1
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "email",
+    "name" : "email",
+    "node" : {
+      "x" : 1019.7,
+      "y" : -41.3
+    },
+    "resourceReference" : "/sources/email",
+    "timestamp" : "2020-10-30T16:04:55.712Z",
+    "type" : 4
+  }, {
+    "label" : "enroute",
+    "name" : "enroute",
+    "node" : {
+      "x" : -73,
+      "y" : -634.4
+    },
+    "resourceReference" : "/types/enroute",
+    "timestamp" : "2020-10-27T19:39:12.962Z",
+    "type" : 1
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "vehicle" ]
+    },
+    "label" : "findDriverForShipping",
+    "name" : "findDriverForShipping",
+    "node" : {
+      "x" : 573.4,
+      "y" : 726.2
+    },
+    "resourceReference" : "/procedures/findDriverForShipping",
+    "timestamp" : "2020-10-27T19:39:18.448Z",
+    "type" : 3
+  }, {
+    "label" : "fixedroutes",
+    "name" : "fixedroutes",
+    "resourceReference" : "/types/fixedroutes",
+    "timestamp" : "2020-10-27T19:39:12.980Z",
+    "type" : 1
+  }, {
+    "label" : "floors",
+    "name" : "floors",
+    "node" : {
+      "x" : 783.7,
+      "y" : 33
+    },
+    "resourceReference" : "/types/floors",
+    "timestamp" : "2020-10-27T19:39:13.102Z",
+    "type" : 1
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "system.collaborations" ]
+    },
+    "label" : "getCollabs",
+    "name" : "getCollabs",
+    "node" : {
+      "x" : 217.6,
+      "y" : 547.7
+    },
+    "resourceReference" : "/procedures/getCollabs",
+    "timestamp" : "2020-10-27T19:39:18.447Z",
+    "type" : 3
+  }, {
+    "label" : "issues",
+    "name" : "issues",
+    "resourceReference" : "/types/issues",
+    "timestamp" : "2020-10-27T19:39:12.982Z",
+    "type" : 1
+  }, {
+    "label" : "issuesDatos",
+    "name" : "issuesDatos",
+    "resourceReference" : "/types/issuesDatos",
+    "timestamp" : "2020-11-12T20:47:17.857Z",
+    "type" : 1
+  }, {
+    "label" : "organization",
+    "name" : "organization",
+    "node" : {
+      "x" : 882.3,
+      "y" : 626.2
+    },
+    "resourceReference" : "/types/organization",
+    "timestamp" : "2020-10-27T19:39:12.985Z",
+    "type" : 1
+  }, {
+    "label" : "package",
+    "name" : "package",
+    "node" : {
+      "x" : 725.3,
+      "y" : 341
+    },
+    "resourceReference" : "/types/package",
+    "timestamp" : "2020-10-27T19:39:13.077Z",
+    "type" : 1
+  }, {
+    "label" : "personnel",
+    "name" : "personnel",
+    "node" : {
+      "x" : 388.3,
+      "y" : 367.9
+    },
+    "resourceReference" : "/types/personnel",
+    "timestamp" : "2020-10-27T19:39:13.092Z",
+    "type" : 1
+  }, {
+    "label" : "public",
+    "name" : "public",
+    "resourceReference" : "/system.services/public",
+    "timestamp" : "2020-11-02T15:06:26.599Z",
+    "type" : 63
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "vehicle" ]
+    },
+    "label" : "public.GetLocation",
+    "name" : "public.GetLocation",
+    "resourceReference" : "/procedures/public.GetLocation",
+    "timestamp" : "2020-10-27T19:39:18.578Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "shipments" ]
+    },
+    "label" : "public.GetShipmentInfo",
+    "name" : "public.GetShipmentInfo",
+    "resourceReference" : "/procedures/public.GetShipmentInfo",
+    "timestamp" : "2020-11-02T15:05:47.209Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out" ],
+      "procedures" : [ "GoogleGeoCode" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ "out" ],
+      "topics" : [ "/deliveries/orderinroute" ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "public.PublishOrder",
+    "name" : "public.PublishOrder",
+    "resourceReference" : "/procedures/public.PublishOrder",
+    "timestamp" : "2020-10-27T19:39:18.534Z",
+    "type" : 3
+  }, {
+    "label" : "region",
+    "name" : "region",
+    "node" : {
+      "x" : 669.8,
+      "y" : 289.6
+    },
+    "resourceReference" : "/types/region",
+    "timestamp" : "2020-10-27T19:39:13.061Z",
+    "type" : 1
+  }, {
+    "label" : "roles",
+    "name" : "roles",
+    "node" : {
+      "x" : 284.8,
+      "y" : -75
+    },
+    "resourceReference" : "/types/roles",
+    "timestamp" : "2020-10-27T19:39:13.092Z",
+    "type" : 1
+  }, {
+    "label" : "routes",
+    "name" : "routes",
+    "node" : {
+      "x" : 1001.4,
+      "y" : 93.6
+    },
+    "resourceReference" : "/types/routes",
+    "timestamp" : "2020-10-27T19:39:12.979Z",
+    "type" : 1
+  }, {
+    "label" : "s_dashboard",
+    "name" : "s_dashboard",
+    "node" : {
+      "x" : 137.6,
+      "y" : 380.4
+    },
+    "resourceReference" : "/types/s_dashboard",
+    "timestamp" : "2020-11-13T10:45:09.358Z",
+    "type" : 1
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out", "out", "out", "out", "out" ],
+      "procedures" : [ "now", "minusMillis", "format", "replace", "push" ],
+      "sourceHash" : [ "out" ],
+      "sources" : [ "email" ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "sendEmailClientEnRoute",
+    "name" : "sendEmailClientEnRoute",
+    "node" : {
+      "x" : 877.5,
+      "y" : -214
+    },
+    "resourceReference" : "/procedures/sendEmailClientEnRoute",
+    "timestamp" : "2020-10-27T19:39:18.509Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out", "out", "out" ],
+      "procedures" : [ "now", "minusMillis", "push" ],
+      "sourceHash" : [ "out" ],
+      "sources" : [ "email" ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "sendEmailDriverFeedBack",
+    "name" : "sendEmailDriverFeedBack",
+    "resourceReference" : "/procedures/sendEmailDriverFeedBack",
+    "timestamp" : "2020-10-27T19:39:18.944Z",
+    "type" : 3
+  }, {
+    "label" : "sensors",
+    "name" : "sensors",
+    "node" : {
+      "x" : 250.9,
+      "y" : 70.3
+    },
+    "resourceReference" : "/types/sensors",
+    "timestamp" : "2020-10-27T19:39:13.098Z",
+    "type" : 1
+  }, {
+    "label" : "shipments",
+    "name" : "shipments",
+    "node" : {
+      "x" : -78.3,
+      "y" : -349.6
+    },
+    "resourceReference" : "/types/shipments",
+    "timestamp" : "2020-10-27T19:39:13.065Z",
+    "type" : 1
+  }, {
+    "label" : "spaces",
+    "name" : "spaces",
+    "node" : {
+      "x" : 134.4,
+      "y" : -383.7
+    },
+    "resourceReference" : "/types/spaces",
+    "timestamp" : "2020-10-27T19:39:13.132Z",
+    "type" : 1
+  }, {
+    "label" : "system.collaborations",
+    "name" : "system.collaborations",
+    "node" : {
+      "x" : 331.1,
+      "y" : 335.4
+    },
+    "resourceReference" : "/types/system.collaborations",
+    "timestamp" : "2020-03-18T00:32:48.756Z",
+    "type" : 1
+  }, {
+    "label" : "temporder",
+    "name" : "temporder",
+    "resourceReference" : "/types/temporder",
+    "timestamp" : "2020-10-27T19:39:12.872Z",
+    "type" : 1
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ "in" ],
+      "sources" : [ "GoogleDistanceMatrix" ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "testDistanceMatrix",
+    "name" : "testDistanceMatrix",
+    "node" : {
+      "x" : -132.4,
+      "y" : 174.7
+    },
+    "resourceReference" : "/procedures/testDistanceMatrix",
+    "timestamp" : "2020-10-27T19:39:18.467Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "out" ],
+      "types" : [ "vehicle" ]
+    },
+    "label" : "updateLatLongVehicles",
+    "name" : "updateLatLongVehicles",
+    "node" : {
+      "x" : 384.9,
+      "y" : 304.4
+    },
+    "resourceReference" : "/procedures/updateLatLongVehicles",
+    "timestamp" : "2020-10-27T19:39:18.671Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "out" ],
+      "types" : [ "package" ]
+    },
+    "label" : "updatePackageDate",
+    "name" : "updatePackageDate",
+    "node" : {
+      "x" : 601.4,
+      "y" : 211.7
+    },
+    "resourceReference" : "/procedures/updatePackageDate",
+    "timestamp" : "2020-10-27T19:39:18.948Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "out" ],
+      "types" : [ "vehicle" ]
+    },
+    "label" : "updateVehicleRegion",
+    "name" : "updateVehicleRegion",
+    "node" : {
+      "x" : 387.2,
+      "y" : 192.4
+    },
+    "resourceReference" : "/procedures/updateVehicleRegion",
+    "timestamp" : "2020-10-27T19:39:18.485Z",
+    "type" : 3
+  }, {
+    "label" : "utility",
+    "name" : "utility",
+    "resourceReference" : "/system.services/utility",
+    "timestamp" : "2020-10-27T19:39:17.797Z",
+    "type" : 63
+  }, {
+    "label" : "vehicle",
+    "name" : "vehicle",
+    "node" : {
+      "x" : 568.6,
+      "y" : 268.1
+    },
+    "resourceReference" : "/types/vehicle",
+    "timestamp" : "2020-10-29T21:16:17.872Z",
+    "type" : 1
+  }, {
+    "label" : "vehicletypes",
+    "name" : "vehicletypes",
+    "node" : {
+      "x" : 816.3,
+      "y" : 612.4
+    },
+    "resourceReference" : "/types/vehicletypes",
+    "timestamp" : "2020-10-27T19:39:12.979Z",
+    "type" : 1
+  } ],
+  "tools" : [ {
+    "isPinned" : true,
+    "name" : "/deliveries/sensors/opendoorsensors",
+    "pane" : {
+      "c" : 2,
+      "r" : 0
+    },
+    "resourceKey" : "topic//deliveries/sensors/opendoorsensors",
+    "state" : 2,
+    "type" : 8
+  }, {
+    "isPinned" : false,
+    "name" : "/deliveries/sensors/opendoorsensors",
+    "pane" : {
+      "c" : -1,
+      "r" : -1
+    },
+    "resourceKey" : "topic//deliveries/sensors/opendoorsensors",
+    "state" : 4,
+    "type" : 11
+  }, {
+    "isPinned" : false,
+    "name" : "AddNewOrderPublic",
+    "pane" : {
+      "c" : -1,
+      "r" : -1
+    },
+    "resourceKey" : "client/AddNewOrderPublic",
+    "state" : 4,
+    "type" : 63
+  }, {
+    "isPinned" : false,
+    "name" : "AddNewPackage",
+    "pane" : {
+      "c" : -1,
+      "r" : -1
+    },
+    "resourceKey" : "app/AddNewPackage",
+    "state" : 4,
+    "toolOptions" : { },
+    "type" : 15
+  }, {
+    "isPinned" : false,
+    "name" : "AssignRegion",
+    "pane" : {
+      "c" : -1,
+      "r" : -1
+    },
+    "resourceKey" : "app/AssignRegion",
+    "state" : 4,
+    "toolOptions" : { },
+    "type" : 15
+  }, {
+    "isPinned" : false,
+    "name" : "Autopsies",
+    "type" : 100
+  }, {
+    "isPinned" : false,
+    "name" : "DriverCalification",
+    "pane" : {
+      "c" : -1,
+      "r" : -1
+    },
+    "resourceKey" : "client/DriverCalification",
+    "state" : 4,
+    "type" : 63
+  }, {
+    "isPinned" : false,
+    "name" : "Errors",
+    "type" : 13
+  }, {
+    "isPinned" : false,
+    "name" : "GoogleDistanceMatrix",
+    "pane" : {
+      "c" : -1,
+      "r" : -1
+    },
+    "resourceKey" : "source/GoogleDistanceMatrix",
+    "state" : 4,
+    "type" : 11
+  }, {
+    "isPinned" : false,
+    "name" : "GoogleDistanceMatrix",
+    "pane" : {
+      "c" : -1,
+      "r" : -1
+    },
+    "resourceKey" : "procedure/GoogleDistanceMatrix",
+    "state" : 4,
+    "type" : 24
+  }, {
+    "isPinned" : false,
+    "name" : "GoogleGeoCode",
+    "pane" : {
+      "c" : -1,
+      "r" : -1
+    },
+    "resourceKey" : "source/GoogleGeoCode",
+    "state" : 4,
+    "type" : 5
+  }, {
+    "isPinned" : false,
+    "name" : "GoogleGeoCode",
+    "pane" : {
+      "c" : -1,
+      "r" : -1
+    },
+    "resourceKey" : "procedure/GoogleGeoCode",
+    "state" : 4,
+    "type" : 24
+  }, {
+    "isPinned" : false,
+    "name" : "GooglePlace",
+    "pane" : {
+      "c" : -1,
+      "r" : -1
+    },
+    "resourceKey" : "source/GooglePlace",
+    "state" : 4,
+    "type" : 5
+  }, {
+    "isPinned" : false,
+    "name" : "GooglePlaceId",
+    "pane" : {
+      "c" : -1,
+      "r" : -1
+    },
+    "resourceKey" : "source/GooglePlaceId",
+    "state" : 4,
+    "type" : 11
+  }, {
+    "dockLocation" : "right",
+    "isPinned" : false,
+    "name" : "Inactive Panes",
+    "type" : 99
+  }, {
+    "isPinned" : false,
+    "name" : "IssueAlert",
+    "pane" : {
+      "c" : -1,
+      "r" : -1
+    },
+    "resourceKey" : "client/IssueAlert",
+    "state" : 4,
+    "type" : 63
+  }, {
+    "isPinned" : false,
+    "name" : "Log Messages",
+    "type" : 12
+  }, {
+    "isPinned" : false,
+    "name" : "NewOrder",
+    "pane" : {
+      "c" : -1,
+      "r" : -1
+    },
+    "resourceKey" : "client/NewOrder",
+    "state" : 4,
+    "toolOptions" : {
+      "isRunning" : false
+    },
+    "type" : 63
+  }, {
+    "isPinned" : false,
+    "name" : "NewPackageDelivery",
+    "pane" : {
+      "c" : -1,
+      "r" : -1
+    },
+    "resourceKey" : "client/NewPackageDelivery",
+    "state" : 4,
+    "type" : 63
+  }, {
+    "isPinned" : false,
+    "name" : "NextShippingNotification",
+    "pane" : {
+      "c" : -1,
+      "r" : -1
+    },
+    "resourceKey" : "collaborationtype/NextShippingNotification",
+    "state" : 4,
+    "toolOptions" : { },
+    "type" : 14
+  }, {
+    "isPinned" : false,
+    "name" : "NextStopinRoute",
+    "pane" : {
+      "c" : -1,
+      "r" : -1
+    },
+    "resourceKey" : "client/NextStopinRoute",
+    "state" : 4,
+    "type" : 63
+  }, {
+    "isPinned" : false,
+    "name" : "NotifyCustomer",
+    "pane" : {
+      "c" : -1,
+      "r" : -1
+    },
+    "resourceKey" : "collaborationtype/NotifyCustomer",
+    "state" : 4,
+    "toolOptions" : { },
+    "type" : 14
+  }, {
+    "isPinned" : false,
+    "name" : "NotifyDriverNewPackage",
+    "pane" : {
+      "c" : -1,
+      "r" : -1
+    },
+    "resourceKey" : "collaborationtype/NotifyDriverNewPackage",
+    "state" : 4,
+    "toolOptions" : { },
+    "type" : 14
+  }, {
+    "isPinned" : false,
+    "name" : "NotifyDriverNextAddress",
+    "pane" : {
+      "c" : -1,
+      "r" : -1
+    },
+    "resourceKey" : "collaborationtype/NotifyDriverNextAddress",
+    "state" : 4,
+    "toolOptions" : { },
+    "type" : 14
+  }, {
+    "isPinned" : false,
+    "name" : "NotifyManager",
+    "pane" : {
+      "c" : -1,
+      "r" : -1
+    },
+    "resourceKey" : "collaborationtype/NotifyManager",
+    "state" : 4,
+    "toolOptions" : { },
+    "type" : 14
+  }, {
+    "isPinned" : false,
+    "name" : "OpenDoorInfo",
+    "pane" : {
+      "c" : -1,
+      "r" : -1
+    },
+    "resourceKey" : "scheduledevent/OpenDoorInfo",
+    "state" : 4,
+    "type" : 21
+  }, {
+    "isPinned" : false,
+    "name" : "Project Contents",
+    "type" : 2
+  }, {
+    "isPinned" : false,
+    "name" : "ShippingCheckIn",
+    "pane" : {
+      "c" : 2,
+      "r" : 1
+    },
+    "resourceKey" : "client/ShippingCheckIn",
+    "state" : 2,
+    "type" : 63
+  }, {
+    "isPinned" : false,
+    "name" : "ShippingNotification",
+    "pane" : {
+      "c" : 1,
+      "r" : 2
+    },
+    "resourceKey" : "client/ShippingNotification",
+    "state" : 2,
+    "type" : 63
+  }, {
+    "isPinned" : false,
+    "name" : "ShippingPackage",
+    "pane" : {
+      "c" : -1,
+      "r" : -1
+    },
+    "resourceKey" : "client/ShippingPackage",
+    "state" : 4,
+    "type" : 63
+  }, {
+    "isPinned" : false,
+    "name" : "StartRouteApp",
+    "pane" : {
+      "c" : 0,
+      "r" : 2
+    },
+    "resourceKey" : "app/StartRouteApp",
+    "state" : 2,
+    "toolOptions" : { },
+    "type" : 15
+  }, {
+    "isPinned" : false,
+    "name" : "TrackDriverandSendEmailShipment",
+    "pane" : {
+      "c" : -1,
+      "r" : -1
+    },
+    "resourceKey" : "collaborationtype/TrackDriverandSendEmailShipment",
+    "state" : 4,
+    "toolOptions" : { },
+    "type" : 14
+  }, {
+    "isPinned" : true,
+    "name" : "VantiqDeliveries",
+    "pane" : {
+      "c" : 1,
+      "r" : 0
+    },
+    "resourceKey" : "client/VantiqDeliveries",
+    "state" : 2,
+    "toolOptions" : {
+      "isRunning" : false
+    },
+    "type" : 63
+  }, {
+    "isPinned" : false,
+    "name" : "app.apdateCurrentLocationinTypes",
+    "pane" : {
+      "c" : -1,
+      "r" : -1
+    },
+    "resourceKey" : "procedure/app.apdateCurrentLocationinTypes",
+    "state" : 4,
+    "type" : 24
+  }, {
+    "isPinned" : true,
+    "name" : "app.assignOrders",
+    "pane" : {
+      "c" : 0,
+      "r" : 0
+    },
+    "resourceKey" : "procedure/app.assignOrders",
+    "state" : 2,
+    "type" : 24
+  }, {
+    "isPinned" : false,
+    "name" : "app.findManager",
+    "pane" : {
+      "c" : -1,
+      "r" : -1
+    },
+    "resourceKey" : "procedure/app.findManager",
+    "state" : 4,
+    "type" : 24
+  }, {
+    "isPinned" : false,
+    "name" : "app.findenroutevehicle",
+    "pane" : {
+      "c" : -1,
+      "r" : -1
+    },
+    "resourceKey" : "procedure/app.findenroutevehicle",
+    "state" : 4,
+    "type" : 24
+  }, {
+    "isPinned" : false,
+    "name" : "app.getFinalDestination",
+    "pane" : {
+      "c" : -1,
+      "r" : -1
+    },
+    "resourceKey" : "procedure/app.getFinalDestination",
+    "state" : 4,
+    "type" : 24
+  }, {
+    "isPinned" : false,
+    "name" : "app.getWaypoints",
+    "pane" : {
+      "c" : -1,
+      "r" : -1
+    },
+    "resourceKey" : "procedure/app.getWaypoints",
+    "state" : 4,
+    "type" : 24
+  }, {
+    "isPinned" : true,
+    "name" : "app.resetStepRoute",
+    "pane" : {
+      "c" : 2,
+      "r" : 2
+    },
+    "resourceKey" : "procedure/app.resetStepRoute",
+    "state" : 2,
+    "type" : 24
+  }, {
+    "isPinned" : false,
+    "name" : "cb.getTempOrders",
+    "pane" : {
+      "c" : -1,
+      "r" : -1
+    },
+    "resourceKey" : "procedure/cb.getTempOrders",
+    "state" : 4,
+    "type" : 24
+  }, {
+    "isPinned" : false,
+    "name" : "personnel",
+    "pane" : {
+      "c" : -1,
+      "r" : -1
+    },
+    "resourceKey" : "type/personnel",
+    "state" : 4,
+    "type" : 6
+  }, {
+    "isPinned" : false,
+    "name" : "public.GetShipmentInfo",
+    "pane" : {
+      "c" : -1,
+      "r" : -1
+    },
+    "resourceKey" : "procedure/public.GetShipmentInfo",
+    "state" : 4,
+    "type" : 24
+  }, {
+    "isPinned" : false,
+    "name" : "public.PublishOrder",
+    "pane" : {
+      "c" : -1,
+      "r" : -1
+    },
+    "resourceKey" : "procedure/public.PublishOrder",
+    "state" : 4,
+    "type" : 24
+  }, {
+    "isPinned" : true,
+    "name" : "routes",
+    "pane" : {
+      "c" : 1,
+      "r" : 1
+    },
+    "resourceKey" : "type/routes",
+    "state" : 2,
+    "type" : 6
+  }, {
+    "isPinned" : false,
+    "name" : "temporder",
+    "pane" : {
+      "c" : -1,
+      "r" : -1
+    },
+    "resourceKey" : "type/temporder",
+    "state" : 4,
+    "type" : 6
+  }, {
+    "isPinned" : true,
+    "name" : "vehicle",
+    "pane" : {
+      "c" : 0,
+      "r" : 1
+    },
+    "resourceKey" : "type/vehicle",
+    "state" : 2,
+    "type" : 6
+  } ],
+  "type" : "dev",
+  "views" : [ {
+    "name" : "Project Contents",
+    "projectToolKeys" : [ "subtopiceditor//deliveries/sensors/opendoorsensors", "dataviewer//deliveries/sensors/opendoorsensors", "client/AddNewOrderPublic", "app/AddNewPackage", "app/AssignRegion", "autopsyviewer/Autopsies", "client/DriverCalification", "errorviewer/Errors", "dataviewer/GoogleDistanceMatrix", "cmeditorprocedure/GoogleDistanceMatrix", "subsourceeditor/GoogleGeoCode", "cmeditorprocedure/GoogleGeoCode", "subsourceeditor/GooglePlace", "dataviewer/GooglePlaceId", "tiledock/Inactive Panes", "client/IssueAlert", "logviewer/Log Messages", "client/NewOrder", "client/NewPackageDelivery", "collaborationgraph/NextShippingNotification", "client/NextStopinRoute", "collaborationgraph/NotifyCustomer", "collaborationgraph/NotifyDriverNewPackage", "collaborationgraph/NotifyDriverNextAddress", "collaborationgraph/NotifyManager", "scheduledeventeditor/OpenDoorInfo", "list/Project Contents", "client/ShippingCheckIn", "client/ShippingNotification", "client/ShippingPackage", "app/StartRouteApp", "collaborationgraph/TrackDriverandSendEmailShipment", "client/VantiqDeliveries", "cmeditorprocedure/app.apdateCurrentLocationinTypes", "cmeditorprocedure/app.assignOrders", "cmeditorprocedure/app.findManager", "cmeditorprocedure/app.findenroutevehicle", "cmeditorprocedure/app.getFinalDestination", "cmeditorprocedure/app.getWaypoints", "cmeditorprocedure/app.resetStepRoute", "cmeditorprocedure/cb.getTempOrders", "subtypeeditor/personnel", "cmeditorprocedure/public.GetShipmentInfo", "cmeditorprocedure/public.PublishOrder", "subtypeeditor/routes", "subtypeeditor/temporder", "subtypeeditor/vehicle" ]
+  } ]
+}
