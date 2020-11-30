@@ -1,0 +1,110 @@
+{
+  "bodyChildren" : {
+    "rootArray" : [ "03e96fd3-147c-4588-80cf-a70790373666", "593c88c5-8675-404b-8ac2-85b51b086bbc", "ab42a2ee-86f3-45a1-8842-c0fd9cb58fd1", "2a978ea6-9805-48d0-8439-b89255a540c2", "3b425216-2c29-4884-af0b-236309aca58d", "a535a888-4727-40d3-8e05-c96f1bb7e7bd" ],
+    "widgets" : [ {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "StaticImage1099",
+      "preserveAspectRatio" : true,
+      "type" : "StaticImage",
+      "url" : "../cmn/assets/branding/defaultImage.png",
+      "uuid" : "03e96fd3-147c-4588-80cf-a70790373666",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "naturalSize"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "buttonBackgroundColor" : "platform",
+      "buttonLabel" : "Click Me",
+      "buttonLabelColor" : "platform",
+      "buttonLabelSize" : 14,
+      "buttonLabelStyle" : "bold",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "Button17505",
+      "submitValue" : 100,
+      "type" : "Button",
+      "uuid" : "2a978ea6-9805-48d0-8439-b89255a540c2",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "binding" : "page.data.collab",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "InputObject266",
+      "optional" : true,
+      "type" : "InputObject",
+      "uuid" : "3b425216-2c29-4884-af0b-236309aca58d",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 2,
+      "defaultMinimumHeight" : 300,
+      "defaultMinimumWidth" : 200,
+      "h" : 250,
+      "heightPolicy" : "explicit",
+      "horzGravity" : "center",
+      "horzizontalScrollPolicy" : "none",
+      "html" : "<p style=\"\\&quot;margin-left:\" 25px;\\\"=\"\"><span style=\"\\&quot;font-size:\" 14px;\\\"=\"\">Name:<strong>Cleats</strong></span></p><p style=\"\\&quot;margin-left:\" 25px;\\\"=\"\"><span style=\"\\&quot;font-size:\" 14px;\\\"=\"\">Barcode:<strong> X000WOH1TX</strong></span></p><p style=\"\\&quot;margin-left:\" 25px;\\\"=\"\"><span style=\"\\&quot;font-size:\" 14px;\\\"=\"\">Condition:<strong>Bike Cleats</strong></span></p><p style=\"\\&quot;margin-left:\" 25px;\\\"=\"\"><span style=\"\\&quot;font-size:\" 14px;\\\"=\"\">Customer Phone:<strong>88370136</strong></span></p><div class=\"se-component se-image-container __se__float-none\" contenteditable=\"false\"><figure style=\"margin: 0px;\"><img src=\"rcs/image/99B02097-826A-48B6-97E9-2F99465844B2.jpg\">\n    </figure></div><p style=\"\\&quot;margin-left:\" 25px;\\\"=\"\"><span style=\"\\&quot;font-size:\" 14px;\\\"=\"\">Shipping Date:<strong>2020-09-08T00:42:45.703Z</strong></span></p><p style=\"\\&quot;margin-left:\" 25px;\\\"=\"\"><span style=\"\\&quot;font-size:\" 14px;\\\"=\"\">Orderred Date:<strong>2020-09-08T00:29:41.311Z</strong></span></p><p style=\"\\&quot;margin-left:\" 25px;\\\"=\"\"><span style=\"\\&quot;font-size:\" 14px;\\\"=\"\">Status:<strong>added</strong></span></p><p style=\"\\&quot;margin-left:\" 25px;\\\"=\"\"><strong><br>\n</strong></p><p><br>\n</p>",
+      "name" : "PackageDescription",
+      "type" : "StaticHtml",
+      "uuid" : "593c88c5-8675-404b-8ac2-85b51b086bbc",
+      "v" : 16,
+      "vertGravity" : "center",
+      "verticalScrollPolicy" : "auto",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "binding" : "page.data.collab.collaboration.results.CreateIssueHTML.result",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "InputObject278",
+      "optional" : true,
+      "type" : "InputObject",
+      "uuid" : "a535a888-4727-40d3-8e05-c96f1bb7e7bd",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "Camera14",
+      "optional" : true,
+      "placeholder" : "Report Issue",
+      "type" : "Camera",
+      "uuid" : "ab42a2ee-86f3-45a1-8842-c0fd9cb58fd1",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    } ]
+  },
+  "data" : {
+    "properties" : {
+      "collab" : {
+        "defaultLabel" : "collab",
+        "type" : "Object"
+      }
+    }
+  },
+  "footerChildren" : [ ],
+  "hasFooter" : false,
+  "layoutType" : "mobile",
+  "responseTopic" : "/my/response/topic"
+}

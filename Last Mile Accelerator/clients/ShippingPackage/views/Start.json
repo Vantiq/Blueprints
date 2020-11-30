@@ -1,0 +1,79 @@
+{
+  "bodyChildren" : {
+    "rootArray" : [ "4c767190-7cda-44c1-8050-fd6e1b998a73", "d3226b65-68e8-4ab8-a2c0-7d34e2b2d5bb" ],
+    "widgets" : [ {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "StaticImage594",
+      "preserveAspectRatio" : true,
+      "type" : "StaticImage",
+      "url" : "../cmn/assets/branding/defaultImage.png",
+      "uuid" : "4c767190-7cda-44c1-8050-fd6e1b998a73",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "naturalSize"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "fontFamily" : "inherit",
+      "fontSize" : 20,
+      "fontStyle" : "normal",
+      "fontWeight" : "normal",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "StaticText59528",
+      "text" : "You have arrived",
+      "type" : "StaticText",
+      "uuid" : "5bf2f938-5539-46a2-9825-04e07bdcfe48",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "naturalSize"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 1,
+      "children" : [ "5bf2f938-5539-46a2-9825-04e07bdcfe48" ],
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "innerMargin" : 20,
+      "name" : "HorizontalLayout25953",
+      "type" : "HorizontalLayout",
+      "uuid" : "d3226b65-68e8-4ab8-a2c0-7d34e2b2d5bb",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    } ]
+  },
+  "data" : {
+    "properties" : { }
+  },
+  "footerChildren" : {
+    "rootArray" : [ "d897918b-003c-49ad-941a-e49e9adf6b3b" ],
+    "widgets" : [ {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "buttonBackgroundColor" : "platform",
+      "buttonLabel" : "Submit",
+      "buttonLabelColor" : "platform",
+      "buttonLabelSize" : 14,
+      "buttonLabelStyle" : "bold",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "Button15802",
+      "submitValue" : 100,
+      "type" : "Button",
+      "uuid" : "d897918b-003c-49ad-941a-e49e9adf6b3b",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    } ]
+  },
+  "hasFooter" : true,
+  "layoutType" : "mobile",
+  "responseTopic" : "/vantiq/systemmodel/ShippingPackage/submitTopic"
+}
