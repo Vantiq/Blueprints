@@ -1,0 +1,85 @@
+{
+  "bodyChildren" : {
+    "rootArray" : [ "c5565187-ff7b-4961-85f1-4f3de234d119" ],
+    "widgets" : [ {
+      "backgroundColor" : "default",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 1,
+      "cellFontColor" : "default",
+      "cellFontFace" : "inherit",
+      "cellFontSize" : 14,
+      "cellFontStyle" : "plain",
+      "clearOnDataArrive" : true,
+      "columnDescriptors" : [ {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "firstname",
+        "selected" : false,
+        "title" : "Name"
+      }, {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "lastname",
+        "selected" : false,
+        "title" : "Last Name"
+      }, {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "mobile",
+        "selected" : false,
+        "title" : "Mobile"
+      }, {
+        "buttonLabel" : "Add",
+        "colorRules" : null,
+        "dataType" : "Button",
+        "propertyName" : "ButtonSelect",
+        "selected" : false,
+        "title" : "Add"
+      } ],
+      "columnSort" : true,
+      "dataStreamGroupedByFiltersString" : "",
+      "dataStreamUUID" : "6bff8b47-3974-4a89-89bb-13218dc2f9b2",
+      "dataType" : null,
+      "headerFontColor" : "default",
+      "headerFontFace" : "inherit",
+      "headerFontSize" : 14,
+      "headerFontStyle" : "plain",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "DataTable4156",
+      "operation" : "insert",
+      "rowsPerPage" : 5,
+      "showPaging" : true,
+      "type" : "DataTable",
+      "uuid" : "078a222b-7920-4dcb-8968-de99f72f683f",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 1,
+      "children" : [ "078a222b-7920-4dcb-8968-de99f72f683f" ],
+      "heightPolicy" : "sizeToCell",
+      "horzGravity" : "center",
+      "innerMargin" : 20,
+      "name" : "HorizontalLayout24994",
+      "type" : "HorizontalLayout",
+      "uuid" : "c5565187-ff7b-4961-85f1-4f3de234d119",
+      "v" : 16,
+      "vertGravity" : "center",
+      "w" : 1410,
+      "widthPolicy" : "explicit",
+      "x" : 10,
+      "y" : 0
+    } ]
+  },
+  "data" : {
+    "properties" : { }
+  },
+  "footerChildren" : [ ],
+  "hasFooter" : false,
+  "layoutType" : "browser",
+  "responseTopic" : ""
+}

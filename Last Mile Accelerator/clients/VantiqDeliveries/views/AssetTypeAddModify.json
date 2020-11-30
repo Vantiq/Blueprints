@@ -1,0 +1,99 @@
+{
+  "bodyChildren" : {
+    "rootArray" : [ "416e2ec3-4369-464d-8cfa-ae136c4deda0" ],
+    "widgets" : [ {
+      "binding" : "page.data.assettype.name",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "inputType" : "text",
+      "label" : "@text.name",
+      "name" : "InputString1032",
+      "optional" : true,
+      "placeholder" : "",
+      "type" : "InputString",
+      "uuid" : "0b93d65d-d33d-45f2-9109-49461e775978",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 1,
+      "children" : [ "f6d5397b-d42e-48c9-a995-5bbccf1d98bc", "0b93d65d-d33d-45f2-9109-49461e775978", "a9598e1f-0853-42c5-9d84-0d0921cfc9f4" ],
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "innerMargin" : 20,
+      "name" : "VerticalLayout1188",
+      "type" : "VerticalLayout",
+      "uuid" : "416e2ec3-4369-464d-8cfa-ae136c4deda0",
+      "v" : 16,
+      "vertGravity" : "center",
+      "w" : 450,
+      "widthPolicy" : "explicit",
+      "x" : 50,
+      "y" : 50
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "buttonBackgroundColor" : "#0e0c14",
+      "buttonLabel" : "@button.submit",
+      "buttonLabelColor" : "platform",
+      "buttonLabelSize" : 14,
+      "buttonLabelStyle" : "bold",
+      "h" : 66,
+      "heightPolicy" : "explicit",
+      "horzGravity" : "center",
+      "name" : "Button848",
+      "submitValue" : 100,
+      "type" : "Button",
+      "uuid" : "a9598e1f-0853-42c5-9d84-0d0921cfc9f4",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "fontFamily" : "inherit",
+      "fontSize" : 20,
+      "fontStyle" : "normal",
+      "fontWeight" : "normal",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "StaticText3081",
+      "text" : "@text.assettype",
+      "type" : "StaticText",
+      "uuid" : "f6d5397b-d42e-48c9-a995-5bbccf1d98bc",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "naturalSize"
+    } ]
+  },
+  "data" : {
+    "properties" : {
+      "assettype" : {
+        "defaultLabel" : "assettype",
+        "type" : "TypedObject",
+        "typedObject" : {
+          "properties" : {
+            "name" : {
+              "defaultLabel" : "name",
+              "defaultValue" : "",
+              "type" : "String"
+            }
+          },
+          "type" : "assettypes"
+        }
+      }
+    }
+  },
+  "footerChildren" : [ ],
+  "hasFooter" : false,
+  "layoutType" : "browser",
+  "responseTopic" : ""
+}

@@ -1,0 +1,276 @@
+{
+  "bodyChildren" : {
+    "rootArray" : [ "860d0193-6354-4638-bc07-7710f96c2455" ],
+    "widgets" : [ {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "children" : [ "d2b74b76-b6bf-46a9-9349-618c6db58c4b", "7fa0e33f-90c2-4638-8f30-5bd91c24286d" ],
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "right",
+      "innerMargin" : 20,
+      "name" : "HorizontalLayout14",
+      "type" : "HorizontalLayout",
+      "uuid" : "3ae554ce-67c8-48d2-a9d3-a786bf077055",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "naturalSize"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 2,
+      "dataStreamGroupedByFiltersString" : "",
+      "dataStreamProperty" : "coordinates",
+      "dataStreamUUID" : "39286ea1-df2b-4f77-8735-94cadb88fb60",
+      "dataType" : null,
+      "fixedCenter" : true,
+      "heightPolicy" : "sizeToCell",
+      "horzGravity" : "left",
+      "horzWeight" : 1,
+      "labelProperty" : "name",
+      "name" : "RegionMap",
+      "naturalKey" : null,
+      "operation" : "insert",
+      "type" : "DynamicMapViewer",
+      "uuid" : "4b790741-a9e9-4419-894e-705f8993e829",
+      "v" : 16,
+      "vertGravity" : "top",
+      "vertWeight" : 1,
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 1,
+      "children" : [ "552b17dc-75cb-4ae0-911a-c94bae8b7375", "e449326c-6746-4e02-94d4-32b00a706242" ],
+      "heightPolicy" : "sizeToCell",
+      "horzGravity" : "left",
+      "innerMargin" : 20,
+      "name" : "HorizontalLayout8",
+      "type" : "HorizontalLayout",
+      "uuid" : "4c488997-eedc-4a68-b323-337e349fe0f9",
+      "v" : 16,
+      "vertGravity" : "top",
+      "vertWeight" : 1,
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "binding" : "page.data.region.description",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "label" : "Description",
+      "name" : "MultilineInput2",
+      "optional" : true,
+      "placeholder" : "",
+      "rows" : 5,
+      "type" : "MultilineInput",
+      "uuid" : "542242b8-71cc-4821-9735-faaa52c41e5e",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell",
+      "wordwrap" : true
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 1,
+      "children" : [ "9efff822-774b-4164-9025-19453a894a1b", "542242b8-71cc-4821-9735-faaa52c41e5e", "ba2dfeff-9d9f-41b3-893e-ecf7d8d6e448" ],
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "innerMargin" : 20,
+      "name" : "VerticalLayout24",
+      "type" : "VerticalLayout",
+      "uuid" : "552b17dc-75cb-4ae0-911a-c94bae8b7375",
+      "v" : 16,
+      "vertGravity" : "top",
+      "widthPolicy" : "naturalSize"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "buttonBackgroundColor" : "#0e0c14",
+      "buttonLabel" : "Clear",
+      "buttonLabelColor" : "platform",
+      "buttonLabelSize" : 14,
+      "buttonLabelStyle" : "bold",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "isDisabled" : true,
+      "name" : "ClearRegionButton",
+      "submitValue" : 100,
+      "type" : "Button",
+      "uuid" : "7fa0e33f-90c2-4638-8f30-5bd91c24286d",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 1,
+      "children" : [ "4c488997-eedc-4a68-b323-337e349fe0f9" ],
+      "h" : 1500,
+      "heightPolicy" : "explicit",
+      "horzGravity" : "left",
+      "innerMargin" : 20,
+      "name" : "VerticalLayout23",
+      "type" : "VerticalLayout",
+      "uuid" : "860d0193-6354-4638-bc07-7710f96c2455",
+      "v" : 16,
+      "vertGravity" : "top",
+      "w" : 2000,
+      "widthPolicy" : "explicit",
+      "x" : 0,
+      "y" : 0
+    }, {
+      "binding" : "page.data.region.name",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "left",
+      "inputType" : "text",
+      "label" : "Region Name",
+      "name" : "InputString3",
+      "optional" : true,
+      "placeholder" : "",
+      "type" : "InputString",
+      "uuid" : "9efff822-774b-4164-9025-19453a894a1b",
+      "v" : 16,
+      "vertGravity" : "center",
+      "w" : 275,
+      "widthPolicy" : "explicit"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "buttonBackgroundColor" : "#0e0c14",
+      "buttonLabel" : "Add Region",
+      "buttonLabelColor" : "platform",
+      "buttonLabelSize" : 14,
+      "buttonLabelStyle" : "bold",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "isDisabled" : true,
+      "name" : "AddButton",
+      "submitValue" : 100,
+      "type" : "Button",
+      "uuid" : "ba2dfeff-9d9f-41b3-893e-ecf7d8d6e448",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "buttonBackgroundColor" : "#0e0c14",
+      "buttonLabel" : "Draw Region",
+      "buttonLabelColor" : "platform",
+      "buttonLabelSize" : 14,
+      "buttonLabelStyle" : "bold",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "DrawRegionButton",
+      "submitValue" : 100,
+      "type" : "Button",
+      "uuid" : "d2b74b76-b6bf-46a9-9349-618c6db58c4b",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 1,
+      "children" : [ "3ae554ce-67c8-48d2-a9d3-a786bf077055", "4b790741-a9e9-4419-894e-705f8993e829" ],
+      "heightPolicy" : "sizeToCell",
+      "horzGravity" : "center",
+      "horzWeight" : 1,
+      "name" : "VerticalLayout25",
+      "type" : "VerticalLayout",
+      "uuid" : "e449326c-6746-4e02-94d4-32b00a706242",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    } ]
+  },
+  "data" : {
+    "properties" : {
+      "DrawingManager" : {
+        "defaultLabel" : "DrawingManager",
+        "type" : "Object"
+      },
+      "SelectedShape" : {
+        "defaultLabel" : "SelectedShape",
+        "type" : "Object"
+      },
+      "region" : {
+        "defaultLabel" : "region",
+        "type" : "TypedObject",
+        "typedObject" : {
+          "properties" : {
+            "coordinates" : {
+              "defaultLabel" : "coordinates",
+              "type" : "GeoJSON"
+            },
+            "description" : {
+              "defaultLabel" : "description",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "name" : {
+              "defaultLabel" : "name",
+              "defaultValue" : "",
+              "type" : "String"
+            }
+          },
+          "type" : "region"
+        }
+      },
+      "regions" : {
+        "defaultLabel" : "region",
+        "isArray" : true,
+        "type" : "TypedObject",
+        "typedObject" : {
+          "properties" : {
+            "coordinates" : {
+              "defaultLabel" : "coordinates",
+              "type" : "GeoJSON"
+            },
+            "description" : {
+              "defaultLabel" : "description",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "id" : {
+              "defaultLabel" : "id",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "name" : {
+              "defaultLabel" : "name",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "vehicles" : {
+              "defaultLabel" : "vehicles",
+              "defaultValue" : "",
+              "isArray" : true,
+              "type" : "String"
+            }
+          },
+          "type" : "region"
+        }
+      },
+      "status" : {
+        "defaultLabel" : "status",
+        "defaultValue" : 0,
+        "type" : "Integer"
+      }
+    }
+  },
+  "footerChildren" : [ ],
+  "hasFooter" : false,
+  "layoutType" : "browser",
+  "responseTopic" : ""
+}

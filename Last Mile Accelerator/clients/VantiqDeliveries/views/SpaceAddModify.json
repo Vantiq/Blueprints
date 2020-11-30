@@ -1,0 +1,194 @@
+{
+  "bodyChildren" : {
+    "rootArray" : [ "604113b2-6ea5-4735-8e64-05c843c7a653", "b74033d6-5dcd-409b-817d-58f29a56b79f" ],
+    "widgets" : [ {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "fontFamily" : "inherit",
+      "fontSize" : 20,
+      "fontStyle" : "normal",
+      "fontWeight" : "normal",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "StaticText1095",
+      "text" : "@text.space",
+      "type" : "StaticText",
+      "uuid" : "2069939e-34ef-4639-87dc-fa9caac65630",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "naturalSize"
+    }, {
+      "binding" : "page.data.space.id",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "inputType" : "text",
+      "label" : "@text.spaceid",
+      "name" : "InputString517",
+      "optional" : true,
+      "placeholder" : "",
+      "type" : "InputString",
+      "uuid" : "2411039b-82b1-44ec-bb47-2e6e543a5984",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "binding" : "page.data.space.restricted",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "checkboxLabel" : "@checkbox.label.restricted",
+      "default" : false,
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "Checkbox1",
+      "type" : "Checkbox",
+      "uuid" : "358b8970-e0bd-440a-8401-1ecdb6ea13e4",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "buttonBackgroundColor" : "#0e0c14",
+      "buttonLabel" : "@button.submit",
+      "buttonLabelColor" : "platform",
+      "buttonLabelSize" : 14,
+      "buttonLabelStyle" : "bold",
+      "h" : 60,
+      "heightPolicy" : "explicit",
+      "horzGravity" : "center",
+      "name" : "Button292",
+      "submitValue" : 100,
+      "type" : "Button",
+      "uuid" : "598f066f-6b72-4939-8578-eb161507a259",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 1,
+      "children" : [ "2069939e-34ef-4639-87dc-fa9caac65630", "72bd51b6-ba2e-4879-8332-324dd9b77b3b", "2411039b-82b1-44ec-bb47-2e6e543a5984", "a693a230-1e40-4f83-8ba7-87599f184dc8", "358b8970-e0bd-440a-8401-1ecdb6ea13e4", "598f066f-6b72-4939-8578-eb161507a259" ],
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "innerMargin" : 20,
+      "name" : "VerticalLayout411",
+      "type" : "VerticalLayout",
+      "uuid" : "604113b2-6ea5-4735-8e64-05c843c7a653",
+      "v" : 16,
+      "vertGravity" : "center",
+      "w" : 450,
+      "widthPolicy" : "explicit",
+      "x" : 50,
+      "y" : 50
+    }, {
+      "binding" : "page.data.space.floorid",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "inputType" : "text",
+      "label" : "@text.floorid",
+      "name" : "InputString519",
+      "optional" : true,
+      "placeholder" : "",
+      "type" : "InputString",
+      "uuid" : "72bd51b6-ba2e-4879-8332-324dd9b77b3b",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "binding" : "page.data.space.name",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "inputType" : "text",
+      "label" : "@text.spacename",
+      "name" : "InputString518",
+      "optional" : true,
+      "placeholder" : "",
+      "type" : "InputString",
+      "uuid" : "a693a230-1e40-4f83-8ba7-87599f184dc8",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "clearOnDataArrive" : true,
+      "dataStreamGroupedByFiltersString" : "",
+      "dataStreamProperty" : "floorplanlocation",
+      "dataStreamUUID" : "586dff59-9292-4c0f-9c89-5f6bfe305c79",
+      "dataType" : null,
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "imageHeightInLocationUnits" : 25,
+      "imageWidthInLocationUnits" : 30,
+      "labelProperty" : "name",
+      "name" : "FloorplanViewer31",
+      "naturalKey" : null,
+      "operation" : "insert",
+      "type" : "FloorplanViewer",
+      "url" : "../../docs/images/floorplanselect.png",
+      "uuid" : "b74033d6-5dcd-409b-817d-58f29a56b79f",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "naturalSize",
+      "x" : 550,
+      "y" : 50
+    } ]
+  },
+  "data" : {
+    "properties" : {
+      "space" : {
+        "defaultLabel" : "space",
+        "type" : "TypedObject",
+        "typedObject" : {
+          "properties" : {
+            "floorid" : {
+              "defaultLabel" : "floorid",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "floorplanlocation" : {
+              "defaultLabel" : "floorplanlocation",
+              "type" : "GeoJSON"
+            },
+            "id" : {
+              "defaultLabel" : "id",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "name" : {
+              "defaultLabel" : "name",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "restricted" : {
+              "defaultLabel" : "restricted",
+              "defaultValue" : false,
+              "type" : "Boolean"
+            }
+          },
+          "type" : "spaces"
+        }
+      }
+    }
+  },
+  "footerChildren" : [ ],
+  "hasFooter" : false,
+  "layoutType" : "browser",
+  "responseTopic" : ""
+}

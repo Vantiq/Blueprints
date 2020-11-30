@@ -1,0 +1,99 @@
+{
+  "bodyChildren" : {
+    "rootArray" : [ "30180228-8f8b-42df-8381-6294d958dc29" ],
+    "widgets" : [ {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 1,
+      "children" : [ "bf461cdc-2571-44d4-8abb-35745764f007", "a2397a38-72ed-4311-8e6c-e979bdab3d4d", "ba2f7a6f-2f2b-4751-8357-06c114f32d4d" ],
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "innerMargin" : 20,
+      "name" : "VerticalLayout1189",
+      "type" : "VerticalLayout",
+      "uuid" : "30180228-8f8b-42df-8381-6294d958dc29",
+      "v" : 16,
+      "vertGravity" : "center",
+      "w" : 450,
+      "widthPolicy" : "explicit",
+      "x" : 30,
+      "y" : 30
+    }, {
+      "binding" : "page.data.vehicletypes.name",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "inputType" : "text",
+      "label" : "type",
+      "name" : "InputString12681",
+      "optional" : true,
+      "placeholder" : "",
+      "type" : "InputString",
+      "uuid" : "a2397a38-72ed-4311-8e6c-e979bdab3d4d",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "buttonBackgroundColor" : "#0e0c14",
+      "buttonLabel" : "@button.submit",
+      "buttonLabelColor" : "platform",
+      "buttonLabelSize" : 14,
+      "buttonLabelStyle" : "bold",
+      "h" : 66,
+      "heightPolicy" : "explicit",
+      "horzGravity" : "center",
+      "name" : "Button849",
+      "submitValue" : 100,
+      "type" : "Button",
+      "uuid" : "ba2f7a6f-2f2b-4751-8357-06c114f32d4d",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "fontFamily" : "inherit",
+      "fontSize" : 20,
+      "fontStyle" : "normal",
+      "fontWeight" : "normal",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "StaticText3082",
+      "text" : "@label.vehicletypes",
+      "type" : "StaticText",
+      "uuid" : "bf461cdc-2571-44d4-8abb-35745764f007",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "naturalSize"
+    } ]
+  },
+  "data" : {
+    "properties" : {
+      "vehicletypes" : {
+        "defaultLabel" : "vehicletypes",
+        "type" : "TypedObject",
+        "typedObject" : {
+          "properties" : {
+            "name" : {
+              "defaultLabel" : "name",
+              "defaultValue" : "",
+              "type" : "String"
+            }
+          },
+          "type" : "vehicletypes"
+        }
+      }
+    }
+  },
+  "footerChildren" : [ ],
+  "hasFooter" : false,
+  "layoutType" : "browser",
+  "responseTopic" : ""
+}

@@ -1,0 +1,82 @@
+{
+  "bodyChildren" : {
+    "rootArray" : [ "f3075b35-765a-449b-8d20-b9648d6ae747" ],
+    "widgets" : [ {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "buttonBackgroundColor" : "#0e0c14",
+      "buttonLabel" : "@button.submit",
+      "buttonLabelColor" : "platform",
+      "buttonLabelSize" : 14,
+      "buttonLabelStyle" : "bold",
+      "h" : 60,
+      "heightPolicy" : "explicit",
+      "horzGravity" : "center",
+      "name" : "Button11313",
+      "submitValue" : 100,
+      "type" : "Button",
+      "uuid" : "aa087b4e-5662-437b-8e09-21b330d4ac85",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "binding" : "page.data.sensormanufacturers.name",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "inputType" : "text",
+      "label" : "@text.name",
+      "name" : "InputString12024",
+      "optional" : true,
+      "placeholder" : "",
+      "type" : "InputString",
+      "uuid" : "b76aac24-b402-48a7-9f35-c57635de68f2",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 1,
+      "children" : [ "b76aac24-b402-48a7-9f35-c57635de68f2", "aa087b4e-5662-437b-8e09-21b330d4ac85" ],
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "innerMargin" : 20,
+      "name" : "VerticalLayout16409",
+      "type" : "VerticalLayout",
+      "uuid" : "f3075b35-765a-449b-8d20-b9648d6ae747",
+      "v" : 16,
+      "vertGravity" : "center",
+      "w" : 450,
+      "widthPolicy" : "explicit",
+      "x" : 50,
+      "y" : 50
+    } ]
+  },
+  "data" : {
+    "properties" : {
+      "sensormanufacturers" : {
+        "defaultLabel" : "sensormanufacturers",
+        "type" : "TypedObject",
+        "typedObject" : {
+          "properties" : {
+            "name" : {
+              "defaultLabel" : "name",
+              "defaultValue" : "",
+              "type" : "String"
+            }
+          },
+          "type" : "sensormanufacturers"
+        }
+      }
+    }
+  },
+  "footerChildren" : [ ],
+  "hasFooter" : false,
+  "layoutType" : "browser",
+  "responseTopic" : ""
+}

@@ -1,0 +1,159 @@
+{
+  "bodyChildren" : {
+    "rootArray" : [ "c16ef9cd-5920-412d-8df5-9c553dd50103" ],
+    "widgets" : [ {
+      "backgroundColor" : "default",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "cellFontColor" : "default",
+      "cellFontFace" : "inherit",
+      "cellFontSize" : 14,
+      "cellFontStyle" : "plain",
+      "clearOnDataArrive" : true,
+      "column" : -1,
+      "columnDescriptors" : [ {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "name",
+        "selected" : false,
+        "title" : "Name"
+      }, {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "plate",
+        "selected" : false,
+        "title" : "Plate"
+      }, {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "vehicletype",
+        "selected" : false,
+        "title" : "Vehicle Type"
+      }, {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "driver",
+        "selected" : false,
+        "title" : "driver"
+      }, {
+        "buttonLabel" : "Select Vehicle",
+        "colorRules" : null,
+        "dataType" : "Button",
+        "propertyName" : "ButtonSelect",
+        "selected" : false,
+        "title" : "Action"
+      }, {
+        "buttonIcon" : "glyphicon-remove",
+        "buttonLabel" : "Click",
+        "colorRules" : null,
+        "dataType" : "Button",
+        "propertyName" : "ButtonDelete",
+        "selected" : false,
+        "title" : "Remove"
+      } ],
+      "columnSort" : true,
+      "dataStreamGroupedByFiltersString" : "",
+      "dataStreamUUID" : "02b4924f-bd05-405f-9bd5-bc5bf210779d",
+      "dataType" : null,
+      "headerFontColor" : "default",
+      "headerFontFace" : "inherit",
+      "headerFontSize" : 14,
+      "headerFontStyle" : "plain",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "DataTable5",
+      "operation" : "insert",
+      "row" : -1,
+      "rowsPerPage" : 20,
+      "showMaximizeButton" : false,
+      "showPaging" : true,
+      "type" : "DataTable",
+      "uuid" : "c16ef9cd-5920-412d-8df5-9c553dd50103",
+      "v" : 16,
+      "vertGravity" : "top",
+      "vertWeight" : 1,
+      "w" : 1000,
+      "widthPolicy" : "explicit",
+      "x" : 40,
+      "y" : 20
+    } ]
+  },
+  "data" : {
+    "properties" : {
+      "vehicle" : {
+        "defaultLabel" : "vehicle",
+        "type" : "TypedObject",
+        "typedObject" : {
+          "properties" : {
+            "address" : {
+              "defaultLabel" : "address",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "cargodimentions" : {
+              "defaultLabel" : "cargodimentions",
+              "type" : "Object"
+            },
+            "currentlocation" : {
+              "defaultLabel" : "currentlocation",
+              "type" : "GeoJSON"
+            },
+            "driver" : {
+              "defaultLabel" : "driver",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "id" : {
+              "defaultLabel" : "id",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "name" : {
+              "defaultLabel" : "name",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "organizationid" : {
+              "defaultLabel" : "organizationid",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "plate" : {
+              "defaultLabel" : "plate",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "route" : {
+              "defaultLabel" : "route",
+              "type" : "GeoJSON"
+            },
+            "startlocation" : {
+              "defaultLabel" : "startlocation",
+              "type" : "GeoJSON"
+            },
+            "targetlocation" : {
+              "defaultLabel" : "targetlocation",
+              "type" : "GeoJSON"
+            },
+            "vehicletype" : {
+              "defaultLabel" : "vehicletype",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "weightcapacity" : {
+              "defaultLabel" : "weightcapacity",
+              "defaultValue" : "0",
+              "type" : "Decimal"
+            }
+          },
+          "type" : "vehicle"
+        }
+      }
+    }
+  },
+  "footerChildren" : [ ],
+  "hasFooter" : false,
+  "layoutType" : "browser",
+  "responseTopic" : ""
+}

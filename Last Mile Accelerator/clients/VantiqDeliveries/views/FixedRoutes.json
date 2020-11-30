@@ -1,0 +1,201 @@
+{
+  "bodyChildren" : {
+    "rootArray" : [ "9e89aaf6-7e55-4d34-8826-a5af2b26c230" ],
+    "widgets" : [ {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 2,
+      "column" : 1,
+      "dataStreamGroupedByFiltersString" : "",
+      "dataStreamProperty" : null,
+      "dataType" : null,
+      "fixedCenter" : true,
+      "heightPolicy" : "sizeToCell",
+      "horzGravity" : "center",
+      "labelProperty" : null,
+      "name" : "fixedroutes",
+      "naturalKey" : null,
+      "operation" : "insert",
+      "row" : 0,
+      "type" : "DynamicMapViewer",
+      "uuid" : "13dc8441-f66a-4e3b-8eeb-360e850bea2d",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "backgroundColor" : "default",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 1,
+      "cellFontColor" : "default",
+      "cellFontFace" : "inherit",
+      "cellFontSize" : 14,
+      "cellFontStyle" : "plain",
+      "clearOnDataArrive" : true,
+      "columnDescriptors" : [ {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "id",
+        "selected" : false,
+        "title" : "id"
+      }, {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "originalAddress",
+        "selected" : false,
+        "title" : "originalAddress"
+      }, {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "destinationAddress",
+        "selected" : false,
+        "title" : "destinationAddress"
+      }, {
+        "buttonIcon" : "fa-truck",
+        "buttonLabel" : "Add/Remove",
+        "colorRules" : null,
+        "dataType" : "Button",
+        "propertyName" : "AddVehicle",
+        "selected" : false,
+        "title" : "Add Vehicle"
+      } ],
+      "columnSort" : true,
+      "dataStreamGroupedByFiltersString" : "",
+      "dataStreamUUID" : "3743ab39-6791-4493-b9d7-b76ddaad557d",
+      "dataType" : null,
+      "headerFontColor" : "default",
+      "headerFontFace" : "inherit",
+      "headerFontSize" : 14,
+      "headerFontStyle" : "plain",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "left",
+      "name" : "DataTable5818",
+      "operation" : "insert",
+      "rowsPerPage" : 5,
+      "showPaging" : true,
+      "type" : "DataTable",
+      "uuid" : "3cd534a4-5bc7-4514-a29e-f9d9b39c6975",
+      "v" : 16,
+      "vertGravity" : "top",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 1,
+      "children" : [ "c21118d4-e72a-463d-9a8e-fbc4df85192e", "13dc8441-f66a-4e3b-8eeb-360e850bea2d" ],
+      "columns" : 2,
+      "heightPolicy" : "sizeToCell",
+      "horzGravity" : "center",
+      "innerMargin" : 20,
+      "name" : "GridLayout224",
+      "rows" : 1,
+      "type" : "GridLayout",
+      "uuid" : "71711852-066f-4348-b07f-3e910bafb934",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 1,
+      "children" : [ "71711852-066f-4348-b07f-3e910bafb934" ],
+      "column" : 0,
+      "heightPolicy" : "sizeToCell",
+      "horzGravity" : "center",
+      "innerMargin" : 20,
+      "name" : "VerticalLayout21377",
+      "row" : 0,
+      "type" : "VerticalLayout",
+      "uuid" : "9e89aaf6-7e55-4d34-8826-a5af2b26c230",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 1,
+      "children" : [ "3cd534a4-5bc7-4514-a29e-f9d9b39c6975", "d6912918-4355-43b7-8169-7bb9b74abbe7" ],
+      "column" : 0,
+      "heightPolicy" : "sizeToCell",
+      "horzGravity" : "center",
+      "innerMargin" : 20,
+      "name" : "VerticalLayout21449",
+      "row" : 0,
+      "type" : "VerticalLayout",
+      "uuid" : "c21118d4-e72a-463d-9a8e-fbc4df85192e",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "buttonBackgroundColor" : "#0e0c14",
+      "buttonLabel" : "Add Fixed Route",
+      "buttonLabelColor" : "platform",
+      "buttonLabelSize" : 14,
+      "buttonLabelStyle" : "bold",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "left",
+      "name" : "Button16595",
+      "submitValue" : 100,
+      "type" : "Button",
+      "uuid" : "d6912918-4355-43b7-8169-7bb9b74abbe7",
+      "v" : 16,
+      "vertGravity" : "top",
+      "widthPolicy" : "sizeToCell"
+    } ]
+  },
+  "data" : {
+    "properties" : {
+      "fixedroutes" : {
+        "defaultLabel" : "fixedroutes",
+        "defaultValue" : [ ],
+        "isArray" : true,
+        "type" : "TypedObject",
+        "typedObject" : {
+          "properties" : {
+            "destinationAddress" : {
+              "defaultLabel" : "destinationAddress",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "destinationAddressGEO" : {
+              "defaultLabel" : "destinationAddressGEO",
+              "type" : "GeoJSON"
+            },
+            "id" : {
+              "defaultLabel" : "id",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "name" : {
+              "defaultLabel" : "name",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "organizationid" : {
+              "defaultLabel" : "organizationid",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "originalAddress" : {
+              "defaultLabel" : "originalAddress",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "originalAddressGEO" : {
+              "defaultLabel" : "originalAddressGEO",
+              "type" : "GeoJSON"
+            }
+          },
+          "type" : "fixedroutes"
+        }
+      }
+    }
+  },
+  "footerChildren" : [ ],
+  "hasFooter" : false,
+  "layoutType" : "single",
+  "responseTopic" : ""
+}

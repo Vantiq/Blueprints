@@ -1,0 +1,256 @@
+{
+  "bodyChildren" : {
+    "rootArray" : [ "0b62b76e-1ee3-4f44-8e71-f23f6569c08a" ],
+    "widgets" : [ {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "children" : [ "2e752bfc-0dc0-4d57-8612-403183c22dbb", "af40580e-ed8d-4e47-b900-dff20a44069f", "5f628abe-59fd-44e4-8762-a4aa02b90264" ],
+      "column" : 0,
+      "columns" : 2,
+      "heightPolicy" : "sizeToCell",
+      "horzGravity" : "center",
+      "innerMargin" : 20,
+      "name" : "GridLayout4",
+      "row" : 0,
+      "rows" : 3,
+      "type" : "GridLayout",
+      "uuid" : "0b62b76e-1ee3-4f44-8e71-f23f6569c08a",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "children" : [ "d8635a20-7685-4b01-891b-de65702340b0" ],
+      "column" : 0,
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "innerMargin" : 20,
+      "name" : "HorizontalLayout26",
+      "row" : 0,
+      "type" : "HorizontalLayout",
+      "uuid" : "2e752bfc-0dc0-4d57-8612-403183c22dbb",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "children" : [ "60c7df2a-474d-4d6d-8239-ca0d6575f210", "93599ec3-a559-4167-969e-26c9dbec4a89" ],
+      "colspan" : 1,
+      "column" : 0,
+      "heightPolicy" : "sizeToCell",
+      "horzGravity" : "center",
+      "innerMargin" : 20,
+      "name" : "VerticalLayout29",
+      "row" : 1,
+      "rowspan" : 2,
+      "type" : "VerticalLayout",
+      "uuid" : "5f628abe-59fd-44e4-8762-a4aa02b90264",
+      "v" : 16,
+      "vertGravity" : "top",
+      "vertWeight" : 1,
+      "w" : 1902,
+      "widthPolicy" : "explicit"
+    }, {
+      "backgroundColor" : "default",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "cellFontColor" : "default",
+      "cellFontFace" : "inherit",
+      "cellFontSize" : 14,
+      "cellFontStyle" : "plain",
+      "clearOnDataArrive" : true,
+      "column" : -1,
+      "columnDescriptors" : [ {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "name",
+        "selected" : false,
+        "title" : "name"
+      }, {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "origen",
+        "selected" : false,
+        "title" : "origen"
+      }, {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "destination",
+        "selected" : false,
+        "title" : "destination"
+      }, {
+        "buttonLabel" : "Delete",
+        "colorRules" : null,
+        "dataType" : "Button",
+        "propertyName" : "ButtonDelete",
+        "selected" : false,
+        "title" : "Action"
+      }, {
+        "buttonIcon" : "fa-truck",
+        "buttonLabel" : "Add Vehicle",
+        "colorRules" : null,
+        "dataType" : "Button",
+        "propertyName" : "Button",
+        "selected" : false,
+        "title" : ""
+      } ],
+      "columnSort" : true,
+      "dataStreamGroupedByFiltersString" : "",
+      "dataStreamUUID" : "1827821b-f270-4023-8ddd-a4332e812c48",
+      "dataType" : null,
+      "headerFontColor" : "default",
+      "headerFontFace" : "inherit",
+      "headerFontSize" : 14,
+      "headerFontStyle" : "plain",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "DataTable6",
+      "operation" : "insert",
+      "row" : -1,
+      "rowsPerPage" : 20,
+      "showMaximizeButton" : false,
+      "showPaging" : true,
+      "type" : "DataTable",
+      "uuid" : "60c7df2a-474d-4d6d-8239-ca0d6575f210",
+      "v" : 16,
+      "vertGravity" : "top",
+      "vertWeight" : 1,
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "clearOnDataArrive" : true,
+      "dataStreamGroupedByFiltersString" : "",
+      "dataStreamProperty" : "destinationGEO",
+      "dataStreamUUID" : "1827821b-f270-4023-8ddd-a4332e812c48",
+      "dataType" : null,
+      "fixedCenter" : true,
+      "heightPolicy" : "sizeToCell",
+      "horzGravity" : "center",
+      "labelProperty" : "name",
+      "name" : "DynamicMapViewerBuildings2",
+      "naturalKey" : null,
+      "operation" : "insert",
+      "type" : "DynamicMapViewer",
+      "uuid" : "79ff862a-2c20-4d29-92da-dc8a8748fb0b",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "buttonBackgroundColor" : "#0e0c14",
+      "buttonLabel" : "@button.label.addroute",
+      "buttonLabelColor" : "platform",
+      "buttonLabelSize" : 14,
+      "buttonLabelStyle" : "bold",
+      "column" : -1,
+      "glyphIcon" : "fa-building-o",
+      "h" : 60,
+      "heightPolicy" : "explicit",
+      "horzGravity" : "center",
+      "name" : "Button6",
+      "row" : -1,
+      "submitValue" : 100,
+      "type" : "Button",
+      "uuid" : "93599ec3-a559-4167-969e-26c9dbec4a89",
+      "v" : 16,
+      "vertGravity" : "bottom",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "children" : [ "79ff862a-2c20-4d29-92da-dc8a8748fb0b" ],
+      "colspan" : 1,
+      "column" : 1,
+      "heightPolicy" : "sizeToCell",
+      "horzGravity" : "center",
+      "horzWeight" : 1,
+      "innerMargin" : 20,
+      "name" : "VerticalLayout28",
+      "row" : 0,
+      "rowspan" : 3,
+      "type" : "VerticalLayout",
+      "uuid" : "af40580e-ed8d-4e47-b900-dff20a44069f",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "fontFamily" : "inherit",
+      "fontSize" : 20,
+      "fontStyle" : "normal",
+      "fontWeight" : "normal",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "left",
+      "name" : "StaticText24",
+      "text" : "@text.routes",
+      "type" : "StaticText",
+      "uuid" : "d8635a20-7685-4b01-891b-de65702340b0",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "naturalSize"
+    } ]
+  },
+  "data" : {
+    "properties" : {
+      "routes" : {
+        "defaultLabel" : "routes",
+        "type" : "TypedObject",
+        "typedObject" : {
+          "properties" : {
+            "destination" : {
+              "defaultLabel" : "destination",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "destinationGEO" : {
+              "defaultLabel" : "destinationGEO",
+              "type" : "GeoJSON"
+            },
+            "fixed" : {
+              "defaultLabel" : "fixed",
+              "defaultValue" : false,
+              "type" : "Boolean"
+            },
+            "id" : {
+              "defaultLabel" : "id",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "name" : {
+              "defaultLabel" : "name",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "origen" : {
+              "defaultLabel" : "origen",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "originGEO" : {
+              "defaultLabel" : "originGEO",
+              "type" : "GeoJSON"
+            }
+          },
+          "type" : "routes"
+        }
+      }
+    }
+  },
+  "footerChildren" : [ ],
+  "hasFooter" : false,
+  "layoutType" : "single",
+  "responseTopic" : ""
+}

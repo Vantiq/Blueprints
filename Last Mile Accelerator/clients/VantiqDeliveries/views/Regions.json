@@ -1,0 +1,275 @@
+{
+  "bodyChildren" : {
+    "rootArray" : [ "5326bfe7-cebe-4f16-8cdf-2eaa94296d05" ],
+    "widgets" : [ {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 2,
+      "clearOnDataArrive" : true,
+      "colspan" : 1,
+      "column" : 1,
+      "dataStreamGroupedByFiltersString" : "",
+      "dataStreamProperty" : "currentlocation",
+      "dataStreamUUID" : "02b4924f-bd05-405f-9bd5-bc5bf210779d",
+      "dataType" : null,
+      "fixedCenter" : true,
+      "heightPolicy" : "sizeToCell",
+      "horzGravity" : "left",
+      "labelProperty" : "name",
+      "name" : "DynamicMapViewerRegions",
+      "naturalKey" : null,
+      "operation" : "insert",
+      "row" : 0,
+      "rowspan" : 2,
+      "type" : "DynamicMapViewer",
+      "uuid" : "11901de3-a569-4319-8788-5afa4c0c9e07",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 1,
+      "children" : [ "cb465b6a-29bf-450c-86dc-016023be2dd7", "11901de3-a569-4319-8788-5afa4c0c9e07", "d87655f1-6d55-4171-8715-9e9a44ec4bf4" ],
+      "columns" : 2,
+      "heightPolicy" : "sizeToCell",
+      "horzGravity" : "center",
+      "horzMargin" : 5,
+      "innerMargin" : 10,
+      "name" : "GridLayout96",
+      "rows" : 2,
+      "type" : "GridLayout",
+      "uuid" : "1d3d2382-123e-4a18-8eff-62cdc67309d2",
+      "v" : 16,
+      "vertGravity" : "center",
+      "vertMargin" : 5,
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "backgroundImagePosition" : "top",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 1,
+      "children" : [ "1d3d2382-123e-4a18-8eff-62cdc67309d2" ],
+      "column" : 0,
+      "heightPolicy" : "sizeToCell",
+      "horzGravity" : "center",
+      "innerMargin" : 20,
+      "name" : "VerticalLayout19770",
+      "row" : 0,
+      "type" : "VerticalLayout",
+      "uuid" : "5326bfe7-cebe-4f16-8cdf-2eaa94296d05",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "backgroundColor" : "default",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 1,
+      "cellFontColor" : "default",
+      "cellFontFace" : "inherit",
+      "cellFontSize" : 14,
+      "cellFontStyle" : "plain",
+      "clearOnDataArrive" : true,
+      "column" : 0,
+      "columnDescriptors" : [ {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "name",
+        "selected" : false,
+        "title" : "name"
+      }, {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "description",
+        "selected" : false,
+        "title" : "description"
+      }, {
+        "buttonLabel" : "Delete",
+        "colorRules" : null,
+        "dataType" : "Button",
+        "propertyName" : "ButtonDelete",
+        "selected" : false,
+        "title" : "Action"
+      }, {
+        "buttonIcon" : "fa-car",
+        "buttonLabel" : "Add/Remove",
+        "colorRules" : null,
+        "dataType" : "Button",
+        "propertyName" : "AddVehicle",
+        "selected" : false,
+        "title" : "Add/Remove Vehicle"
+      }, {
+        "buttonLabel" : "Click",
+        "colorRules" : null,
+        "dataType" : "Button",
+        "propertyName" : "ButtonVehicles",
+        "selected" : false,
+        "title" : "Show Vehicles"
+      } ],
+      "columnSort" : true,
+      "dataStreamGroupedByFiltersString" : "",
+      "dataStreamUUID" : "2e5ae1da-4bac-4cef-af82-7d94d9cc9eba",
+      "dataType" : null,
+      "headerFontColor" : "default",
+      "headerFontFace" : "inherit",
+      "headerFontSize" : 14,
+      "headerFontStyle" : "plain",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "DataTable4720",
+      "operation" : "insert",
+      "row" : 0,
+      "rowsPerPage" : 5,
+      "showPaging" : true,
+      "type" : "DataTable",
+      "uuid" : "cb465b6a-29bf-450c-86dc-016023be2dd7",
+      "v" : 16,
+      "vertGravity" : "top",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "backgroundColor" : "default",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 1,
+      "cellFontColor" : "default",
+      "cellFontFace" : "inherit",
+      "cellFontSize" : 14,
+      "cellFontStyle" : "plain",
+      "clearOnDataArrive" : true,
+      "column" : 0,
+      "columnDescriptors" : [ {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "name",
+        "selected" : false,
+        "title" : "name"
+      }, {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "plate",
+        "selected" : false,
+        "title" : "plate"
+      }, {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "vehicletype",
+        "selected" : false,
+        "title" : "vehicletype"
+      }, {
+        "colorRules" : null,
+        "dataType" : "Decimal",
+        "propertyName" : "weightcapacity",
+        "selected" : false,
+        "title" : "weightcapacity"
+      }, {
+        "colorRules" : [ {
+          "bgColor" : "#00ff00",
+          "fgColor" : "#000000",
+          "numericValue" : 0,
+          "operator" : 6,
+          "value" : "30"
+        }, {
+          "bgColor" : "#ffff00",
+          "fgColor" : "#000000",
+          "numericValue" : 0,
+          "operator" : 4,
+          "value" : "30"
+        }, {
+          "bgColor" : "#ff0000",
+          "fgColor" : "#000000",
+          "numericValue" : 0,
+          "operator" : 4,
+          "value" : "70"
+        } ],
+        "dataType" : "Integer",
+        "initialSort" : "A",
+        "propertyName" : "cargoload",
+        "selected" : false,
+        "title" : "cargoload"
+      }, {
+        "buttonLabel" : "Click",
+        "colorRules" : null,
+        "dataType" : "Button",
+        "propertyName" : "Button",
+        "selected" : false,
+        "title" : "Details"
+      } ],
+      "columnSort" : true,
+      "dataStreamGroupedByFiltersString" : "",
+      "dataStreamUUID" : "02b4924f-bd05-405f-9bd5-bc5bf210779d",
+      "dataType" : null,
+      "headerFontColor" : "default",
+      "headerFontFace" : "inherit",
+      "headerFontSize" : 14,
+      "headerFontStyle" : "plain",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "left",
+      "name" : "DataTableVE",
+      "operation" : "insert",
+      "row" : 1,
+      "rowsPerPage" : 5,
+      "showPaging" : true,
+      "type" : "DataTable",
+      "uuid" : "d87655f1-6d55-4171-8715-9e9a44ec4bf4",
+      "v" : 16,
+      "vertGravity" : "top",
+      "widthPolicy" : "sizeToCell"
+    } ]
+  },
+  "data" : {
+    "properties" : {
+      "region" : {
+        "defaultLabel" : "region",
+        "type" : "TypedObject",
+        "typedObject" : {
+          "properties" : {
+            "coordinates" : {
+              "defaultLabel" : "coordinates",
+              "type" : "GeoJSON"
+            },
+            "description" : {
+              "defaultLabel" : "description",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "name" : {
+              "defaultLabel" : "name",
+              "defaultValue" : "",
+              "type" : "String"
+            }
+          },
+          "type" : "region"
+        }
+      },
+      "regions" : {
+        "defaultLabel" : "region",
+        "isArray" : true,
+        "type" : "TypedObject",
+        "typedObject" : {
+          "properties" : {
+            "coordinates" : {
+              "defaultLabel" : "coordinates",
+              "type" : "GeoJSON"
+            },
+            "description" : {
+              "defaultLabel" : "description",
+              "defaultValue" : "",
+              "type" : "String"
+            },
+            "name" : {
+              "defaultLabel" : "name",
+              "defaultValue" : "",
+              "type" : "String"
+            }
+          },
+          "type" : "region"
+        }
+      }
+    }
+  },
+  "footerChildren" : [ ],
+  "hasFooter" : false,
+  "layoutType" : "single",
+  "responseTopic" : ""
+}

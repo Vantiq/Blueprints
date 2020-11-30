@@ -1,0 +1,109 @@
+{
+  "bodyChildren" : {
+    "rootArray" : [ "05f1968a-4f92-4722-b5b3-eaad8394f1f3" ],
+    "widgets" : [ {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "children" : [ "4affc27b-dcc4-46c5-9aee-6aad632be4fc", "e49eb596-ece8-4373-badc-608a59f2b4ed" ],
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "innerMargin" : 20,
+      "name" : "HorizontalLayout23745",
+      "type" : "HorizontalLayout",
+      "uuid" : "05f1968a-4f92-4722-b5b3-eaad8394f1f3",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "naturalSize",
+      "x" : 50,
+      "y" : 50
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "children" : [ "b2c93041-bb54-4cf9-8c31-938251e3805b", "d69ed338-f19f-430d-8a42-00aa3775c0ee" ],
+      "heightPolicy" : "sizeToCell",
+      "horzGravity" : "center",
+      "innerMargin" : 20,
+      "name" : "VerticalLayout16744",
+      "type" : "VerticalLayout",
+      "uuid" : "4affc27b-dcc4-46c5-9aee-6aad632be4fc",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "naturalSize"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 2,
+      "defaultMinimumHeight" : 300,
+      "defaultMinimumWidth" : 200,
+      "h" : 100,
+      "heightPolicy" : "explicit",
+      "horzGravity" : "center",
+      "horzizontalScrollPolicy" : "none",
+      "html" : "<p><br></p>",
+      "name" : "StaticHtml172",
+      "type" : "StaticHtml",
+      "uuid" : "b2c93041-bb54-4cf9-8c31-938251e3805b",
+      "v" : 16,
+      "vertGravity" : "top",
+      "verticalScrollPolicy" : "none",
+      "w" : 100,
+      "widthPolicy" : "explicit"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "buttonBackgroundColor" : "#0e0c14",
+      "buttonLabel" : "Contact Trace",
+      "buttonLabelColor" : "platform",
+      "buttonLabelSize" : 14,
+      "buttonLabelStyle" : "bold",
+      "h" : 60,
+      "heightPolicy" : "explicit",
+      "horzGravity" : "center",
+      "name" : "Button11561",
+      "submitValue" : 100,
+      "type" : "Button",
+      "uuid" : "d69ed338-f19f-430d-8a42-00aa3775c0ee",
+      "v" : 16,
+      "vertGravity" : "bottom",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "clearOnDataArrive" : true,
+      "dataStreamGroupedByFiltersString" : "",
+      "dataStreamProperty" : "fplocation",
+      "dataStreamUUID" : "086ef4a0-dbfa-40d7-8dc8-8f2cedb9c292",
+      "dataType" : null,
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "imageHeightInLocationUnits" : 25,
+      "imageWidthInLocationUnits" : 30,
+      "labelProperty" : "id",
+      "name" : "FloorplanViewer864",
+      "naturalKey" : null,
+      "operation" : "insert",
+      "type" : "FloorplanViewer",
+      "url" : "../cmn/img/floorplan.png",
+      "uuid" : "e49eb596-ece8-4373-badc-608a59f2b4ed",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "naturalSize"
+    } ]
+  },
+  "data" : {
+    "properties" : {
+      "collabcontext" : {
+        "defaultLabel" : "collabcontext",
+        "type" : "Object"
+      }
+    }
+  },
+  "footerChildren" : [ ],
+  "hasFooter" : false,
+  "layoutType" : "browser",
+  "responseTopic" : ""
+}
