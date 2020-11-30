@@ -1,0 +1,81 @@
+{
+  "bodyChildren" : {
+    "rootArray" : [ "411f6a65-7465-43b2-814f-3cf877158385", "768d9e3f-91df-4f58-a7c4-fd6df5dfc0fe", "7dd7e164-91e4-4351-9101-f89b1c161967" ],
+    "widgets" : [ {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "documentGroupName" : "personnel",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "maxWidth" : 500,
+      "name" : "Camera1",
+      "optional" : false,
+      "placeholder" : "Take Photo",
+      "thumbnailSize" : 100,
+      "type" : "Camera",
+      "uuid" : "411f6a65-7465-43b2-814f-3cf877158385",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "StaticImage92",
+      "preserveAspectRatio" : true,
+      "type" : "StaticImage",
+      "url" : "../../docs/images/placeholderuser250.jpg",
+      "uuid" : "768d9e3f-91df-4f58-a7c4-fd6df5dfc0fe",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "PersonnelId",
+      "optional" : false,
+      "placeholder" : "Scan User QR Code",
+      "type" : "BarcodeReader",
+      "uuid" : "7dd7e164-91e4-4351-9101-f89b1c161967",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    } ]
+  },
+  "data" : {
+    "properties" : { }
+  },
+  "footerChildren" : {
+    "rootArray" : [ "3bb3f856-e8bd-4d97-ab6a-91c87b8be382" ],
+    "widgets" : [ {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "buttonBackgroundColor" : "platform",
+      "buttonLabel" : "Submit",
+      "buttonLabelColor" : "platform",
+      "buttonLabelSize" : 14,
+      "buttonLabelStyle" : "bold",
+      "h" : 60,
+      "heightPolicy" : "explicit",
+      "horzGravity" : "center",
+      "name" : "Button9728",
+      "submitValue" : 100,
+      "type" : "Button",
+      "uuid" : "3bb3f856-e8bd-4d97-ab6a-91c87b8be382",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    } ]
+  },
+  "hasFooter" : true,
+  "layoutType" : "mobile",
+  "responseTopic" : "/personnel/registration"
+}
