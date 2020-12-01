@@ -140,7 +140,7 @@
       "label" : "Location ID",
       "labelColor" : "#000000",
       "labelStyle" : "plain",
-      "name" : "InputString962086",
+      "name" : "InputString962086a",
       "optional" : true,
       "placeholder" : "",
       "type" : "InputString",

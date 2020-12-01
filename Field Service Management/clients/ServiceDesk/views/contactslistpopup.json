@@ -32,7 +32,7 @@
       "defaultValue" : "",
       "heightPolicy" : "naturalSize",
       "horzGravity" : "center",
-      "label" : "Ssearch Contacts",
+      "label" : "Search Contacts",
       "labelColor" : "#000000",
       "labelStyle" : "plain",
       "name" : "InputString962086",
