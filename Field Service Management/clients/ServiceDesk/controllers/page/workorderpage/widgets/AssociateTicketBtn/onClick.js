@@ -1,6 +1,8 @@
 client.popupPage("ticketlistpopup", "Select a Ticket to associate to the Work Order", null, function(response){   
     if (response){
-
+        
+		console.log("The Response is: " + response);
+        
         page.data.Workorders.customer = response.customer;
         page.data.Workorders.customerId = response.customerId;
         page.data.Workorders.priority = response.priority;
@@ -59,11 +61,20 @@ client.popupPage("ticketlistpopup", "Select a Ticket to associate to the Work Or
                 console.log("SUCCESS: " + JSON.stringify(response));
                 // check warranty
                 var fDate,lDate,cDate;
+            try {
                 fDate = Date.parse(response[0].supportStart);
                 lDate = Date.parse(response[0].supportEnd);
+
                 page.data.supportStart = response[0].supportStart;
                 page.data.supportEnd = response[0].supportEnd;
-
+        	}
+            catch (e)
+                {
+				log.info("Catch of sporadical runtime exception https://github.com/Vantiq/Blueprints/issues/28");
+				log.info("TypeError: Error in 'select' success callback: Cannot read property 'supportStart' of undefined");
+				log.info(e.name);
+                log.info(e.message);
+                }
                 var d = new Date();
                 cDate = d.getTime();
 
