@@ -33,10 +33,10 @@ client.popupPage("ticketlistpopup", "Select a Ticket to associate to the Work Or
         	}
             catch (e)
                 {
-				log.info("Catch of sporadical runtime exception https://github.com/Vantiq/Blueprints/issues/28");
-				log.info("TypeError: Error in 'select' success callback: Cannot read property 'supportStart' of undefined");
-				log.info(e.name);
-                log.info(e.message);
+				console.log("Catch of sporadical runtime exception https://github.com/Vantiq/Blueprints/issues/28");
+				console.log("TypeError: Error in 'select' success callback: Cannot read property 'supportStart' of undefined");
+				console.log(e.name);
+                console.log(e.message);
                 }
             var d = new Date();
             cDate = d.getTime();
@@ -84,10 +84,10 @@ client.popupPage("ticketlistpopup", "Select a Ticket to associate to the Work Or
         	}
             catch (e)
                 {
-				log.info("Catch of sporadical runtime exception https://github.com/Vantiq/Blueprints/issues/28");
-				log.info("TypeError: Error in 'select' success callback: Cannot read property 'supportStart' of undefined");
-				log.info(e.name);
-                log.info(e.message);
+				console.log("Catch of sporadical runtime exception https://github.com/Vantiq/Blueprints/issues/28");
+				console.log("TypeError: Error in 'select' success callback: Cannot read property 'supportStart' of undefined");
+				console.log(e.name);
+                console.log(e.message);
                 }
                 var d = new Date();
                 cDate = d.getTime();
