@@ -9,9 +9,6 @@
     "source" : "client/ScheduleArrivalDateTime",
     "target" : "topic//notifications/TechnicianDispatch/ScheduleArrivalDateTime"
   }, {
-    "source" : "client/Accept-Reject-Assignment",
-    "target" : "topic//notifications/TechnicianCollaborationCollaborationType/NotifyAcceptReject"
-  }, {
     "source" : "client/Accept_Reject_Assignment",
     "target" : "topic//notifications/TechnicianCollaborationCollaborationType/NotifyAcceptReject"
   } ],
@@ -65,30 +62,6 @@
     "name" : "/notifications/TechnicianDispatch/ScheduleArrivalDateTime",
     "resourceReference" : "/topics//notifications/TechnicianDispatch/ScheduleArrivalDateTime",
     "type" : 10
-  }, {
-    "inventory" : {
-      "clientHash" : [ ],
-      "clients" : [ ],
-      "collaborationHash" : [ ],
-      "collaborations" : [ ],
-      "eventstreamHash" : [ ],
-      "eventstreams" : [ ],
-      "procedureHash" : [ ],
-      "procedures" : [ ],
-      "sourceHash" : [ ],
-      "sources" : [ ],
-      "systemmodelHash" : [ ],
-      "systemmodels" : [ ],
-      "topicHash" : [ "out" ],
-      "topics" : [ "/notifications/TechnicianCollaborationCollaborationType/NotifyAcceptReject" ],
-      "typeHash" : [ ],
-      "types" : [ ]
-    },
-    "label" : "Accept-Reject-Assignment",
-    "name" : "Accept-Reject-Assignment",
-    "resourceReference" : "/system.clients/Accept-Reject-Assignment",
-    "timestamp" : "2020-11-27T09:39:26Z",
-    "type" : 15
   }, {
     "inventory" : {
       "clientHash" : [ ],
@@ -183,7 +156,7 @@
     "label" : "ScheduleArrivalDateTime",
     "name" : "ScheduleArrivalDateTime",
     "resourceReference" : "/system.clients/ScheduleArrivalDateTime",
-    "timestamp" : "2020-11-27T09:41:00.985Z",
+    "timestamp" : "2020-11-27T17:20:20.010Z",
     "type" : 15
   }, {
     "inventory" : {
@@ -212,18 +185,6 @@
   } ],
   "tools" : [ {
     "isPinned" : false,
-    "name" : "Accept-Reject-Assignment",
-    "pane" : {
-      "h" : 700,
-      "w" : 1130,
-      "x" : 10,
-      "y" : 10
-    },
-    "resourceKey" : "client/Accept-Reject-Assignment",
-    "state" : 3,
-    "type" : 63
-  }, {
-    "isPinned" : false,
     "name" : "Accept_Reject_Assignment",
     "pane" : {
       "h" : 700,
@@ -233,6 +194,9 @@
     },
     "resourceKey" : "client/Accept_Reject_Assignment",
     "state" : 3,
+    "toolOptions" : {
+      "isRunning" : false
+    },
     "type" : 63
   }, {
     "isPinned" : false,
@@ -291,8 +255,8 @@
     "pane" : {
       "h" : 400,
       "w" : 700,
-      "x" : 1140.0000915527344,
-      "y" : 20
+      "x" : 1150.0000610351562,
+      "y" : 0
     },
     "state" : 3,
     "type" : 82
@@ -307,6 +271,9 @@
     },
     "resourceKey" : "client/ScheduleArrivalDateTime",
     "state" : 3,
+    "toolOptions" : {
+      "isRunning" : false
+    },
     "type" : 63
   }, {
     "isPinned" : false,
@@ -324,6 +291,6 @@
   "type" : "dev",
   "views" : [ {
     "name" : "Project Contents",
-    "projectToolKeys" : [ "client/Accept-Reject-Assignment", "client/Accept_Reject_Assignment", "client/CompleteWorkorder", "errorviewer/Errors", "findrecords/Find Records", "tiledock/Inactive Panes", "client/Notify-Manager", "list/Project Contents", "projectdescription/Project Description", "client/ScheduleArrivalDateTime", "client/WorkOrders" ]
+    "projectToolKeys" : [ "client/Accept_Reject_Assignment", "client/CompleteWorkorder", "errorviewer/Errors", "findrecords/Find Records", "tiledock/Inactive Panes", "client/Notify-Manager", "list/Project Contents", "projectdescription/Project Description", "client/ScheduleArrivalDateTime", "client/WorkOrders" ]
   } ]
 }
