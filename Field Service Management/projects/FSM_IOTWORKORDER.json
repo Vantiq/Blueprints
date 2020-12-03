@@ -1,0 +1,457 @@
+{
+  "links" : [ {
+    "source" : "type/Assets",
+    "target" : "procedure/iot.PrepareWorkOrder"
+  }, {
+    "source" : "procedure/iot.PrepareWorkOrder",
+    "target" : "type/Workorders"
+  }, {
+    "source" : "type/Assets",
+    "target" : "procedure/closeServiceIssue"
+  }, {
+    "source" : "type/system.collaborations",
+    "target" : "procedure/closeServiceIssue"
+  }, {
+    "source" : "procedure/closeServiceIssue",
+    "target" : "type/Workorders"
+  }, {
+    "source" : "type/Customers",
+    "target" : "procedure/iot.PrepareWorkOrder"
+  }, {
+    "source" : "type/Contacts",
+    "target" : "procedure/iot.PrepareWorkOrder"
+  }, {
+    "source" : "source/GoogleGeoCode",
+    "target" : "procedure/GoogleReverseGeoCode"
+  }, {
+    "source" : "procedure/iot.PrepareWorkOrder",
+    "target" : "procedure/GoogleReverseGeoCode"
+  }, {
+    "source" : "type/lookups",
+    "target" : "app/PumpApp"
+  }, {
+    "source" : "type/Assets",
+    "target" : "app/PumpApp"
+  }, {
+    "source" : "app/PumpApp",
+    "target" : "type/pumpHistory"
+  }, {
+    "source" : "app/PumpApp",
+    "target" : "topic//service/alert"
+  }, {
+    "source" : "topic//stream/rpms",
+    "target" : "app/PumpApp"
+  }, {
+    "source" : "topic//stream/temp",
+    "target" : "app/PumpApp"
+  }, {
+    "source" : "app/PumpApp",
+    "target" : "procedure/closeServiceIssue"
+  }, {
+    "source" : "type/Assets",
+    "target" : "collaborationtype/ServiceIssue"
+  }, {
+    "source" : "collaborationtype/ServiceIssue",
+    "target" : "procedure/iot.PrepareWorkOrder"
+  } ],
+  "name" : "FSM_IOTWORKORDER",
+  "options" : {
+    "blacklist" : [ "app/WorkOrders", "procedure/startOfDay", "type/Technicians", "type/Tickets" ],
+    "description" : "",
+    "dockCollapsed" : {
+      "bottom" : true,
+      "left" : false,
+      "right" : false,
+      "top" : false,
+      "viewtabs" : false
+    },
+    "dockDimensions" : {
+      "bottom" : 200,
+      "debug" : [ 0, 0, 0 ],
+      "left" : 320,
+      "right" : 220,
+      "top" : 0,
+      "viewtabs" : 0
+    },
+    "filterBitArray" : "ffffffffffffffffffffffffffffffff",
+    "isModeloProject" : true,
+    "layoutStyle" : "custom",
+    "openResourceFolders" : {
+      "app" : true,
+      "collaborationtype" : true,
+      "procedure" : true,
+      "topic" : true,
+      "type" : true
+    },
+    "rootViewFlavor" : 1,
+    "showGrid" : true,
+    "type" : "dev",
+    "v" : 3,
+    "viewUUID" : "MAINVIEW"
+  },
+  "resources" : [ {
+    "label" : "/service/alert",
+    "name" : "/service/alert",
+    "node" : {
+      "x" : 745.4,
+      "y" : 412.5
+    },
+    "resourceReference" : "/topics//service/alert",
+    "type" : 10
+  }, {
+    "label" : "/stream/rpms",
+    "name" : "/stream/rpms",
+    "node" : {
+      "x" : 815.6,
+      "y" : 658.5
+    },
+    "resourceReference" : "/topics//stream/rpms",
+    "type" : 10
+  }, {
+    "label" : "/stream/temp",
+    "name" : "/stream/temp",
+    "node" : {
+      "x" : 721,
+      "y" : 543.1
+    },
+    "resourceReference" : "/topics//stream/temp",
+    "type" : 10
+  }, {
+    "label" : "Assets",
+    "name" : "Assets",
+    "node" : {
+      "x" : 1043.1,
+      "y" : 441.9
+    },
+    "resourceReference" : "/types/Assets",
+    "timestamp" : "2020-11-24T10:54:57.743Z",
+    "type" : 1
+  }, {
+    "label" : "Contacts",
+    "name" : "Contacts",
+    "node" : {
+      "x" : 1479.2,
+      "y" : 304.5
+    },
+    "resourceReference" : "/types/Contacts",
+    "timestamp" : "2020-11-20T13:38:41.786Z",
+    "type" : 1
+  }, {
+    "label" : "Customers",
+    "name" : "Customers",
+    "node" : {
+      "x" : 1335.4,
+      "y" : 460.4
+    },
+    "resourceReference" : "/types/Customers",
+    "timestamp" : "2020-11-20T13:38:41.716Z",
+    "type" : 1
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "GoogleGeoCode",
+    "name" : "GoogleGeoCode",
+    "node" : {
+      "x" : 935.9,
+      "y" : 215.3
+    },
+    "resourceReference" : "/sources/GoogleGeoCode",
+    "timestamp" : "2020-11-20T15:42:22.569Z",
+    "type" : 4
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out" ],
+      "procedures" : [ "format" ],
+      "sourceHash" : [ "in" ],
+      "sources" : [ "GoogleGeoCode" ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "GoogleReverseGeoCode",
+    "name" : "GoogleReverseGeoCode",
+    "node" : {
+      "x" : 1108.2,
+      "y" : 287.4
+    },
+    "resourceReference" : "/procedures/GoogleReverseGeoCode",
+    "timestamp" : "2020-11-20T13:38:47.911Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ "out" ],
+      "collaborations" : [ "ServiceIssue" ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out" ],
+      "procedures" : [ "closeServiceIssue" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ "out", "in", "in" ],
+      "topics" : [ "/service/alert", "/stream/rpms", "/stream/temp" ],
+      "typeHash" : [ "in", "in", "out" ],
+      "types" : [ "lookups", "Assets", "pumpHistory" ]
+    },
+    "label" : "PumpApp",
+    "name" : "PumpApp",
+    "node" : {
+      "x" : 860.7,
+      "y" : 476.5
+    },
+    "resourceReference" : "/collaborationtypes/PumpApp",
+    "timestamp" : "2020-12-03T16:14:47.732Z",
+    "type" : 12
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out" ],
+      "procedures" : [ "iot.PrepareWorkOrder" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "Assets" ]
+    },
+    "label" : "ServiceIssue",
+    "name" : "ServiceIssue",
+    "node" : {
+      "x" : 687.3,
+      "y" : 294.7
+    },
+    "resourceReference" : "/collaborationtypes/ServiceIssue",
+    "timestamp" : "2020-12-03T16:18:16.936Z",
+    "type" : 11
+  }, {
+    "label" : "Workorders",
+    "name" : "Workorders",
+    "node" : {
+      "x" : 1209.7,
+      "y" : 566.9
+    },
+    "resourceReference" : "/types/Workorders",
+    "timestamp" : "2020-11-20T13:38:41.790Z",
+    "type" : 1
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out", "out" ],
+      "procedures" : [ "CollaborationUtils.closeCollaboration", "now" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in", "in", "both" ],
+      "types" : [ "Assets", "system.collaborations", "Workorders" ]
+    },
+    "label" : "closeServiceIssue",
+    "name" : "closeServiceIssue",
+    "node" : {
+      "x" : 997.9,
+      "y" : 622.7
+    },
+    "resourceReference" : "/procedures/closeServiceIssue",
+    "timestamp" : "2020-11-27T08:47:11.439Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out", "out", "out" ],
+      "procedures" : [ "IoT.newTicket", "now", "GoogleReverseGeoCode" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in", "in", "in", "out" ],
+      "types" : [ "Assets", "Customers", "Contacts", "Workorders" ]
+    },
+    "label" : "iot.PrepareWorkOrder",
+    "name" : "iot.PrepareWorkOrder",
+    "node" : {
+      "x" : 1270.5,
+      "y" : 190.9
+    },
+    "resourceReference" : "/procedures/iot.PrepareWorkOrder",
+    "timestamp" : "2020-11-27T08:47:11.395Z",
+    "type" : 3
+  }, {
+    "label" : "lookups",
+    "name" : "lookups",
+    "node" : {
+      "x" : 899.5,
+      "y" : 338.4
+    },
+    "resourceReference" : "/types/lookups",
+    "timestamp" : "2020-12-03T15:22:02.860Z",
+    "type" : 1
+  }, {
+    "label" : "pumpHistory",
+    "name" : "pumpHistory",
+    "node" : {
+      "x" : 1107.1,
+      "y" : 518
+    },
+    "resourceReference" : "/types/pumpHistory",
+    "timestamp" : "2020-11-26T14:06:37.196Z",
+    "type" : 1
+  }, {
+    "label" : "system.collaborations",
+    "name" : "system.collaborations",
+    "node" : {
+      "x" : 1007.5,
+      "y" : 763.6
+    },
+    "resourceReference" : "/types/system.collaborations",
+    "timestamp" : "2017-02-23T05:43:11.477Z",
+    "type" : 1
+  } ],
+  "tools" : [ {
+    "isPinned" : false,
+    "name" : "Assets",
+    "pane" : {
+      "h" : 269.5,
+      "w" : 863.5,
+      "x" : 903.5,
+      "y" : 599
+    },
+    "resourceKey" : "type/Assets",
+    "state" : 3,
+    "type" : 6
+  }, {
+    "isPinned" : false,
+    "name" : "Errors",
+    "type" : 13
+  }, {
+    "dockLocation" : "top",
+    "isPinned" : false,
+    "name" : "Inactive Panes",
+    "type" : 99
+  }, {
+    "isPinned" : false,
+    "name" : "Project Contents",
+    "type" : 2
+  }, {
+    "isPinned" : false,
+    "name" : "Project Resource Graph",
+    "pane" : {
+      "h" : 269.5,
+      "w" : 863.5,
+      "x" : 20,
+      "y" : 20
+    },
+    "state" : 3,
+    "toolOptions" : {
+      "scaleAndTranslationState" : {
+        "lastZoomRequest" : 0,
+        "scale" : 0.34960910633443215,
+        "translate" : [ 61.66360091618145, -54.85093532888453 ]
+      }
+    },
+    "type" : 1
+  }, {
+    "isPinned" : false,
+    "name" : "PumpApp",
+    "pane" : {
+      "h" : 500,
+      "w" : 860,
+      "x" : 20,
+      "y" : 300
+    },
+    "resourceKey" : "app/PumpApp",
+    "state" : 3,
+    "toolOptions" : { },
+    "type" : 15
+  }, {
+    "isPinned" : false,
+    "name" : "ServiceIssue",
+    "pane" : {
+      "h" : 500,
+      "w" : 800,
+      "x" : 20,
+      "y" : 810
+    },
+    "resourceKey" : "collaborationtype/ServiceIssue",
+    "state" : 3,
+    "toolOptions" : { },
+    "type" : 14
+  }, {
+    "isPinned" : false,
+    "name" : "Workorders",
+    "pane" : {
+      "h" : 269.5,
+      "w" : 863.5,
+      "x" : 903.5,
+      "y" : 20
+    },
+    "resourceKey" : "type/Workorders",
+    "state" : 3,
+    "type" : 6
+  }, {
+    "isPinned" : false,
+    "name" : "iot.PrepareWorkOrder",
+    "pane" : {
+      "h" : 269.5,
+      "w" : 863.5,
+      "x" : 903.5,
+      "y" : 309.5
+    },
+    "resourceKey" : "procedure/iot.PrepareWorkOrder",
+    "state" : 3,
+    "type" : 24
+  } ],
+  "type" : "dev",
+  "views" : [ {
+    "name" : "Project Contents",
+    "projectToolKeys" : [ "subtypeeditor/Assets", "errorviewer/Errors", "tiledock/Inactive Panes", "list/Project Contents", "graph/Project Resource Graph", "app/PumpApp", "collaborationgraph/ServiceIssue", "subtypeeditor/Workorders", "cmeditorprocedure/iot.PrepareWorkOrder" ]
+  } ]
+}

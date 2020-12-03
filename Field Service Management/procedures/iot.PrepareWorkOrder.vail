@@ -1,0 +1,130 @@
+PROCEDURE iot.PrepareWorkOrder(event)
+
+var ticket =  IoT.newTicket()
+
+var ctime = now()
+
+var desc = ""
+desc += "Time: " + ctime
+desc += "
+Asset: " + event.name
+desc += "
+EventMessage: Pump is over temp and rpms thresholds 
+"
+
+
+//look up the assett
+var assetslist = select _id, category, description, id, manufacturer, name, location, location_ref_locations, customer_ref_customers, primaryContact_ref_contacts from Assets WHERE name == event.name
+
+log.debug("ASSET NAME IS: " + event.name)
+log.debug("ASSETS SELECTED IS: " + stringify(assetslist) )
+
+// currently demo only has one customer so we get it
+var customer = SELECT EXACTLY ONE FROM Customers WHERE id == assetslist[0].customer_ref_customers
+
+var contacts = SELECT FROM Contacts WHERE companyid == customer.id
+					AND id == assetslist[0].primaryContact_ref_contacts
+
+var address = GoogleReverseGeoCode(assetslist[0].location)
+/*
+// contacts
+var contacts = [
+    {
+      "_id": "5bec732122d4e059c340e58c",
+      "companyid": "d0715782-e840-11e8-a0b8-02429813f446",
+      "department": "Water",
+      "email": "brudenstein@vantiq.com",
+      "fax": null,
+      "firstname": "Sally",
+      "geolocation": null,
+      "id": "e15d4fe4-e840-11e8-96f1-0242e345f129",
+      "lastname": "Johnson",
+      "phone": "7819104062",
+      "title": "Plant Manager"
+   }
+]
+
+*/
+
+// haard coded. what skills are required to repair pump
+var skills = [
+     {
+      "_id": "5bec6fcc22d4e059c340a60a",
+      "description": "Able to repair pumps",
+      "skill": "Pump Repair"
+   }
+]
+
+/*
+[
+   {
+      "_id": "5bddc615ae7cb33b53e1ae71",
+      "address": "1 Harborside Dr, Boston, MA 02128",
+      "companyname": "Boston Logan International Airport",
+      "contacts": [],
+      "email": "brudenstein@vantiq.com",
+      "facebook": null,
+      "faxnumber": null,
+      "googleplus": null,
+      "id": "0c8dcb60-df7f-11e8-a8e7-02429813f446",
+      "industry": "airline",
+      "linkedin": null,
+      "locations": [],
+      "phonenumber": "7819104062",
+      "primaryfirstname": "Joe",
+      "primarylastname": "Smith",
+      "products": {},
+      "twitter": null,
+      "website": "http://www.massport.com/logan-airport/"
+   }
+]
+*/
+
+var obj = {
+
+    "activitytype": "Other",
+    "actualArrivalDate": null,
+    "actualCompletionDate": null,
+    "actualStartDate": null,
+    "address": address,
+    "assets": assetslist,
+    "closedDate": null,
+    "closedNotes": null,
+    "closedresult": null,
+    "contacts": contacts,
+    "creationDate": now(),
+    "customer": customer.companyname,
+    "customerId": assetslist[0].customer_ref_customers,
+    "customernotify": "Both",
+    "description": desc,
+    "estimatedHours": null,
+    "geolocation": assetslist[0].location,
+    "id": uuid(),
+    "impact": null,
+    "location": assetslist[0].location_ref_locations,
+    "notes": [],
+    "notificationList_Customer": {},
+    "notificationList_Internal": {},
+    "priority": "1",
+    "resolution": null,
+    "scheduledArrivalDate": null,
+    "scheduledCompletionDate": null,
+    "servicedeskowner": "9b0c8471-9314-419e-a118-8957690a91a2",
+    "skills": skills,
+    "status": "Created",
+    "summary": event.name + " is over temp and rpms thresholds",
+    "techAssignmentDate": null,
+    "techId": "-AutoAssign-",
+    "techlevel": null,
+    "techname": null,
+    "ticketId": ticket.id
+}
+
+
+
+// obj.data = event
+
+var inserted = INSERT Workorders(obj)
+
+return inserted
+

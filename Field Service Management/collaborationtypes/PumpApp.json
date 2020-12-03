@@ -1,0 +1,243 @@
+{
+  "active" : true,
+  "appType" : true,
+  "ars_properties" : {
+    "dataVersion" : 4,
+    "graph" : {
+      "lastZoomRequest" : 0,
+      "scale" : 0.6484521838708472,
+      "translate" : [ 329.187144475286, 22.0524402842953 ]
+    },
+    "groupSettings" : {
+      "appGroupOpenHash" : {
+        "actions" : true,
+        "filters" : true,
+        "flowControl" : true
+      },
+      "ctGroupOpenHash" : {
+        "actions" : true,
+        "mobile" : true
+      },
+      "ctServiceOpen" : false,
+      "serviceGroupOpenHash" : { }
+    },
+    "paletteWidth" : 170
+  },
+  "assembly" : {
+    "CachedEnrich" : {
+      "configuration" : {
+        "associatedType" : "lookups",
+        "childStreams" : [ "joinStreams" ],
+        "enableBadging" : true,
+        "foreignKeys" : [ {
+          "type" : "Property",
+          "value" : "tempSensorId"
+        } ],
+        "groupByProperty" : "tempSensorId",
+        "groupByWindow" : null,
+        "parentStreams" : [ "SenseTemp" ],
+        "refreshInterval" : "30 minutes"
+      },
+      "description" : null,
+      "name" : "CachedEnrich",
+      "pattern" : "CachedEnrich",
+      "uuid" : "494f179c-2adf-4313-99ee-41810b732114"
+    },
+    "CreateServiceAlert" : {
+      "configuration" : {
+        "childStreams" : [ "ServiceIssue" ],
+        "enableBadging" : true,
+        "parentStreams" : [ "overUsage" ],
+        "topic" : "/service/alert"
+      },
+      "description" : null,
+      "name" : "CreateServiceAlert",
+      "pattern" : "PublishToTopic",
+      "uuid" : "3fa95f9f-8a90-4823-a11d-e5094aaf3d4c"
+    },
+    "SenseRPMs" : {
+      "configuration" : {
+        "childStreams" : [ "joinStreams" ],
+        "enableBadging" : true,
+        "inboundResource" : "topics",
+        "inboundResourceId" : "/stream/rpms",
+        "op" : null,
+        "outboundResource" : null,
+        "outboundResourceId" : null,
+        "parentStreams" : [ ],
+        "schema" : null,
+        "upsert" : false
+      },
+      "description" : "Receive the RPM Sensor Stream",
+      "name" : "SenseRPMs",
+      "pattern" : "EventStream",
+      "uuid" : "0c042539-fe59-4d20-8e68-0f588e3d36f1"
+    },
+    "SenseTemp" : {
+      "configuration" : {
+        "childStreams" : [ "CachedEnrich" ],
+        "enableBadging" : true,
+        "inboundResource" : "topics",
+        "inboundResourceId" : "/stream/temp",
+        "op" : null,
+        "outboundResource" : null,
+        "outboundResourceId" : null,
+        "parentStreams" : [ ],
+        "upsert" : false
+      },
+      "description" : "Receive the Temp Sensor Stream",
+      "name" : "SenseTemp",
+      "pattern" : "EventStream",
+      "uuid" : "1fce84d8-94c3-453e-9e88-445aea3381c6"
+    },
+    "ServiceIssue" : {
+      "configuration" : {
+        "collaboration" : "ServiceIssue",
+        "enableBadging" : true,
+        "entityConstraint" : "id == event.id",
+        "entityType" : "Assets",
+        "parentStreams" : [ "CreateServiceAlert" ]
+      },
+      "description" : null,
+      "name" : "ServiceIssue",
+      "pattern" : "StartCollaboration",
+      "uuid" : "3c5b1c37-0f7b-42f1-b6fe-67644c2a9078"
+    },
+    "closeServiceIssue" : {
+      "configuration" : {
+        "childStreams" : null,
+        "enableBadging" : true,
+        "parentStreams" : [ "normalReading" ],
+        "procedure" : "closeServiceIssue",
+        "schema" : null
+      },
+      "description" : null,
+      "name" : "closeServiceIssue",
+      "pattern" : "Procedure",
+      "uuid" : "51b21b81-f377-4151-a132-b720aa2c0eb0"
+    },
+    "insertAssetHistory" : {
+      "configuration" : {
+        "childStreams" : null,
+        "enableBadging" : true,
+        "parentStreams" : [ "transformData" ],
+        "type" : "pumpHistory",
+        "upsert" : false
+      },
+      "description" : null,
+      "name" : "insertAssetHistory",
+      "pattern" : "SaveToType",
+      "uuid" : "0133da19-4590-4c93-8c49-21436d9d4919"
+    },
+    "joinStreams" : {
+      "configuration" : {
+        "childStreams" : [ "transformData" ],
+        "constraints" : [ {
+          "type" : "VAIL",
+          "value" : "CachedEnrich.lookups.rpmSensorId ==  SenseRPMs.rpmSensorId"
+        } ],
+        "enableBadging" : true,
+        "order" : null,
+        "outboundResource" : "topics",
+        "outboundResourceId" : "",
+        "parentStreams" : [ "SenseRPMs", "CachedEnrich" ],
+        "upsert" : false,
+        "withinDuration" : "11 seconds"
+      },
+      "name" : "joinStreams",
+      "pattern" : "Join",
+      "uuid" : "14b9b24a-8491-45dd-8640-fe25b7b8f2e2"
+    },
+    "normalReading" : {
+      "configuration" : {
+        "childStreams" : [ "closeServiceIssue" ],
+        "condition" : "event.rpms < 4250 AND event.rpms > 1 AND event.temp < 198 AND event.temp > 1",
+        "direction" : "true",
+        "enableBadging" : true,
+        "groupByProperty" : "id",
+        "groupByWindow" : null,
+        "outboundResource" : null,
+        "outboundResourceId" : null,
+        "overConsecutiveReadings" : 2,
+        "parentStreams" : [ "transformData" ],
+        "upsert" : false
+      },
+      "description" : null,
+      "name" : "normalReading",
+      "pattern" : "Threshold",
+      "uuid" : "6c1c5ed0-54dc-44c6-86db-47f81830c145"
+    },
+    "overUsage" : {
+      "configuration" : {
+        "childStreams" : [ "CreateServiceAlert" ],
+        "condition" : "event.rpms > 4250 AND event.temp > 198",
+        "duration" : "5 seconds",
+        "enableBadging" : true,
+        "groupByProperty" : "id",
+        "groupByWindow" : null,
+        "outboundResource" : "topics",
+        "outboundResourceId" : "",
+        "parentStreams" : [ "transformData" ],
+        "upsert" : false
+      },
+      "name" : "overUsage",
+      "pattern" : "Dwell",
+      "uuid" : "b135acd9-f147-4146-b0ba-f1fda7876f50"
+    },
+    "transformData" : {
+      "configuration" : {
+        "childStreams" : [ "updateAssets", "overUsage", "normalReading", "insertAssetHistory" ],
+        "enableBadging" : true,
+        "outboundResource" : null,
+        "outboundResourceId" : null,
+        "parentStreams" : [ "joinStreams" ],
+        "schema" : null,
+        "transformation" : {
+          "id" : {
+            "expression" : "event.CachedEnrich.lookups.pumpId",
+            "type" : "expression"
+          },
+          "name" : {
+            "expression" : "event.CachedEnrich.lookups.pumpId",
+            "type" : "expression"
+          },
+          "rpms" : {
+            "expression" : "event.SenseRPMs.rpms",
+            "type" : "expression"
+          },
+          "temp" : {
+            "expression" : "event.CachedEnrich.temp",
+            "type" : "expression"
+          }
+        },
+        "upsert" : false
+      },
+      "description" : null,
+      "name" : "transformData",
+      "pattern" : "Transformation",
+      "uuid" : "4b3345da-7beb-4926-be7f-6625feeddb95"
+    },
+    "updateAssets" : {
+      "configuration" : {
+        "childStreams" : null,
+        "enableBadging" : true,
+        "parentStreams" : [ "transformData" ],
+        "type" : "Assets",
+        "upsert" : true
+      },
+      "description" : null,
+      "name" : "updateAssets",
+      "pattern" : "SaveToType",
+      "uuid" : "17990937-8d84-4b43-8b00-51edaa3849b5"
+    }
+  },
+  "collaboratorRoles" : [ ],
+  "currentState" : {
+    "code" : "success"
+  },
+  "description" : "",
+  "disableBadging" : false,
+  "entityRoles" : [ ],
+  "keyTypes" : [ "system.collaborations" ],
+  "name" : "PumpApp"
+}

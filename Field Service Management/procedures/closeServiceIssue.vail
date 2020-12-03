@@ -1,0 +1,44 @@
+PROCEDURE closeServiceIssue(event Object)
+
+
+log.debug("updateExisitngWorkOrder RECEIVED: "+ stringify(event))
+ 
+// get the assets _id (Bretts-MacBook-Pro.local for test)
+SELECT ONE FROM Assets AS asset WHERE name == event.name
+
+log.debug("updateExisitngWorkOrder found Asset: "+ stringify(asset))
+
+
+var entity = "/Assets/" + asset._id
+
+SELECT ONE FROM system.collaborations AS collaboration WHERE status == "active" AND name == "ServiceIssue" AND keys == entity
+
+log.debug("updateExisitngWorkOrder found Collaboration: "+ stringify(collaboration))
+
+
+
+if (collaboration){
+    
+    // close the service issue collaboration
+	CollaborationUtils.closeCollaboration(collaboration.id)
+
+    // get the workorder
+    SELECT ONE FROM Workorders AS workorder WHERE id == collaboration.results.IoTWorkOrder.result.id
+    
+    log.debug("closeServiceIssue : workorder = " + stringify(workorder) )
+    
+    var desc = "Closed.  " //workorder.description
+desc += "Time: " + now()
+
+	
+
+
+    // update the workorder
+    UPDATE Workorders(description:desc, status:"Completed") WHERE id == workorder.id
+    // return collaboration
+}
+
+// 5bc5d71c41c0b6555a7ac34f
+// return asset
+
+
