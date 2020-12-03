@@ -186,12 +186,24 @@
   } ],
   "tools" : [ {
     "isPinned" : false,
+    "name" : "AcceptRejectAssignment",
+    "pane" : {
+      "h" : 700,
+      "w" : 1130,
+      "x" : 1080.0000610351562,
+      "y" : 1430.0000305175781
+    },
+    "resourceKey" : "client/AcceptRejectAssignment",
+    "state" : 3,
+    "type" : 63
+  }, {
+    "isPinned" : false,
     "name" : "CompleteWorkorder",
     "pane" : {
       "h" : 700,
-      "w" : 1060,
-      "x" : 0,
-      "y" : 1440
+      "w" : 1050,
+      "x" : 10,
+      "y" : 720.0000610351562
     },
     "resourceKey" : "client/CompleteWorkorder",
     "state" : 3,
@@ -205,6 +217,18 @@
     "isPinned" : false,
     "name" : "Inactive Panes",
     "type" : 99
+  }, {
+    "isPinned" : false,
+    "name" : "NotifyManager",
+    "pane" : {
+      "h" : 700,
+      "w" : 1050,
+      "x" : 10,
+      "y" : 1430.0000610351562
+    },
+    "resourceKey" : "client/NotifyManager",
+    "state" : 3,
+    "type" : 63
   }, {
     "isPinned" : false,
     "name" : "Project Contents",
@@ -251,6 +275,6 @@
   "type" : "dev",
   "views" : [ {
     "name" : "Project Contents",
-    "projectToolKeys" : [ "client/CompleteWorkorder", "errorviewer/Errors", "tiledock/Inactive Panes", "list/Project Contents", "projectdescription/Project Description", "client/ScheduleArrivalDateTime", "client/WorkOrders" ]
+    "projectToolKeys" : [ "client/AcceptRejectAssignment", "client/CompleteWorkorder", "errorviewer/Errors", "tiledock/Inactive Panes", "client/NotifyManager", "list/Project Contents", "projectdescription/Project Description", "client/ScheduleArrivalDateTime", "client/WorkOrders" ]
   } ]
 }
