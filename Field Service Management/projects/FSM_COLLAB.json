@@ -1,25 +1,7 @@
 {
   "links" : [ {
-    "source" : "source/GoogleDirections",
-    "target" : "procedure/GoogleDirections"
-  }, {
-    "source" : "source/GoogleDirections",
-    "target" : "procedure/GoogleDirectionsDuration"
-  }, {
     "source" : "procedure/GoogleDirectionsDuration",
     "target" : "procedure/Google.getAPIKey"
-  }, {
-    "source" : "source/GoogleDistanceMatrix",
-    "target" : "procedure/GoogleDistanceMatrix"
-  }, {
-    "source" : "source/GoogleGeoCode",
-    "target" : "procedure/GoogleGeoCode"
-  }, {
-    "source" : "source/GoogleGeoCode",
-    "target" : "procedure/GoogleReverseGeoCode"
-  }, {
-    "source" : "source/GoogleTimeZone",
-    "target" : "procedure/GoogleTimeZone"
   }, {
     "source" : "type/system.users",
     "target" : "procedure/clientLoginValidation"
@@ -84,9 +66,6 @@
     "source" : "collaborationtype/TechnicianDispatch",
     "target" : "procedure/Notification.retractPayload"
   }, {
-    "source" : "procedure/CollaborationUtils.cancelEscalation",
-    "target" : "type/ArsEscalationDeadline"
-  }, {
     "source" : "collaborationtype/TechnicianDispatch",
     "target" : "procedure/CollaborationUtils.cancelEscalation"
   }, {
@@ -105,23 +84,11 @@
     "source" : "collaborationtype/TechnicianDispatch",
     "target" : "procedure/collab.changeWorkOrderStatus"
   }, {
-    "source" : "procedure/sendTextMessageToTech",
-    "target" : "source/Twilio"
-  }, {
     "source" : "procedure/collab.notifyCustomer",
     "target" : "procedure/sendTextMessageToTech"
   }, {
-    "source" : "client/Accept_Reject_Assignment",
-    "target" : "topic//notifications/TechnicianCollaborationCollaborationType/NotifyAcceptReject"
-  }, {
-    "source" : "procedure/collab.notifyCustomer",
-    "target" : "source/email"
-  }, {
     "source" : "type/Technicians",
     "target" : "procedure/customIntent"
-  }, {
-    "source" : "source/GoogleDirections",
-    "target" : "procedure/getNavDirections"
   }, {
     "source" : "procedure/customIntent",
     "target" : "procedure/getNavDirections"
@@ -129,17 +96,44 @@
     "source" : "collaborationtype/TechnicianDispatch",
     "target" : "procedure/customIntent"
   }, {
+    "source" : "source/GoogleDirections",
+    "target" : "procedure/GoogleDirections"
+  }, {
+    "source" : "source/GoogleDirections",
+    "target" : "procedure/GoogleDirectionsDuration"
+  }, {
+    "source" : "source/GoogleDistanceMatrix",
+    "target" : "procedure/GoogleDistanceMatrix"
+  }, {
+    "source" : "source/GoogleGeoCode",
+    "target" : "procedure/GoogleGeoCode"
+  }, {
+    "source" : "source/GoogleGeoCode",
+    "target" : "procedure/GoogleReverseGeoCode"
+  }, {
+    "source" : "source/GoogleTimeZone",
+    "target" : "procedure/GoogleTimeZone"
+  }, {
     "source" : "source/chatbot",
     "target" : "collaborationtype/TechnicianDispatch"
   }, {
     "source" : "source/NLP",
     "target" : "collaborationtype/TechnicianDispatch"
+  }, {
+    "source" : "procedure/collab.notifyCustomer",
+    "target" : "source/email"
+  }, {
+    "source" : "source/GoogleDirections",
+    "target" : "procedure/getNavDirections"
+  }, {
+    "source" : "procedure/sendTextMessageToTech",
+    "target" : "source/Twilio"
   } ],
   "name" : "FSM_COLLAB",
   "options" : {
     "description" : "A Collaboration is a graphical programming tool that primarily provides tools for man-machine interactions. For this project you can think of a new Collaboration as creating a ticket which holds all the information about the work order plus all the technician tracking details. \n\nIn the Collaboration you will see a lot of task activities that support the technician dispatch steps such as finding technicians (when -AutoAssign- is set), assigning a technician to the Collaboration, tracking the GPS location of the technician which occurs 1 hour prior to the scheduled arrival time. \n\nHandling of the mobile notifications, capturing their responses and taking the next steps based on the responses are all programmed through this collaboration. This includes manual assignment steps for when Escalation occurs (no Technician accepts the assignment), and when a user is manually assigned in the work order. \n\nAdditional features programmed through the collaboration are notifications to the customer, capturing the customer signature at the end of the work order, updating status for the work orders throughout the process and updating the current GPS location of the Technician once tracking has started. \n",
     "dockCollapsed" : {
-      "bottom" : false,
+      "bottom" : true,
       "left" : false,
       "right" : false,
       "top" : false,
@@ -147,8 +141,8 @@
     },
     "dockDimensions" : {
       "bottom" : 200,
-      "debug" : [ 560.398388431471, 983.7101525425884, 369.8914590259406 ],
-      "left" : 331,
+      "debug" : [ 492.57212601155925, 1088.9292842914397, 421.49858969700114 ],
+      "left" : 312,
       "right" : 220,
       "top" : 0,
       "viewtabs" : 0
@@ -157,10 +151,7 @@
     "isModeloProject" : true,
     "layoutStyle" : "custom",
     "openResourceFolders" : {
-      "collaborationtype" : true,
-      "procedure" : true,
-      "source" : true,
-      "type" : true
+      "collaborationtype" : true
     },
     "rootViewFlavor" : 1,
     "showGrid" : true,
@@ -193,42 +184,6 @@
     "name" : "/notifications/TechnicianDispatch/ScheduleArrivalDateTime",
     "resourceReference" : "/topics//notifications/TechnicianDispatch/ScheduleArrivalDateTime",
     "type" : 10
-  }, {
-    "inventory" : {
-      "clientHash" : [ ],
-      "clients" : [ ],
-      "collaborationHash" : [ ],
-      "collaborations" : [ ],
-      "eventstreamHash" : [ ],
-      "eventstreams" : [ ],
-      "procedureHash" : [ ],
-      "procedures" : [ ],
-      "sourceHash" : [ ],
-      "sources" : [ ],
-      "systemmodelHash" : [ ],
-      "systemmodels" : [ ],
-      "topicHash" : [ "out" ],
-      "topics" : [ "/notifications/TechnicianCollaborationCollaborationType/NotifyAcceptReject" ],
-      "typeHash" : [ ],
-      "types" : [ ]
-    },
-    "label" : "Accept_Reject_Assignment",
-    "name" : "Accept_Reject_Assignment",
-    "resourceReference" : "/system.clients/Accept_Reject_Assignment",
-    "timestamp" : "2020-11-27T09:39:59.771Z",
-    "type" : 15
-  }, {
-    "label" : "ArsEscalationDeadline",
-    "name" : "ArsEscalationDeadline",
-    "resourceReference" : "/types/ArsEscalationDeadline",
-    "timestamp" : "2017-04-21T03:27:58.913Z",
-    "type" : 1
-  }, {
-    "label" : "ArsPayloadMessage",
-    "name" : "ArsPayloadMessage",
-    "resourceReference" : "/types/ArsPayloadMessage",
-    "timestamp" : "2016-11-23T17:40:16.195Z",
-    "type" : 1
   }, {
     "inventory" : {
       "clientHash" : [ ],
@@ -320,7 +275,6 @@
       "typeHash" : [ ],
       "types" : [ ]
     },
-    "label" : "GoogleDirections",
     "name" : "GoogleDirections",
     "resourceReference" : "/sources/GoogleDirections",
     "timestamp" : "2020-11-20T15:42:43.893Z",
@@ -392,34 +346,9 @@
       "typeHash" : [ ],
       "types" : [ ]
     },
-    "label" : "GoogleDistanceMatrix",
     "name" : "GoogleDistanceMatrix",
     "resourceReference" : "/sources/GoogleDistanceMatrix",
     "timestamp" : "2020-11-20T15:43:03.494Z",
-    "type" : 4
-  }, {
-    "inventory" : {
-      "clientHash" : [ ],
-      "clients" : [ ],
-      "collaborationHash" : [ ],
-      "collaborations" : [ ],
-      "eventstreamHash" : [ ],
-      "eventstreams" : [ ],
-      "procedureHash" : [ ],
-      "procedures" : [ ],
-      "sourceHash" : [ ],
-      "sources" : [ ],
-      "systemmodelHash" : [ ],
-      "systemmodels" : [ ],
-      "topicHash" : [ ],
-      "topics" : [ ],
-      "typeHash" : [ ],
-      "types" : [ ]
-    },
-    "label" : "GoogleGeoCode",
-    "name" : "GoogleGeoCode",
-    "resourceReference" : "/sources/GoogleGeoCode",
-    "timestamp" : "2020-11-20T15:42:22.569Z",
     "type" : 4
   }, {
     "inventory" : {
@@ -445,6 +374,29 @@
     "resourceReference" : "/procedures/GoogleGeoCode",
     "timestamp" : "2020-11-20T13:38:47.957Z",
     "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "name" : "GoogleGeoCode",
+    "resourceReference" : "/sources/GoogleGeoCode",
+    "timestamp" : "2020-11-20T15:42:22.569Z",
+    "type" : 4
   }, {
     "inventory" : {
       "clientHash" : [ ],
@@ -560,7 +512,6 @@
       "typeHash" : [ ],
       "types" : [ ]
     },
-    "label" : "GoogleTimeZone",
     "name" : "GoogleTimeZone",
     "resourceReference" : "/sources/GoogleTimeZone",
     "timestamp" : "2020-11-20T15:41:40.430Z",
@@ -590,7 +541,6 @@
       "typeHash" : [ ],
       "types" : [ ]
     },
-    "label" : "NLP",
     "name" : "NLP",
     "resourceReference" : "/sources/NLP",
     "timestamp" : "2020-11-27T16:37:10.600Z",
@@ -653,7 +603,7 @@
     "label" : "TechnicianDispatch",
     "name" : "TechnicianDispatch",
     "resourceReference" : "/collaborationtypes/TechnicianDispatch",
-    "timestamp" : "2020-11-27T16:38:03.570Z",
+    "timestamp" : "2020-12-03T07:54:32.469Z",
     "type" : 11
   }, {
     "label" : "Technicians",
@@ -680,7 +630,6 @@
       "typeHash" : [ ],
       "types" : [ ]
     },
-    "label" : "Twilio",
     "name" : "Twilio",
     "resourceReference" : "/sources/Twilio",
     "timestamp" : "2020-11-20T15:44:22.764Z",
@@ -764,7 +713,6 @@
       "typeHash" : [ ],
       "types" : [ ]
     },
-    "label" : "chatbot",
     "name" : "chatbot",
     "resourceReference" : "/sources/chatbot",
     "timestamp" : "2020-11-27T16:37:10.603Z",
@@ -1124,7 +1072,6 @@
       "typeHash" : [ ],
       "types" : [ ]
     },
-    "label" : "email",
     "name" : "email",
     "resourceReference" : "/sources/email",
     "timestamp" : "2020-11-27T10:23:46.973Z",
@@ -1226,6 +1173,30 @@
     "timestamp" : "2020-11-20T13:38:48.014Z",
     "type" : 3
   }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out", "out", "out", "out" ],
+      "procedures" : [ "getFullYear", "getMonth", "getDate", "toDate" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "startOfDay",
+    "name" : "startOfDay",
+    "resourceReference" : "/procedures/startOfDay",
+    "timestamp" : "2020-11-27T08:47:11.357Z",
+    "type" : 3
+  }, {
     "label" : "system.collaborations",
     "name" : "system.collaborations",
     "resourceReference" : "/types/system.collaborations",
@@ -1246,29 +1217,6 @@
     "isPinned" : false,
     "name" : "Errors",
     "type" : 13
-  }, {
-    "isPinned" : false,
-    "name" : "Errors Query",
-    "pane" : {
-      "h" : 400,
-      "w" : 600,
-      "x" : 0,
-      "y" : 1570
-    },
-    "state" : 3,
-    "type" : 28
-  }, {
-    "isPinned" : false,
-    "name" : "Google.getAPIKey",
-    "pane" : {
-      "h" : 400,
-      "w" : 600,
-      "x" : 0,
-      "y" : 2390
-    },
-    "resourceKey" : "procedure/Google.getAPIKey",
-    "state" : 3,
-    "type" : 24
   }, {
     "dockLocation" : "top",
     "isPinned" : false,
@@ -1306,46 +1254,10 @@
     "state" : 3,
     "toolOptions" : { },
     "type" : 14
-  }, {
-    "isPinned" : false,
-    "name" : "collab.notifyCustomer",
-    "pane" : {
-      "h" : 400,
-      "w" : 600,
-      "x" : 610,
-      "y" : 1980
-    },
-    "resourceKey" : "procedure/collab.notifyCustomer",
-    "state" : 3,
-    "type" : 24
-  }, {
-    "isPinned" : false,
-    "name" : "collab.scheduleLocationTracking",
-    "pane" : {
-      "h" : 400,
-      "w" : 1500,
-      "x" : 0,
-      "y" : 2800
-    },
-    "resourceKey" : "procedure/collab.scheduleLocationTracking",
-    "state" : 3,
-    "type" : 24
-  }, {
-    "isPinned" : false,
-    "name" : "email",
-    "pane" : {
-      "h" : 400,
-      "w" : 600,
-      "x" : 0,
-      "y" : 1980
-    },
-    "resourceKey" : "source/email",
-    "state" : 3,
-    "type" : 5
   } ],
   "type" : "dev",
   "views" : [ {
     "name" : "Project Contents",
-    "projectToolKeys" : [ "autopsyviewer/Autopsies", "errorviewer/Errors", "errorquery/Errors Query", "cmeditorprocedure/Google.getAPIKey", "tiledock/Inactive Panes", "logviewer/Log Messages", "list/Project Contents", "projectdescription/Project Description", "collaborationgraph/TechnicianDispatch", "cmeditorprocedure/collab.notifyCustomer", "cmeditorprocedure/collab.scheduleLocationTracking", "subsourceeditor/email" ]
+    "projectToolKeys" : [ "autopsyviewer/Autopsies", "errorviewer/Errors", "tiledock/Inactive Panes", "logviewer/Log Messages", "list/Project Contents", "projectdescription/Project Description", "collaborationgraph/TechnicianDispatch" ]
   } ]
 }

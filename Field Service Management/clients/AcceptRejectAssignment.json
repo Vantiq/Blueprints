@@ -90,7 +90,7 @@
       "v" : 1
     } ]
   },
-  "name" : "Accept_Reject_Assignment",
+  "name" : "AcceptRejectAssignment",
   "options" : {
     "RELOCATE" : [ {
       "path" : "controllers",

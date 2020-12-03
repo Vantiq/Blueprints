@@ -1,0 +1,142 @@
+PROCEDURE customIntent(collab, event, activityname)
+
+log.debug("PROCEDURE customIntent - collab: " + stringify(collab))
+log.debug("PROCEDURE customIntent - event: " + stringify(event))
+log.debug("PROCEDURE customIntent - activityname: " + stringify(activityname))
+
+// var olonraw  = collab.results.AcceptRejectWorkorder.responses[0].arsInfo.responseLocation.longitude - 1
+// var olatraw = collab.results.AcceptRejectWorkorder.responses[0].arsInfo.responseLocation.latitude - 1
+
+
+SELECT EXACTLY ONE FROM Technicians WHERE username == collab.collaborators.technician
+
+//var olat = "42.125411"	
+//var olon = "-71.146278"
+var olat = Technicians.mobilegeolocation.coordinates[1].toString()
+var olon = Technicians.mobilegeolocation.coordinates[0].toString()
+var dlat = collab.results.Initiate.event.geolocation.coordinates[1].toString()
+var dlon = collab.results.Initiate.event.geolocation.coordinates[0].toString()
+
+
+// Let's figure out if we can translate these into actions...
+var response = "Default Response Value"
+
+try {
+    var interpretation = event.intentSpecification
+
+    log.debug("PROCEDURE customIntent - ProcessUtterance() interpretation: {}", [interpretation.stringify(true)])
+    log.debug("PROCEDURE customIntent - ProcessUtterance() new: {}", [interpretation.rawIntent.topScoringIntent.intent.stringify(true)])
+
+
+    if (interpretation.errorMsg != null) {
+        // Then, we had some error.  Let's just dump that as the response and move on
+        log.debug("PROCEDURE customIntent - ProcessUtterance(): Found Error: {} -- {}", [interpretation.errorMsg])
+        response = interpretation.errorMsg
+    } else if (interpretation.intent == "custom.location.directions") {
+        log.debug("PROCEDURE customIntent - ProcessUtterance():  Attempting interpretation of intent: {}", [interpretation.intent])
+		var gnd = getNavDirections(
+			olat, 
+			olon, 
+			dlat, 
+			dlon
+		)
+		// response = "No Problem, I'm Sending directions to your mobile"
+		var steps = gnd[0].routes[0].legs[0].steps
+		var fields = []
+		push(fields, {
+         	"id": "document1",
+         	"type": "document",
+         	"label": "Directions",
+         	"url": format("https://www.google.com/maps/dir/?api=1&origin={0},{1}&destination={2},{3}&travelmode=driving",olat, olon, dlat, dlon),
+         	"placeholder": "Open for directions"
+      	})
+		// response = format("https://www.google.com/maps/dir/?api=1&origin={0},{1}&destination={2},{3}&travelmode=driving",olat, olon, dlat, dlon)
+		response = format("Sure:  Safe Travels.  \n\n https://www.google.com/maps/dir/?api=1&origin={0},{1}&destination={2},{3}&travelmode=driving",olat, olon, dlat, dlon)
+
+/*
+https://www.google.com/maps/embed/v1/directions
+  ?key=YOUR_API_KEY
+  &origin=Oslo+Norway
+  &destination=Telemark+Norway
+  &avoid=tolls|highways
+*/
+// https://www.google.com/maps/embed/v1/directions?key=AIzaSyBk_diPPw9v48koUnce-QfcNVK2DoonjTk&origin={0},{1}&destination={2},{3}
+// https://www.google.com/maps/dir/?api=1&origin={0},{1}&destination={2},{3}&travelmode=driving&key=AIzaSyBk_diPPw9v48koUnce-QfcNVK2DoonjTk
+
+
+
+		var inc = 1
+		FOR EACH step IN steps DO
+			var instruction = step.html_instructions.replace(regExp("(<([^>]+)>)"), "")
+			var obj = {
+         		"id": "text" + inc,
+         		"type": "text",
+         		"label": instruction,
+         		"size": 18,
+         		"align": "left"        
+			}	
+			push(fields, obj)
+			inc = inc + 1
+		END
+
+		var payload = {
+   			"responseTopic": "/from/directions",
+    		fields:fields
+		}
+
+
+		//PUBLISH { title: "Directions to pump", 
+          // body: "Step by step and map to location", 
+           //data: payload } TO SOURCE VantiqPushNotification USING { to: [ collab.results.AssignTechRole.assignedValue ] } 
+
+		// return {duration:duration, steps:steps, directions:directions}
+		
+	} else if (interpretation.intent == "custom.location.time") {
+        log.debug("PROCEDURE customIntent - ProcessUtterance():  Attempting interpretation of intent: {}", [interpretation.intent])       
+		var gnd = getNavDirections(
+			olat, 
+			olon, 
+			dlat, 
+			dlon
+		)
+		response = format("It will take approximately {0} to get there.", gnd[0].routes[0].legs[0].duration.text)
+    } else if (interpretation.intent == "custom.instruction") {
+        
+        // see if you are turning it on
+        var entities = interpretation.rawIntent.entities
+  		var cmdOn = false
+        FOR EACH x IN entities DO
+           if (x.type == "command"){
+               cmdOn = true
+        	}
+        END
+
+        var pid = collab.results.Initiate.event.assets[0].id
+        
+        if (cmdOn){
+            UPDATE democontrol(state:1) WHERE id == parseInt(pid.substr(length(pid) - 1))
+            response = pid + " has been started. "
+        } else {        
+            
+            UPDATE democontrol(state:5) WHERE id == parseInt(pid.substr(length(pid) - 1))
+            response = pid + " has been shut down. " // + pid.substr(length(pid) - 1)
+		}
+    } else if (interpretation.intent == "custom.service.issue") {
+        var pid = collab.results.Initiate.event.assets[0].id
+        // UPDATE democontrol(state:5) WHERE id == parseInt(pid.substr(length(pid) - 1))
+		response = "High temperature and rpm's on " + pid + " likley indicates a clogged intake valve." // + pid.substr(length(pid) - 1)
+    } else {
+       response = "I don't know how to execute intent: " + interpretation.intent
+    }
+		
+}
+catch (error) {
+    log.error("PROCEDURE customIntent - ProcessUtterance(): Error Encountered: " + stringify(error))
+    response = error.message
+}
+
+interpretation.response = response
+
+return interpretation
+
+

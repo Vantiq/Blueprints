@@ -1,0 +1,17 @@
+PROCEDURE collab.changeWorkOrderStatus(collaboration Object, status String)
+
+var techname = ""
+var workorder = collaboration.results.Initiate.event
+var techid = collaboration.results.AssignTechRole.assignedValue
+
+if(!workorder.techname){
+	select exactly one from Technicians as technician where username == techid
+	techname = technician.fname + " " + technician.lname
+}
+else {
+    techname = workorder.techname
+}
+
+log.info("Update Assigned TechID" + techid)
+
+UPDATE Workorders(status:status, techAssignmentDate:now(), techId:techid, techname:techname) WHERE id == workorder.id

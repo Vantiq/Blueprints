@@ -27,7 +27,7 @@
     },
     "dataStreams" : [ ]
   },
-  "name" : "Notify-Manager",
+  "name" : "NotifyManager",
   "options" : {
     "RELOCATE" : [ {
       "path" : "controllers",

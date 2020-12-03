@@ -5,8 +5,8 @@
     "dataVersion" : 4,
     "graph" : {
       "lastZoomRequest" : 0,
-      "scale" : 0.6430103442554261,
-      "translate" : [ 297.8560560084263, 227.69379344674434 ]
+      "scale" : 0.6727046443138269,
+      "translate" : [ 956.1888139732791, 25.87721341170385 ]
     },
     "groupSettings" : {
       "appGroupOpenHash" : {
@@ -45,7 +45,7 @@
       "completionCondition" : [ ],
       "configuration" : {
         "body" : "Please respond to the Workorder assignment request.",
-        "clientName" : "Accept_Reject_Assignment",
+        "clientName" : "AcceptRejectAssignment",
         "enableBadging" : true,
         "firstResponseBehaviors" : [ {
           "behaviors" : [ {
@@ -462,7 +462,7 @@
       "completionCondition" : [ ],
       "configuration" : {
         "body" : "Please open to manually assign the technician to the Workorder.",
-        "clientName" : "Notify-Manager",
+        "clientName" : "NotifyManager",
         "enableBadging" : true,
         "firstResponseBehaviors" : [ {
           "behaviors" : [ {

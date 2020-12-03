@@ -3,17 +3,18 @@
     "source" : "client/CompleteWorkorder",
     "target" : "topic//my/response/topic"
   }, {
-    "source" : "client/Notify-Manager",
-    "target" : "topic//notifications/NoAssignment"
-  }, {
     "source" : "client/ScheduleArrivalDateTime",
     "target" : "topic//notifications/TechnicianDispatch/ScheduleArrivalDateTime"
   }, {
-    "source" : "client/Accept_Reject_Assignment",
+    "source" : "client/AcceptRejectAssignment",
     "target" : "topic//notifications/TechnicianCollaborationCollaborationType/NotifyAcceptReject"
+  }, {
+    "source" : "client/NotifyManager",
+    "target" : "topic//notifications/NoAssignment"
   } ],
   "name" : "FSM_MOBILE_CLIENTS",
   "options" : {
+    "blacklist" : [ "client/Accept_Reject_Assignment", "client/Notify-Manager" ],
     "description" : "These clients will appear in the VANTIQ mobile app as push notifications or under the Collaboration section of the mobile (the Play button icon). \n\nThe VANTIQ mobile app can be obtained from the App Store or Play Store by searching for \"VANTIQ\". Users can login or register using the same OAuth providers used to access Modelo. \n\nTechnicians who register will need to send their user ID (click on your profile name in the top right corner, the uuid for the ID: value is the user ID) to the service desk users who add them into the database. Likewise service desk users who add themselves or others as Users will also need to provide a user ID. \n\nThe first client listed WorkOrders is set as Launachbe which means it will persist in the mobile app for users to run at any time. The WorkOrders client will list the Technicians WorkOrders that have been assigned to them and a calendar view of their scheduled activities. ",
     "dockCollapsed" : {
       "bottom" : true,
@@ -25,7 +26,7 @@
     "dockDimensions" : {
       "bottom" : 200,
       "debug" : [ 0, 0, 0 ],
-      "left" : 210,
+      "left" : 298,
       "right" : 220,
       "top" : 0,
       "viewtabs" : 0
@@ -81,10 +82,10 @@
       "typeHash" : [ ],
       "types" : [ ]
     },
-    "label" : "Accept_Reject_Assignment",
-    "name" : "Accept_Reject_Assignment",
-    "resourceReference" : "/system.clients/Accept_Reject_Assignment",
-    "timestamp" : "2020-11-27T09:39:59.771Z",
+    "label" : "AcceptRejectAssignment",
+    "name" : "AcceptRejectAssignment",
+    "resourceReference" : "/system.clients/AcceptRejectAssignment",
+    "timestamp" : "2020-12-03T07:45:57.579Z",
     "type" : 15
   }, {
     "inventory" : {
@@ -129,10 +130,10 @@
       "typeHash" : [ ],
       "types" : [ ]
     },
-    "label" : "Notify-Manager",
-    "name" : "Notify-Manager",
-    "resourceReference" : "/system.clients/Notify-Manager",
-    "timestamp" : "2020-11-27T09:30:11.778Z",
+    "label" : "NotifyManager",
+    "name" : "NotifyManager",
+    "resourceReference" : "/system.clients/NotifyManager",
+    "timestamp" : "2020-12-03T07:46:10.703Z",
     "type" : 15
   }, {
     "inventory" : {
@@ -185,25 +186,10 @@
   } ],
   "tools" : [ {
     "isPinned" : false,
-    "name" : "Accept_Reject_Assignment",
-    "pane" : {
-      "h" : 700,
-      "w" : 1130,
-      "x" : 0,
-      "y" : 720
-    },
-    "resourceKey" : "client/Accept_Reject_Assignment",
-    "state" : 3,
-    "toolOptions" : {
-      "isRunning" : false
-    },
-    "type" : 63
-  }, {
-    "isPinned" : false,
     "name" : "CompleteWorkorder",
     "pane" : {
       "h" : 700,
-      "w" : 1130,
+      "w" : 1060,
       "x" : 0,
       "y" : 1440
     },
@@ -215,36 +201,10 @@
     "name" : "Errors",
     "type" : 13
   }, {
-    "isPinned" : false,
-    "name" : "Find Records",
-    "pane" : {
-      "h" : 400,
-      "w" : 600,
-      "x" : 1140,
-      "y" : 720
-    },
-    "state" : 3,
-    "type" : 41
-  }, {
     "dockLocation" : "top",
     "isPinned" : false,
     "name" : "Inactive Panes",
     "type" : 99
-  }, {
-    "isPinned" : false,
-    "name" : "Notify-Manager",
-    "pane" : {
-      "h" : 700,
-      "w" : 1130,
-      "x" : 0,
-      "y" : 2160
-    },
-    "resourceKey" : "client/Notify-Manager",
-    "state" : 3,
-    "toolOptions" : {
-      "isRunning" : false
-    },
-    "type" : 63
   }, {
     "isPinned" : false,
     "name" : "Project Contents",
@@ -255,8 +215,8 @@
     "pane" : {
       "h" : 400,
       "w" : 700,
-      "x" : 1150.0000610351562,
-      "y" : 0
+      "x" : 1080.0000305175781,
+      "y" : 10
     },
     "state" : 3,
     "type" : 82
@@ -265,9 +225,9 @@
     "name" : "ScheduleArrivalDateTime",
     "pane" : {
       "h" : 700,
-      "w" : 1130,
-      "x" : 0,
-      "y" : 2870
+      "w" : 1060,
+      "x" : 1080.0000610351562,
+      "y" : 720.0000076293945
     },
     "resourceKey" : "client/ScheduleArrivalDateTime",
     "state" : 3,
@@ -280,9 +240,9 @@
     "name" : "WorkOrders",
     "pane" : {
       "h" : 700,
-      "w" : 1130,
-      "x" : 0,
-      "y" : 0
+      "w" : 1050,
+      "x" : 10,
+      "y" : 10
     },
     "resourceKey" : "client/WorkOrders",
     "state" : 3,
@@ -291,6 +251,6 @@
   "type" : "dev",
   "views" : [ {
     "name" : "Project Contents",
-    "projectToolKeys" : [ "client/Accept_Reject_Assignment", "client/CompleteWorkorder", "errorviewer/Errors", "findrecords/Find Records", "tiledock/Inactive Panes", "client/Notify-Manager", "list/Project Contents", "projectdescription/Project Description", "client/ScheduleArrivalDateTime", "client/WorkOrders" ]
+    "projectToolKeys" : [ "client/CompleteWorkorder", "errorviewer/Errors", "tiledock/Inactive Panes", "list/Project Contents", "projectdescription/Project Description", "client/ScheduleArrivalDateTime", "client/WorkOrders" ]
   } ]
 }

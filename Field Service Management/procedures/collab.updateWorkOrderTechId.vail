@@ -1,0 +1,3 @@
+PROCEDURE collab.updateWorkOrderTechId(username, workorderid, status)
+
+UPDATE work_order(status:status, techId:username) WHERE id == workorderid

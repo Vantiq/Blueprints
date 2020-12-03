@@ -1,0 +1,310 @@
+PROCEDURE getNavDirections(olat String, olon String, dlat String, dlon String)
+
+var queryparams = {}
+queryparams.origin = format("{0},{1}", olat, olon)
+queryparams.destination = format("{0},{1}", dlat, dlon)
+queryparams.travelmode = "driving"
+
+log.debug("getNavDirections queryparams: {}",[queryparams] )
+
+
+var directions = SELECT FROM SOURCE GoogleDirections WITH query = queryparams
+
+
+log.debug("PROCEDURE getNavDirections PRODUCED: " + stringify(directions))
+
+
+// only get the first route
+// var steps = directions[0].routes[0].legs[0].steps
+// var duration = directions[0].routes[0].legs[0].duration.text
+
+return directions
+
+/*
+var payload = {
+   "responseTopic": "/from/directions",
+   "fields": [
+      {
+         "id": "document1",
+         "type": "document",
+         "label": "Directions",
+         "url": "https://www.google.com/maps/dir/?api=1&origin=42.130174,-71.196759&destination=42.12175222583313,-71.170944180343&travelmode=driving",
+         "placeholder": "Open for directions"
+      }
+   ]
+}
+*/
+
+/*
+var fields = []
+push(fields, {
+         "id": "document1",
+         "type": "document",
+         "label": "Directions",
+         "url": "https://www.google.com/maps/dir/?api=1&origin=42.130174,-71.196759&destination=42.12175222583313,-71.170944180343&travelmode=driving",
+         "placeholder": "Open for directions"
+      })
+var inc = 1
+FOR EACH step IN steps DO
+	var instruction = step.html_instructions.replace(regExp("(<([^>]+)>)"), "")
+	var obj = {
+         "id": "text" + inc,
+         "type": "text",
+         "label": instruction,
+         "size": 18,
+         "align": "left"        
+	}
+	push(fields, obj)
+	inc = inc + 1
+END
+
+var payload = {
+   "responseTopic": "/from/directions",
+    fields:fields
+}
+
+
+PUBLISH { title: "Directions to pump", 
+           body: "Step by step and map to location", 
+           data: payload } TO SOURCE VantiqPushNotification USING { to: [ "br_bruden" ] }
+
+return {duration:duration, steps:steps, directions:directions}
+*/ 
+
+//
+// RCS Request object 'Test Directions'
+//
+
+
+/*
+      {
+         "id": "text1",
+         "type": "text",
+         "label": "A Label",
+         "size": 18,
+         "align": "left"
+      }
+*/
+
+
+
+
+
+// return stepsList
+
+
+// var mystring = "Head <b>southwest</b> on <b>Bell St</b> toward <b>Pleasant Dr</b>"
+// var instruction = mystring.replace(regExp("(<([^>]+)>)"), "")
+
+/*
+[
+   {
+      "geocoded_waypoints": [
+         {
+            "geocoder_status": "OK",
+            "place_id": "ChIJz074Z_V95IkR0k8phy3_Ouk",
+            "types": [
+               "street_address"
+            ]
+         },
+         {
+            "geocoder_status": "OK",
+            "place_id": "ChIJ8eTGD2uH5IkRnTJwDwgpwFg",
+            "types": [
+               "street_address"
+            ]
+         }
+      ],
+      "routes": [
+         {
+            "bounds": {
+               "northeast": {
+                  "lat": 42.12879059999999,
+                  "lng": -71.1709523
+               },
+               "southwest": {
+                  "lat": 42.1212698,
+                  "lng": -71.19307429999999
+               }
+            },
+            "copyrights": "Map data ©2017 Google",
+            "legs": [
+               {
+                  "distance": {
+                     "text": "1.4 mi",
+                     "value": 2190
+                  },
+                  "duration": {
+                     "text": "4 mins",
+                     "value": 247
+                  },
+                  "end_address": "117 Billings St, Sharon, MA 02067, USA",
+                  "end_location": {
+                     "lat": 42.1212698,
+                     "lng": -71.1709523
+                  },
+                  "start_address": "29 Everett St, Sharon, MA 02067, USA",
+                  "start_location": {
+                     "lat": 42.12879059999999,
+                     "lng": -71.192782
+                  },
+                  "steps": [
+                     {
+                        "distance": {
+                           "text": "66 ft",
+                           "value": 20
+                        },
+                        "duration": {
+                           "text": "1 min",
+                           "value": 4
+                        },
+                        "end_location": {
+                           "lat": 42.1286224,
+                           "lng": -71.19271379999999
+                        },
+                        "html_instructions": "Head <b>south</b> toward <b>Everett St</b>",
+                        "polyline": {
+                           "points": "}gc`GzyoqLLGRE"
+                        },
+                        "start_location": {
+                           "lat": 42.12879059999999,
+                           "lng": -71.192782
+                        },
+                        "travel_mode": "DRIVING"
+                     },
+                     {
+                        "distance": {
+                           "text": "0.1 mi",
+                           "value": 172
+                        },
+                        "duration": {
+                           "text": "1 min",
+                           "value": 38
+                        },
+                        "end_location": {
+                           "lat": 42.12722,
+                           "lng": -71.1927
+                        },
+                        "html_instructions": "Turn <b>right</b> onto <b>Everett St</b>",
+                        "maneuver": "turn-right",
+                        "polyline": {
+                           "points": "{fc`GlyoqLFBFHFDDLJNHNLDN?bBc@`Be@"
+                        },
+                        "start_location": {
+                           "lat": 42.1286224,
+                           "lng": -71.19271379999999
+                        },
+                        "travel_mode": "DRIVING"
+                     },
+                     {
+                        "distance": {
+                           "text": "0.5 mi",
+                           "value": 783
+                        },
+                        "duration": {
+                           "text": "1 min",
+                           "value": 84
+                        },
+                        "end_location": {
+                           "lat": 42.1253467,
+                           "lng": -71.1841364
+                        },
+                        "html_instructions": "Turn <b>left</b> onto <b>Upland Rd</b>",
+                        "maneuver": "turn-left",
+                        "polyline": {
+                           "points": "c~b`GjyoqL?s@OgFEs@I}@a@uCAk@AK?c@Ds@JkAd@yBJc@HYDYR{@DUDMDQNo@FS@WH[BQFQDQDQDODMDKFKJUNYLWd@y@h@aAh@aAfAoB"
+                        },
+                        "start_location": {
+                           "lat": 42.12722,
+                           "lng": -71.1927
+                        },
+                        "travel_mode": "DRIVING"
+                     },
+                     {
+                        "distance": {
+                           "text": "0.3 mi",
+                           "value": 473
+                        },
+                        "duration": {
+                           "text": "1 min",
+                           "value": 52
+                        },
+                        "end_location": {
+                           "lat": 42.1236595,
+                           "lng": -71.1789565
+                        },
+                        "html_instructions": "Continue onto <b>MA-27 S</b>/<b>Depot St</b>",
+                        "polyline": {
+                           "points": "mrb`GzcnqLJQBGDGJQJQFK@EHOLUHQR_@Tw@Lm@Nu@Z{ATsALgAJgAJy@P_BDc@F_@Ja@BIH[@CZuA"
+                        },
+                        "start_location": {
+                           "lat": 42.1253467,
+                           "lng": -71.1841364
+                        },
+                        "travel_mode": "DRIVING"
+                     },
+                     {
+                        "distance": {
+                           "text": "164 ft",
+                           "value": 50
+                        },
+                        "duration": {
+                           "text": "1 min",
+                           "value": 11
+                        },
+                        "end_location": {
+                           "lat": 42.1234749,
+                           "lng": -71.1784002
+                        },
+                        "html_instructions": "Continue straight onto <b>Post Office Square</b>",
+                        "maneuver": "straight",
+                        "polyline": {
+                           "points": "{gb`GncmqLd@oB"
+                        },
+                        "start_location": {
+                           "lat": 42.1236595,
+                           "lng": -71.1789565
+                        },
+                        "travel_mode": "DRIVING"
+                     },
+                     {
+                        "distance": {
+                           "text": "0.4 mi",
+                           "value": 692
+                        },
+                        "duration": {
+                           "text": "1 min",
+                           "value": 58
+                        },
+                        "end_location": {
+                           "lat": 42.1212698,
+                           "lng": -71.1709523
+                        },
+                        "html_instructions": "Continue onto <b>Billings St</b><div style=\"font-size:0.9em\">Destination will be on the left</div>",
+                        "polyline": {
+                           "points": "ufb`G~_mqLNi@Na@L]Xk@Vk@Vk@^{@nAqCrAwCx@eBZq@JUFQDSDS@U@U@WAg@AmCBiI?qA"
+                        },
+                        "start_location": {
+                           "lat": 42.1234749,
+                           "lng": -71.1784002
+                        },
+                        "travel_mode": "DRIVING"
+                     }
+                  ],
+                  "traffic_speed_entry": [],
+                  "via_waypoint": []
+               }
+            ],
+            "overview_polyline": {
+               "points": "}gc`GzyoqL`@MNLb@r@LDN?dEiAO{GOqBa@uCAk@Ao@P_Cp@}Ch@eCb@cBJs@Jc@VaAh@gAfCuE~BgEt@wAb@eBj@qCb@{CVaCVcCRaAj@_Ct@yC\\_AhB_ExFaMRg@Jg@Bk@?_A@iP"
+            },
+            "summary": "Upland Rd and Billings St",
+            "warnings": [],
+            "waypoint_order": []
+         }
+      ],
+      "status": "OK"
+   }
+]
+*/
+

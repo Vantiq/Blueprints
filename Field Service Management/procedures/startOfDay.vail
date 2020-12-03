@@ -1,0 +1,15 @@
+PROCEDURE startOfDay(date DateTime)
+
+// get the year
+var year = getFullYear(date)
+ 
+// get the numeric value of the month
+var month = getMonth(date) 
+
+// get the numeric value of the day
+var day = getDate(date)
+
+// get the start of the day
+var daystart = toDate(format("{0,number,0000}-{1,number,00}-{2,number,00}T00:00:00.000Z", year, month, day))
+
+

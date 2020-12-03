@@ -1,0 +1,4 @@
+PROCEDURE Google.getAPIKey()
+
+var apikey = "<ENTERYOURAPIKEY>"
+return apikey
