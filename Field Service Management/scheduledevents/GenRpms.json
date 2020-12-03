@@ -1,0 +1,9 @@
+{
+  "active" : true,
+  "interval" : 5000,
+  "message" : { },
+  "name" : "GenRpms",
+  "occursAt" : "2020-12-03T16:38:15Z",
+  "periodic" : true,
+  "topic" : "/gen/rpms"
+}

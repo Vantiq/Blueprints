@@ -1,0 +1,21 @@
+[ {
+  "description" : "1 Normal, 2 High Temp, 3 High RPMS, 4 BOTH",
+  "id" : 5,
+  "state" : 1
+}, {
+  "description" : "1 Normal, 2 High Temp, 3 High RPMS, 4 BOTH",
+  "id" : 4,
+  "state" : 1
+}, {
+  "description" : "1 Normal, 2 High Temp, 3 High RPMS, 4 BOTH",
+  "id" : 3,
+  "state" : 1
+}, {
+  "description" : "1 Normal, 2 High Temp, 3 High RPMS, 4 BOTH",
+  "id" : 2,
+  "state" : 1
+}, {
+  "description" : "1 Normal, 2 High Temp, 3 High RPMS, 4 BOTH",
+  "id" : 1,
+  "state" : 1
+} ]

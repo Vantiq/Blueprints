@@ -1,0 +1,34 @@
+RULE z_datagenRPMs hidden
+
+WHEN PUBLISH OCCURS ON "/gen/rpms"
+
+
+
+
+SELECT FROM democontrol AS dc {
+
+	var rpms
+
+	if (dc.state == 1) {
+		rpms = random(2500,3750)
+	} else if (dc.state == 2) {
+		rpms = random(2500,3750)
+	} else if (dc.state == 3) {
+		rpms = random(4500,5000)
+	} else if (dc.state == 4) {
+		rpms = random(4500,5000)
+	} else if (dc.state == 5) {
+        rpms = 0
+	}
+
+	var obj = {
+    		rpmSensorId: "rpmSensor" + dc.id,
+    		rpms: rpms,
+       	 	time: now()
+	}
+
+	log.debug(stringify(obj))
+
+	PUBLISH obj	TO TOPIC "/stream/rpms"
+
+}

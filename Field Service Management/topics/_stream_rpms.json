@@ -1,0 +1,6 @@
+{
+  "description" : "Subscription to catalog event /devices/pump/rpms",
+  "isReliable" : false,
+  "messageType" : "s_rpms",
+  "name" : "/stream/rpms"
+}
