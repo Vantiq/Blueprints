@@ -40,7 +40,7 @@
   "options" : {
     "description" : "",
     "dockCollapsed" : {
-      "bottom" : false,
+      "bottom" : true,
       "left" : false,
       "right" : false,
       "top" : false,
@@ -364,17 +364,6 @@
     "type" : 8
   }, {
     "isPinned" : false,
-    "name" : "Autopsies Query",
-    "pane" : {
-      "h" : 400,
-      "w" : 600,
-      "x" : 20,
-      "y" : 2070
-    },
-    "state" : 3,
-    "type" : 37
-  }, {
-    "isPinned" : false,
     "name" : "Errors",
     "type" : 13
   }, {
@@ -446,64 +435,28 @@
     "pane" : {
       "h" : 390,
       "w" : 600,
-      "x" : 640,
-      "y" : 440
+      "x" : 640.0000305175781,
+      "y" : 430
     },
     "resourceKey" : "subscription/rpms",
     "state" : 3,
     "type" : 7
   }, {
     "isPinned" : false,
-    "name" : "s_rpms",
-    "pane" : {
-      "h" : 400,
-      "w" : 600,
-      "x" : 20,
-      "y" : 2890
-    },
-    "resourceKey" : "type/s_rpms",
-    "state" : 3,
-    "type" : 6
-  }, {
-    "isPinned" : false,
     "name" : "temp",
     "pane" : {
       "h" : 390,
       "w" : 600,
-      "x" : 1260,
-      "y" : 440
+      "x" : 1260.0000915527344,
+      "y" : 430
     },
     "resourceKey" : "subscription/temp",
     "state" : 3,
     "type" : 7
-  }, {
-    "isPinned" : false,
-    "name" : "z_datagenRPMs",
-    "pane" : {
-      "h" : 400,
-      "w" : 600,
-      "x" : 630,
-      "y" : 1660
-    },
-    "resourceKey" : "rule/z_datagenRPMs",
-    "state" : 3,
-    "type" : 3
-  }, {
-    "isPinned" : false,
-    "name" : "z_datagenTemp",
-    "pane" : {
-      "h" : 400,
-      "w" : 600,
-      "x" : 20,
-      "y" : 1660
-    },
-    "resourceKey" : "rule/z_datagenTemp",
-    "state" : 3,
-    "type" : 3
   } ],
   "type" : "dev",
   "views" : [ {
     "name" : "Project Contents",
-    "projectToolKeys" : [ "subtopiceditor//stream/temp", "autopsyquery/Autopsies Query", "errorviewer/Errors", "scheduledeventeditor/GenRpms", "scheduledeventeditor/GenTemp", "tiledock/Inactive Panes", "list/Project Contents", "graph/Project Resource Graph", "subtypeeditor/democontrol", "subsubscribeeditor/rpms", "subtypeeditor/s_rpms", "subsubscribeeditor/temp", "cmeditorrule/z_datagenRPMs", "cmeditorrule/z_datagenTemp" ]
+    "projectToolKeys" : [ "subtopiceditor//stream/temp", "errorviewer/Errors", "scheduledeventeditor/GenRpms", "scheduledeventeditor/GenTemp", "tiledock/Inactive Panes", "list/Project Contents", "graph/Project Resource Graph", "subtypeeditor/democontrol", "subsubscribeeditor/rpms", "subsubscribeeditor/temp" ]
   } ]
 }

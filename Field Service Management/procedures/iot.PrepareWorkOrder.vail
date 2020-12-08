@@ -1,6 +1,6 @@
 PROCEDURE iot.PrepareWorkOrder(event)
 
-var ticket =  IoT.newTicket()
+var ticket =  iot.newTicket()
 
 var ctime = now()
 

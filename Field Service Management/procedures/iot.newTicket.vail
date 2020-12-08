@@ -1,0 +1,134 @@
+PROCEDURE iot.newTicket()
+
+// create a new ticket if its a new dat other wise return last ticket
+
+var ticket = {}
+
+var currentDate = now()
+
+// get to the beginning of the day
+var daystart = startOfDay(currentDate)
+
+// determine if a ticket for today already exists
+SELECT FROM Tickets WHERE assignedDate > daystart
+
+if (Tickets.size() == 0){
+    
+    var tsummary = format("Pump Issues {0}", format("{0, date, MMMMMMMMMMM dd, yyyy}", currentDate))
+
+	var tdescription = format("All related workorders for Pumps on this day {0}", format("{0, date, MMMMMMMMMMM dd, yyyy}", currentDate))
+
+
+    ticket.assets = []
+    ticket.assignedDate = currentDate
+    ticket.assignedTo = "065d4bbf-f48e-4ca5-944b-989661edf154"
+    // this should really be assembled
+    ticket.contacts = [
+         {
+            "_id": "5bec732122d4e059c340e58c",
+            "companyid": "d0715782-e840-11e8-a0b8-02429813f446",
+            "department": "Water",
+            "email": "tdegen@vantiq.com",
+            "fax": null,
+            "firstname": "Heidi",
+            "geolocation": null,
+            "id": "e15d4fe4-e840-11e8-96f1-0242e345f129",
+            "lastname": "Klum",
+            "phone": "+32470172419",
+            "title": "Water Administration",
+            "ars_namespace": "FieldServiceManagement",
+            "ars_version": 1,
+            "ars_createdAt": "2018-11-14T19:10:25.416Z",
+            "ars_createdBy": "065d4bbf-f48e-4ca5-944b-989661edf154"
+         }
+      ]
+    ticket.createdBy = "065d4bbf-f48e-4ca5-944b-989661edf154"
+    ticket.createdByName = "Thomas Degen"
+    ticket.customer = "RWE Power AG"
+    ticket.customerId = "d0715782-e840-11e8-a0b8-02429813f446"
+    ticket.description = tdescription
+    ticket.emailtosales = false
+    ticket.id =  uuid()
+
+    ticket.locationid = "6036a7f0-9785-11e9-bda4-0242a2cac2b7"
+    ticket.locationname = "Kraftwerk Neurath"
+    ticket.notificationList_Customer =  []
+    ticket.notificationList_Internal= []
+    ticket.priority= "1"
+    ticket.reportedSource =  "IoT"
+
+    ticket.sentcustomersurvey = false
+
+    ticket.status =  "Open"
+    ticket.summary= tsummary
+
+	INSERT Tickets(ticket)
+} else {
+    ticket = SELECT ONE FROM Tickets WITH LIMIT = 1 ORDER BY ars_createdAt DESC
+}
+
+
+
+
+
+
+return ticket
+/*
+[
+   {
+      "_id": "5beefbab22d4e02a2a2ad76f",
+      "assets": [],
+      "assignedDate": "2018-11-16T17:16:14.358Z",
+      "assignedGroup": null,
+      "assignedTeam": null,
+      "assignedTo": "9b0c8471-9314-419e-a118-8957690a91a2",
+      "assignedToName": null,
+      "closedDate": null,
+      "contacts": [
+         {
+            "_id": "5bec732122d4e059c340e58c",
+            "companyid": "d0715782-e840-11e8-a0b8-02429813f446",
+            "department": "Water",
+            "email": "brudenstein@vantiq.com",
+            "fax": null,
+            "firstname": "Sally",
+            "geolocation": null,
+            "id": "e15d4fe4-e840-11e8-96f1-0242e345f129",
+            "lastname": "Johnson",
+            "phone": "7819104062",
+            "title": "Plant Manager",
+            "ars_namespace": "br_pump_v2",
+            "ars_version": 1,
+            "ars_createdAt": "2018-11-14T19:10:25.416Z",
+            "ars_createdBy": "9b0c8471-9314-419e-a118-8957690a91a2"
+         }
+      ],
+      "createdBy": "9b0c8471-9314-419e-a118-8957690a91a2",
+      "createdByName": "Brett Rudenstein",
+      "customer": "Acme Waters North America",
+      "customerId": "d0715782-e840-11e8-a0b8-02429813f446",
+      "description": "All related workorders for Pumps on this day November 16, 2018",
+      "emailtosales": false,
+      "externalticketnumber": null,
+      "externaltickettype": null,
+      "firstResponseDate": null,
+      "history": null,
+      "id": "52600880-e9c3-11e8-a881-02429813f446",
+      "impact": null,
+      "incident": null,
+      "locationid": "f21f7924-e840-11e8-96f1-0242e345f129",
+      "locationname": "Billings Processing Center",
+      "notificationList_Customer": [],
+      "notificationList_Internal": [],
+      "priority": "1",
+      "reportedSource": "IoT",
+      "resolution": null,
+      "salesemails": null,
+      "sentcustomersurvey": false,
+      "serviceType": null,
+      "status": "Open",
+      "summary": "Pump Issues November 16, 2018",
+      "type": null
+   }
+]
+*/
