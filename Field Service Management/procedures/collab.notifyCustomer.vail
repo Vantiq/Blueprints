@@ -26,11 +26,16 @@ select exactly one from Technicians as tech where username == workorder.techId
 var result = GoogleTimeZone(workorder.geolocation, workorder.scheduledArrivalDate)
 var offset = toInteger(abs(result[0].rawOffset))
 var daylight = result[0].dstOffset
-offset = offset - daylight
+
+offset = (offset - daylight) + " seconds"
 var arrivaltime = toDate(workorder.scheduledArrivalDate)
 
 if(result[0].rawOffset > 0){  
-	arrivaltime = arrivaltime.plusMillis(stringToInterval(offset * 1000))
+    // Fix #24 https://github.com/Vantiq/Blueprints/issues/24 
+    // Error in Rule TechnicianDispatch_ScheduleArrivalDateTime_NotificationResponse
+	// Message: Unable to parse duration string '3600000'.  Expected number followed by time unit.
+    // stringToInterval(str) - return the number of milliseconds in an interval string such as 1 minute or 3 hours as an integer. For example, stringToInterval("1 second") would evaluate to 1000.
+	arrivaltime = arrivaltime.plusMillis(stringToInterval(offset))
     }
 else {
     arrivaltime = arrivaltime.minusMillis(offset * 1000)
