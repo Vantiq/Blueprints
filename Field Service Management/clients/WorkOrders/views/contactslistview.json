@@ -1,0 +1,165 @@
+{
+  "bodyChildren" : {
+    "rootArray" : [ "ce1b26cd-ee08-437e-87ef-e7eb2da349c1", "0ba00f0f-b468-409a-9038-aa6e6b99cbb7", "96156e54-5acd-43f6-983d-979cfcede765", "6c9a94d8-e299-4dac-8680-d642a8b99fda" ],
+    "widgets" : [ {
+      "binding" : "page.data.customer",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "isReadOnly" : true,
+      "label" : "Customer",
+      "labelColor" : "#000000",
+      "labelStyle" : "plain",
+      "name" : "InputString976939",
+      "optional" : true,
+      "placeholder" : "",
+      "type" : "InputString",
+      "uuid" : "0ba00f0f-b468-409a-9038-aa6e6b99cbb7",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "buttonBackgroundColor" : "platform",
+      "buttonLabel" : "Save",
+      "buttonLabelColor" : "platform",
+      "buttonLabelSize" : 18,
+      "buttonLabelStyle" : "plain",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "labelAlign" : "center",
+      "labelColor" : "#000000",
+      "labelStyle" : "plain",
+      "name" : "Button109484",
+      "submitValue" : 100,
+      "type" : "Button",
+      "uuid" : "39a92531-70fc-4783-8911-0b6b7267e480",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "buttonBackgroundColor" : "platform",
+      "buttonLabel" : "Cancel",
+      "buttonLabelColor" : "platform",
+      "buttonLabelSize" : 18,
+      "buttonLabelStyle" : "plain",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "labelAlign" : "center",
+      "labelColor" : "#000000",
+      "labelStyle" : "plain",
+      "name" : "Button109485",
+      "submitValue" : 100,
+      "type" : "Button",
+      "uuid" : "4890975c-2179-438d-8154-1c8eb1b7033e",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "children" : [ "39a92531-70fc-4783-8911-0b6b7267e480", "4890975c-2179-438d-8154-1c8eb1b7033e" ],
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "innerMargin" : 20,
+      "name" : "HorizontalLayout31564",
+      "type" : "HorizontalLayout",
+      "uuid" : "6c9a94d8-e299-4dac-8680-d642a8b99fda",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "backgroundColor" : "default",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 1,
+      "cellFontColor" : "#000000",
+      "cellFontFace" : "inherit",
+      "cellFontSize" : 14,
+      "cellFontStyle" : "plain",
+      "clearOnDataArrive" : true,
+      "columnDescriptors" : [ {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "firstname",
+        "selected" : false,
+        "title" : "First"
+      }, {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "lastname",
+        "selected" : false,
+        "title" : "Last"
+      } ],
+      "columnSort" : true,
+      "dataStreamGroupedByFiltersString" : "",
+      "dataStreamUUID" : "33a5b2d1-e6b9-4968-8029-af3e406d1c33",
+      "dataType" : null,
+      "headerFontColor" : "#000000",
+      "headerFontFace" : "inherit",
+      "headerFontSize" : 14,
+      "headerFontStyle" : "plain",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "DataTable2907",
+      "operation" : "insert",
+      "rowsPerPage" : 5,
+      "showPaging" : true,
+      "type" : "DataTable",
+      "uuid" : "96156e54-5acd-43f6-983d-979cfcede765",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "horzMargin" : 2,
+      "label" : "Select Contact to Add",
+      "labelColor" : "#808080",
+      "labelSize" : 18,
+      "labelStyle" : "italic",
+      "name" : "SectionLabel12149",
+      "type" : "SectionLabel",
+      "uuid" : "ce1b26cd-ee08-437e-87ef-e7eb2da349c1",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    } ]
+  },
+  "data" : {
+    "properties" : {
+      "contact" : {
+        "defaultLabel" : "contact",
+        "type" : "Object"
+      },
+      "customer" : {
+        "defaultLabel" : "customer",
+        "type" : "String"
+      },
+      "customerid" : {
+        "defaultLabel" : "customerid",
+        "type" : "String"
+      },
+      "dbid" : {
+        "defaultLabel" : "dbid",
+        "type" : "String"
+      }
+    }
+  },
+  "footerChildren" : [ ],
+  "hasFooter" : false,
+  "layoutType" : "mobile",
+  "responseTopic" : ""
+}

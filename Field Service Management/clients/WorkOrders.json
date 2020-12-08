@@ -1,0 +1,298 @@
+{
+  "ars_properties" : {
+    "tags" : [ "#launchable" ]
+  },
+  "ars_public" : false,
+  "controllers" : {
+    "client" : {
+      "customCode" : "RELOCATED to controllers/client/customCode.js",
+      "onStart" : "RELOCATED to controllers/client/onStart.js"
+    },
+    "dataStream" : {
+      "ce_Contacts" : { },
+      "ce_Materials" : { },
+      "ce_Tickets" : { },
+      "ce_Workorders" : { },
+      "ce_workordernotes" : { }
+    },
+    "page" : {
+      "Start" : {
+        "onClientStart" : "RELOCATED to controllers/page/Start/onClientStart.js"
+      },
+      "calendar" : {
+        "onClientStart" : "RELOCATED to controllers/page/calendar/onClientStart.js",
+        "onStart" : "RELOCATED to controllers/page/calendar/onStart.js"
+      },
+      "contactpage" : {
+        "onStart" : "RELOCATED to controllers/page/contactpage/onStart.js",
+        "widgets" : {
+          "Button107898" : {
+            "onClick" : "RELOCATED to controllers/page/contactpage/widgets/Button107898/onClick.js"
+          }
+        }
+      },
+      "contactslistview" : {
+        "onStart" : "RELOCATED to controllers/page/contactslistview/onStart.js",
+        "widgets" : {
+          "Button109484" : {
+            "onClick" : "RELOCATED to controllers/page/contactslistview/widgets/Button109484/onClick.js"
+          },
+          "Button109485" : {
+            "onClick" : "RELOCATED to controllers/page/contactslistview/widgets/Button109485/onClick.js"
+          },
+          "DataTable2907" : {
+            "onSelect" : "RELOCATED to controllers/page/contactslistview/widgets/DataTable2907/onSelect.js"
+          }
+        }
+      },
+      "notedetail" : {
+        "onStart" : "RELOCATED to controllers/page/notedetail/onStart.js",
+        "widgets" : {
+          "Button107911" : {
+            "onClick" : "RELOCATED to controllers/page/notedetail/widgets/Button107911/onClick.js"
+          },
+          "Button107912" : {
+            "onClick" : "RELOCATED to controllers/page/notedetail/widgets/Button107912/onClick.js"
+          }
+        }
+      },
+      "workorderpage" : {
+        "onStart" : "RELOCATED to controllers/page/workorderpage/onStart.js",
+        "widgets" : {
+          "Button107863" : {
+            "onClick" : "RELOCATED to controllers/page/workorderpage/widgets/Button107863/onClick.js"
+          },
+          "Button109758" : {
+            "onClick" : "RELOCATED to controllers/page/workorderpage/widgets/Button109758/onClick.js"
+          },
+          "DataTable2860" : {
+            "onSelect" : "RELOCATED to controllers/page/workorderpage/widgets/DataTable2860/onSelect.js"
+          },
+          "DataTable2862" : {
+            "onSelect" : "RELOCATED to controllers/page/workorderpage/widgets/DataTable2862/onSelect.js"
+          }
+        }
+      },
+      "workorderslist" : {
+        "onStart" : "RELOCATED to controllers/page/workorderslist/onStart.js",
+        "widgets" : {
+          "DataTable2851" : {
+            "onSelect" : "RELOCATED to controllers/page/workorderslist/widgets/DataTable2851/onSelect.js"
+          },
+          "Droplist10981" : {
+            "onChange" : "RELOCATED to controllers/page/workorderslist/widgets/Droplist10981/onChange.js"
+          },
+          "InputString976487" : {
+            "onChange" : "RELOCATED to controllers/page/workorderslist/widgets/InputString976487/onChange.js"
+          }
+        }
+      }
+    },
+    "topbar" : {
+      "widgets" : {
+        "MenuButton21" : {
+          "onClick" : "RELOCATED to controllers/topbar/widgets/MenuButton21/onClick.js"
+        },
+        "MenuButton22" : {
+          "onClick" : "RELOCATED to controllers/topbar/widgets/MenuButton22/onClick.js"
+        },
+        "MenuButton23" : {
+          "onClick" : "RELOCATED to controllers/topbar/widgets/MenuButton23/onClick.js"
+        }
+      }
+    }
+  },
+  "isLaunchable" : true,
+  "models" : {
+    "dataObjects" : {
+      "__GLOBAL__" : {
+        "properties" : {
+          "username" : {
+            "defaultLabel" : "username",
+            "type" : "String"
+          },
+          "workordernote" : {
+            "defaultLabel" : "workordernote",
+            "type" : "TypedObject",
+            "typedObject" : {
+              "properties" : {
+                "note" : {
+                  "defaultLabel" : "note",
+                  "type" : "String"
+                },
+                "techId" : {
+                  "defaultLabel" : "techId",
+                  "type" : "String"
+                },
+                "techname" : {
+                  "defaultLabel" : "techname",
+                  "type" : "String"
+                },
+                "time" : {
+                  "defaultLabel" : "time",
+                  "type" : "DateTime"
+                }
+              }
+            }
+          }
+        }
+      },
+      "__PARAMETERS__" : {
+        "properties" : { }
+      }
+    },
+    "dataStreams" : [ {
+      "advancedWhereClause" : null,
+      "dataObjectName" : null,
+      "dataTypeList" : [ {
+        "label" : null,
+        "type" : "Workorders"
+      } ],
+      "isDeleteOp" : false,
+      "isInsertOp" : false,
+      "isUpdateOp" : false,
+      "maxRecords" : 0,
+      "name" : "ce_Workorders",
+      "pauseAtStartup" : false,
+      "property" : null,
+      "sortByProperty" : null,
+      "sortDescending" : false,
+      "type" : 5,
+      "updateInterval" : 60,
+      "uuid" : "1d38ff96-00c8-4691-817a-e83696c93a3a",
+      "v" : 1
+    }, {
+      "advancedWhereClause" : null,
+      "dataObjectName" : null,
+      "dataTypeList" : [ {
+        "label" : null,
+        "type" : "Tickets"
+      } ],
+      "isDeleteOp" : false,
+      "isInsertOp" : false,
+      "isUpdateOp" : false,
+      "maxRecords" : 0,
+      "name" : "ce_Tickets",
+      "pauseAtStartup" : false,
+      "property" : null,
+      "sortByProperty" : null,
+      "sortDescending" : false,
+      "type" : 5,
+      "updateInterval" : 60,
+      "uuid" : "5bf45cab-9493-43d9-9910-2fe5dbabfe26",
+      "v" : 1
+    }, {
+      "advancedWhereClause" : null,
+      "dataObjectName" : null,
+      "dataTypeList" : [ {
+        "label" : null,
+        "type" : "Assets"
+      } ],
+      "isDeleteOp" : false,
+      "isInsertOp" : false,
+      "isUpdateOp" : false,
+      "maxRecords" : 0,
+      "name" : "ce_Materials",
+      "pauseAtStartup" : false,
+      "property" : null,
+      "sortByProperty" : null,
+      "sortDescending" : false,
+      "type" : 5,
+      "updateInterval" : 60,
+      "uuid" : "1f46ddd7-0dc8-4675-9f37-330a30803436",
+      "v" : 1
+    }, {
+      "advancedWhereClause" : null,
+      "dataObjectName" : null,
+      "dataTypeList" : [ {
+        "label" : null,
+        "type" : "Contacts"
+      } ],
+      "isDeleteOp" : false,
+      "isInsertOp" : false,
+      "isUpdateOp" : false,
+      "maxRecords" : 0,
+      "name" : "ce_Contacts",
+      "pauseAtStartup" : false,
+      "property" : null,
+      "sortByProperty" : null,
+      "sortDescending" : false,
+      "type" : 5,
+      "updateInterval" : 60,
+      "uuid" : "33a5b2d1-e6b9-4968-8029-af3e406d1c33",
+      "v" : 1
+    }, {
+      "advancedWhereClause" : null,
+      "dataObjectName" : "client.data.workordernote",
+      "dataTypeList" : [ ],
+      "isDeleteOp" : false,
+      "isInsertOp" : false,
+      "isUpdateOp" : false,
+      "maxRecords" : 0,
+      "name" : "ce_workordernotes",
+      "pauseAtStartup" : false,
+      "property" : null,
+      "sortByProperty" : null,
+      "sortDescending" : false,
+      "type" : 5,
+      "updateInterval" : 60,
+      "uuid" : "c9109f53-0354-4b68-9654-6d0df4063575",
+      "v" : 1
+    } ]
+  },
+  "name" : "WorkOrders",
+  "options" : {
+    "RELOCATE" : [ {
+      "path" : "controllers",
+      "type" : "js"
+    }, {
+      "path" : "views",
+      "type" : "json"
+    }, {
+      "path" : "options.topbar",
+      "type" : "jsonObj"
+    } ],
+    "badgeCount" : 0,
+    "cssAssets" : [ "../../docs/css/mobile.css", "../../docs/public/css/fullcalendar.css", "../../docs/public/css/customcalendar.css", "../../docs/public/css/servicedeskmobile.css" ],
+    "description" : "View and modify work orders",
+    "displayName" : "Work Orders",
+    "docAssets" : [ "css/mobile.css", "images/PumpBG.jpg", "images/vantiqLogoWhite.png", "public/css/customcalendar.css", "public/css/fullcalendar.css", "public/css/servicedeskmobile.css", "public/js/fullcalendar.js", "public/js/moment.min.js" ],
+    "hasTopbar" : true,
+    "jsAssets" : [ "../../docs/public/js/moment.min.js", "../../docs/public/js/fullcalendar.js" ],
+    "paletteCollapsed" : false,
+    "productV" : "7.4o",
+    "showCategoryButtons" : false,
+    "showCategoryDataDisplay" : false,
+    "showCategoryDataInput" : false,
+    "showCategoryLayout" : true,
+    "showGridWhileEditing" : true,
+    "showOutlinesWhileEditing" : true,
+    "theme" : {
+      "backgroundColor" : "#ffffff",
+      "borderColor" : "#2b6e9e",
+      "cardAccentColor" : "#ffffff",
+      "cardColor" : "#3c424d",
+      "dataDisplayColor" : "#ffffff",
+      "dataDisplayColors" : [ "#3cbce1", "#996db8", "#86d557", "#ff9800", "#425b71", "#cc467c", "#01aa93", "#ffca28", "#f583a9", "#1c84d4", "#ff6767", "#4caf50" ],
+      "dataInputColor" : "#ffffff",
+      "foregroundColor" : "#000000",
+      "label" : "Custom",
+      "name" : "custom",
+      "titleBarColor" : "#f0f2f8",
+      "v" : 3
+    },
+    "topbar" : "RELOCATED to options/topbar.json",
+    "v" : 5
+  },
+  "targetDevice" : "mobile",
+  "userList" : [ ],
+  "views" : {
+    "Start" : "RELOCATED to views/Start.json",
+    "calendar" : "RELOCATED to views/calendar.json",
+    "contactpage" : "RELOCATED to views/contactpage.json",
+    "contactslistview" : "RELOCATED to views/contactslistview.json",
+    "notedetail" : "RELOCATED to views/notedetail.json",
+    "workorderpage" : "RELOCATED to views/workorderpage.json",
+    "workorderslist" : "RELOCATED to views/workorderslist.json"
+  }
+}

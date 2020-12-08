@@ -1,0 +1,12 @@
+{
+  "activationConstraint" : "",
+  "active" : true,
+  "config" : {
+    "clientId" : "46ed3114-d669-488d-b637-dbe5f5a79b80",
+    "clientSecret" : "mndigAF186#zlVYLYW15[)~",
+    "directLineSecret" : "nipAqm-l28Y.cwA.lPs.8___dy91zR3Re_O81pXwkb0l2EGWobWNm5jlU2Bo6GQ"
+  },
+  "direction" : "BOTH",
+  "name" : "chatbot",
+  "type" : "CHATBOT"
+}

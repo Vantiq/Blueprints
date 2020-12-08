@@ -1,0 +1,9 @@
+{
+  "name" : "temp",
+  "operation" : "publish",
+  "properties" : [ {
+    "name" : "/stream/temp",
+    "type" : ""
+  } ],
+  "type" : ""
+}

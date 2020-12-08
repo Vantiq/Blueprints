@@ -1,0 +1,20 @@
+{
+  "activationConstraint" : "",
+  "active" : true,
+  "config" : {
+    "pollingInterval" : 0,
+    "requestDefaults" : {
+      "contentType" : "application/json",
+      "headers" : {
+        "Ocp-Apim-Subscription-Key" : "5cb4a4bb793b457db0dc957be6cb890e"
+      },
+      "query" : {
+        "staging" : "true"
+      }
+    },
+    "uri" : "https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/f568e96e-4fed-45bc-bfdf-f7cf8bbe1c7e?subscription-key=5cb4a4bb793b457db0dc957be6cb890e&verbose=true&timezoneOffset=0&q="
+  },
+  "direction" : "BOTH",
+  "name" : "NLP",
+  "type" : "REMOTE"
+}

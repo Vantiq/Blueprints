@@ -1,0 +1,151 @@
+{
+  "bodyChildren" : {
+    "rootArray" : [ "6710924c-8def-4b26-b254-1c681e3e2a24", "132228c9-358f-48c0-94d0-667c2a1c4813" ],
+    "widgets" : [ {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "children" : [ "5675f92b-95be-4c67-a5a7-a343327a2754", "abfd1352-c35a-444e-b346-c741c7530762" ],
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "right",
+      "innerMargin" : 20,
+      "name" : "HorizontalLayout9935",
+      "type" : "HorizontalLayout",
+      "uuid" : "132228c9-358f-48c0-94d0-667c2a1c4813",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "naturalSize",
+      "x" : 90,
+      "y" : 310
+    }, {
+      "binding" : "page.data.Skills.description",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "label" : "Description",
+      "labelColor" : "#000000",
+      "labelStyle" : "plain",
+      "name" : "MultilineInput99",
+      "optional" : true,
+      "placeholder" : "",
+      "rows" : 5,
+      "type" : "MultilineInput",
+      "uuid" : "3d433df3-cc1d-4d28-b21f-f07e883c4b68",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell",
+      "wordwrap" : true
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "buttonBackgroundColor" : "platform",
+      "buttonLabel" : "Submit",
+      "buttonLabelColor" : "platform",
+      "buttonLabelSize" : 18,
+      "buttonLabelStyle" : "plain",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "labelAlign" : "center",
+      "labelColor" : "#000000",
+      "labelStyle" : "plain",
+      "name" : "Button98166",
+      "submitValue" : 100,
+      "type" : "Button",
+      "uuid" : "5675f92b-95be-4c67-a5a7-a343327a2754",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "backgroundColor" : "#f5f5f5",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 1,
+      "children" : [ "78b13393-72e1-4025-881f-2b28534a0028", "3d433df3-cc1d-4d28-b21f-f07e883c4b68" ],
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "innerMargin" : 20,
+      "name" : "VerticalLayout9831b",
+      "type" : "VerticalLayout",
+      "uuid" : "6710924c-8def-4b26-b254-1c681e3e2a24",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "naturalSize",
+      "x" : 30,
+      "y" : 30
+    }, {
+      "binding" : "page.data.Skills.skill",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "label" : "Skill",
+      "labelColor" : "#000000",
+      "labelStyle" : "plain",
+      "name" : "skillwidget",
+      "optional" : true,
+      "placeholder" : "",
+      "type" : "InputString",
+      "uuid" : "78b13393-72e1-4025-881f-2b28534a0028",
+      "v" : 16,
+      "vertGravity" : "center",
+      "w" : 345,
+      "widthPolicy" : "explicit"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "buttonBackgroundColor" : "platform",
+      "buttonLabel" : "Cancel",
+      "buttonLabelColor" : "platform",
+      "buttonLabelSize" : 18,
+      "buttonLabelStyle" : "plain",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "labelAlign" : "center",
+      "labelColor" : "#000000",
+      "labelStyle" : "plain",
+      "name" : "Button98167",
+      "submitValue" : 100,
+      "type" : "Button",
+      "uuid" : "abfd1352-c35a-444e-b346-c741c7530762",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    } ]
+  },
+  "data" : {
+    "properties" : {
+      "Skills" : {
+        "defaultLabel" : "Skills",
+        "type" : "TypedObject",
+        "typedObject" : {
+          "properties" : {
+            "description" : {
+              "defaultLabel" : "description",
+              "type" : "String"
+            },
+            "skill" : {
+              "defaultLabel" : "skill",
+              "type" : "String"
+            }
+          },
+          "type" : "skills"
+        }
+      },
+      "dbid" : {
+        "defaultLabel" : "dbid",
+        "type" : "String"
+      }
+    }
+  },
+  "footerChildren" : [ ],
+  "hasFooter" : false,
+  "layoutType" : "browser",
+  "responseTopic" : ""
+}

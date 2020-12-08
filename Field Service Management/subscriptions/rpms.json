@@ -1,0 +1,9 @@
+{
+  "name" : "rpms",
+  "operation" : "publish",
+  "properties" : [ {
+    "name" : "/stream/rpms",
+    "type" : ""
+  } ],
+  "type" : ""
+}

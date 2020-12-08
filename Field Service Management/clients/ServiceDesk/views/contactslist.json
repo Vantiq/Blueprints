@@ -1,0 +1,120 @@
+{
+  "bodyChildren" : {
+    "rootArray" : [ "8c983424-43cd-4a1d-9554-0440c79c67b4", "ffe5f94b-e3da-4b86-a59d-0dc85109c918", "5d45a68f-3b3d-407f-a46c-ced792cb4b3f" ],
+    "widgets" : [ {
+      "backgroundColor" : "default",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 1,
+      "clearOnDataArrive" : true,
+      "columnDescriptors" : [ {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "title",
+        "selected" : false,
+        "title" : "Title"
+      }, {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "firstname",
+        "selected" : false,
+        "title" : "First Name"
+      }, {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "lastname",
+        "selected" : false,
+        "title" : "Last Name"
+      }, {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "email",
+        "selected" : false,
+        "title" : "EMail"
+      }, {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "phone",
+        "selected" : false,
+        "title" : "Phone"
+      }, {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "fax",
+        "selected" : false,
+        "title" : "Fax"
+      } ],
+      "columnSort" : true,
+      "dataStreamGroupedByFiltersString" : "",
+      "dataStreamUUID" : "39c4aac0-a96e-423c-92db-07a0fd20c5f4",
+      "dataType" : null,
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "DataTable87",
+      "operation" : "insert",
+      "rowsPerPage" : 15,
+      "showPaging" : true,
+      "type" : "DataTable",
+      "uuid" : "5d45a68f-3b3d-407f-a46c-ced792cb4b3f",
+      "v" : 16,
+      "vertGravity" : "center",
+      "w" : 1380,
+      "widthPolicy" : "explicit",
+      "x" : 50,
+      "y" : 130
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "fontFamily" : "Arial,Verdana",
+      "fontSize" : 20,
+      "fontStyle" : "normal",
+      "fontWeight" : "normal",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "Text887",
+      "text" : "Contacts",
+      "type" : "StaticText",
+      "uuid" : "8c983424-43cd-4a1d-9554-0440c79c67b4",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "naturalSize",
+      "x" : 50,
+      "y" : 20
+    }, {
+      "binding" : "page.data.searchcontacts",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "label" : "Search Contacts",
+      "labelColor" : "#000000",
+      "labelStyle" : "plain",
+      "name" : "inputString99836",
+      "optional" : false,
+      "placeholder" : "",
+      "type" : "InputString",
+      "uuid" : "ffe5f94b-e3da-4b86-a59d-0dc85109c918",
+      "v" : 16,
+      "vertGravity" : "center",
+      "w" : 370,
+      "widthPolicy" : "explicit",
+      "x" : 40,
+      "y" : 50
+    } ]
+  },
+  "data" : {
+    "properties" : {
+      "searchcontacts" : {
+        "defaultLabel" : "searchcontacts",
+        "type" : "String"
+      }
+    }
+  },
+  "footerChildren" : [ ],
+  "hasFooter" : false,
+  "layoutType" : "browser",
+  "responseTopic" : ""
+}

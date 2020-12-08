@@ -1,8 +1,11 @@
 {
   "adminAccessLevel" : "ars_readWrite",
+  "ars_properties" : null,
   "audited" : false,
   "encapsulated" : false,
+  "expiresAfter" : null,
   "foreignKeys" : null,
+  "groupBy" : "",
   "groupEnabled" : false,
   "groupRequired" : false,
   "indexes" : [ {
@@ -10,6 +13,9 @@
     "options" : {
       "unique" : true
     }
+  }, {
+    "keys" : [ "#location" ],
+    "options" : { }
   } ],
   "maxObjects" : 0,
   "maxStorage" : 0,
@@ -18,6 +24,13 @@
   "naturalKey" : [ "id" ],
   "properties" : {
     "category" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "String",
+      "unique" : false
+    },
+    "customer_ref_customers" : {
       "encrypted" : false,
       "multi" : false,
       "required" : false,
@@ -38,6 +51,27 @@
       "type" : "String",
       "unique" : false
     },
+    "indoorLocation" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "GeoJSON",
+      "unique" : false
+    },
+    "location" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "GeoJSON",
+      "unique" : false
+    },
+    "location_ref_locations" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "String",
+      "unique" : false
+    },
     "manufacturer" : {
       "encrypted" : false,
       "multi" : false,
@@ -50,6 +84,34 @@
       "multi" : false,
       "required" : false,
       "type" : "String",
+      "unique" : false
+    },
+    "primaryContact_ref_contacts" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "String",
+      "unique" : false
+    },
+    "rpms" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "Integer",
+      "unique" : false
+    },
+    "temp" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "Integer",
+      "unique" : false
+    },
+    "time" : {
+      "encrypted" : false,
+      "multi" : false,
+      "required" : false,
+      "type" : "DateTime",
       "unique" : false
     }
   },

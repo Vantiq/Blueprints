@@ -1,88 +1,483 @@
 {
   "links" : [ {
-    "source" : "procedure/collab.notifyCustomer",
-    "target" : "source/email"
-  }, {
     "source" : "procedure/testing.sources",
     "target" : "source/Twilio"
   }, {
+    "source" : "type/Technicians",
+    "target" : "procedure/collab.notifyCustomer"
+  }, {
+    "source" : "type/NotificationTemplates",
+    "target" : "procedure/collab.notifyCustomer"
+  }, {
+    "source" : "source/GoogleTimeZone",
+    "target" : "procedure/GoogleTimeZone"
+  }, {
+    "source" : "procedure/collab.notifyCustomer",
+    "target" : "procedure/GoogleTimeZone"
+  }, {
+    "source" : "procedure/sendTextMessageToTech",
+    "target" : "source/Twilio"
+  }, {
+    "source" : "procedure/collab.notifyCustomer",
+    "target" : "procedure/sendTextMessageToTech"
+  }, {
+    "source" : "source/GoogleGeoCode",
+    "target" : "procedure/GoogleGeoCode"
+  }, {
     "source" : "procedure/testing.sources",
+    "target" : "procedure/GoogleGeoCode"
+  }, {
+    "source" : "source/GoogleDistanceMatrix",
+    "target" : "procedure/GoogleDistanceMatrix"
+  }, {
+    "source" : "procedure/testing.sources",
+    "target" : "procedure/GoogleDistanceMatrix"
+  }, {
+    "source" : "source/GoogleDirections",
+    "target" : "procedure/GoogleDirections"
+  }, {
+    "source" : "procedure/testing.sources",
+    "target" : "procedure/GoogleDirections"
+  }, {
+    "source" : "procedure/testing.sources",
+    "target" : "procedure/GoogleTimeZone"
+  }, {
+    "source" : "procedure/testing.sources",
+    "target" : "source/EmailSource"
+  }, {
+    "source" : "procedure/collab.notifyCustomer",
     "target" : "source/email"
   } ],
   "name" : "SOURCES",
   "options" : {
-    "description" : "Sources represent the external API connections to third party systems. The Field Service Management blueprint uses Google Maps API, Twilio API and an SMTP server to provide additional capabilities. \n\nBefore using the blueprint it is necessary to enable each of the sources listed on this page. For the Google and Twilio sources it is also necessary to add your API key. You can edit these by clicking on the pencil icon and for the Google API looking for the {\"key\":\"YOUR_API_KEY\"} in query parameters. \n\nEnabling also means setting the Current State to Active which is done by clicking on the empty square box in the top right of each source and using the down arrow icon to save. The \"Current State\" will change from a red down arrow to a green up arrow after a couple seconds. Each of the sources listed on this page must be set to active. \n\nMake sure to enable the corresponding API for each of the Google API services. Directions, Distance, TimeZone, GeoCode. The Sources on this page are named to correspond to the Maps API service and lists the unique endpoint for each of those services. \n\nDistance: https://developers.google.com/maps/documentation/distance-matrix/\nDirections: https://developers.google.com/maps/documentation/directions/\nGeoCode: https://developers.google.com/maps/documentation/geocoding/\nTimeZone: https://developers.google.com/maps/documentation/timezone/\n\nThe FROM address for the email must also be set which can be done in the collab.notifyCustomer procedure which is open on this page. \n\nvar returnaddress = \"senders-email@goes.here.com\"\n\nOnce all the Sources have been filled in run the testing.sources procedure at the bottom of this page to verify the settings.\n\n",
+    "description" : "bSources represent the external API connections to third party systems. The Field Service Management blueprint uses Google Maps API, Twilio API and an SMTP server to provide additional capabilities. \n\nBefore using the blueprint it is necessary to enable each of the sources listed on this page. For the Google and Twilio sources it is also necessary to add your API key. You can edit these by clicking on the pencil icon and for the Google API looking for the {\"key\":\"YOUR_API_KEY\"} in query parameters. \n\nEnabling also means setting the Current State to Active which is done by clicking on the empty square box in the top right of each source and using the down arrow icon to save. The \"Current State\" will change from a red down arrow to a green up arrow after a couple seconds. Each of the sources listed on this page must be set to active. \n\nMake sure to enable the corresponding API for each of the Google API services. Directions, Distance, TimeZone, GeoCode. The Sources on this page are named to correspond to the Maps API service and lists the unique endpoint for each of those services. \n\nDistance: https://developers.google.com/maps/documentation/distance-matrix/\nDirections: https://developers.google.com/maps/documentation/directions/\nGeoCode: https://developers.google.com/maps/documentation/geocoding/\nTimeZone: https://developers.google.com/maps/documentation/timezone/\n\nThe FROM address for the email must also be set which can be done in the collab.notifyCustomer procedure which is open on this page. \n\nvar returnaddress = \"senders-email@goes.here.com\"\n\nOnce all the Sources have been filled in run the testing.sources procedure at the bottom of this page to verify the settings.\n\n",
+    "dockCollapsed" : {
+      "bottom" : true,
+      "left" : false,
+      "right" : false,
+      "top" : false,
+      "viewtabs" : false
+    },
+    "dockDimensions" : {
+      "bottom" : 200,
+      "debug" : [ 0, 0, 0 ],
+      "left" : 283,
+      "right" : 220,
+      "top" : 0,
+      "viewtabs" : 0
+    },
     "filterBitArray" : "ffffffffffffffffffffffffffffffff",
     "isModeloProject" : true,
+    "layoutStyle" : "custom",
+    "openResourceFolders" : {
+      "procedure" : true,
+      "source" : true,
+      "type" : true
+    },
+    "rootViewFlavor" : 1,
     "showGrid" : true,
-    "v" : 2
+    "type" : "dev",
+    "v" : 3,
+    "viewUUID" : "MAINVIEW"
   },
   "resources" : [ {
-    "label" : "GoogleDirections",
-    "name" : "GoogleDirections",
-    "node" : {
-      "x" : 328.8407651947557,
-      "y" : 29.706751443795923
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
     },
-    "timestamp" : "2018-10-09T18:17:48.107Z",
-    "type" : 4
-  }, {
-    "label" : "GoogleDistanceMatrix",
-    "name" : "GoogleDistanceMatrix",
+    "label" : "EmailSource",
+    "name" : "EmailSource",
     "node" : {
-      "x" : 164.30727551585176,
-      "y" : 105.26529335673152
+      "x" : 645.2,
+      "y" : 131
     },
-    "timestamp" : "2018-10-09T18:18:10.869Z",
-    "type" : 4
-  }, {
-    "label" : "GoogleGeoCode",
-    "name" : "GoogleGeoCode",
-    "node" : {
-      "x" : 185.26627023501203,
-      "y" : 248.19658371743174
-    },
-    "timestamp" : "2018-10-09T18:18:50.629Z",
-    "type" : 4
-  }, {
-    "label" : "GoogleTimeZone",
-    "name" : "GoogleTimeZone",
-    "node" : {
-      "x" : 373.5336606504696,
-      "y" : 143.13922031470852
-    },
-    "timestamp" : "2018-10-09T18:17:35.652Z",
-    "type" : 4
-  }, {
-    "label" : "Twilio",
-    "name" : "Twilio",
-    "node" : {
-      "x" : 294.9418441674165,
-      "y" : 316.77459029254453
-    },
-    "timestamp" : "2018-10-09T18:16:40.281Z",
-    "type" : 4
-  }, {
-    "label" : "VantiqPushNotification",
-    "name" : "VantiqPushNotification",
-    "node" : {
-      "x" : 129.9045910881822,
-      "y" : 172.08882660540326
-    },
-    "timestamp" : "2018-10-22T22:37:04.965Z",
+    "resourceReference" : "/sources/EmailSource",
+    "timestamp" : "2020-11-27T10:22:10.128Z",
     "type" : 4
   }, {
     "inventory" : {
-      "appmodelHash" : [ ],
-      "appmodels" : [ ],
+      "clientHash" : [ ],
+      "clients" : [ ],
       "collaborationHash" : [ ],
       "collaborations" : [ ],
-      "pagesetHash" : [ ],
-      "pagesets" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "GoogleDirections",
+    "name" : "GoogleDirections",
+    "node" : {
+      "x" : 328.8,
+      "y" : 29.7
+    },
+    "resourceReference" : "/sources/GoogleDirections",
+    "timestamp" : "2020-11-20T15:42:43.893Z",
+    "type" : 4
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out" ],
+      "procedures" : [ "format" ],
+      "sourceHash" : [ "in" ],
+      "sources" : [ "GoogleDirections" ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "GoogleDirections",
+    "name" : "GoogleDirections",
+    "node" : {
+      "x" : 269.7,
+      "y" : 180.2
+    },
+    "resourceReference" : "/procedures/GoogleDirections",
+    "timestamp" : "2020-11-20T13:38:47.957Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out", "out" ],
+      "procedures" : [ "format", "date" ],
+      "sourceHash" : [ "in" ],
+      "sources" : [ "GoogleDistanceMatrix" ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "GoogleDistanceMatrix",
+    "name" : "GoogleDistanceMatrix",
+    "node" : {
+      "x" : 281.6,
+      "y" : -30.6
+    },
+    "resourceReference" : "/procedures/GoogleDistanceMatrix",
+    "timestamp" : "2020-11-20T13:38:48.088Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "GoogleDistanceMatrix",
+    "name" : "GoogleDistanceMatrix",
+    "node" : {
+      "x" : 164.3,
+      "y" : 105.3
+    },
+    "resourceReference" : "/sources/GoogleDistanceMatrix",
+    "timestamp" : "2020-11-20T15:43:03.494Z",
+    "type" : 4
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "GoogleGeoCode",
+    "name" : "GoogleGeoCode",
+    "node" : {
+      "x" : 185.3,
+      "y" : 248.2
+    },
+    "resourceReference" : "/sources/GoogleGeoCode",
+    "timestamp" : "2020-11-20T15:42:22.569Z",
+    "type" : 4
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ "in" ],
+      "sources" : [ "GoogleGeoCode" ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "GoogleGeoCode",
+    "name" : "GoogleGeoCode",
+    "node" : {
+      "x" : 237.9,
+      "y" : 75.1
+    },
+    "resourceReference" : "/procedures/GoogleGeoCode",
+    "timestamp" : "2020-11-20T13:38:47.957Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "GoogleTimeZone",
+    "name" : "GoogleTimeZone",
+    "node" : {
+      "x" : 373.5,
+      "y" : 143.1
+    },
+    "resourceReference" : "/sources/GoogleTimeZone",
+    "timestamp" : "2020-11-20T15:41:40.430Z",
+    "type" : 4
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out" ],
+      "procedures" : [ "format" ],
+      "sourceHash" : [ "in" ],
+      "sources" : [ "GoogleTimeZone" ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "GoogleTimeZone",
+    "name" : "GoogleTimeZone",
+    "node" : {
+      "x" : 533.6,
+      "y" : 197.5
+    },
+    "resourceReference" : "/procedures/GoogleTimeZone",
+    "timestamp" : "2020-11-20T13:38:47.826Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "NLP",
+    "name" : "NLP",
+    "node" : {
+      "x" : 422.4,
+      "y" : 531.2
+    },
+    "resourceReference" : "/sources/NLP",
+    "timestamp" : "2020-11-27T16:37:10.600Z",
+    "type" : 4
+  }, {
+    "label" : "NotificationTemplates",
+    "name" : "NotificationTemplates",
+    "node" : {
+      "x" : 516.5,
+      "y" : 91.1
+    },
+    "resourceReference" : "/types/NotificationTemplates",
+    "timestamp" : "2020-11-20T13:38:41.675Z",
+    "type" : 1
+  }, {
+    "label" : "Technicians",
+    "name" : "Technicians",
+    "node" : {
+      "x" : 357.3,
+      "y" : 364.7
+    },
+    "resourceReference" : "/types/Technicians",
+    "timestamp" : "2020-11-26T14:06:36.948Z",
+    "type" : 1
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "Twilio",
+    "name" : "Twilio",
+    "node" : {
+      "x" : 294.9,
+      "y" : 316.8
+    },
+    "resourceReference" : "/sources/Twilio",
+    "timestamp" : "2020-11-20T15:44:22.764Z",
+    "type" : 4
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "VantiqPushNotification",
+    "name" : "VantiqPushNotification",
+    "node" : {
+      "x" : 129.9,
+      "y" : 172.1
+    },
+    "resourceReference" : "/sources/VantiqPushNotification",
+    "timestamp" : "2020-11-20T15:44:38.198Z",
+    "type" : 4
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "chatbot",
+    "name" : "chatbot",
+    "node" : {
+      "x" : 639.2,
+      "y" : 310.5
+    },
+    "resourceReference" : "/sources/chatbot",
+    "timestamp" : "2020-11-27T16:37:10.603Z",
+    "type" : 4
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
       "procedureHash" : [ "out", "out", "out", "out", "out", "out", "out", "out", "out", "out" ],
       "procedures" : [ "GoogleTimeZone", "toInteger", "toDate", "arrivaltime.minusMillis", "arrivaltime.plusMillis", "push", "length", "range", "format", "sendTextMessageToTech" ],
       "sourceHash" : [ "out" ],
       "sources" : [ "email" ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
       "topicHash" : [ ],
       "topics" : [ ],
       "typeHash" : [ "in", "in" ],
@@ -91,46 +486,193 @@
     "label" : "collab.notifyCustomer",
     "name" : "collab.notifyCustomer",
     "node" : {
-      "x" : 382.94939639246775,
-      "y" : 194.60438998331074
+      "x" : 382.9,
+      "y" : 194.6
     },
-    "timestamp" : "2018-10-22T23:24:28.238Z",
+    "resourceReference" : "/procedures/collab.notifyCustomer",
+    "timestamp" : "2020-11-27T15:55:30.864Z",
     "type" : 3
   }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
     "label" : "email",
     "name" : "email",
     "node" : {
-      "x" : 428.9298931942415,
-      "y" : 253.63591014868123
+      "x" : 405.9,
+      "y" : 366.8
     },
-    "timestamp" : "2018-10-09T18:17:04.593Z",
+    "resourceReference" : "/sources/email",
+    "timestamp" : "2020-11-27T10:23:46.973Z",
     "type" : 4
   }, {
     "inventory" : {
-      "appmodelHash" : [ ],
-      "appmodels" : [ ],
+      "clientHash" : [ ],
+      "clients" : [ ],
       "collaborationHash" : [ ],
       "collaborations" : [ ],
-      "pagesetHash" : [ ],
-      "pagesets" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ "out" ],
+      "sources" : [ "Twilio" ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ ],
+      "types" : [ ]
+    },
+    "label" : "sendTextMessageToTech",
+    "name" : "sendTextMessageToTech",
+    "node" : {
+      "x" : 449.2,
+      "y" : 345.8
+    },
+    "resourceReference" : "/procedures/sendTextMessageToTech",
+    "timestamp" : "2020-11-20T13:38:48.014Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
       "procedureHash" : [ "out", "out", "out", "out", "out" ],
       "procedures" : [ "format", "GoogleGeoCode", "GoogleDistanceMatrix", "GoogleDirections", "GoogleTimeZone" ],
       "sourceHash" : [ "out", "out" ],
-      "sources" : [ "Twilio", "email" ],
+      "sources" : [ "Twilio", "EmailSource" ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
       "topicHash" : [ ],
       "topics" : [ ],
       "typeHash" : [ "in" ],
       "types" : [ "system.sources" ]
     },
+    "label" : "testing.sources",
     "name" : "testing.sources",
     "node" : {
-      "x" : 406.1727855494353,
-      "y" : 95.60778718714877
+      "x" : 406.2,
+      "y" : 95.6
     },
-    "timestamp" : "2018-11-03T15:44:11.398Z",
+    "resourceReference" : "/procedures/testing.sources",
+    "timestamp" : "2020-11-20T16:02:39.494Z",
     "type" : 3
   } ],
   "tools" : [ {
+    "isPinned" : false,
+    "name" : "Autopsies Query",
+    "pane" : {
+      "h" : 400,
+      "w" : 600,
+      "x" : 930,
+      "y" : 2510
+    },
+    "state" : 3,
+    "type" : 37
+  }, {
+    "isPinned" : false,
+    "name" : "Errors",
+    "type" : 13
+  }, {
+    "isPinned" : false,
+    "name" : "Find Records",
+    "pane" : {
+      "h" : 400,
+      "w" : 600,
+      "x" : 20,
+      "y" : 2510
+    },
+    "state" : 3,
+    "type" : 41
+  }, {
+    "isPinned" : false,
+    "name" : "GoogleDirections",
+    "pane" : {
+      "h" : 400,
+      "w" : 600,
+      "x" : 1250,
+      "y" : 440.0000305175781
+    },
+    "resourceKey" : "source/GoogleDirections",
+    "state" : 3,
+    "type" : 5
+  }, {
+    "isPinned" : false,
+    "name" : "GoogleDistanceMatrix",
+    "pane" : {
+      "h" : 400,
+      "w" : 600,
+      "x" : 1260.0000915527344,
+      "y" : 30
+    },
+    "resourceKey" : "source/GoogleDistanceMatrix",
+    "state" : 3,
+    "type" : 5
+  }, {
+    "isPinned" : false,
+    "name" : "GoogleGeoCode",
+    "pane" : {
+      "h" : 400,
+      "w" : 600,
+      "x" : 630,
+      "y" : 440.0000305175781
+    },
+    "resourceKey" : "source/GoogleGeoCode",
+    "state" : 3,
+    "type" : 5
+  }, {
+    "isPinned" : false,
+    "name" : "GoogleTimeZone",
+    "pane" : {
+      "h" : 400,
+      "w" : 600,
+      "x" : 20,
+      "y" : 440
+    },
+    "resourceKey" : "source/GoogleTimeZone",
+    "state" : 3,
+    "type" : 5
+  }, {
+    "dockLocation" : "top",
+    "isPinned" : false,
+    "name" : "Inactive Panes",
+    "type" : 99
+  }, {
+    "isPinned" : false,
+    "name" : "Project Contents",
+    "type" : 2
+  }, {
+    "isPinned" : false,
+    "name" : "Project Description",
+    "pane" : {
+      "h" : 400,
+      "w" : 610,
+      "x" : 20,
+      "y" : 20
+    },
+    "state" : 3,
+    "type" : 82
+  }, {
+    "isPinned" : false,
     "name" : "Project Resource Graph",
     "pane" : {
       "h" : 400,
@@ -138,6 +680,7 @@
       "x" : 650.0000610351562,
       "y" : 30
     },
+    "state" : 3,
     "toolOptions" : {
       "scaleAndTranslationState" : {
         "lastZoomRequest" : 0,
@@ -147,26 +690,7 @@
     },
     "type" : 1
   }, {
-    "name" : "GoogleTimeZone",
-    "pane" : {
-      "h" : 400,
-      "w" : 600,
-      "x" : 20,
-      "y" : 440
-    },
-    "resourceKey" : "source/GoogleTimeZone",
-    "type" : 5
-  }, {
-    "name" : "email",
-    "pane" : {
-      "h" : 400,
-      "w" : 600,
-      "x" : 640,
-      "y" : 860.0000610351562
-    },
-    "resourceKey" : "source/email",
-    "type" : 5
-  }, {
+    "isPinned" : false,
     "name" : "Twilio",
     "pane" : {
       "h" : 400,
@@ -175,28 +699,10 @@
       "y" : 860
     },
     "resourceKey" : "source/Twilio",
+    "state" : 3,
     "type" : 5
   }, {
-    "name" : "GoogleDistanceMatrix",
-    "pane" : {
-      "h" : 400,
-      "w" : 600,
-      "x" : 1260.0000915527344,
-      "y" : 30
-    },
-    "resourceKey" : "source/GoogleDistanceMatrix",
-    "type" : 5
-  }, {
-    "name" : "GoogleGeoCode",
-    "pane" : {
-      "h" : 400,
-      "w" : 600,
-      "x" : 630,
-      "y" : 440.0000305175781
-    },
-    "resourceKey" : "source/GoogleGeoCode",
-    "type" : 5
-  }, {
+    "isPinned" : false,
     "name" : "VantiqPushNotification",
     "pane" : {
       "h" : 400,
@@ -205,17 +711,10 @@
       "y" : 1280.0000610351562
     },
     "resourceKey" : "source/VantiqPushNotification",
+    "state" : 3,
     "type" : 5
   }, {
-    "name" : "Project Description",
-    "pane" : {
-      "h" : 400,
-      "w" : 610,
-      "x" : 20,
-      "y" : 20
-    },
-    "type" : 82
-  }, {
+    "isPinned" : false,
     "name" : "collab.notifyCustomer",
     "pane" : {
       "h" : 400,
@@ -224,31 +723,24 @@
       "y" : 860.0000610351562
     },
     "resourceKey" : "procedure/collab.notifyCustomer",
+    "state" : 3,
     "type" : 24
   }, {
-    "name" : "GoogleDirections",
-    "pane" : {
-      "h" : 400,
-      "w" : 600,
-      "x" : 1250,
-      "y" : 440.0000305175781
-    },
-    "resourceKey" : "source/GoogleDirections",
-    "type" : 5
-  }, {
+    "isPinned" : false,
     "name" : "testing.sources",
     "pane" : {
       "h" : 400,
-      "w" : 600,
+      "w" : 820,
       "x" : 650.0000610351562,
       "y" : 1280.0000610351562
     },
     "resourceKey" : "procedure/testing.sources",
+    "state" : 3,
     "type" : 24
   } ],
   "type" : "dev",
   "views" : [ {
-    "name" : "Main",
-    "projectToolKeys" : [ "graph/Project Resource Graph", "subsourceeditor/GoogleTimeZone", "subsourceeditor/email", "subsourceeditor/Twilio", "subsourceeditor/GoogleDistanceMatrix", "subsourceeditor/GoogleGeoCode", "subsourceeditor/VantiqPushNotification", "projectdescription/Project Description", "cmeditorprocedure/collab.notifyCustomer", "subsourceeditor/GoogleDirections", "cmeditorprocedure/testing.sources" ]
+    "name" : "Project Contents",
+    "projectToolKeys" : [ "autopsyquery/Autopsies Query", "errorviewer/Errors", "findrecords/Find Records", "subsourceeditor/GoogleDirections", "subsourceeditor/GoogleDistanceMatrix", "subsourceeditor/GoogleGeoCode", "subsourceeditor/GoogleTimeZone", "tiledock/Inactive Panes", "list/Project Contents", "projectdescription/Project Description", "graph/Project Resource Graph", "subsourceeditor/Twilio", "subsourceeditor/VantiqPushNotification", "cmeditorprocedure/collab.notifyCustomer", "cmeditorprocedure/testing.sources" ]
   } ]
 }

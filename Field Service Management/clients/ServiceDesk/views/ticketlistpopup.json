@@ -1,0 +1,124 @@
+{
+  "bodyChildren" : {
+    "rootArray" : [ "fe231049-710b-46a4-a046-09bfb8714a54", "e2f5a680-89ac-46d3-8632-70130dc006f4" ],
+    "widgets" : [ {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "buttonBackgroundColor" : "platform",
+      "buttonLabel" : "Cancel",
+      "buttonLabelColor" : "platform",
+      "buttonLabelSize" : 18,
+      "buttonLabelStyle" : "plain",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "left",
+      "labelAlign" : "center",
+      "labelColor" : "#000000",
+      "labelStyle" : "plain",
+      "name" : "Button98175",
+      "submitValue" : 100,
+      "type" : "Button",
+      "uuid" : "53bbb438-fd88-40a7-8cf9-ae08661e10b7",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "backgroundColor" : "default",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 1,
+      "clearOnDataArrive" : true,
+      "columnDescriptors" : [ {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "customer",
+        "selected" : false,
+        "title" : "Customer"
+      }, {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "summary",
+        "selected" : false,
+        "title" : "Summary"
+      }, {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "status",
+        "selected" : false,
+        "title" : "Status"
+      }, {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "description",
+        "selected" : false,
+        "title" : "Description"
+      } ],
+      "columnSort" : true,
+      "dataStreamGroupedByFiltersString" : "",
+      "dataStreamUUID" : "2b091a6e-d6e4-461f-b6b8-f831382b7e2e",
+      "dataType" : null,
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "left",
+      "name" : "DataTable4",
+      "operation" : "insert",
+      "rowsPerPage" : 5,
+      "showPaging" : true,
+      "type" : "DataTable",
+      "uuid" : "cc1be274-180b-4793-8f75-3fb0e25d1e36",
+      "v" : 16,
+      "vertGravity" : "center",
+      "w" : 1120,
+      "widthPolicy" : "explicit"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "children" : [ "cc1be274-180b-4793-8f75-3fb0e25d1e36", "53bbb438-fd88-40a7-8cf9-ae08661e10b7" ],
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "innerMargin" : 10,
+      "name" : "FlowLayout149",
+      "type" : "FlowLayout",
+      "uuid" : "e2f5a680-89ac-46d3-8632-70130dc006f4",
+      "v" : 16,
+      "vertGravity" : "center",
+      "vertMargin" : 0,
+      "w" : 1140,
+      "widthPolicy" : "explicit",
+      "x" : 30,
+      "y" : 90
+    }, {
+      "binding" : "page.data.searchtickets",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "labelColor" : "#000000",
+      "name" : "inputString962079",
+      "optional" : true,
+      "placeholder" : "Search Tickets",
+      "type" : "InputString",
+      "uuid" : "fe231049-710b-46a4-a046-09bfb8714a54",
+      "v" : 16,
+      "vertGravity" : "center",
+      "w" : 360,
+      "widthPolicy" : "explicit",
+      "x" : 30,
+      "y" : 30
+    } ]
+  },
+  "data" : {
+    "properties" : {
+      "searchtickets" : {
+        "defaultLabel" : "searchtickets",
+        "type" : "String"
+      }
+    }
+  },
+  "footerChildren" : [ ],
+  "hasFooter" : false,
+  "layoutType" : "browser",
+  "responseTopic" : ""
+}

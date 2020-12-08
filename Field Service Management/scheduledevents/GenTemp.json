@@ -1,0 +1,9 @@
+{
+  "active" : true,
+  "interval" : 7000,
+  "message" : { },
+  "name" : "GenTemp",
+  "occursAt" : "2020-12-07T17:04:45Z",
+  "periodic" : true,
+  "topic" : "/gen/temp"
+}

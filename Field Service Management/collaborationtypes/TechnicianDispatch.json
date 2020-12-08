@@ -1,14 +1,52 @@
 {
   "active" : true,
   "appType" : false,
+  "ars_properties" : {
+    "dataVersion" : 4,
+    "graph" : {
+      "lastZoomRequest" : 0,
+      "scale" : 0.6727046443138269,
+      "translate" : [ 956.1888139732791, 25.87721341170385 ]
+    },
+    "groupSettings" : {
+      "appGroupOpenHash" : {
+        "actions" : true,
+        "filters" : true,
+        "flowControl" : true
+      },
+      "ctGroupOpenHash" : {
+        "actions" : true,
+        "mobile" : true
+      },
+      "ctServiceOpen" : false,
+      "serviceGroupOpenHash" : { }
+    },
+    "paletteWidth" : 170
+  },
   "assembly" : {
+    "ATrackProgess" : {
+      "additionalBehaviors" : [ ],
+      "cancellationCondition" : [ ],
+      "completionCondition" : [ ],
+      "configuration" : {
+        "enableBadging" : true,
+        "serviceName" : "collab.trackProgress"
+      },
+      "continuationCondition" : [ ],
+      "description" : null,
+      "instanceParameters" : [ "technician", "workorder" ],
+      "name" : "ATrackProgess",
+      "pattern" : "Execute",
+      "uuid" : "312c744b-db14-4aae-860d-558ed1d4fa2d"
+    },
     "AcceptRejectWorkorder" : {
       "additionalBehaviors" : [ ],
       "cancellationCondition" : [ ],
       "completionCondition" : [ ],
       "configuration" : {
         "body" : "Please respond to the Workorder assignment request.",
-        "clientName" : "Accept-Reject-Assignment",
+        "clientName" : "AcceptRejectAssignment",
+        "enableBadging" : true,
         "firstResponseBehaviors" : [ {
           "behaviors" : [ {
             "description" : null,
@@ -22,7 +60,8 @@
               "type" : "expression",
               "value" : "collaboration.results.AcceptRejectWorkorder.responses[0].username"
             } ],
-            "type" : "activity"
+            "type" : "activity",
+            "uuid" : null
           }, {
             "description" : "Remove the accept reject request after one person has already responded.",
             "name" : "Notification.retractPayload",
@@ -39,11 +78,13 @@
                 "value" : "collaboration.results.AcceptRejectWorkorder.responses[0].username"
               } ]
             } ],
-            "type" : "service"
+            "type" : "service",
+            "uuid" : "b8a37122-7ae0-4a30-83f8-b42f3ee3face"
           } ],
           "condition" : "event.submitValue == 100",
           "description" : null,
-          "name" : "firstAcceptResponse"
+          "name" : "firstAcceptResponse",
+          "uuid" : "7267cb42-d419-4476-a779-d14a8b5d4aa5"
         } ],
         "pushSourceName" : "VantiqPushNotification",
         "responseBehaviors" : [ ],
@@ -52,7 +93,9 @@
       "continuationCondition" : [ ],
       "description" : "Notification payload is sent to the list of recommended techs.",
       "instanceParameters" : [ "technician", "workorder" ],
-      "pattern" : "Notification"
+      "name" : "AcceptRejectWorkorder",
+      "pattern" : "Notification",
+      "uuid" : "8a509d10-63fe-4a8a-8675-bc30522caa19"
     },
     "AssignTechRole" : {
       "additionalBehaviors" : [ {
@@ -68,7 +111,8 @@
             "type" : "expression",
             "value" : "technician"
           } ],
-          "type" : "activity"
+          "type" : "activity",
+          "uuid" : null
         }, {
           "description" : null,
           "name" : "UpdateWorkorderAssignment",
@@ -88,7 +132,8 @@
               "value" : "\"Assigned\""
             } ]
           } ],
-          "type" : "activity"
+          "type" : "activity",
+          "uuid" : null
         }, {
           "description" : "Cancel the EscalationAssignment escalation timer after an assignment is made. \n\nThe cancelEscalation is a built in service. An escalation is a countdown timer that triggers the steps below it when the countdown completes. \n\nOnce an assignment is made we cancel the escalation. \n\nIf an assignment is not made before the escalation time limit is reached then the Assignment request payloads are removed from the mobile apps and a new form is sent to the Service Desk Owner user to manually make an assignment.",
           "name" : "CollaborationUtils.cancelEscalation",
@@ -101,22 +146,27 @@
             "type" : "String",
             "value" : "EscalationAssignmentTimer"
           } ],
-          "type" : "service"
+          "type" : "service",
+          "uuid" : "e652f290-3d34-43ce-9bbd-826f3a8b606b"
         } ],
         "condition" : "true",
         "description" : null,
-        "name" : null
+        "name" : null,
+        "uuid" : "2080ac22-5315-4515-8134-286882739a73"
       } ],
       "cancellationCondition" : [ ],
       "completionCondition" : [ ],
       "configuration" : {
+        "enableBadging" : true,
         "roleName" : "technician",
         "roleType" : "collaborator"
       },
       "continuationCondition" : [ ],
       "description" : "Take the first response and assign it to the technician collaborator role. \n\nThe responses come back as an array in the event of any race condition where two techs click the Accept button at the same time only the first responded listed in the response array is used. \n\ncollaboration.results.AcceptRejectWorkorder.responses[0].response.username\n\nThe retractPayload step is executed at the same time to remove the Accept-Reject request from everyone else.",
       "instanceParameters" : [ "technician", "workorder" ],
-      "pattern" : "Assignment"
+      "name" : "AssignTechRole",
+      "pattern" : "Assignment",
+      "uuid" : "f0b99d50-275f-4d94-87ff-1b1b2cea37d5"
     },
     "BeginLocationTracking" : {
       "additionalBehaviors" : [ ],
@@ -127,6 +177,7 @@
         "desiredAccuracy" : null,
         "destinationRadius" : null,
         "distanceFilter" : null,
+        "enableBadging" : true,
         "firstArrivalBehaviors" : [ {
           "behaviors" : [ {
             "description" : null,
@@ -140,7 +191,8 @@
               "type" : "expression",
               "value" : "technician"
             } ],
-            "type" : "activity"
+            "type" : "activity",
+            "uuid" : null
           }, {
             "description" : null,
             "name" : "UpdateWorkorderStatus",
@@ -153,11 +205,27 @@
               "type" : "expression",
               "value" : "{id:workorder.id, status:\"On Site\", actualArrivalDate:now()}"
             } ],
-            "type" : "activity"
+            "type" : "activity",
+            "uuid" : null
+          }, {
+            "description" : null,
+            "name" : "ATrackProgess",
+            "parameters" : [ {
+              "name" : "collaboration",
+              "type" : "reference",
+              "value" : "collaboration"
+            }, {
+              "name" : "parameters",
+              "type" : "expression",
+              "value" : "[ event, collaboration.results.Initiate.event]"
+            } ],
+            "type" : "activity",
+            "uuid" : null
           } ],
           "condition" : "true",
           "description" : null,
-          "name" : "firstArrival"
+          "name" : "firstArrival",
+          "uuid" : "ebdd0eff-2199-46b2-86e9-89a3a4369b19"
         } ],
         "level" : null,
         "pingInterval" : "10 minutes",
@@ -174,11 +242,13 @@
               "type" : "expression",
               "value" : "[ event, collaboration.results.Initiate.event]"
             } ],
-            "type" : "activity"
+            "type" : "activity",
+            "uuid" : null
           } ],
           "condition" : "true",
           "description" : null,
-          "name" : "update"
+          "name" : "update",
+          "uuid" : "b874ac73-3c29-432f-9046-997a11b979a9"
         } ],
         "waypointArrivalBehaviors" : [ ],
         "waypointDepartureBehaviors" : [ ]
@@ -186,19 +256,24 @@
       "continuationCondition" : [ ],
       "description" : null,
       "instanceParameters" : [ "technician", "workorder" ],
-      "pattern" : "LocationTracking"
+      "name" : "BeginLocationTracking",
+      "pattern" : "LocationTracking",
+      "uuid" : "6b260790-dd8c-4a06-8395-181d78e04fe3"
     },
     "CompleteManualAssignment" : {
       "additionalBehaviors" : [ ],
       "cancellationCondition" : [ ],
       "completionCondition" : [ ],
       "configuration" : {
+        "enableBadging" : true,
         "serviceName" : "collab.completeManualAssignment"
       },
       "continuationCondition" : [ ],
       "description" : null,
       "instanceParameters" : [ "technician", "workorder" ],
-      "pattern" : "Execute"
+      "name" : "CompleteManualAssignment",
+      "pattern" : "Execute",
+      "uuid" : "b0ec203b-c4b5-403d-8e9f-b9dd2ebf2ed6"
     },
     "CompleteWorkorderNotification" : {
       "additionalBehaviors" : [ ],
@@ -207,6 +282,7 @@
       "configuration" : {
         "body" : "You have arrived at your destination. Use this form at the end of the workorder to complete.",
         "clientName" : "CompleteWorkorder",
+        "enableBadging" : true,
         "firstResponseBehaviors" : [ {
           "behaviors" : [ {
             "description" : null,
@@ -216,7 +292,8 @@
               "type" : "expression",
               "value" : "collaboration.id"
             } ],
-            "type" : "service"
+            "type" : "service",
+            "uuid" : "e4131344-90a5-4b82-826e-6d7977d13807"
           }, {
             "description" : null,
             "name" : "UpdateWorkorderCompleted",
@@ -229,7 +306,8 @@
               "type" : "expression",
               "value" : "{id:workorder.id, status:\"Completed\", actualCompletionDate:now(), closedDate:now()}"
             } ],
-            "type" : "activity"
+            "type" : "activity",
+            "uuid" : null
           }, {
             "description" : null,
             "name" : "SaveSignature",
@@ -242,11 +320,13 @@
               "type" : "expression",
               "value" : "{customername: workorder.customer, id:uuid(), url:collaboration.results.CompleteWorkorderNotification.responses[0].response.Signature1, workorderid: workorder.id}"
             } ],
-            "type" : "activity"
+            "type" : "activity",
+            "uuid" : null
           } ],
           "condition" : "true",
           "description" : null,
-          "name" : "firstResponse"
+          "name" : "firstResponse",
+          "uuid" : "62205aa7-fee1-4fa2-a933-c056b3802b64"
         } ],
         "pushSourceName" : "VantiqPushNotification",
         "responseBehaviors" : [ ],
@@ -255,37 +335,46 @@
       "continuationCondition" : [ ],
       "description" : "Send a form to the mobile app that the tech can use to complete the workorder when the job is done.",
       "instanceParameters" : [ "technician", "workorder" ],
-      "pattern" : "Notification"
+      "name" : "CompleteWorkorderNotification",
+      "pattern" : "Notification",
+      "uuid" : "94530e63-303e-49f7-8d32-3fae6b8d60ae"
     },
     "CustomerNotifyTechArrival" : {
       "additionalBehaviors" : [ ],
       "cancellationCondition" : [ ],
       "completionCondition" : [ ],
       "configuration" : {
+        "enableBadging" : true,
         "serviceName" : "collab.notifyCustomer"
       },
       "continuationCondition" : [ ],
       "description" : null,
       "instanceParameters" : [ "technician", "workorder" ],
-      "pattern" : "Execute"
+      "name" : "CustomerNotifyTechArrival",
+      "pattern" : "Execute",
+      "uuid" : "9a81f66d-dadb-48ac-8324-285bdfe7917b"
     },
     "CustomerSchedulingAlert" : {
       "additionalBehaviors" : [ ],
       "cancellationCondition" : [ ],
       "completionCondition" : [ ],
       "configuration" : {
+        "enableBadging" : true,
         "serviceName" : "collab.notifyCustomer"
       },
       "continuationCondition" : [ ],
       "description" : "Send customer notification based on the notification preferences in the workorder. SMS, Email or Both.",
       "instanceParameters" : [ "technician", "workorder" ],
-      "pattern" : "Execute"
+      "name" : "CustomerSchedulingAlert",
+      "pattern" : "Execute",
+      "uuid" : "4f86f72f-f865-401c-8172-46b090170448"
     },
     "EscalationAssignmentTimer" : {
       "additionalBehaviors" : [ ],
       "cancellationCondition" : [ ],
       "completionCondition" : [ ],
       "configuration" : {
+        "enableBadging" : true,
         "escalationBehaviors" : [ {
           "behaviors" : [ {
             "description" : null,
@@ -299,7 +388,8 @@
               "type" : "expression",
               "value" : "workorder.servicedeskowner"
             } ],
-            "type" : "activity"
+            "type" : "activity",
+            "uuid" : null
           }, {
             "description" : "Remove the accept-reject request from all users once escalation time limit has expired.",
             "name" : "Notification.retractPayload",
@@ -313,18 +403,22 @@
               "type" : "mixed",
               "value" : null
             } ],
-            "type" : "service"
+            "type" : "service",
+            "uuid" : "9b246bb6-50f3-4eb8-8666-36cd580454bc"
           } ],
           "condition" : "true",
           "description" : null,
-          "name" : "escalate"
+          "name" : "escalate",
+          "uuid" : "995c6449-f67f-4a4f-8dbf-a7b863fcfaef"
         } ],
         "escalationTime" : 90
       },
       "continuationCondition" : [ ],
       "description" : "Countdown timer for the a technician to accept the workorder assignment request.",
       "instanceParameters" : [ "technician", "workorder" ],
-      "pattern" : "Escalation"
+      "name" : "EscalationAssignmentTimer",
+      "pattern" : "Escalation",
+      "uuid" : "e29b100c-870a-47de-8951-84a0dcf1dd4b"
     },
     "Initiate" : {
       "additionalBehaviors" : [ {
@@ -340,22 +434,27 @@
             "type" : "expression",
             "value" : "collaboration.results.Initiate.event"
           } ],
-          "type" : "activity"
+          "type" : "activity",
+          "uuid" : null
         } ],
         "condition" : "true",
         "description" : null,
-        "name" : null
+        "name" : null,
+        "uuid" : "766dba9c-d701-4405-9907-bd37ee23b7f4"
       } ],
       "cancellationCondition" : [ ],
       "completionCondition" : [ ],
       "configuration" : {
+        "enableBadging" : true,
         "entityRole" : "workorder",
         "initialTrigger" : "WHEN INSERT OCCURS ON ArsSituation AS situation WHERE situation.name == \"WorkOrders_TechnicianCollaboration\""
       },
       "continuationCondition" : [ ],
-      "description" : null,
+      "description" : "Upon creation of a new WorkOrders_TechnicianCollaboration",
       "instanceParameters" : [ "technician", "workorder" ],
-      "pattern" : "InitiateCollaboration"
+      "name" : "Initiate",
+      "pattern" : "InitiateCollaboration",
+      "uuid" : "fb1d3228-c015-4240-b04f-d7805003e535"
     },
     "NotifyServiceDeskNoAssignment" : {
       "additionalBehaviors" : [ ],
@@ -363,9 +462,24 @@
       "completionCondition" : [ ],
       "configuration" : {
         "body" : "Please open to manually assign the technician to the Workorder.",
-        "clientName" : "Notify-Manager",
+        "clientName" : "NotifyManager",
+        "enableBadging" : true,
         "firstResponseBehaviors" : [ {
           "behaviors" : [ {
+            "description" : null,
+            "name" : "ReAssign",
+            "parameters" : [ {
+              "name" : "collaboration",
+              "type" : "reference",
+              "value" : "collaboration"
+            }, {
+              "name" : "value",
+              "type" : "expression",
+              "value" : "event.username"
+            } ],
+            "type" : "activity",
+            "uuid" : null
+          }, {
             "description" : null,
             "name" : "CompleteManualAssignment",
             "parameters" : [ {
@@ -384,11 +498,13 @@
                 "value" : "collaboration.results.NotifyServiceDeskNoAssignment.responses"
               } ]
             } ],
-            "type" : "activity"
+            "type" : "activity",
+            "uuid" : null
           } ],
           "condition" : "true",
           "description" : null,
-          "name" : "firstResponse"
+          "name" : "firstResponse",
+          "uuid" : "9a836291-7a4b-4df4-a040-1daad68f49ef"
         } ],
         "pushSourceName" : "VantiqPushNotification",
         "responseBehaviors" : [ ],
@@ -397,7 +513,9 @@
       "continuationCondition" : [ ],
       "description" : "Notify the service desk that no one has responded to the workorder assignment request. \n\nThis will be sent to the Workorders \"Service Desk Owner\" field who will then be required to manually set the technician assignment.",
       "instanceParameters" : [ "technician", "workorder" ],
-      "pattern" : "Notification"
+      "name" : "NotifyServiceDeskNoAssignment",
+      "pattern" : "Notification",
+      "uuid" : "3c89d7cf-72ee-4c31-8551-c0f34977226c"
     },
     "ProcessAssignment" : {
       "additionalBehaviors" : [ {
@@ -413,7 +531,8 @@
             "type" : "Integer",
             "value" : null
           } ],
-          "type" : "activity"
+          "type" : "activity",
+          "uuid" : null
         }, {
           "description" : null,
           "name" : "AcceptRejectWorkorder",
@@ -426,16 +545,19 @@
             "type" : "expression",
             "value" : "collaboration.results.ProcessAssignment.recommendations"
           } ],
-          "type" : "activity"
+          "type" : "activity",
+          "uuid" : null
         } ],
         "condition" : "true",
         "description" : null,
-        "name" : null
+        "name" : null,
+        "uuid" : "23abbbd7-00f8-4bf6-8611-c3acf56f4dc1"
       } ],
       "cancellationCondition" : [ ],
       "completionCondition" : [ ],
       "configuration" : {
         "candidateType" : "Technicians",
+        "enableBadging" : true,
         "matchDirectives" : {
           "excludeProperties" : [ "id" ],
           "maxRecommendations" : 10
@@ -446,20 +568,41 @@
       "continuationCondition" : [ ],
       "description" : "Run a custom procedure to determine the recommended techs list. \n\nThe recommendation criteria will be based on skills and geolocation of the workorder and the support radius in the technicians own record. The technician must match the skills and be inside the support radius. \n\nThis step is only performed if the Assigned To field is set to -AutoAssign-. \n\nWhen a manual assignment has been made this step is skipped and the process will jump to the AssignTechRole step.\n\nThe result of the ProcessAssignment step is an array of strings that contain user id's. These user id's represent the list of technicians to contact to accept the workorder assignment request.",
       "instanceParameters" : [ "technician", "workorder" ],
-      "pattern" : "Recommendation"
+      "name" : "ProcessAssignment",
+      "pattern" : "Recommendation",
+      "uuid" : "3611cf4a-512f-4cfb-9daf-735ead39b341"
+    },
+    "ReAssign" : {
+      "additionalBehaviors" : [ ],
+      "cancellationCondition" : [ ],
+      "completionCondition" : [ ],
+      "configuration" : {
+        "enableBadging" : true,
+        "roleName" : "technician",
+        "roleType" : "collaborator"
+      },
+      "continuationCondition" : [ ],
+      "description" : null,
+      "instanceParameters" : [ "technician", "workorder" ],
+      "name" : "ReAssign",
+      "pattern" : "Assignment",
+      "uuid" : "084ccb08-fd1b-4060-93d9-f59d4952b1c6"
     },
     "SaveSignature" : {
       "additionalBehaviors" : [ ],
       "cancellationCondition" : [ ],
       "completionCondition" : [ ],
       "configuration" : {
+        "enableBadging" : true,
         "type" : "Signatures",
         "upsert" : false
       },
       "continuationCondition" : [ ],
       "description" : null,
       "instanceParameters" : [ "technician", "workorder" ],
-      "pattern" : "Collaboration.SaveToType"
+      "name" : "SaveSignature",
+      "pattern" : "Collaboration.SaveToType",
+      "uuid" : "ed97631f-919a-4bdf-8a08-2494e32bacfd"
     },
     "ScheduleArrivalDateTime" : {
       "additionalBehaviors" : [ ],
@@ -468,6 +611,7 @@
       "configuration" : {
         "body" : "Use the notification form to schedule your estimated arrival time for the workorder.",
         "clientName" : "ScheduleArrivalDateTime",
+        "enableBadging" : true,
         "firstResponseBehaviors" : [ {
           "behaviors" : [ {
             "description" : null,
@@ -481,7 +625,8 @@
               "type" : "expression",
               "value" : "collab.scheduleLocationTracking( workorder, \"1 hours\")"
             } ],
-            "type" : "activity"
+            "type" : "activity",
+            "uuid" : null
           }, {
             "description" : null,
             "name" : "CustomerSchedulingAlert",
@@ -498,11 +643,13 @@
                 "value" : "workorder"
               } ]
             } ],
-            "type" : "activity"
+            "type" : "activity",
+            "uuid" : null
           } ],
           "condition" : "true",
           "description" : null,
-          "name" : "firstResponse"
+          "name" : "firstResponse",
+          "uuid" : "6d4efb79-49f8-4d84-866c-daec212d5093"
         } ],
         "pushSourceName" : "VantiqPushNotification",
         "responseBehaviors" : [ ],
@@ -511,13 +658,16 @@
       "continuationCondition" : [ ],
       "description" : "Send mobile payload form to technician request estimated arrival time. \n\nThis date is used to notify the customer of the appointment as well as to determine when to start location tracking of the technicians current GPS coordinates. \n\nThe default will be 1 hour prior to the est arrival.",
       "instanceParameters" : [ "technician", "workorder" ],
-      "pattern" : "Notification"
+      "name" : "ScheduleArrivalDateTime",
+      "pattern" : "Notification",
+      "uuid" : "74b9ce5f-1d2b-4457-89e3-5daeb2286894"
     },
     "SetTrackingTimer" : {
       "additionalBehaviors" : [ ],
       "cancellationCondition" : [ ],
       "completionCondition" : [ ],
       "configuration" : {
+        "enableBadging" : true,
         "escalationBehaviors" : [ {
           "behaviors" : [ {
             "description" : null,
@@ -544,7 +694,8 @@
               "type" : "mixed",
               "value" : null
             } ],
-            "type" : "activity"
+            "type" : "activity",
+            "uuid" : null
           }, {
             "description" : null,
             "name" : "UpdateWorkorderEnroute",
@@ -557,68 +708,138 @@
               "type" : "expression",
               "value" : "{id:workorder.id, actualStartDate:now(), status:\"En Route\"}"
             } ],
-            "type" : "activity"
+            "type" : "activity",
+            "uuid" : null
+          }, {
+            "description" : null,
+            "name" : "StartConversation",
+            "parameters" : [ {
+              "name" : "collaboration",
+              "type" : "reference",
+              "value" : "collaboration"
+            }, {
+              "multi" : true,
+              "name" : "users",
+              "type" : "mixed",
+              "value" : [ {
+                "type" : "expression",
+                "value" : "technician"
+              } ]
+            } ],
+            "type" : "activity",
+            "uuid" : null
           } ],
           "condition" : "true",
           "description" : null,
-          "name" : "escalate"
+          "name" : "escalate",
+          "uuid" : "e9150511-d7d0-47a1-9846-1352cac3e13b"
         } ],
         "escalationTime" : 10
       },
       "continuationCondition" : [ ],
       "description" : "collab.scheduleLocationTracking sets the point in time in the future when to start location tracking. \n\nThe location tracking send a request to the Google Maps API to determine travel time.\n\nLocation tracking will begin 15 minutes prior to the ETA returned by Google to take into account changes in traffic.",
       "instanceParameters" : [ "technician", "workorder" ],
-      "pattern" : "Escalation"
+      "name" : "SetTrackingTimer",
+      "pattern" : "Escalation",
+      "uuid" : "9a524d5a-29c0-48d3-8801-323c070a99d7"
+    },
+    "StartConversation" : {
+      "additionalBehaviors" : [ ],
+      "cancellationCondition" : [ ],
+      "completionCondition" : [ ],
+      "configuration" : {
+        "chatbotSourceName" : "chatbot",
+        "enableBadging" : true,
+        "messageBehaviors" : [ {
+          "behaviors" : [ {
+            "description" : null,
+            "name" : "interpretNLP",
+            "parameters" : [ {
+              "name" : "collaboration",
+              "type" : "reference",
+              "value" : "collaboration"
+            }, {
+              "name" : "event",
+              "type" : "expression",
+              "value" : "event"
+            } ],
+            "type" : "activity",
+            "uuid" : null
+          } ],
+          "condition" : "true",
+          "description" : null,
+          "name" : "message",
+          "uuid" : "cccabd3e-ff2e-4958-8822-96273901abe3"
+        } ]
+      },
+      "continuationCondition" : [ ],
+      "description" : null,
+      "instanceParameters" : [ "technician", "workorder" ],
+      "name" : "StartConversation",
+      "pattern" : "Conversation",
+      "uuid" : "d001ce15-9824-4d6c-b869-f56f814eb01b"
     },
     "TrackProgress" : {
       "additionalBehaviors" : [ ],
       "cancellationCondition" : [ ],
       "completionCondition" : [ ],
       "configuration" : {
+        "enableBadging" : true,
         "serviceName" : "collab.trackProgress"
       },
       "continuationCondition" : [ ],
       "description" : "This procedure will run with each new GPS update and determine the technicians current location which will update the map on the reports page. \n\nThis procedure will also use Google Maps API to get the ETA using current location and destination location. If the ETA will result in a time that is past the scheduled arrival time, we will notify customer and technician of the late arrival.",
       "instanceParameters" : [ "technician", "workorder" ],
-      "pattern" : "Execute"
+      "name" : "TrackProgress",
+      "pattern" : "Execute",
+      "uuid" : "b15d55b2-8280-417e-96d7-3ea82ccc7631"
     },
     "UpdateWorkorderAssignment" : {
       "additionalBehaviors" : [ ],
       "cancellationCondition" : [ ],
       "completionCondition" : [ ],
       "configuration" : {
+        "enableBadging" : true,
         "serviceName" : "collab.changeWorkOrderStatus"
       },
       "continuationCondition" : [ ],
       "description" : null,
       "instanceParameters" : [ "technician", "workorder" ],
-      "pattern" : "Execute"
+      "name" : "UpdateWorkorderAssignment",
+      "pattern" : "Execute",
+      "uuid" : "f044fa1d-617b-4207-8691-0443f6fc8564"
     },
     "UpdateWorkorderCompleted" : {
       "additionalBehaviors" : [ ],
       "cancellationCondition" : [ ],
       "completionCondition" : [ ],
       "configuration" : {
+        "enableBadging" : true,
         "type" : "Workorders",
         "upsert" : true
       },
       "continuationCondition" : [ ],
       "description" : null,
       "instanceParameters" : [ "technician", "workorder" ],
-      "pattern" : "Collaboration.SaveToType"
+      "name" : "UpdateWorkorderCompleted",
+      "pattern" : "Collaboration.SaveToType",
+      "uuid" : "11e86e95-9b75-466b-a0cc-c99f8770a397"
     },
     "UpdateWorkorderEnroute" : {
       "additionalBehaviors" : [ ],
       "cancellationCondition" : [ ],
       "completionCondition" : [ ],
       "configuration" : {
+        "enableBadging" : true,
         "type" : "Workorders",
         "upsert" : true
       },
       "continuationCondition" : [ ],
       "description" : null,
       "instanceParameters" : [ "technician", "workorder" ],
-      "pattern" : "Collaboration.SaveToType"
+      "name" : "UpdateWorkorderEnroute",
+      "pattern" : "Collaboration.SaveToType",
+      "uuid" : "da6932e7-34ee-4809-83c8-a01e88d091d8"
     },
     "UpdateWorkorderStatus" : {
       "additionalBehaviors" : [ {
@@ -638,22 +859,83 @@
               "value" : "workorder"
             } ]
           } ],
-          "type" : "activity"
+          "type" : "activity",
+          "uuid" : null
         } ],
         "condition" : "true",
         "description" : null,
-        "name" : null
+        "name" : null,
+        "uuid" : "375ecec1-714c-45d7-b709-5e83a645fcd3"
       } ],
       "cancellationCondition" : [ ],
       "completionCondition" : [ ],
       "configuration" : {
+        "enableBadging" : true,
         "type" : "Workorders",
         "upsert" : true
       },
       "continuationCondition" : [ ],
       "description" : "After the status is updated to \"On Site\" send a notification to the customer that the technician has arrived. \n\nThe customer will not get any more notifications after this step.",
       "instanceParameters" : [ "technician", "workorder" ],
-      "pattern" : "Collaboration.SaveToType"
+      "name" : "UpdateWorkorderStatus",
+      "pattern" : "Collaboration.SaveToType",
+      "uuid" : "13598cd1-ed9a-4967-80bf-8d7ddc347291"
+    },
+    "execCustomIntent" : {
+      "additionalBehaviors" : [ ],
+      "cancellationCondition" : [ ],
+      "completionCondition" : [ ],
+      "configuration" : {
+        "debugEchoIntent" : false,
+        "enableBadging" : true,
+        "serviceName" : "customIntent",
+        "suppressChatroomSend" : false
+      },
+      "continuationCondition" : [ ],
+      "description" : null,
+      "instanceParameters" : [ "technician", "workorder" ],
+      "name" : "execCustomIntent",
+      "pattern" : "NaturalLanguageCustomIntent",
+      "uuid" : "86d3f7c4-1010-49a8-9f9c-196878288276"
+    },
+    "interpretNLP" : {
+      "additionalBehaviors" : [ ],
+      "cancellationCondition" : [ ],
+      "completionCondition" : [ ],
+      "configuration" : {
+        "enableBadging" : true,
+        "naturalLanguageSource" : "NLP",
+        "performSystemIntentsDirectly" : false,
+        "processCustomIntentBehaviors" : [ {
+          "behaviors" : [ {
+            "description" : null,
+            "name" : "execCustomIntent",
+            "parameters" : [ {
+              "name" : "collaboration",
+              "type" : "reference",
+              "value" : "collaboration"
+            }, {
+              "name" : "event",
+              "type" : "expression",
+              "value" : "event"
+            } ],
+            "type" : "activity",
+            "uuid" : null
+          } ],
+          "condition" : "true",
+          "description" : null,
+          "name" : "processCustomIntent",
+          "uuid" : "dd77977b-7b3b-40d1-81e5-b02e2510754a"
+        } ],
+        "processIntentBehaviors" : [ ],
+        "processSystemIntentBehaviors" : [ ]
+      },
+      "continuationCondition" : [ ],
+      "description" : null,
+      "instanceParameters" : [ "technician", "workorder" ],
+      "name" : "interpretNLP",
+      "pattern" : "NaturalLanguageInterpreter",
+      "uuid" : "e426ed08-3453-44ea-b7ba-0da587c91843"
     }
   },
   "collaboratorRoles" : [ "technician" ],
@@ -661,6 +943,7 @@
     "code" : "success"
   },
   "description" : "Save the customer signature to the Signature type for use in the Workorder View Signature popup poage.",
+  "disableBadging" : false,
   "entityRoles" : [ {
     "name" : "workorder",
     "type" : "Workorders"

@@ -1,0 +1,180 @@
+{
+  "bodyChildren" : {
+    "rootArray" : [ "afb57ed2-c706-4897-a577-3f5899d3a105", "868c83b3-09fc-41a8-aeca-42bbb1218cde" ],
+    "widgets" : [ {
+      "binding" : "page.data.searchworkorders",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "label" : "Search",
+      "labelColor" : "#000000",
+      "labelStyle" : "plain",
+      "name" : "InputString976487",
+      "optional" : true,
+      "placeholder" : "",
+      "type" : "InputString",
+      "uuid" : "170bc4ec-96dd-427a-8628-cd9e864c4aca",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "binding" : "page.data.statusworkorders",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "default" : "All",
+      "enumeratedList" : [ {
+        "label" : "All",
+        "value" : "All"
+      }, {
+        "label" : "Created",
+        "value" : "Created"
+      }, {
+        "label" : "Assigned",
+        "value" : "Assigned"
+      }, {
+        "label" : "En Route",
+        "value" : "En Route"
+      }, {
+        "label" : "On Site",
+        "value" : "On Site"
+      }, {
+        "label" : "Completed",
+        "value" : "Completed"
+      } ],
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "label" : "Status",
+      "labelColor" : "#000000",
+      "labelStyle" : "plain",
+      "name" : "Droplist10981",
+      "type" : "Droplist",
+      "uuid" : "29ea2e76-68f3-4e78-bf62-b973d6b8bf27",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "backgroundColor" : "default",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 1,
+      "cellFontColor" : "#000000",
+      "cellFontFace" : "inherit",
+      "cellFontSize" : 12,
+      "cellFontStyle" : "plain",
+      "clearOnDataArrive" : true,
+      "columnDescriptors" : [ {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "summary",
+        "selected" : false,
+        "title" : "Summary"
+      }, {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "customer",
+        "selected" : false,
+        "title" : "Customer"
+      }, {
+        "colorRules" : null,
+        "dataType" : "DateTime",
+        "format" : "MMM D",
+        "initialSort" : "D",
+        "propertyName" : "scheduledArrivalDate",
+        "selected" : false,
+        "title" : "Arrival"
+      }, {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "status",
+        "selected" : false,
+        "title" : "Status"
+      } ],
+      "columnSort" : true,
+      "dataStreamGroupedByFiltersString" : "",
+      "dataStreamUUID" : "1d38ff96-00c8-4691-817a-e83696c93a3a",
+      "dataType" : null,
+      "headerFontColor" : "#000000",
+      "headerFontFace" : "inherit",
+      "headerFontSize" : 12,
+      "headerFontStyle" : "plain",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "left",
+      "name" : "DataTable2851",
+      "operation" : "insert",
+      "rowsPerPage" : 5,
+      "showPaging" : true,
+      "type" : "DataTable",
+      "uuid" : "53904619-1626-4969-90dd-369a5036bfe8",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "children" : [ "ee3b8640-1ecc-4bc5-84b1-5bd1f95ee3f3", "53904619-1626-4969-90dd-369a5036bfe8" ],
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "innerMargin" : 20,
+      "name" : "VerticalLayout72",
+      "type" : "VerticalLayout",
+      "uuid" : "868c83b3-09fc-41a8-aeca-42bbb1218cde",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "horzMargin" : 2,
+      "label" : "Workorders",
+      "labelColor" : "#808080",
+      "labelSize" : 18,
+      "labelStyle" : "italic",
+      "name" : "SectionLabel12048",
+      "type" : "SectionLabel",
+      "uuid" : "afb57ed2-c706-4897-a577-3f5899d3a105",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 1,
+      "children" : [ "170bc4ec-96dd-427a-8628-cd9e864c4aca", "29ea2e76-68f3-4e78-bf62-b973d6b8bf27" ],
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "innerMargin" : 10,
+      "name" : "HorizontalLayout30936",
+      "type" : "HorizontalLayout",
+      "uuid" : "ee3b8640-1ecc-4bc5-84b1-5bd1f95ee3f3",
+      "v" : 16,
+      "vertGravity" : "center",
+      "vertMargin" : 0,
+      "widthPolicy" : "sizeToCell"
+    } ]
+  },
+  "data" : {
+    "properties" : {
+      "searchworkorders" : {
+        "defaultLabel" : "searchworkorders",
+        "type" : "String"
+      },
+      "statusworkorders" : {
+        "defaultLabel" : "statusworkorders",
+        "defaultValue" : "All",
+        "type" : "String"
+      }
+    }
+  },
+  "footerChildren" : [ ],
+  "hasFooter" : false,
+  "layoutType" : "mobile",
+  "responseTopic" : ""
+}

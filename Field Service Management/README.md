@@ -33,5 +33,66 @@ The FSM Blueprint is an application built to provide ideal solutions these chall
 *	A process/workflow for handling open tickets and Workorders. 
 *	Security Profiles that provide ACL based security for users. 
 
-If you need assistance with getting started please contact VANTIQ's technical support team. 
+If you need assistance with getting started, please contact VANTIQ's technical support team at support@vantiq.com .
 
+Note: To get the full effect at runtime in the ServiceDesk client Work Orders detail page, you need to accommodate
+after import the referenced CSS custom asset public/status/status_image_flow.css to match your namespace at runtime
+e.g. replace here for 'background : url' referenced namespace 'br_acmeWater' in between 'NS' and 'status' properties
+with 'my_fsmblueprint_ns' at these 10 positions :
+
+/* To use CSS - change the namespace name and folder where images are uploaded. Update 'left' positions. */
+#list_image {
+                background : url(../ui/docs/NS/br_acmeWater/status/list_image.png) no-repeat;
+                position: absolute;
+...
+}
+#list_gray {
+                background : url(../ui/docs/NS/br_acmeWater/status/list_gray.png) no-repeat;
+                position: absolute;
+...
+}
+#person_image {
+                background : url(../ui/docs/NS/br_acmeWater/status/person_image.png) no-repeat;
+                position: absolute;
+...
+}
+#person_gray {
+                background : url(../ui/docs/NS/br_acmeWater/status/person_gray.png) no-repeat;
+                position: absolute;
+...
+}
+#enroute_image{
+                background : url(../ui/docs/NS/br_acmeWater/status/enroute_image.png) no-repeat;
+                position: absolute;
+...
+}
+#enroute_gray{
+                background : url(../ui/docs/NS/br_acmeWater/status/enroute_gray.png) no-repeat;
+                position: absolute;
+...
+}
+#technician_image{
+                background : url(../ui/docs/NS/br_acmeWater/status/technician_image.png) no-repeat;
+                position: absolute;
+...
+}
+#technician_gray{
+                background : url(../ui/docs/NS/br_acmeWater/status/technician_gray.png) no-repeat;
+                position: absolute;
+...
+}
+#checkbox_image{
+                background : url(../ui/docs/NS/br_acmeWater/status/checkbox_image.png) no-repeat;
+                position: absolute;
+...
+}
+#checkbox_gray{
+                background : url(../ui/docs/NS/br_acmeWater/status/checkbox_gray.png) no-repeat;
+                position: absolute;
+...
+}
+
+
+Note: when updating this project in Github, use the CLI to export the files, not VCS by CLI's VCSSERVER. 
+The export format in the Github repository is in the CLI full-namespace export structure and not the 
+UI VCSSERVER per-project export structure.

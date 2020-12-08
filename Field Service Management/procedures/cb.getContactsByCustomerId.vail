@@ -1,0 +1,3 @@
+PROCEDURE cb.getContactsByCustomerId(id String)
+
+SELECT id, firstname, lastname FROM Contacts WHERE companyid == id

@@ -1,0 +1,354 @@
+{
+  "bodyChildren" : {
+    "rootArray" : [ "7601b0ba-1c28-4c20-9be0-34048347eadb", "f6f5e2e3-7fe0-45d0-8208-0cc37fb30005", "29c6c71f-317b-4e66-8847-41df0bde265b" ],
+    "widgets" : [ {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 1,
+      "children" : [ "a0ce240d-29d4-4846-858d-e99ca2ca1346", "7ec92a52-1097-4544-b318-9fb3ee8cc541", "4eac61c7-d537-4a85-9047-4662bad41a0a" ],
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "innerMargin" : 20,
+      "name" : "VerticalLayout9837",
+      "type" : "VerticalLayout",
+      "uuid" : "29c6c71f-317b-4e66-8847-41df0bde265b",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "naturalSize",
+      "x" : 500,
+      "y" : 70
+    }, {
+      "binding" : "page.data.Locations.address",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "label" : "Address",
+      "labelColor" : "#000000",
+      "labelStyle" : "plain",
+      "name" : "MultilineInput95",
+      "optional" : true,
+      "placeholder" : "",
+      "rows" : 5,
+      "type" : "MultilineInput",
+      "uuid" : "3ce8a1a1-994a-4b7a-9cda-55f8f09eac77",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell",
+      "wordwrap" : true
+    }, {
+      "backgroundColor" : "default",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 2,
+      "cellFontColor" : "#000000",
+      "cellFontFace" : "inherit",
+      "cellFontSize" : 14,
+      "cellFontStyle" : "plain",
+      "clearOnDataArrive" : true,
+      "columnDescriptors" : [ {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "department",
+        "selected" : false,
+        "title" : "Department"
+      }, {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "title",
+        "selected" : false,
+        "title" : "Title"
+      }, {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "firstname",
+        "selected" : false,
+        "title" : "First Name"
+      }, {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "lastname",
+        "selected" : false,
+        "title" : "Last Name"
+      }, {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "email",
+        "selected" : false,
+        "title" : "EMail"
+      }, {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "phone",
+        "selected" : false,
+        "title" : "Phone"
+      }, {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "fax",
+        "selected" : false,
+        "title" : "Fax"
+      } ],
+      "columnSort" : true,
+      "dataStreamGroupedByFiltersString" : "",
+      "dataStreamUUID" : "39c4aac0-a96e-423c-92db-07a0fd20c5f4",
+      "dataType" : null,
+      "headerFontColor" : "#000000",
+      "headerFontFace" : "inherit",
+      "headerFontSize" : 14,
+      "headerFontStyle" : "plain",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "DataTable927",
+      "operation" : "insert",
+      "rowsPerPage" : 5,
+      "showPaging" : true,
+      "type" : "DataTable",
+      "uuid" : "4eac61c7-d537-4a85-9047-4662bad41a0a",
+      "v" : 16,
+      "vertGravity" : "center",
+      "w" : 906,
+      "widthPolicy" : "explicit"
+    }, {
+      "binding" : "page.data.Locations.id",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "isReadOnly" : true,
+      "label" : "Location ID",
+      "labelColor" : "#000000",
+      "labelStyle" : "plain",
+      "name" : "InputString962049",
+      "optional" : true,
+      "placeholder" : "",
+      "type" : "InputString",
+      "uuid" : "5519c922-5b11-4403-b166-8b0fef79114d",
+      "v" : 16,
+      "vertGravity" : "center",
+      "w" : 379,
+      "widthPolicy" : "explicit"
+    }, {
+      "binding" : "page.data.Locations.customerid",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "isReadOnly" : true,
+      "label" : "Customer ID",
+      "labelColor" : "#000000",
+      "labelStyle" : "plain",
+      "name" : "InputString962052",
+      "optional" : true,
+      "placeholder" : "",
+      "type" : "InputString",
+      "uuid" : "5932cf7a-4ddd-4a43-9129-f80b8a5351b6",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "buttonBackgroundColor" : "platform",
+      "buttonLabel" : "Update",
+      "buttonLabelColor" : "platform",
+      "buttonLabelSize" : 18,
+      "buttonLabelStyle" : "plain",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "labelAlign" : "center",
+      "labelColor" : "#000000",
+      "labelStyle" : "plain",
+      "name" : "Button99090",
+      "submitValue" : 100,
+      "type" : "Button",
+      "uuid" : "660a84c0-46d4-4bb1-991d-4ec8b3ee2ff5",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "fontFamily" : "inherit",
+      "fontSize" : 28,
+      "fontStyle" : "normal",
+      "fontWeight" : "normal",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "StaticText99942",
+      "text" : "Location",
+      "type" : "StaticText",
+      "uuid" : "7601b0ba-1c28-4c20-9be0-34048347eadb",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "naturalSize",
+      "x" : 50,
+      "y" : 20
+    }, {
+      "binding" : "page.data.Locations.name",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "label" : "Location Name",
+      "labelColor" : "#000000",
+      "labelStyle" : "plain",
+      "name" : "InputString962050",
+      "optional" : true,
+      "placeholder" : "",
+      "type" : "InputString",
+      "uuid" : "7e359a6b-4737-4f74-9ef1-e7756c90e4cf",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "buttonBackgroundColor" : "platform",
+      "buttonLabel" : "Add Contact",
+      "buttonLabelColor" : "platform",
+      "buttonLabelSize" : 18,
+      "buttonLabelStyle" : "plain",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "left",
+      "labelAlign" : "right",
+      "labelColor" : "#000000",
+      "labelStyle" : "plain",
+      "name" : "Button99092",
+      "submitValue" : 100,
+      "type" : "Button",
+      "uuid" : "7ec92a52-1097-4544-b318-9fb3ee8cc541",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "buttonBackgroundColor" : "platform",
+      "buttonLabel" : "Cancel",
+      "buttonLabelColor" : "platform",
+      "buttonLabelSize" : 18,
+      "buttonLabelStyle" : "plain",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "labelAlign" : "center",
+      "labelColor" : "#000000",
+      "labelStyle" : "plain",
+      "name" : "Button99091",
+      "submitValue" : 100,
+      "type" : "Button",
+      "uuid" : "8943ded9-e934-483a-85a2-46a5d8ccdc98",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "fontFamily" : "inherit",
+      "fontSize" : 20,
+      "fontStyle" : "normal",
+      "fontWeight" : "normal",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "left",
+      "name" : "StaticText99940",
+      "text" : "Contacts",
+      "type" : "StaticText",
+      "uuid" : "a0ce240d-29d4-4846-858d-e99ca2ca1346",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "naturalSize"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "children" : [ "660a84c0-46d4-4bb1-991d-4ec8b3ee2ff5", "8943ded9-e934-483a-85a2-46a5d8ccdc98" ],
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "innerMargin" : 20,
+      "name" : "HorizontalLayout9112",
+      "type" : "HorizontalLayout",
+      "uuid" : "ede741df-41e8-4116-8a14-0709cb8dceb3",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "naturalSize"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 1,
+      "children" : [ "5519c922-5b11-4403-b166-8b0fef79114d", "5932cf7a-4ddd-4a43-9129-f80b8a5351b6", "7e359a6b-4737-4f74-9ef1-e7756c90e4cf", "3ce8a1a1-994a-4b7a-9cda-55f8f09eac77", "ede741df-41e8-4116-8a14-0709cb8dceb3" ],
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "innerMargin" : 20,
+      "name" : "VerticalLayout9836",
+      "type" : "VerticalLayout",
+      "uuid" : "f6f5e2e3-7fe0-45d0-8208-0cc37fb30005",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "naturalSize",
+      "x" : 50,
+      "y" : 70
+    } ]
+  },
+  "data" : {
+    "properties" : {
+      "Locations" : {
+        "defaultLabel" : "Locations",
+        "type" : "TypedObject",
+        "typedObject" : {
+          "properties" : {
+            "address" : {
+              "defaultLabel" : "address",
+              "type" : "String"
+            },
+            "customerid" : {
+              "defaultLabel" : "customerid",
+              "type" : "String"
+            },
+            "email" : {
+              "defaultLabel" : "email",
+              "type" : "String"
+            },
+            "fax" : {
+              "defaultLabel" : "fax",
+              "type" : "String"
+            },
+            "geolocation" : {
+              "defaultLabel" : "geolocation",
+              "type" : "GeoJSON"
+            },
+            "id" : {
+              "defaultLabel" : "id",
+              "type" : "String"
+            },
+            "name" : {
+              "defaultLabel" : "name",
+              "type" : "String"
+            },
+            "phone" : {
+              "defaultLabel" : "phone",
+              "type" : "String"
+            }
+          },
+          "type" : "Locations"
+        }
+      }
+    }
+  },
+  "footerChildren" : [ ],
+  "hasFooter" : false,
+  "layoutType" : "browser",
+  "responseTopic" : ""
+}

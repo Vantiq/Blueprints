@@ -1,0 +1,107 @@
+{
+  "bodyChildren" : {
+    "rootArray" : [ "7fe28d9a-c74b-446c-9097-4a3cf3146189", "e4b20afa-ef3b-41b5-8a31-8fa818beb722", "8c269ce1-cd7d-4225-af7f-8aafc9563e98" ],
+    "widgets" : [ {
+      "binding" : "page.data.skillsearch",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "labelColor" : "#000000",
+      "labelStyle" : "plain",
+      "name" : "InputString962065",
+      "optional" : true,
+      "placeholder" : "Search Skills",
+      "type" : "InputString",
+      "uuid" : "7fe28d9a-c74b-446c-9097-4a3cf3146189",
+      "v" : 16,
+      "vertGravity" : "center",
+      "w" : 420,
+      "widthPolicy" : "explicit",
+      "x" : 40,
+      "y" : 20
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "buttonBackgroundColor" : "platform",
+      "buttonLabel" : "Cancel",
+      "buttonLabelColor" : "platform",
+      "buttonLabelSize" : 18,
+      "buttonLabelStyle" : "plain",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "labelAlign" : "center",
+      "labelColor" : "#000000",
+      "labelStyle" : "plain",
+      "name" : "Button98169",
+      "submitValue" : 100,
+      "type" : "Button",
+      "uuid" : "8c269ce1-cd7d-4225-af7f-8aafc9563e98",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell",
+      "x" : 40,
+      "y" : 680.0000305175781
+    }, {
+      "backgroundColor" : "default",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 1,
+      "cellFontColor" : "#000000",
+      "cellFontFace" : "inherit",
+      "cellFontSize" : 14,
+      "cellFontStyle" : "plain",
+      "clearOnDataArrive" : true,
+      "columnDescriptors" : [ {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "skill",
+        "selected" : false,
+        "title" : "Skill"
+      }, {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "description",
+        "selected" : false,
+        "title" : "Description"
+      } ],
+      "columnSort" : true,
+      "dataStreamGroupedByFiltersString" : "",
+      "dataStreamUUID" : "043c3390-8a53-4d3b-a707-281690fc49ca",
+      "dataType" : null,
+      "headerFontColor" : "#000000",
+      "headerFontFace" : "inherit",
+      "headerFontSize" : 14,
+      "headerFontStyle" : "plain",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "skillslisttable",
+      "operation" : "insert",
+      "rowsPerPage" : 12,
+      "showPaging" : true,
+      "type" : "DataTable",
+      "uuid" : "e4b20afa-ef3b-41b5-8a31-8fa818beb722",
+      "v" : 16,
+      "vertGravity" : "center",
+      "w" : 800,
+      "widthPolicy" : "explicit",
+      "x" : 50,
+      "y" : 90
+    } ]
+  },
+  "data" : {
+    "properties" : {
+      "skillsearch" : {
+        "defaultLabel" : "skillsearch",
+        "type" : "String"
+      }
+    }
+  },
+  "footerChildren" : [ ],
+  "hasFooter" : false,
+  "layoutType" : "browser",
+  "responseTopic" : ""
+}

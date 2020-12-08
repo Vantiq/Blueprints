@@ -1,0 +1,226 @@
+{
+  "bodyChildren" : {
+    "rootArray" : [ "23deddbd-1fb1-4699-8e92-7f3fa499719a" ],
+    "widgets" : [ {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "buttonBackgroundColor" : "platform",
+      "buttonLabel" : "Submit",
+      "buttonLabelColor" : "platform",
+      "buttonLabelSize" : 18,
+      "buttonLabelStyle" : "plain",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "labelAlign" : "center",
+      "labelColor" : "#000000",
+      "labelStyle" : "plain",
+      "name" : "Button99085",
+      "submitValue" : 100,
+      "type" : "Button",
+      "uuid" : "1ef74703-5bdf-44c1-8a7f-1a27e3e37442",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "backgroundColor" : "#f5f5f5",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 1,
+      "children" : [ "3f88f9be-5dbc-4fee-878d-4ad6c0d9974f", "6921e082-5cda-4594-8133-523444a57635", "56a592c3-31f9-47ca-96b7-3908e951d7e5", "a2244793-690f-4e2e-9f08-a8d5d2d108a4", "b4e3b41e-0500-4e5d-8b04-606d884dcc10", "d775d625-bf04-47a1-9a62-00c856250b8c" ],
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "innerMargin" : 10,
+      "name" : "VerticalLayout9831a",
+      "type" : "VerticalLayout",
+      "uuid" : "23deddbd-1fb1-4699-8e92-7f3fa499719a",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "naturalSize",
+      "x" : 40,
+      "y" : 30
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "fontFamily" : "inherit",
+      "fontSize" : 20,
+      "fontStyle" : "normal",
+      "fontWeight" : "normal",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "StaticText99931a",
+      "text" : "Location Information",
+      "type" : "StaticText",
+      "uuid" : "3f88f9be-5dbc-4fee-878d-4ad6c0d9974f",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "naturalSize"
+    }, {
+      "binding" : "page.data.Locations.customerid",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "isReadOnly" : true,
+      "label" : "Customer ID",
+      "labelColor" : "#000000",
+      "labelStyle" : "plain",
+      "name" : "InputString962040",
+      "optional" : true,
+      "placeholder" : "",
+      "type" : "InputString",
+      "uuid" : "56a592c3-31f9-47ca-96b7-3908e951d7e5",
+      "v" : 16,
+      "vertGravity" : "center",
+      "w" : 408,
+      "widthPolicy" : "explicit"
+    }, {
+      "binding" : "page.data.Locations.id",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "isReadOnly" : true,
+      "label" : "Location ID",
+      "labelColor" : "#000000",
+      "labelStyle" : "plain",
+      "name" : "InputString962046",
+      "optional" : true,
+      "placeholder" : "",
+      "type" : "InputString",
+      "uuid" : "6921e082-5cda-4594-8133-523444a57635",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "buttonBackgroundColor" : "platform",
+      "buttonLabel" : "Cancel",
+      "buttonLabelColor" : "platform",
+      "buttonLabelSize" : 18,
+      "buttonLabelStyle" : "plain",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "labelAlign" : "center",
+      "labelColor" : "#000000",
+      "labelStyle" : "plain",
+      "name" : "Button99086",
+      "submitValue" : 100,
+      "type" : "Button",
+      "uuid" : "8b0bab3b-c2ed-4510-88f2-1f439ca56021",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "binding" : "page.data.Locations.name",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "label" : "Location Name",
+      "labelColor" : "#000000",
+      "labelStyle" : "plain",
+      "name" : "InputString962045",
+      "optional" : false,
+      "placeholder" : "",
+      "type" : "InputString",
+      "uuid" : "a2244793-690f-4e2e-9f08-a8d5d2d108a4",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "binding" : "page.data.Locations.address",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "label" : "Address",
+      "labelColor" : "#000000",
+      "labelStyle" : "plain",
+      "name" : "MultilineInput27",
+      "optional" : false,
+      "placeholder" : "",
+      "rows" : 5,
+      "type" : "MultilineInput",
+      "uuid" : "b4e3b41e-0500-4e5d-8b04-606d884dcc10",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell",
+      "wordwrap" : true
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "children" : [ "1ef74703-5bdf-44c1-8a7f-1a27e3e37442", "8b0bab3b-c2ed-4510-88f2-1f439ca56021" ],
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "right",
+      "innerMargin" : 20,
+      "name" : "HorizontalLayout9098",
+      "type" : "HorizontalLayout",
+      "uuid" : "d775d625-bf04-47a1-9a62-00c856250b8c",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "naturalSize"
+    } ]
+  },
+  "data" : {
+    "properties" : {
+      "Locations" : {
+        "defaultLabel" : "Locations",
+        "type" : "TypedObject",
+        "typedObject" : {
+          "properties" : {
+            "address" : {
+              "defaultLabel" : "address",
+              "type" : "String"
+            },
+            "customerid" : {
+              "defaultLabel" : "customerid",
+              "type" : "String"
+            },
+            "email" : {
+              "defaultLabel" : "email",
+              "type" : "String"
+            },
+            "fax" : {
+              "defaultLabel" : "fax",
+              "type" : "String"
+            },
+            "geolocation" : {
+              "defaultLabel" : "geolocation",
+              "type" : "GeoJSON"
+            },
+            "id" : {
+              "defaultLabel" : "id",
+              "type" : "String"
+            },
+            "name" : {
+              "defaultLabel" : "name",
+              "type" : "String"
+            },
+            "phone" : {
+              "defaultLabel" : "phone",
+              "type" : "String"
+            }
+          },
+          "type" : "Locations"
+        }
+      }
+    }
+  },
+  "footerChildren" : [ ],
+  "hasFooter" : false,
+  "layoutType" : "browser",
+  "responseTopic" : ""
+}

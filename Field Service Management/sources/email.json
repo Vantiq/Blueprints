@@ -1,12 +1,16 @@
 {
   "activationConstraint" : "",
   "active" : false,
+  "ars_properties" : null,
   "config" : {
     "host" : "[servername]",
-    "port" : null,
+    "password" : "[password]",
+    "passwordType" : "string",
+    "port" : 587,
     "username" : "[username]"
   },
   "direction" : "SINK",
+  "messageType" : null,
   "name" : "email",
   "type" : "EMAIL"
 }

@@ -1,0 +1,110 @@
+{
+  "bodyChildren" : {
+    "rootArray" : [ "2b2d5f2c-ea95-4449-9ee7-1012510d1a36" ],
+    "widgets" : [ {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "buttonBackgroundColor" : "platform",
+      "buttonLabel" : "Cancel",
+      "buttonLabelColor" : "platform",
+      "buttonLabelSize" : 18,
+      "buttonLabelStyle" : "plain",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "labelAlign" : "center",
+      "labelColor" : "#000000",
+      "labelStyle" : "plain",
+      "name" : "Button99160",
+      "submitValue" : 100,
+      "type" : "Button",
+      "uuid" : "110ce547-d185-4d0c-84b2-59ef70339a3a",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 1,
+      "children" : [ "d4c6910c-46b3-49da-8512-c1d05bccef05", "edbb3891-47f3-420b-8335-dd488a225ef8" ],
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "innerMargin" : 20,
+      "name" : "VerticalContainer9641",
+      "type" : "VerticalLayout",
+      "uuid" : "2b2d5f2c-ea95-4449-9ee7-1012510d1a36",
+      "v" : 16,
+      "vertGravity" : "top",
+      "w" : 610,
+      "widthPolicy" : "explicit",
+      "x" : 30,
+      "y" : 30
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "buttonBackgroundColor" : "platform",
+      "buttonLabel" : "Add Comments",
+      "buttonLabelColor" : "platform",
+      "buttonLabelSize" : 18,
+      "buttonLabelStyle" : "plain",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "left",
+      "labelColor" : "#000000",
+      "labelStyle" : "plain",
+      "name" : "inlineButton66109",
+      "submitValue" : 100,
+      "type" : "Button",
+      "uuid" : "8d5414da-e153-46f7-b439-db92f00d56fe",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "naturalSize"
+    }, {
+      "binding" : "page.data.comments",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "labelColor" : "#000000",
+      "labelStyle" : "plain",
+      "name" : "comments1",
+      "optional" : true,
+      "placeholder" : "",
+      "rows" : 10,
+      "type" : "MultilineInput",
+      "uuid" : "d4c6910c-46b3-49da-8512-c1d05bccef05",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell",
+      "wordwrap" : true
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "children" : [ "8d5414da-e153-46f7-b439-db92f00d56fe", "110ce547-d185-4d0c-84b2-59ef70339a3a" ],
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "right",
+      "innerMargin" : 20,
+      "name" : "HorizontalLayout9425",
+      "type" : "HorizontalLayout",
+      "uuid" : "edbb3891-47f3-420b-8335-dd488a225ef8",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "naturalSize"
+    } ]
+  },
+  "data" : {
+    "properties" : {
+      "comments" : {
+        "defaultLabel" : "comments",
+        "type" : "String"
+      }
+    }
+  },
+  "footerChildren" : [ ],
+  "hasFooter" : false,
+  "layoutType" : "browser",
+  "responseTopic" : ""
+}

@@ -1,0 +1,156 @@
+{
+  "bodyChildren" : {
+    "rootArray" : [ "b544cb36-c3ab-4df5-8f82-8217a82a33f2", "ba935aa7-cfe1-447f-9d94-ef5ceac2a537", "9798992f-07cd-45d6-b1cd-5aa04ed7358e" ],
+    "widgets" : [ {
+      "backgroundColor" : "default",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 1,
+      "clearOnDataArrive" : true,
+      "columnDescriptors" : [ {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "name",
+        "selected" : false,
+        "title" : "Name"
+      } ],
+      "columnSort" : true,
+      "dataStreamGroupedByFiltersString" : "",
+      "dataStreamUUID" : "4d7e3131-5059-42f2-a0c4-2bf8f6aa405c",
+      "dataType" : null,
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "DataTable905",
+      "operation" : "insert",
+      "rowsPerPage" : 15,
+      "showPaging" : true,
+      "type" : "DataTable",
+      "uuid" : "9798992f-07cd-45d6-b1cd-5aa04ed7358e",
+      "v" : 16,
+      "vertGravity" : "center",
+      "w" : 920,
+      "widthPolicy" : "explicit",
+      "x" : 50,
+      "y" : 130
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "fontFamily" : "Arial,Verdana",
+      "fontSize" : 20,
+      "fontStyle" : "normal",
+      "fontWeight" : "normal",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "Text9411",
+      "text" : "View Locations",
+      "type" : "StaticText",
+      "uuid" : "b544cb36-c3ab-4df5-8f82-8217a82a33f2",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "naturalSize",
+      "x" : 50,
+      "y" : 20
+    }, {
+      "binding" : "page.data.searchlocations",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "label" : "Search Locations",
+      "labelColor" : "#000000",
+      "labelStyle" : "plain",
+      "name" : "inputString955131",
+      "optional" : false,
+      "placeholder" : "",
+      "type" : "InputString",
+      "uuid" : "ba935aa7-cfe1-447f-9d94-ef5ceac2a537",
+      "v" : 16,
+      "vertGravity" : "center",
+      "w" : 440,
+      "widthPolicy" : "explicit",
+      "x" : 40,
+      "y" : 50
+    } ]
+  },
+  "data" : {
+    "properties" : {
+      "locations" : {
+        "defaultLabel" : "locations",
+        "type" : "TypedObject",
+        "typedObject" : {
+          "properties" : {
+            "city" : {
+              "defaultLabel" : "city",
+              "type" : "String"
+            },
+            "contacts" : {
+              "defaultLabel" : "contacts",
+              "isArray" : true,
+              "type" : "Object"
+            },
+            "country" : {
+              "defaultLabel" : "country",
+              "type" : "String"
+            },
+            "customerid" : {
+              "defaultLabel" : "customerid",
+              "type" : "String"
+            },
+            "customername" : {
+              "defaultLabel" : "customername",
+              "type" : "String"
+            },
+            "email" : {
+              "defaultLabel" : "email",
+              "type" : "String"
+            },
+            "fax" : {
+              "defaultLabel" : "fax",
+              "type" : "String"
+            },
+            "geolocation" : {
+              "defaultLabel" : "geolocation",
+              "type" : "GeoJSON"
+            },
+            "name" : {
+              "defaultLabel" : "name",
+              "type" : "String"
+            },
+            "phone" : {
+              "defaultLabel" : "phone",
+              "type" : "String"
+            },
+            "postal" : {
+              "defaultLabel" : "postal",
+              "type" : "String"
+            },
+            "state" : {
+              "defaultLabel" : "state",
+              "type" : "String"
+            },
+            "street1" : {
+              "defaultLabel" : "street1",
+              "type" : "String"
+            },
+            "street2" : {
+              "defaultLabel" : "street2",
+              "type" : "String"
+            }
+          },
+          "type" : "locations"
+        }
+      },
+      "searchlocations" : {
+        "defaultLabel" : "searchlocations",
+        "type" : "String"
+      }
+    }
+  },
+  "footerChildren" : [ ],
+  "hasFooter" : false,
+  "layoutType" : "browser",
+  "responseTopic" : ""
+}

@@ -1,0 +1,1110 @@
+{
+  "bodyChildren" : {
+    "rootArray" : [ "72722be3-5eeb-4ce7-b3d9-053cdb3b037b", "abcbd2a8-0efd-4230-a32b-f42c12996355" ],
+    "widgets" : [ {
+      "backgroundColor" : "#ffffff",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "children" : [ "b301b0c2-c44a-42b4-8c93-7d115b42ff30", "e7b2e1a0-ec3b-415b-8667-2b5993e3b187", "30f4c2ef-fe85-4de8-8ab9-38824a056486" ],
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "innerMargin" : 10,
+      "name" : "VerticalContainer9608",
+      "type" : "VerticalLayout",
+      "uuid" : "004326ec-0968-4f7f-8c98-000c25525af4",
+      "v" : 16,
+      "vertGravity" : "center",
+      "w" : 580,
+      "widthPolicy" : "explicit"
+    }, {
+      "binding" : "page.data.Tickets.status",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "default" : "-select-",
+      "enumeratedList" : [ {
+        "label" : "-select-",
+        "value" : "-select-"
+      }, {
+        "label" : "Open",
+        "value" : "Open"
+      }, {
+        "label" : "Escalate L1",
+        "value" : "Escalate L1"
+      }, {
+        "label" : "Escalate L2",
+        "value" : "Escalate L2"
+      }, {
+        "label" : "Escalate L3",
+        "value" : "Escalate L3"
+      }, {
+        "label" : "Closed",
+        "value" : "Closed"
+      } ],
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "left",
+      "label" : "Status",
+      "labelColor" : "#000000",
+      "labelStyle" : "plain",
+      "name" : "statusDroplist",
+      "type" : "Droplist",
+      "uuid" : "02dd44e7-2855-44da-8554-0a7a61613086",
+      "v" : 16,
+      "vertGravity" : "center",
+      "w" : 510,
+      "widthPolicy" : "explicit"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "children" : [ "5f75f14c-4e4c-486c-857a-68ed23853bc4", "b3369028-d97c-43c5-9776-6e690b370802" ],
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "left",
+      "horzMargin" : 5,
+      "innerMargin" : 20,
+      "name" : "HorizontalLayout38157",
+      "type" : "HorizontalLayout",
+      "uuid" : "039a7ca1-7455-4a74-943b-248b35992396",
+      "v" : 16,
+      "vertGravity" : "center",
+      "vertMargin" : 5,
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "fontFamily" : "inherit",
+      "fontSize" : 16,
+      "fontStyle" : "italic",
+      "fontWeight" : "normal",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "right",
+      "name" : "StaticText120544",
+      "text" : "(click on table row to remove)",
+      "type" : "StaticText",
+      "uuid" : "0b63d8f5-1deb-41a1-87d3-10c9dde32327",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "naturalSize"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "horzMargin" : 2,
+      "label" : "Customer",
+      "labelColor" : "#808080",
+      "labelSize" : 18,
+      "labelStyle" : "italic",
+      "name" : "text995",
+      "type" : "SectionLabel",
+      "uuid" : "14cb29e2-1bd1-43a0-befa-9eecdcb87745",
+      "v" : 16,
+      "vertGravity" : "center",
+      "w" : 1150,
+      "widthPolicy" : "explicit"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "buttonBackgroundColor" : "platform",
+      "buttonLabel" : "Asset",
+      "buttonLabelColor" : "platform",
+      "buttonLabelSize" : 18,
+      "buttonLabelStyle" : "plain",
+      "glyphIcon" : "glyphicon-plus",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "left",
+      "labelAlign" : "center",
+      "labelColor" : "#000000",
+      "labelStyle" : "plain",
+      "name" : "inlineButton81190",
+      "submitValue" : 100,
+      "type" : "Button",
+      "uuid" : "2d83235e-aff4-422e-a263-22e5180a60a3",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "naturalSize"
+    }, {
+      "backgroundColor" : "default",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 1,
+      "cellFontColor" : "#000000",
+      "clearOnDataArrive" : true,
+      "columnDescriptors" : [ {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "name",
+        "selected" : false,
+        "title" : "Name"
+      }, {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "manufacturer",
+        "selected" : false,
+        "title" : "Manufacturer"
+      }, {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "category",
+        "selected" : false,
+        "title" : "Category"
+      }, {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "description",
+        "selected" : false,
+        "title" : "Description"
+      } ],
+      "columnSort" : true,
+      "dataStreamGroupedByFiltersString" : "",
+      "dataStreamUUID" : "4bc09f3c-e95e-4b68-80c1-fb73ee470504",
+      "dataType" : null,
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "DataTable627",
+      "operation" : "insert",
+      "rowsPerPage" : 5,
+      "showPaging" : true,
+      "type" : "DataTable",
+      "uuid" : "30f4c2ef-fe85-4de8-8ab9-38824a056486",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "binding" : "page.data.Tickets.locationname",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "isReadOnly" : true,
+      "label" : "Location Name",
+      "labelColor" : "#000000",
+      "labelStyle" : "plain",
+      "name" : "tplocationname",
+      "optional" : false,
+      "placeholder" : "",
+      "type" : "InputString",
+      "uuid" : "35097a71-4883-4aa1-8140-dc93cdb827b3",
+      "v" : 16,
+      "vertGravity" : "center",
+      "w" : 480,
+      "widthPolicy" : "explicit"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "fontFamily" : "Arial,Verdana",
+      "fontSize" : 18,
+      "fontStyle" : "normal",
+      "fontWeight" : "normal",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "left",
+      "name" : "Text69517",
+      "text" : "History",
+      "type" : "StaticText",
+      "uuid" : "36417f3b-5e79-464f-8de4-09a6cf7e8c37",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "naturalSize"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "horzMargin" : 2,
+      "label" : "Comments",
+      "labelColor" : "#808080",
+      "labelSize" : 18,
+      "labelStyle" : "italic",
+      "name" : "text6200",
+      "type" : "SectionLabel",
+      "uuid" : "406cc8df-2249-461b-adc1-1f57d1e5ffd4",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "binding" : "page.data.Tickets.description",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "column" : -1,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "label" : "Description",
+      "labelColor" : "#000000",
+      "labelStyle" : "plain",
+      "name" : "multilineInput4",
+      "optional" : false,
+      "placeholder" : "",
+      "row" : -1,
+      "rows" : 14,
+      "type" : "MultilineInput",
+      "uuid" : "42c4c28e-2eb4-47fb-a961-94d78d7a8dbc",
+      "v" : 16,
+      "vertGravity" : "center",
+      "w" : 600,
+      "widthPolicy" : "explicit"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "buttonBackgroundColor" : "platform",
+      "buttonLabel" : "Add Comment",
+      "buttonLabelColor" : "platform",
+      "buttonLabelSize" : 18,
+      "buttonLabelStyle" : "plain",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "left",
+      "labelColor" : "#000000",
+      "labelStyle" : "plain",
+      "name" : "inlineButton66108",
+      "submitValue" : 100,
+      "type" : "Button",
+      "uuid" : "430aa267-c054-400d-b111-e26566eb5576",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "naturalSize"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "buttonBackgroundColor" : "platform",
+      "buttonLabel" : "Reset",
+      "buttonLabelColor" : "platform",
+      "buttonLabelSize" : 18,
+      "buttonLabelStyle" : "plain",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "left",
+      "labelAlign" : "center",
+      "labelColor" : "#000000",
+      "labelStyle" : "plain",
+      "name" : "resetticketBtn",
+      "submitValue" : 100,
+      "type" : "Button",
+      "uuid" : "45d4ac0b-d6a7-4cfa-8d10-a0dd3daed188",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "naturalSize"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "children" : [ "e305635a-a06a-46e6-8adf-5a7f95012b9b", "5e494db7-cea9-455e-846a-ab41c472845a", "02dd44e7-2855-44da-8554-0a7a61613086", "61e520aa-9efe-43b3-9114-1474a08bc56c", "e2963ddd-1778-4f37-a536-7d4027134e3f" ],
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "innerMargin" : 16,
+      "name" : "VerticalLayout10659",
+      "type" : "VerticalLayout",
+      "uuid" : "513d2695-9d8f-4b16-8f60-112884b057e1",
+      "v" : 16,
+      "vertGravity" : "top",
+      "w" : 530,
+      "widthPolicy" : "explicit"
+    }, {
+      "binding" : "page.data.Tickets.createdByName",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "left",
+      "isReadOnly" : true,
+      "label" : "Created By",
+      "labelColor" : "#000000",
+      "labelStyle" : "plain",
+      "name" : "tpCreatedBy",
+      "optional" : false,
+      "placeholder" : "",
+      "type" : "InputString",
+      "uuid" : "5e494db7-cea9-455e-846a-ab41c472845a",
+      "v" : 16,
+      "vertGravity" : "top",
+      "w" : 510,
+      "widthPolicy" : "explicit"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "buttonBackgroundColor" : "platform",
+      "buttonLabel" : "Contact",
+      "buttonLabelColor" : "platform",
+      "buttonLabelSize" : 18,
+      "buttonLabelStyle" : "plain",
+      "glyphIcon" : "glyphicon-plus",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "left",
+      "labelAlign" : "center",
+      "labelColor" : "#000000",
+      "labelStyle" : "plain",
+      "name" : "Button98171",
+      "submitValue" : 100,
+      "type" : "Button",
+      "uuid" : "5f75f14c-4e4c-486c-857a-68ed23853bc4",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "naturalSize"
+    }, {
+      "binding" : "page.data.Tickets.priority",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "default" : "-select-",
+      "enumeratedList" : [ {
+        "label" : "-select-",
+        "value" : "-select-"
+      }, {
+        "label" : "1",
+        "value" : 1
+      }, {
+        "label" : "2",
+        "value" : 2
+      }, {
+        "label" : "3",
+        "value" : 3
+      }, {
+        "label" : "4",
+        "value" : 4
+      } ],
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "label" : "Priority",
+      "labelColor" : "#000000",
+      "labelStyle" : "plain",
+      "name" : "droplist625",
+      "type" : "Droplist",
+      "uuid" : "61e520aa-9efe-43b3-9114-1474a08bc56c",
+      "v" : 16,
+      "vertGravity" : "center",
+      "w" : 508,
+      "widthPolicy" : "explicit"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "buttonBackgroundColor" : "platform",
+      "buttonLabel" : "Submit Ticket",
+      "buttonLabelColor" : "platform",
+      "buttonLabelSize" : 18,
+      "buttonLabelStyle" : "plain",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "left",
+      "labelAlign" : "center",
+      "labelColor" : "#000000",
+      "labelStyle" : "plain",
+      "name" : "addticketBtn",
+      "submitValue" : 100,
+      "type" : "Button",
+      "uuid" : "62f9cbe2-2cf4-481c-bf70-9d7283eaf930",
+      "v" : 16,
+      "vertGravity" : "center",
+      "w" : 146,
+      "widthPolicy" : "explicit"
+    }, {
+      "backgroundColor" : "#f5f5f5",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 1,
+      "children" : [ "f892375e-2f08-4343-98c0-ead8a56c4997", "513d2695-9d8f-4b16-8f60-112884b057e1", "82fd8b3d-26ff-4808-8521-86523aa5da77", "cb941104-aaae-4ab8-a63c-f2cc3a198fea", "fc4fbae6-bf70-463d-8bd8-522d416c1841", "14cb29e2-1bd1-43a0-befa-9eecdcb87745", "f78a79b6-713f-4077-9fc6-1d764be10344", "c4674e93-d064-42ce-a7d6-8f316341bed4", "9f8b3480-b40b-4f7a-91fb-34ad50df570a", "6bf7bdbc-8c27-4c4f-96b1-5a3f23ecd215", "ab3a9fd9-3ef8-4a89-a397-ceb787dc1469", "35097a71-4883-4aa1-8140-dc93cdb827b3", "da4bca01-eda8-4e62-acae-6f94ff3c2e74", "ed766e5d-5683-4f08-8ee5-1e7f98373bad", "cdbd945a-77d5-4022-aa3a-0f6b737b6435", "004326ec-0968-4f7f-8c98-000c25525af4", "e64099ba-919a-4794-ac9e-60c7d58fd1da" ],
+      "h" : 1892,
+      "heightPolicy" : "explicit",
+      "horzGravity" : "center",
+      "innerMargin" : 10,
+      "name" : "FlowLayout38",
+      "type" : "FlowLayout",
+      "uuid" : "649c36d1-d2a2-4d32-b30e-87c54b3990ae",
+      "v" : 16,
+      "vertGravity" : "center",
+      "w" : 1172,
+      "widthPolicy" : "explicit"
+    }, {
+      "backgroundColor" : "default",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 1,
+      "cellFontColor" : "#000000",
+      "cellFontFace" : "inherit",
+      "cellFontSize" : 14,
+      "cellFontStyle" : "plain",
+      "clearOnDataArrive" : true,
+      "columnDescriptors" : [ {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "firstname",
+        "selected" : false,
+        "title" : "First"
+      }, {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "lastname",
+        "selected" : false,
+        "title" : "Last"
+      }, {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "email",
+        "selected" : false,
+        "title" : "Email"
+      }, {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "phone",
+        "selected" : false,
+        "title" : "Phone"
+      } ],
+      "columnSort" : true,
+      "dataStreamGroupedByFiltersString" : "",
+      "dataStreamUUID" : "1104f14e-c8d4-4cf6-bddc-ff3326769455",
+      "dataType" : null,
+      "headerFontColor" : "#000000",
+      "headerFontFace" : "inherit",
+      "headerFontSize" : 14,
+      "headerFontStyle" : "plain",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "DataTable929",
+      "operation" : "insert",
+      "rowsPerPage" : 5,
+      "showPaging" : true,
+      "type" : "DataTable",
+      "uuid" : "64b62620-4bc6-46ce-91fd-ebce5f268b3f",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "horzMargin" : 2,
+      "label" : "Customer Location",
+      "labelColor" : "#808080",
+      "labelSize" : 18,
+      "labelStyle" : "italic",
+      "name" : "SectionLabel9654",
+      "type" : "SectionLabel",
+      "uuid" : "6bf7bdbc-8c27-4c4f-96b1-5a3f23ecd215",
+      "v" : 16,
+      "vertGravity" : "center",
+      "w" : 1150,
+      "widthPolicy" : "explicit"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "fontFamily" : "Arial,Verdana",
+      "fontSize" : 20,
+      "fontStyle" : "normal",
+      "fontWeight" : "normal",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "ticketpagetitle",
+      "text" : "Add Ticket",
+      "type" : "StaticText",
+      "uuid" : "72722be3-5eeb-4ce7-b3d9-053cdb3b037b",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "naturalSize",
+      "x" : 50,
+      "y" : 30
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "horzMargin" : 2,
+      "label" : "Ticket Assignment",
+      "labelColor" : "#808080",
+      "labelSize" : 18,
+      "labelStyle" : "italic",
+      "name" : "text6201",
+      "type" : "SectionLabel",
+      "uuid" : "82fd8b3d-26ff-4808-8521-86523aa5da77",
+      "v" : 16,
+      "vertGravity" : "center",
+      "w" : 1150,
+      "widthPolicy" : "explicit"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 1,
+      "defaultMinimumHeight" : 300,
+      "defaultMinimumWidth" : 200,
+      "h" : 173,
+      "heightPolicy" : "explicit",
+      "horzGravity" : "center",
+      "horzizontalScrollPolicy" : "none",
+      "html" : "",
+      "name" : "HistoryText",
+      "type" : "StaticHtml",
+      "uuid" : "92ff2090-475c-4f06-98bb-f86fc1f42e4c",
+      "v" : 16,
+      "vertGravity" : "center",
+      "verticalScrollPolicy" : "auto",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "binding" : "page.data.Tickets.customerId",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "isReadOnly" : true,
+      "label" : "Customer ID",
+      "labelColor" : "#000000",
+      "labelStyle" : "plain",
+      "name" : "InputString962084",
+      "optional" : true,
+      "placeholder" : "",
+      "type" : "InputString",
+      "uuid" : "9f8b3480-b40b-4f7a-91fb-34ad50df570a",
+      "v" : 16,
+      "vertGravity" : "center",
+      "w" : 480,
+      "widthPolicy" : "explicit"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "buttonBackgroundColor" : "platform",
+      "buttonLabel" : "Select Location",
+      "buttonLabelColor" : "platform",
+      "buttonLabelSize" : 18,
+      "buttonLabelStyle" : "plain",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "left",
+      "labelAlign" : "center",
+      "labelColor" : "#000000",
+      "labelStyle" : "plain",
+      "name" : "locationButton",
+      "submitValue" : 100,
+      "type" : "Button",
+      "uuid" : "ab3a9fd9-3ef8-4a89-a397-ceb787dc1469",
+      "v" : 16,
+      "vertGravity" : "bottom",
+      "w" : 157,
+      "widthPolicy" : "explicit"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "children" : [ "649c36d1-d2a2-4d32-b30e-87c54b3990ae", "c7bafc65-4ba4-466c-8271-d0eb7013b90a" ],
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "horzMargin" : 0,
+      "innerMargin" : 20,
+      "name" : "VerticalLayout12548",
+      "type" : "VerticalLayout",
+      "uuid" : "abcbd2a8-0efd-4230-a32b-f42c12996355",
+      "v" : 16,
+      "vertGravity" : "center",
+      "vertMargin" : 0,
+      "widthPolicy" : "naturalSize",
+      "x" : 40,
+      "y" : 60
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "horzMargin" : 2,
+      "label" : "Asset(s) with Issues",
+      "labelColor" : "#808080",
+      "labelSize" : 18,
+      "labelStyle" : "italic",
+      "name" : "text6202",
+      "type" : "SectionLabel",
+      "uuid" : "b301b0c2-c44a-42b4-8c93-7d115b42ff30",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "fontFamily" : "inherit",
+      "fontSize" : 16,
+      "fontStyle" : "italic",
+      "fontWeight" : "normal",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "right",
+      "name" : "StaticText120543",
+      "text" : "(click on table row to remove)",
+      "type" : "StaticText",
+      "uuid" : "b3369028-d97c-43c5-9776-6e690b370802",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "naturalSize"
+    }, {
+      "binding" : "page.data.Tickets.customer",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "isReadOnly" : true,
+      "label" : "Customer Name",
+      "labelColor" : "#000000",
+      "labelStyle" : "plain",
+      "name" : "tpCName",
+      "optional" : false,
+      "placeholder" : "",
+      "type" : "InputString",
+      "uuid" : "c4674e93-d064-42ce-a7d6-8f316341bed4",
+      "v" : 16,
+      "vertGravity" : "center",
+      "w" : 480,
+      "widthPolicy" : "explicit"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "children" : [ "62f9cbe2-2cf4-481c-bf70-9d7283eaf930", "45d4ac0b-d6a7-4cfa-8d10-a0dd3daed188" ],
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "left",
+      "horzMargin" : 0,
+      "name" : "HorizontalContainer8083",
+      "type" : "HorizontalLayout",
+      "uuid" : "c7bafc65-4ba4-466c-8271-d0eb7013b90a",
+      "v" : 16,
+      "vertGravity" : "top",
+      "w" : 300,
+      "widthPolicy" : "explicit"
+    }, {
+      "binding" : "page.data.Tickets.assignedTo",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "default" : null,
+      "enumeratedList" : [ ],
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "left",
+      "label" : "Service Desk User",
+      "labelColor" : "#000000",
+      "labelStyle" : "plain",
+      "name" : "assignmentList",
+      "type" : "Droplist",
+      "uuid" : "cb941104-aaae-4ab8-a63c-f2cc3a198fea",
+      "v" : 16,
+      "vertGravity" : "center",
+      "w" : 508,
+      "widthPolicy" : "explicit"
+    }, {
+      "backgroundColor" : "#ffffff",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "children" : [ "d3df13d7-20a5-447e-90d7-2fb9f929e285", "039a7ca1-7455-4a74-943b-248b35992396", "64b62620-4bc6-46ce-91fd-ebce5f268b3f" ],
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "innerMargin" : 10,
+      "name" : "VerticalLayout9830",
+      "type" : "VerticalLayout",
+      "uuid" : "cdbd945a-77d5-4022-aa3a-0f6b737b6435",
+      "v" : 16,
+      "vertGravity" : "center",
+      "w" : 560,
+      "widthPolicy" : "explicit"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "horzMargin" : 2,
+      "label" : "Customer Contact(s) for Ticket",
+      "labelColor" : "#808080",
+      "labelSize" : 18,
+      "labelStyle" : "italic",
+      "name" : "tpcontacts",
+      "type" : "SectionLabel",
+      "uuid" : "d3df13d7-20a5-447e-90d7-2fb9f929e285",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "binding" : "page.data.Tickets.locationid",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "isReadOnly" : true,
+      "label" : "Location ID",
+      "labelColor" : "#000000",
+      "labelStyle" : "plain",
+      "name" : "tplocationid",
+      "optional" : false,
+      "placeholder" : "",
+      "type" : "InputString",
+      "uuid" : "da4bca01-eda8-4e62-acae-6f94ff3c2e74",
+      "v" : 16,
+      "vertGravity" : "center",
+      "w" : 480,
+      "widthPolicy" : "explicit"
+    }, {
+      "binding" : "page.data.Tickets.reportedSource",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "default" : "-select-",
+      "enumeratedList" : [ {
+        "label" : "-select-",
+        "value" : "-select-"
+      }, {
+        "label" : "Phone",
+        "value" : "Phone"
+      }, {
+        "label" : "Email",
+        "value" : "Email"
+      }, {
+        "label" : "Social Media",
+        "value" : "Social"
+      }, {
+        "label" : "Other",
+        "value" : "Other"
+      }, {
+        "label" : "IoT",
+        "value" : "IoT"
+      } ],
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "left",
+      "label" : "Reported Source",
+      "labelColor" : "#000000",
+      "labelStyle" : "plain",
+      "name" : "droplist627",
+      "type" : "Droplist",
+      "uuid" : "e2963ddd-1778-4f37-a536-7d4027134e3f",
+      "v" : 16,
+      "vertGravity" : "center",
+      "w" : 510,
+      "widthPolicy" : "explicit"
+    }, {
+      "binding" : "page.data.Tickets.id",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "left",
+      "isReadOnly" : true,
+      "label" : "Ticket ID",
+      "labelColor" : "#000000",
+      "labelStyle" : "plain",
+      "name" : "inputString962035",
+      "optional" : false,
+      "placeholder" : "",
+      "type" : "InputString",
+      "uuid" : "e305635a-a06a-46e6-8adf-5a7f95012b9b",
+      "v" : 16,
+      "vertGravity" : "top",
+      "w" : 510,
+      "widthPolicy" : "explicit"
+    }, {
+      "backgroundColor" : "#ffffff",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "children" : [ "406cc8df-2249-461b-adc1-1f57d1e5ffd4", "430aa267-c054-400d-b111-e26566eb5576", "36417f3b-5e79-464f-8de4-09a6cf7e8c37", "92ff2090-475c-4f06-98bb-f86fc1f42e4c" ],
+      "h" : 371,
+      "heightPolicy" : "explicit",
+      "horzGravity" : "center",
+      "innerMargin" : 5,
+      "name" : "VerticalContainer9640",
+      "type" : "VerticalLayout",
+      "uuid" : "e64099ba-919a-4794-ac9e-60c7d58fd1da",
+      "v" : 16,
+      "vertGravity" : "top",
+      "w" : 1150,
+      "widthPolicy" : "explicit"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "children" : [ "2d83235e-aff4-422e-a263-22e5180a60a3", "0b63d8f5-1deb-41a1-87d3-10c9dde32327" ],
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "left",
+      "horzMargin" : 5,
+      "innerMargin" : 20,
+      "name" : "HorizontalLayout38158",
+      "type" : "HorizontalLayout",
+      "uuid" : "e7b2e1a0-ec3b-415b-8667-2b5993e3b187",
+      "v" : 16,
+      "vertGravity" : "center",
+      "vertMargin" : 5,
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultMinimumHeight" : 300,
+      "defaultMinimumWidth" : 200,
+      "h" : 25,
+      "heightPolicy" : "explicit",
+      "horzGravity" : "center",
+      "horzizontalScrollPolicy" : "none",
+      "html" : "<hr />",
+      "name" : "StaticHtml50",
+      "type" : "StaticHtml",
+      "uuid" : "ed766e5d-5683-4f08-8ee5-1e7f98373bad",
+      "v" : 16,
+      "vertGravity" : "center",
+      "verticalScrollPolicy" : "none",
+      "w" : 1150,
+      "widthPolicy" : "explicit"
+    }, {
+      "binding" : "page.data.Tickets.summary",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "column" : -1,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "left",
+      "label" : "Title",
+      "labelColor" : "#000000",
+      "labelStyle" : "plain",
+      "name" : "inputString9334",
+      "optional" : false,
+      "placeholder" : "",
+      "row" : -1,
+      "type" : "InputString",
+      "uuid" : "f314d835-8e37-48ef-a12d-52422d41bd7f",
+      "v" : 16,
+      "vertGravity" : "center",
+      "w" : 600,
+      "widthPolicy" : "explicit"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "buttonBackgroundColor" : "platform",
+      "buttonLabel" : "Select Customer",
+      "buttonLabelColor" : "platform",
+      "buttonLabelSize" : 18,
+      "buttonLabelStyle" : "plain",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "left",
+      "labelAlign" : "center",
+      "labelColor" : "#000000",
+      "labelStyle" : "plain",
+      "name" : "Button99095",
+      "submitValue" : 100,
+      "type" : "Button",
+      "uuid" : "f78a79b6-713f-4077-9fc6-1d764be10344",
+      "v" : 16,
+      "vertGravity" : "bottom",
+      "widthPolicy" : "naturalSize"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "children" : [ "f314d835-8e37-48ef-a12d-52422d41bd7f", "42c4c28e-2eb4-47fb-a961-94d78d7a8dbc" ],
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "horzMargin" : 0,
+      "innerMargin" : 20,
+      "name" : "VerticalLayout10788",
+      "type" : "VerticalLayout",
+      "uuid" : "f892375e-2f08-4343-98c0-ead8a56c4997",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "naturalSize"
+    }, {
+      "binding" : "page.data.Tickets.assignedDate",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "column" : -1,
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "left",
+      "label" : "Assigned Date",
+      "labelColor" : "#000000",
+      "labelStyle" : "plain",
+      "name" : "datetime44",
+      "optional" : false,
+      "placeholder" : "",
+      "row" : -1,
+      "type" : "InputDateTime",
+      "uuid" : "fc4fbae6-bf70-463d-8bd8-522d416c1841",
+      "v" : 16,
+      "vertGravity" : "center",
+      "w" : 280,
+      "widthPolicy" : "explicit"
+    } ]
+  },
+  "data" : {
+    "properties" : {
+      "Tickets" : {
+        "defaultLabel" : "Tickets",
+        "type" : "TypedObject",
+        "typedObject" : {
+          "properties" : {
+            "assets" : {
+              "defaultLabel" : "assets",
+              "isArray" : true,
+              "type" : "Object"
+            },
+            "assignedDate" : {
+              "defaultLabel" : "assignedDate",
+              "type" : "DateTime"
+            },
+            "assignedGroup" : {
+              "defaultLabel" : "assignedGroup",
+              "type" : "String"
+            },
+            "assignedTeam" : {
+              "defaultLabel" : "assignedTeam",
+              "type" : "String"
+            },
+            "assignedTo" : {
+              "defaultLabel" : "assignedTo",
+              "type" : "String"
+            },
+            "assignedToName" : {
+              "defaultLabel" : "assignedToName",
+              "type" : "String"
+            },
+            "closedDate" : {
+              "defaultLabel" : "closedDate",
+              "type" : "DateTime"
+            },
+            "contacts" : {
+              "defaultLabel" : "contacts",
+              "isArray" : true,
+              "type" : "Object"
+            },
+            "createdBy" : {
+              "defaultLabel" : "createdBy",
+              "type" : "String"
+            },
+            "createdByName" : {
+              "defaultLabel" : "createdByName",
+              "type" : "String"
+            },
+            "customer" : {
+              "defaultLabel" : "customer",
+              "type" : "String"
+            },
+            "customerId" : {
+              "defaultLabel" : "customerId",
+              "type" : "String"
+            },
+            "description" : {
+              "defaultLabel" : "description",
+              "type" : "String"
+            },
+            "emailtosales" : {
+              "defaultLabel" : "emailtosales",
+              "type" : "Boolean"
+            },
+            "externalticketnumber" : {
+              "defaultLabel" : "externalticketnumber",
+              "type" : "String"
+            },
+            "externaltickettype" : {
+              "defaultLabel" : "externaltickettype",
+              "type" : "String"
+            },
+            "firstResponseDate" : {
+              "defaultLabel" : "firstResponseDate",
+              "type" : "DateTime"
+            },
+            "history" : {
+              "defaultLabel" : "history",
+              "type" : "String"
+            },
+            "id" : {
+              "defaultLabel" : "id",
+              "type" : "String"
+            },
+            "impact" : {
+              "defaultLabel" : "impact",
+              "type" : "String"
+            },
+            "incident" : {
+              "defaultLabel" : "incident",
+              "type" : "String"
+            },
+            "locationid" : {
+              "defaultLabel" : "locationid",
+              "type" : "String"
+            },
+            "locationname" : {
+              "defaultLabel" : "locationname",
+              "type" : "String"
+            },
+            "notificationList_Customer" : {
+              "defaultLabel" : "notificationList_Customer",
+              "isArray" : true,
+              "type" : "Object"
+            },
+            "notificationList_Internal" : {
+              "defaultLabel" : "notificationList_Internal",
+              "isArray" : true,
+              "type" : "Object"
+            },
+            "priority" : {
+              "defaultLabel" : "priority",
+              "type" : "String"
+            },
+            "reportedSource" : {
+              "defaultLabel" : "reportedSource",
+              "type" : "String"
+            },
+            "resolution" : {
+              "defaultLabel" : "resolution",
+              "type" : "String"
+            },
+            "salesemails" : {
+              "defaultLabel" : "salesemails",
+              "type" : "String"
+            },
+            "sentcustomersurvey" : {
+              "defaultLabel" : "sentcustomersurvey",
+              "type" : "Boolean"
+            },
+            "serviceType" : {
+              "defaultLabel" : "serviceType",
+              "type" : "String"
+            },
+            "status" : {
+              "defaultLabel" : "status",
+              "type" : "String"
+            },
+            "summary" : {
+              "defaultLabel" : "summary",
+              "type" : "String"
+            },
+            "type" : {
+              "defaultLabel" : "type",
+              "type" : "String"
+            }
+          },
+          "type" : "Tickets"
+        }
+      },
+      "dbid" : {
+        "defaultLabel" : "dbid",
+        "type" : "String"
+      }
+    }
+  },
+  "footerChildren" : [ ],
+  "hasFooter" : false,
+  "layoutType" : "browser",
+  "responseTopic" : ""
+}

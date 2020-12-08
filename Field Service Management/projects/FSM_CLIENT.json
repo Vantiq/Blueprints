@@ -1,157 +1,371 @@
 {
   "links" : [ {
     "source" : "type/Assets",
-    "target" : "client/Service Desk"
+    "target" : "client/ServiceDesk"
   }, {
     "source" : "type/Tickets",
-    "target" : "client/Service Desk"
+    "target" : "client/ServiceDesk"
   }, {
     "source" : "type/Workorders",
-    "target" : "client/Service Desk"
+    "target" : "client/ServiceDesk"
   }, {
     "source" : "type/Technicians",
-    "target" : "client/Service Desk"
+    "target" : "client/ServiceDesk"
   }, {
     "source" : "type/Skills",
-    "target" : "client/Service Desk"
+    "target" : "client/ServiceDesk"
   }, {
-    "source" : "client/Service Desk",
+    "source" : "type/pumpHistory",
+    "target" : "client/ServiceDesk"
+  }, {
+    "source" : "client/ServiceDesk",
     "target" : "topic//my/response/topic"
   }, {
-    "source" : "client/Service Desk",
+    "source" : "client/ServiceDesk",
     "target" : "topic/email"
+  }, {
+    "source" : "type/Customers",
+    "target" : "procedure/cb.getAllCustomers"
+  }, {
+    "source" : "type/Contacts",
+    "target" : "procedure/cb.getContactsByCustomerId"
+  }, {
+    "source" : "type/Locations",
+    "target" : "procedure/cb.getLocationByLocationId"
+  }, {
+    "source" : "type/Locations",
+    "target" : "procedure/cb.getLocationsByCustomerId"
+  }, {
+    "source" : "type/Users",
+    "target" : "procedure/clientLoginValidation"
   } ],
   "name" : "FSM_CLIENT",
   "options" : {
     "description" : "The FSM_Client represents the web application for this project. To access the run time for this client users must navigate to: \n\nhttps://dev.vantiq.com/ui/rtc/index.html\n\nThese pages are typically broken up into a detail page and a list view page. The common naming format is \"ticketpage\" for the detail page used to add/edit content and \"ticketslist\" for the data table list view used to show all records.  A page called \"ticketslistpopup\" would represent a data table list view that is used for modal popup dialogs specifically. \n\nPrimary data objects such as Users, Customers, Locations, Tickets, Work Orders, Assets and Technicians are entered/updated through standard web forms. There are many droplists that represent fields inside these primary data objects such as Industry for the Customer record or Support Radius for the Technician. These droplist values can be changed by opening the page they appear on, clicking on the droplist widget on the page and adding/editing the List values in the widgets properties. \n\n\n\n",
+    "dockCollapsed" : {
+      "bottom" : true,
+      "left" : false,
+      "right" : false,
+      "top" : false
+    },
+    "dockDimensions" : {
+      "bottom" : 200,
+      "debug" : [ 0, 0, 0 ],
+      "left" : 210,
+      "right" : 220,
+      "top" : 0
+    },
     "filterBitArray" : "ffffffffffffffffffffffffffffffff",
     "isModeloProject" : true,
+    "layoutStyle" : "custom",
+    "openResourceFolders" : {
+      "procedure" : true
+    },
+    "rootViewFlavor" : 1,
     "showGrid" : true,
-    "v" : 2
+    "type" : "dev",
+    "v" : 3,
+    "viewUUID" : "MAINVIEW"
   },
   "resources" : [ {
     "label" : "/location/tracking/tech",
     "name" : "/location/tracking/tech",
+    "resourceReference" : "/topics//location/tracking/tech",
     "type" : 10
   }, {
     "label" : "/my/response/topic",
     "name" : "/my/response/topic",
     "node" : {
-      "x" : 390.65992633099637,
-      "y" : 257.27935551447007
+      "x" : 390.7,
+      "y" : 257.3
     },
+    "resourceReference" : "/topics//my/response/topic",
     "type" : 10
   }, {
     "label" : "Assets",
     "name" : "Assets",
     "node" : {
-      "x" : 227.84301042590238,
-      "y" : 10.892916042771132
+      "x" : 227.8,
+      "y" : 10.9
     },
-    "timestamp" : "2018-10-09T18:13:48.444Z",
+    "resourceReference" : "/types/Assets",
+    "timestamp" : "2020-11-24T10:54:57.743Z",
+    "type" : 1
+  }, {
+    "label" : "Contacts",
+    "name" : "Contacts",
+    "resourceReference" : "/types/Contacts",
+    "timestamp" : "2020-11-20T13:38:41.786Z",
+    "type" : 1
+  }, {
+    "label" : "Customers",
+    "name" : "Customers",
+    "resourceReference" : "/types/Customers",
+    "timestamp" : "2020-11-20T13:38:41.716Z",
+    "type" : 1
+  }, {
+    "label" : "Locations",
+    "name" : "Locations",
+    "resourceReference" : "/types/Locations",
+    "timestamp" : "2020-11-20T13:38:41.710Z",
     "type" : 1
   }, {
     "inventory" : {
-      "appmodelHash" : [ ],
-      "appmodels" : [ ],
+      "clientHash" : [ ],
+      "clients" : [ ],
       "collaborationHash" : [ ],
       "collaborations" : [ ],
-      "pagesetHash" : [ ],
-      "pagesets" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
       "procedureHash" : [ ],
       "procedures" : [ ],
       "sourceHash" : [ ],
       "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
       "topicHash" : [ "out", "out" ],
       "topics" : [ "/my/response/topic", "email" ],
-      "typeHash" : [ "in", "in", "in", "in", "in" ],
-      "types" : [ "Assets", "Tickets", "Workorders", "Technicians", "Skills" ]
+      "typeHash" : [ "in", "in", "in", "in", "in", "in" ],
+      "types" : [ "Assets", "Tickets", "Workorders", "Technicians", "Skills", "pumpHistory" ]
     },
-    "label" : "Service Desk",
-    "name" : "Service Desk",
-    "node" : {
-      "x" : 271.7652456006533,
-      "y" : 156.0355448406297
-    },
-    "timestamp" : "2018-11-03T15:49:08.268Z",
+    "label" : "ServiceDesk",
+    "name" : "ServiceDesk",
+    "resourceReference" : "/system.clients/ServiceDesk",
+    "timestamp" : "2020-11-27T09:09:44.571Z",
     "type" : 15
   }, {
     "label" : "Skills",
     "name" : "Skills",
     "node" : {
-      "x" : 427.27064560988595,
-      "y" : 153.50500833195113
+      "x" : 427.3,
+      "y" : 153.5
     },
-    "timestamp" : "2018-10-09T18:13:48.671Z",
+    "resourceReference" : "/types/Skills",
+    "timestamp" : "2020-11-26T14:06:36.951Z",
     "type" : 1
   }, {
     "label" : "Technicians",
     "name" : "Technicians",
     "node" : {
-      "x" : 184.13451342362498,
-      "y" : 282.9848413523353
+      "x" : 184.1,
+      "y" : 283
     },
-    "timestamp" : "2018-10-09T18:13:48.566Z",
+    "resourceReference" : "/types/Technicians",
+    "timestamp" : "2020-11-26T14:06:36.948Z",
     "type" : 1
   }, {
     "label" : "Tickets",
     "name" : "Tickets",
     "node" : {
-      "x" : 119.83427590830527,
-      "y" : 156.4028295809664
+      "x" : 119.8,
+      "y" : 156.4
     },
-    "timestamp" : "2018-10-09T18:13:48.102Z",
+    "resourceReference" : "/types/Tickets",
+    "timestamp" : "2020-11-20T13:38:41.805Z",
+    "type" : 1
+  }, {
+    "label" : "Users",
+    "name" : "Users",
+    "resourceReference" : "/types/Users",
+    "timestamp" : "2020-11-20T13:38:41.752Z",
     "type" : 1
   }, {
     "label" : "Workorders",
     "name" : "Workorders",
     "node" : {
-      "x" : 374.68980753072606,
-      "y" : 41.95379988501584
+      "x" : 374.7,
+      "y" : 42
     },
-    "timestamp" : "2018-10-09T18:13:46.947Z",
+    "resourceReference" : "/types/Workorders",
+    "timestamp" : "2020-11-20T13:38:41.790Z",
     "type" : 1
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "Customers" ]
+    },
+    "label" : "cb.getAllCustomers",
+    "name" : "cb.getAllCustomers",
+    "resourceReference" : "/procedures/cb.getAllCustomers",
+    "timestamp" : "2020-11-27T08:47:11.368Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "Contacts" ]
+    },
+    "label" : "cb.getContactsByCustomerId",
+    "name" : "cb.getContactsByCustomerId",
+    "resourceReference" : "/procedures/cb.getContactsByCustomerId",
+    "timestamp" : "2020-11-27T08:47:11.628Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "Locations" ]
+    },
+    "label" : "cb.getLocationByLocationId",
+    "name" : "cb.getLocationByLocationId",
+    "resourceReference" : "/procedures/cb.getLocationByLocationId",
+    "timestamp" : "2020-11-27T08:47:11.413Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ ],
+      "procedures" : [ ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in" ],
+      "types" : [ "Locations" ]
+    },
+    "label" : "cb.getLocationsByCustomerId",
+    "name" : "cb.getLocationsByCustomerId",
+    "resourceReference" : "/procedures/cb.getLocationsByCustomerId",
+    "timestamp" : "2020-11-27T08:47:11.869Z",
+    "type" : 3
+  }, {
+    "inventory" : {
+      "clientHash" : [ ],
+      "clients" : [ ],
+      "collaborationHash" : [ ],
+      "collaborations" : [ ],
+      "eventstreamHash" : [ ],
+      "eventstreams" : [ ],
+      "procedureHash" : [ "out", "out" ],
+      "procedures" : [ "namespace", "includes" ],
+      "sourceHash" : [ ],
+      "sources" : [ ],
+      "systemmodelHash" : [ ],
+      "systemmodels" : [ ],
+      "topicHash" : [ ],
+      "topics" : [ ],
+      "typeHash" : [ "in", "in" ],
+      "types" : [ "system.users", "Users" ]
+    },
+    "label" : "clientLoginValidation",
+    "name" : "clientLoginValidation",
+    "resourceReference" : "/procedures/clientLoginValidation",
+    "timestamp" : "2020-11-20T13:38:47.773Z",
+    "type" : 3
   }, {
     "label" : "email",
     "name" : "email",
     "node" : {
-      "x" : 298.7218056908962,
-      "y" : 310.1912464873686
+      "x" : 298.7,
+      "y" : 310.2
     },
+    "resourceReference" : "/topics/email",
     "type" : 10
+  }, {
+    "label" : "pumpHistory",
+    "name" : "pumpHistory",
+    "resourceReference" : "/types/pumpHistory",
+    "timestamp" : "2020-11-26T14:06:37.196Z",
+    "type" : 1
   } ],
   "tools" : [ {
-    "name" : "Project Contents",
+    "isPinned" : false,
+    "name" : "Errors",
+    "type" : 13
+  }, {
+    "isPinned" : false,
+    "name" : "Errors Query",
     "pane" : {
       "h" : 400,
-      "w" : 650,
-      "x" : 1150.0000610351562,
-      "y" : 0
+      "w" : 600,
+      "x" : 30,
+      "y" : 730
     },
+    "state" : 3,
+    "type" : 28
+  }, {
+    "dockLocation" : "top",
+    "isPinned" : false,
+    "name" : "Inactive Panes",
+    "type" : 99
+  }, {
+    "isPinned" : false,
+    "name" : "Project Contents",
     "type" : 2
   }, {
-    "name" : "Service Desk",
-    "pane" : {
-      "h" : 810,
-      "w" : 1130,
-      "x" : 0,
-      "y" : 0
-    },
-    "resourceKey" : "client/Service Desk",
-    "type" : 63
-  }, {
+    "isPinned" : false,
     "name" : "Project Description",
     "pane" : {
-      "h" : 400,
+      "h" : 720,
       "w" : 650,
-      "x" : 1150.0000610351562,
-      "y" : 410.0000228881836
+      "x" : 1190.0000915527344,
+      "y" : 20
     },
+    "state" : 3,
     "type" : 82
+  }, {
+    "isPinned" : false,
+    "name" : "ServiceDesk",
+    "pane" : {
+      "h" : 700,
+      "w" : 1130,
+      "x" : 30,
+      "y" : 20
+    },
+    "resourceKey" : "client/ServiceDesk",
+    "state" : 3,
+    "type" : 63
   } ],
   "type" : "dev",
   "views" : [ {
-    "name" : "Main",
-    "projectToolKeys" : [ "list/Project Contents", "client/Service Desk", "projectdescription/Project Description" ]
+    "name" : "Project Contents",
+    "projectToolKeys" : [ "errorviewer/Errors", "errorquery/Errors Query", "tiledock/Inactive Panes", "list/Project Contents", "projectdescription/Project Description", "client/ServiceDesk" ]
   } ]
 }

@@ -1,0 +1,142 @@
+{
+  "bodyChildren" : {
+    "rootArray" : [ "84fd813e-87ab-4429-9805-de4e321c9a29", "ba17257b-e77f-4f8f-9ac9-973cede488f7", "331d921c-6c81-4ce5-92ea-55c1f8770ad0" ],
+    "widgets" : [ {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "buttonBackgroundColor" : "platform",
+      "buttonLabel" : "Cancel",
+      "buttonLabelColor" : "platform",
+      "buttonLabelSize" : 18,
+      "buttonLabelStyle" : "plain",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "labelAlign" : "center",
+      "labelColor" : "#000000",
+      "labelStyle" : "plain",
+      "name" : "Button98165",
+      "submitValue" : 100,
+      "type" : "Button",
+      "uuid" : "331d921c-6c81-4ce5-92ea-55c1f8770ad0",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell",
+      "x" : 40,
+      "y" : 420
+    }, {
+      "binding" : "page.data.search",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "label" : "Search Contacts",
+      "labelColor" : "#000000",
+      "labelStyle" : "plain",
+      "name" : "InputString962086",
+      "optional" : true,
+      "placeholder" : "",
+      "type" : "InputString",
+      "uuid" : "84fd813e-87ab-4429-9805-de4e321c9a29",
+      "v" : 16,
+      "vertGravity" : "center",
+      "w" : 320,
+      "widthPolicy" : "explicit",
+      "x" : 30,
+      "y" : 30
+    }, {
+      "backgroundColor" : "default",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 1,
+      "cellFontColor" : "#000000",
+      "cellFontFace" : "inherit",
+      "cellFontSize" : 14,
+      "cellFontStyle" : "plain",
+      "clearOnDataArrive" : true,
+      "columnDescriptors" : [ {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "department",
+        "selected" : false,
+        "title" : "Department"
+      }, {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "title",
+        "selected" : false,
+        "title" : "Title"
+      }, {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "firstname",
+        "selected" : false,
+        "title" : "First Name"
+      }, {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "lastname",
+        "selected" : false,
+        "title" : "Last Name"
+      }, {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "email",
+        "selected" : false,
+        "title" : "Email"
+      }, {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "phone",
+        "selected" : false,
+        "title" : "Phone"
+      }, {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "fax",
+        "selected" : false,
+        "title" : "Fax"
+      } ],
+      "columnSort" : true,
+      "dataStreamGroupedByFiltersString" : "",
+      "dataStreamUUID" : "903f4dc4-c194-423e-83ca-9c425def5e35",
+      "dataType" : null,
+      "headerFontColor" : "#000000",
+      "headerFontFace" : "inherit",
+      "headerFontSize" : 14,
+      "headerFontStyle" : "plain",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "DataTable926",
+      "operation" : "insert",
+      "rowsPerPage" : 5,
+      "showPaging" : true,
+      "type" : "DataTable",
+      "uuid" : "ba17257b-e77f-4f8f-9ac9-973cede488f7",
+      "v" : 16,
+      "vertGravity" : "center",
+      "w" : 1180,
+      "widthPolicy" : "explicit",
+      "x" : 40,
+      "y" : 110
+    } ]
+  },
+  "data" : {
+    "properties" : {
+      "companyid" : {
+        "defaultLabel" : "companyid",
+        "type" : "String"
+      },
+      "search" : {
+        "defaultLabel" : "search",
+        "type" : "String"
+      }
+    }
+  },
+  "footerChildren" : [ ],
+  "hasFooter" : false,
+  "layoutType" : "browser",
+  "responseTopic" : ""
+}

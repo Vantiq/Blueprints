@@ -1,0 +1,72 @@
+{
+  "ars_properties" : {
+    "tags" : [ ]
+  },
+  "ars_public" : false,
+  "controllers" : {
+    "client" : {
+      "customCode" : "RELOCATED to controllers/client/customCode.js"
+    },
+    "dataStream" : { },
+    "page" : {
+      "Start" : {
+        "onClientStart" : "RELOCATED to controllers/page/Start/onClientStart.js",
+        "onStart" : "RELOCATED to controllers/page/Start/onStart.js"
+      }
+    }
+  },
+  "isLaunchable" : false,
+  "models" : {
+    "dataObjects" : {
+      "__GLOBAL__" : {
+        "properties" : { }
+      },
+      "__PARAMETERS__" : {
+        "properties" : { }
+      }
+    },
+    "dataStreams" : [ ]
+  },
+  "name" : "NotifyManager",
+  "options" : {
+    "RELOCATE" : [ {
+      "path" : "controllers",
+      "type" : "js"
+    }, {
+      "path" : "views",
+      "type" : "json"
+    } ],
+    "badgeCount" : 0,
+    "cssAssets" : [ "../../docs/public/css/servicedeskmobile.css" ],
+    "description" : "",
+    "displayName" : "Notify-Manager",
+    "docAssets" : [ "public/css/servicedeskmobile.css" ],
+    "paletteCollapsed" : false,
+    "productV" : "7.4o",
+    "showCategoryButtons" : false,
+    "showCategoryDataDisplay" : false,
+    "showCategoryDataInput" : false,
+    "showCategoryLayout" : true,
+    "showGridWhileEditing" : true,
+    "theme" : {
+      "backgroundColor" : "#ffffff",
+      "borderColor" : "#000000",
+      "cardAccentColor" : "#ffffff",
+      "cardColor" : "#3c424d",
+      "dataDisplayColor" : "#ffffff",
+      "dataDisplayColors" : [ "#3cbce1", "#996db8", "#86d557", "#ff9800", "#425b71", "#cc467c", "#01aa93", "#ffca28", "#f583a9", "#1c84d4", "#ff6767", "#4caf50" ],
+      "dataInputColor" : "#ffffff",
+      "foregroundColor" : "#000000",
+      "label" : "Custom",
+      "name" : "custom",
+      "titleBarColor" : "#f0f2f8",
+      "v" : 3
+    },
+    "v" : 5
+  },
+  "targetDevice" : "mobile",
+  "userList" : [ ],
+  "views" : {
+    "Start" : "RELOCATED to views/Start.json"
+  }
+}

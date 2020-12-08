@@ -1,0 +1,247 @@
+{
+  "bodyChildren" : {
+    "rootArray" : [ "96e3a126-0c96-4119-a8c3-3e1f4b91980a", "82644e7f-e352-4352-84e9-90efb1c6bc03" ],
+    "widgets" : [ {
+      "binding" : "page.data.Contacts.email",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "column" : -1,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "left",
+      "isReadOnly" : true,
+      "label" : "Email",
+      "labelColor" : "#000000",
+      "labelStyle" : "plain",
+      "name" : "InputString976645",
+      "optional" : true,
+      "placeholder" : "",
+      "row" : -1,
+      "type" : "InputString",
+      "uuid" : "0f85638f-a1b9-4a4e-91a9-4c1dc22f5b03",
+      "v" : 16,
+      "vertGravity" : "center",
+      "w" : 300,
+      "widthPolicy" : "explicit"
+    }, {
+      "binding" : "page.data.Contacts.phone",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "column" : -1,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "left",
+      "isReadOnly" : true,
+      "label" : "Phone",
+      "labelColor" : "#000000",
+      "labelStyle" : "plain",
+      "name" : "InputString976650",
+      "optional" : true,
+      "placeholder" : "",
+      "row" : -1,
+      "type" : "InputString",
+      "uuid" : "33bffbd0-3a23-4046-aa5a-6926495926c5",
+      "v" : 16,
+      "vertGravity" : "center",
+      "w" : 300,
+      "widthPolicy" : "explicit"
+    }, {
+      "binding" : "page.data.Contacts.lastname",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "column" : -1,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "left",
+      "isReadOnly" : true,
+      "label" : "Last Name",
+      "labelColor" : "#000000",
+      "labelStyle" : "plain",
+      "name" : "InputString976649",
+      "optional" : true,
+      "placeholder" : "",
+      "row" : -1,
+      "type" : "InputString",
+      "uuid" : "4f8e5f4f-a113-4db3-80b8-40d8f86ef313",
+      "v" : 16,
+      "vertGravity" : "center",
+      "w" : 300,
+      "widthPolicy" : "explicit"
+    }, {
+      "binding" : "page.data.Contacts.title",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "column" : -1,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "left",
+      "isReadOnly" : true,
+      "label" : "Title",
+      "labelColor" : "#000000",
+      "labelStyle" : "plain",
+      "name" : "InputString976651",
+      "optional" : true,
+      "placeholder" : "",
+      "row" : -1,
+      "type" : "InputString",
+      "uuid" : "7bab5fe8-eaf1-40ba-92bf-b0c2106c2d24",
+      "v" : 16,
+      "vertGravity" : "center",
+      "w" : 300,
+      "widthPolicy" : "explicit"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "buttonBackgroundColor" : "platform",
+      "buttonLabel" : "Close",
+      "buttonLabelColor" : "platform",
+      "buttonLabelSize" : 18,
+      "buttonLabelStyle" : "plain",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "labelAlign" : "center",
+      "labelColor" : "#000000",
+      "labelStyle" : "plain",
+      "name" : "Button107898",
+      "submitValue" : 100,
+      "type" : "Button",
+      "uuid" : "82644e7f-e352-4352-84e9-90efb1c6bc03",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "binding" : "page.data.Contacts.firstname",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "column" : -1,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "left",
+      "isReadOnly" : true,
+      "label" : "First Name",
+      "labelColor" : "#000000",
+      "labelStyle" : "plain",
+      "name" : "InputString976647",
+      "optional" : true,
+      "placeholder" : "",
+      "row" : -1,
+      "type" : "InputString",
+      "uuid" : "94fc9820-5f50-4499-b8a1-6a6b2f3427de",
+      "v" : 16,
+      "vertGravity" : "center",
+      "w" : 300,
+      "widthPolicy" : "explicit"
+    }, {
+      "backgroundColor" : "#f5f5f5",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 1,
+      "children" : [ "94fc9820-5f50-4499-b8a1-6a6b2f3427de", "4f8e5f4f-a113-4db3-80b8-40d8f86ef313", "0f85638f-a1b9-4a4e-91a9-4c1dc22f5b03", "33bffbd0-3a23-4046-aa5a-6926495926c5", "7bab5fe8-eaf1-40ba-92bf-b0c2106c2d24", "d15c2e65-240b-41a9-89e1-be4c1cdd4701" ],
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "innerMargin" : 20,
+      "name" : "FlowLayout133",
+      "type" : "FlowLayout",
+      "uuid" : "96e3a126-0c96-4119-a8c3-3e1f4b91980a",
+      "v" : 16,
+      "vertGravity" : "center",
+      "w" : 330,
+      "widthPolicy" : "explicit"
+    }, {
+      "binding" : "page.data.Contacts.department",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "column" : -1,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "left",
+      "isReadOnly" : true,
+      "label" : "Department",
+      "labelColor" : "#000000",
+      "labelStyle" : "plain",
+      "name" : "InputString976644",
+      "optional" : true,
+      "placeholder" : "",
+      "row" : -1,
+      "type" : "InputString",
+      "uuid" : "d15c2e65-240b-41a9-89e1-be4c1cdd4701",
+      "v" : 16,
+      "vertGravity" : "center",
+      "w" : 300,
+      "widthPolicy" : "explicit"
+    } ]
+  },
+  "data" : {
+    "properties" : {
+      "Contacts" : {
+        "defaultLabel" : "Contacts",
+        "type" : "TypedObject",
+        "typedObject" : {
+          "properties" : {
+            "companyid" : {
+              "defaultLabel" : "companyid",
+              "type" : "String"
+            },
+            "department" : {
+              "defaultLabel" : "department",
+              "type" : "String"
+            },
+            "email" : {
+              "defaultLabel" : "email",
+              "type" : "String"
+            },
+            "fax" : {
+              "defaultLabel" : "fax",
+              "type" : "String"
+            },
+            "firstname" : {
+              "defaultLabel" : "firstname",
+              "type" : "String"
+            },
+            "geolocation" : {
+              "defaultLabel" : "geolocation",
+              "type" : "GeoJSON"
+            },
+            "id" : {
+              "defaultLabel" : "id",
+              "type" : "String"
+            },
+            "lastname" : {
+              "defaultLabel" : "lastname",
+              "type" : "String"
+            },
+            "locationid" : {
+              "defaultLabel" : "locationid",
+              "isArray" : true,
+              "type" : "String"
+            },
+            "phone" : {
+              "defaultLabel" : "phone",
+              "type" : "String"
+            },
+            "title" : {
+              "defaultLabel" : "title",
+              "type" : "String"
+            }
+          },
+          "type" : "Contacts"
+        }
+      },
+      "dbid" : {
+        "defaultLabel" : "dbid",
+        "type" : "String"
+      }
+    }
+  },
+  "footerChildren" : [ ],
+  "hasFooter" : false,
+  "layoutType" : "mobile",
+  "responseTopic" : ""
+}

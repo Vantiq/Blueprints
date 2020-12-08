@@ -1,0 +1,6 @@
+{
+  "description" : "Subscription to catalog event /devices/pump/temp",
+  "isReliable" : false,
+  "messageType" : "s_temp",
+  "name" : "/stream/temp"
+}

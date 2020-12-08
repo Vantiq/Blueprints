@@ -1,0 +1,95 @@
+{
+  "active" : true,
+  "appType" : false,
+  "ars_properties" : {
+    "dataVersion" : 4,
+    "graph" : {
+      "lastZoomRequest" : 0,
+      "scale" : 2.0640722425284883,
+      "translate" : [ 308.5, 70.19458181036339 ]
+    },
+    "groupSettings" : {
+      "appGroupOpenHash" : {
+        "actions" : true,
+        "filters" : true,
+        "flowControl" : true
+      },
+      "ctGroupOpenHash" : {
+        "actions" : true,
+        "mobile" : true
+      },
+      "ctServiceOpen" : false,
+      "serviceGroupOpenHash" : { }
+    },
+    "paletteWidth" : 170
+  },
+  "assembly" : {
+    "Initiate" : {
+      "additionalBehaviors" : [ {
+        "behaviors" : [ {
+          "description" : null,
+          "name" : "IoTWorkOrder",
+          "parameters" : [ {
+            "name" : "collaboration",
+            "type" : "reference",
+            "value" : "collaboration"
+          }, {
+            "multi" : true,
+            "name" : "parameters",
+            "type" : "mixed",
+            "value" : [ {
+              "type" : "expression",
+              "value" : "collaboration.results.Initiate.event"
+            } ]
+          } ],
+          "type" : "activity",
+          "uuid" : null
+        } ],
+        "condition" : "true",
+        "description" : null,
+        "name" : null,
+        "uuid" : "61e6d1e4-8200-4426-872d-5851a2f60634"
+      } ],
+      "cancellationCondition" : [ ],
+      "completionCondition" : [ ],
+      "configuration" : {
+        "enableBadging" : true,
+        "entityRole" : "asset",
+        "initialTrigger" : "WHEN INSERT OCCURS ON ArsSituation AS situation WHERE situation.name == \"ServiceIssue\""
+      },
+      "continuationCondition" : [ ],
+      "description" : null,
+      "instanceParameters" : [ "asset" ],
+      "name" : "Initiate",
+      "pattern" : "InitiateCollaboration",
+      "uuid" : "b69b2eb6-ec0e-40c1-b0da-432008b1d819"
+    },
+    "IoTWorkOrder" : {
+      "additionalBehaviors" : [ ],
+      "cancellationCondition" : [ ],
+      "completionCondition" : [ ],
+      "configuration" : {
+        "enableBadging" : true,
+        "serviceName" : "iot.PrepareWorkOrder"
+      },
+      "continuationCondition" : [ ],
+      "description" : null,
+      "instanceParameters" : [ "asset" ],
+      "name" : "IoTWorkOrder",
+      "pattern" : "Execute",
+      "uuid" : "4cfbcc41-1bec-43d6-923a-c704f35780a3"
+    }
+  },
+  "collaboratorRoles" : [ ],
+  "currentState" : {
+    "code" : "success"
+  },
+  "description" : "",
+  "disableBadging" : false,
+  "entityRoles" : [ {
+    "name" : "asset",
+    "type" : "Assets"
+  } ],
+  "keyTypes" : [ "system.collaborations" ],
+  "name" : "ServiceIssue"
+}

@@ -1,0 +1,509 @@
+{
+  "bodyChildren" : {
+    "rootArray" : [ "ebbe1d28-3b8e-498a-99f7-72eae3048b77", "bba8575b-0d47-4c89-803e-699e5f804fd3", "a0a522c2-3b93-4d8d-8a6a-d1ce7d9f8b64", "d59782ea-8490-4f12-8b85-abf570df1930", "2021b82e-81a5-44fa-88ea-ad6798c32f02", "c9f81858-240b-4b2c-8b20-c8bbee342a8c" ],
+    "widgets" : [ {
+      "binding" : "page.data.workorder.description",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "isReadOnly" : true,
+      "label" : "Description",
+      "labelColor" : "#000000",
+      "labelStyle" : "plain",
+      "name" : "MultilineInput131",
+      "optional" : true,
+      "placeholder" : "",
+      "rows" : 2,
+      "type" : "MultilineInput",
+      "uuid" : "0bf1befa-6fbc-4ed3-b062-faee41dd114c",
+      "v" : 16,
+      "vertGravity" : "center",
+      "w" : 450,
+      "widthPolicy" : "explicit",
+      "wordwrap" : true
+    }, {
+      "binding" : "page.data.skills",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "isReadOnly" : true,
+      "label" : "Skills",
+      "labelColor" : "#000000",
+      "labelStyle" : "plain",
+      "name" : "MultilineInput132",
+      "optional" : true,
+      "placeholder" : "",
+      "rows" : 2,
+      "type" : "MultilineInput",
+      "uuid" : "1406b2d5-19e7-47ae-8d11-974648a6d3d8",
+      "v" : 16,
+      "vertGravity" : "center",
+      "w" : 300,
+      "widthPolicy" : "explicit",
+      "wordwrap" : true
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "h" : 40,
+      "heightPolicy" : "explicit",
+      "horzGravity" : "center",
+      "name" : "loadingImage",
+      "preserveAspectRatio" : true,
+      "type" : "StaticImage",
+      "url" : "../docs/NS/bp_sitsm_v2/images/Double Ring-1s-200px.gif",
+      "uuid" : "2021b82e-81a5-44fa-88ea-ad6798c32f02",
+      "v" : 16,
+      "vertGravity" : "center",
+      "w" : 40,
+      "widthPolicy" : "explicit",
+      "x" : 440,
+      "y" : 520
+    }, {
+      "binding" : "page.data.workorder.customer",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "isReadOnly" : true,
+      "label" : "Customer",
+      "labelColor" : "#000000",
+      "labelStyle" : "plain",
+      "name" : "InputString970560",
+      "optional" : true,
+      "placeholder" : "",
+      "type" : "InputString",
+      "uuid" : "46ba1ec9-39f9-4d6a-b1e3-16b0fa1c4b57",
+      "v" : 16,
+      "vertGravity" : "center",
+      "w" : 200,
+      "widthPolicy" : "explicit"
+    }, {
+      "binding" : "page.data.workorder.activitytype",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "isReadOnly" : true,
+      "label" : "Activity Type",
+      "labelColor" : "#000000",
+      "labelStyle" : "plain",
+      "name" : "InputString970561",
+      "optional" : true,
+      "placeholder" : "",
+      "type" : "InputString",
+      "uuid" : "5ac4a032-6fac-4bd4-8cd5-c33486dbabdf",
+      "v" : 16,
+      "vertGravity" : "center",
+      "w" : 200,
+      "widthPolicy" : "explicit"
+    }, {
+      "binding" : "page.data.workorder.priority",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "isReadOnly" : true,
+      "label" : "Priority",
+      "labelColor" : "#000000",
+      "labelStyle" : "plain",
+      "name" : "InputString970562",
+      "optional" : true,
+      "placeholder" : "",
+      "type" : "InputString",
+      "uuid" : "727e28fd-0ce4-4094-8372-b4ecf5a664fe",
+      "v" : 16,
+      "vertGravity" : "center",
+      "w" : 200,
+      "widthPolicy" : "explicit"
+    }, {
+      "binding" : "page.data.workorder.scheduledCompletionDate",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "isReadOnly" : true,
+      "label" : "Scheduled Completion Time",
+      "labelColor" : "#000000",
+      "labelStyle" : "plain",
+      "name" : "InputDateTime333",
+      "optional" : true,
+      "placeholder" : "",
+      "type" : "InputDateTime",
+      "uuid" : "73852678-c5b2-4705-af74-fe69e542661a",
+      "v" : 16,
+      "vertGravity" : "center",
+      "w" : 230,
+      "widthPolicy" : "explicit"
+    }, {
+      "binding" : "page.data.workorder.estimatedHours",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : 0,
+      "flavor" : "text",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "isReadOnly" : true,
+      "label" : "Estimated Hours",
+      "labelColor" : "#000000",
+      "labelStyle" : "plain",
+      "maxValue" : 100,
+      "minValue" : 0,
+      "name" : "InputReal10",
+      "optional" : true,
+      "placeholder" : "",
+      "type" : "InputReal",
+      "units" : "",
+      "uuid" : "767b972e-567a-4df2-8836-c7f35f8a676e",
+      "v" : 16,
+      "vertGravity" : "center",
+      "w" : 120,
+      "widthPolicy" : "explicit"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "buttonBackgroundColor" : "platform",
+      "buttonLabel" : "Cancel",
+      "buttonLabelColor" : "platform",
+      "buttonLabelSize" : 18,
+      "buttonLabelStyle" : "plain",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "labelAlign" : "center",
+      "labelColor" : "#000000",
+      "labelStyle" : "plain",
+      "name" : "Button109365",
+      "submitValue" : 100,
+      "type" : "Button",
+      "uuid" : "a0a522c2-3b93-4d8d-8a6a-d1ce7d9f8b64",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell",
+      "x" : 820,
+      "y" : 90
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "buttonBackgroundColor" : "platform",
+      "buttonLabel" : "Save Assignment",
+      "buttonLabelColor" : "platform",
+      "buttonLabelSize" : 18,
+      "buttonLabelStyle" : "plain",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "labelAlign" : "center",
+      "labelColor" : "#000000",
+      "labelStyle" : "plain",
+      "name" : "Button109364",
+      "submitValue" : 100,
+      "type" : "Button",
+      "uuid" : "bba8575b-0d47-4c89-803e-699e5f804fd3",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell",
+      "x" : 820,
+      "y" : 40
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultMinimumHeight" : 300,
+      "defaultMinimumWidth" : 200,
+      "h" : 70,
+      "heightPolicy" : "explicit",
+      "horzGravity" : "center",
+      "horzizontalScrollPolicy" : "none",
+      "html" : "<div id=\"assignCalendarTrash\" class=\"calendar-trash\"><img src=\"../docs/NS/bp_sitsm_v2/images/trash-can-33874.svg\" alt=\"\" width=\"50\" height=\"69\" /></div>",
+      "name" : "StaticHtml39",
+      "type" : "StaticHtml",
+      "uuid" : "c9f81858-240b-4b2c-8b20-c8bbee342a8c",
+      "v" : 16,
+      "vertGravity" : "center",
+      "verticalScrollPolicy" : "none",
+      "w" : 50,
+      "widthPolicy" : "explicit",
+      "x" : 40,
+      "y" : 700
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultMinimumHeight" : 300,
+      "defaultMinimumWidth" : 200,
+      "h" : 550,
+      "heightPolicy" : "explicit",
+      "horzGravity" : "center",
+      "horzizontalScrollPolicy" : "none",
+      "html" : "<section>\n<div style=\"width: 20%; float: left; padding: 0px 10px 10px 10px;\">&nbsp;<select id=\"assignSelection\" multiple=\"multiple\"></select></div>\n<div id=\"assignCalendar\" style=\"float: right; width: 80%;\">&nbsp;</div>\n</section>",
+      "name" : "assignCalendarHtml",
+      "type" : "StaticHtml",
+      "uuid" : "d59782ea-8490-4f12-8b85-abf570df1930",
+      "v" : 16,
+      "vertGravity" : "center",
+      "verticalScrollPolicy" : "none",
+      "w" : 950,
+      "widthPolicy" : "explicit",
+      "x" : 20,
+      "y" : 280
+    }, {
+      "binding" : "page.data.workorder.scheduledArrivalDate",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "isReadOnly" : true,
+      "label" : "Scheduled Arrival Time",
+      "labelColor" : "#000000",
+      "labelStyle" : "plain",
+      "name" : "InputDateTime331",
+      "optional" : true,
+      "placeholder" : "",
+      "type" : "InputDateTime",
+      "uuid" : "e43290c6-d1a1-4c1b-9175-d95f1b4268b5",
+      "v" : 16,
+      "vertGravity" : "center",
+      "w" : 230,
+      "widthPolicy" : "explicit"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 1,
+      "children" : [ "46ba1ec9-39f9-4d6a-b1e3-16b0fa1c4b57", "5ac4a032-6fac-4bd4-8cd5-c33486dbabdf", "ef1c224d-2d9c-4c1f-a224-593243257993", "727e28fd-0ce4-4094-8372-b4ecf5a664fe", "e43290c6-d1a1-4c1b-9175-d95f1b4268b5", "73852678-c5b2-4705-af74-fe69e542661a", "767b972e-567a-4df2-8836-c7f35f8a676e", "0bf1befa-6fbc-4ed3-b062-faee41dd114c", "1406b2d5-19e7-47ae-8d11-974648a6d3d8" ],
+      "h" : 263,
+      "heightPolicy" : "explicit",
+      "horzGravity" : "center",
+      "horzMargin" : 2,
+      "innerMargin" : 2,
+      "name" : "FlowLayout113",
+      "type" : "FlowLayout",
+      "uuid" : "ebbe1d28-3b8e-498a-99f7-72eae3048b77",
+      "v" : 16,
+      "vertGravity" : "center",
+      "vertMargin" : 2,
+      "w" : 795,
+      "widthPolicy" : "explicit",
+      "x" : 20,
+      "y" : 10
+    }, {
+      "binding" : "page.data.workorder.summary",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "isReadOnly" : true,
+      "label" : "Summary",
+      "labelColor" : "#000000",
+      "labelStyle" : "plain",
+      "name" : "InputString970558",
+      "optional" : true,
+      "placeholder" : "",
+      "type" : "InputString",
+      "uuid" : "ef1c224d-2d9c-4c1f-a224-593243257993",
+      "v" : 16,
+      "vertGravity" : "center",
+      "w" : 350,
+      "widthPolicy" : "explicit"
+    } ]
+  },
+  "data" : {
+    "properties" : {
+      "calendar" : {
+        "defaultLabel" : "calendar",
+        "type" : "Object"
+      },
+      "calendarSelect" : {
+        "defaultLabel" : "calendarSelect",
+        "type" : "Object"
+      },
+      "lastAddedEvent" : {
+        "defaultLabel" : "lastAddedEvent",
+        "type" : "Object"
+      },
+      "selectedTechs" : {
+        "defaultLabel" : "Selected Techs",
+        "isArray" : true,
+        "type" : "String"
+      },
+      "workorder" : {
+        "defaultLabel" : "workorder",
+        "type" : "TypedObject",
+        "typedObject" : {
+          "properties" : {
+            "activitytype" : {
+              "defaultLabel" : "activitytype",
+              "type" : "String"
+            },
+            "actualArrivalDate" : {
+              "defaultLabel" : "actualArrivalDate",
+              "type" : "DateTime"
+            },
+            "actualCompletionDate" : {
+              "defaultLabel" : "actualCompletionDate",
+              "type" : "DateTime"
+            },
+            "actualStartDate" : {
+              "defaultLabel" : "actualStartDate",
+              "type" : "DateTime"
+            },
+            "address" : {
+              "defaultLabel" : "address",
+              "type" : "String"
+            },
+            "assets" : {
+              "defaultLabel" : "assets",
+              "isArray" : true,
+              "type" : "Object"
+            },
+            "closedDate" : {
+              "defaultLabel" : "closedDate",
+              "type" : "DateTime"
+            },
+            "closedNotes" : {
+              "defaultLabel" : "closedNotes",
+              "type" : "String"
+            },
+            "closedresult" : {
+              "defaultLabel" : "closedresult",
+              "type" : "String"
+            },
+            "contacts" : {
+              "defaultLabel" : "contacts",
+              "isArray" : true,
+              "type" : "Object"
+            },
+            "creationDate" : {
+              "defaultLabel" : "creationDate",
+              "type" : "DateTime"
+            },
+            "customer" : {
+              "defaultLabel" : "customer",
+              "type" : "String"
+            },
+            "customerId" : {
+              "defaultLabel" : "customerId",
+              "type" : "String"
+            },
+            "customernotify" : {
+              "defaultLabel" : "customernotify",
+              "type" : "String"
+            },
+            "description" : {
+              "defaultLabel" : "description",
+              "type" : "String"
+            },
+            "estimatedHours" : {
+              "defaultLabel" : "estimatedHours",
+              "type" : "Real"
+            },
+            "geolocation" : {
+              "defaultLabel" : "geolocation",
+              "type" : "GeoJSON"
+            },
+            "id" : {
+              "defaultLabel" : "id",
+              "type" : "String"
+            },
+            "impact" : {
+              "defaultLabel" : "impact",
+              "type" : "String"
+            },
+            "location" : {
+              "defaultLabel" : "location",
+              "type" : "String"
+            },
+            "notes" : {
+              "defaultLabel" : "notes",
+              "isArray" : true,
+              "type" : "Object"
+            },
+            "notificationList_Customer" : {
+              "defaultLabel" : "notificationList_Customer",
+              "type" : "Object"
+            },
+            "notificationList_Internal" : {
+              "defaultLabel" : "notificationList_Internal",
+              "type" : "Object"
+            },
+            "priority" : {
+              "defaultLabel" : "priority",
+              "type" : "String"
+            },
+            "resolution" : {
+              "defaultLabel" : "resolution",
+              "type" : "String"
+            },
+            "scheduledArrivalDate" : {
+              "defaultLabel" : "scheduledArrivalDate",
+              "type" : "DateTime"
+            },
+            "scheduledCompletionDate" : {
+              "defaultLabel" : "scheduledCompletionDate",
+              "type" : "DateTime"
+            },
+            "servicedeskowner" : {
+              "defaultLabel" : "servicedeskowner",
+              "type" : "String"
+            },
+            "skills" : {
+              "defaultLabel" : "skills",
+              "isArray" : true,
+              "type" : "Object"
+            },
+            "status" : {
+              "defaultLabel" : "status",
+              "type" : "String"
+            },
+            "summary" : {
+              "defaultLabel" : "summary",
+              "type" : "String"
+            },
+            "techAssignmentDate" : {
+              "defaultLabel" : "techAssignmentDate",
+              "type" : "DateTime"
+            },
+            "techId" : {
+              "defaultLabel" : "techId",
+              "type" : "String"
+            },
+            "techlevel" : {
+              "defaultLabel" : "techlevel",
+              "type" : "String"
+            },
+            "techname" : {
+              "defaultLabel" : "techname",
+              "type" : "String"
+            },
+            "ticketId" : {
+              "defaultLabel" : "ticketId",
+              "type" : "String"
+            }
+          },
+          "type" : "Workorders"
+        }
+      }
+    }
+  },
+  "footerChildren" : [ ],
+  "hasFooter" : false,
+  "layoutType" : "browser",
+  "responseTopic" : ""
+}

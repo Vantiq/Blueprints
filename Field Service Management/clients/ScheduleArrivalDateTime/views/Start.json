@@ -1,0 +1,508 @@
+{
+  "bodyChildren" : {
+    "rootArray" : [ "2f0f5a33-1135-47a8-8b8f-895c42528891", "022666a6-77f3-48fa-bc5a-f84148d7b491", "390348b8-e64a-4c99-ae2a-0700dea2cc9b", "3b9704d9-f7dd-4012-a8d4-33f4b3593408", "b505adf6-30c0-4466-801f-4e6c7bb40000", "c0cf8117-6e26-4374-be5c-c3327d23f61e", "a4b80c36-16f0-428e-980c-6fee2988b47a", "f78db17c-6b65-49c3-85d2-91209e723a6d", "ea7c00cb-f37b-45b3-83b2-91fb25d7aae7", "f7944148-bd2f-4a07-8957-4c87d594ec71", "66ea62c8-16ae-4296-8e8d-703916378651", "435a6c5a-e1f8-4f07-a258-7e660ec2817f", "5f335a51-2ad9-4e5f-a5e1-8842da55fe81", "222dff43-d1ab-48e7-9b4a-81f7d3cf1b4b", "4ddd9be2-3351-4636-aaa7-6747ddcc2558" ],
+    "widgets" : [ {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "horzMargin" : 2,
+      "label" : "Work Order Details",
+      "labelColor" : "#808080",
+      "labelSize" : 18,
+      "labelStyle" : "italic",
+      "name" : "SectionLabel5",
+      "type" : "SectionLabel",
+      "uuid" : "022666a6-77f3-48fa-bc5a-f84148d7b491",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "children" : [ "e8455cf1-249c-4f58-8794-68f08d569205" ],
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "innerMargin" : 20,
+      "name" : "HorizontalLayout13",
+      "type" : "HorizontalLayout",
+      "uuid" : "222dff43-d1ab-48e7-9b4a-81f7d3cf1b4b",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "isScaleable" : false,
+      "name" : "StaticImage8",
+      "scale" : 1,
+      "type" : "StaticImage",
+      "url" : "../cmn/assets/branding/defaultImage.png",
+      "uuid" : "2f0f5a33-1135-47a8-8b8f-895c42528891",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "naturalSize"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "fontFamily" : "inherit",
+      "fontSize" : 20,
+      "fontStyle" : "normal",
+      "fontWeight" : "normal",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "StaticText71826",
+      "text" : "Customer: ${workorder.customer}",
+      "type" : "StaticText",
+      "uuid" : "390348b8-e64a-4c99-ae2a-0700dea2cc9b",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "naturalSize"
+    }, {
+      "binding" : "page.data.description",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : "${workorder.description}",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "isReadOnly" : true,
+      "label" : "Description",
+      "labelAlign" : "center",
+      "labelColor" : "#000000",
+      "labelSize" : 14,
+      "labelStyle" : "plain",
+      "name" : "MultilineInput2",
+      "optional" : true,
+      "placeholder" : "",
+      "rows" : 5,
+      "type" : "MultilineInput",
+      "uuid" : "3b9704d9-f7dd-4012-a8d4-33f4b3593408",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell",
+      "wordwrap" : true
+    }, {
+      "binding" : "page.data.Workorders.scheduledArrivalDate",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "isReadOnly" : false,
+      "label" : "Arrival Data",
+      "labelAlign" : "center",
+      "labelColor" : "#000000",
+      "labelSize" : 14,
+      "labelStyle" : "plain",
+      "name" : "InputDateTime1",
+      "optional" : true,
+      "placeholder" : "",
+      "type" : "InputDateTime",
+      "uuid" : "435a6c5a-e1f8-4f07-a258-7e660ec2817f",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "binding" : "page.data.username",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : "",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "isReadOnly" : true,
+      "label" : "username",
+      "labelAlign" : "center",
+      "labelColor" : "#000000",
+      "labelSize" : 14,
+      "labelStyle" : "plain",
+      "name" : "username",
+      "optional" : true,
+      "placeholder" : "",
+      "type" : "InputString",
+      "uuid" : "4ddd9be2-3351-4636-aaa7-6747ddcc2558",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "binding" : "page.data.Workorders.scheduledCompletionDate",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "isReadOnly" : false,
+      "label" : "Estimated completion time",
+      "labelAlign" : "center",
+      "labelColor" : "#000000",
+      "labelSize" : 14,
+      "labelStyle" : "plain",
+      "name" : "InputDateTime2",
+      "optional" : true,
+      "placeholder" : "",
+      "type" : "InputDateTime",
+      "uuid" : "5f335a51-2ad9-4e5f-a5e1-8842da55fe81",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "binding" : "page.data.address",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "defaultValue" : "${workorder.address}",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "isReadOnly" : true,
+      "labelAlign" : "center",
+      "labelColor" : "#000000",
+      "labelSize" : 14,
+      "labelStyle" : "plain",
+      "name" : "MultilineInput1",
+      "optional" : true,
+      "placeholder" : "",
+      "rows" : 5,
+      "type" : "MultilineInput",
+      "uuid" : "66ea62c8-16ae-4296-8e8d-703916378651",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell",
+      "wordwrap" : true
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "fontFamily" : "inherit",
+      "fontSize" : 20,
+      "fontStyle" : "normal",
+      "fontWeight" : "normal",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "StaticText71823",
+      "text" : "Activity: ${workorder.activitytype}",
+      "type" : "StaticText",
+      "uuid" : "a4b80c36-16f0-428e-980c-6fee2988b47a",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "naturalSize"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "fontFamily" : "inherit",
+      "fontSize" : 20,
+      "fontStyle" : "normal",
+      "fontWeight" : "normal",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "StaticText71827",
+      "text" : "Title: ${workorder.summary}",
+      "type" : "StaticText",
+      "uuid" : "b505adf6-30c0-4466-801f-4e6c7bb40000",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "naturalSize"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "fontFamily" : "inherit",
+      "fontSize" : 20,
+      "fontStyle" : "normal",
+      "fontWeight" : "normal",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "StaticText71825",
+      "text" : "Priority: ${workorder.priority}",
+      "type" : "StaticText",
+      "uuid" : "c0cf8117-6e26-4374-be5c-c3327d23f61e",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "naturalSize"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "buttonBackgroundColor" : "platform",
+      "buttonLabel" : "Schedule Arrival",
+      "buttonLabelColor" : "platform",
+      "buttonLabelSize" : 22,
+      "buttonLabelStyle" : "plain",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "labelAlign" : "center",
+      "labelColor" : "#000000",
+      "labelSize" : 14,
+      "labelStyle" : "plain",
+      "name" : "Button6",
+      "submitValue" : 100,
+      "type" : "Button",
+      "uuid" : "e8455cf1-249c-4f58-8794-68f08d569205",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "naturalSize"
+    }, {
+      "backgroundColor" : "default",
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 1,
+      "cellFontColor" : "#000000",
+      "cellFontFace" : "inherit",
+      "cellFontSize" : 14,
+      "cellFontStyle" : "plain",
+      "clearOnDataArrive" : true,
+      "columnDescriptors" : [ {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "firstname",
+        "selected" : false,
+        "title" : "firstname"
+      }, {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "lastname",
+        "selected" : false,
+        "title" : "lastname"
+      }, {
+        "colorRules" : null,
+        "dataType" : "String",
+        "propertyName" : "phone",
+        "selected" : false,
+        "title" : "phone"
+      } ],
+      "columnSort" : true,
+      "dataStreamGroupedByFiltersString" : "",
+      "dataStreamUUID" : "e0c51b42-5086-4a0a-8e38-f25846f10482",
+      "dataType" : null,
+      "headerFontColor" : "#000000",
+      "headerFontFace" : "inherit",
+      "headerFontSize" : 14,
+      "headerFontStyle" : "plain",
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "name" : "DataTable946",
+      "operation" : "insert",
+      "rowsPerPage" : 3,
+      "showPaging" : true,
+      "type" : "DataTable",
+      "uuid" : "ea7c00cb-f37b-45b3-83b2-91fb25d7aae7",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "horzMargin" : 2,
+      "label" : "Contacts",
+      "labelColor" : "#808080",
+      "labelSize" : 18,
+      "labelStyle" : "italic",
+      "name" : "SectionLabel9660",
+      "type" : "SectionLabel",
+      "uuid" : "f78db17c-6b65-49c3-85d2-91209e723a6d",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    }, {
+      "borderColor" : "Default",
+      "borderRadius" : 4,
+      "borderThickness" : 0,
+      "heightPolicy" : "naturalSize",
+      "horzGravity" : "center",
+      "horzMargin" : 2,
+      "label" : "Address",
+      "labelColor" : "#808080",
+      "labelSize" : 18,
+      "labelStyle" : "italic",
+      "name" : "SectionLabel9661",
+      "type" : "SectionLabel",
+      "uuid" : "f7944148-bd2f-4a07-8957-4c87d594ec71",
+      "v" : 16,
+      "vertGravity" : "center",
+      "widthPolicy" : "sizeToCell"
+    } ]
+  },
+  "data" : {
+    "properties" : {
+      "Workorders" : {
+        "defaultLabel" : "Workorders",
+        "type" : "TypedObject",
+        "typedObject" : {
+          "properties" : {
+            "activitytype" : {
+              "defaultLabel" : "activitytype",
+              "type" : "String"
+            },
+            "actualArrivalDate" : {
+              "defaultLabel" : "actualArrivalDate",
+              "type" : "DateTime"
+            },
+            "actualCompletionDate" : {
+              "defaultLabel" : "actualCompletionDate",
+              "type" : "DateTime"
+            },
+            "actualStartDate" : {
+              "defaultLabel" : "actualStartDate",
+              "type" : "DateTime"
+            },
+            "address" : {
+              "defaultLabel" : "address",
+              "type" : "String"
+            },
+            "assets" : {
+              "defaultLabel" : "assets",
+              "isArray" : true,
+              "type" : "Object"
+            },
+            "closedDate" : {
+              "defaultLabel" : "closedDate",
+              "type" : "DateTime"
+            },
+            "closedNotes" : {
+              "defaultLabel" : "closedNotes",
+              "type" : "String"
+            },
+            "closedresult" : {
+              "defaultLabel" : "closedresult",
+              "type" : "String"
+            },
+            "contacts" : {
+              "defaultLabel" : "contacts",
+              "isArray" : true,
+              "type" : "Object"
+            },
+            "creationDate" : {
+              "defaultLabel" : "creationDate",
+              "type" : "DateTime"
+            },
+            "customer" : {
+              "defaultLabel" : "customer",
+              "type" : "String"
+            },
+            "customerId" : {
+              "defaultLabel" : "customerId",
+              "type" : "String"
+            },
+            "description" : {
+              "defaultLabel" : "description",
+              "type" : "String"
+            },
+            "estimatedHours" : {
+              "defaultLabel" : "estimatedHours",
+              "type" : "Real"
+            },
+            "geolocation" : {
+              "defaultLabel" : "geolocation",
+              "type" : "GeoJSON"
+            },
+            "id" : {
+              "defaultLabel" : "id",
+              "type" : "String"
+            },
+            "impact" : {
+              "defaultLabel" : "impact",
+              "type" : "String"
+            },
+            "location" : {
+              "defaultLabel" : "location",
+              "type" : "String"
+            },
+            "notes" : {
+              "defaultLabel" : "notes",
+              "isArray" : true,
+              "type" : "Object"
+            },
+            "notificationList_Customer" : {
+              "defaultLabel" : "notificationList_Customer",
+              "type" : "Object"
+            },
+            "notificationList_Internal" : {
+              "defaultLabel" : "notificationList_Internal",
+              "type" : "Object"
+            },
+            "priority" : {
+              "defaultLabel" : "priority",
+              "type" : "String"
+            },
+            "resolution" : {
+              "defaultLabel" : "resolution",
+              "type" : "String"
+            },
+            "scheduledArrivalDate" : {
+              "defaultLabel" : "scheduledArrivalDate",
+              "type" : "DateTime"
+            },
+            "scheduledCompletionDate" : {
+              "defaultLabel" : "scheduledCompletionDate",
+              "type" : "DateTime"
+            },
+            "servicedeskowner" : {
+              "defaultLabel" : "servicedeskowner",
+              "type" : "String"
+            },
+            "skills" : {
+              "defaultLabel" : "skills",
+              "isArray" : true,
+              "type" : "Object"
+            },
+            "status" : {
+              "defaultLabel" : "status",
+              "type" : "String"
+            },
+            "summary" : {
+              "defaultLabel" : "summary",
+              "type" : "String"
+            },
+            "techAssignmentDate" : {
+              "defaultLabel" : "techAssignmentDate",
+              "type" : "DateTime"
+            },
+            "techId" : {
+              "defaultLabel" : "techId",
+              "type" : "String"
+            },
+            "techlevel" : {
+              "defaultLabel" : "techlevel",
+              "type" : "String"
+            },
+            "techname" : {
+              "defaultLabel" : "techname",
+              "type" : "String"
+            },
+            "ticketId" : {
+              "defaultLabel" : "ticketId",
+              "type" : "String"
+            }
+          },
+          "type" : "Workorders"
+        }
+      },
+      "address" : {
+        "defaultLabel" : "address",
+        "type" : "String"
+      },
+      "description" : {
+        "defaultLabel" : "description",
+        "type" : "String"
+      },
+      "username" : {
+        "defaultLabel" : "username",
+        "type" : "String"
+      }
+    }
+  },
+  "footerChildren" : [ ],
+  "hasFooter" : false,
+  "layoutType" : "mobile",
+  "responseTopic" : "/notifications/TechnicianDispatch/ScheduleArrivalDateTime"
+}

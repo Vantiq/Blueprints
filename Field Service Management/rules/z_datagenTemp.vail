@@ -1,0 +1,33 @@
+RULE z_datagenTemp hidden
+
+WHEN PUBLISH OCCURS ON "/gen/temp"
+
+log.debug("RULE z_datagenTemp: triggered")
+
+SELECT FROM democontrol AS dc {
+    
+	var temp
+
+	if (dc.state == 1) {
+    	temp = random(150,169)
+	} else if (dc.state == 2) {
+    	temp = random(240,290)
+	} else if (dc.state == 3) {
+		temp = random(150,169)
+	} else if (dc.state == 4) {
+    	temp = random(240,290)
+	} else if (dc.state == 5) {
+        temp = 0
+    }
+
+	PUBLISH
+		{
+        	tempSensorId:"tempSensor" + dc.id,
+        	temp:temp,
+        	time:now()
+		} 
+	TO TOPIC "/stream/temp"
+
+}
+
+

@@ -1,0 +1,3 @@
+PROCEDURE collab.updateTechMobileGeoLocation(techid, location)
+
+UPDATE technician(mobilegeolocation:location) WHERE username == techid
